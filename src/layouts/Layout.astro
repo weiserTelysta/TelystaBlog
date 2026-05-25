@@ -1,23 +1,42 @@
+---
+import SiteFooter from '../components/site/SiteFooter.astro';
+import SiteHeader from '../components/site/SiteHeader';
+import StarfieldBackground from '../components/starfield/StarfieldBackground';
+import '../styles/global.scss';
+
+type Props = {
+	title?: string;
+	description?: string;
+	starfield?: boolean;
+	starfieldVariant?: 'immersive' | 'subtle';
+};
+
+const {
+	title = 'Telysta Blog',
+	description = '这是我的博客，或许，你能与我共鸣。',
+	starfield = true,
+	starfieldVariant = 'immersive',
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<meta name="description" content={description} />
+		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		{starfield && <StarfieldBackground client:idle variant={starfieldVariant} />}
+		<SiteHeader client:load />
+		<div class="site-shell">
+			<slot />
+		</div>
+		<SiteFooter />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

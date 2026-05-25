@@ -1,0 +1,81 @@
+.starfield {
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	overflow: hidden;
+	pointer-events: none;
+	opacity: 0;
+	animation: starfield-reveal 2.2s ease-out forwards;
+	background:
+		radial-gradient(circle at 18% 18%, rgba(156, 199, 232, 0.04), transparent 28rem),
+		radial-gradient(circle at 82% 28%, rgba(214, 167, 200, 0.026), transparent 24rem),
+		linear-gradient(180deg, #070a10 0%, #0b0f17 52%, #070a10 100%);
+}
+
+.starfield::before,
+.starfield::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+}
+
+.starfield::before {
+	background:
+		radial-gradient(circle at 32% 42%, rgba(156, 199, 232, 0.045), transparent 18rem),
+		radial-gradient(circle at 68% 58%, rgba(214, 167, 200, 0.028), transparent 16rem);
+	opacity: 0.18;
+	animation: starfield-breathe 18s ease-in-out infinite;
+}
+
+.starfield::after {
+	background:
+		linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.008) 1px, transparent 1px);
+	background-size: 96px 96px;
+	mask-image: radial-gradient(circle at center, black 0%, transparent 72%);
+	opacity: 0.12;
+}
+
+.starfield__canvas {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@keyframes starfield-reveal {
+	from {
+		opacity: 0;
+		filter: saturate(0.82);
+	}
+
+	to {
+		opacity: 1;
+		filter: saturate(1);
+	}
+}
+
+@keyframes starfield-breathe {
+	0%,
+	100% {
+		opacity: 0.14;
+		transform: scale(1);
+	}
+
+	48% {
+		opacity: 0.26;
+		transform: scale(1.03);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.starfield {
+		animation: none;
+		opacity: 1;
+	}
+
+	.starfield::before {
+		animation: none;
+		opacity: 0.14;
+	}
+}

@@ -1,46 +1,44 @@
-# Astro Starter Kit: Basics
+# Telysta Blog Project
+
+Telysta Blog is a personal blog project built with Astro and React islands. The current stage focuses on a quiet, dark, spacious personal homepage before the full writing system is introduced.
+
+## Current Stage
+
+- Canvas starfield background with subtle motion and small hidden details.
+- Personal landing page with avatar, name, and time-based typewriter greeting.
+- Lightweight glass navigation.
+- ICP footer: `浙ICP备2025149243号-1`.
+- Local Cinzel display font for brand/navigation styling.
+
+The content system is not implemented yet. `Blog`, `About`, and `Friends` are visible as planned navigation items, but are intentionally disabled until their pages are built.
+
+## Project Structure
+
+```txt
+src/components/home       Homepage identity and greeting components
+src/components/site       Shared site chrome such as header and footer
+src/components/starfield  Canvas starfield background
+src/lib                   Shared data and small utilities
+src/styles                Global style tokens and glass surface rules
+docs                      Direction and project vision documents
+```
+
+## Commands
 
 ```sh
-npm create astro@latest -- --template basics
+npm run dev
+npm run build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Deployment
 
-## 🚀 Project Structure
+Deployment is handled by GitHub Pages through GitHub Actions. Push source code to the `main` branch; GitHub installs dependencies, runs `npm run build`, and publishes `dist/`.
 
-Inside of your Astro project, you'll see the following folders and files:
+Production domain: `https://telysta.com`
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+See [docs/deployment.md](docs/deployment.md) for setup notes.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Direction
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The site should feel like a calm, dark personal archive: writing first, glass second, and ACG details hidden quietly in the atmosphere.

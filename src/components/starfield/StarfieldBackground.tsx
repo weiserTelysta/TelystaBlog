@@ -1,0 +1,448 @@
+import { useEffect, useRef } from 'react';
+import './StarfieldBackground.scss';
+
+type StarfieldBackgroundProps = {
+	variant?: 'immersive' | 'subtle';
+};
+
+type Star = {
+	x: number;
+	y: number;
+	depth: number;
+	radius: number;
+	alpha: number;
+	twinkle: number;
+	twinkleSpeed: number;
+	breathPhase: number;
+	breathSpeed: number;
+	orbitPhase: number;
+	orbitSpeed: number;
+	orbitRadiusX: number;
+	orbitRadiusY: number;
+	driftX: number;
+	driftY: number;
+	color: string;
+	special: boolean;
+	blinkStartedAt: number;
+	blinkDuration: number;
+	blinkStrength: number;
+	nextBlinkAt: number;
+};
+
+type Meteor = {
+	active: boolean;
+	x: number;
+	y: number;
+	length: number;
+	speed: number;
+	alpha: number;
+	life: number;
+	maxLife: number;
+	nextAt: number;
+};
+
+type HeartConstellation = {
+	active: boolean;
+	startedAt: number;
+	duration: number;
+	nextCheckAt: number;
+	points: Array<{ x: number; y: number; radius: number; phase: number }>;
+};
+
+const BASE_COLORS = ['214, 226, 241', '156, 199, 232'];
+const SPECIAL_COLORS = ['214, 167, 200', '184, 170, 224', '154, 214, 210', '230, 217, 188'];
+const SPECIAL_COLOR_RATE = 0.05;
+const CYCLE_DURATION = 82000;
+
+export default function StarfieldBackground({ variant = 'immersive' }: StarfieldBackgroundProps) {
+	const canvasRef = useRef<HTMLCanvasElement>(null);
+
+	useEffect(() => {
+		const canvas = canvasRef.current;
+		if (!canvas) return;
+
+		const context = canvas.getContext('2d', { alpha: true });
+		if (!context) return;
+
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const isSubtle = variant === 'subtle';
+		const pointer = { x: 0, y: 0, easedX: 0, easedY: 0 };
+		const bounds = { width: 0, height: 0, dpr: 1 };
+		const stars: Star[] = [];
+		const meteor: Meteor = {
+			active: false,
+			x: 0,
+			y: 0,
+			length: 0,
+			speed: 0,
+			alpha: 0,
+			life: 0,
+			maxLife: 0,
+			nextAt: performance.now() + randomBetween(12000, 26000),
+		};
+		const heart: HeartConstellation = {
+			active: false,
+			startedAt: 0,
+			duration: 7600,
+			nextCheckAt: performance.now() + 30000,
+			points: [],
+		};
+
+		let animationFrame = 0;
+		let running = true;
+		let lastTime = performance.now();
+
+		const createStar = (): Star => {
+			const depth = Math.random();
+			const near = depth > 0.84;
+			const mid = depth > 0.46 && depth <= 0.84;
+			const special = Math.random() < SPECIAL_COLOR_RATE;
+			const driftBoost = isSubtle ? 1.08 : 1.28;
+			const orbitScale = (isSubtle ? 0.62 : 1) * (0.38 + depth);
+			const blinkable = special || near || Math.random() < 0.16;
+
+			return {
+				x: Math.random() * bounds.width,
+				y: Math.random() * bounds.height,
+				depth,
+				radius: near ? randomBetween(0.82, 1.25) : mid ? randomBetween(0.48, 0.88) : randomBetween(0.24, 0.58),
+				alpha: near ? randomBetween(0.22, 0.46) : mid ? randomBetween(0.14, 0.32) : randomBetween(0.05, 0.16),
+				twinkle: Math.random() * Math.PI * 2,
+				twinkleSpeed: randomBetween(0.00016, 0.00046),
+				breathPhase: Math.random() * Math.PI * 2,
+				breathSpeed: randomBetween(0.000035, 0.000095),
+				orbitPhase: Math.random() * Math.PI * 2,
+				orbitSpeed: randomBetween(0.000032, 0.000088) * (0.72 + depth),
+				orbitRadiusX: randomBetween(0.3, near ? 2.8 : mid ? 1.8 : 1.1) * orbitScale,
+				orbitRadiusY: randomBetween(0.2, near ? 1.8 : mid ? 1.2 : 0.75) * orbitScale,
+				driftX: randomBetween(-0.0026, 0.0026) * (0.36 + depth) * driftBoost,
+				driftY: randomBetween(-0.0013, 0.0032) * (0.36 + depth) * driftBoost,
+				color: pickColor(special),
+				special,
+				blinkStartedAt: 0,
+				blinkDuration: 0,
+				blinkStrength: 0,
+				nextBlinkAt: blinkable ? performance.now() + randomBetween(6000, 22000) : Number.POSITIVE_INFINITY,
+			};
+		};
+
+		const createStarField = () => {
+			stars.length = 0;
+			const area = bounds.width * bounds.height;
+			const density = isSubtle ? 0.000055 : 0.00009;
+			const cap = isSubtle ? 130 : 235;
+			const count = Math.min(cap, Math.max(74, Math.floor(area * density)));
+
+			for (let index = 0; index < count; index += 1) {
+				stars.push(createStar());
+			}
+		};
+
+		const setupCanvas = () => {
+			bounds.width = window.innerWidth;
+			bounds.height = window.innerHeight;
+			bounds.dpr = Math.min(window.devicePixelRatio || 1, 2);
+			canvas.width = Math.floor(bounds.width * bounds.dpr);
+			canvas.height = Math.floor(bounds.height * bounds.dpr);
+			canvas.style.width = `${bounds.width}px`;
+			canvas.style.height = `${bounds.height}px`;
+			context.setTransform(bounds.dpr, 0, 0, bounds.dpr, 0, 0);
+			createStarField();
+		};
+
+		const drawBackground = () => {
+			context.clearRect(0, 0, bounds.width, bounds.height);
+			const vignette = context.createRadialGradient(
+				bounds.width * 0.5,
+				bounds.height * 0.45,
+				0,
+				bounds.width * 0.5,
+				bounds.height * 0.5,
+				Math.max(bounds.width, bounds.height) * 0.72,
+			);
+
+			vignette.addColorStop(0, 'rgba(10, 15, 24, 0.12)');
+			vignette.addColorStop(0.72, 'rgba(7, 10, 16, 0.04)');
+			vignette.addColorStop(1, 'rgba(0, 0, 0, 0.38)');
+			context.fillStyle = vignette;
+			context.fillRect(0, 0, bounds.width, bounds.height);
+		};
+
+		const drawStars = (time: number, cycleGlow: number) => {
+			const parallax = isSubtle ? 7 : 13;
+			const brightness = (isSubtle ? 0.68 : 1) * (1 + cycleGlow * 0.24);
+
+			if (!reducedMotion) {
+				pointer.easedX += (pointer.x - pointer.easedX) * 0.035;
+				pointer.easedY += (pointer.y - pointer.easedY) * 0.035;
+			}
+
+			for (const star of stars) {
+				const shiftX = reducedMotion ? 0 : pointer.easedX * star.depth * parallax;
+				const shiftY = reducedMotion ? 0 : pointer.easedY * star.depth * parallax;
+				const driftTime = reducedMotion ? 0 : time;
+				const orbit = getOrbitOffset(star, time, reducedMotion);
+				const x = wrap(star.x + star.driftX * driftTime + shiftX + orbit.x, bounds.width);
+				const y = wrap(star.y + star.driftY * driftTime + shiftY + orbit.y, bounds.height);
+				const twinkle = reducedMotion ? 0 : Math.sin(time * star.twinkleSpeed + star.twinkle) * 0.075;
+				const breath = reducedMotion ? 0 : Math.sin(time * star.breathSpeed + star.breathPhase) * 0.105;
+				const blinkGlow = getBlinkGlow(star, time, isSubtle, reducedMotion);
+				const cycleLift = 1 + cycleGlow * (star.special ? 0.28 : star.depth > 0.84 ? 0.18 : 0.08);
+				const alpha = Math.max(0, star.alpha + twinkle + breath + blinkGlow) * brightness * cycleLift;
+
+				context.beginPath();
+				context.fillStyle = `rgba(${star.color}, ${alpha})`;
+				context.shadowBlur = star.depth > 0.84 ? 4 + cycleGlow * (star.special ? 2.4 : 1.4) + blinkGlow * 8 : 0;
+				context.shadowColor = `rgba(${star.color}, ${alpha * 0.52})`;
+				context.arc(x, y, star.radius, 0, Math.PI * 2);
+				context.fill();
+				context.shadowBlur = 0;
+			}
+		};
+
+		const updateMeteor = (time: number, delta: number) => {
+			if (reducedMotion || isSubtle) return;
+
+			if (!meteor.active && time > meteor.nextAt) {
+				meteor.active = true;
+				meteor.x = randomBetween(bounds.width * 0.12, bounds.width * 0.82);
+				meteor.y = randomBetween(bounds.height * 0.08, bounds.height * 0.42);
+				meteor.length = randomBetween(72, 132);
+				meteor.speed = randomBetween(0.86, 1.28);
+				meteor.alpha = randomBetween(0.2, 0.36);
+				meteor.life = 0;
+				meteor.maxLife = randomBetween(720, 980);
+			}
+
+			if (!meteor.active) return;
+
+			meteor.life += delta;
+			meteor.x += meteor.speed * (delta / 16.67);
+			meteor.y += meteor.speed * 0.36 * (delta / 16.67);
+
+			if (meteor.life >= meteor.maxLife) {
+				meteor.active = false;
+				meteor.nextAt = time + randomBetween(18000, 42000);
+			}
+		};
+
+		const drawMeteor = () => {
+			if (!meteor.active) return;
+
+			const progress = meteor.life / meteor.maxLife;
+			const fade = Math.sin(progress * Math.PI) * meteor.alpha;
+			const tailX = meteor.x - meteor.length;
+			const tailY = meteor.y - meteor.length * 0.36;
+			const gradient = context.createLinearGradient(tailX, tailY, meteor.x, meteor.y);
+
+			gradient.addColorStop(0, 'rgba(156, 199, 232, 0)');
+			gradient.addColorStop(0.72, `rgba(156, 199, 232, ${fade * 0.32})`);
+			gradient.addColorStop(1, `rgba(232, 240, 248, ${fade})`);
+			context.strokeStyle = gradient;
+			context.lineWidth = 1;
+			context.lineCap = 'round';
+			context.beginPath();
+			context.moveTo(tailX, tailY);
+			context.lineTo(meteor.x, meteor.y);
+			context.stroke();
+		};
+
+		const updateHeart = (time: number) => {
+			if (reducedMotion || isSubtle) return;
+
+			if (!heart.active && time > heart.nextCheckAt) {
+				if (Math.random() < 0.2) {
+					heart.active = true;
+					heart.startedAt = time;
+					heart.points = createHeartPoints(bounds.width, bounds.height);
+				}
+
+				heart.nextCheckAt = time + randomBetween(28000, 36000);
+			}
+
+			if (heart.active && time - heart.startedAt > heart.duration) {
+				heart.active = false;
+				heart.points = [];
+			}
+		};
+
+		const drawHeart = (time: number) => {
+			if (!heart.active) return;
+
+			const elapsed = time - heart.startedAt;
+			const progress = elapsed / heart.duration;
+			const reveal = smoothPulse(progress);
+
+			for (const point of heart.points) {
+				const shimmer = Math.sin(time * 0.0012 + point.phase) * 0.08;
+				const alpha = Math.max(0, reveal * (0.15 + shimmer));
+
+				context.beginPath();
+				context.fillStyle = `rgba(214, 167, 200, ${alpha})`;
+				context.shadowBlur = 5;
+				context.shadowColor = `rgba(214, 167, 200, ${alpha * 0.42})`;
+				context.arc(point.x, point.y, point.radius, 0, Math.PI * 2);
+				context.fill();
+				context.shadowBlur = 0;
+			}
+		};
+
+		const animate = (time: number) => {
+			if (!running) return;
+
+			const delta = Math.min(time - lastTime, 50);
+			lastTime = time;
+			const cycleGlow = reducedMotion ? 0 : getCycleGlow(time);
+
+			drawBackground();
+			drawStars(time, cycleGlow);
+			updateMeteor(time, delta);
+			updateHeart(time);
+			drawMeteor();
+			drawHeart(time);
+
+			if (!reducedMotion) {
+				animationFrame = window.requestAnimationFrame(animate);
+			}
+		};
+
+		const handlePointerMove = (event: PointerEvent) => {
+			pointer.x = (event.clientX / bounds.width - 0.5) * -1;
+			pointer.y = (event.clientY / bounds.height - 0.5) * -1;
+		};
+
+		const handleResize = () => {
+			setupCanvas();
+		};
+
+		const handleVisibility = () => {
+			running = document.visibilityState === 'visible';
+
+			if (running) {
+				lastTime = performance.now();
+				window.cancelAnimationFrame(animationFrame);
+				animationFrame = window.requestAnimationFrame(animate);
+			} else {
+				window.cancelAnimationFrame(animationFrame);
+			}
+		};
+
+		setupCanvas();
+		animationFrame = window.requestAnimationFrame(animate);
+
+		window.addEventListener('pointermove', handlePointerMove, { passive: true });
+		window.addEventListener('resize', handleResize);
+		document.addEventListener('visibilitychange', handleVisibility);
+
+		return () => {
+			running = false;
+			window.cancelAnimationFrame(animationFrame);
+			window.removeEventListener('pointermove', handlePointerMove);
+			window.removeEventListener('resize', handleResize);
+			document.removeEventListener('visibilitychange', handleVisibility);
+		};
+	}, [variant]);
+
+	return (
+		<div className="starfield" aria-hidden="true">
+			<canvas ref={canvasRef} className="starfield__canvas" />
+		</div>
+	);
+}
+
+function createHeartPoints(width: number, height: number) {
+	const points: HeartConstellation['points'] = [];
+	const scale = Math.min(width, height) * 0.008;
+	const centerX = width * randomBetween(0.34, 0.66);
+	const centerY = height * randomBetween(0.32, 0.58);
+
+	for (let index = 0; index < 28; index += 1) {
+		const t = (index / 28) * Math.PI * 2;
+		const x = 16 * Math.sin(t) ** 3;
+		const y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+
+		points.push({
+			x: centerX + x * scale + randomBetween(-1.2, 1.2),
+			y: centerY + y * scale + randomBetween(-1.2, 1.2),
+			radius: randomBetween(0.42, 0.76),
+			phase: Math.random() * Math.PI * 2,
+		});
+	}
+
+	return points;
+}
+
+function getOrbitOffset(star: Star, time: number, reducedMotion: boolean) {
+	if (reducedMotion) return { x: 0, y: 0 };
+
+	const phase = time * star.orbitSpeed + star.orbitPhase;
+
+	return {
+		x: Math.sin(phase) * star.orbitRadiusX,
+		y: Math.cos(phase * 0.86) * star.orbitRadiusY,
+	};
+}
+
+function scheduleNextBlink(star: Star, time: number, isSubtle: boolean) {
+	star.blinkStartedAt = time;
+	star.blinkDuration = randomBetween(420, isSubtle ? 820 : 1100);
+	star.blinkStrength = randomBetween(0.055, isSubtle ? 0.13 : 0.22) * (star.special ? 1.18 : 1);
+	star.nextBlinkAt = time + randomBetween(isSubtle ? 16000 : 6000, isSubtle ? 34000 : 22000);
+}
+
+function getBlinkGlow(star: Star, time: number, isSubtle: boolean, reducedMotion: boolean) {
+	if (reducedMotion || star.nextBlinkAt === Number.POSITIVE_INFINITY) return 0;
+
+	if (star.blinkStartedAt === 0 && time >= star.nextBlinkAt) {
+		scheduleNextBlink(star, time, isSubtle);
+	}
+
+	if (star.blinkStartedAt === 0) return 0;
+
+	const progress = (time - star.blinkStartedAt) / star.blinkDuration;
+
+	if (progress >= 1) {
+		star.blinkStartedAt = 0;
+		star.blinkDuration = 0;
+		star.blinkStrength = 0;
+		return 0;
+	}
+
+	return smoothPulse(progress) * star.blinkStrength;
+}
+
+function getCycleGlow(time: number) {
+	const progress = (time % CYCLE_DURATION) / CYCLE_DURATION;
+	const distanceFromPeak = Math.abs(progress - 0.58);
+	const window = 0.115;
+
+	if (distanceFromPeak > window) return 0;
+
+	const normalized = 1 - distanceFromPeak / window;
+	return easeInOut(normalized) * 0.9;
+}
+
+function smoothPulse(progress: number) {
+	if (progress <= 0 || progress >= 1) return 0;
+	if (progress < 0.24) return easeInOut(progress / 0.24);
+	if (progress > 0.76) return easeInOut((1 - progress) / 0.24);
+	return 1;
+}
+
+function easeInOut(value: number) {
+	const clamped = Math.max(0, Math.min(1, value));
+	return clamped * clamped * (3 - 2 * clamped);
+}
+
+function pickColor(special: boolean) {
+	const colors = special ? SPECIAL_COLORS : BASE_COLORS;
+	return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function randomBetween(min: number, max: number) {
+	return min + Math.random() * (max - min);
+}
+
+function wrap(value: number, max: number) {
+	return ((value % max) + max) % max;
+}

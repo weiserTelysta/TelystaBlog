@@ -1,0 +1,100 @@
+---
+import TimeGreeting from './TimeGreeting';
+import avatar from '../../assets/images/logo/weiser_avatar.png';
+---
+
+<main class="home">
+	<section class="hero" aria-labelledby="hero-title">
+		<img class="avatar" src={avatar.src} alt="Weiser 的头像" width="128" height="128" />
+		<h1 id="hero-title">Weiser</h1>
+		<TimeGreeting client:load />
+	</section>
+</main>
+
+<style lang="scss">
+	.home {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 100vh;
+		padding: clamp(136px, 18vh, 188px) clamp(24px, 8vw, 112px) 124px;
+	}
+
+	.hero {
+		display: flex;
+		width: min(820px, 100%);
+		align-items: center;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.avatar {
+		width: clamp(96px, 12vw, 120px);
+		height: clamp(96px, 12vw, 120px);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.025);
+		box-shadow:
+			0 16px 42px rgba(0, 0, 0, 0.28),
+			0 0 0 5px rgba(255, 255, 255, 0.018),
+			0 0 32px rgba(156, 199, 232, 0.08);
+		object-fit: cover;
+	}
+
+	h1 {
+		margin: 34px 0 0;
+		color: rgba(237, 243, 251, 0.9);
+		font-family: var(--font-display);
+		font-size: clamp(3rem, 7vw, 4.7rem);
+		font-weight: 650;
+		line-height: 1;
+		letter-spacing: 0.018em;
+		text-shadow:
+			0 2px 22px rgba(0, 0, 0, 0.46),
+			0 0 26px rgba(156, 199, 232, 0.055);
+	}
+
+	:global(.time-greeting) {
+		min-height: 4.2em;
+		max-width: min(680px, 100%);
+		margin: 30px 0 0;
+		color: rgba(185, 198, 216, 0.56);
+		font-size: clamp(0.98rem, 1.75vw, 1.1rem);
+		line-height: 1.9;
+		white-space: pre-wrap;
+		text-wrap: balance;
+		text-shadow: 0 2px 16px rgba(0, 0, 0, 0.42);
+	}
+
+	:global(.time-greeting__cursor) {
+		display: inline-block;
+		width: 0.58em;
+		height: 1.1em;
+		margin-left: 0.18em;
+		border-right: 2px solid rgba(156, 199, 232, 0.56);
+		vertical-align: -0.16em;
+		animation: cursor-blink 1s steps(2, start) infinite;
+	}
+
+	@media (max-width: 640px) {
+		.home {
+			padding: 124px 20px 92px;
+		}
+
+		:global(.time-greeting) {
+			min-height: 6.8em;
+		}
+	}
+
+	@keyframes cursor-blink {
+		0%,
+		45% {
+			opacity: 1;
+		}
+
+		46%,
+		100% {
+			opacity: 0;
+		}
+	}
+</style>
