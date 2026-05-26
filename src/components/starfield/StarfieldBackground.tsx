@@ -42,6 +42,22 @@ type Meteor = {
 	nextAt: number;
 };
 
+type LongMeteor = {
+	active: boolean;
+	x: number;
+	y: number;
+	vx: number;
+	vy: number;
+	length: number;
+	alpha: number;
+	life: number;
+	maxLife: number;
+	nextAt: number;
+	color: string;
+	lineWidth: number;
+	glow: number;
+};
+
 type HeartConstellation = {
 	active: boolean;
 	startedAt: number;
@@ -52,6 +68,7 @@ type HeartConstellation = {
 
 const BASE_COLORS = ['214, 226, 241', '156, 199, 232'];
 const SPECIAL_COLORS = ['214, 167, 200', '184, 170, 224', '154, 214, 210', '230, 217, 188'];
+const LONG_METEOR_COLORS = ['164, 220, 246', '202, 186, 245', '236, 185, 214', '240, 220, 174'];
 const SPECIAL_COLOR_RATE = 0.05;
 const CYCLE_DURATION = 82000;
 const BREATH_DURATION = 30000;
@@ -82,6 +99,21 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			life: 0,
 			maxLife: 0,
 			nextAt: performance.now() + randomBetween(12000, 26000),
+		};
+		const longMeteor: LongMeteor = {
+			active: false,
+			x: 0,
+			y: 0,
+			vx: 0,
+			vy: 0,
+			length: 0,
+			alpha: 0,
+			life: 0,
+			maxLife: 0,
+			nextAt: performance.now() + randomBetween(36000, 76000),
+			color: LONG_METEOR_COLORS[0],
+			lineWidth: 1,
+			glow: 0,
 		};
 		const heart: HeartConstellation = {
 			active: false,
@@ -222,16 +254,16 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			}
 		};
 
-		const updateMeteor = (time: number, delta: number) => {
+		const updateMeteor = (time: number, delta: number, cycleGlow: number) => {
 			if (reducedMotion || isSubtle) return;
 
-			if (!meteor.active && time > meteor.nextAt) {
+			if (!meteor.active && time > meteor.nextAt && bounds.width > 0 && bounds.height > 0) {
 				meteor.active = true;
 				meteor.x = randomBetween(bounds.width * 0.12, bounds.width * 0.82);
 				meteor.y = randomBetween(bounds.height * 0.08, bounds.height * 0.42);
 				meteor.length = randomBetween(72, 132);
-				meteor.speed = randomBetween(0.86, 1.28);
-				meteor.alpha = randomBetween(0.2, 0.36);
+				meteor.speed = randomBetween(0.86, 1.28) * (1 + cycleGlow * 0.18);
+				meteor.alpha = randomBetween(0.2, 0.36) * (1 + cycleGlow * 0.12);
 				meteor.life = 0;
 				meteor.maxLife = randomBetween(720, 980);
 			}
@@ -244,7 +276,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 
 			if (meteor.life >= meteor.maxLife) {
 				meteor.active = false;
-				meteor.nextAt = time + randomBetween(18000, 42000);
+				meteor.nextAt = time + randomBetween(18000, 42000) * (1 - cycleGlow * 0.46);
 			}
 		};
 
@@ -267,6 +299,88 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			context.moveTo(tailX, tailY);
 			context.lineTo(meteor.x, meteor.y);
 			context.stroke();
+		};
+
+		const spawnLongMeteor = (time: number, cycleGlow: number) => {
+			const fromLeft = Math.random() < 0.64;
+			const speed = randomBetween(4.2, 6.6) * (1 + cycleGlow * 0.22);
+			const angle = fromLeft ? randomBetween(0.24, 0.48) : randomBetween(Math.PI - 0.48, Math.PI - 0.24);
+
+			longMeteor.active = true;
+			longMeteor.x = fromLeft ? randomBetween(-bounds.width * 0.18, bounds.width * 0.2) : randomBetween(bounds.width * 0.8, bounds.width * 1.18);
+			longMeteor.y = randomBetween(bounds.height * 0.04, bounds.height * 0.34);
+			longMeteor.vx = Math.cos(angle) * speed;
+			longMeteor.vy = Math.sin(angle) * speed;
+			longMeteor.length = randomBetween(260, 420) * (1 + cycleGlow * 0.14);
+			longMeteor.alpha = randomBetween(0.26, 0.42) * (1 + cycleGlow * 0.12);
+			longMeteor.life = 0;
+			longMeteor.maxLife = randomBetween(760, 1120);
+			longMeteor.nextAt = time;
+			longMeteor.color = pickLongMeteorColor();
+			longMeteor.lineWidth = randomBetween(1.1, 1.65);
+			longMeteor.glow = randomBetween(10, 18);
+		};
+
+		const updateLongMeteor = (time: number, delta: number, cycleGlow: number) => {
+			if (reducedMotion || isSubtle || bounds.width <= 0 || bounds.height <= 0) return;
+
+			if (!longMeteor.active && time > longMeteor.nextAt) {
+				const chance = 0.1 + cycleGlow * 0.42;
+
+				if (Math.random() < chance) {
+					spawnLongMeteor(time, cycleGlow);
+				} else {
+					longMeteor.nextAt = time + randomBetween(14000, 26000) * (1 - cycleGlow * 0.42);
+				}
+			}
+
+			if (!longMeteor.active) return;
+
+			longMeteor.life += delta;
+			longMeteor.x += longMeteor.vx * (delta / 16.67);
+			longMeteor.y += longMeteor.vy * (delta / 16.67);
+
+			const outside =
+				longMeteor.x < -longMeteor.length ||
+				longMeteor.x > bounds.width + longMeteor.length ||
+				longMeteor.y < -longMeteor.length ||
+				longMeteor.y > bounds.height + longMeteor.length;
+
+			if (longMeteor.life >= longMeteor.maxLife || outside) {
+				longMeteor.active = false;
+				longMeteor.nextAt = time + randomBetween(42000, 90000) * (1 - cycleGlow * 0.5);
+			}
+		};
+
+		const drawLongMeteor = () => {
+			if (!longMeteor.active) return;
+
+			const progress = longMeteor.life / longMeteor.maxLife;
+			const fade = smoothPulse(progress) * longMeteor.alpha;
+			const magnitude = Math.hypot(longMeteor.vx, longMeteor.vy) || 1;
+			const tailX = longMeteor.x - (longMeteor.vx / magnitude) * longMeteor.length;
+			const tailY = longMeteor.y - (longMeteor.vy / magnitude) * longMeteor.length;
+			const gradient = context.createLinearGradient(tailX, tailY, longMeteor.x, longMeteor.y);
+
+			gradient.addColorStop(0, `rgba(${longMeteor.color}, 0)`);
+			gradient.addColorStop(0.52, `rgba(${longMeteor.color}, ${fade * 0.18})`);
+			gradient.addColorStop(0.86, `rgba(${longMeteor.color}, ${fade * 0.48})`);
+			gradient.addColorStop(1, `rgba(244, 249, 255, ${fade})`);
+			context.strokeStyle = gradient;
+			context.lineWidth = longMeteor.lineWidth;
+			context.lineCap = 'round';
+			context.shadowBlur = longMeteor.glow * fade;
+			context.shadowColor = `rgba(${longMeteor.color}, ${fade * 0.55})`;
+			context.beginPath();
+			context.moveTo(tailX, tailY);
+			context.lineTo(longMeteor.x, longMeteor.y);
+			context.stroke();
+
+			context.beginPath();
+			context.fillStyle = `rgba(248, 251, 255, ${fade * 0.82})`;
+			context.arc(longMeteor.x, longMeteor.y, longMeteor.lineWidth * 1.35, 0, Math.PI * 2);
+			context.fill();
+			context.shadowBlur = 0;
 		};
 
 		const updateHeart = (time: number) => {
@@ -319,9 +433,11 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 
 			drawBackground();
 			drawStars(time, cycleGlow, breathBrightness);
-			updateMeteor(time, delta);
+			updateMeteor(time, delta, cycleGlow);
+			updateLongMeteor(time, delta, cycleGlow);
 			updateHeart(time);
 			drawMeteor();
+			drawLongMeteor();
 			drawHeart(time);
 			clickEffects.update(time, delta);
 			clickEffects.draw(context);
@@ -593,6 +709,10 @@ function easeInOut(value: number) {
 function pickColor(special: boolean) {
 	const colors = special ? SPECIAL_COLORS : BASE_COLORS;
 	return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function pickLongMeteorColor() {
+	return LONG_METEOR_COLORS[Math.floor(Math.random() * LONG_METEOR_COLORS.length)];
 }
 
 function isSelectableTextTarget(target: EventTarget | null) {
