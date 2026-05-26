@@ -23,7 +23,7 @@
 	background:
 		radial-gradient(circle at 32% 42%, rgba(156, 199, 232, 0.045), transparent 18rem),
 		radial-gradient(circle at 68% 58%, rgba(214, 167, 200, 0.028), transparent 16rem);
-	opacity: 0.18;
+	opacity: 0.12;
 	animation: starfield-breathe 18s ease-in-out infinite;
 }
 
@@ -58,13 +58,13 @@
 @keyframes starfield-breathe {
 	0%,
 	100% {
-		opacity: 0.14;
+		opacity: 0.1;
 		transform: scale(1);
 	}
 
 	48% {
-		opacity: 0.26;
-		transform: scale(1.03);
+		opacity: 0.17;
+		transform: scale(1.02);
 	}
 }
 

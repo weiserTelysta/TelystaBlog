@@ -54,6 +54,7 @@ const BASE_COLORS = ['214, 226, 241', '156, 199, 232'];
 const SPECIAL_COLORS = ['214, 167, 200', '184, 170, 224', '154, 214, 210', '230, 217, 188'];
 const SPECIAL_COLOR_RATE = 0.05;
 const CYCLE_DURATION = 82000;
+const BREATH_DURATION = 30000;
 
 export default function StarfieldBackground({ variant = 'immersive' }: StarfieldBackgroundProps) {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -189,9 +190,9 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			context.fillRect(0, 0, bounds.width, bounds.height);
 		};
 
-		const drawStars = (time: number, cycleGlow: number) => {
+		const drawStars = (time: number, cycleGlow: number, breathBrightness: number) => {
 			const parallax = isSubtle ? 7 : 13;
-			const brightness = (isSubtle ? 0.68 : 1) * (1 + cycleGlow * 0.24);
+			const brightness = (isSubtle ? 0.68 : 1) * breathBrightness * (1 + cycleGlow * 0.12);
 
 			if (!reducedMotion) {
 				pointer.easedX += (pointer.x - pointer.easedX) * 0.035;
@@ -208,7 +209,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 				const twinkle = reducedMotion ? 0 : Math.sin(time * star.twinkleSpeed + star.twinkle) * 0.075;
 				const breath = reducedMotion ? 0 : Math.sin(time * star.breathSpeed + star.breathPhase) * 0.105;
 				const blinkGlow = getBlinkGlow(star, time, isSubtle, reducedMotion);
-				const cycleLift = 1 + cycleGlow * (star.special ? 0.28 : star.depth > 0.84 ? 0.18 : 0.08);
+				const cycleLift = 1 + cycleGlow * (star.special ? 0.2 : star.depth > 0.84 ? 0.12 : 0.04);
 				const alpha = Math.max(0, star.alpha + twinkle + breath + blinkGlow) * brightness * cycleLift;
 
 				context.beginPath();
@@ -314,9 +315,10 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			const delta = Math.min(time - lastTime, 50);
 			lastTime = time;
 			const cycleGlow = reducedMotion ? 0 : getCycleGlow(time);
+			const breathBrightness = reducedMotion ? 1 : getBreathBrightness(time);
 
 			drawBackground();
-			drawStars(time, cycleGlow);
+			drawStars(time, cycleGlow, breathBrightness);
 			updateMeteor(time, delta);
 			updateHeart(time);
 			drawMeteor();
@@ -563,6 +565,17 @@ function getCycleGlow(time: number) {
 
 	const normalized = 1 - distanceFromPeak / window;
 	return easeInOut(normalized) * 0.9;
+}
+
+function getBreathBrightness(time: number) {
+	const progress = (time % BREATH_DURATION) / BREATH_DURATION;
+	const wave = Math.sin(progress * Math.PI * 2);
+
+	if (wave < 0) {
+		return 1 + wave * 0.07;
+	}
+
+	return 1 + wave * 0.03;
 }
 
 function smoothPulse(progress: number) {
