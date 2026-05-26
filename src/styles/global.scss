@@ -34,6 +34,10 @@ html {
 	font-family: var(--font-sans);
 }
 
+html.is-starfield-interacting {
+	user-select: none;
+}
+
 body {
 	min-height: 100%;
 	margin: 0;

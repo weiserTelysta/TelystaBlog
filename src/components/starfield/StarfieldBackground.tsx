@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { createClickEffects } from './clickEffects';
 import './StarfieldBackground.scss';
 
 type StarfieldBackgroundProps = {
@@ -69,6 +70,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		const pointer = { x: 0, y: 0, easedX: 0, easedY: 0 };
 		const bounds = { width: 0, height: 0, dpr: 1 };
 		const stars: Star[] = [];
+		const clickEffects = createClickEffects({ bounds, isSubtle, reducedMotion });
 		const meteor: Meteor = {
 			active: false,
 			x: 0,
@@ -91,6 +93,25 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		let animationFrame = 0;
 		let running = true;
 		let lastTime = performance.now();
+		const pointerIntent: {
+			phase: 'idle' | 'pending' | 'dust-active' | 'text-selecting';
+			pointerId: number;
+			startX: number;
+			startY: number;
+			startedAt: number;
+			startedOnSelectableText: boolean;
+			dustTimer: number;
+			selectionFallbackTimer: number;
+		} = {
+			phase: 'idle',
+			pointerId: -1,
+			startX: 0,
+			startY: 0,
+			startedAt: 0,
+			startedOnSelectableText: false,
+			dustTimer: 0,
+			selectionFallbackTimer: 0,
+		};
 
 		const createStar = (): Star => {
 			const depth = Math.random();
@@ -300,6 +321,8 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			updateHeart(time);
 			drawMeteor();
 			drawHeart(time);
+			clickEffects.update(time, delta);
+			clickEffects.draw(context);
 
 			if (!reducedMotion) {
 				animationFrame = window.requestAnimationFrame(animate);
@@ -309,10 +332,120 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		const handlePointerMove = (event: PointerEvent) => {
 			pointer.x = (event.clientX / bounds.width - 0.5) * -1;
 			pointer.y = (event.clientY / bounds.height - 0.5) * -1;
+
+			if (event.pointerId !== pointerIntent.pointerId) return;
+
+			if (pointerIntent.phase === 'pending') {
+				const distance = Math.hypot(event.clientX - pointerIntent.startX, event.clientY - pointerIntent.startY);
+
+				if (pointerIntent.startedOnSelectableText && distance > 11) {
+					pointerIntent.phase = 'text-selecting';
+					window.clearTimeout(pointerIntent.dustTimer);
+					clickEffects.cancelPress();
+				}
+
+				return;
+			}
+
+			if (pointerIntent.phase === 'dust-active') {
+				clickEffects.handlePointerMove(event, performance.now());
+			}
+		};
+
+		const handlePointerDown = (event: PointerEvent) => {
+			if (reducedMotion || !event.isPrimary || ('button' in event && event.button !== 0)) return;
+
+			cancelPointerIntent();
+			pointerIntent.phase = 'pending';
+			pointerIntent.pointerId = event.pointerId;
+			pointerIntent.startX = event.clientX;
+			pointerIntent.startY = event.clientY;
+			pointerIntent.startedAt = performance.now();
+			pointerIntent.startedOnSelectableText = isSelectableTextTarget(event.target);
+			pointerIntent.dustTimer = window.setTimeout(
+				() => startDustInteraction(event),
+				pointerIntent.startedOnSelectableText ? 180 : 45,
+			);
+		};
+
+		const handlePointerUp = (event: PointerEvent) => {
+			if (event.pointerId !== pointerIntent.pointerId) return;
+
+			if (pointerIntent.phase === 'dust-active') {
+				clickEffects.handlePointerUp(event, performance.now());
+				resetPointerIntent();
+				return;
+			}
+
+			if (pointerIntent.phase === 'pending') {
+				window.clearTimeout(pointerIntent.dustTimer);
+
+				if (!pointerIntent.startedOnSelectableText) {
+					startDustInteraction(event);
+					clickEffects.handlePointerUp(event, performance.now());
+				}
+
+				resetPointerIntent();
+				return;
+			}
+
+			if (pointerIntent.phase === 'text-selecting') {
+				resetPointerIntent();
+			}
+		};
+
+		const handlePointerCancel = () => {
+			cancelPointerIntent();
+		};
+
+		const startDustInteraction = (event: PointerEvent) => {
+			if (pointerIntent.phase !== 'pending' || event.pointerId !== pointerIntent.pointerId) return;
+
+			pointerIntent.phase = 'dust-active';
+			clickEffects.handlePointerDown(event, performance.now());
+			enableSelectionGuard();
+		};
+
+		const clearIntentTimers = () => {
+			window.clearTimeout(pointerIntent.dustTimer);
+			window.clearTimeout(pointerIntent.selectionFallbackTimer);
+			pointerIntent.dustTimer = 0;
+			pointerIntent.selectionFallbackTimer = 0;
+		};
+
+		const enableSelectionGuard = () => {
+			document.documentElement.classList.add('is-starfield-interacting');
+			window.clearTimeout(pointerIntent.selectionFallbackTimer);
+			pointerIntent.selectionFallbackTimer = window.setTimeout(() => {
+				document.documentElement.classList.remove('is-starfield-interacting');
+				pointerIntent.selectionFallbackTimer = 0;
+			}, 2000);
+		};
+
+		const resetPointerIntent = () => {
+			clearIntentTimers();
+			document.documentElement.classList.remove('is-starfield-interacting');
+			pointerIntent.phase = 'idle';
+			pointerIntent.pointerId = -1;
+			pointerIntent.startX = 0;
+			pointerIntent.startY = 0;
+			pointerIntent.startedAt = 0;
+			pointerIntent.startedOnSelectableText = false;
+		};
+
+		const cancelPointerIntent = () => {
+			if (pointerIntent.phase === 'dust-active') {
+				clickEffects.handlePointerCancel(performance.now());
+			} else {
+				clickEffects.cancelPress();
+			}
+
+			resetPointerIntent();
 		};
 
 		const handleResize = () => {
 			setupCanvas();
+			clickEffects.reset();
 		};
 
 		const handleVisibility = () => {
@@ -324,6 +457,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 				animationFrame = window.requestAnimationFrame(animate);
 			} else {
 				window.cancelAnimationFrame(animationFrame);
+				cancelPointerIntent();
 			}
 		};
 
@@ -331,13 +465,22 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		animationFrame = window.requestAnimationFrame(animate);
 
 		window.addEventListener('pointermove', handlePointerMove, { passive: true });
+		window.addEventListener('pointerdown', handlePointerDown, { passive: true });
+		window.addEventListener('pointerup', handlePointerUp, { passive: true });
+		window.addEventListener('pointercancel', handlePointerCancel, { passive: true });
+		window.addEventListener('blur', handlePointerCancel);
 		window.addEventListener('resize', handleResize);
 		document.addEventListener('visibilitychange', handleVisibility);
 
 		return () => {
 			running = false;
 			window.cancelAnimationFrame(animationFrame);
+			cancelPointerIntent();
 			window.removeEventListener('pointermove', handlePointerMove);
+			window.removeEventListener('pointerdown', handlePointerDown);
+			window.removeEventListener('pointerup', handlePointerUp);
+			window.removeEventListener('pointercancel', handlePointerCancel);
+			window.removeEventListener('blur', handlePointerCancel);
 			window.removeEventListener('resize', handleResize);
 			document.removeEventListener('visibilitychange', handleVisibility);
 		};
@@ -437,6 +580,37 @@ function easeInOut(value: number) {
 function pickColor(special: boolean) {
 	const colors = special ? SPECIAL_COLORS : BASE_COLORS;
 	return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function isSelectableTextTarget(target: EventTarget | null) {
+	if (!(target instanceof Element)) return false;
+
+	return Boolean(
+		target.closest(
+			[
+				'p',
+				'span',
+				'strong',
+				'em',
+				'h1',
+				'h2',
+				'h3',
+				'h4',
+				'h5',
+				'h6',
+				'li',
+				'blockquote',
+				'code',
+				'pre',
+				'a',
+				'button',
+				'input',
+				'textarea',
+				'select',
+				'[contenteditable="true"]',
+			].join(', '),
+		),
+	);
 }
 
 function randomBetween(min: number, max: number) {
