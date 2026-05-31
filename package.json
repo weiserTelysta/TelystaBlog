@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -17,5 +19,8 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "sass": "^1.100.0"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
   }
 }
