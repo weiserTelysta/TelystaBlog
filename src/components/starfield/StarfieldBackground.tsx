@@ -1,5 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { createClickEffects } from './clickEffects';
+import { createHeartPoints, type HeartConstellation } from './heartConstellation';
+import { LONG_METEOR_COLORS, SPECIAL_COLOR_RATE } from './starfieldConfig';
+import {
+	getBreathBrightness,
+	getCycleGlow,
+	pickColor,
+	pickLongMeteorColor,
+	randomBetween,
+	smoothPulse,
+	wrap,
+} from './starfieldMath';
 import './StarfieldBackground.scss';
 
 type StarfieldBackgroundProps = {
@@ -57,21 +68,6 @@ type LongMeteor = {
 	lineWidth: number;
 	glow: number;
 };
-
-type HeartConstellation = {
-	active: boolean;
-	startedAt: number;
-	duration: number;
-	nextCheckAt: number;
-	points: Array<{ x: number; y: number; radius: number; phase: number }>;
-};
-
-const BASE_COLORS = ['214, 226, 241', '156, 199, 232'];
-const SPECIAL_COLORS = ['214, 167, 200', '184, 170, 224', '154, 214, 210', '230, 217, 188'];
-const LONG_METEOR_COLORS = ['164, 220, 246', '202, 186, 245', '236, 185, 214', '240, 220, 174'];
-const SPECIAL_COLOR_RATE = 0.05;
-const CYCLE_DURATION = 82000;
-const BREATH_DURATION = 30000;
 
 export default function StarfieldBackground({ variant = 'immersive' }: StarfieldBackgroundProps) {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -387,7 +383,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			if (reducedMotion || isSubtle) return;
 
 			if (!heart.active && time > heart.nextCheckAt) {
-				if (Math.random() < 0.2) {
+				if (Math.random() < 0.24) {
 					heart.active = true;
 					heart.startedAt = time;
 					heart.points = createHeartPoints(bounds.width, bounds.height);
@@ -411,11 +407,12 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 
 			for (const point of heart.points) {
 				const shimmer = Math.sin(time * 0.0012 + point.phase) * 0.08;
-				const alpha = Math.max(0, reveal * (0.15 + shimmer));
+				const lifeLift = Math.sin(progress * Math.PI) * 0.06;
+				const alpha = Math.max(0, reveal * (0.22 + lifeLift + shimmer));
 
 				context.beginPath();
 				context.fillStyle = `rgba(214, 167, 200, ${alpha})`;
-				context.shadowBlur = 5;
+				context.shadowBlur = 6;
 				context.shadowColor = `rgba(214, 167, 200, ${alpha * 0.42})`;
 				context.arc(point.x, point.y, point.radius, 0, Math.PI * 2);
 				context.fill();
@@ -611,28 +608,6 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 	);
 }
 
-function createHeartPoints(width: number, height: number) {
-	const points: HeartConstellation['points'] = [];
-	const scale = Math.min(width, height) * 0.008;
-	const centerX = width * randomBetween(0.34, 0.66);
-	const centerY = height * randomBetween(0.32, 0.58);
-
-	for (let index = 0; index < 28; index += 1) {
-		const t = (index / 28) * Math.PI * 2;
-		const x = 16 * Math.sin(t) ** 3;
-		const y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
-
-		points.push({
-			x: centerX + x * scale + randomBetween(-1.2, 1.2),
-			y: centerY + y * scale + randomBetween(-1.2, 1.2),
-			radius: randomBetween(0.42, 0.76),
-			phase: Math.random() * Math.PI * 2,
-		});
-	}
-
-	return points;
-}
-
 function getOrbitOffset(star: Star, time: number, reducedMotion: boolean) {
 	if (reducedMotion) return { x: 0, y: 0 };
 
@@ -672,49 +647,6 @@ function getBlinkGlow(star: Star, time: number, isSubtle: boolean, reducedMotion
 	return smoothPulse(progress) * star.blinkStrength;
 }
 
-function getCycleGlow(time: number) {
-	const progress = (time % CYCLE_DURATION) / CYCLE_DURATION;
-	const distanceFromPeak = Math.abs(progress - 0.58);
-	const window = 0.115;
-
-	if (distanceFromPeak > window) return 0;
-
-	const normalized = 1 - distanceFromPeak / window;
-	return easeInOut(normalized) * 0.9;
-}
-
-function getBreathBrightness(time: number) {
-	const progress = (time % BREATH_DURATION) / BREATH_DURATION;
-	const wave = Math.sin(progress * Math.PI * 2);
-
-	if (wave < 0) {
-		return 1 + wave * 0.07;
-	}
-
-	return 1 + wave * 0.03;
-}
-
-function smoothPulse(progress: number) {
-	if (progress <= 0 || progress >= 1) return 0;
-	if (progress < 0.24) return easeInOut(progress / 0.24);
-	if (progress > 0.76) return easeInOut((1 - progress) / 0.24);
-	return 1;
-}
-
-function easeInOut(value: number) {
-	const clamped = Math.max(0, Math.min(1, value));
-	return clamped * clamped * (3 - 2 * clamped);
-}
-
-function pickColor(special: boolean) {
-	const colors = special ? SPECIAL_COLORS : BASE_COLORS;
-	return colors[Math.floor(Math.random() * colors.length)];
-}
-
-function pickLongMeteorColor() {
-	return LONG_METEOR_COLORS[Math.floor(Math.random() * LONG_METEOR_COLORS.length)];
-}
-
 function isSelectableTextTarget(target: EventTarget | null) {
 	if (!(target instanceof Element)) return false;
 
@@ -744,12 +676,4 @@ function isSelectableTextTarget(target: EventTarget | null) {
 			].join(', '),
 		),
 	);
-}
-
-function randomBetween(min: number, max: number) {
-	return min + Math.random() * (max - min);
-}
-
-function wrap(value: number, max: number) {
-	return ((value % max) + max) % max;
 }
