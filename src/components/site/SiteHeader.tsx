@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from 'react';
 
 const navItems = [
-	{ label: 'Blog' },
+	{ label: 'Blog', href: '/blog' },
 	{ label: 'About' },
 	{ label: 'Friends' },
 ];
@@ -38,15 +38,21 @@ export default function SiteHeader() {
 			</a>
 			<nav className="site-header__nav" aria-label="主导航">
 				{navItems.map((item, index) => (
-					<Fragment key={item.href}>
+					<Fragment key={item.label}>
 						{index > 0 && (
 							<span className="site-header__divider" aria-hidden="true">
 								/
 							</span>
 						)}
-						<span className="site-header__nav-item is-disabled" aria-disabled="true">
-							{item.label}
-						</span>
+						{item.href ? (
+							<a className="site-header__nav-item" href={item.href}>
+								{item.label}
+							</a>
+						) : (
+							<span className="site-header__nav-item is-disabled" aria-disabled="true">
+								{item.label}
+							</span>
+						)}
 					</Fragment>
 				))}
 			</nav>
