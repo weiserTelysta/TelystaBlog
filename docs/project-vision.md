@@ -68,6 +68,12 @@ Light ACG influence should appear through atmosphere and detail, such as soft st
 
 Text should remain calm, clean, and easy to read. The article page is the most important surface of the blog.
 
+Empty space is part of the design. The layout should leave enough room for the starfield, text, and interaction states to breathe instead of filling every area with cards or widgets.
+
+Interactions should feel responsive and intentional, but still restrained. Motion can improve the sense of touch, such as star dust feedback, soft fades, or category selection effects, but it should not turn the site into a game interface or distract from reading.
+
+OC and ACG assets should work as atmospheric signals. They can support identity, categories, and small moments of delight, but they should not overpower the writing system.
+
 ## Content Direction
 
 The blog can grow around several content types:
@@ -111,3 +117,5 @@ Search, comments, RSS, sitemap, animation polish, and advanced archive features 
 We will build from scratch instead of modifying SHBlog Next directly.
 
 SHBlog Next remains a reference for spatial feeling and simplicity. The final blog should have its own design system, its own structure, and a quieter low-saturation atmosphere.
+
+The blog system should grow progressively. The home page, blog navigation page, and article detail page should be built as reusable foundations first. Richer effects, search, comments, and advanced archive features should be added only after the core reading and navigation experience is stable.
