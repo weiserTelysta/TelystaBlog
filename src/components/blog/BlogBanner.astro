@@ -1,0 +1,119 @@
+---
+import bannerImage from '../../assets/banner/blog-banner.png';
+
+type Props = {
+	postCount: number;
+	selectedLabel?: string;
+};
+
+const { postCount, selectedLabel } = Astro.props;
+const summary = selectedLabel ? `当前栏目：${selectedLabel}` : `${postCount} 篇记录正在归档`;
+---
+
+<section class="blog-banner" aria-labelledby="blog-banner-title">
+	<img class="blog-banner__image" src={bannerImage.src} alt="" loading="eager" decoding="async" />
+	<div class="blog-banner__content">
+		<p class="blog-banner__eyebrow">Records</p>
+		<h1 id="blog-banner-title">文章列表</h1>
+		<p class="blog-banner__intro">所有的思绪与技术累积，都会在这里留下足迹。</p>
+		<p class="blog-banner__summary">{summary}</p>
+	</div>
+</section>
+
+<style lang="scss">
+	.blog-banner {
+		position: relative;
+		display: grid;
+		min-height: clamp(210px, 28vw, 320px);
+		overflow: hidden;
+		align-items: end;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+		border-radius: 0 0 18px 18px;
+		isolation: isolate;
+	}
+
+	.blog-banner::before,
+	.blog-banner::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	.blog-banner::before {
+		background:
+			linear-gradient(180deg, rgba(7, 10, 16, 0.46), rgba(7, 10, 16, 0.82)),
+			linear-gradient(90deg, rgba(7, 10, 16, 0.66), rgba(7, 10, 16, 0.18) 48%, rgba(7, 10, 16, 0.7));
+	}
+
+	.blog-banner::after {
+		background:
+			radial-gradient(ellipse at 62% 42%, transparent, rgba(7, 10, 16, 0.76) 74%),
+			linear-gradient(180deg, transparent 45%, rgba(7, 10, 16, 0.96) 100%);
+	}
+
+	.blog-banner__image {
+		position: absolute;
+		inset: 0;
+		z-index: -2;
+		width: 100%;
+		height: 100%;
+		filter: saturate(0.76) brightness(0.58);
+		object-fit: cover;
+		opacity: 0.52;
+	}
+
+	.blog-banner__content {
+		width: min(1080px, calc(100% - 48px));
+		margin: 0 auto;
+		padding: clamp(112px, 13vw, 168px) 0 clamp(42px, 6vw, 72px);
+	}
+
+	.blog-banner__eyebrow,
+	.blog-banner__summary {
+		margin: 0;
+		color: rgba(156, 199, 232, 0.55);
+		font-family: var(--font-display);
+		font-size: 0.72rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	h1 {
+		margin: 12px 0 0;
+		color: rgba(237, 243, 251, 0.92);
+		font-size: clamp(2.8rem, 6vw, 5rem);
+		font-weight: 720;
+		line-height: 1.05;
+		letter-spacing: 0;
+		text-shadow:
+			0 2px 28px rgba(0, 0, 0, 0.52),
+			0 0 32px rgba(156, 199, 232, 0.06);
+	}
+
+	.blog-banner__intro {
+		max-width: 720px;
+		margin: 18px 0 0;
+		color: rgba(190, 199, 214, 0.58);
+		font-size: clamp(1rem, 2.4vw, 1.22rem);
+		line-height: 1.8;
+	}
+
+	.blog-banner__summary {
+		margin-top: 18px;
+		color: rgba(216, 222, 233, 0.4);
+	}
+
+	@media (max-width: 640px) {
+		.blog-banner {
+			min-height: 240px;
+			border-radius: 0 0 14px 14px;
+		}
+
+		.blog-banner__content {
+			width: min(100% - 36px, 1080px);
+			padding-top: 104px;
+		}
+	}
+</style>

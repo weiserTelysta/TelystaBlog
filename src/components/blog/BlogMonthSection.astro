@@ -1,0 +1,108 @@
+---
+import type { BlogMonthGroup } from '../../lib/blogPosts';
+import BlogPostItem from './BlogPostItem.astro';
+
+type Props = {
+	monthGroup: BlogMonthGroup;
+};
+
+const { monthGroup } = Astro.props;
+---
+
+<section class="blog-month" aria-label={`${monthGroup.year} 年 ${monthGroup.label}`}>
+	<div class="blog-month__node" aria-hidden="true"></div>
+	<div class="blog-month__label">{monthGroup.label}</div>
+	<ol class="blog-month__posts">
+		{monthGroup.posts.map((post) => <BlogPostItem post={post} />)}
+	</ol>
+</section>
+
+<style lang="scss">
+	.blog-month {
+		position: relative;
+		display: grid;
+		grid-template-columns: var(--axis-size) var(--month-size) minmax(0, 1fr);
+		align-items: start;
+		column-gap: clamp(14px, 2.8vw, 24px);
+	}
+
+	.blog-month::before {
+		content: "";
+		position: absolute;
+		top: 2rem;
+		bottom: calc(-1 * var(--month-gap));
+		left: calc(var(--axis-size) / 2);
+		width: 1px;
+		background: linear-gradient(
+			180deg,
+			rgba(156, 199, 232, 0.28),
+			rgba(156, 199, 232, 0.06)
+		);
+		transform: translateX(-0.5px);
+	}
+
+	.blog-month:last-child::before {
+		bottom: 0.24rem;
+		background: linear-gradient(180deg, rgba(156, 199, 232, 0.2), transparent);
+	}
+
+	.blog-month__node {
+		position: relative;
+		z-index: 2;
+		grid-column: 1;
+		grid-row: 1;
+		width: 17px;
+		height: 17px;
+		margin-top: 0.4rem;
+		border: 1px solid rgba(156, 199, 232, 0.5);
+		border-radius: 50%;
+		background:
+			radial-gradient(circle, rgba(216, 222, 233, 0.42) 0 1.5px, transparent 2px),
+			radial-gradient(circle, rgba(7, 10, 16, 0.96) 0 55%, rgba(156, 199, 232, 0.14) 56% 100%);
+		box-shadow:
+			0 0 0 5px rgba(7, 10, 16, 0.84),
+			0 0 18px rgba(156, 199, 232, 0.1);
+		justify-self: center;
+	}
+
+	.blog-month__label {
+		grid-column: 2;
+		grid-row: 1;
+		width: fit-content;
+		margin-top: 0.22rem;
+		color: rgba(216, 222, 233, 0.72);
+		font-family: var(--font-display);
+		font-size: 0.92rem;
+		letter-spacing: 0.08em;
+		white-space: nowrap;
+	}
+
+	.blog-month__posts {
+		display: grid;
+		grid-column: 3;
+		grid-row: 1;
+		gap: 26px;
+		min-width: 0;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	@media (max-width: 640px) {
+		.blog-month {
+			grid-template-columns: var(--axis-size) minmax(0, 1fr);
+			gap: 12px 14px;
+		}
+
+		.blog-month__label {
+			grid-column: 2;
+			grid-row: 1;
+			margin-top: 0.14rem;
+		}
+
+		.blog-month__posts {
+			grid-column: 2;
+			grid-row: 2;
+		}
+	}
+</style>

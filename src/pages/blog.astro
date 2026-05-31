@@ -1,0 +1,18 @@
+---
+import BlogNavigationPage from '../components/blog/BlogNavigationPage.astro';
+import { BLOG_CATEGORY_IDS } from '../lib/blogCategories';
+import { getPublishedPosts } from '../lib/blogPosts';
+
+const allPosts = await getPublishedPosts();
+---
+
+<BlogNavigationPage allPosts={allPosts} posts={allPosts} />
+
+<script define:vars={{ categoryIds: BLOG_CATEGORY_IDS }}>
+	const params = new URLSearchParams(window.location.search);
+	const category = params.get('category');
+
+	if (category && categoryIds.includes(category)) {
+		window.location.replace(`/blog/category/${category}/`);
+	}
+</script>

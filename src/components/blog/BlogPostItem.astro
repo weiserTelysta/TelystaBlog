@@ -1,0 +1,94 @@
+---
+import type { PostListItem } from '../../lib/blogPosts';
+import { formatFullDate, formatPostDate } from '../../lib/blogPosts';
+
+type Props = {
+	post: PostListItem;
+};
+
+const { post } = Astro.props;
+---
+
+<li class="blog-post">
+	<article>
+		<h3>{post.title}</h3>
+		<p>{post.description}</p>
+		<div class="blog-post__meta" aria-label="文章元信息">
+			<span>{formatPostDate(post.publishedAt)}</span>
+			<span>更新 {formatFullDate(post.updatedAt)}</span>
+			<span>{post.categoryTitle}</span>
+			{post.tags.map((tag) => <span class="blog-post__tag">#{tag}</span>)}
+		</div>
+	</article>
+</li>
+
+<style lang="scss">
+	.blog-post {
+		position: relative;
+		min-width: 0;
+		padding-bottom: 26px;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+		animation: blog-post-reveal 0.38s ease both;
+	}
+
+	.blog-post article {
+		min-width: 0;
+	}
+
+	.blog-post h3 {
+		margin: 0;
+		color: rgba(237, 243, 251, 0.88);
+		font-size: clamp(1.12rem, 2.2vw, 1.36rem);
+		font-weight: 650;
+		line-height: 1.45;
+		letter-spacing: 0;
+		overflow-wrap: anywhere;
+	}
+
+	.blog-post p {
+		max-width: 700px;
+		margin: 10px 0 0;
+		color: rgba(190, 199, 214, 0.52);
+		font-size: 0.94rem;
+		line-height: 1.8;
+		overflow-wrap: anywhere;
+	}
+
+	.blog-post__meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px 13px;
+		margin-top: 13px;
+		color: rgba(139, 149, 167, 0.72);
+		font-size: 0.78rem;
+		line-height: 1.7;
+		overflow-wrap: anywhere;
+	}
+
+	.blog-post__meta span {
+		min-width: 0;
+		overflow-wrap: anywhere;
+	}
+
+	.blog-post__tag {
+		color: rgba(214, 167, 200, 0.58);
+	}
+
+	@keyframes blog-post-reveal {
+		from {
+			opacity: 0;
+			transform: translateY(6px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.blog-post {
+			animation: none;
+		}
+	}
+</style>

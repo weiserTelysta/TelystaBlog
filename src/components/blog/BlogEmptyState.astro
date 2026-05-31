@@ -1,0 +1,38 @@
+---
+type Props = {
+	categoryTitle?: string;
+};
+
+const { categoryTitle } = Astro.props;
+const message = categoryTitle
+	? `${categoryTitle} 还没有公开文章。`
+	: '这里暂时还没有公开文章。';
+---
+
+<section class="blog-empty" aria-live="polite">
+	<p>{message}</p>
+	<span>等下一颗星落下来，再回来看看。</span>
+</section>
+
+<style lang="scss">
+	.blog-empty {
+		padding: clamp(46px, 9vw, 86px) 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.045);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+	}
+
+	.blog-empty p {
+		margin: 0;
+		color: rgba(237, 243, 251, 0.82);
+		font-size: clamp(1.2rem, 3vw, 1.55rem);
+		line-height: 1.7;
+	}
+
+	.blog-empty span {
+		display: block;
+		margin-top: 12px;
+		color: rgba(139, 149, 167, 0.68);
+		font-size: 0.92rem;
+		line-height: 1.8;
+	}
+</style>

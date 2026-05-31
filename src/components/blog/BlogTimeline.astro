@@ -1,0 +1,77 @@
+---
+import type { BlogYearGroup } from '../../lib/blogPosts';
+import BlogMonthSection from './BlogMonthSection.astro';
+
+type Props = {
+	groups: BlogYearGroup[];
+};
+
+const { groups } = Astro.props;
+---
+
+<div class="blog-timeline" aria-label="文章时间线">
+	{
+		groups.map((yearGroup) => (
+			<section class="blog-year" id={yearGroup.id} aria-labelledby={`${yearGroup.id}-title`}>
+				<header class="blog-year__header">
+					<h2 id={`${yearGroup.id}-title`}>{yearGroup.year}</h2>
+					<span>{yearGroup.postCount} 篇文章</span>
+				</header>
+
+				<div class="blog-year__months">
+					{yearGroup.months.map((monthGroup) => (
+						<BlogMonthSection monthGroup={monthGroup} />
+					))}
+				</div>
+			</section>
+		))
+	}
+</div>
+
+<style lang="scss">
+	.blog-timeline {
+		display: grid;
+		gap: clamp(48px, 7vw, 76px);
+	}
+
+	.blog-year {
+		scroll-margin-top: 104px;
+	}
+
+	.blog-year__header {
+		display: flex;
+		align-items: baseline;
+		gap: 14px;
+		margin-bottom: 24px;
+	}
+
+	.blog-year__header h2 {
+		margin: 0;
+		color: rgba(237, 243, 251, 0.94);
+		font-size: clamp(2.1rem, 5vw, 3rem);
+		font-weight: 720;
+		line-height: 1;
+		letter-spacing: 0;
+	}
+
+	.blog-year__header span {
+		color: rgba(156, 199, 232, 0.5);
+		font-size: 0.86rem;
+	}
+
+	.blog-year__months {
+		--axis-size: 18px;
+		--month-size: clamp(54px, 7vw, 76px);
+		--month-gap: clamp(34px, 5vw, 48px);
+
+		position: relative;
+		display: grid;
+		gap: var(--month-gap);
+	}
+
+	@media (max-width: 640px) {
+		.blog-year__months {
+			--axis-size: 16px;
+		}
+	}
+</style>

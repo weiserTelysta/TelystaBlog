@@ -1,0 +1,22 @@
+---
+import BlogNavigationPage from '../../../components/blog/BlogNavigationPage.astro';
+import { BLOG_CATEGORIES, type BlogCategoryId } from '../../../lib/blogCategories';
+import { filterPostsByCategory, getPublishedPosts } from '../../../lib/blogPosts';
+
+export function getStaticPaths() {
+	return BLOG_CATEGORIES.map((category) => ({
+		params: { category: category.id },
+		props: { categoryId: category.id },
+	}));
+}
+
+type Props = {
+	categoryId: BlogCategoryId;
+};
+
+const { categoryId } = Astro.props;
+const allPosts = await getPublishedPosts();
+const posts = filterPostsByCategory(allPosts, categoryId);
+---
+
+<BlogNavigationPage allPosts={allPosts} posts={posts} selectedCategoryId={categoryId} />

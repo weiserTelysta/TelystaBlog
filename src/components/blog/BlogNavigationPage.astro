@@ -1,0 +1,109 @@
+---
+import BlogBanner from './BlogBanner.astro';
+import BlogCategoryIndex from './BlogCategoryIndex.astro';
+import BlogEmptyState from './BlogEmptyState.astro';
+import BlogTimeline from './BlogTimeline.astro';
+import BlogYearJump from './BlogYearJump.astro';
+import Layout from '../../layouts/Layout.astro';
+import {
+	getBlogCategoryById,
+	getCategoryPostCount,
+	type BlogCategoryId,
+} from '../../lib/blogCategories';
+import { groupPostsByYearMonth, type PostListItem } from '../../lib/blogPosts';
+
+type Props = {
+	allPosts: PostListItem[];
+	posts: PostListItem[];
+	selectedCategoryId?: BlogCategoryId;
+};
+
+const { allPosts, posts, selectedCategoryId } = Astro.props;
+const selectedCategory = getBlogCategoryById(selectedCategoryId);
+const groups = groupPostsByYearMonth(posts);
+const years = groups.map((group) => group.year);
+const postCounts = getCategoryPostCount(allPosts);
+const title = selectedCategory
+	? `${selectedCategory.title} - Blog - Telysta Blog`
+	: 'Blog - Telysta Blog';
+const description = selectedCategory?.description ?? 'Telysta Blog 的文章导航页。';
+---
+
+<Layout title={title} description={description}>
+	<main class="blog-page">
+		<BlogBanner postCount={posts.length} selectedLabel={selectedCategory?.title} />
+
+		<div class="blog-page__body">
+			<section class="blog-page__main" aria-label="文章列表">
+				{
+					groups.length > 0 ? (
+						<BlogTimeline groups={groups} />
+					) : (
+						<BlogEmptyState categoryTitle={selectedCategory?.title} />
+					)
+				}
+			</section>
+
+			<aside class="blog-page__side" aria-label="文章筛选">
+				<BlogCategoryIndex
+					selectedCategoryId={selectedCategoryId}
+					postCounts={postCounts}
+					totalCount={allPosts.length}
+				/>
+				<BlogYearJump years={years} />
+			</aside>
+		</div>
+	</main>
+</Layout>
+
+<style lang="scss">
+	.blog-page {
+		position: relative;
+		z-index: 1;
+		min-height: 100vh;
+	}
+
+	.blog-page__body {
+		display: grid;
+		width: min(1080px, calc(100% - 48px));
+		grid-template-columns: minmax(0, 1fr) minmax(210px, 260px);
+		gap: clamp(48px, 8vw, 92px);
+		margin: 0 auto;
+		padding: clamp(54px, 7vw, 86px) 0 clamp(96px, 12vw, 140px);
+	}
+
+	.blog-page__main {
+		min-width: 0;
+	}
+
+	.blog-page__side {
+		position: sticky;
+		top: 112px;
+		align-self: start;
+		padding-left: clamp(18px, 2.6vw, 30px);
+		border-left: 1px solid rgba(255, 255, 255, 0.045);
+	}
+
+	@media (max-width: 900px) {
+		.blog-page__body {
+			width: min(100% - 40px, 720px);
+			grid-template-columns: 1fr;
+			gap: 52px;
+		}
+
+		.blog-page__side {
+			position: static;
+			padding: 38px 0 0;
+			border-top: 1px solid rgba(255, 255, 255, 0.045);
+			border-right: 0;
+			border-left: 0;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.blog-page__body {
+			width: min(100% - 32px, 720px);
+			padding-bottom: 92px;
+		}
+	}
+</style>
