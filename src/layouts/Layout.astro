@@ -1,6 +1,7 @@
 ---
 import SiteFooter from '../components/site/SiteFooter.astro';
 import SiteHeader from '../components/site/SiteHeader';
+import BackToTop from '../components/site/BackToTop';
 import StarfieldBackground from '../components/starfield/StarfieldBackground';
 import { SITE_CONFIG } from '../lib/siteConfig';
 import '../styles/global.scss';
@@ -39,5 +40,6 @@ const {
 			<slot />
 		</div>
 		<SiteFooter />
+		<BackToTop client:load />
 	</body>
 </html>
