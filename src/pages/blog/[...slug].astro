@@ -4,6 +4,7 @@ import ArticleHeader from '../../components/article/ArticleHeader.astro';
 import ArticleSeriesNav from '../../components/article/ArticleSeriesNav.astro';
 import ArticleToc from '../../components/article/ArticleToc.astro';
 import Layout from '../../layouts/Layout.astro';
+import { ARTICLE_PAGE_CONFIG } from '../../lib/articlePageConfig';
 import { getBlogSeriesById } from '../../lib/blogSeries';
 import {
 	getPostsBySeries,
@@ -12,6 +13,7 @@ import {
 	toPostListItem,
 	type PostEntry,
 } from '../../lib/blogPosts';
+import { SITE_CONFIG } from '../../lib/siteConfig';
 
 export async function getStaticPaths() {
 	const entries = (await getCollection('posts')) as PostEntry[];
@@ -36,10 +38,14 @@ const seriesPosts = series ? getPostsBySeries(allPosts, series.id) : [];
 const seriesNavigation = getSeriesNavigation(allPosts, post);
 const { Content, headings } = await render(entry);
 const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
-const hasToc = tocHeadings.length >= 3;
+const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 ---
 
-<Layout title={`${post.title} - Telysta Blog`} description={post.description} starfieldVariant="subtle">
+<Layout
+	title={`${post.title}${ARTICLE_PAGE_CONFIG.meta.titleSeparator}${SITE_CONFIG.name}`}
+	description={post.description}
+	starfieldVariant="subtle"
+>
 	<main class="article-page">
 		<article class="article-page__inner">
 			<ArticleHeader post={post} series={series} />
@@ -52,13 +58,22 @@ const hasToc = tocHeadings.length >= 3;
 				{
 					hasToc && (
 						<aside class="article-page__side">
-							<ArticleToc headings={tocHeadings} />
+							<ArticleToc
+								headings={tocHeadings}
+								title={ARTICLE_PAGE_CONFIG.toc.title}
+								ariaLabel={ARTICLE_PAGE_CONFIG.toc.ariaLabel}
+							/>
 						</aside>
 					)
 				}
 			</div>
 
-			<ArticleSeriesNav series={series} seriesPosts={seriesPosts} navigation={seriesNavigation} />
+			<ArticleSeriesNav
+				series={series}
+				seriesPosts={seriesPosts}
+				navigation={seriesNavigation}
+				labels={ARTICLE_PAGE_CONFIG.series}
+			/>
 		</article>
 	</main>
 </Layout>

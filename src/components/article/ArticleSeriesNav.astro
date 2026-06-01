@@ -1,4 +1,5 @@
 ---
+import { ARTICLE_PAGE_CONFIG } from '../../lib/articlePageConfig';
 import type { BlogSeries } from '../../lib/blogSeries';
 import { buildSeriesHref } from '../../lib/blogSeries';
 import type { PostListItem, SeriesNavigation } from '../../lib/blogPosts';
@@ -7,9 +8,22 @@ type Props = {
 	series?: BlogSeries;
 	seriesPosts: PostListItem[];
 	navigation?: SeriesNavigation;
+	labels?: {
+		sectionLabel: string;
+		fullSeriesPrefix: string;
+		previousLabel: string;
+		nextLabel: string;
+		emptyPrevious: string;
+		emptyNext: string;
+	};
 };
 
-const { series, seriesPosts, navigation } = Astro.props;
+const {
+	series,
+	seriesPosts,
+	navigation,
+	labels = ARTICLE_PAGE_CONFIG.series,
+} = Astro.props;
 const hasDirectionalLinks = Boolean(navigation?.previous || navigation?.next);
 ---
 
@@ -17,31 +31,31 @@ const hasDirectionalLinks = Boolean(navigation?.previous || navigation?.next);
 	series && (
 		<section class="article-series" aria-label="所属系列">
 			<div class="article-series__intro">
-				<p>Series</p>
+				<p>{labels.sectionLabel}</p>
 				<h2>{series.title}</h2>
 				<span>{series.description}</span>
 			</div>
 
 			<div class="article-series__actions">
-				<a href={buildSeriesHref(series.id)}>查看完整系列 · {seriesPosts.length}</a>
+				<a href={buildSeriesHref(series.id)}>{labels.fullSeriesPrefix} · {seriesPosts.length}</a>
 			</div>
 
 			{hasDirectionalLinks && (
 				<nav class="article-series__nav" aria-label="系列上一篇和下一篇">
 					<div>
-						<span>Previous</span>
+						<span>{labels.previousLabel}</span>
 						{navigation?.previous ? (
 							<a href={navigation.previous.href}>{navigation.previous.title}</a>
 						) : (
-							<em>暂无更早的篇章</em>
+							<em>{labels.emptyPrevious}</em>
 						)}
 					</div>
 					<div>
-						<span>Next</span>
+						<span>{labels.nextLabel}</span>
 						{navigation?.next ? (
 							<a href={navigation.next.href}>{navigation.next.title}</a>
 						) : (
-							<em>暂无后续篇章</em>
+							<em>{labels.emptyNext}</em>
 						)}
 					</div>
 				</nav>

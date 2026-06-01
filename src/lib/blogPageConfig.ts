@@ -1,8 +1,10 @@
+import { SITE_CONFIG } from './siteConfig';
+
 export const BLOG_PAGE_CONFIG = {
 	meta: {
-		title: 'Blog - Telysta Blog',
-		description: 'Telysta Blog 的文章导航页。',
-		categoryTitleSuffix: 'Blog - Telysta Blog',
+		title: `Blog - ${SITE_CONFIG.name}`,
+		description: `${SITE_CONFIG.name} 的文章导航页。`,
+		categoryTitleSuffix: `Blog - ${SITE_CONFIG.name}`,
 	},
 	banner: {
 		eyebrow: 'Records',

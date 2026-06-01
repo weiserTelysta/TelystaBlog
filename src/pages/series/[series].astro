@@ -1,8 +1,10 @@
 ---
 import ArticlePostList from '../../components/article/ArticlePostList.astro';
 import Layout from '../../layouts/Layout.astro';
+import { ARTICLE_PAGE_CONFIG } from '../../lib/articlePageConfig';
 import { BLOG_SERIES, type BlogSeries } from '../../lib/blogSeries';
 import { getPostsBySeries, getPublishedPosts } from '../../lib/blogPosts';
+import { SITE_CONFIG } from '../../lib/siteConfig';
 
 export function getStaticPaths() {
 	return BLOG_SERIES.map((series) => ({
@@ -21,7 +23,7 @@ const posts = getPostsBySeries(allPosts, series.id);
 ---
 
 <Layout
-	title={`${series.title} - Telysta Blog`}
+	title={`${series.title}${ARTICLE_PAGE_CONFIG.meta.titleSeparator}${SITE_CONFIG.name}`}
 	description={series.description}
 	starfieldVariant="subtle"
 >
@@ -29,7 +31,7 @@ const posts = getPostsBySeries(allPosts, series.id);
 		<section class="series-page__inner" aria-labelledby="series-title">
 			<div class="series-page__header">
 				<a href="/blog">Blog</a>
-				<p>Series</p>
+				<p>{ARTICLE_PAGE_CONFIG.series.pageLabel}</p>
 				<h1 id="series-title">{series.title}</h1>
 				<span>{series.description}</span>
 			</div>

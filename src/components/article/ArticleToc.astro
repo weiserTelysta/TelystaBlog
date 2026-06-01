@@ -1,4 +1,6 @@
 ---
+import { ARTICLE_PAGE_CONFIG } from '../../lib/articlePageConfig';
+
 type ArticleHeading = {
 	depth: number;
 	slug: string;
@@ -7,13 +9,19 @@ type ArticleHeading = {
 
 type Props = {
 	headings: ArticleHeading[];
+	title?: string;
+	ariaLabel?: string;
 };
 
-const { headings } = Astro.props;
+const {
+	headings,
+	title = ARTICLE_PAGE_CONFIG.toc.title,
+	ariaLabel = ARTICLE_PAGE_CONFIG.toc.ariaLabel,
+} = Astro.props;
 ---
 
-<nav class="article-toc" aria-label="文章目录">
-	<p>On This Page</p>
+<nav class="article-toc" aria-label={ariaLabel}>
+	<p>{title}</p>
 	<ol>
 		{
 			headings.map((heading) => (
