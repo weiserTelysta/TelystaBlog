@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CSSProperties, MouseEvent, PointerEvent, WheelEvent } from 'react';
+import { BLOG_PAGE_CONFIG } from '../../lib/blogPageConfig';
 import {
 	buildCategoryHref,
 	type BlogCategoryId,
@@ -8,7 +9,8 @@ import {
 import type { BlogCategoryVisual } from '../../lib/blogCategoryVisuals';
 import './CategoryAccordion.scss';
 
-const CATEGORY_DIALOG_TITLE_ID = 'category-accordion-title';
+const ACCORDION_COPY = BLOG_PAGE_CONFIG.categoryAccordion;
+const CATEGORY_DIALOG_TITLE_ID = ACCORDION_COPY.dialogTitleId;
 const CLOSE_ANIMATION_MS = 200;
 const WHEEL_SCROLL_FACTOR = 1.75;
 const WHEEL_EASE = 0.18;
@@ -415,18 +417,20 @@ export default function CategoryAccordion({
 				type="button"
 				onClick={openAccordion}
 			>
-				<span className="category-accordion__entry-label">Category</span>
+				<span className="category-accordion__entry-label">{ACCORDION_COPY.entryLabel}</span>
 				<span className="category-accordion__entry-title">
-					<strong>{selectedVisual?.title ?? 'All Records'}</strong>
-					<em>{currentCount} records</em>
+					<strong>{selectedVisual?.title ?? ACCORDION_COPY.allRecordsTitle}</strong>
+					<em>
+						{currentCount} {ACCORDION_COPY.recordLabel}
+					</em>
 				</span>
 				<span className="category-accordion__entry-hint">
-					星辰微光，愿片语对你有助。
+					{ACCORDION_COPY.entryHint}
 				</span>
 			</button>
 
 			<a className="category-accordion__all-link" href={buildCategoryHref()}>
-				全部文章 · {totalCount}
+				{ACCORDION_COPY.allPostsLabel} · {totalCount}
 			</a>
 
 			{open && (
@@ -455,7 +459,7 @@ export default function CategoryAccordion({
 							ref={closeButtonRef}
 							className="category-accordion__close"
 							type="button"
-							aria-label="关闭类目选择"
+							aria-label={ACCORDION_COPY.closeLabel}
 							data-category-accordion-control
 							onClick={requestCloseAccordion}
 						>
@@ -463,8 +467,8 @@ export default function CategoryAccordion({
 						</button>
 
 						<header className="category-accordion__heading">
-							<p>Category Map</p>
-							<h2 id={CATEGORY_DIALOG_TITLE_ID}>渺渺星辰，亦有微光。</h2>
+							<p>{ACCORDION_COPY.dialogEyebrow}</p>
+							<h2 id={CATEGORY_DIALOG_TITLE_ID}>{ACCORDION_COPY.dialogTitle}</h2>
 						</header>
 
 						<div className="category-accordion__rail-frame" onWheel={handleRailWheel}>
@@ -502,8 +506,8 @@ export default function CategoryAccordion({
 													'--image-active-scale': visual.imageScale + 0.04,
 												} as CSSProperties
 											}
-											aria-label={`${visual.title}，${postCount} 篇文章。${
-												isPreselected ? '再次点击进入此栏目。' : '点击预选此栏目。'
+											aria-label={`${visual.title}，${postCount} ${ACCORDION_COPY.cardCountSuffix}。${
+												isPreselected ? ACCORDION_COPY.confirmHint : ACCORDION_COPY.selectHint
 											}`}
 											aria-current={isActive ? 'page' : undefined}
 											aria-pressed={isPreselected}
@@ -532,9 +536,16 @@ export default function CategoryAccordion({
 												<span className="category-accordion__card-copy">
 													<strong>{visual.title}</strong>
 													<span>{visual.description}</span>
-													<em>{postCount} records · 再次点击进入</em>
+													<em>
+														{postCount} {ACCORDION_COPY.recordLabel} ·{' '}
+														{ACCORDION_COPY.cardConfirmText}
+													</em>
 												</span>
-												{isActive && <span className="category-accordion__current-mark">Current</span>}
+												{isActive && (
+													<span className="category-accordion__current-mark">
+														{ACCORDION_COPY.currentLabel}
+													</span>
+												)}
 											</span>
 										</button>
 									);

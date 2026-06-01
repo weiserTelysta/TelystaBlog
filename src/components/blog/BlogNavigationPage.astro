@@ -5,6 +5,7 @@ import BlogEmptyState from './BlogEmptyState.astro';
 import BlogTimeline from './BlogTimeline.astro';
 import BlogYearJump from './BlogYearJump.astro';
 import Layout from '../../layouts/Layout.astro';
+import { BLOG_PAGE_CONFIG } from '../../lib/blogPageConfig';
 import {
 	getBlogCategoryById,
 	getCategoryPostCount,
@@ -24,9 +25,9 @@ const groups = groupPostsByYearMonth(posts);
 const years = groups.map((group) => group.year);
 const postCounts = getCategoryPostCount(allPosts);
 const title = selectedCategory
-	? `${selectedCategory.title} - Blog - Telysta Blog`
-	: 'Blog - Telysta Blog';
-const description = selectedCategory?.description ?? 'Telysta Blog 的文章导航页。';
+	? `${selectedCategory.title} - ${BLOG_PAGE_CONFIG.meta.categoryTitleSuffix}`
+	: BLOG_PAGE_CONFIG.meta.title;
+const description = selectedCategory?.description ?? BLOG_PAGE_CONFIG.meta.description;
 ---
 
 <Layout title={title} description={description}>

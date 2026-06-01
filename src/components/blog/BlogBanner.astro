@@ -1,5 +1,6 @@
 ---
 import bannerImage from '../../assets/banner/blog-banner.png';
+import { BLOG_PAGE_CONFIG } from '../../lib/blogPageConfig';
 
 type Props = {
 	postCount: number;
@@ -7,15 +8,18 @@ type Props = {
 };
 
 const { postCount, selectedLabel } = Astro.props;
-const summary = selectedLabel ? `当前栏目：${selectedLabel}` : `${postCount} 篇记录正在归档`;
+const { banner } = BLOG_PAGE_CONFIG;
+const summary = selectedLabel
+	? `${banner.categorySummaryPrefix}${selectedLabel}`
+	: `${postCount} ${banner.allSummarySuffix}`;
 ---
 
 <section class="blog-banner" aria-labelledby="blog-banner-title">
 	<img class="blog-banner__image" src={bannerImage.src} alt="" loading="eager" decoding="async" />
 	<div class="blog-banner__content">
-		<p class="blog-banner__eyebrow">Records</p>
-		<h1 id="blog-banner-title">文章列表</h1>
-		<p class="blog-banner__intro">所有的思绪与技术累积，都会在这里留下足迹。</p>
+		<p class="blog-banner__eyebrow">{banner.eyebrow}</p>
+		<h1 id="blog-banner-title">{banner.title}</h1>
+		<p class="blog-banner__intro">{banner.intro}</p>
 		<p class="blog-banner__summary">{summary}</p>
 	</div>
 </section>

@@ -1,15 +1,18 @@
 ---
+import { BLOG_PAGE_CONFIG } from '../../lib/blogPageConfig';
+
 type Props = {
 	years: number[];
 };
 
 const { years } = Astro.props;
+const { yearJump } = BLOG_PAGE_CONFIG;
 ---
 
 {
 	years.length > 0 && (
-		<nav class="blog-year-jump" aria-label="年份快速跳转">
-			<p>Years</p>
+		<nav class="blog-year-jump" aria-label={yearJump.ariaLabel}>
+			<p>{yearJump.title}</p>
 			<div>
 				{years.map((year) => (
 					<a href={`#year-${year}`}>{year}</a>

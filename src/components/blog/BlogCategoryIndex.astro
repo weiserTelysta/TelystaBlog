@@ -1,5 +1,6 @@
 ---
 import CategoryAccordion from './CategoryAccordion';
+import { BLOG_PAGE_CONFIG } from '../../lib/blogPageConfig';
 import { type BlogCategoryId, type CategoryPostCount } from '../../lib/blogCategories';
 import { BLOG_CATEGORY_VISUALS } from '../../lib/blogCategoryVisuals';
 
@@ -10,9 +11,10 @@ type Props = {
 };
 
 const { selectedCategoryId, postCounts, totalCount } = Astro.props;
+const { categoryIndex } = BLOG_PAGE_CONFIG;
 ---
 
-<section class="blog-category-index" aria-label="文章类目">
+<section class="blog-category-index" aria-label={categoryIndex.ariaLabel}>
 	<CategoryAccordion
 		client:load
 		visuals={BLOG_CATEGORY_VISUALS}

@@ -1,8 +1,9 @@
 ---
 import HomeHero from '../components/home/HomeHero.astro';
 import Layout from '../layouts/Layout.astro';
+import { SITE_CONFIG } from '../lib/siteConfig';
 ---
 
-<Layout title="Weiser的个人博客" description="weiser的个人博客，蒙受恩典而设。">
+<Layout title={SITE_CONFIG.home.title} description={SITE_CONFIG.home.description}>
 	<HomeHero />
 </Layout>

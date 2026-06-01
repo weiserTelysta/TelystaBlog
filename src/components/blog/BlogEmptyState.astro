@@ -1,17 +1,20 @@
 ---
+import { BLOG_PAGE_CONFIG } from '../../lib/blogPageConfig';
+
 type Props = {
 	categoryTitle?: string;
 };
 
 const { categoryTitle } = Astro.props;
+const { emptyState } = BLOG_PAGE_CONFIG;
 const message = categoryTitle
-	? `${categoryTitle} 还没有公开文章。`
-	: '这里暂时还没有公开文章。';
+	? `${categoryTitle} ${emptyState.categorySuffix}`
+	: emptyState.defaultMessage;
 ---
 
 <section class="blog-empty" aria-live="polite">
 	<p>{message}</p>
-	<span>等下一颗星落下来，再回来看看。</span>
+	<span>{emptyState.hint}</span>
 </section>
 
 <style lang="scss">

@@ -1,10 +1,5 @@
 import { Fragment, useEffect, useState } from 'react';
-
-const navItems = [
-	{ label: 'Blog', href: '/blog' },
-	{ label: 'About' },
-	{ label: 'Friends' },
-];
+import { SITE_CONFIG } from '../../lib/siteConfig';
 
 const IDLE_DELAY = 5200;
 
@@ -33,28 +28,32 @@ export default function SiteHeader() {
 
 	return (
 		<header className={`site-header glass-surface glass-surface--thin${idle ? ' is-idle' : ''}`}>
-			<a className="site-header__brand" href="/" aria-label="Telysta Blog 首页">
-				<span>Telysta Blog</span>
+			<a className="site-header__brand" href="/" aria-label={`${SITE_CONFIG.name} 首页`}>
+				<span>{SITE_CONFIG.name}</span>
 			</a>
 			<nav className="site-header__nav" aria-label="主导航">
-				{navItems.map((item, index) => (
-					<Fragment key={item.label}>
-						{index > 0 && (
-							<span className="site-header__divider" aria-hidden="true">
-								/
-							</span>
-						)}
-						{item.href ? (
-							<a className="site-header__nav-item" href={item.href}>
-								{item.label}
-							</a>
-						) : (
-							<span className="site-header__nav-item is-disabled" aria-disabled="true">
-								{item.label}
-							</span>
-						)}
-					</Fragment>
-				))}
+				{SITE_CONFIG.navItems.map((item, index) => {
+					const href = 'href' in item ? item.href : undefined;
+
+					return (
+						<Fragment key={item.label}>
+							{index > 0 && (
+								<span className="site-header__divider" aria-hidden="true">
+									/
+								</span>
+							)}
+							{href ? (
+								<a className="site-header__nav-item" href={href}>
+									{item.label}
+								</a>
+							) : (
+								<span className="site-header__nav-item is-disabled" aria-disabled="true">
+									{item.label}
+								</span>
+							)}
+						</Fragment>
+					);
+				})}
 			</nav>
 		</header>
 	);
