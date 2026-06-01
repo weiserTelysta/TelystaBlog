@@ -11,7 +11,9 @@ const { post } = Astro.props;
 
 <li class="blog-post">
 	<article>
-		<h3>{post.title}</h3>
+		<h3>
+			<a href={post.href}>{post.title}</a>
+		</h3>
 		<p>{post.description}</p>
 		<div class="blog-post__meta" aria-label="文章元信息">
 			<span>{formatPostDate(post.publishedAt)}</span>
@@ -37,12 +39,22 @@ const { post } = Astro.props;
 
 	.blog-post h3 {
 		margin: 0;
-		color: rgba(237, 243, 251, 0.88);
 		font-size: clamp(1.12rem, 2.2vw, 1.36rem);
 		font-weight: 650;
 		line-height: 1.45;
 		letter-spacing: 0;
 		overflow-wrap: anywhere;
+	}
+
+	.blog-post h3 a {
+		color: rgba(237, 243, 251, 0.88);
+		text-decoration: none;
+		transition: color 0.2s ease, text-shadow 0.2s ease;
+	}
+
+	.blog-post h3 a:hover {
+		color: rgba(255, 255, 255, 0.96);
+		text-shadow: 0 0 22px rgba(156, 199, 232, 0.12);
 	}
 
 	.blog-post p {
