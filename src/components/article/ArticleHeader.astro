@@ -1,0 +1,188 @@
+---
+import { buildCategoryHref } from '../../lib/blogCategories';
+import type { BlogSeries } from '../../lib/blogSeries';
+import { buildSeriesHref } from '../../lib/blogSeries';
+import type { PostListItem } from '../../lib/blogPosts';
+import { formatFullDate } from '../../lib/blogPosts';
+
+type Props = {
+	post: PostListItem;
+	series?: BlogSeries;
+};
+
+const { post, series } = Astro.props;
+const cover = post.cover?.startsWith('/images/posts/') ? post.cover : undefined;
+---
+
+<header class="article-header">
+	{
+		cover && (
+			<figure class="article-header__cover" aria-label="文章主图">
+				<img src={cover} alt="" loading="eager" decoding="async" />
+			</figure>
+		)
+	}
+
+	<div class="article-header__intro">
+		<a class="article-header__back" href="/blog">Blog</a>
+		<h1>{post.title}</h1>
+		<p>{post.description}</p>
+	</div>
+
+	<div class="article-header__meta" aria-label="文章信息">
+		<div class="article-header__path">
+			<a href={buildCategoryHref(post.category)}>{post.categoryTitle}</a>
+			{
+				series && (
+					<a href={buildSeriesHref(series.id)} aria-label={`查看 ${series.title} 系列`}>
+						{series.title}
+					</a>
+				)
+			}
+		</div>
+
+		{
+			post.tags.length > 0 && (
+				<div class="article-header__tags">
+					{post.tags.map((tag) => <span class="article-header__tag">#{tag}</span>)}
+				</div>
+			)
+		}
+
+		<div class="article-header__dates">
+			<span>发布 {formatFullDate(post.publishedAt)}</span>
+			<span>更新 {formatFullDate(post.updatedAt)}</span>
+		</div>
+	</div>
+</header>
+
+<style lang="scss">
+	.article-header {
+		display: grid;
+		gap: clamp(22px, 4vw, 36px);
+		padding: clamp(124px, 15vw, 172px) 0 clamp(34px, 6vw, 58px);
+	}
+
+	.article-header__cover {
+		position: relative;
+		width: 100%;
+		margin: 0;
+		overflow: hidden;
+		border-radius: 8px;
+		aspect-ratio: 16 / 6;
+		background: rgba(12, 17, 26, 0.5);
+	}
+
+	.article-header__cover::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(180deg, rgba(7, 10, 16, 0.08), rgba(7, 10, 16, 0.62)),
+			linear-gradient(90deg, rgba(7, 10, 16, 0.34), transparent 42%);
+		pointer-events: none;
+	}
+
+	.article-header__cover img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: saturate(0.76) brightness(0.62);
+	}
+
+	.article-header__intro {
+		display: grid;
+		gap: 14px;
+	}
+
+	.article-header__back {
+		width: fit-content;
+		color: rgba(156, 199, 232, 0.58);
+		font-family: var(--font-display);
+		font-size: 0.76rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		transition: color 0.2s ease;
+	}
+
+	.article-header__back:hover {
+		color: rgba(216, 222, 233, 0.86);
+	}
+
+	.article-header h1 {
+		margin: 0;
+		color: rgba(237, 243, 251, 0.94);
+		font-family: Georgia, "Times New Roman", "Songti SC", SimSun, serif;
+		font-size: clamp(2.15rem, 6.1vw, 4.25rem);
+		font-weight: 580;
+		line-height: 1.08;
+		letter-spacing: 0;
+		overflow-wrap: anywhere;
+	}
+
+	.article-header p {
+		max-width: 720px;
+		margin: 0;
+		color: rgba(190, 199, 214, 0.58);
+		font-size: clamp(1rem, 2vw, 1.16rem);
+		line-height: 1.9;
+		overflow-wrap: anywhere;
+	}
+
+	.article-header__meta {
+		display: grid;
+		gap: 6px;
+		max-width: 860px;
+		color: rgba(139, 149, 167, 0.58);
+		font-family: var(--font-sans);
+		font-size: 0.8rem;
+		line-height: 1.55;
+	}
+
+	.article-header__dates,
+	.article-header__path,
+	.article-header__tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px 16px;
+		min-width: 0;
+	}
+
+	.article-header__dates {
+		color: rgba(139, 149, 167, 0.46);
+		font-size: 0.74rem;
+	}
+
+	.article-header__path a {
+		color: rgba(156, 199, 232, 0.66);
+		font-size: 0.84rem;
+		font-weight: 520;
+	}
+
+	.article-header__tags {
+		gap: 7px 13px;
+		font-size: 0.76rem;
+	}
+
+	.article-header__tag {
+		color: rgba(214, 167, 200, 0.42);
+	}
+
+	.article-header__path a {
+		transition: color 0.2s ease;
+	}
+
+	.article-header__path a:hover {
+		color: rgba(216, 222, 233, 0.9);
+	}
+
+	@media (max-width: 760px) {
+		.article-header {
+			padding-top: 104px;
+		}
+
+		.article-header__cover {
+			aspect-ratio: 16 / 8;
+		}
+	}
+</style>

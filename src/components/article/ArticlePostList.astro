@@ -1,0 +1,94 @@
+---
+import type { PostListItem } from '../../lib/blogPosts';
+import { formatFullDate } from '../../lib/blogPosts';
+
+type Props = {
+	posts: PostListItem[];
+};
+
+const { posts } = Astro.props;
+---
+
+<ol class="article-post-list">
+	{
+		posts.map((post) => (
+			<li>
+				<a href={post.href}>
+					<span>{post.seriesOrder ? String(post.seriesOrder).padStart(2, '0') : '·'}</span>
+					<strong>{post.title}</strong>
+					<em>{formatFullDate(post.publishedAt)}</em>
+					<p>{post.description}</p>
+				</a>
+			</li>
+		))
+	}
+</ol>
+
+<style lang="scss">
+	.article-post-list {
+		display: grid;
+		gap: 0;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.article-post-list li {
+		border-top: 1px solid rgba(255, 255, 255, 0.055);
+	}
+
+	.article-post-list a {
+		display: grid;
+		grid-template-columns: 42px minmax(0, 1fr) auto;
+		gap: 10px 18px;
+		padding: 24px 0;
+		align-items: baseline;
+	}
+
+	.article-post-list span {
+		color: rgba(156, 199, 232, 0.54);
+		font-family: var(--font-display);
+		font-size: 0.82rem;
+		letter-spacing: 0.08em;
+	}
+
+	.article-post-list strong {
+		color: rgba(237, 243, 251, 0.88);
+		font-size: clamp(1.08rem, 2.4vw, 1.34rem);
+		line-height: 1.5;
+		overflow-wrap: anywhere;
+		transition: color 0.2s ease;
+	}
+
+	.article-post-list em {
+		color: rgba(139, 149, 167, 0.64);
+		font-size: 0.78rem;
+		font-style: normal;
+		white-space: nowrap;
+	}
+
+	.article-post-list p {
+		grid-column: 2 / -1;
+		max-width: 720px;
+		margin: 0;
+		color: rgba(190, 199, 214, 0.52);
+		font-size: 0.92rem;
+		line-height: 1.8;
+		overflow-wrap: anywhere;
+	}
+
+	.article-post-list a:hover strong {
+		color: rgba(255, 255, 255, 0.96);
+	}
+
+	@media (max-width: 640px) {
+		.article-post-list a {
+			grid-template-columns: 34px minmax(0, 1fr);
+		}
+
+		.article-post-list em,
+		.article-post-list p {
+			grid-column: 2;
+		}
+	}
+</style>

@@ -1,0 +1,141 @@
+---
+import type { BlogSeries } from '../../lib/blogSeries';
+import { buildSeriesHref } from '../../lib/blogSeries';
+import type { PostListItem, SeriesNavigation } from '../../lib/blogPosts';
+
+type Props = {
+	series?: BlogSeries;
+	seriesPosts: PostListItem[];
+	navigation?: SeriesNavigation;
+};
+
+const { series, seriesPosts, navigation } = Astro.props;
+const hasDirectionalLinks = Boolean(navigation?.previous || navigation?.next);
+---
+
+{
+	series && (
+		<section class="article-series" aria-label="所属系列">
+			<div class="article-series__intro">
+				<p>Series</p>
+				<h2>{series.title}</h2>
+				<span>{series.description}</span>
+			</div>
+
+			<div class="article-series__actions">
+				<a href={buildSeriesHref(series.id)}>查看完整系列 · {seriesPosts.length}</a>
+			</div>
+
+			{hasDirectionalLinks && (
+				<nav class="article-series__nav" aria-label="系列上一篇和下一篇">
+					<div>
+						<span>Previous</span>
+						{navigation?.previous ? (
+							<a href={navigation.previous.href}>{navigation.previous.title}</a>
+						) : (
+							<em>暂无更早的篇章</em>
+						)}
+					</div>
+					<div>
+						<span>Next</span>
+						{navigation?.next ? (
+							<a href={navigation.next.href}>{navigation.next.title}</a>
+						) : (
+							<em>暂无后续篇章</em>
+						)}
+					</div>
+				</nav>
+			)}
+		</section>
+	)
+}
+
+<style lang="scss">
+	.article-series {
+		display: grid;
+		gap: 22px;
+		margin-top: clamp(54px, 9vw, 88px);
+		padding-top: 30px;
+		border-top: 1px solid rgba(255, 255, 255, 0.055);
+	}
+
+	.article-series__intro {
+		display: grid;
+		gap: 8px;
+		max-width: 680px;
+	}
+
+	.article-series__intro p,
+	.article-series__nav span {
+		margin: 0;
+		color: rgba(156, 199, 232, 0.55);
+		font-family: var(--font-display);
+		font-size: 0.72rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.article-series__intro h2 {
+		margin: 0;
+		color: rgba(237, 243, 251, 0.88);
+		font-family: var(--font-display);
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: 0;
+	}
+
+	.article-series__intro span {
+		color: rgba(190, 199, 214, 0.58);
+		font-size: 0.94rem;
+		line-height: 1.8;
+	}
+
+	.article-series__actions a,
+	.article-series__nav a {
+		color: rgba(216, 222, 233, 0.78);
+		transition: color 0.2s ease;
+	}
+
+	.article-series__actions a:hover,
+	.article-series__nav a:hover {
+		color: rgba(237, 243, 251, 0.94);
+	}
+
+	.article-series__actions {
+		color: rgba(156, 199, 232, 0.62);
+		font-size: 0.86rem;
+	}
+
+	.article-series__nav {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 18px;
+	}
+
+	.article-series__nav div {
+		display: grid;
+		gap: 8px;
+		min-width: 0;
+		padding-top: 16px;
+		border-top: 1px solid rgba(255, 255, 255, 0.045);
+	}
+
+	.article-series__nav a,
+	.article-series__nav em {
+		font-size: 0.94rem;
+		font-style: normal;
+		line-height: 1.7;
+		overflow-wrap: anywhere;
+	}
+
+	.article-series__nav em {
+		color: rgba(139, 149, 167, 0.58);
+	}
+
+	@media (max-width: 700px) {
+		.article-series__nav {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

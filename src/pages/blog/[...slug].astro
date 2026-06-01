@@ -1,0 +1,116 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleHeader from '../../components/article/ArticleHeader.astro';
+import ArticleSeriesNav from '../../components/article/ArticleSeriesNav.astro';
+import ArticleToc from '../../components/article/ArticleToc.astro';
+import Layout from '../../layouts/Layout.astro';
+import { getBlogSeriesById } from '../../lib/blogSeries';
+import {
+	getPostsBySeries,
+	getPublishedPosts,
+	getSeriesNavigation,
+	toPostListItem,
+	type PostEntry,
+} from '../../lib/blogPosts';
+
+export async function getStaticPaths() {
+	const entries = (await getCollection('posts')) as PostEntry[];
+
+	return entries
+		.filter((entry) => !entry.data.draft)
+		.map((entry) => ({
+			params: { slug: entry.id },
+			props: { entry },
+		}));
+}
+
+type Props = {
+	entry: PostEntry;
+};
+
+const { entry } = Astro.props;
+const post = toPostListItem(entry);
+const allPosts = await getPublishedPosts();
+const series = getBlogSeriesById(post.series);
+const seriesPosts = series ? getPostsBySeries(allPosts, series.id) : [];
+const seriesNavigation = getSeriesNavigation(allPosts, post);
+const { Content, headings } = await render(entry);
+const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+const hasToc = tocHeadings.length >= 3;
+---
+
+<Layout title={`${post.title} - Telysta Blog`} description={post.description} starfieldVariant="subtle">
+	<main class="article-page">
+		<article class="article-page__inner">
+			<ArticleHeader post={post} series={series} />
+
+			<div class={`article-page__body ${hasToc ? 'has-toc' : 'no-toc'}`}>
+				<div class="article-page__content prose">
+					<Content />
+				</div>
+
+				{
+					hasToc && (
+						<aside class="article-page__side">
+							<ArticleToc headings={tocHeadings} />
+						</aside>
+					)
+				}
+			</div>
+
+			<ArticleSeriesNav series={series} seriesPosts={seriesPosts} navigation={seriesNavigation} />
+		</article>
+	</main>
+</Layout>
+
+<style lang="scss">
+	.article-page {
+		position: relative;
+		z-index: 1;
+		min-height: 100vh;
+	}
+
+	.article-page__inner {
+		width: min(1080px, calc(100% - 48px));
+		margin: 0 auto;
+		padding-bottom: clamp(92px, 13vw, 150px);
+	}
+
+	.article-page__body {
+		display: grid;
+		align-items: start;
+		min-height: 70vh;
+	}
+
+	.article-page__body.has-toc {
+		grid-template-columns: minmax(0, 1fr) minmax(190px, 250px);
+		gap: clamp(42px, 7vw, 82px);
+	}
+
+	.article-page__body.no-toc {
+		grid-template-columns: minmax(0, 760px);
+	}
+
+	.article-page__content,
+	.article-page__side {
+		min-width: 0;
+	}
+
+	@media (max-width: 960px) {
+		.article-page__body,
+		.article-page__body.has-toc,
+		.article-page__body.no-toc {
+			grid-template-columns: 1fr;
+		}
+
+		.article-page__side {
+			order: -1;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.article-page__inner {
+			width: min(100% - 32px, 720px);
+		}
+	}
+</style>

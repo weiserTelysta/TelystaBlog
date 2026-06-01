@@ -1,0 +1,141 @@
+.prose {
+	color: rgba(216, 222, 233, 0.84);
+	font-size: clamp(1rem, 1.4vw, 1.06rem);
+	line-height: 2;
+}
+
+.prose > *:first-child {
+	margin-top: 0;
+}
+
+.prose > *:last-child {
+	margin-bottom: 0;
+}
+
+.prose h2,
+.prose h3,
+.prose h4 {
+	color: rgba(237, 243, 251, 0.9);
+	line-height: 1.35;
+	letter-spacing: 0;
+	scroll-margin-top: 110px;
+}
+
+.prose h2 {
+	margin: 3.2em 0 0.85em;
+	font-size: clamp(1.42rem, 3vw, 1.92rem);
+	font-weight: 680;
+}
+
+.prose h3 {
+	margin: 2.45em 0 0.75em;
+	font-size: clamp(1.18rem, 2.2vw, 1.42rem);
+	font-weight: 650;
+}
+
+.prose h4 {
+	margin: 2em 0 0.65em;
+	font-size: 1.05rem;
+	font-weight: 650;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote,
+.prose pre,
+.prose table,
+.prose figure {
+	margin: 1.18em 0;
+}
+
+.prose p {
+	overflow-wrap: anywhere;
+}
+
+.prose a {
+	color: rgba(156, 199, 232, 0.82);
+	text-decoration: underline;
+	text-decoration-color: rgba(156, 199, 232, 0.28);
+	text-underline-offset: 0.22em;
+	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.prose a:hover {
+	color: rgba(237, 243, 251, 0.94);
+	text-decoration-color: rgba(237, 243, 251, 0.58);
+}
+
+.prose ul,
+.prose ol {
+	padding-left: 1.25em;
+}
+
+.prose li + li {
+	margin-top: 0.38em;
+}
+
+.prose blockquote {
+	padding: 0.1em 0 0.1em 1.2em;
+	border-left: 1px solid rgba(156, 199, 232, 0.28);
+	color: rgba(190, 199, 214, 0.68);
+}
+
+.prose code {
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.045);
+	color: rgba(237, 243, 251, 0.9);
+	font-size: 0.9em;
+	padding: 0.12em 0.34em;
+}
+
+.prose pre {
+	overflow: auto;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: 8px;
+	background: rgba(8, 12, 19, 0.76);
+	padding: 18px;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(156, 199, 232, 0.22) transparent;
+}
+
+.prose pre code {
+	border: 0;
+	background: transparent;
+	padding: 0;
+}
+
+.prose img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 2em auto;
+	border-radius: 8px;
+	filter: saturate(0.86) brightness(0.82);
+}
+
+.prose table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.94rem;
+}
+
+.prose th,
+.prose td {
+	padding: 10px 12px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+	text-align: left;
+}
+
+.prose th {
+	color: rgba(237, 243, 251, 0.82);
+	font-weight: 650;
+}
+
+@media (max-width: 640px) {
+	.prose {
+		font-size: 0.98rem;
+		line-height: 1.9;
+	}
+}

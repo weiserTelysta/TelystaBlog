@@ -1,11 +1,13 @@
 ---
-title: "Telysta Blog 的第一阶段"
+title: "TELYSTA BLOG 的第一阶段"
 description: "记录博客主页之后，文章系统开始成形的节点。"
 publishedAt: 2026-05-27
 updatedAt: 2026-05-28
 category: "manuscript"
 tags: ["Astro", "Blog", "Content"]
 draft: false
+series: "telysta-blog-build"
+seriesOrder: 1
 ---
 
 这是 Telysta Blog 进入文章系统阶段的第一篇记录。

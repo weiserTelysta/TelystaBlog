@@ -1,0 +1,105 @@
+---
+import ArticlePostList from '../../components/article/ArticlePostList.astro';
+import Layout from '../../layouts/Layout.astro';
+import { BLOG_SERIES, type BlogSeries } from '../../lib/blogSeries';
+import { getPostsBySeries, getPublishedPosts } from '../../lib/blogPosts';
+
+export function getStaticPaths() {
+	return BLOG_SERIES.map((series) => ({
+		params: { series: series.id },
+		props: { series },
+	}));
+}
+
+type Props = {
+	series: BlogSeries;
+};
+
+const { series } = Astro.props;
+const allPosts = await getPublishedPosts();
+const posts = getPostsBySeries(allPosts, series.id);
+---
+
+<Layout
+	title={`${series.title} - Telysta Blog`}
+	description={series.description}
+	starfieldVariant="subtle"
+>
+	<main class="series-page">
+		<section class="series-page__inner" aria-labelledby="series-title">
+			<div class="series-page__header">
+				<a href="/blog">Blog</a>
+				<p>Series</p>
+				<h1 id="series-title">{series.title}</h1>
+				<span>{series.description}</span>
+			</div>
+
+			<ArticlePostList posts={posts} />
+		</section>
+	</main>
+</Layout>
+
+<style lang="scss">
+	.series-page {
+		position: relative;
+		z-index: 1;
+		min-height: 100vh;
+	}
+
+	.series-page__inner {
+		display: grid;
+		gap: clamp(44px, 7vw, 72px);
+		width: min(900px, calc(100% - 48px));
+		margin: 0 auto;
+		padding: clamp(132px, 16vw, 188px) 0 clamp(92px, 13vw, 150px);
+	}
+
+	.series-page__header {
+		display: grid;
+		gap: 12px;
+		max-width: 760px;
+	}
+
+	.series-page__header a,
+	.series-page__header p {
+		width: fit-content;
+		margin: 0;
+		color: rgba(156, 199, 232, 0.58);
+		font-family: var(--font-display);
+		font-size: 0.76rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.series-page__header a {
+		transition: color 0.2s ease;
+	}
+
+	.series-page__header a:hover {
+		color: rgba(216, 222, 233, 0.86);
+	}
+
+	.series-page__header h1 {
+		margin: 0;
+		color: rgba(237, 243, 251, 0.94);
+		font-family: var(--font-display);
+		font-size: clamp(2.3rem, 7vw, 4.5rem);
+		font-weight: 650;
+		line-height: 1.04;
+		letter-spacing: 0;
+	}
+
+	.series-page__header span {
+		max-width: 660px;
+		color: rgba(190, 199, 214, 0.58);
+		font-size: clamp(1rem, 2vw, 1.12rem);
+		line-height: 1.9;
+	}
+
+	@media (max-width: 640px) {
+		.series-page__inner {
+			width: min(100% - 32px, 720px);
+			padding-top: 112px;
+		}
+	}
+</style>

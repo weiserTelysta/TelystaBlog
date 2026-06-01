@@ -1,0 +1,94 @@
+---
+type ArticleHeading = {
+	depth: number;
+	slug: string;
+	text: string;
+};
+
+type Props = {
+	headings: ArticleHeading[];
+};
+
+const { headings } = Astro.props;
+---
+
+<nav class="article-toc" aria-label="文章目录">
+	<p>On This Page</p>
+	<ol>
+		{
+			headings.map((heading) => (
+				<li class={`article-toc__item article-toc__item--depth-${heading.depth}`}>
+					<a href={`#${heading.slug}`}>{heading.text}</a>
+				</li>
+			))
+		}
+	</ol>
+</nav>
+
+<style lang="scss">
+	.article-toc {
+		position: sticky;
+		top: 112px;
+		display: grid;
+		gap: 14px;
+		max-height: calc(100vh - 150px);
+		overflow: auto;
+		padding-left: 22px;
+		border-left: 1px solid rgba(255, 255, 255, 0.055);
+		scrollbar-width: none;
+	}
+
+	.article-toc::-webkit-scrollbar {
+		display: none;
+	}
+
+	.article-toc p {
+		margin: 0;
+		color: rgba(156, 199, 232, 0.58);
+		font-family: var(--font-display);
+		font-size: 0.72rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.article-toc ol {
+		display: grid;
+		gap: 11px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.article-toc a {
+		display: block;
+		color: rgba(190, 199, 214, 0.58);
+		font-size: 0.78rem;
+		line-height: 1.6;
+		overflow-wrap: anywhere;
+		transition: color 0.2s ease, transform 0.2s ease;
+	}
+
+	.article-toc a:hover {
+		color: rgba(237, 243, 251, 0.88);
+		transform: translateX(2px);
+	}
+
+	.article-toc__item--depth-3 {
+		padding-left: 12px;
+	}
+
+	.article-toc__item--depth-3 a {
+		color: rgba(139, 149, 167, 0.62);
+		font-size: 0.74rem;
+	}
+
+	@media (max-width: 960px) {
+		.article-toc {
+			position: static;
+			max-height: none;
+			padding: 18px 0 0;
+			border-top: 1px solid rgba(255, 255, 255, 0.055);
+			border-left: 0;
+		}
+	}
+</style>
