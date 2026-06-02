@@ -39,8 +39,9 @@ const { post } = Astro.props;
 
 	.blog-post h3 {
 		margin: 0;
+		font-family: var(--font-item-title);
 		font-size: clamp(1.12rem, 2.2vw, 1.36rem);
-		font-weight: 650;
+		font-weight: var(--font-item-title-weight);
 		line-height: 1.45;
 		letter-spacing: 0;
 		overflow-wrap: anywhere;
@@ -72,6 +73,7 @@ const { post } = Astro.props;
 		gap: 8px 13px;
 		margin-top: 13px;
 		color: rgba(139, 149, 167, 0.72);
+		font-family: var(--font-meta);
 		font-size: 0.78rem;
 		line-height: 1.7;
 		overflow-wrap: anywhere;

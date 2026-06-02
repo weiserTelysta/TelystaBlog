@@ -1,0 +1,39 @@
+.text-display-label {
+	font-family: var(--font-display);
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.text-hero-title {
+	font-family: var(--font-hero-title);
+	font-weight: var(--weight-hero-title);
+	letter-spacing: 0;
+}
+
+.text-page-title {
+	font-family: var(--font-page-title);
+	font-weight: var(--weight-page-title);
+	letter-spacing: 0;
+}
+
+.text-article-title {
+	font-family: var(--font-article-title);
+	font-weight: var(--font-article-title-weight);
+	letter-spacing: 0;
+}
+
+.text-item-title {
+	font-family: var(--font-item-title);
+	font-weight: var(--font-item-title-weight);
+	letter-spacing: 0;
+}
+
+.text-meta {
+	font-family: var(--font-meta);
+}
+
+.text-prose-heading {
+	font-family: var(--font-prose-heading);
+	font-weight: var(--weight-prose-heading);
+	letter-spacing: 0;
+}
