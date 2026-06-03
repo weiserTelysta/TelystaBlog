@@ -37,7 +37,7 @@ export const BLOG_CATEGORIES = [
 		id: 'collection',
 		title: "Telysta's Collection",
 		subtitle: 'Learning Notes',
-		description: '学习过程里被认真收好的线索与笔记。',
+		description: '学习过程中被认真收好的线索与笔记。',
 		foil: 'aurora',
 	},
 	{
