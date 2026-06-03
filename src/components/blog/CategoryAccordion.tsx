@@ -441,6 +441,7 @@ export default function CategoryAccordion({
 					]
 						.filter(Boolean)
 						.join(' ')}
+					data-scroll-native
 					role="dialog"
 					aria-modal="true"
 					aria-labelledby={CATEGORY_DIALOG_TITLE_ID}
@@ -471,7 +472,11 @@ export default function CategoryAccordion({
 							<h2 id={CATEGORY_DIALOG_TITLE_ID}>{ACCORDION_COPY.dialogTitle}</h2>
 						</header>
 
-						<div className="category-accordion__rail-frame" onWheel={handleRailWheel}>
+						<div
+							className="category-accordion__rail-frame"
+							data-scroll-native
+							onWheel={handleRailWheel}
+						>
 							<div
 								className={[
 									'category-accordion__rail',
@@ -479,6 +484,7 @@ export default function CategoryAccordion({
 								]
 									.filter(Boolean)
 									.join(' ')}
+								data-scroll-native
 								ref={railRef}
 							>
 								{visuals.map((visual, index) => {

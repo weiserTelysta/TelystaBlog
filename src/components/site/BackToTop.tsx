@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { scrollToTop } from '../../lib/scrollRuntime';
 import './BackToTop.scss';
 
 const SHOW_AFTER = 620;
@@ -18,10 +19,6 @@ export default function BackToTop() {
 			window.removeEventListener('scroll', updateVisibility);
 		};
 	}, []);
-
-	const scrollToTop = () => {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
-	};
 
 	return (
 		<>

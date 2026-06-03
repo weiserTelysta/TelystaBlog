@@ -1,0 +1,79 @@
+---
+import type { HomeSectionConfig } from '../../lib/homeSections';
+
+type Props = {
+	section: HomeSectionConfig;
+	index: number;
+};
+
+const { section, index } = Astro.props;
+const hasItems = section.items && section.items.length > 0;
+---
+
+<article
+	class={`home-section home-section--${section.type}`}
+	data-home-reveal
+	style={`--reveal-order: ${index}`}
+>
+	<div
+		class="home-section__rule home-section__reveal-part"
+		aria-hidden="true"
+		style="--part-order: 0"
+	></div>
+	<div class="home-section__body">
+		{
+			section.eyebrow && (
+				<p class="home-section__eyebrow home-section__reveal-part" style="--part-order: 1">
+					{section.eyebrow}
+				</p>
+			)
+		}
+		<h2 class="home-section__title home-section__reveal-part" style="--part-order: 2">
+			{section.title}
+		</h2>
+		<p class="home-section__description home-section__reveal-part" style="--part-order: 3">
+			{section.description}
+		</p>
+
+		{
+			hasItems && (
+				<ul
+					class="home-section__links home-section__reveal-part"
+					aria-label={`${section.title} links`}
+					style="--part-order: 4"
+				>
+					{section.items?.map((item) => (
+						<li class="home-section__link-item">
+							{item.href ? (
+								<a
+									class="home-section__link"
+									href={item.href}
+									target={item.external ? '_blank' : undefined}
+									rel={item.external ? 'noreferrer' : undefined}
+								>
+									<span class="home-section__link-text">
+										<span class="home-section__link-label">{item.label}</span>
+										{item.kind && <span class="home-section__link-kind">{item.kind}</span>}
+									</span>
+									{item.description && (
+										<span class="home-section__link-description">{item.description}</span>
+									)}
+								</a>
+							) : (
+								<span class="home-section__link home-section__link--disabled">
+									<span class="home-section__link-text">
+										<span class="home-section__link-label">{item.label}</span>
+										{item.kind && <span class="home-section__link-kind">{item.kind}</span>}
+									</span>
+									{item.description && (
+										<span class="home-section__link-description">{item.description}</span>
+									)}
+								</span>
+							)}
+						</li>
+					))}
+				</ul>
+			)
+		}
+	</div>
+</article>

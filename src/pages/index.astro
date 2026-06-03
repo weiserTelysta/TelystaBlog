@@ -1,9 +1,15 @@
 ---
 import HomeHero from '../components/home/HomeHero.astro';
+import HomeArchive from '../components/home/HomeArchive.astro';
+import HomeReveal from '../components/home/HomeReveal.astro';
 import Layout from '../layouts/Layout.astro';
 import { SITE_CONFIG } from '../lib/siteConfig';
 ---
 
 <Layout title={SITE_CONFIG.home.title} description={SITE_CONFIG.home.description}>
-	<HomeHero />
+	<main>
+		<HomeHero />
+		<HomeArchive />
+		<HomeReveal />
+	</main>
 </Layout>
