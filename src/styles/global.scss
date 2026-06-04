@@ -18,6 +18,8 @@
 		"PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
 	--font-display: "Cinzel", "Trajan Pro", "Times New Roman", serif;
 	--font-script: "MonteCarlo", "Brush Script MT", "Segoe Script", cursive;
+	--font-cn-prose: "LXGW WenKai Lite", "KaiTi", "STKaiti", "Songti SC", serif;
+	--font-home-prose: var(--font-cn-prose);
 	--font-hero-title: var(--font-body);
 	--font-page-title: var(--font-body);
 	--font-article-title: var(--font-body);

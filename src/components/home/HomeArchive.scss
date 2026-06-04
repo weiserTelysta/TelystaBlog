@@ -31,7 +31,7 @@
 	max-width: 12em;
 	margin: 14px auto 0;
 	color: rgba(230, 236, 246, 0.88);
-	font-family: var(--font-page-title);
+	font-family: var(--font-display);
 	font-size: clamp(1.8rem, 4vw, 2.7rem);
 	font-weight: var(--weight-page-title);
 	letter-spacing: 0;
@@ -67,7 +67,7 @@
 .home-section__title {
 	margin: 12px 0 0;
 	color: rgba(224, 231, 241, 0.86);
-	font-family: var(--font-item-title);
+	font-family: var(--font-home-prose);
 	font-size: clamp(1.15rem, 2.4vw, 1.45rem);
 	font-weight: var(--weight-item-title);
 	letter-spacing: 0;
@@ -78,6 +78,7 @@
 	max-width: 38rem;
 	margin: 16px 0 0;
 	color: rgba(177, 188, 204, 0.68);
+	font-family: var(--font-home-prose);
 	font-size: clamp(0.96rem, 1.7vw, 1.04rem);
 	line-height: 2;
 }
@@ -95,6 +96,7 @@
 	gap: 12px;
 	margin: 24px 0 0;
 	padding: 0;
+	font-family: var(--font-body);
 	list-style: none;
 }
 
@@ -150,6 +152,7 @@
 }
 
 .home-section__link-label {
+	font-family: var(--font-home-prose);
 	font-size: 0.98rem;
 	font-weight: 650;
 	line-height: 1.4;
@@ -163,6 +166,7 @@
 
 .home-section__link-description {
 	color: rgba(145, 157, 176, 0.66);
+	font-family: var(--font-home-prose);
 	font-size: 0.9rem;
 	line-height: 1.7;
 }
