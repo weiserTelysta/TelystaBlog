@@ -39,9 +39,9 @@ Some current text in this file may still need copy cleanup. Keep future edits in
 
 ## Blog Posts
 
-Markdown posts live in `src/content/posts`.
+Markdown posts live in `src/content/weiser-posts`.
 
-Start from `src/content/posts/_template.md` when creating a new post. A typical post uses frontmatter like:
+Start from `src/content/weiser-posts/_template.md` when creating a new post. A typical post uses frontmatter like:
 
 ```md
 ---

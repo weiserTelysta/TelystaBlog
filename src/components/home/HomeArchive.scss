@@ -13,6 +13,7 @@
 
 .home-archive__intro {
 	margin-bottom: clamp(46px, 8vw, 76px);
+	text-align: center;
 }
 
 .home-archive__eyebrow,
@@ -28,7 +29,7 @@
 
 .home-archive__intro h2 {
 	max-width: 12em;
-	margin: 14px 0 0;
+	margin: 14px auto 0;
 	color: rgba(230, 236, 246, 0.88);
 	font-family: var(--font-page-title);
 	font-size: clamp(1.8rem, 4vw, 2.7rem);
@@ -79,6 +80,14 @@
 	color: rgba(177, 188, 204, 0.68);
 	font-size: clamp(0.96rem, 1.7vw, 1.04rem);
 	line-height: 2;
+}
+
+.home-section__description p {
+	margin: 0;
+}
+
+.home-section__description p + p {
+	margin-top: 0.82em;
 }
 
 .home-section__links {

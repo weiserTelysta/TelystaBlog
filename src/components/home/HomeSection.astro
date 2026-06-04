@@ -31,9 +31,9 @@ const hasItems = section.items && section.items.length > 0;
 		<h2 class="home-section__title home-section__reveal-part" style="--part-order: 2">
 			{section.title}
 		</h2>
-		<p class="home-section__description home-section__reveal-part" style="--part-order: 3">
-			{section.description}
-		</p>
+		<div class="home-section__description home-section__reveal-part" style="--part-order: 3">
+			{section.description.map((paragraph) => <p>{paragraph}</p>)}
+		</div>
 
 		{
 			hasItems && (

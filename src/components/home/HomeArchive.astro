@@ -1,6 +1,6 @@
 ---
 import HomeSection from './HomeSection.astro';
-import { HOME_SECTIONS } from '../../lib/homeSections';
+import { HOME_ARCHIVE_INTRO, HOME_SECTIONS } from '../../lib/homeSections';
 import './HomeArchive.scss';
 
 const sections = HOME_SECTIONS.filter((section) => section.enabled !== false).sort(
@@ -11,8 +11,8 @@ const sections = HOME_SECTIONS.filter((section) => section.enabled !== false).so
 <section class="home-archive" aria-labelledby="home-archive-title" data-home-archive>
 	<div class="home-archive__inner">
 		<div class="home-archive__intro" data-home-reveal>
-			<p class="home-archive__eyebrow">Archive</p>
-			<h2 id="home-archive-title">一些落在夜里的坐标</h2>
+			{HOME_ARCHIVE_INTRO.eyebrow && <p class="home-archive__eyebrow">{HOME_ARCHIVE_INTRO.eyebrow}</p>}
+			<h2 id="home-archive-title">{HOME_ARCHIVE_INTRO.title}</h2>
 		</div>
 
 		<div class="home-archive__sections">

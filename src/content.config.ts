@@ -6,7 +6,7 @@ import { BLOG_CATEGORY_IDS } from './lib/blogCategories';
 const posts = defineCollection({
 	loader: glob({
 		pattern: '**/*.md',
-		base: './src/content/posts',
+		base: './src/content/weiser-posts',
 	}),
 	schema: z.object({
 		title: z.string().min(1),

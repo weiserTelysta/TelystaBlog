@@ -23,7 +23,7 @@ Updated: 2026-05-28
 
 ## Current Blog System
 
-Posts live in `src/content/posts/`.
+Posts live in `src/content/weiser-posts/`.
 
 Each post uses frontmatter for:
 
@@ -47,7 +47,7 @@ The `/blog` page and `/blog/category/[category]/` pages share the same navigatio
 ## Current Risks
 
 - Several files are still uncommitted. Before publishing, the work should be grouped into clear commits.
-- `src/content/posts/` currently contains one public first-stage post and several draft development notes.
+- `src/content/weiser-posts/` currently contains one public first-stage post and several draft development notes.
 - `src/assets/banner/blog-banner.png` is still a large PNG asset. The resource-size issue has been identified, but the image has not been optimized yet.
 - `src/assets/images/accordion/accordion-weiser.png` is the current accordion test asset. It is shared across categories until individual OC images are ready, and it has not been optimized yet.
 - The article detail URL strategy is not defined yet.

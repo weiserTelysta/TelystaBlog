@@ -25,7 +25,7 @@ src/components/blog       Blog index, timeline, category filter, and accordion U
 src/components/article    Article header, TOC, post list, and series navigation
 src/components/site       Shared header, footer, back-to-top, and scroll manager
 src/components/starfield  Canvas starfield and interaction effects
-src/content/posts         Markdown post sources
+src/content/weiser-posts  Markdown post sources
 src/lib                   Site config, blog data, content helpers, and scroll runtime
 src/styles                Global styles, fonts, typography tokens, and glass rules
 docs                      Vision, deployment, maintenance, and planning documents
@@ -53,7 +53,7 @@ Common edit points:
 - Home page modules: `src/lib/homeSections.ts`
 - Blog categories: `src/lib/blogCategories.ts`
 - Category accordion visuals: `src/lib/blogCategoryVisuals.ts`
-- Markdown posts: `src/content/posts`
+- Markdown posts: `src/content/weiser-posts`
 - Post images: `public/images/posts`
 - Fonts and type roles: `src/styles/fonts.scss`, `src/styles/global.scss`, `src/styles/typography.scss`
 
