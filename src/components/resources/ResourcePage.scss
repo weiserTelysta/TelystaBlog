@@ -1,0 +1,21 @@
+.resource-page {
+	--resource-line: rgba(134, 170, 196, 0.14);
+	--resource-line-strong: rgba(150, 190, 220, 0.34);
+	--resource-text: rgba(231, 237, 245, 0.9);
+	--resource-muted: rgba(162, 176, 191, 0.64);
+	--resource-dim: rgba(125, 142, 158, 0.46);
+	--resource-blue: rgba(126, 171, 201, 0.82);
+	--resource-sticky-offset: 112px;
+	position: relative;
+	width: min(var(--site-content-width), calc(100% - 48px));
+	min-height: calc(100vh - var(--resource-sticky-offset));
+	margin: 0 auto;
+	padding: clamp(118px, 13vh, 146px) 0 clamp(96px, 14vh, 160px);
+}
+
+@media (max-width: 640px) {
+	.resource-page {
+		width: min(100% - 28px, 560px);
+		padding-top: 112px;
+	}
+}

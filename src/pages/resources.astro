@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResourcePage from '../components/resources/ResourcePage.astro';
+import { RESOURCE_PAGE_CONFIG } from '../lib/resources/resourcePageConfig';
+import { getResourceItems } from '../lib/resources/resourceItems';
+
+const resources = await getResourceItems();
+---
+
+<Layout title={RESOURCE_PAGE_CONFIG.meta.title} description={RESOURCE_PAGE_CONFIG.meta.description}>
+	<ResourcePage resources={resources} />
+</Layout>

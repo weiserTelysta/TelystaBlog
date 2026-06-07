@@ -1,0 +1,18 @@
+---
+import ResourceExplorer from './ResourceExplorer';
+import './ResourcePage.scss';
+import './ResourceExplorer.scss';
+import './ResourceDetailOverlay.scss';
+import type { ResourceListItem } from '../../lib/resources/resourceItems';
+
+type Props = {
+	resources: ResourceListItem[];
+};
+
+const { resources } = Astro.props;
+const formatCount = new Set(resources.flatMap((resource) => resource.formats)).size;
+---
+
+<main class="resource-page">
+	<ResourceExplorer client:load resources={resources} formatCount={formatCount} />
+</main>

@@ -8,5 +8,8 @@ export const SITE_CONFIG = {
 		title: "Telysta's Melancholy",
 		description: 'Weiser 的个人写作空间，记录学习、开发、阅读、生活和缓慢成形的想法。',
 	},
-	navItems: [{ label: 'Blog', href: '/blog' }],
+	navItems: [
+		{ label: 'Blog', href: '/blog' },
+		{ label: 'Resources', href: '/resources' },
+	],
 } as const;
