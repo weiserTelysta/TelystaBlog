@@ -25,8 +25,10 @@ src/components/blog       Blog index, timeline, category filter, and accordion U
 src/components/article    Article header, TOC, post list, and series navigation
 src/components/site       Shared header, footer, back-to-top, and scroll manager
 src/components/starfield  Canvas starfield and interaction effects
+src/config                Editable site, page, content, visual, and interaction config
 src/content/weiser-posts  Markdown post sources
-src/lib                   Site config, blog data, content helpers, and scroll runtime
+src/content/resources     Markdown resource entries
+src/lib                   Data helpers and runtime utilities
 src/styles                Global styles, fonts, typography tokens, and glass rules
 docs                      Vision, deployment, maintenance, and planning documents
 public/images/posts       Public post images referenced from Markdown
@@ -47,13 +49,27 @@ npm run preview
 
 Use [docs/maintenance.md](docs/maintenance.md) as the main guide for editing the site.
 
+The project keeps editable content separate from derived logic:
+
+- `src/config`: site copy, page settings, content taxonomy, visuals, and interaction parameters.
+- `src/lib`: helpers that derive, validate, count, sort, or build URLs from config and content.
+- `src/content`: Markdown posts and resource entries.
+- `src/components`: rendering and interaction components.
+
 Common edit points:
 
-- Site name, navigation, SEO text, and ICP record: `src/lib/siteConfig.ts`
-- Home page modules: `src/lib/homeSections.ts`
-- Blog categories: `src/lib/blogCategories.ts`
-- Category accordion visuals: `src/lib/blogCategoryVisuals.ts`
+- Site name, navigation, SEO text, and ICP record: `src/config/site.ts`
+- Home page modules: `src/config/pages/home.ts`
+- Blog page copy: `src/config/pages/blog.ts`
+- Article page copy: `src/config/pages/article.ts`
+- Resource page copy: `src/config/pages/resources.ts`
+- Blog categories: `src/config/content/blogCategories.ts`
+- Blog series: `src/config/content/blogSeries.ts`
+- Resource types: `src/config/content/resourceTypes.ts`
+- Category accordion visuals: `src/config/visuals/categoryVisuals.ts`
+- Scroll and chrome interaction settings: `src/config/interactions`
 - Markdown posts: `src/content/weiser-posts`
+- Resource entries: `src/content/resources`
 - Post images: `public/images/posts`
 - Fonts and type roles: `src/styles/fonts.scss`, `src/styles/global.scss`, `src/styles/typography.scss`
 

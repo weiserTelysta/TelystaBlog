@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
+import { SITE_CHROME_CONFIG } from '../../config/interactions/siteChrome';
 import { scrollToTop } from '../../lib/scrollRuntime';
 import './BackToTop.scss';
-
-const SHOW_AFTER = 620;
 
 export default function BackToTop() {
 	const [visible, setVisible] = useState(false);
 
 	useEffect(() => {
 		const updateVisibility = () => {
-			setVisible(window.scrollY > SHOW_AFTER);
+			setVisible(window.scrollY > SITE_CHROME_CONFIG.backToTop.showAfter);
 		};
 
 		updateVisibility();
@@ -25,13 +24,13 @@ export default function BackToTop() {
 			<button
 				className={`back-to-top${visible ? ' is-visible' : ''}`}
 				type="button"
-				aria-label="返回顶部"
+				aria-label={SITE_CHROME_CONFIG.backToTop.ariaLabel}
 				aria-hidden={!visible}
 				tabIndex={visible ? 0 : -1}
 				onClick={scrollToTop}
 			>
 				<span className="back-to-top__line" aria-hidden="true" />
-				<span className="back-to-top__label">Back to top</span>
+				<span className="back-to-top__label">{SITE_CHROME_CONFIG.backToTop.label}</span>
 				<span className="back-to-top__mark" aria-hidden="true" />
 			</button>
 		</>

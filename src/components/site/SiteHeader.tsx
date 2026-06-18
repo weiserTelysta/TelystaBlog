@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useState } from 'react';
-import { SITE_CONFIG } from '../../lib/siteConfig';
-
-const IDLE_DELAY = 5200;
+import { SITE_CONFIG } from '../../config/site';
+import { SITE_CHROME_CONFIG } from '../../config/interactions/siteChrome';
 
 export default function SiteHeader() {
 	const [idle, setIdle] = useState(false);
@@ -12,7 +11,7 @@ export default function SiteHeader() {
 		const markActive = () => {
 			setIdle(false);
 			window.clearTimeout(timer);
-			timer = window.setTimeout(() => setIdle(true), IDLE_DELAY);
+			timer = window.setTimeout(() => setIdle(true), SITE_CHROME_CONFIG.header.idleDelay);
 		};
 
 		markActive();
@@ -28,10 +27,10 @@ export default function SiteHeader() {
 
 	return (
 		<header className={`site-header glass-surface glass-surface--thin${idle ? ' is-idle' : ''}`}>
-			<a className="site-header__brand" href="/" aria-label={`${SITE_CONFIG.name} 首页`}>
+			<a className="site-header__brand" href="/" aria-label={`${SITE_CONFIG.name} ${SITE_CHROME_CONFIG.header.homeLabel}`}>
 				<span>{SITE_CONFIG.name}</span>
 			</a>
-			<nav className="site-header__nav" aria-label="主导航">
+			<nav className="site-header__nav" aria-label={SITE_CHROME_CONFIG.header.navigationLabel}>
 				{SITE_CONFIG.navItems.map((item, index) => {
 					const href = 'href' in item ? item.href : undefined;
 

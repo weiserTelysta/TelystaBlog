@@ -2,6 +2,15 @@ export const ARTICLE_PAGE_CONFIG = {
 	meta: {
 		titleSeparator: ' - ',
 	},
+	header: {
+		backLabel: 'Blog',
+		coverAriaLabel: '文章主图',
+		metaAriaLabel: '文章信息',
+		seriesAriaPrefix: '查看',
+		seriesAriaSuffix: '系列',
+		publishedLabel: '发布',
+		updatedLabel: '更新',
+	},
 	toc: {
 		minHeadingCount: 3,
 		title: 'On This Page',

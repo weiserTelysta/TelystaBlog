@@ -4,9 +4,21 @@ This guide explains where to edit common site content and configuration for Tely
 
 Keep source files encoded as UTF-8. Do not edit generated files in `dist/`; they are rebuilt from source.
 
+## Project Boundaries
+
+The project uses a simple boundary model:
+
+- `src/config` describes editable site content, page copy, taxonomy, visuals, and interaction parameters.
+- `src/lib` derives data from config and content, including lookup helpers, counters, sorting, URL builders, and runtime utilities.
+- `src/content` stores Markdown-powered posts and resources.
+- `src/components` renders UI and owns interaction state.
+- `src/styles` stores global visual roles, typography, prose rules, and shared visual language.
+
+Configuration files should stay data-focused. If a function validates ids, finds an item, counts posts, or builds a URL, it belongs in `src/lib` rather than `src/config`.
+
 ## Site Identity
 
-Edit `src/lib/siteConfig.ts` for global site information:
+Edit `src/config/site.ts` for global site information:
 
 - `name`: visible site name in the header.
 - `defaultTitle`: default browser title.
@@ -20,7 +32,7 @@ Only add a navigation item after the target page exists. Disabled placeholder li
 
 ## Home Page Modules
 
-Edit `src/lib/homeSections.ts` to change the modules below the home hero.
+Edit `src/config/pages/home.ts` to change the modules below the home hero.
 
 Each section supports:
 
@@ -70,7 +82,7 @@ Images used inside posts should usually live in `public/images/posts`, then be r
 
 Categories are the main columns of the blog. They should be few, stable, and useful for filtering.
 
-Edit `src/lib/blogCategories.ts` to change category ids, titles, subtitles, descriptions, and foil presets.
+Edit `src/config/content/blogCategories.ts` to change category ids, titles, subtitles, and descriptions.
 
 Tags are lighter metadata written in each post frontmatter. They can be more flexible and more specific than categories.
 
@@ -78,7 +90,7 @@ Do not use categories like tags. If a label describes the main home of a post, i
 
 ## Category Accordion Visuals
 
-Edit `src/lib/blogCategoryVisuals.ts` for the visual category selector.
+Edit `src/config/visuals/categoryVisuals.ts` for the visual category selector.
 
 Accordion images are imported from `src/assets/images/accordion`.
 
@@ -120,7 +132,7 @@ Prefer changing font roles instead of editing individual components one by one. 
 Global vertical smooth scrolling is managed by:
 
 - `src/components/site/ScrollManager.tsx`
-- `src/lib/scrollConfig.ts`
+- `src/config/interactions/scroll.ts`
 - `src/lib/scrollRuntime.ts`
 
 Local scrolling areas such as the category accordion, article TOC, and code blocks should stay native. Mark such areas with `data-scroll-native` when needed.
@@ -155,12 +167,24 @@ When changing it, watch frame cost carefully. Decorative animation should never 
 
 The content system is currently schema-checked by Astro, but a few cross-file rules are still maintained by convention:
 
-- Each post `category` should exist in `src/lib/blogCategories.ts`.
-- Each category should have a visual entry in `src/lib/blogCategoryVisuals.ts`.
-- Each post `series`, when present, should exist in `src/lib/blogSeries.ts`.
+- Each post `category` should exist in `src/config/content/blogCategories.ts`.
+- Each category should have a visual entry in `src/config/visuals/categoryVisuals.ts`.
+- Each post `series`, when present, should exist in `src/config/content/blogSeries.ts`.
 - `seriesOrder` values should be unique inside the same series.
 
 These rules can become a small validation script later if the archive grows.
+
+## Taxonomy Helpers
+
+Blog categories, blog series, and resource types are configured in `src/config/content`.
+
+Their helper logic lives in:
+
+- `src/lib/blogCategoryUtils.ts`
+- `src/lib/blogSeriesUtils.ts`
+- `src/lib/resourceTypeUtils.ts`
+
+Use those helpers when a component or page needs to validate an id, find a configured item, count entries, or build an internal URL. This keeps configuration files readable for manual editing.
 
 ## Deployment
 

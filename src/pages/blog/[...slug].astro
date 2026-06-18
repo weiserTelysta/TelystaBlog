@@ -4,8 +4,7 @@ import ArticleHeader from '../../components/article/ArticleHeader.astro';
 import ArticleSeriesNav from '../../components/article/ArticleSeriesNav.astro';
 import ArticleToc from '../../components/article/ArticleToc.astro';
 import Layout from '../../layouts/Layout.astro';
-import { ARTICLE_PAGE_CONFIG } from '../../lib/articlePageConfig';
-import { getBlogSeriesById } from '../../lib/blogSeries';
+import { ARTICLE_PAGE_CONFIG } from '../../config/pages/article';
 import {
 	getPostsBySeries,
 	getPublishedPosts,
@@ -13,7 +12,8 @@ import {
 	toPostListItem,
 	type PostEntry,
 } from '../../lib/blogPosts';
-import { SITE_CONFIG } from '../../lib/siteConfig';
+import { getBlogSeriesById } from '../../lib/blogSeriesUtils';
+import { SITE_CONFIG } from '../../config/site';
 
 export async function getStaticPaths() {
 	const entries = (await getCollection('posts')) as PostEntry[];

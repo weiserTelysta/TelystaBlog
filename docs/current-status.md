@@ -1,6 +1,6 @@
 # Current Status
 
-Updated: 2026-05-28
+Updated: 2026-06-16
 
 ## Completed
 
@@ -13,6 +13,8 @@ Updated: 2026-05-28
 - Static category pages at `/blog/category/[category]/`.
 - Year and month based timeline.
 - Blog timeline split into `BlogTimeline`, `BlogMonthSection`, and `BlogPostItem`.
+- Editable site, page, content, visual, and interaction settings are centralized under `src/config`.
+- Blog category, blog series, and resource type helper logic is separated into `src/lib/*Utils.ts`.
 - Low-contrast banner and custom dark scrollbar.
 - Visual category accordion entered implementation for the second blog-navigation stage.
 - Category accordion has a reusable React island, light overlay, no-default-preselection behavior, scroll locking, and two-step category selection.
@@ -38,9 +40,9 @@ Each post uses frontmatter for:
 
 Only posts with `draft: false` are public.
 
-Categories are defined in `src/lib/blogCategories.ts`. The content schema uses those category ids, so category ids should stay stable.
+Categories are defined in `src/config/content/blogCategories.ts`. The content schema uses those category ids, so category ids should stay stable.
 
-Category visual entries live in `src/lib/blogCategoryVisuals.ts`. This file can connect category ids with OC images, short display titles, descriptions, image crop tuning, and future foil presets.
+Category visual entries live in `src/config/visuals/categoryVisuals.ts`. This file can connect category ids with OC images, short display titles, descriptions, image crop tuning, and future foil presets.
 
 The `/blog` page and `/blog/category/[category]/` pages share the same navigation layout. Category state is represented through URL routes, while year navigation is still a timeline jump behavior rather than a filter.
 
@@ -63,12 +65,14 @@ Current healthy points:
 
 - `npm run check` passes with the current blog navigation system.
 - Astro Content Collections provide a typed Markdown data source for posts.
+- Editable content and derived logic now have clearer boundaries: config describes data, lib handles lookup/counting/URL helpers.
 - Category semantic config and category visual config are separated.
 - `/blog` and `/blog/category/[category]/` share the same navigation layout.
 - Blog timeline rendering is split into `BlogTimeline`, `BlogMonthSection`, and `BlogPostItem`.
 
 Current maintenance risks:
 
+- The worktree still contains many mixed historical changes. Submission boundaries should be cleaned before publishing another large batch.
 - `CategoryAccordion.tsx` carries several interaction responsibilities: dialog lifecycle, focus trap, rail scrolling, preselection, two-click confirmation, URL navigation, and pointer tilt.
 - `CategoryAccordion.scss` carries entry, overlay, panel, rail, card, foil, copy, responsive, and reduced-motion styles in one stylesheet.
 - `StarfieldBackground.tsx` remains a long-term pressure point because it still coordinates canvas setup, star drawing, meteors, long meteors, pointer intent, and easter egg timing.

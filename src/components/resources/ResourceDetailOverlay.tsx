@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDialogFocusTrap } from '../../hooks/useDialogFocusTrap';
 import { usePageScrollLock } from '../../hooks/usePageScrollLock';
-import { RESOURCE_PAGE_CONFIG } from '../../lib/resources/resourcePageConfig';
-import { getResourceTypeById } from '../../lib/resources/resourceTypes';
+import { RESOURCE_PAGE_CONFIG } from '../../config/pages/resources';
 import type { ResourceAction, ResourceListItem } from '../../lib/resources/resourceItems';
+import { getResourceTypeById } from '../../lib/resourceTypeUtils';
 
 type ResourceDetailOverlayProps = {
 	resource: ResourceListItem | null;

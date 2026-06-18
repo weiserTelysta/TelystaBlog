@@ -1,10 +1,10 @@
 ---
 import ArticlePostList from '../../components/article/ArticlePostList.astro';
 import Layout from '../../layouts/Layout.astro';
-import { ARTICLE_PAGE_CONFIG } from '../../lib/articlePageConfig';
-import { BLOG_SERIES, type BlogSeries } from '../../lib/blogSeries';
+import { ARTICLE_PAGE_CONFIG } from '../../config/pages/article';
+import { BLOG_SERIES, type BlogSeries } from '../../config/content/blogSeries';
 import { getPostsBySeries, getPublishedPosts } from '../../lib/blogPosts';
-import { SITE_CONFIG } from '../../lib/siteConfig';
+import { SITE_CONFIG } from '../../config/site';
 
 export function getStaticPaths() {
 	return BLOG_SERIES.map((series) => ({

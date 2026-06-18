@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
-import { SCROLL_CONFIG } from '../../lib/scrollConfig';
+import { SCROLL_CONFIG } from '../../config/interactions/scroll';
 import {
 	clearScrollController,
 	setScrollController,

@@ -1,16 +1,16 @@
 import type { ImageMetadata } from 'astro';
-import accordionWeiserImage from '../assets/images/accordion/accordion_weiser.webp';
-import accordionTelystaImage from '../assets/images/accordion/accordion_telysta.webp';
-import accordionRhaelysaImage from '../assets/images/accordion/accordion_rhaelysa.webp';
-import accordionAliceImage from '../assets/images/accordion/accordion_alice.webp';
-import accordionSylvaenaImage from '../assets/images/accordion/accordion_sylvaena.webp';
+import accordionWeiserImage from '../../assets/images/accordion/accordion_weiser.webp';
+import accordionTelystaImage from '../../assets/images/accordion/accordion_telysta.webp';
+import accordionRhaelysaImage from '../../assets/images/accordion/accordion_rhaelysa.webp';
+import accordionAliceImage from '../../assets/images/accordion/accordion_alice.webp';
+import accordionSylvaenaImage from '../../assets/images/accordion/accordion_sylvaena.webp';
 
 import {
 	BLOG_CATEGORIES,
 	type BlogCategory,
 	type BlogCategoryId,
 	type FoilPreset,
-} from './blogCategories';
+} from '../content/blogCategories';
 
 export type BlogCategoryVisual = BlogCategory & {
 	cardInscription: {

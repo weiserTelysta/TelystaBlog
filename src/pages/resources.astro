@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ResourcePage from '../components/resources/ResourcePage.astro';
-import { RESOURCE_PAGE_CONFIG } from '../lib/resources/resourcePageConfig';
+import { RESOURCE_PAGE_CONFIG } from '../config/pages/resources';
 import { getResourceItems } from '../lib/resources/resourceItems';
 
 const resources = await getResourceItems();

@@ -1,6 +1,6 @@
 ---
 import HomeSection from './HomeSection.astro';
-import { HOME_ARCHIVE_INTRO, HOME_SECTIONS } from '../../lib/homeSections';
+import { HOME_ARCHIVE_INTRO, HOME_SECTIONS } from '../../config/pages/home';
 import './HomeArchive.scss';
 
 const sections = HOME_SECTIONS.filter((section) => section.enabled !== false).sort(

@@ -1,5 +1,5 @@
-import { getResourceTypeById } from '../../lib/resources/resourceTypes';
 import type { ResourceListItem } from '../../lib/resources/resourceItems';
+import { getResourceTypeById } from '../../lib/resourceTypeUtils';
 
 type ResourceCardProps = {
 	resource: ResourceListItem;

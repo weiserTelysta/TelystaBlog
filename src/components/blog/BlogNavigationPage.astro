@@ -5,12 +5,9 @@ import BlogEmptyState from './BlogEmptyState.astro';
 import BlogTimeline from './BlogTimeline.astro';
 import BlogYearJump from './BlogYearJump.astro';
 import Layout from '../../layouts/Layout.astro';
-import { BLOG_PAGE_CONFIG } from '../../lib/blogPageConfig';
-import {
-	getBlogCategoryById,
-	getCategoryPostCount,
-	type BlogCategoryId,
-} from '../../lib/blogCategories';
+import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
+import type { BlogCategoryId } from '../../config/content/blogCategories';
+import { getBlogCategoryById, getCategoryPostCount } from '../../lib/blogCategoryUtils';
 import { groupPostsByYearMonth, type PostListItem } from '../../lib/blogPosts';
 
 type Props = {

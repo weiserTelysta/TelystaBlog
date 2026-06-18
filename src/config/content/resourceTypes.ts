@@ -59,11 +59,3 @@ export const RESOURCE_ACTION_TYPES = [
 export type ResourceActionType = (typeof RESOURCE_ACTION_TYPES)[number];
 
 export type ResourceTypeInfo = (typeof RESOURCE_TYPES)[number];
-
-export function isResourceTypeId(value: string | null | undefined): value is ResourceTypeId {
-	return RESOURCE_TYPE_IDS.includes(value as ResourceTypeId);
-}
-
-export function getResourceTypeById(id: ResourceTypeId): ResourceTypeInfo {
-	return RESOURCE_TYPES.find((type) => type.id === id) ?? RESOURCE_TYPES[0];
-}

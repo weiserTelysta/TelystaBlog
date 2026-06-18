@@ -1,4 +1,4 @@
-import { SITE_CONFIG } from '../siteConfig';
+import { SITE_CONFIG } from '../site';
 
 export const RESOURCE_PAGE_CONFIG = {
 	meta: {

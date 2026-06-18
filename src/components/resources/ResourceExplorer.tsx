@@ -1,12 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { RESOURCE_PAGE_CONFIG } from '../../lib/resources/resourcePageConfig';
-import {
-	RESOURCE_TYPES,
-	getResourceTypeById,
-	isResourceTypeId,
-	type ResourceTypeId,
-} from '../../lib/resources/resourceTypes';
+import { RESOURCE_PAGE_CONFIG } from '../../config/pages/resources';
+import { RESOURCE_TYPES, type ResourceTypeId } from '../../config/content/resourceTypes';
 import type { ResourceListItem } from '../../lib/resources/resourceItems';
+import { getResourceTypeById, isResourceTypeId } from '../../lib/resourceTypeUtils';
 import ResourceCard from './ResourceCard';
 import ResourceDetailOverlay from './ResourceDetailOverlay';
 

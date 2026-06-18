@@ -1,12 +1,12 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { BLOG_CATEGORY_IDS } from './lib/blogCategories';
+import { BLOG_CATEGORY_IDS } from './config/content/blogCategories';
 import {
 	RESOURCE_ACTION_TYPES,
 	RESOURCE_STATUS_IDS,
 	RESOURCE_TYPE_IDS,
-} from './lib/resources/resourceTypes';
+} from './config/content/resourceTypes';
 
 const posts = defineCollection({
 	loader: glob({

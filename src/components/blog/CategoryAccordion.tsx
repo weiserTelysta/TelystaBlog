@@ -1,12 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CSSProperties, MouseEvent, PointerEvent, WheelEvent } from 'react';
-import { BLOG_PAGE_CONFIG } from '../../lib/blogPageConfig';
-import {
-	buildCategoryHref,
-	type BlogCategoryId,
-	type CategoryPostCount,
-} from '../../lib/blogCategories';
-import type { BlogCategoryVisual } from '../../lib/blogCategoryVisuals';
+import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
+import type { BlogCategoryId, CategoryPostCount } from '../../config/content/blogCategories';
+import type { BlogCategoryVisual } from '../../config/visuals/categoryVisuals';
+import { buildCategoryHref } from '../../lib/blogCategoryUtils';
 import './CategoryAccordion.scss';
 
 const ACCORDION_COPY = BLOG_PAGE_CONFIG.categoryAccordion;

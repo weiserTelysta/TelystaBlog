@@ -1,9 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import {
-	type BlogCategoryId,
-	getBlogCategoryById,
-	isBlogCategoryId,
-} from './blogCategories';
+import type { BlogCategoryId } from '../config/content/blogCategories';
+import { getBlogCategoryById, isBlogCategoryId } from './blogCategoryUtils';
 
 export type PostEntry = CollectionEntry<'posts'>;
 

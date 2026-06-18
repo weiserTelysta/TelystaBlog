@@ -1,6 +1,6 @@
 ---
 import BlogNavigationPage from '../components/blog/BlogNavigationPage.astro';
-import { BLOG_CATEGORY_IDS } from '../lib/blogCategories';
+import { BLOG_CATEGORY_IDS } from '../config/content/blogCategories';
 import { getPublishedPosts } from '../lib/blogPosts';
 
 const allPosts = await getPublishedPosts();

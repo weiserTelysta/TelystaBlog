@@ -1,9 +1,10 @@
 ---
-import { buildCategoryHref } from '../../lib/blogCategories';
-import type { BlogSeries } from '../../lib/blogSeries';
-import { buildSeriesHref } from '../../lib/blogSeries';
+import type { BlogSeries } from '../../config/content/blogSeries';
+import { ARTICLE_PAGE_CONFIG } from '../../config/pages/article';
+import { buildCategoryHref } from '../../lib/blogCategoryUtils';
 import type { PostListItem } from '../../lib/blogPosts';
 import { formatFullDate } from '../../lib/blogPosts';
+import { buildSeriesHref } from '../../lib/blogSeriesUtils';
 
 type Props = {
 	post: PostListItem;
@@ -12,6 +13,7 @@ type Props = {
 
 const { post, series } = Astro.props;
 const cover = post.cover?.startsWith('/images/posts/') ? post.cover : undefined;
+const { header } = ARTICLE_PAGE_CONFIG;
 ---
 
 <header class="article-header">
@@ -24,7 +26,7 @@ const cover = post.cover?.startsWith('/images/posts/') ? post.cover : undefined;
 	}
 
 	<div class="article-header__intro">
-		<a class="article-header__back" href="/blog">Blog</a>
+		<a class="article-header__back" href="/blog">{header.backLabel}</a>
 		<h1>{post.title}</h1>
 		<p>{post.description}</p>
 	</div>

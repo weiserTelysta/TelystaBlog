@@ -1,6 +1,6 @@
 ---
 import BlogNavigationPage from '../../../components/blog/BlogNavigationPage.astro';
-import { BLOG_CATEGORIES, type BlogCategoryId } from '../../../lib/blogCategories';
+import { BLOG_CATEGORIES, type BlogCategoryId } from '../../../config/content/blogCategories';
 import { filterPostsByCategory, getPublishedPosts } from '../../../lib/blogPosts';
 
 export function getStaticPaths() {

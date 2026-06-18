@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import type { ResourceActionType, ResourceStatus, ResourceTypeId } from './resourceTypes';
+import type { ResourceActionType, ResourceStatus, ResourceTypeId } from '../../config/content/resourceTypes';
 
 type ImageModule = {
 	default: {
