@@ -4,8 +4,7 @@ title: Weiser Bunny
 summary: 一张用于资源页第一版的立绘插画，包含 PNG 原图与 PSD 源文件。
 type: illustration
 status: available
-cover: src/assets/images/illustration/weiser_bunny.png
-preview: src/assets/images/illustration/weiser_bunny.png
+image: src/assets/images/illustration/weiser_bunny.png
 publishedAt: 2026-06-06
 updatedAt: 2026-06-06
 formats:

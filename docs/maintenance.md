@@ -78,6 +78,28 @@ Images used inside posts should usually live in `public/images/posts`, then be r
 ![Image description](/images/posts/example.webp)
 ```
 
+## Resources
+
+Resource entries live in `src/content/resources`.
+
+Each resource needs at least:
+
+- `id`
+- `title`
+- `summary`
+- `type`
+- `image`
+- `publishedAt`
+- `updatedAt`
+
+`image` is the required main image. `cover` and `preview` are optional optimization fields:
+
+- If `cover` is omitted, the resource card uses `image`.
+- If `preview` is omitted, the detail view and high-resolution preview use `image`.
+- If `cover` or `preview` is provided, the path must resolve successfully during build.
+
+When a resource page starts to feel heavy, add a lighter `cover` first instead of changing resource components. Large originals, PSD files, videos, and project files should usually be exposed through `actions` or external links.
+
 ## Categories And Tags
 
 Categories are the main columns of the blog. They should be few, stable, and useful for filtering.

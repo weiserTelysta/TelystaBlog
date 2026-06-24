@@ -56,7 +56,7 @@ PSD 是格式，不是资源类型。百度网盘、下载链接、镜像链接�
 当前资源类型定义在：
 
 ```text
-src/lib/resources/resourceTypes.ts
+src/config/content/resourceTypes.ts
 ```
 
 新增资源类型时，只修改这个文件里的 `RESOURCE_TYPES` 配置。类型 id、筛选按钮、URL 参数校验和内容 schema 会从这里派生，不需要去组件里手动补筛选按钮。
@@ -86,8 +86,9 @@ title: Resource Title
 summary: 一句话介绍这个资源。
 type: illustration
 status: available
+image: src/assets/images/resources/example.png
 cover: src/assets/images/resources/example-cover.webp
-preview: src/assets/images/resources/example.png
+preview: src/assets/images/resources/example-preview.webp
 publishedAt: 2026-06-06
 updatedAt: 2026-06-06
 formats:
@@ -147,17 +148,23 @@ label: 下载 PSD 源文件
 
 ## 图片策略
 
-测试阶段可以暂时让 `cover` 和 `preview` 使用同一张图。
+`image` 是必填字段，表示资源的主图或原图入口。
 
-正式资源建议分离：
+`cover` 和 `preview` 是可选优化字段。没有 `cover` 时，资源列表会使用 `image`；没有 `preview` 时，详情层和高清预览会使用 `image`。
+
+资源较少或测试阶段，可以只写 `image`。这样能先把资源放进系统，不必每次手动准备多张图片。
+
+正式资源建议逐步分离：
 
 `cover` 用轻量图片，服务资源列表。
 
 `preview` 用较清晰图片，服务详情预览。
 
+`actions.href` 用于原始下载文件、网盘链接、PSD、工程包或其他获取方式。
+
 大文件、PSD、工程包、视频文件建议走网盘、对象存储或其他外链，不建议直接放进站点首屏资源链路。
 
-当前暂不实现自动缩略图生成。等资源数量变多，再考虑用构建脚本统一生成 cover。
+当前暂不实现自动缩略图生成。等资源数量变多，再考虑用构建脚本根据 `image` 统一生成 `cover` 和 `preview`。
 
 ## 体验原则
 

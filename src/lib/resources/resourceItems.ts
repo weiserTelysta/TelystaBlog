@@ -59,6 +59,14 @@ export async function getResourceItems(): Promise<ResourceListItem[]> {
 }
 
 function toResourceListItem(resource: ResourceEntry): ResourceListItem {
+	const image = resolveRequiredResourceImage(resource.data.image, resource.data.id, 'image');
+	const cover = resource.data.cover
+		? resolveRequiredResourceImage(resource.data.cover, resource.data.id, 'cover')
+		: image;
+	const preview = resource.data.preview
+		? resolveRequiredResourceImage(resource.data.preview, resource.data.id, 'preview')
+		: image;
+
 	return {
 		id: resource.data.id,
 		slug: resource.id,
@@ -66,8 +74,8 @@ function toResourceListItem(resource: ResourceEntry): ResourceListItem {
 		summary: resource.data.summary,
 		type: resource.data.type,
 		status: resource.data.status,
-		cover: resolveRequiredResourceImage(resource.data.cover, resource.data.id, 'cover'),
-		preview: resolveRequiredResourceImage(resource.data.preview, resource.data.id, 'preview'),
+		cover,
+		preview,
 		publishedAt: toDateText(resource.data.publishedAt),
 		updatedAt: toDateText(resource.data.updatedAt),
 		formats: resource.data.formats,
