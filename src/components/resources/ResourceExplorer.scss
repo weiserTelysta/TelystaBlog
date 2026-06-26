@@ -23,19 +23,20 @@
 .resource-sidebar__eyebrow {
 	margin: 0;
 	color: var(--resource-blue);
-	font-family: var(--font-display);
-	font-size: 0.76rem;
-	letter-spacing: 0.2em;
+	font-family: var(--type-display-label-font);
+	font-size: var(--type-display-label-size);
+	font-weight: var(--type-display-label-weight);
+	letter-spacing: var(--type-display-label-tracking);
 	text-transform: uppercase;
 }
 
 .resource-sidebar__intro h1 {
 	margin: 0;
 	color: var(--resource-text);
-	font-family: var(--font-page-title);
+	font-family: var(--type-index-title-font);
 	font-size: clamp(2rem, 3.6vw, 2.8rem);
-	font-weight: var(--font-page-title-weight);
-	line-height: 1.08;
+	font-weight: var(--type-index-title-weight);
+	line-height: var(--type-index-title-line);
 }
 
 .resource-sidebar__intro p:not(.resource-sidebar__eyebrow) {
@@ -52,7 +53,7 @@
 	gap: 14px;
 	margin-top: 2px;
 	color: rgba(126, 171, 201, 0.62);
-	font-family: var(--font-display);
+	font-family: var(--type-display-label-font);
 	font-size: 0.64rem;
 	letter-spacing: 0.13em;
 	text-transform: uppercase;
@@ -78,7 +79,7 @@
 
 .resource-sidebar__summary strong {
 	color: rgba(229, 236, 244, 0.82);
-	font-family: var(--font-display);
+	font-family: var(--type-display-label-font);
 	font-size: 0.82rem;
 	font-weight: 700;
 	letter-spacing: 0.08em;
@@ -95,9 +96,10 @@
 .resource-sidebar__section {
 	margin: 0 0 -4px;
 	color: rgba(126, 171, 201, 0.66);
-	font-family: var(--font-display);
-	font-size: 0.72rem;
-	letter-spacing: 0.18em;
+	font-family: var(--type-display-label-font);
+	font-size: var(--type-display-label-size);
+	font-weight: var(--type-display-label-weight);
+	letter-spacing: var(--type-display-label-tracking);
 	text-transform: uppercase;
 }
 
@@ -117,7 +119,7 @@
 	border: 0;
 	background: transparent;
 	color: rgba(198, 209, 220, 0.42);
-	font-family: var(--font-display);
+	font-family: var(--type-display-label-font);
 	font-size: 0.74rem;
 	letter-spacing: 0.13em;
 	text-align: left;
@@ -164,8 +166,9 @@
 	padding: 10px 0 14px;
 	border-bottom: 1px solid rgba(134, 170, 196, 0.085);
 	color: rgba(126, 171, 201, 0.62);
-	font-family: var(--font-meta);
-	font-size: 0.72rem;
+	font-family: var(--type-meta-font);
+	font-size: var(--type-meta-size);
+	line-height: var(--type-meta-line);
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
 }
@@ -265,10 +268,10 @@
 
 .resource-card__title {
 	color: rgba(237, 242, 248, 0.9);
-	font-family: var(--font-item-title);
+	font-family: var(--type-card-title-font);
 	font-size: clamp(0.9rem, 1vw, 1rem);
-	font-weight: var(--font-item-title-weight);
-	line-height: 1.16;
+	font-weight: var(--type-card-title-weight);
+	line-height: var(--type-card-title-line);
 }
 
 .resource-card__meta {
@@ -276,7 +279,7 @@
 	flex-wrap: wrap;
 	gap: 7px 11px;
 	color: rgba(135, 160, 181, 0.68);
-	font-family: var(--font-meta);
+	font-family: var(--type-meta-font);
 	font-size: 0.66rem;
 	letter-spacing: 0.01em;
 }
@@ -292,9 +295,10 @@
 .resource-empty p {
 	margin: 0 0 10px;
 	color: var(--resource-text);
-	font-family: var(--font-item-title);
-	font-size: 1.28rem;
-	font-weight: var(--font-item-title-weight);
+	font-family: var(--type-section-title-font);
+	font-size: var(--type-section-title-size);
+	font-weight: var(--type-section-title-weight);
+	line-height: var(--type-section-title-line);
 }
 
 .resource-empty span {

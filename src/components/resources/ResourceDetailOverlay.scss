@@ -105,19 +105,20 @@
 .resource-detail__eyebrow {
 	margin: 0;
 	color: var(--resource-blue);
-	font-family: var(--font-display);
-	font-size: 0.76rem;
-	letter-spacing: 0.2em;
+	font-family: var(--type-display-label-font);
+	font-size: var(--type-display-label-size);
+	font-weight: var(--type-display-label-weight);
+	letter-spacing: var(--type-display-label-tracking);
 	text-transform: uppercase;
 }
 
 .resource-detail__body h2 {
 	margin: 0;
 	color: var(--resource-text);
-	font-family: var(--font-page-title);
+	font-family: var(--type-section-title-font);
 	font-size: clamp(1.34rem, 2.35vw, 1.96rem);
-	font-weight: var(--font-page-title-weight);
-	line-height: 1.1;
+	font-weight: var(--type-section-title-weight);
+	line-height: var(--type-section-title-line);
 }
 
 .resource-detail__summary,
@@ -153,7 +154,7 @@
 .resource-detail__meta-item span,
 .resource-detail__license span {
 	color: rgba(126, 171, 201, 0.62);
-	font-family: var(--font-display);
+	font-family: var(--type-display-label-font);
 	font-size: 0.62rem;
 	letter-spacing: 0.13em;
 	text-transform: uppercase;
@@ -195,7 +196,7 @@
 .resource-detail__section-title {
 	margin: 6px 0 -2px;
 	color: rgba(126, 171, 201, 0.62);
-	font-family: var(--font-display);
+	font-family: var(--type-display-label-font);
 	font-size: 0.64rem;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
@@ -222,7 +223,7 @@
 
 .resource-detail__action small {
 	color: rgba(126, 171, 201, 0.62);
-	font-family: var(--font-display);
+	font-family: var(--type-display-label-font);
 	font-size: 0.56rem;
 	letter-spacing: 0.08em;
 	line-height: 1.45;
