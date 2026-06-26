@@ -1,39 +1,59 @@
 .text-display-label {
-	font-family: var(--font-display);
-	letter-spacing: 0.14em;
+	font-family: var(--type-display-label-font);
+	font-size: var(--type-display-label-size);
+	font-weight: var(--type-display-label-weight);
+	letter-spacing: var(--type-display-label-tracking);
 	text-transform: uppercase;
 }
 
 .text-hero-title {
-	font-family: var(--font-hero-title);
-	font-weight: var(--weight-hero-title);
+	font-family: var(--type-hero-title-font);
+	font-size: var(--type-hero-title-size);
+	font-weight: var(--type-hero-title-weight);
+	line-height: var(--type-hero-title-line);
 	letter-spacing: 0;
 }
 
 .text-page-title {
-	font-family: var(--font-page-title);
-	font-weight: var(--weight-page-title);
+	font-family: var(--type-index-title-font);
+	font-size: var(--type-index-title-size);
+	font-weight: var(--type-index-title-weight);
+	line-height: var(--type-index-title-line);
 	letter-spacing: 0;
 }
 
 .text-article-title {
-	font-family: var(--font-article-title);
-	font-weight: var(--font-article-title-weight);
+	font-family: var(--type-article-title-font);
+	font-size: var(--type-article-title-size);
+	font-weight: var(--type-article-title-weight);
+	line-height: var(--type-article-title-line);
+	letter-spacing: 0;
+}
+
+.text-section-title {
+	font-family: var(--type-section-title-font);
+	font-size: var(--type-section-title-size);
+	font-weight: var(--type-section-title-weight);
+	line-height: var(--type-section-title-line);
 	letter-spacing: 0;
 }
 
 .text-item-title {
-	font-family: var(--font-item-title);
-	font-weight: var(--font-item-title-weight);
+	font-family: var(--type-card-title-font);
+	font-size: var(--type-card-title-size);
+	font-weight: var(--type-card-title-weight);
+	line-height: var(--type-card-title-line);
 	letter-spacing: 0;
 }
 
 .text-meta {
-	font-family: var(--font-meta);
+	font-family: var(--type-meta-font);
+	font-size: var(--type-meta-size);
+	line-height: var(--type-meta-line);
 }
 
 .text-prose-heading {
-	font-family: var(--font-prose-heading);
-	font-weight: var(--weight-prose-heading);
+	font-family: var(--type-prose-heading-font);
+	font-weight: var(--type-prose-heading-weight);
 	letter-spacing: 0;
 }

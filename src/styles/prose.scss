@@ -1,7 +1,7 @@
 .prose {
 	color: rgba(216, 222, 233, 0.8);
-	font-size: clamp(1rem, 1.4vw, 1.06rem);
-	line-height: 2;
+	font-size: var(--type-prose-size);
+	line-height: var(--type-prose-line);
 }
 
 .prose > *:first-child {
@@ -16,8 +16,8 @@
 .prose h3,
 .prose h4 {
 	color: rgba(237, 243, 251, 0.9);
-	font-family: var(--font-prose-heading);
-	font-weight: var(--weight-prose-heading);
+	font-family: var(--type-prose-heading-font);
+	font-weight: var(--type-prose-heading-weight);
 	line-height: 1.35;
 	letter-spacing: 0;
 	scroll-margin-top: 110px;

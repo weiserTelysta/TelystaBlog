@@ -1,10 +1,16 @@
 ---
 import { SITE_CONFIG } from '../../config/site';
+
+const icpRecord = SITE_CONFIG.icpRecord;
 ---
 
-<footer class="site-footer">
-	<p>{SITE_CONFIG.icpRecord}</p>
-</footer>
+{
+	icpRecord && (
+		<footer class="site-footer">
+			<p>{icpRecord}</p>
+		</footer>
+	)
+}
 
 <style lang="scss">
 	.site-footer {

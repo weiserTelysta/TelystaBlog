@@ -36,6 +36,37 @@
 	--font-item-title-weight: var(--weight-item-title);
 	--font-sans: var(--font-body);
 	--font-heading: var(--font-page-title);
+	--type-display-label-font: var(--font-display);
+	--type-display-label-size: 0.72rem;
+	--type-display-label-weight: 520;
+	--type-display-label-tracking: 0.14em;
+	--type-hero-title-font: var(--font-display);
+	--type-hero-title-size: clamp(3rem, 7vw, 4.7rem);
+	--type-hero-title-weight: 650;
+	--type-hero-title-line: 1;
+	--type-index-title-font: var(--font-page-title);
+	--type-index-title-size: clamp(2.25rem, 5.4vw, 4.45rem);
+	--type-index-title-weight: var(--weight-page-title);
+	--type-index-title-line: 1.08;
+	--type-article-title-font: var(--font-article-title);
+	--type-article-title-size: clamp(2.05rem, 4.8vw, 3.65rem);
+	--type-article-title-weight: var(--weight-article-title);
+	--type-article-title-line: 1.14;
+	--type-section-title-font: var(--font-page-title);
+	--type-section-title-size: clamp(1.18rem, 2.4vw, 1.52rem);
+	--type-section-title-weight: 620;
+	--type-section-title-line: 1.4;
+	--type-card-title-font: var(--font-item-title);
+	--type-card-title-size: clamp(0.96rem, 1.3vw, 1.16rem);
+	--type-card-title-weight: var(--weight-item-title);
+	--type-card-title-line: 1.28;
+	--type-meta-font: var(--font-meta);
+	--type-meta-size: 0.76rem;
+	--type-meta-line: 1.65;
+	--type-prose-heading-font: var(--font-prose-heading);
+	--type-prose-heading-weight: var(--weight-prose-heading);
+	--type-prose-size: clamp(1rem, 1.4vw, 1.06rem);
+	--type-prose-line: 2;
 }
 
 * {
@@ -148,7 +179,7 @@ a {
 
 .site-header__brand {
 	color: rgba(232, 238, 247, 0.82);
-	font-family: var(--font-display);
+	font-family: var(--type-display-label-font);
 	font-size: 0.9rem;
 	font-weight: 560;
 	letter-spacing: 0.025em;
@@ -157,7 +188,7 @@ a {
 .site-header__nav {
 	gap: clamp(10px, 2.2vw, 24px);
 	color: rgba(218, 225, 236, 0.74);
-	font-family: var(--font-display);
+	font-family: var(--type-display-label-font);
 	font-size: 0.84rem;
 	font-weight: 520;
 	letter-spacing: 0.055em;
@@ -166,7 +197,7 @@ a {
 
 .site-header__divider {
 	color: rgba(216, 222, 233, 0.34);
-	font-family: var(--font-display);
+	font-family: var(--type-display-label-font);
 	font-size: 0.86rem;
 	font-weight: 400;
 	line-height: 1;
