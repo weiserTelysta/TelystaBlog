@@ -20,10 +20,10 @@
 .home-section__eyebrow,
 .home-section__link-kind {
 	color: rgba(129, 164, 190, 0.66);
-	font-family: var(--font-display);
-	font-size: 0.74rem;
-	font-weight: 520;
-	letter-spacing: 0.19em;
+	font-family: var(--type-display-label-font);
+	font-size: var(--type-display-label-size);
+	font-weight: var(--type-display-label-weight);
+	letter-spacing: var(--type-display-label-tracking);
 	text-transform: uppercase;
 }
 
@@ -68,10 +68,10 @@
 	margin: 12px 0 0;
 	color: rgba(224, 231, 241, 0.86);
 	font-family: var(--font-home-prose);
-	font-size: clamp(1.15rem, 2.4vw, 1.45rem);
-	font-weight: var(--weight-item-title);
+	font-size: var(--type-section-title-size);
+	font-weight: var(--type-section-title-weight);
 	letter-spacing: 0;
-	line-height: 1.45;
+	line-height: var(--type-section-title-line);
 }
 
 .home-section__description {
@@ -153,9 +153,9 @@
 
 .home-section__link-label {
 	font-family: var(--font-home-prose);
-	font-size: 0.98rem;
-	font-weight: 650;
-	line-height: 1.4;
+	font-size: clamp(0.96rem, 1.2vw, 1.04rem);
+	font-weight: var(--type-card-title-weight);
+	line-height: var(--type-card-title-line);
 }
 
 .home-section__link-kind {

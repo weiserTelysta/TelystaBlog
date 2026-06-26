@@ -1,14 +1,17 @@
-import { useEffect, useMemo, useState } from 'react';
-import { getGreetingForHour } from '../../lib/timeGreeting';
+import { useEffect, useState } from 'react';
+import { getWeightedGreeting } from '../../lib/homeGreeting';
 
-const TYPE_INTERVAL = 46;
+type GreetingDisplayMode = 'type' | 'fade';
+
+const TYPEWRITER_MAX_SEGMENTS = 42;
+const TYPE_DELAY = 44;
 
 export default function TimeGreeting() {
-	const [hour, setHour] = useState(() => new Date().getHours());
+	const [message] = useState(() => getWeightedGreeting(new Date().getHours()).text);
 	const [displayedText, setDisplayedText] = useState('');
 	const [reducedMotion, setReducedMotion] = useState(false);
-
-	const message = useMemo(() => getGreetingForHour(hour).message, [hour]);
+	const [isComplete, setIsComplete] = useState(false);
+	const displayMode = getGreetingDisplayMode(message);
 
 	useEffect(() => {
 		const media = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -20,41 +23,63 @@ export default function TimeGreeting() {
 	}, []);
 
 	useEffect(() => {
-		const timer = window.setInterval(() => {
-			setHour(new Date().getHours());
-		}, 60 * 1000);
+		setIsComplete(false);
 
-		return () => window.clearInterval(timer);
-	}, []);
-
-	useEffect(() => {
-		if (reducedMotion) {
+		if (reducedMotion || displayMode === 'fade') {
 			setDisplayedText(message);
+			setIsComplete(true);
 			return;
 		}
 
 		const letters = getTextSegments(message);
 		let index = 0;
+		let timer: number | undefined;
 		setDisplayedText('');
 
-		const timer = window.setInterval(() => {
+		const typeNextSegment = () => {
 			index += 1;
 			setDisplayedText(letters.slice(0, index).join(''));
 
 			if (index >= letters.length) {
-				window.clearInterval(timer);
+				setIsComplete(true);
+				return;
 			}
-		}, TYPE_INTERVAL);
 
-		return () => window.clearInterval(timer);
-	}, [message, reducedMotion]);
+			timer = window.setTimeout(typeNextSegment, getTypeDelay(letters.length));
+		};
+
+		timer = window.setTimeout(typeNextSegment, getTypeDelay(letters.length));
+
+		return () => {
+			if (typeof timer === 'number') {
+				window.clearTimeout(timer);
+			}
+		};
+	}, [displayMode, message, reducedMotion]);
 
 	return (
-		<p className="time-greeting" aria-live="polite">
+		<p
+			className={`time-greeting time-greeting--${displayMode}${
+				isComplete ? ' time-greeting--complete' : ''
+			}`}
+			aria-live="polite"
+		>
 			<span>{displayedText}</span>
-			{!reducedMotion && <span className="time-greeting__cursor" aria-hidden="true" />}
+			{!reducedMotion && displayMode === 'type' && !isComplete && (
+				<span className="time-greeting__cursor" aria-hidden="true" />
+			)}
 		</p>
 	);
+}
+
+function getGreetingDisplayMode(text: string): GreetingDisplayMode {
+	const segments = getTextSegments(text);
+
+	if (text.includes('\n') || segments.length > TYPEWRITER_MAX_SEGMENTS) {
+		return 'fade';
+	}
+
+	return 'type';
 }
 
 function getTextSegments(text: string) {
@@ -64,4 +89,16 @@ function getTextSegments(text: string) {
 	}
 
 	return Array.from(text);
+}
+
+function getTypeDelay(total: number) {
+	if (total <= 16) {
+		return TYPE_DELAY + 4;
+	}
+
+	if (total <= TYPEWRITER_MAX_SEGMENTS) {
+		return TYPE_DELAY;
+	}
+
+	return TYPE_DELAY - 4;
 }

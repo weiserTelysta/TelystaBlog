@@ -45,10 +45,10 @@ import avatar from '../../assets/images/logo/weiser_avatar.png';
 	h1 {
 		margin: 34px 0 0;
 		color: rgba(237, 243, 251, 0.9);
-		font-family: var(--font-display);
-		font-size: clamp(3rem, 7vw, 4.7rem);
-		font-weight: 650;
-		line-height: 1;
+		font-family: var(--type-hero-title-font);
+		font-size: var(--type-hero-title-size);
+		font-weight: var(--type-hero-title-weight);
+		line-height: var(--type-hero-title-line);
 		letter-spacing: 0.018em;
 		text-shadow:
 			0 2px 22px rgba(0, 0, 0, 0.46),
@@ -65,6 +65,10 @@ import avatar from '../../assets/images/logo/weiser_avatar.png';
 		white-space: pre-wrap;
 		text-wrap: balance;
 		text-shadow: 0 2px 16px rgba(0, 0, 0, 0.42);
+	}
+
+	:global(.time-greeting--fade) {
+		animation: greeting-fade-in 760ms cubic-bezier(0.2, 0.72, 0.24, 1) both;
 	}
 
 	:global(.time-greeting__cursor) {
@@ -84,6 +88,18 @@ import avatar from '../../assets/images/logo/weiser_avatar.png';
 
 		:global(.time-greeting) {
 			min-height: 6.8em;
+		}
+	}
+
+	@keyframes greeting-fade-in {
+		from {
+			opacity: 0;
+			transform: translateY(6px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 
