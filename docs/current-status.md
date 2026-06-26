@@ -1,31 +1,38 @@
 # Current Status
 
-Updated: 2026-06-16
+Updated: 2026-06-24
 
 ## Completed
 
-- Home page with the current Telysta Blog atmosphere.
-- Canvas starfield background with interaction, breathing, meteors, long meteors, and constellation-style easter eggs.
-- Site header and footer.
+- Home page with the current Telysta's Melancholy atmosphere.
+- Canvas starfield background with interaction, breathing, meteors, long meteors, click dust, and constellation-style easter eggs.
+- Shared site header, optional footer, global back-to-top control, and Lenis-powered vertical smooth scrolling.
 - GitHub Pages deployment workflow.
-- Markdown-based blog content collection.
+- Markdown-based blog content collection under `src/content/weiser-posts`.
 - Blog navigation page at `/blog`.
 - Static category pages at `/blog/category/[category]/`.
-- Year and month based timeline.
-- Blog timeline split into `BlogTimeline`, `BlogMonthSection`, and `BlogPostItem`.
-- Editable site, page, content, visual, and interaction settings are centralized under `src/config`.
-- Blog category, blog series, and resource type helper logic is separated into `src/lib/*Utils.ts`.
-- Low-contrast banner and custom dark scrollbar.
-- Visual category accordion entered implementation for the second blog-navigation stage.
-- Category accordion has a reusable React island, light overlay, no-default-preselection behavior, scroll locking, and two-step category selection.
+- Article detail route and article reading layout.
+- Article metadata, tags, series navigation, and right-side TOC.
+- Year and month based blog timeline.
+- Blog timeline split into focused components such as `BlogTimeline`, `BlogMonthSection`, and `BlogPostItem`.
+- Visual category accordion for blog category filtering.
 - Category semantic config and visual config are separated.
-- README and planning docs are being synchronized with the current blog-navigation implementation.
-- Category accordion has basic dialog focus trapping and two-click card confirmation after preselection.
-- Category accordion can clear preselection from non-card panel space, now uses a vertical OC accordion rail, and has a lightweight staggered card entrance.
+- Resource content collection under `src/content/resources`.
+- Resource index page at `/resources`.
+- Resource type filtering with URL state.
+- Resource detail overlay with preview and action links.
+- Editable site, page, content, visual, typography, and interaction settings are centralized under `src/config` and `src/styles`.
+- Blog category, blog series, and resource type helper logic is separated into `src/lib`.
 
-## Current Blog System
+## Current Content Systems
 
 Posts live in `src/content/weiser-posts/`.
+
+Resources live in `src/content/resources/`.
+
+Both systems use Astro Content Collections, so schema errors are caught during development and build.
+
+## Blog System
 
 Each post uses frontmatter for:
 
@@ -36,62 +43,81 @@ Each post uses frontmatter for:
 - `category`
 - `tags`
 - `draft`
+- optional `series`
+- optional `seriesOrder`
 - optional `cover`
 
 Only posts with `draft: false` are public.
 
-Categories are defined in `src/config/content/blogCategories.ts`. The content schema uses those category ids, so category ids should stay stable.
+Categories are defined in `src/config/content/blogCategories.ts`. Category ids should stay stable because they are used by frontmatter, routes, and filters.
 
-Category visual entries live in `src/config/visuals/categoryVisuals.ts`. This file can connect category ids with OC images, short display titles, descriptions, image crop tuning, and future foil presets.
+Category visual entries live in `src/config/visuals/categoryVisuals.ts`. This file connects category ids with OC images, short display titles, descriptions, image crop tuning, and visual tone settings.
 
-The `/blog` page and `/blog/category/[category]/` pages share the same navigation layout. Category state is represented through URL routes, while year navigation is still a timeline jump behavior rather than a filter.
+Series entries live in `src/config/content/blogSeries.ts`.
+
+## Resource System
+
+Each resource uses frontmatter for:
+
+- `id`
+- `title`
+- `summary`
+- `type`
+- `status`
+- `image`
+- `publishedAt`
+- `updatedAt`
+- `formats`
+- optional `cover`
+- optional `preview`
+- optional `variantCount`
+- optional `license`
+- `actions`
+
+`image` is required. `cover` and `preview` are optional optimization fields. When they are omitted, the resource system falls back to `image`.
+
+Resource types are defined in `src/config/content/resourceTypes.ts`. Adding a resource type should happen there first so schema validation, filters, and URL handling stay aligned.
 
 ## Current Risks
 
-- Several files are still uncommitted. Before publishing, the work should be grouped into clear commits.
-- `src/content/weiser-posts/` currently contains one public first-stage post and several draft development notes.
-- `src/assets/banner/blog-banner.png` is still a large PNG asset. The resource-size issue has been identified, but the image has not been optimized yet.
-- `src/assets/images/accordion/accordion-weiser.png` is the current accordion test asset. It is shared across categories until individual OC images are ready, and it has not been optimized yet.
-- The article detail URL strategy is not defined yet.
-- Category semantic config and future visual config should remain separate. Avoid importing images into `blogCategories.ts`.
-- The accordion dialog has a basic focus trap, Escape close, overlay close, and focus restoration to the category entry.
-- Mobile accordion behavior, reduced-motion behavior, vertical card cropping, horizontal rail scrolling, scrollbar behavior, and foil presets still need visual verification.
-- Future category images can be tuned through `imagePosition` and `imageScale` before adding heavier visual configuration.
-- Timeline visual alignment has been improved, but the final line and node style should continue to be checked while real posts are added.
+- The working tree still contains mixed uncommitted changes across documentation, typography, home, blog, article, resource, and footer files.
+- Resource page visuals are still the most active area. The layout is usable, but card density, detail overlay balance, and image handling still need careful visual verification as more real resources are added.
+- Large source images can make resource pages heavy when `cover` and `preview` are omitted. The fallback is convenient, but final resources should still use lighter cover assets when needed.
+- `docs/resources.md` contains the right maintenance ideas, but it should be periodically checked in a UTF-8 aware editor because PowerShell may display Chinese documentation as mojibake.
+- The category accordion and starfield remain long-term interaction pressure points because they coordinate multiple animation and input states.
 
 ## Code Quality Notes
 
 Current healthy points:
 
-- `npm run check` passes with the current blog navigation system.
-- Astro Content Collections provide a typed Markdown data source for posts.
-- Editable content and derived logic now have clearer boundaries: config describes data, lib handles lookup/counting/URL helpers.
-- Category semantic config and category visual config are separated.
-- `/blog` and `/blog/category/[category]/` share the same navigation layout.
-- Blog timeline rendering is split into `BlogTimeline`, `BlogMonthSection`, and `BlogPostItem`.
+- Editable content and derived logic have clearer boundaries: config describes data, lib handles lookup, counting, URL helpers, and data shaping.
+- Astro Content Collections provide typed Markdown data sources for posts and resources.
+- Site identity and navigation are centralized in `src/config/site.ts`.
+- Page copy is moving into `src/config/pages`.
+- Content taxonomy is moving into `src/config/content`.
+- Visual category configuration is separated from semantic category configuration.
+- Font roles and reusable typography classes are centralized in `src/styles/global.scss` and `src/styles/typography.scss`.
 
 Current maintenance risks:
 
-- The worktree still contains many mixed historical changes. Submission boundaries should be cleaned before publishing another large batch.
-- `CategoryAccordion.tsx` carries several interaction responsibilities: dialog lifecycle, focus trap, rail scrolling, preselection, two-click confirmation, URL navigation, and pointer tilt.
-- `CategoryAccordion.scss` carries entry, overlay, panel, rail, card, foil, copy, responsive, and reduced-motion styles in one stylesheet.
-- `StarfieldBackground.tsx` remains a long-term pressure point because it still coordinates canvas setup, star drawing, meteors, long meteors, pointer intent, and easter egg timing.
-- The current banner and accordion images are still test assets and are too large for the final lightweight atmosphere.
-- The working tree contains many related but uncommitted changes, so future debugging will be easier after the current work is grouped into clear commits.
+- Several components still carry both interaction and presentation responsibilities, especially resource and visual accordion components.
+- The working tree should be grouped into clear commits before another large feature round.
+- Some documentation still overlaps in responsibility. `docs/maintenance.md` should be the main operator guide, while this file should stay a status snapshot.
+- Resource optimization is still manual. Automatic cover or preview generation can be considered later, but it should be its own stage.
 
-Short-term maintenance principles:
+## Short-Term Maintenance Principles
 
-- Document boundaries first; avoid large rewrites while the current visual and interaction tuning is fresh.
-- Refactor one high-risk module at a time, then verify the full interaction path before moving on.
-- Do not mix visual tuning, interaction changes, resource replacement, and structural refactors in the same batch.
-- Keep category semantics, visual assets, post grouping, and page composition in separate layers.
-- Treat resource optimization as its own stage so image changes do not hide component regressions.
+- Do not mix visual tuning, interaction changes, content schema changes, and documentation updates in one large batch.
+- Keep editable content in `src/config` or `src/content`.
+- Keep derived logic in `src/lib`.
+- Keep components focused on rendering and interaction state.
+- Verify the visual path after changing any shared typography token.
+- Treat resource image optimization as a separate concern from resource page layout.
 
 ## Next Stage Candidates
 
-1. Decide article detail URL strategy.
-2. Build the article detail page.
-3. Prepare optimized web assets for banner and future accordion images.
-4. Verify the category accordion focus trap, blank-space cancel, vertical OC card layout, card entrance, and horizontal rail behavior in browser.
-5. Tune the visual accordion interaction, foil presets, mobile layout, and reduced-motion behavior.
-6. Replace draft test notes with real articles when ready.
+1. Group the current working tree into clear commit boundaries.
+2. Finish the current resource page visual pass and verify it with real resources.
+3. Sync `docs/maintenance.md`, `docs/resources.md`, and `README.md` after the resource page stabilizes.
+4. Add more real posts and resources to test whether the current layouts scale naturally.
+5. Consider a small validation script for cross-file rules such as category visual coverage, series ids, and resource action paths.

@@ -24,7 +24,7 @@ Edit `src/config/site.ts` for global site information:
 - `defaultTitle`: default browser title.
 - `defaultDescription`: default SEO description.
 - `authorName`: site author.
-- `icpRecord`: ICP record shown in the footer.
+- `icpRecord`: optional ICP record. Set it to a string to show it in the footer, or `undefined` to hide it.
 - `home.title` and `home.description`: home page metadata.
 - `navItems`: header navigation entries.
 
@@ -48,6 +48,20 @@ Each section supports:
 Use `external: true` for external links so the component can add the correct link behavior.
 
 Some current text in this file may still need copy cleanup. Keep future edits in UTF-8.
+
+## Home Hero Greetings
+
+Edit `src/config/pages/homeGreetings.ts` to change the random greeting shown below the home avatar.
+
+Each greeting supports:
+
+- `id`: stable identifier.
+- `text`: displayed text. Use `\n` for intentional line breaks.
+- `dayAffinity`: number from `0` to `1`. Values closer to `1` appear more often during daytime; values closer to `0` appear more often at night.
+- `weight`: optional base probability. Higher values appear more often before time weighting is applied.
+- `mood`: optional maintenance group such as `quiet`, `playful`, `poetic`, `hopeful`, `melancholy`, or `daily`.
+
+The greeting is selected once when the page loads. Short greetings are written out lightly; long or multiline greetings fade in as a whole so the home page does not feel slow. The display strategy is handled by `src/components/home/TimeGreeting.tsx`, and the weighted random selection logic lives in `src/lib/homeGreeting.ts`.
 
 ## Blog Posts
 

@@ -102,9 +102,9 @@ Semantic category data and visual category data should stay separate. The stable
 
 The blog navigation system should keep data, presentation, and interaction boundaries explicit.
 
-`src/lib/blogCategories.ts` is the semantic category layer. It should define stable ids, public names, subtitles, descriptions, and category-level metadata. It should not import images or carry visual implementation details.
+`src/config/content/blogCategories.ts` is the semantic category layer. It should define stable ids, public names, subtitles, descriptions, and category-level metadata. It should not import images or carry visual implementation details.
 
-`src/lib/blogCategoryVisuals.ts` is the visual category layer. It can connect category ids to OC images, card inscriptions, tone presets, crop positions, image scale values, and future foil presets.
+`src/config/visuals/categoryVisuals.ts` is the visual category layer. It can connect category ids to OC images, card inscriptions, tone presets, crop positions, image scale values, and future foil presets.
 
 `src/lib/blogPosts.ts` is the post data shaping layer. It should handle published-post filtering, category filtering, year-month grouping, and date formatting. Page components should not duplicate this sorting or grouping logic.
 

@@ -7,7 +7,7 @@ The site is designed as a calm dark archive: quiet starfield, generous space, re
 ## Current Features
 
 - Canvas starfield background with subtle motion, click effects, meteors, and small hidden constellations.
-- Personal home page with avatar, time-based typewriter greeting, and configurable archive modules.
+- Personal home page with avatar, weighted random typewriter greeting, and configurable archive modules.
 - Lightweight glass navigation with only active entries shown.
 - Blog index at `/blog` with year/month timeline grouping.
 - Markdown-powered article pages from Astro content collections.
@@ -15,7 +15,7 @@ The site is designed as a calm dark archive: quiet starfield, generous space, re
 - Visual category accordion for topic filtering.
 - Article metadata, tags, series navigation, and right-side TOC.
 - Global back-to-top control and Lenis-powered vertical smooth scrolling.
-- ICP footer: `浙ICP备2025149243号-1`.
+- Optional ICP footer, currently hidden through `src/config/site.ts`.
 
 ## Project Structure
 
@@ -58,8 +58,9 @@ The project keeps editable content separate from derived logic:
 
 Common edit points:
 
-- Site name, navigation, SEO text, and ICP record: `src/config/site.ts`
+- Site name, navigation, SEO text, and optional ICP footer: `src/config/site.ts`
 - Home page modules: `src/config/pages/home.ts`
+- Home hero random greetings: `src/config/pages/homeGreetings.ts`
 - Blog page copy: `src/config/pages/blog.ts`
 - Article page copy: `src/config/pages/article.ts`
 - Resource page copy: `src/config/pages/resources.ts`
