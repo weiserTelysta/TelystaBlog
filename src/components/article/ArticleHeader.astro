@@ -19,7 +19,7 @@ const { header } = ARTICLE_PAGE_CONFIG;
 <header class="article-header">
 	{
 		cover && (
-			<figure class="article-header__cover" aria-label="文章主图">
+			<figure class="article-header__cover" aria-label={header.coverAriaLabel}>
 				<img src={cover} alt="" loading="eager" decoding="async" />
 			</figure>
 		)
@@ -31,12 +31,12 @@ const { header } = ARTICLE_PAGE_CONFIG;
 		<p>{post.description}</p>
 	</div>
 
-	<div class="article-header__meta" aria-label="文章信息">
+	<div class="article-header__meta" aria-label={header.metaAriaLabel}>
 		<div class="article-header__path">
 			<a href={buildCategoryHref(post.category)}>{post.categoryTitle}</a>
 			{
 				series && (
-					<a href={buildSeriesHref(series.id)} aria-label={`查看 ${series.title} 系列`}>
+					<a href={buildSeriesHref(series.id)} aria-label={`${header.seriesAriaPrefix} ${series.title} ${header.seriesAriaSuffix}`}>
 						{series.title}
 					</a>
 				)
@@ -52,8 +52,8 @@ const { header } = ARTICLE_PAGE_CONFIG;
 		}
 
 		<div class="article-header__dates">
-			<span>发布 {formatFullDate(post.publishedAt)}</span>
-			<span>更新 {formatFullDate(post.updatedAt)}</span>
+			<span>{header.publishedLabel} {formatFullDate(post.publishedAt)}</span>
+			<span>{header.updatedLabel} {formatFullDate(post.updatedAt)}</span>
 		</div>
 	</div>
 </header>
@@ -100,9 +100,10 @@ const { header } = ARTICLE_PAGE_CONFIG;
 	.article-header__back {
 		width: fit-content;
 		color: rgba(156, 199, 232, 0.58);
-		font-family: var(--font-display);
-		font-size: 0.76rem;
-		letter-spacing: 0.12em;
+		font-family: var(--type-display-label-font);
+		font-size: var(--type-display-label-size);
+		font-weight: var(--type-display-label-weight);
+		letter-spacing: var(--type-display-label-tracking);
 		text-transform: uppercase;
 		transition: color 0.2s ease;
 	}
@@ -114,10 +115,10 @@ const { header } = ARTICLE_PAGE_CONFIG;
 	.article-header h1 {
 		margin: 0;
 		color: rgba(237, 243, 251, 0.94);
-		font-family: var(--font-article-title);
-		font-size: clamp(2.15rem, 6.1vw, 4.25rem);
-		font-weight: var(--font-article-title-weight);
-		line-height: 1.08;
+		font-family: var(--type-article-title-font);
+		font-size: var(--type-article-title-size);
+		font-weight: var(--type-article-title-weight);
+		line-height: var(--type-article-title-line);
 		letter-spacing: 0;
 		overflow-wrap: anywhere;
 	}
@@ -127,7 +128,7 @@ const { header } = ARTICLE_PAGE_CONFIG;
 		margin: 0;
 		color: rgba(190, 199, 214, 0.58);
 		font-family: var(--font-body);
-		font-size: clamp(1rem, 2vw, 1.16rem);
+		font-size: clamp(0.98rem, 1.8vw, 1.08rem);
 		line-height: 1.9;
 		overflow-wrap: anywhere;
 	}
@@ -137,9 +138,9 @@ const { header } = ARTICLE_PAGE_CONFIG;
 		gap: 6px;
 		max-width: 860px;
 		color: rgba(139, 149, 167, 0.58);
-		font-family: var(--font-meta);
-		font-size: 0.8rem;
-		line-height: 1.55;
+		font-family: var(--type-meta-font);
+		font-size: var(--type-meta-size);
+		line-height: var(--type-meta-line);
 	}
 
 	.article-header__dates,

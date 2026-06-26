@@ -47,22 +47,26 @@ const { posts } = Astro.props;
 
 	.article-post-list span {
 		color: rgba(156, 199, 232, 0.54);
-		font-family: var(--font-display);
-		font-size: 0.82rem;
+		font-family: var(--type-display-label-font);
+		font-size: var(--type-meta-size);
+		font-weight: var(--type-display-label-weight);
 		letter-spacing: 0.08em;
 	}
 
 	.article-post-list strong {
 		color: rgba(237, 243, 251, 0.88);
-		font-size: clamp(1.08rem, 2.4vw, 1.34rem);
-		line-height: 1.5;
+		font-family: var(--type-card-title-font);
+		font-size: var(--type-card-title-size);
+		font-weight: var(--type-card-title-weight);
+		line-height: var(--type-card-title-line);
 		overflow-wrap: anywhere;
 		transition: color 0.2s ease;
 	}
 
 	.article-post-list em {
 		color: rgba(139, 149, 167, 0.64);
-		font-size: 0.78rem;
+		font-family: var(--type-meta-font);
+		font-size: var(--type-meta-size);
 		font-style: normal;
 		white-space: nowrap;
 	}

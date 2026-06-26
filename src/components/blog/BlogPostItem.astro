@@ -39,10 +39,10 @@ const { post } = Astro.props;
 
 	.blog-post h3 {
 		margin: 0;
-		font-family: var(--font-item-title);
-		font-size: clamp(1.12rem, 2.2vw, 1.36rem);
-		font-weight: var(--font-item-title-weight);
-		line-height: 1.45;
+		font-family: var(--type-card-title-font);
+		font-size: var(--type-card-title-size);
+		font-weight: var(--type-card-title-weight);
+		line-height: var(--type-card-title-line);
 		letter-spacing: 0;
 		overflow-wrap: anywhere;
 	}
@@ -73,9 +73,9 @@ const { post } = Astro.props;
 		gap: 8px 13px;
 		margin-top: 13px;
 		color: rgba(139, 149, 167, 0.72);
-		font-family: var(--font-meta);
-		font-size: 0.78rem;
-		line-height: 1.7;
+		font-family: var(--type-meta-font);
+		font-size: var(--type-meta-size);
+		line-height: var(--type-meta-line);
 		overflow-wrap: anywhere;
 	}
 

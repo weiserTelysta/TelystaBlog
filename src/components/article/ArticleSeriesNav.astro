@@ -1,8 +1,8 @@
 ---
 import { ARTICLE_PAGE_CONFIG } from '../../config/pages/article';
 import type { BlogSeries } from '../../config/content/blogSeries';
-import { buildSeriesHref } from '../../lib/blogSeriesUtils';
 import type { PostListItem, SeriesNavigation } from '../../lib/blogPosts';
+import { buildSeriesHref } from '../../lib/blogSeriesUtils';
 
 type Props = {
 	series?: BlogSeries;
@@ -83,19 +83,20 @@ const hasDirectionalLinks = Boolean(navigation?.previous || navigation?.next);
 	.article-series__nav span {
 		margin: 0;
 		color: rgba(156, 199, 232, 0.55);
-		font-family: var(--font-display);
-		font-size: 0.72rem;
-		letter-spacing: 0.14em;
+		font-family: var(--type-display-label-font);
+		font-size: var(--type-display-label-size);
+		font-weight: var(--type-display-label-weight);
+		letter-spacing: var(--type-display-label-tracking);
 		text-transform: uppercase;
 	}
 
 	.article-series__intro h2 {
 		margin: 0;
 		color: rgba(237, 243, 251, 0.88);
-		font-family: var(--font-display);
-		font-size: clamp(1.5rem, 3vw, 2rem);
-		font-weight: 600;
-		line-height: 1.2;
+		font-family: var(--type-section-title-font);
+		font-size: var(--type-section-title-size);
+		font-weight: var(--type-section-title-weight);
+		line-height: var(--type-section-title-line);
 		letter-spacing: 0;
 	}
 
