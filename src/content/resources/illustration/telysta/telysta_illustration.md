@@ -4,9 +4,9 @@ title: Telysta Illustration
 summary: Temporary draft entry for a Telysta illustration resource.
 type: illustration
 status: draft
-image: src/assets/images/logo/Telysta_01.png
+image: src/assets/images/resources/illustration/telysta_illustration_01/Profile_Telysta_01.png
 gallery:
-  - src: src/assets/images/logo/Telysta_01.png
+  - src: src/assets/images/resources/illustration/telysta_illustration_01/Profile_Telysta_01.png
     label: Draft
     alt: Telysta illustration draft image
 publishedAt: 2026-07-01
@@ -18,7 +18,7 @@ license: Personal preview draft. Replace this text before publishing.
 actions:
   - type: preview
     label: Preview
-    href: src/assets/images/logo/Telysta_01.png
+    href: src/assets/images/resources/illustration/telysta_illustration_01/Profile_Telysta_01.png
     format: PNG
     disabled: true
 draft: true

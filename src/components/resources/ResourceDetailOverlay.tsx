@@ -75,6 +75,7 @@ export default function ResourceDetailOverlay({ resource, onClose }: ResourceDet
 	const type = getResourceTypeById(resource.type);
 	const activeImage = resource.gallery[activeImageIndex] ?? resource.gallery[0];
 	const activeImageAlt = activeImage.alt ?? resource.title;
+	const isUnavailable = resource.status === 'unavailable';
 
 	return (
 		<div className="resource-detail" onMouseDown={handleBackdropMouseDown} data-scroll-native>
@@ -120,6 +121,9 @@ export default function ResourceDetailOverlay({ resource, onClose }: ResourceDet
 					<p className="resource-detail__eyebrow">{type.label}</p>
 					<h2 id="resource-detail-title">{resource.title}</h2>
 					<p className="resource-detail__summary">{resource.summary}</p>
+					{isUnavailable ? (
+						<p className="resource-detail__unavailable">{RESOURCE_PAGE_CONFIG.status.unavailable}</p>
+					) : null}
 
 					<div className="resource-detail__meta" aria-label="资源信息">
 						<MetaItem label="公开" value={resource.publishedAt} />

@@ -15,6 +15,11 @@ const resourceImages = import.meta.glob<ImageModule>(
 	{ eager: true },
 );
 
+const RESOURCE_IMAGE_PATH_HINT = [
+	'src/assets/images/resources/**',
+	'src/assets/images/illustration/**',
+].join(', ');
+
 export type ResourceAction = {
 	type: ResourceActionType;
 	label: string;
@@ -63,7 +68,7 @@ type ResourceEntry = CollectionEntry<'resources'>;
 
 export async function getResourceItems(): Promise<ResourceListItem[]> {
 	const resources = await getCollection('resources');
-	const visibleResources = resources.filter((resource) => !resource.data.draft);
+	const visibleResources = resources.filter((resource) => !isDraftResource(resource));
 
 	assertUniqueResourceIds(visibleResources);
 
@@ -100,7 +105,7 @@ function toResourceListItem(resource: ResourceEntry): ResourceListItem {
 		license: resource.data.license,
 		actions: resource.data.actions.map((action) => ({
 			...action,
-			href: action.href
+			href: action.href && !action.disabled
 				? resolveResourceActionHref(action.href, resource.data.id, action.label)
 				: undefined,
 		})),
@@ -141,6 +146,10 @@ function assertUniqueResourceIds(resources: ResourceEntry[]) {
 	}
 }
 
+function isDraftResource(resource: ResourceEntry): boolean {
+	return resource.data.draft || resource.data.status === 'draft';
+}
+
 function resolveRequiredResourceImage(path: string, resourceId: string, field: string): string {
 	const normalized = path.replace(/^\/+/, '');
 	const candidates = [
@@ -152,7 +161,10 @@ function resolveRequiredResourceImage(path: string, resourceId: string, field: s
 	const image = candidates.map((candidate) => resourceImages[candidate]).find(Boolean);
 
 	if (!image) {
-		throw new Error(`[resources] Unable to resolve ${field} for "${resourceId}": ${path}`);
+		throw new Error(
+			`[resources] Unable to resolve ${field} for "${resourceId}": ${path}. ` +
+				`Allowed local resource image paths: ${RESOURCE_IMAGE_PATH_HINT}.`,
+		);
 	}
 
 	return image.default.src;

@@ -83,6 +83,7 @@ const resources = defineCollection({
 		variantCount: z.coerce.number().int().nonnegative().optional(),
 		license: z.string().min(1).optional(),
 		actions: z.array(resourceActionSchema).default([]),
+		// Prefer status for new resources; draft remains for older content compatibility.
 		draft: z.boolean().default(false),
 	}),
 });

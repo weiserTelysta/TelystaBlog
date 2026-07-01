@@ -4,22 +4,22 @@
 
 ## 文件位置
 
-每个资源对应一个 Markdown 文件，放在：
+每个资源对应一个 Markdown 文件，推荐按类型放在：
 
 ```text
-src/content/resources/
+src/content/resources/{type}/{resource-id}.md
 ```
 
 示例：
 
 ```text
-src/content/resources/weiser-bunny.md
+src/content/resources/illustration/weiser-bunny.md
 ```
 
-正式资源图片优先放在：
+正式资源图片放在：
 
 ```text
-src/assets/images/resources/
+src/assets/images/resources/{type}/{resource-id}/
 ```
 
 当前项目仍兼容已有的测试插画目录：
@@ -28,7 +28,16 @@ src/assets/images/resources/
 src/assets/images/illustration/
 ```
 
+`src/assets/images/logo/` 和 `src/assets/images/accordion/` 是站点视觉资产目录，不作为资源页发布资产路径。
+
 资源图片路径写错会导致构建失败。这样做是为了防止发布后才发现断图或下载入口失效。
+
+## 新增资源流程
+
+1. 把图片放到 `src/assets/images/resources/{type}/{resource-id}/`。
+2. 在 `src/content/resources/{type}/{resource-id}.md` 写资源 frontmatter 和详情正文。
+3. 新资源使用 `status: available`、`status: draft` 或 `status: unavailable` 表达生命周期。
+4. 运行 `npm run build` 验证资源路径、格式和下载入口。
 
 ## 核心规则
 
@@ -39,6 +48,10 @@ src/assets/images/illustration/
 `formats` 表示这个资源提供哪些文件格式。
 
 `actions` 表示用户如何获取这些文件。
+
+`status` 表示资源生命周期。`available` 会公开显示，`draft` 不进入公开资源列表，`unavailable` 会显示资源但表达暂不可用。
+
+旧内容里的 `draft: true` 仍会让资源不进入公开列表；新资源优先使用 `status`。
 
 例如，一张插画同时提供 PNG 和 PSD，它仍然是：
 
@@ -86,9 +99,9 @@ title: Resource Title
 summary: 一句话介绍这个资源。
 type: illustration
 status: available
-image: src/assets/images/resources/example.png
-cover: src/assets/images/resources/example-cover.webp
-preview: src/assets/images/resources/example-preview.webp
+image: src/assets/images/resources/illustration/resource-id/example.png
+cover: src/assets/images/resources/illustration/resource-id/example-cover.webp
+preview: src/assets/images/resources/illustration/resource-id/example-preview.webp
 publishedAt: 2026-06-06
 updatedAt: 2026-06-06
 formats:
@@ -99,7 +112,7 @@ license: 仅供个人学习、预览与交流使用，请勿商用或二次分�
 actions:
   - type: download
     label: 下载 PNG 原图
-    href: src/assets/images/resources/example.png
+    href: src/assets/images/resources/illustration/resource-id/example.png
     format: PNG
     primary: true
   - type: external
