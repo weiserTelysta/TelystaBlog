@@ -4,6 +4,8 @@ This guide explains where to edit common site content and configuration for Tely
 
 Keep source files encoded as UTF-8. Do not edit generated files in `dist/`; they are rebuilt from source.
 
+Use `docs/project-knowledge.md` for the design and architecture principles behind these maintenance rules. Use `docs/current-status.md` for a short snapshot of current project state.
+
 ## Project Boundaries
 
 The project uses a simple boundary model:
@@ -61,7 +63,7 @@ Each greeting supports:
 - `weight`: optional base probability. Higher values appear more often before time weighting is applied.
 - `mood`: optional maintenance group such as `quiet`, `playful`, `poetic`, `hopeful`, `melancholy`, or `daily`.
 
-The greeting is selected once when the page loads. Short greetings are written out lightly; long or multiline greetings fade in as a whole so the home page does not feel slow. The display strategy is handled by `src/components/home/TimeGreeting.tsx`, and the weighted random selection logic lives in `src/lib/homeGreeting.ts`.
+The home avatar and greeting are selected once in the browser when the page loads. The first-screen entrance is handled by `src/components/home/HomeIntro.tsx`: a neutral placeholder appears first, the selected avatar and name reveal with a restrained low-saturation tone, then the greeting begins. Short single-line greetings type out character by character, short multiline greetings type line by line, and very long or many-line greetings fade in as a whole so the home page does not feel slow. The weighted random selection logic lives in `src/lib/homeProfile.ts` and `src/lib/homeGreeting.ts`.
 
 ## Blog Posts
 

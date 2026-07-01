@@ -1,6 +1,6 @@
 # Current Status
 
-Updated: 2026-06-24
+Updated: 2026-07-01
 
 ## Completed
 
@@ -23,6 +23,8 @@ Updated: 2026-06-24
 - Resource detail overlay with preview and action links.
 - Editable site, page, content, visual, typography, and interaction settings are centralized under `src/config` and `src/styles`.
 - Blog category, blog series, and resource type helper logic is separated into `src/lib`.
+- Project design and architecture principles are recorded in `docs/project-knowledge.md`.
+- Current stage decisions and follow-up candidates are recorded in `docs/stage-log.md`.
 
 ## Current Content Systems
 
@@ -80,7 +82,7 @@ Resource types are defined in `src/config/content/resourceTypes.ts`. Adding a re
 
 ## Current Risks
 
-- The working tree still contains mixed uncommitted changes across documentation, typography, home, blog, article, resource, and footer files.
+- The working tree should still be grouped carefully before the next feature stage if more local edits are added after this snapshot.
 - Resource page visuals are still the most active area. The layout is usable, but card density, detail overlay balance, and image handling still need careful visual verification as more real resources are added.
 - Large source images can make resource pages heavy when `cover` and `preview` are omitted. The fallback is convenient, but final resources should still use lighter cover assets when needed.
 - `docs/resources.md` contains the right maintenance ideas, but it should be periodically checked in a UTF-8 aware editor because PowerShell may display Chinese documentation as mojibake.
