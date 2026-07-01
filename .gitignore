@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # Obsidian workspace settings
 .obsidian/
+
+# local task planning notes
+.tasks/
