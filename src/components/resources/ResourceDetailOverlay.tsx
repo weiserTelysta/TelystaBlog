@@ -4,7 +4,6 @@ import { usePageScrollLock } from '../../hooks/usePageScrollLock';
 import { RESOURCE_PAGE_CONFIG } from '../../config/pages/resources';
 import type {
 	ResourceAction,
-	ResourceCredit,
 	ResourceGalleryImage,
 	ResourceListItem,
 } from '../../lib/resources/resourceItems';
@@ -76,6 +75,7 @@ export default function ResourceDetailOverlay({ resource, onClose }: ResourceDet
 	const activeImage = resource.gallery[activeImageIndex] ?? resource.gallery[0];
 	const activeImageAlt = activeImage.alt ?? resource.title;
 	const isUnavailable = resource.status === 'unavailable';
+	const detailParagraphs = resource.details.length > 0 ? resource.details : [resource.summary];
 
 	return (
 		<div className="resource-detail" onMouseDown={handleBackdropMouseDown} data-scroll-native>
@@ -120,38 +120,26 @@ export default function ResourceDetailOverlay({ resource, onClose }: ResourceDet
 				<div className="resource-detail__body" data-scroll-native>
 					<p className="resource-detail__eyebrow">{type.label}</p>
 					<h2 id="resource-detail-title">{resource.title}</h2>
-					<p className="resource-detail__summary">{resource.summary}</p>
 					{isUnavailable ? (
 						<p className="resource-detail__unavailable">{RESOURCE_PAGE_CONFIG.status.unavailable}</p>
 					) : null}
 
+					<div className="resource-detail__text">
+						{detailParagraphs.map((paragraph) => (
+							<p key={paragraph}>{paragraph}</p>
+						))}
+					</div>
+
 					<div className="resource-detail__meta" aria-label="资源信息">
-						<MetaItem label="公开" value={resource.publishedAt} />
-						<MetaItem label="更新" value={resource.updatedAt} />
-						<MetaItem label={RESOURCE_PAGE_CONFIG.detail.formatLabel} value={resource.formats.join(' / ')} />
+						{resource.credits.map((credit) => (
+							<MetaItem key={`${credit.label}-${credit.name}`} label={credit.label} value={credit.name} href={credit.href} />
+						))}
 						{typeof resource.variantCount === 'number' ? (
 							<MetaItem label={RESOURCE_PAGE_CONFIG.detail.variantLabel} value={`${resource.variantCount}`} />
 						) : null}
+						<MetaItem label="更新" value={resource.updatedAt} subdued />
 					</div>
 
-					{resource.credits.length > 0 ? <ResourceCredits credits={resource.credits} /> : null}
-
-					{resource.details.length > 0 ? (
-						<div className="resource-detail__text">
-							{resource.details.map((paragraph) => (
-								<p key={paragraph}>{paragraph}</p>
-							))}
-						</div>
-					) : null}
-
-					{resource.license ? (
-						<div className="resource-detail__license">
-							<span>{RESOURCE_PAGE_CONFIG.detail.licenseLabel}</span>
-							<p>{resource.license}</p>
-						</div>
-					) : null}
-
-					<p className="resource-detail__section-title">{RESOURCE_PAGE_CONFIG.detail.actionLabel}</p>
 					{resource.actions.length > 0 ? (
 						<div className="resource-detail__actions" aria-label={RESOURCE_PAGE_CONFIG.detail.actionLabel}>
 							{resource.actions.map((action) => (
@@ -256,34 +244,28 @@ function GalleryStrip({
 	);
 }
 
-function MetaItem({ label, value }: { label: string; value: string }) {
+function MetaItem({
+	label,
+	value,
+	href,
+	subdued = false,
+}: {
+	label: string;
+	value: string;
+	href?: string;
+	subdued?: boolean;
+}) {
 	return (
-		<span className="resource-detail__meta-item">
+		<span className={subdued ? 'resource-detail__meta-item is-subdued' : 'resource-detail__meta-item'}>
 			<span>{label}</span>
-			<strong>{value}</strong>
+			{href ? (
+				<a href={href} target="_blank" rel="noreferrer">
+					{value}
+				</a>
+			) : (
+				<strong>{value}</strong>
+			)}
 		</span>
-	);
-}
-
-function ResourceCredits({ credits }: { credits: ResourceCredit[] }) {
-	return (
-		<div className="resource-detail__credits">
-			<p>{RESOURCE_PAGE_CONFIG.detail.creditsLabel}</p>
-			<div>
-				{credits.map((credit) => (
-					<span className="resource-detail__credit" key={`${credit.label}-${credit.name}`}>
-						<span>{credit.label}</span>
-						{credit.href ? (
-							<a href={credit.href} target="_blank" rel="noreferrer">
-								{credit.name}
-							</a>
-						) : (
-							<strong>{credit.name}</strong>
-						)}
-					</span>
-				))}
-			</div>
-		</div>
 	);
 }
 
@@ -298,7 +280,6 @@ function ResourceActionLink({ action }: { action: ResourceAction }) {
 		return (
 			<span className={`${className} is-disabled`}>
 				<strong>{action.format ?? action.label}</strong>
-				<ActionMeta action={action} />
 			</span>
 		);
 	}
@@ -312,22 +293,7 @@ function ResourceActionLink({ action }: { action: ResourceAction }) {
 			download={action.type === 'download' ? '' : undefined}
 		>
 			<strong>{action.format ?? action.label}</strong>
-			<ActionMeta action={action} />
 		</a>
-	);
-}
-
-function ActionMeta({ action }: { action: ResourceAction }) {
-	const actionKind = action.type === 'download' ? 'download' : action.provider ?? action.type;
-	const details = [action.code ? `${RESOURCE_PAGE_CONFIG.detail.codeLabel} ${action.code}` : undefined, action.note]
-		.filter(Boolean)
-		.join(' · ');
-
-	return (
-		<>
-			<small>{actionKind}</small>
-			{details ? <small>{details}</small> : null}
-		</>
 	);
 }
 

@@ -7,8 +7,14 @@ status: available
 image: src/assets/images/illustration/weiser/weiser_bunny_01/weiser_bunny_01.png
 gallery:
   - src: src/assets/images/illustration/weiser/weiser_bunny_01/weiser_bunny_01.png
-    label: Main
-    alt: Weiser Bunny 立绘插画
+    label: "01"
+    alt: Weiser Bunny 立绘插画 01
+  - src: src/assets/images/illustration/weiser/weiser_bunny_01/weiser_bunny_02.png
+    label: "02"
+    alt: Weiser Bunny 立绘插画 02
+  - src: src/assets/images/illustration/weiser/weiser_bunny_01/weiser_bunny_03.png
+    label: "03"
+    alt: Weiser Bunny 立绘插画 03
 publishedAt: 2026-06-06
 updatedAt: 2026-06-28
 formats:
@@ -19,10 +25,11 @@ license: 仅供个人欣赏、预览与交流使用，请勿商用或二次分�
 credits:
   - label: 画师
     name: 小鳥遊啓
+    href: https://x.com/KEI_takanashi
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/weiser_bunny.png
+    href: src/assets/images/illustration/weiser/weiser_bunny_01/weiser_bunny_01.png
     format: PNG
     primary: true
   - type: external
