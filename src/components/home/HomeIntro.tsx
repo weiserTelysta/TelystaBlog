@@ -193,10 +193,6 @@ export default function HomeIntro() {
 						loading="eager"
 						decoding="async"
 					/>
-					<span className="home-identity__spark home-identity__spark--1" aria-hidden="true" />
-					<span className="home-identity__spark home-identity__spark--2" aria-hidden="true" />
-					<span className="home-identity__spark home-identity__spark--3" aria-hidden="true" />
-					<span className="home-identity__spark home-identity__spark--4" aria-hidden="true" />
 				</span>
 				<h1 className="home-identity__name" id="hero-title" aria-live="polite">
 					{intro.profile.name}
