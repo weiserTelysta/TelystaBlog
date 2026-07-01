@@ -27,6 +27,18 @@ export type ResourceAction = {
 	note?: string;
 };
 
+export type ResourceGalleryImage = {
+	src: string;
+	label?: string;
+	alt?: string;
+};
+
+export type ResourceCredit = {
+	label: string;
+	name: string;
+	href?: string;
+};
+
 export type ResourceListItem = {
 	id: string;
 	slug: string;
@@ -36,6 +48,8 @@ export type ResourceListItem = {
 	status: ResourceStatus;
 	cover: string;
 	preview: string;
+	gallery: ResourceGalleryImage[];
+	credits: ResourceCredit[];
 	publishedAt: string;
 	updatedAt: string;
 	formats: string[];
@@ -66,6 +80,7 @@ function toResourceListItem(resource: ResourceEntry): ResourceListItem {
 	const preview = resource.data.preview
 		? resolveRequiredResourceImage(resource.data.preview, resource.data.id, 'preview')
 		: image;
+	const gallery = resolveResourceGallery(resource, preview);
 
 	return {
 		id: resource.data.id,
@@ -76,6 +91,8 @@ function toResourceListItem(resource: ResourceEntry): ResourceListItem {
 		status: resource.data.status,
 		cover,
 		preview,
+		gallery,
+		credits: resource.data.credits,
 		publishedAt: toDateText(resource.data.publishedAt),
 		updatedAt: toDateText(resource.data.updatedAt),
 		formats: resource.data.formats,
@@ -89,6 +106,26 @@ function toResourceListItem(resource: ResourceEntry): ResourceListItem {
 		})),
 		details: getResourceDetails(resource),
 	};
+}
+
+function resolveResourceGallery(resource: ResourceEntry, fallbackImage: string): ResourceGalleryImage[] {
+	const gallery = resource.data.gallery.map((image, index) => ({
+		src: resolveRequiredResourceImage(image.src, resource.data.id, `gallery[${index}]`),
+		label: image.label,
+		alt: image.alt,
+	}));
+
+	if (gallery.length > 0) {
+		return gallery;
+	}
+
+	return [
+		{
+			src: fallbackImage,
+			label: 'Main',
+			alt: resource.data.title,
+		},
+	];
 }
 
 function assertUniqueResourceIds(resources: ResourceEntry[]) {

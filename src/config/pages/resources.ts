@@ -23,6 +23,10 @@ export const RESOURCE_PAGE_CONFIG = {
 	detail: {
 		closeLabel: '关闭资源详情',
 		previewLabel: '查看高清预览',
+		galleryLabel: '资源预览图',
+		previousImageLabel: '上一张预览图',
+		nextImageLabel: '下一张预览图',
+		creditsLabel: 'Credits',
 		formatLabel: 'Formats',
 		variantLabel: 'Variants',
 		licenseLabel: 'Notice',

@@ -9,24 +9,21 @@ type ArticleHeading = {
 
 type Props = {
 	headings: ArticleHeading[];
-	title?: string;
 	ariaLabel?: string;
 };
 
 const {
 	headings,
-	title = ARTICLE_PAGE_CONFIG.toc.title,
 	ariaLabel = ARTICLE_PAGE_CONFIG.toc.ariaLabel,
 } = Astro.props;
 ---
 
-<nav class="article-toc" aria-label={ariaLabel} data-scroll-native>
-	<p>{title}</p>
+<nav class="article-toc" aria-label={ariaLabel}>
 	<ol>
 		{
 			headings.map((heading) => (
 				<li class={`article-toc__item article-toc__item--depth-${heading.depth}`}>
-					<a href={`#${heading.slug}`}>{heading.text}</a>
+					<a href={`#${heading.slug}`} data-toc-link={heading.slug}>{heading.text}</a>
 				</li>
 			))
 		}
@@ -35,68 +32,133 @@ const {
 
 <style lang="scss">
 	.article-toc {
-		position: sticky;
-		top: 112px;
 		display: grid;
-		gap: 14px;
-		max-height: calc(100vh - 150px);
-		overflow: auto;
-		padding-left: 22px;
-		border-left: 1px solid rgba(255, 255, 255, 0.055);
-		scrollbar-width: none;
-	}
-
-	.article-toc::-webkit-scrollbar {
-		display: none;
-	}
-
-	.article-toc p {
-		margin: 0;
-		color: rgba(156, 199, 232, 0.58);
-		font-family: var(--font-display);
-		font-size: 0.72rem;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
+		min-width: 0;
 	}
 
 	.article-toc ol {
 		display: grid;
 		gap: 11px;
+		min-width: 0;
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
 
+	.article-toc__item {
+		position: relative;
+		min-width: 0;
+	}
+
 	.article-toc a {
+		position: relative;
 		display: block;
-		color: rgba(190, 199, 214, 0.58);
-		font-size: 0.78rem;
-		line-height: 1.6;
+		max-width: 100%;
+		min-width: 0;
+		min-height: 30px;
+		padding: 4px 8px 4px 0;
+		border-radius: 6px;
+		color: rgba(190, 199, 214, 0.56);
+		font-size: 0.88rem;
+		line-height: 1.55;
 		overflow-wrap: anywhere;
-		transition: color 0.2s ease, transform 0.2s ease;
+		transition:
+			color 0.2s ease,
+			opacity 0.2s ease,
+			transform 0.2s ease,
+			text-shadow 0.2s ease;
 	}
 
 	.article-toc a:hover {
 		color: rgba(237, 243, 251, 0.88);
-		transform: translateX(2px);
+		opacity: 0.92;
+		transform: translateX(1px);
+	}
+
+	.article-toc a.is-active {
+		color: rgba(237, 243, 251, 0.9);
+		opacity: 1;
+		text-shadow: 0 0 14px rgba(156, 199, 232, 0.1);
+		transform: translateX(1px);
+	}
+
+	.article-toc__item--depth-2 {
+		margin-top: 18px;
+	}
+
+	.article-toc__item--depth-2:first-child {
+		margin-top: 0;
+	}
+
+	.article-toc__item--depth-2 a {
+		color: rgba(205, 214, 228, 0.72);
+		font-size: 0.94rem;
+		font-weight: 600;
+	}
+
+	.article-toc__item--depth-2 a::before {
+		display: inline-block;
+		width: 5px;
+		height: 5px;
+		margin-right: 10px;
+		vertical-align: middle;
+		content: '';
+		border: 1px solid rgba(156, 199, 232, 0.22);
+		background: rgba(156, 199, 232, 0.04);
+		transform: rotate(45deg) translateY(-1px);
+		transition:
+			background 0.2s ease,
+			border-color 0.2s ease,
+			border-radius 0.2s ease,
+			box-shadow 0.2s ease,
+			opacity 0.2s ease,
+			transform 0.2s ease;
+	}
+
+	.article-toc__item--depth-2 a:hover::before,
+	.article-toc__item--depth-2 a.is-active::before {
+		border-color: rgba(210, 226, 240, 0.42);
+		border-radius: 2px;
+		background: rgba(156, 199, 232, 0.1);
+		box-shadow: 0 0 10px rgba(156, 199, 232, 0.1);
+		transform: rotate(45deg) translateY(-1px) scale(1.08);
 	}
 
 	.article-toc__item--depth-3 {
-		padding-left: 12px;
+		padding-left: 22px;
+	}
+
+	.article-toc__item--depth-4 {
+		padding-left: 38px;
 	}
 
 	.article-toc__item--depth-3 a {
-		color: rgba(139, 149, 167, 0.62);
-		font-size: 0.74rem;
+		color: rgba(178, 190, 209, 0.62);
+		font-size: 0.87rem;
+	}
+
+	.article-toc__item--depth-4 a {
+		color: rgba(158, 170, 190, 0.55);
+		font-size: 0.84rem;
+	}
+
+	.article-toc__item--depth-5 {
+		padding-left: 50px;
+	}
+
+	.article-toc__item--depth-6 {
+		padding-left: 60px;
+	}
+
+	.article-toc__item--depth-5 a,
+	.article-toc__item--depth-6 a {
+		color: rgba(147, 158, 178, 0.5);
+		font-size: 0.82rem;
 	}
 
 	@media (max-width: 960px) {
 		.article-toc {
-			position: static;
-			max-height: none;
-			padding: 18px 0 0;
-			border-top: 1px solid rgba(255, 255, 255, 0.055);
-			border-left: 0;
+			gap: 12px;
 		}
 	}
 </style>

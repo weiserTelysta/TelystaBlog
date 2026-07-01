@@ -13,8 +13,22 @@ export const ARTICLE_PAGE_CONFIG = {
 	},
 	toc: {
 		minHeadingCount: 3,
+		minDepth: 2,
+		maxDepth: 4,
 		title: 'On This Page',
 		ariaLabel: '文章目录',
+		behavior: {
+			readingLineOffset: 72,
+			bottomThreshold: 96,
+			clickLockMs: 760,
+			scrollSettleMs: 220,
+			userIntentMs: 5000,
+			inspectionLeaveMs: 1800,
+			programmaticScrollMs: 720,
+			revealCooldownMs: 160,
+			revealAnchor: 0.3,
+			revealMargin: 28,
+		},
 	},
 	series: {
 		pageLabel: 'Series',

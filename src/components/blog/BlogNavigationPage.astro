@@ -1,7 +1,7 @@
 ---
-import BlogBanner from './BlogBanner.astro';
 import BlogCategoryIndex from './BlogCategoryIndex.astro';
 import BlogEmptyState from './BlogEmptyState.astro';
+import BlogIndexHeader from './BlogIndexHeader.astro';
 import BlogTimeline from './BlogTimeline.astro';
 import BlogYearJump from './BlogYearJump.astro';
 import Layout from '../../layouts/Layout.astro';
@@ -29,10 +29,14 @@ const description = selectedCategory?.description ?? BLOG_PAGE_CONFIG.meta.descr
 
 <Layout title={title} description={description}>
 	<main class="blog-page">
-		<BlogBanner postCount={posts.length} selectedLabel={selectedCategory?.title} />
-
 		<div class="blog-page__body">
 			<section class="blog-page__main" aria-label="文章列表">
+				<BlogIndexHeader
+					postCount={posts.length}
+					selectedCategoryTitle={selectedCategory?.title}
+					selectedCategoryDescription={selectedCategory?.description}
+				/>
+
 				{
 					groups.length > 0 ? (
 						<BlogTimeline groups={groups} />
@@ -65,9 +69,9 @@ const description = selectedCategory?.description ?? BLOG_PAGE_CONFIG.meta.descr
 		display: grid;
 		width: min(1080px, calc(100% - 48px));
 		grid-template-columns: minmax(0, 1fr) minmax(210px, 260px);
-		gap: clamp(48px, 8vw, 92px);
+		gap: clamp(40px, 6vw, 68px);
 		margin: 0 auto;
-		padding: clamp(54px, 7vw, 86px) 0 clamp(96px, 12vw, 140px);
+		padding: clamp(118px, 13vw, 150px) 0 clamp(88px, 10vw, 128px);
 	}
 
 	.blog-page__main {
@@ -86,7 +90,8 @@ const description = selectedCategory?.description ?? BLOG_PAGE_CONFIG.meta.descr
 		.blog-page__body {
 			width: min(100% - 40px, 720px);
 			grid-template-columns: 1fr;
-			gap: 52px;
+			gap: 42px;
+			padding-top: 112px;
 		}
 
 		.blog-page__side {

@@ -1,11 +1,11 @@
 export const SITE_CONFIG = {
-	name: "Telysta's Melancholy",
-	defaultTitle: "Telysta's Melancholy",
-	defaultDescription: '这是 Weiser 的个人写作空间，用来整理技术、学习、随笔与一些安静的想法。',
+	name: "Weiser's Melancholy",
+	defaultTitle: "Weiser's Melancholy",
+	defaultDescription: '这是 Weiser 的个人网络空间，用来整理技术、学习、随笔与一些安静的想法。我希望把最真挚的感情以及我的世界与你分享。',
 	authorName: 'Weiser',
 	icpRecord: undefined,
 	home: {
-		title: "Telysta's Melancholy",
+		title: "Weiser's Melancholy",
 		description: 'Weiser 的个人写作空间，记录学习、开发、阅读、生活和缓慢成形的想法。',
 	},
 	navItems: [

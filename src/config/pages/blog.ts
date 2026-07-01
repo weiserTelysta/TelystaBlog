@@ -6,12 +6,12 @@ export const BLOG_PAGE_CONFIG = {
 		description: `${SITE_CONFIG.name} 的文章导航页。`,
 		categoryTitleSuffix: `Blog - ${SITE_CONFIG.name}`,
 	},
-	banner: {
+	indexHeader: {
 		eyebrow: 'Records',
 		title: '文章列表',
 		intro: '所有的思绪与技术累积，都会在这里留下足迹。',
-		categorySummaryPrefix: '当前栏目：',
-		allSummarySuffix: '篇记录正在归档',
+		allCountSuffix: '篇记录正在归档',
+		categoryCountSuffix: '篇文章',
 	},
 	emptyState: {
 		defaultMessage: '这里暂时还没有公开文章。',

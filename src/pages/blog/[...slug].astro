@@ -1,8 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
+import ArticleAside from '../../components/article/ArticleAside.astro';
 import ArticleHeader from '../../components/article/ArticleHeader.astro';
 import ArticleSeriesNav from '../../components/article/ArticleSeriesNav.astro';
-import ArticleToc from '../../components/article/ArticleToc.astro';
 import Layout from '../../layouts/Layout.astro';
 import { ARTICLE_PAGE_CONFIG } from '../../config/pages/article';
 import {
@@ -14,6 +14,7 @@ import {
 } from '../../lib/blogPosts';
 import { getBlogSeriesById } from '../../lib/blogSeriesUtils';
 import { SITE_CONFIG } from '../../config/site';
+import 'katex/dist/katex.min.css';
 
 export async function getStaticPaths() {
 	const entries = (await getCollection('posts')) as PostEntry[];
@@ -37,7 +38,11 @@ const series = getBlogSeriesById(post.series);
 const seriesPosts = series ? getPostsBySeries(allPosts, series.id) : [];
 const seriesNavigation = getSeriesNavigation(allPosts, post);
 const { Content, headings } = await render(entry);
-const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+const tocHeadings = headings.filter(
+	(heading) =>
+		heading.depth >= ARTICLE_PAGE_CONFIG.toc.minDepth &&
+		heading.depth <= ARTICLE_PAGE_CONFIG.toc.maxDepth,
+);
 const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 ---
 
@@ -51,20 +56,12 @@ const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 			<ArticleHeader post={post} series={series} />
 
 			<div class={`article-page__body ${hasToc ? 'has-toc' : 'no-toc'}`}>
-				<div class="article-page__content prose">
+				<div class="article-page__content prose" data-article-content>
 					<Content />
 				</div>
 
 				{
-					hasToc && (
-						<aside class="article-page__side">
-							<ArticleToc
-								headings={tocHeadings}
-								title={ARTICLE_PAGE_CONFIG.toc.title}
-								ariaLabel={ARTICLE_PAGE_CONFIG.toc.ariaLabel}
-							/>
-						</aside>
-					)
+					hasToc && <ArticleAside headings={tocHeadings} />
 				}
 			</div>
 
@@ -98,16 +95,15 @@ const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 	}
 
 	.article-page__body.has-toc {
-		grid-template-columns: minmax(0, 1fr) minmax(190px, 250px);
-		gap: clamp(42px, 7vw, 82px);
+		grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+		gap: clamp(44px, 6.4vw, 78px);
 	}
 
 	.article-page__body.no-toc {
 		grid-template-columns: minmax(0, 760px);
 	}
 
-	.article-page__content,
-	.article-page__side {
+	.article-page__content {
 		min-width: 0;
 	}
 
@@ -118,7 +114,7 @@ const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 			grid-template-columns: 1fr;
 		}
 
-		.article-page__side {
+		:global(.article-aside) {
 			order: -1;
 		}
 	}

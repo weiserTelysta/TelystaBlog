@@ -25,6 +25,7 @@ export default function ResourceCard({ resource, onSelect }: ResourceCardProps) 
 					<span>{resource.publishedAt}</span>
 					<span>{type.label}</span>
 					<span>{resource.formats.join(' / ')}</span>
+					{resource.gallery.length > 1 ? <span>{resource.gallery.length} images</span> : null}
 				</span>
 			</span>
 		</button>

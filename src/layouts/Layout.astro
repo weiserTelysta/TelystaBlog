@@ -2,6 +2,7 @@
 import SiteFooter from '../components/site/SiteFooter.astro';
 import SiteHeader from '../components/site/SiteHeader';
 import BackToTop from '../components/site/BackToTop';
+import PageScrollIndicator from '../components/site/PageScrollIndicator';
 import ScrollManager from '../components/site/ScrollManager';
 import StarfieldBackground from '../components/starfield/StarfieldBackground';
 import { SITE_CONFIG } from '../config/site';
@@ -41,6 +42,7 @@ const {
 			<slot />
 		</div>
 		<SiteFooter />
+		<PageScrollIndicator client:idle />
 		<BackToTop client:idle />
 		<ScrollManager client:idle />
 	</body>

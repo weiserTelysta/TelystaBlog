@@ -33,9 +33,9 @@ cover: ""
 
 `cover` 是可选主图路径。第一版推荐把文章图片放在 `public/images/posts`，然后写成 `/images/posts/...`。如果不使用主图，可以删除这一行或保留为空字符串。
 
-`series` 是可选系列 id。只有文章属于某个合集时才填写。
+`series` 是可选系列 id。只有文章属于某个合集时才填写。这里填写的是 `src/config/content/blogSeries.ts` 里维护的稳定 id，不是页面上展示的系列标题。
 
-`seriesOrder` 是可选系列顺序。只有同时填写 `series` 和 `seriesOrder` 的文章，才会参与系列上一篇/下一篇计算。
+`seriesOrder` 是可选系列顺序。只有同时填写 `series` 和 `seriesOrder` 的文章，才会参与系列上一篇/下一篇计算。系列标题、说明和后续展示文案统一在配置文件里修改。
 
 ## 可用栏目
 

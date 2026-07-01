@@ -1,7 +1,8 @@
 import type { ImageMetadata } from 'astro';
 import accordionWeiserImage from '../../assets/images/accordion/accordion_weiser.webp';
 import accordionTelystaImage from '../../assets/images/accordion/accordion_telysta.webp';
-import accordionRhaelysaImage from '../../assets/images/accordion/accordion_rhaelysa.webp';
+import accordionRhaelysaImage01 from '../../assets/images/accordion/accordion_rhaelysa_01.webp';
+import accordionRhaelysaImage02 from '../../assets/images/accordion/accordion_rhaelysa_02.webp';
 import accordionAliceImage from '../../assets/images/accordion/accordion_alice.webp';
 import accordionSylvaenaImage from '../../assets/images/accordion/accordion_sylvaena.webp';
 
@@ -66,7 +67,7 @@ const VISUAL_COPY: Record<
 			name: 'Letters',
 		},
 		shortTitle: 'Letters',
-		image: accordionRhaelysaImage,
+		image: accordionRhaelysaImage01,
 		description: '不急着抵达答案，只是在安静处把心里的回声写下来。',
 		tone: 'silver',
 	},
@@ -92,11 +93,11 @@ const VISUAL_COPY: Record<
 	},
 	portraits: {
 		cardInscription: {
-			prefix: 'Telysta',
+			prefix: 'Rhaelysa',
 			name: 'Portrait',
 		},
 		shortTitle: 'Portrait',
-		image: accordionTelystaImage,
+		image: accordionRhaelysaImage02,
 		description: '观察人物、角色与创作者表达方式的侧影。',
 		tone: 'ember',
 	},

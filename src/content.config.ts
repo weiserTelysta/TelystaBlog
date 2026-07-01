@@ -49,6 +49,18 @@ const resourceActionSchema = z
 		}
 	});
 
+const resourceGalleryImageSchema = z.object({
+	src: z.string().min(1),
+	label: z.string().min(1).optional(),
+	alt: z.string().min(1).optional(),
+});
+
+const resourceCreditSchema = z.object({
+	label: z.string().min(1),
+	name: z.string().min(1),
+	href: z.string().min(1).optional(),
+});
+
 const resources = defineCollection({
 	loader: glob({
 		pattern: '**/*.md',
@@ -63,6 +75,8 @@ const resources = defineCollection({
 		image: z.string().min(1),
 		cover: z.string().min(1).optional(),
 		preview: z.string().min(1).optional(),
+		gallery: z.array(resourceGalleryImageSchema).default([]),
+		credits: z.array(resourceCreditSchema).default([]),
 		publishedAt: z.coerce.date(),
 		updatedAt: z.coerce.date(),
 		formats: z.array(z.string().min(1)).default([]),

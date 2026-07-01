@@ -1,13 +1,20 @@
 ---
-import TimeGreeting from './TimeGreeting';
-import avatar from '../../assets/images/logo/weiser_avatar.png';
+import HomeIntro from './HomeIntro';
 ---
 
-<section class="home" aria-labelledby="hero-title" data-home-hero>
+<section class="home" aria-label="Telysta home introduction" data-home-hero>
 	<div class="hero">
-		<img class="avatar" src={avatar.src} alt="Weiser avatar" width="128" height="128" />
-		<h1 id="hero-title">Weiser</h1>
-		<TimeGreeting client:load />
+		<HomeIntro client:only="react">
+			<div class="home-intro home-intro--fallback" slot="fallback" aria-hidden="true">
+				<div class="home-identity home-identity--placeholder">
+					<span class="home-intro__placeholder-name"></span>
+				</div>
+				<p class="time-greeting time-greeting--placeholder">
+					<span class="home-intro__placeholder-line"></span>
+					<span class="home-intro__placeholder-line home-intro__placeholder-line--short"></span>
+				</p>
+			</div>
+		</HomeIntro>
 	</div>
 </section>
 
@@ -29,9 +36,76 @@ import avatar from '../../assets/images/logo/weiser_avatar.png';
 		text-align: center;
 	}
 
-	.avatar {
+	:global(.home-intro) {
+		--home-intro-accent: rgba(156, 199, 232, 0.76);
+		--home-intro-accent-soft: rgba(156, 199, 232, 0.16);
+		display: flex;
+		width: 100%;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	:global(.home-identity) {
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		opacity: 0.96;
+		transition:
+			opacity 260ms cubic-bezier(0.22, 0.72, 0.24, 1),
+			transform 300ms cubic-bezier(0.22, 0.72, 0.24, 1);
+	}
+
+	:global(.home-identity.is-ready) {
+		opacity: 1;
+	}
+
+	:global(.home-identity__avatar-shell) {
+		position: relative;
+		display: block;
 		width: clamp(96px, 12vw, 120px);
 		height: clamp(96px, 12vw, 120px);
+		border-radius: 50%;
+	}
+
+	:global(.home-identity__avatar-shell::before) {
+		content: "";
+		position: absolute;
+		border-radius: 50%;
+		pointer-events: none;
+	}
+
+	:global(.home-identity__avatar-shell::before) {
+		inset: -16px;
+		z-index: 0;
+		background:
+			radial-gradient(circle, var(--home-intro-accent-soft), transparent 54%),
+			radial-gradient(circle, color-mix(in srgb, var(--home-intro-accent) 10%, transparent), transparent 72%);
+		opacity: 0;
+		filter: blur(14px);
+		transform: scale(0.94);
+		transition:
+			opacity 620ms cubic-bezier(0.22, 0.72, 0.24, 1),
+			transform 760ms cubic-bezier(0.22, 0.72, 0.24, 1);
+	}
+
+	:global(.home-intro--revealed .home-identity__avatar-shell::before),
+	:global(.home-intro--speaking .home-identity__avatar-shell::before),
+	:global(.home-intro--settled .home-identity__avatar-shell::before) {
+		opacity: 0.72;
+		transform: scale(1);
+	}
+
+	:global(.home-intro--settled .home-identity__avatar-shell::before) {
+		opacity: 0.34;
+	}
+
+	:global(.home-identity__avatar) {
+		position: relative;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		height: 100%;
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		border-radius: 50%;
 		background: rgba(255, 255, 255, 0.025);
@@ -39,10 +113,78 @@ import avatar from '../../assets/images/logo/weiser_avatar.png';
 			0 16px 42px rgba(0, 0, 0, 0.28),
 			0 0 0 5px rgba(255, 255, 255, 0.018),
 			0 0 32px rgba(156, 199, 232, 0.08);
+		opacity: 0;
 		object-fit: cover;
+		transform: scale(0.975);
+		filter: blur(4px);
+		transition:
+			opacity 520ms cubic-bezier(0.22, 0.72, 0.24, 1),
+			transform 640ms cubic-bezier(0.22, 0.72, 0.24, 1),
+			filter 620ms cubic-bezier(0.22, 0.72, 0.24, 1),
+			box-shadow 520ms ease;
 	}
 
-	h1 {
+	:global(.home-intro--revealed .home-identity__avatar),
+	:global(.home-intro--speaking .home-identity__avatar),
+	:global(.home-intro--settled .home-identity__avatar) {
+		box-shadow:
+			0 16px 42px rgba(0, 0, 0, 0.28),
+			0 0 0 5px rgba(255, 255, 255, 0.018),
+			0 0 36px var(--home-intro-accent-soft);
+		opacity: 1;
+		transform: scale(1);
+		filter: blur(0);
+	}
+
+	:global(.home-identity__spark) {
+		position: absolute;
+		z-index: 2;
+		width: 2px;
+		height: 2px;
+		border-radius: 50%;
+		background: color-mix(in srgb, var(--home-intro-accent) 72%, rgba(255, 255, 255, 0.42));
+		box-shadow: 0 0 10px var(--home-intro-accent-soft);
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	:global(.home-identity__spark--1) {
+		top: 10%;
+		left: 16%;
+		--spark-x: -5px;
+		--spark-y: -6px;
+		--spark-delay: 80ms;
+	}
+
+	:global(.home-identity__spark--2) {
+		top: 24%;
+		right: 8%;
+		--spark-x: 7px;
+		--spark-y: -4px;
+		--spark-delay: 160ms;
+	}
+
+	:global(.home-identity__spark--3) {
+		right: 17%;
+		bottom: 13%;
+		--spark-x: 5px;
+		--spark-y: 7px;
+		--spark-delay: 260ms;
+	}
+
+	:global(.home-identity__spark--4) {
+		bottom: 21%;
+		left: 8%;
+		--spark-x: -6px;
+		--spark-y: 4px;
+		--spark-delay: 210ms;
+	}
+
+	:global(.home-intro--revealed .home-identity__spark) {
+		animation: avatar-spark 820ms cubic-bezier(0.22, 0.72, 0.24, 1) var(--spark-delay) both;
+	}
+
+	:global(.home-identity__name) {
 		margin: 34px 0 0;
 		color: rgba(237, 243, 251, 0.9);
 		font-family: var(--type-hero-title-font);
@@ -53,6 +195,22 @@ import avatar from '../../assets/images/logo/weiser_avatar.png';
 		text-shadow:
 			0 2px 22px rgba(0, 0, 0, 0.46),
 			0 0 26px rgba(156, 199, 232, 0.055);
+		opacity: 0;
+		transform: translateY(5px);
+		transition:
+			opacity 420ms cubic-bezier(0.22, 0.72, 0.24, 1) 120ms,
+			transform 500ms cubic-bezier(0.22, 0.72, 0.24, 1) 120ms,
+			text-shadow 420ms ease;
+	}
+
+	:global(.home-intro--revealed .home-identity__name),
+	:global(.home-intro--speaking .home-identity__name),
+	:global(.home-intro--settled .home-identity__name) {
+		opacity: 1;
+		transform: translateY(0);
+		text-shadow:
+			0 2px 22px rgba(0, 0, 0, 0.46),
+			0 0 24px var(--home-intro-accent-soft);
 	}
 
 	:global(.time-greeting) {
@@ -67,8 +225,13 @@ import avatar from '../../assets/images/logo/weiser_avatar.png';
 		text-shadow: 0 2px 16px rgba(0, 0, 0, 0.42);
 	}
 
-	:global(.time-greeting--fade) {
+	:global(.home-intro--speaking .time-greeting--fade) {
 		animation: greeting-fade-in 760ms cubic-bezier(0.2, 0.72, 0.24, 1) both;
+	}
+
+	:global(.home-intro--summoning .time-greeting),
+	:global(.home-intro--revealed .time-greeting) {
+		opacity: 0.42;
 	}
 
 	:global(.time-greeting__cursor) {
@@ -81,6 +244,45 @@ import avatar from '../../assets/images/logo/weiser_avatar.png';
 		animation: cursor-blink 1s steps(2, start) infinite;
 	}
 
+	:global(.home-intro__placeholder-name) {
+		width: min(160px, 42vw);
+		height: 1.1rem;
+		margin-top: 38px;
+		border-radius: 999px;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(156, 199, 232, 0.14),
+			transparent
+		);
+	}
+
+	:global(.home-intro__placeholder-line) {
+		display: block;
+		width: min(420px, 72vw);
+		height: 1px;
+		margin: 0 auto;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(156, 199, 232, 0.16),
+			transparent
+		);
+	}
+
+	:global(.home-intro__placeholder-line + .home-intro__placeholder-line) {
+		margin-top: 1.1rem;
+	}
+
+	:global(.home-intro__placeholder-line--short) {
+		width: min(280px, 48vw);
+		opacity: 0.72;
+	}
+
+	:global(.time-greeting--placeholder) {
+		opacity: 0.58;
+	}
+
 	@media (max-width: 640px) {
 		.home {
 			padding: 124px 20px 92px;
@@ -88,6 +290,22 @@ import avatar from '../../assets/images/logo/weiser_avatar.png';
 
 		:global(.time-greeting) {
 			min-height: 6.8em;
+		}
+	}
+
+	@keyframes avatar-spark {
+		0% {
+			opacity: 0;
+			transform: translate3d(0, 0, 0) scale(0.72);
+		}
+
+		34% {
+			opacity: 0.72;
+		}
+
+		100% {
+			opacity: 0;
+			transform: translate3d(var(--spark-x), var(--spark-y), 0) scale(1.15);
 		}
 	}
 
@@ -111,6 +329,33 @@ import avatar from '../../assets/images/logo/weiser_avatar.png';
 
 		46%,
 		100% {
+			opacity: 0;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		:global(.home-identity__avatar-shell::before),
+		:global(.home-identity__spark),
+		:global(.home-identity__avatar),
+		:global(.home-identity__name),
+		:global(.time-greeting__cursor) {
+			animation: none;
+			transition: none;
+		}
+
+		:global(.home-identity__avatar),
+		:global(.home-identity__name) {
+			opacity: 1;
+			transform: none;
+			filter: none;
+		}
+
+		:global(.home-identity__avatar-shell::before) {
+			opacity: 0.34;
+			transform: none;
+		}
+
+		:global(.home-identity__spark) {
 			opacity: 0;
 		}
 	}

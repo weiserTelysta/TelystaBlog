@@ -14,13 +14,15 @@
 
 .prose h2,
 .prose h3,
-.prose h4 {
+.prose h4,
+.prose h5,
+.prose h6 {
 	color: rgba(237, 243, 251, 0.9);
 	font-family: var(--type-prose-heading-font);
 	font-weight: var(--type-prose-heading-weight);
 	line-height: 1.35;
 	letter-spacing: 0;
-	scroll-margin-top: 110px;
+	scroll-margin-top: var(--site-header-clearance);
 }
 
 .prose h2 {
@@ -36,6 +38,20 @@
 .prose h4 {
 	margin: 2em 0 0.65em;
 	font-size: 1.05rem;
+}
+
+.prose h5 {
+	margin: 1.72em 0 0.58em;
+	color: rgba(220, 228, 240, 0.82);
+	font-size: 1rem;
+	font-weight: 640;
+}
+
+.prose h6 {
+	margin: 1.55em 0 0.5em;
+	color: rgba(190, 199, 214, 0.74);
+	font-size: 0.98rem;
+	font-weight: 620;
 }
 
 .prose p,
@@ -103,6 +119,40 @@
 	border: 0;
 	background: transparent;
 	padding: 0;
+}
+
+.prose .katex {
+	color: rgba(226, 233, 244, 0.88);
+	font-size: 1em;
+}
+
+.prose .katex-display {
+	margin: 1.65em 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 0.65em 0.2em 0.75em;
+	color: rgba(226, 233, 244, 0.88);
+	scrollbar-width: thin;
+	scrollbar-color: rgba(156, 199, 232, 0.2) transparent;
+	overscroll-behavior: contain;
+}
+
+.prose .katex-display::-webkit-scrollbar {
+	height: 3px;
+}
+
+.prose .katex-display::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.prose .katex-display::-webkit-scrollbar-thumb {
+	border-radius: 999px;
+	background: rgba(156, 199, 232, 0.2);
+}
+
+.prose .katex-display > .katex {
+	display: inline-block;
+	min-width: max-content;
 }
 
 .prose img {

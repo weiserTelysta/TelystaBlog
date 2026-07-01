@@ -9,7 +9,7 @@ tags:
   - Blog
   - Introduction
 draft: false
-series: Weiser‘s Blog Construction Records
+series: weiser-blog-construction-records
 seriesOrder: 1
 ---
 # 开始的本篇
