@@ -10,9 +10,8 @@ type Props = {
 };
 
 const { resources } = Astro.props;
-const formatCount = new Set(resources.flatMap((resource) => resource.formats)).size;
 ---
 
 <main class="resource-page">
-	<ResourceExplorer client:load resources={resources} formatCount={formatCount} />
+	<ResourceExplorer client:load resources={resources} />
 </main>

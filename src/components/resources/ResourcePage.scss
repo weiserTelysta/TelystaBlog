@@ -7,10 +7,10 @@
 	--resource-blue: rgba(126, 171, 201, 0.82);
 	--resource-sticky-offset: 112px;
 	position: relative;
-	width: min(var(--site-content-width), calc(100% - 48px));
+	width: min(1360px, calc(100% - 72px));
 	min-height: calc(100vh - var(--resource-sticky-offset));
 	margin: 0 auto;
-	padding: clamp(118px, 13vh, 146px) 0 clamp(96px, 14vh, 160px);
+	padding: clamp(116px, 13vh, 144px) 0 clamp(96px, 14vh, 160px);
 }
 
 @media (max-width: 640px) {
