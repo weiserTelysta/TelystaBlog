@@ -162,3 +162,5 @@ npm run resources:images
 `npm run build` runs the same resource image step before building the site.
 
 Generated `.cover.webp` and `.preview.webp` files are build artifacts. They are intentionally ignored by Git in the current project setup. Commit original source images and resource Markdown entries; let local development and GitHub Pages build regenerate display WebP files.
+
+GitHub Actions caches generated WebP files together with `.tmp/resource-images-manifest.json` to reduce repeated image work. The cache is not a source of truth. The generator only reuses cached images when the source image hash and generation settings still match the manifest; otherwise it regenerates the affected files.

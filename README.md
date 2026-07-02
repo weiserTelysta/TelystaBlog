@@ -47,7 +47,7 @@ npm run preview
 
 `npm run check` runs TypeScript checking and the Astro production build.
 
-`npm run resources:images` generates `.cover.webp` and `.preview.webp` display images for resource sources. `npm run build` runs this automatically before Astro builds the site.
+`npm run resources:images` generates `.cover.webp` and `.preview.webp` display images for resource sources. `npm run build` runs this automatically before Astro builds the site. Generated resource WebP files stay out of Git; GitHub Actions restores them from cache when possible, and the generator uses a manifest plus source hashes to skip unchanged images.
 
 ## Content And Maintenance
 

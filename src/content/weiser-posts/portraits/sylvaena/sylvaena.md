@@ -1,6 +1,6 @@
 ---
-title: To 神戸新一
-description: skeb上向神戸新一的约稿
+title: Skeb To 神戸新一
+description: Skeb Commission for 神戸新一
 publishedAt: 2026-07-02
 updatedAt: 2026-07-02
 category: portraits
@@ -55,10 +55,10 @@ cover: ""
 
 ## 参考画像
 
-![Sylvaena character reference 01](./sylvaena_01.preview.webp)
+![Sylvaena character reference 01](../../../../assets/images/illustration/Sylvaena/sylvaena_character_primary/sylvaena_01.png)
 
-![Sylvaena character reference 02](./sylvaena_02.preview.webp)
+![Sylvaena character reference 02](../../../../assets/images/illustration/Sylvaena/sylvaena_character_primary/sylvaena_02.png)
 
-![Sylvaena character reference 03](./sylvaena_03.preview.webp)
+![Sylvaena character reference 03](../../../../assets/images/illustration/Sylvaena/sylvaena_character_primary/sylvaena_03.png)
 
 ![White Oriental poppy reference](./oriental-poppy.png)

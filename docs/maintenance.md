@@ -129,6 +129,8 @@ The script scans `src/assets/images/resources` and the legacy-compatible `src/as
 
 `npm run build` runs this step automatically through `prebuild`. The generated WebP files are currently ignored by Git, so original source images and Markdown entries are the committed source of truth.
 
+GitHub Actions restores generated resource WebP files and `.tmp/resource-images-manifest.json` from cache before building. The cache is only an acceleration layer: `scripts/generate-resource-images.mjs` verifies each cached image against a manifest entry, the source image hash, and the generator settings before skipping work. If the cache is missing, stale, or invalid, the image is regenerated from the original source.
+
 Resource interaction maintenance notes:
 
 - Keep the resource page a quiet index, not a marketplace.

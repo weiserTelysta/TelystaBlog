@@ -1,9 +1,12 @@
 import fs from 'node:fs/promises';
+import crypto from 'node:crypto';
 import path from 'node:path';
 import process from 'node:process';
 import sharp from 'sharp';
 
 const rootDir = process.cwd();
+const manifestPath = path.join(rootDir, '.tmp/resource-images-manifest.json');
+const generatorVersion = 'resource-images-v3';
 const sourceDirs = [
 	'src/assets/images/resources',
 	'src/assets/images/illustration',
@@ -29,8 +32,10 @@ const variants = [
 ];
 
 const errors = [];
+const fileFingerprintCache = new Map();
 let generatedCount = 0;
 let skippedCount = 0;
+const manifest = await loadManifest();
 
 for (const sourceDir of sourceDirs) {
 	const absoluteDir = path.join(rootDir, sourceDir);
@@ -59,9 +64,46 @@ if (errors.length > 0) {
 	process.exit(1);
 }
 
+await saveManifest(manifest);
+
 console.log(
 	`[resources:images] Generated ${generatedCount} image(s), skipped ${skippedCount} up-to-date image(s).`,
 );
+
+async function loadManifest() {
+	try {
+		const rawManifest = await fs.readFile(manifestPath, 'utf8');
+		const parsedManifest = JSON.parse(rawManifest);
+
+		if (
+			parsedManifest &&
+			typeof parsedManifest === 'object' &&
+			parsedManifest.entries &&
+			typeof parsedManifest.entries === 'object'
+		) {
+			return parsedManifest;
+		}
+	} catch (error) {
+		if (error?.code !== 'ENOENT') {
+			console.warn('[resources:images] Ignoring invalid resource image manifest; assets will be regenerated as needed.');
+		}
+	}
+
+	return {
+		generatorVersion,
+		updatedAt: null,
+		entries: {},
+	};
+}
+
+async function saveManifest(currentManifest) {
+	currentManifest.generatorVersion = generatorVersion;
+	currentManifest.updatedAt = new Date().toISOString();
+
+	await fs.mkdir(path.dirname(manifestPath), { recursive: true });
+	await fs.writeFile(`${manifestPath}.tmp`, `${JSON.stringify(currentManifest, null, 2)}\n`, 'utf8');
+	await fs.rename(`${manifestPath}.tmp`, manifestPath);
+}
 
 async function findSourceImages(directory) {
 	const entries = await fs.readdir(directory, { withFileTypes: true });
@@ -91,7 +133,9 @@ async function generateVariant(sourceFile, variant) {
 	const targetFile = getTargetPath(sourceFile, variant.suffix);
 
 	try {
-		if (await isTargetCurrent(sourceFile, targetFile)) {
+		const sourceFingerprint = await getSourceFingerprint(sourceFile);
+
+		if (await isTargetCurrent(sourceFile, targetFile, variant, manifest)) {
 			skippedCount += 1;
 			return;
 		}
@@ -111,6 +155,9 @@ async function generateVariant(sourceFile, variant) {
 			})
 			.toFile(targetFile);
 
+		fileFingerprintCache.delete(targetFile);
+		const targetFingerprint = await getTargetFingerprint(targetFile);
+		updateManifestEntry(sourceFile, targetFile, variant, sourceFingerprint, targetFingerprint, manifest);
 		generatedCount += 1;
 	} catch (error) {
 		errors.push({
@@ -126,21 +173,106 @@ function getTargetPath(sourceFile, suffix) {
 	return sourceFile.slice(0, -extension.length) + suffix;
 }
 
-async function isTargetCurrent(sourceFile, targetFile) {
-	try {
-		const [sourceStat, targetStat] = await Promise.all([
-			fs.stat(sourceFile),
-			fs.stat(targetFile),
-		]);
+async function getSourceFingerprint(sourceFile) {
+	return getFileFingerprint(sourceFile);
+}
 
-		return targetStat.mtimeMs >= sourceStat.mtimeMs;
+async function getTargetFingerprint(targetFile) {
+	return getFileFingerprint(targetFile);
+}
+
+async function getFileFingerprint(filePath) {
+	const cachedFingerprint = fileFingerprintCache.get(filePath);
+
+	if (cachedFingerprint) {
+		return cachedFingerprint;
+	}
+
+	const [fileBuffer, fileStat] = await Promise.all([
+		fs.readFile(filePath),
+		fs.stat(filePath),
+	]);
+	const fingerprint = {
+		hash: crypto.createHash('sha256').update(fileBuffer).digest('hex'),
+		size: fileStat.size,
+	};
+
+	fileFingerprintCache.set(filePath, fingerprint);
+	return fingerprint;
+}
+
+function createManifestKey(sourceFile, targetFile, variant) {
+	return [
+		toRelativePath(sourceFile),
+		toRelativePath(targetFile),
+		variant.suffix,
+	].join('::');
+}
+
+function getVariantSignature(variant) {
+	return {
+		suffix: variant.suffix,
+		maxWidth: variant.maxWidth,
+		maxHeight: variant.maxHeight,
+		quality: variant.quality,
+		alphaQuality: variant.alphaQuality,
+		effort: 5,
+		format: 'webp',
+	};
+}
+
+async function isTargetCurrent(sourceFile, targetFile, variant, currentManifest) {
+	try {
+		await fs.access(targetFile);
+
+		const sourceFingerprint = await getSourceFingerprint(sourceFile);
+		const targetFingerprint = await getTargetFingerprint(targetFile);
+		const manifestKey = createManifestKey(sourceFile, targetFile, variant);
+		const entry = currentManifest.entries[manifestKey];
+
+		if (!entry) {
+			return false;
+		}
+
+		return (
+			entry.generatorVersion === generatorVersion &&
+			entry.sourcePath === toRelativePath(sourceFile) &&
+			entry.targetPath === toRelativePath(targetFile) &&
+			entry.sourceHash === sourceFingerprint.hash &&
+			entry.sourceSize === sourceFingerprint.size &&
+			entry.targetHash === targetFingerprint.hash &&
+			entry.targetSize === targetFingerprint.size &&
+			entry.variantSuffix === variant.suffix &&
+			JSON.stringify(entry.variantConfig) === JSON.stringify(getVariantSignature(variant))
+		);
 	} catch {
 		return false;
 	}
 }
 
+function updateManifestEntry(sourceFile, targetFile, variant, sourceFingerprint, targetFingerprint, currentManifest) {
+	const manifestKey = createManifestKey(sourceFile, targetFile, variant);
+
+	currentManifest.entries[manifestKey] = {
+		sourcePath: toRelativePath(sourceFile),
+		targetPath: toRelativePath(targetFile),
+		sourceHash: sourceFingerprint.hash,
+		sourceSize: sourceFingerprint.size,
+		targetHash: targetFingerprint.hash,
+		targetSize: targetFingerprint.size,
+		variantSuffix: variant.suffix,
+		variantConfig: getVariantSignature(variant),
+		generatorVersion,
+		generatedAt: new Date().toISOString(),
+	};
+}
+
 function isGeneratedImage(fileName) {
 	return generatedSuffixes.some((suffix) => fileName.endsWith(suffix));
+}
+
+function toRelativePath(absolutePath) {
+	return path.relative(rootDir, absolutePath).replace(/\\/g, '/');
 }
 
 async function pathExists(absolutePath) {
