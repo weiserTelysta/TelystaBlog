@@ -4,7 +4,16 @@ import type { ResourceActionType, ResourceStatus, ResourceTypeId } from '../../c
 type ImageModule = {
 	default: {
 		src: string;
+		width?: number;
+		height?: number;
 	};
+};
+
+type ResourceImageAsset = {
+	src: string;
+	width?: number;
+	height?: number;
+	aspectRatio: number;
 };
 
 const resourceImages = import.meta.glob<ImageModule>(
@@ -34,6 +43,10 @@ export type ResourceAction = {
 
 export type ResourceGalleryImage = {
 	src: string;
+	width?: number;
+	height?: number;
+	aspectRatio: number;
+	downloadHref: string;
 	label?: string;
 	alt?: string;
 };
@@ -44,6 +57,19 @@ export type ResourceCredit = {
 	href?: string;
 };
 
+export type ResourceDownloadFile = {
+	kind: 'file' | 'external';
+	label: string;
+	href: string;
+	format: string;
+	provider?: string;
+	code?: string;
+	note?: string;
+	sourceIndex?: number;
+};
+
+export type ResourceRelatedAction = ResourceAction;
+
 export type ResourceListItem = {
 	id: string;
 	slug: string;
@@ -52,6 +78,7 @@ export type ResourceListItem = {
 	type: ResourceTypeId;
 	status: ResourceStatus;
 	cover: string;
+	coverAspectRatio: number;
 	preview: string;
 	gallery: ResourceGalleryImage[];
 	credits: ResourceCredit[];
@@ -61,10 +88,14 @@ export type ResourceListItem = {
 	variantCount?: number;
 	license?: string;
 	actions: ResourceAction[];
+	downloadFiles: ResourceDownloadFile[];
+	relatedActions: ResourceRelatedAction[];
 	details: string[];
 };
 
 type ResourceEntry = CollectionEntry<'resources'>;
+type ResourceImageVariant = 'cover' | 'preview';
+const DEFAULT_RESOURCE_ASPECT_RATIO = 0.78;
 
 export async function getResourceItems(): Promise<ResourceListItem[]> {
 	const resources = await getCollection('resources');
@@ -78,14 +109,21 @@ export async function getResourceItems(): Promise<ResourceListItem[]> {
 }
 
 function toResourceListItem(resource: ResourceEntry): ResourceListItem {
-	const image = resolveRequiredResourceImage(resource.data.image, resource.data.id, 'image');
+	resolveRequiredResourceImageAsset(resource.data.image, resource.data.id, 'image');
 	const cover = resource.data.cover
-		? resolveRequiredResourceImage(resource.data.cover, resource.data.id, 'cover')
-		: image;
+		? resolveRequiredResourceImageAsset(resource.data.cover, resource.data.id, 'cover')
+		: resolveDisplayResourceImageAsset(resource.data.image, resource.data.id, 'cover', 'cover');
 	const preview = resource.data.preview
-		? resolveRequiredResourceImage(resource.data.preview, resource.data.id, 'preview')
-		: image;
+		? resolveRequiredResourceImageAsset(resource.data.preview, resource.data.id, 'preview')
+		: resolveDisplayResourceImageAsset(resource.data.image, resource.data.id, 'preview', 'preview');
 	const gallery = resolveResourceGallery(resource, preview);
+	const downloadFiles = resolveResourceDownloadFiles(resource);
+	const actions = resource.data.actions.map((action) => ({
+		...action,
+		href: action.href && !action.disabled
+			? resolveResourceActionHref(action.href, resource.data.id, action.label)
+			: undefined,
+	}));
 
 	return {
 		id: resource.data.id,
@@ -94,8 +132,9 @@ function toResourceListItem(resource: ResourceEntry): ResourceListItem {
 		summary: resource.data.summary,
 		type: resource.data.type,
 		status: resource.data.status,
-		cover,
-		preview,
+		cover: cover.src,
+		coverAspectRatio: cover.aspectRatio,
+		preview: preview.src,
 		gallery,
 		credits: resource.data.credits,
 		publishedAt: toDateText(resource.data.publishedAt),
@@ -103,22 +142,28 @@ function toResourceListItem(resource: ResourceEntry): ResourceListItem {
 		formats: resource.data.formats,
 		variantCount: resource.data.variantCount,
 		license: resource.data.license,
-		actions: resource.data.actions.map((action) => ({
-			...action,
-			href: action.href && !action.disabled
-				? resolveResourceActionHref(action.href, resource.data.id, action.label)
-				: undefined,
-		})),
+		actions,
+		downloadFiles,
+		relatedActions: actions.filter((action) => action.type !== 'download'),
 		details: getResourceDetails(resource),
 	};
 }
 
-function resolveResourceGallery(resource: ResourceEntry, fallbackImage: string): ResourceGalleryImage[] {
-	const gallery = resource.data.gallery.map((image, index) => ({
-		src: resolveRequiredResourceImage(image.src, resource.data.id, `gallery[${index}]`),
-		label: image.label,
-		alt: image.alt,
-	}));
+function resolveResourceGallery(resource: ResourceEntry, fallbackImage: ResourceImageAsset): ResourceGalleryImage[] {
+	const gallery = resource.data.gallery.map((image, index) => {
+		const displayImage = resolveDisplayResourceImageAsset(image.src, resource.data.id, `gallery[${index}]`, 'preview');
+		const downloadImage = resolveRequiredResourceImageAsset(image.src, resource.data.id, `gallery[${index}] download`);
+
+		return {
+			src: displayImage.src,
+			width: displayImage.width,
+			height: displayImage.height,
+			aspectRatio: displayImage.aspectRatio,
+			downloadHref: downloadImage.src,
+			label: image.label,
+			alt: image.alt,
+		};
+	});
 
 	if (gallery.length > 0) {
 		return gallery;
@@ -126,11 +171,39 @@ function resolveResourceGallery(resource: ResourceEntry, fallbackImage: string):
 
 	return [
 		{
-			src: fallbackImage,
+			src: fallbackImage.src,
+			width: fallbackImage.width,
+			height: fallbackImage.height,
+			aspectRatio: fallbackImage.aspectRatio,
+			downloadHref: resolveRequiredResourceImageAsset(resource.data.image, resource.data.id, 'image download').src,
 			label: 'Main',
 			alt: resource.data.title,
 		},
 	];
+}
+
+function resolveResourceDownloadFiles(resource: ResourceEntry): ResourceDownloadFile[] {
+	const images = resource.data.gallery.length > 0
+		? resource.data.gallery
+		: [
+			{
+				src: resource.data.image,
+				label: '01',
+				alt: resource.data.title,
+			},
+		];
+	const files = images.map((image, index) => ({
+		kind: 'file' as const,
+		label: image.label ?? String(index + 1).padStart(2, '0'),
+		href: resolveRequiredResourceImageAsset(image.src, resource.data.id, `downloadFiles[${index}]`).src,
+		format: getPathFormat(image.src),
+		sourceIndex: index,
+	}));
+	const actionFiles = resource.data.actions
+		.filter((action) => action.type === 'download' && !action.disabled && action.href)
+		.map((action) => resolveResourceDownloadAction(resource, action));
+
+	return dedupeDownloadFiles([...files, ...actionFiles]);
 }
 
 function assertUniqueResourceIds(resources: ResourceEntry[]) {
@@ -151,6 +224,44 @@ function isDraftResource(resource: ResourceEntry): boolean {
 }
 
 function resolveRequiredResourceImage(path: string, resourceId: string, field: string): string {
+	return resolveRequiredResourceImageAsset(path, resourceId, field).src;
+}
+
+function resolveRequiredResourceImageAsset(path: string, resourceId: string, field: string): ResourceImageAsset {
+	const image = resolveResourceImage(path);
+
+	if (!image) {
+		throw new Error(
+			`[resources] Unable to resolve ${field} for "${resourceId}": ${path}. ` +
+				`Allowed local resource image paths: ${RESOURCE_IMAGE_PATH_HINT}.`,
+		);
+	}
+
+	return image;
+}
+
+function resolveDisplayResourceImageAsset(
+	path: string,
+	resourceId: string,
+	field: string,
+	variant: ResourceImageVariant,
+): ResourceImageAsset {
+	return (
+		resolveDerivedResourceImage(path, variant) ??
+		resolveRequiredResourceImageAsset(path, resourceId, field)
+	);
+}
+
+function resolveDerivedResourceImage(path: string, variant: ResourceImageVariant): ResourceImageAsset | undefined {
+	if (!/\.(png|jpe?g)$/i.test(path)) {
+		return undefined;
+	}
+
+	const derivedPath = path.replace(/\.(png|jpe?g)$/i, `.${variant}.webp`);
+	return resolveResourceImage(derivedPath);
+}
+
+function resolveResourceImage(path: string): ResourceImageAsset | undefined {
 	const normalized = path.replace(/^\/+/, '');
 	const candidates = [
 		path,
@@ -161,13 +272,15 @@ function resolveRequiredResourceImage(path: string, resourceId: string, field: s
 	const image = candidates.map((candidate) => resourceImages[candidate]).find(Boolean);
 
 	if (!image) {
-		throw new Error(
-			`[resources] Unable to resolve ${field} for "${resourceId}": ${path}. ` +
-				`Allowed local resource image paths: ${RESOURCE_IMAGE_PATH_HINT}.`,
-		);
+		return undefined;
 	}
 
-	return image.default.src;
+	return {
+		src: image.default.src,
+		width: image.default.width,
+		height: image.default.height,
+		aspectRatio: getImageAspectRatio(image.default.width, image.default.height),
+	};
 }
 
 function resolveResourceActionHref(href: string, resourceId: string, label: string): string {
@@ -176,6 +289,61 @@ function resolveResourceActionHref(href: string, resourceId: string, label: stri
 	}
 
 	return resolveRequiredResourceImage(href, resourceId, `action "${label}" href`);
+}
+
+function getPathFormat(path: string): string {
+	const extension = path.split(/[?#]/)[0]?.split('.').pop()?.toUpperCase();
+
+	if (extension === 'JPEG') {
+		return 'JPG';
+	}
+
+	return extension || 'FILE';
+}
+
+function resolveResourceDownloadAction(resource: ResourceEntry, action: ResourceAction): ResourceDownloadFile {
+	const href = action.href ?? '';
+	const isExternal = isExternalHref(href);
+	const resolvedHref = isExternal
+		? href
+		: resolveRequiredResourceImageAsset(href, resource.data.id, `download action "${action.label}" href`).src;
+
+	return {
+		kind: isExternal ? 'external' : 'file',
+		label: action.label,
+		href: resolvedHref,
+		format: action.format ?? getPathFormat(href),
+		provider: action.provider,
+		code: action.code,
+		note: action.note,
+	};
+}
+
+function dedupeDownloadFiles(files: ResourceDownloadFile[]): ResourceDownloadFile[] {
+	const seen = new Set<string>();
+
+	return files.filter((file) => {
+		const key = `${file.kind}:${file.href}`;
+
+		if (seen.has(key)) {
+			return false;
+		}
+
+		seen.add(key);
+		return true;
+	});
+}
+
+function getImageAspectRatio(width?: number, height?: number): number {
+	if (!width || !height || width <= 0 || height <= 0) {
+		return DEFAULT_RESOURCE_ASPECT_RATIO;
+	}
+
+	return width / height;
+}
+
+function isExternalHref(href: string): boolean {
+	return /^(https?:|mailto:)/.test(href);
 }
 
 function getResourceDetails(resource: ResourceEntry): string[] {

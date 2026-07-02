@@ -1,6 +1,10 @@
 # build output
 dist/
 
+# generated resource images
+*.cover.webp
+*.preview.webp
+
 # generated types
 .astro/
 
@@ -29,3 +33,5 @@ pnpm-debug.log*
 
 # local task planning notes
 .tasks/
+.task/
+.task
