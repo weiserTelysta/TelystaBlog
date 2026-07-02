@@ -1,5 +1,33 @@
 # Stage Log
 
+## 2026-07-02
+
+This stage focused on making the resource page feel like a quiet visual index while keeping source assets and downloads maintainable.
+
+### Completed Direction
+
+- The resource page moved from a fixed grid toward a responsive masonry layout that respects each image's aspect ratio.
+- Resource display images can now be generated as `.cover.webp` and `.preview.webp` while original images remain available for download.
+- Resource cards gained Motion-powered enter, exit, and layout transitions.
+- The detail overlay gained multi-image navigation, wheel-based switching, image preloading, pending states, and compact download selection.
+- Download files now merge gallery originals with local and external download actions, so PSD and netdisk files can live in the same download model without becoming resource categories.
+- Back-to-top behavior was adjusted to avoid fighting the resource page's wider visual surface.
+
+### Principles Learned
+
+- It is better to wait briefly and appear in the correct masonry layout than to render immediately in the wrong layout and jump into place.
+- Layout animation and hover animation should not fight over the same transform. Put layout motion on an outer wrapper and keep hover polish on inner visual elements.
+- Local wheel interactions must stop global scroll side effects when they intentionally control image navigation.
+- Resource downloads should stay clear and useful, but the page should not borrow marketplace visual language.
+- Generated WebP files are performance artifacts. Original files and Markdown frontmatter remain the content source of truth.
+
+### Current Follow-Up Candidates
+
+1. Group the working tree into clear commit boundaries.
+2. Visually test the resource page on desktop and mobile after the current batch of real resources.
+3. Add a lightweight resource/content validation script if resource entries keep growing.
+4. Keep the new interaction polish rules available as a Codex skill for future UI work.
+
 ## 2026-07-01
 
 This stage focused on turning the site from a set of working pages into a more maintainable personal blog system.

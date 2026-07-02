@@ -20,6 +20,10 @@ Lenis is used for global vertical smooth scrolling only. Local scroll areas have
 
 When a custom scroll control is introduced, it must not create layout shift. It should be visually light, have a stable hit area, and avoid native scrollbar appearance unless the local area truly needs native behavior.
 
+For animation work, prefer a calm reveal over immediate unstable rendering. It is better for a layout to wait briefly and appear in the right place than to flash in the wrong place and settle afterward.
+
+Separate layout motion from local hover polish. If a component uses Motion layout animation, put layout transforms on an outer wrapper and keep hover effects on inner visual elements such as image, shadow, color, or opacity.
+
 ## Content And Configuration Boundaries
 
 Editable site information belongs in `src/config` or `src/content`.
@@ -49,6 +53,8 @@ Resource entries should be maintained through Markdown frontmatter in `src/conte
 Cards should be image-led and lightweight. Detail overlays can show richer information, but download actions should remain compact and clear.
 
 Large original files are acceptable as source material, but pages should prefer lighter covers and previews when performance becomes noticeable. If cover or preview is missing, the system falls back to the original image for convenience.
+
+Resource page motion should feel like quiet browsing. Avoid aggressive card lift, loud glass controls, reward-style feedback, or download UI that makes the page feel like a commercial asset marketplace.
 
 ## Typography
 

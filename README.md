@@ -14,6 +14,7 @@ The site is designed as a calm dark archive: quiet starfield, generous space, re
 - Static category pages at `/blog/category/[category]/`.
 - Visual category accordion for topic filtering.
 - Article metadata, tags, series navigation, and right-side TOC.
+- Resource index with masonry cards, generated WebP display images, detail preview, and compact download actions.
 - Global back-to-top control and Lenis-powered vertical smooth scrolling.
 - Optional ICP footer, currently hidden through `src/config/site.ts`.
 
@@ -38,6 +39,7 @@ public/images/posts       Public post images referenced from Markdown
 
 ```sh
 npm run dev
+npm run resources:images
 npm run check
 npm run build
 npm run preview
@@ -45,9 +47,12 @@ npm run preview
 
 `npm run check` runs TypeScript checking and the Astro production build.
 
+`npm run resources:images` generates `.cover.webp` and `.preview.webp` display images for resource sources. `npm run build` runs this automatically before Astro builds the site.
+
 ## Content And Maintenance
 
 Use [docs/maintenance.md](docs/maintenance.md) as the main guide for editing the site.
+Use [docs/resource-content-guide.md](docs/resource-content-guide.md) for resource Markdown, gallery, credits, actions, downloads, and generated display images.
 
 The project keeps editable content separate from derived logic:
 

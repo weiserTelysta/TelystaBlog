@@ -1,6 +1,6 @@
 # Current Status
 
-Updated: 2026-07-01
+Updated: 2026-07-02
 
 ## Completed
 
@@ -20,7 +20,12 @@ Updated: 2026-07-01
 - Resource content collection under `src/content/resources`.
 - Resource index page at `/resources`.
 - Resource type filtering with URL state.
-- Resource detail overlay with preview and action links.
+- Resource masonry layout with image-led cards.
+- Resource detail overlay with multi-image preview, wheel switching, keyboard navigation, download menu, and related action links.
+- Resource display images can be generated as `.cover.webp` and `.preview.webp` from PNG, JPG, and JPEG source files.
+- Resource downloads merge gallery originals with local and external download actions.
+- Resource page motion uses Motion for card enter, exit, and layout transitions.
+- Back-to-top behavior adapts around the resource page.
 - Editable site, page, content, visual, typography, and interaction settings are centralized under `src/config` and `src/styles`.
 - Blog category, blog series, and resource type helper logic is separated into `src/lib`.
 - Project design and architecture principles are recorded in `docs/project-knowledge.md`.
@@ -74,19 +79,25 @@ Each resource uses frontmatter for:
 - optional `preview`
 - optional `variantCount`
 - optional `license`
+- optional `gallery`
+- optional `credits`
 - `actions`
 
 `image` is required. `cover` and `preview` are optional optimization fields. When they are omitted, the resource system falls back to `image`.
+
+When generated WebP variants exist next to PNG, JPG, or JPEG sources, the resource system prefers `.cover.webp` for cards and `.preview.webp` for detail display. Original source images remain the download target.
 
 Resource types are defined in `src/config/content/resourceTypes.ts`. Adding a resource type should happen there first so schema validation, filters, and URL handling stay aligned.
 
 ## Current Risks
 
 - The working tree should still be grouped carefully before the next feature stage if more local edits are added after this snapshot.
-- Resource page visuals are still the most active area. The layout is usable, but card density, detail overlay balance, and image handling still need careful visual verification as more real resources are added.
-- Large source images can make resource pages heavy when `cover` and `preview` are omitted. The fallback is convenient, but final resources should still use lighter cover assets when needed.
+- Resource page visuals are much closer to the intended atmosphere, but they still need visual checks after large content batches.
+- Large source images are acceptable as originals, but the resource image generation step must run before local preview or production build.
+- Generated `.cover.webp` and `.preview.webp` files are ignored by Git. This is intentional while GitHub Pages runs the build, but it depends on the build pipeline continuing to execute `npm run build`.
 - `docs/resources.md` contains the right maintenance ideas, but it should be periodically checked in a UTF-8 aware editor because PowerShell may display Chinese documentation as mojibake.
 - The category accordion and starfield remain long-term interaction pressure points because they coordinate multiple animation and input states.
+- Resource detail interactions coordinate wheel events, scroll locking, focus trapping, image preloading, pending states, and reduced motion. Future changes should stay small and verified.
 
 ## Code Quality Notes
 
@@ -105,7 +116,7 @@ Current maintenance risks:
 - Several components still carry both interaction and presentation responsibilities, especially resource and visual accordion components.
 - The working tree should be grouped into clear commits before another large feature round.
 - Some documentation still overlaps in responsibility. `docs/maintenance.md` should be the main operator guide, while this file should stay a status snapshot.
-- Resource optimization is still manual. Automatic cover or preview generation can be considered later, but it should be its own stage.
+- Resource optimization now has an automatic display image script, but original asset selection and external large-file hosting remain manual content decisions.
 
 ## Short-Term Maintenance Principles
 
@@ -119,7 +130,7 @@ Current maintenance risks:
 ## Next Stage Candidates
 
 1. Group the current working tree into clear commit boundaries.
-2. Finish the current resource page visual pass and verify it with real resources.
-3. Sync `docs/maintenance.md`, `docs/resources.md`, and `README.md` after the resource page stabilizes.
-4. Add more real posts and resources to test whether the current layouts scale naturally.
-5. Consider a small validation script for cross-file rules such as category visual coverage, series ids, and resource action paths.
+2. Visually verify the resource page after the current documentation and skill pass.
+3. Add more real posts and resources to test whether the current layouts scale naturally.
+4. Consider a small validation script for cross-file rules such as category visual coverage, series ids, resource type ids, and resource action paths.
+5. Revisit `docs/resources.md` in a UTF-8 aware editor if the Chinese resource guide should remain a primary document.
