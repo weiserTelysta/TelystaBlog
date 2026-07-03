@@ -89,8 +89,9 @@ export const HOME_SECTIONS: HomeSectionConfig[] = [
 		items: [
 			{
 				label: 'Resource Index',
+				href: '/resources',
 				description: '还没想好，先留一个安静的位置。',
-				kind: 'placeholder',
+				kind: 'index',
 			},
 		],
 		order: 30,

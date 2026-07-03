@@ -10,6 +10,5 @@ export const SITE_CONFIG = {
 	},
 	navItems: [
 		{ label: 'Blog', href: '/blog' },
-		{ label: 'Resources', href: '/resources' },
 	],
 } as const;
