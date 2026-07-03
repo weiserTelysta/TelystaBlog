@@ -134,7 +134,8 @@
 	color: rgba(226, 233, 244, 0.88);
 	scrollbar-width: thin;
 	scrollbar-color: rgba(156, 199, 232, 0.2) transparent;
-	overscroll-behavior: contain;
+	overscroll-behavior-x: contain;
+	overscroll-behavior-y: auto;
 }
 
 .prose .katex-display::-webkit-scrollbar {

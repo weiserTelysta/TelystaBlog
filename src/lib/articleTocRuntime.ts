@@ -22,6 +22,7 @@ type TocState = {
 	scrollSettleTimer: number;
 	revealRetryTimer: number;
 	lastRevealAt: number;
+	prefersReducedMotion: MediaQueryList;
 	cleanup: () => void;
 };
 
@@ -102,22 +103,51 @@ const syncTocScrollState = (tocList: HTMLElement) => {
 	tocList.dataset.tocAtEnd = String(isAtEnd);
 };
 
+const clampScrollTop = (state: TocState, scrollTop: number) => {
+	const maxScrollTop = Math.max(0, state.tocList.scrollHeight - state.tocList.clientHeight);
+
+	return Math.min(Math.max(0, scrollTop), maxScrollTop);
+};
+
+const getTocScrollBehavior = (state: TocState, force: boolean): ScrollBehavior => (
+	force || state.prefersReducedMotion.matches ? 'auto' : 'smooth'
+);
+
 const revealLinkIfNeeded = (state: TocState, link: HTMLAnchorElement, force = false) => {
-	const { programmaticScrollMs, revealAnchor, revealCooldownMs, revealMargin } = ARTICLE_PAGE_CONFIG.toc.behavior;
+	const {
+		comfortAnchor,
+		comfortBottom,
+		comfortTop,
+		maxRevealStep,
+		programmaticScrollMs,
+		revealAnchor,
+		revealCooldownMs,
+		revealMargin,
+	} = ARTICLE_PAGE_CONFIG.toc.behavior;
 	const now = window.performance.now();
 	const { top: linkTop, bottom: linkBottom } = getLinkScrollBounds(state, link);
 	const viewTop = state.tocList.scrollTop;
 	const viewBottom = viewTop + state.tocList.clientHeight;
+	const linkCenter = (linkTop + linkBottom) / 2;
+	const comfortTopLine = viewTop + state.tocList.clientHeight * comfortTop;
+	const comfortBottomLine = viewTop + state.tocList.clientHeight * comfortBottom;
+	const isComfortable = linkCenter >= comfortTopLine && linkCenter <= comfortBottomLine;
 	const isVisible = linkTop >= viewTop + revealMargin && linkBottom <= viewBottom - revealMargin;
+	const shouldStayPut = isComfortable && isVisible;
 
-	if (!force && (isVisible || !canReveal(state) || now - state.lastRevealAt < revealCooldownMs)) {
+	if (!force && (shouldStayPut || !canReveal(state) || now - state.lastRevealAt < revealCooldownMs)) {
 		return;
 	}
 
 	const maxScrollTop = Math.max(0, state.tocList.scrollHeight - state.tocList.clientHeight);
-	const anchoredScrollTop = Math.max(0, linkTop - state.tocList.clientHeight * revealAnchor);
+	const anchor = force ? revealAnchor : comfortAnchor;
+	const anchoredScrollTop = Math.max(0, linkTop - state.tocList.clientHeight * anchor);
 	const shouldUseEndAlignment = force && linkBottom > maxScrollTop + state.tocList.clientHeight - revealMargin;
-	const nextScrollTop = shouldUseEndAlignment ? maxScrollTop : Math.min(anchoredScrollTop, maxScrollTop);
+	const targetScrollTop = shouldUseEndAlignment ? maxScrollTop : clampScrollTop(state, anchoredScrollTop);
+	const scrollDelta = targetScrollTop - state.tocList.scrollTop;
+	const nextScrollTop = !force && Math.abs(scrollDelta) > maxRevealStep
+		? clampScrollTop(state, state.tocList.scrollTop + Math.sign(scrollDelta) * maxRevealStep)
+		: targetScrollTop;
 
 	if (Math.abs(state.tocList.scrollTop - nextScrollTop) < 1) {
 		return;
@@ -127,7 +157,7 @@ const revealLinkIfNeeded = (state: TocState, link: HTMLAnchorElement, force = fa
 	state.programmaticScrollUntil = now + programmaticScrollMs;
 	state.tocList.scrollTo({
 		top: nextScrollTop,
-		behavior: force ? 'auto' : 'smooth',
+		behavior: getTocScrollBehavior(state, force),
 	});
 	syncTocScrollState(state.tocList);
 };
@@ -273,6 +303,7 @@ const initTocList = (tocList: HTMLElement) => {
 		scrollSettleTimer: 0,
 		revealRetryTimer: 0,
 		lastRevealAt: 0,
+		prefersReducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)'),
 		cleanup: () => {},
 	};
 
@@ -290,6 +321,9 @@ const initTocList = (tocList: HTMLElement) => {
 		markUserIntent(state);
 		syncTocScrollState(tocList);
 		scheduleRevealRetry(state);
+	};
+	const syncTocOnly = () => {
+		syncTocScrollState(tocList);
 	};
 	const handleMouseEnter = () => {
 		state.isInspectingToc = true;
@@ -328,7 +362,7 @@ const initTocList = (tocList: HTMLElement) => {
 	tocList.addEventListener('wheel', registerUserIntent, { passive: true });
 	tocList.addEventListener('touchstart', registerUserIntent, { passive: true });
 	tocList.addEventListener('pointerdown', registerUserIntent);
-	tocList.addEventListener('scroll', registerUserIntent, { passive: true });
+	tocList.addEventListener('scroll', syncTocOnly, { passive: true });
 	tocList.addEventListener('mouseenter', handleMouseEnter);
 	tocList.addEventListener('mouseleave', handleMouseLeave);
 	window.addEventListener('scroll', requestUpdate, { passive: true });
@@ -341,7 +375,7 @@ const initTocList = (tocList: HTMLElement) => {
 		tocList.removeEventListener('wheel', registerUserIntent);
 		tocList.removeEventListener('touchstart', registerUserIntent);
 		tocList.removeEventListener('pointerdown', registerUserIntent);
-		tocList.removeEventListener('scroll', registerUserIntent);
+		tocList.removeEventListener('scroll', syncTocOnly);
 		tocList.removeEventListener('mouseenter', handleMouseEnter);
 		tocList.removeEventListener('mouseleave', handleMouseLeave);
 		window.removeEventListener('scroll', requestUpdate);

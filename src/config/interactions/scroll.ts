@@ -2,6 +2,18 @@ import type { LenisOptions } from 'lenis';
 
 export const SCROLL_PREVENT_ATTRIBUTE = 'data-scroll-native';
 
+const KATEX_DISPLAY_SELECTOR = '.katex-display';
+
+const shouldLetFormulaHandleScroll = (event: Event, deltaX: number, deltaY: number) => {
+	const target = event.target;
+
+	if (!(target instanceof Element) || !target.closest(KATEX_DISPLAY_SELECTOR)) {
+		return false;
+	}
+
+	return event instanceof WheelEvent && (event.shiftKey || Math.abs(deltaX) > Math.abs(deltaY));
+};
+
 export const SCROLL_CONFIG = {
 	enabled: true,
 	reducedMotionQuery: '(prefers-reduced-motion: reduce)',
@@ -16,7 +28,6 @@ export const SCROLL_CONFIG = {
 		'.article-aside__toc-list',
 		'.article-aside__scroll',
 		'.article-toc',
-		'.katex-display',
 		'pre',
 		'pre code',
 		'textarea',
@@ -31,5 +42,8 @@ export const SCROLL_CONFIG = {
 		touchMultiplier: 1,
 		smoothWheel: true,
 		syncTouch: false,
+		virtualScroll: ({ event, deltaX, deltaY }) => (
+			shouldLetFormulaHandleScroll(event, deltaX, deltaY) ? false : true
+		),
 	} satisfies Partial<LenisOptions>,
 };

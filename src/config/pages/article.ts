@@ -28,6 +28,10 @@ export const ARTICLE_PAGE_CONFIG = {
 			revealCooldownMs: 160,
 			revealAnchor: 0.3,
 			revealMargin: 28,
+			comfortTop: 0.24,
+			comfortBottom: 0.68,
+			comfortAnchor: 0.34,
+			maxRevealStep: 96,
 		},
 	},
 	series: {
