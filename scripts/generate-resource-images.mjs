@@ -6,19 +6,17 @@ import sharp from 'sharp';
 
 const rootDir = process.cwd();
 const manifestPath = path.join(rootDir, '.tmp/resource-images-manifest.json');
-const generatorVersion = 'resource-images-v3';
-const sourceDirs = [
-	'src/assets/images/resources',
-	'src/assets/images/illustration',
-];
+const generatorVersion = 'generated-images-v1';
 const sourceExtensions = new Set(['.png', '.jpg', '.jpeg']);
-const generatedSuffixes = ['.cover.webp', '.preview.webp'];
+const generatedSuffixes = ['.cover.webp', '.preview.webp', '.avatar.webp'];
 
-const variants = [
+const resourceVariants = [
 	{
 		suffix: '.cover.webp',
 		maxWidth: 1200,
 		maxHeight: 1600,
+		fit: 'inside',
+		withoutEnlargement: true,
 		quality: 84,
 		alphaQuality: 95,
 	},
@@ -26,8 +24,33 @@ const variants = [
 		suffix: '.preview.webp',
 		maxWidth: 3200,
 		maxHeight: 3200,
+		fit: 'inside',
+		withoutEnlargement: true,
 		quality: 92,
 		alphaQuality: 98,
+	},
+];
+
+const imageGroups = [
+	{
+		sourceDirs: [
+			'src/assets/images/resources',
+			'src/assets/images/illustration',
+		],
+		variants: resourceVariants,
+	},
+	{
+		sourceDirs: ['src/assets/images/logo'],
+		variants: [
+			{
+				suffix: '.avatar.webp',
+				maxWidth: 384,
+				maxHeight: 384,
+				fit: 'cover',
+				quality: 90,
+				alphaQuality: 98,
+			},
+		],
 	},
 ];
 
@@ -37,24 +60,26 @@ let generatedCount = 0;
 let skippedCount = 0;
 const manifest = await loadManifest();
 
-for (const sourceDir of sourceDirs) {
-	const absoluteDir = path.join(rootDir, sourceDir);
+for (const imageGroup of imageGroups) {
+	for (const sourceDir of imageGroup.sourceDirs) {
+		const absoluteDir = path.join(rootDir, sourceDir);
 
-	if (!(await pathExists(absoluteDir))) {
-		continue;
-	}
+		if (!(await pathExists(absoluteDir))) {
+			continue;
+		}
 
-	const sourceFiles = await findSourceImages(absoluteDir);
+		const sourceFiles = await findSourceImages(absoluteDir);
 
-	for (const sourceFile of sourceFiles) {
-		for (const variant of variants) {
-			await generateVariant(sourceFile, variant);
+		for (const sourceFile of sourceFiles) {
+			for (const variant of imageGroup.variants) {
+				await generateVariant(sourceFile, variant);
+			}
 		}
 	}
 }
 
 if (errors.length > 0) {
-	console.error('[resources:images] Failed to generate one or more resource asset:');
+	console.error('[assets:images] Failed to generate one or more derived image asset:');
 
 	for (const error of errors) {
 		console.error(`- ${path.relative(rootDir, error.source)} -> ${path.relative(rootDir, error.target)}`);
@@ -67,7 +92,7 @@ if (errors.length > 0) {
 await saveManifest(manifest);
 
 console.log(
-	`[resources:images] Generated ${generatedCount} image(s), skipped ${skippedCount} up-to-date image(s).`,
+	`[assets:images] Generated ${generatedCount} image(s), skipped ${skippedCount} up-to-date image(s).`,
 );
 
 async function loadManifest() {
@@ -85,7 +110,7 @@ async function loadManifest() {
 		}
 	} catch (error) {
 		if (error?.code !== 'ENOENT') {
-			console.warn('[resources:images] Ignoring invalid resource image manifest; assets will be regenerated as needed.');
+			console.warn('[assets:images] Ignoring invalid image manifest; assets will be regenerated as needed.');
 		}
 	}
 
@@ -145,8 +170,8 @@ async function generateVariant(sourceFile, variant) {
 			.resize({
 				width: variant.maxWidth,
 				height: variant.maxHeight,
-				fit: 'inside',
-				withoutEnlargement: true,
+				fit: variant.fit,
+				withoutEnlargement: variant.withoutEnlargement ?? false,
 			})
 			.webp({
 				quality: variant.quality,
@@ -214,6 +239,8 @@ function getVariantSignature(variant) {
 		suffix: variant.suffix,
 		maxWidth: variant.maxWidth,
 		maxHeight: variant.maxHeight,
+		fit: variant.fit,
+		withoutEnlargement: variant.withoutEnlargement ?? false,
 		quality: variant.quality,
 		alphaQuality: variant.alphaQuality,
 		effort: 5,

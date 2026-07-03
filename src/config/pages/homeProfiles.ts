@@ -1,10 +1,10 @@
 import type { ImageMetadata } from 'astro';
-import aliceAvatar from '../../assets/images/logo/Profile_Alice_01.png';
-import rhaelysaAvatar01 from '../../assets/images/logo/Profile_Rhaelysa_01.png';
-import rhaelysaAvatar02 from '../../assets/images/logo/Profile_Rhaelysa_02.png';
-import sylvaenaAvatar from '../../assets/images/logo/Profile_Sylvaena.png';
-import telystaAvatar from '../../assets/images/logo/Profile_Telysta_01.png';
-import weiserAvatar from '../../assets/images/logo/Profile_Weiser.png';
+import aliceAvatar from '../../assets/images/logo/Profile_Alice_01.avatar.webp';
+import rhaelysaAvatar01 from '../../assets/images/logo/Profile_Rhaelysa_01.avatar.webp';
+import rhaelysaAvatar02 from '../../assets/images/logo/Profile_Rhaelysa_02.avatar.webp';
+import sylvaenaAvatar from '../../assets/images/logo/Profile_Sylvaena.avatar.webp';
+import telystaAvatar from '../../assets/images/logo/Profile_Telysta_01.avatar.webp';
+import weiserAvatar from '../../assets/images/logo/Profile_Weiser.avatar.webp';
 
 export type HomeProfile = {
 	id: string;
