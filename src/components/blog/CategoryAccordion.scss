@@ -8,6 +8,11 @@ body.is-category-accordion-open {
 	overflow: hidden;
 }
 
+html.is-category-accordion-open .blog-month__node,
+html.is-category-accordion-open .blog-month::before {
+	visibility: hidden;
+}
+
 .category-accordion__entry {
 	display: grid;
 	width: 100%;

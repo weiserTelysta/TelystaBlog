@@ -4,17 +4,22 @@ import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
 import type { BlogCategoryId, CategoryPostCount } from '../../config/content/blogCategories';
 import type { BlogCategoryVisual } from '../../config/visuals/categoryVisuals';
 import { buildCategoryHref } from '../../lib/blogCategoryUtils';
+import {
+	RAIL_SNAP_DISTANCE_RATIO,
+	easeOutRailMotion,
+	getBoundedRailTarget,
+	getNearestRailSnapTarget,
+	getRailMotionDuration,
+	normalizeWheelDelta,
+} from './categoryAccordionMotion';
 import './CategoryAccordion.scss';
 
 const ACCORDION_COPY = BLOG_PAGE_CONFIG.categoryAccordion;
 const CATEGORY_DIALOG_TITLE_ID = ACCORDION_COPY.dialogTitleId;
 const CLOSE_ANIMATION_MS = 200;
-const WHEEL_SCROLL_FACTOR = 1.75;
-const WHEEL_EASE = 0.18;
-const WHEEL_REST_DISTANCE = 0.5;
-const SNAP_MAX_DISTANCE = 48;
+const RAIL_REST_DISTANCE = 0.5;
 
-type RailMotionPhase = 'idle' | 'wheel' | 'settling' | 'closing';
+type RailMotionPhase = 'idle' | 'animating' | 'closing';
 
 type Props = {
 	visuals: BlogCategoryVisual[];
@@ -40,7 +45,12 @@ export default function CategoryAccordion({
 	const railRef = useRef<HTMLDivElement>(null);
 	const closeTimerRef = useRef<number | null>(null);
 	const scrollAnimationFrameRef = useRef<number | null>(null);
+	const animationStartLeftRef = useRef(0);
+	const animationStartTimeRef = useRef(0);
+	const animationDurationRef = useRef(0);
 	const targetScrollLeftRef = useRef(0);
+	const wheelDirectionRef = useRef(0);
+	const reducedMotionRef = useRef(false);
 	const isWheelScrollingRef = useRef(false);
 	const isClosingRef = useRef(false);
 	const railMotionPhaseRef = useRef<RailMotionPhase>('idle');
@@ -52,6 +62,35 @@ export default function CategoryAccordion({
 		[visuals, selectedCategoryId],
 	);
 	const currentCount = selectedCategoryId ? postCounts[selectedCategoryId] : totalCount;
+
+	useEffect(() => {
+		const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+		function syncReducedMotionPreference() {
+			reducedMotionRef.current = reducedMotionQuery.matches;
+
+			if (!reducedMotionQuery.matches || railMotionPhaseRef.current !== 'animating') {
+				return;
+			}
+
+			const rail = railRef.current;
+			stopRailAnimation();
+
+			if (rail) {
+				rail.scrollLeft = targetScrollLeftRef.current;
+			}
+
+			wheelDirectionRef.current = 0;
+			setRailMotionPhase('idle');
+		}
+
+		syncReducedMotionPreference();
+		reducedMotionQuery.addEventListener('change', syncReducedMotionPreference);
+
+		return () => {
+			reducedMotionQuery.removeEventListener('change', syncReducedMotionPreference);
+		};
+	}, []);
 
 	useEffect(() => {
 		if (!open) {
@@ -72,7 +111,10 @@ export default function CategoryAccordion({
 		const rail = railRef.current;
 
 		if (rail && 'ResizeObserver' in window) {
-			railResizeObserverRef.current = new ResizeObserver(updateRailEdgeSpace);
+			railResizeObserverRef.current = new ResizeObserver(() => {
+				updateRailEdgeSpace();
+				clearWheelScrollState();
+			});
 			railResizeObserverRef.current.observe(rail);
 		}
 
@@ -130,14 +172,36 @@ export default function CategoryAccordion({
 
 	function setRailMotionPhase(phase: RailMotionPhase) {
 		railMotionPhaseRef.current = phase;
-		setWheelScrolling(phase === 'wheel' || phase === 'settling');
+		setWheelScrolling(phase === 'animating');
 	}
 
-	function startRailAnimation() {
-		if (scrollAnimationFrameRef.current !== null) {
+	function startRailAnimation(
+		rail: HTMLDivElement,
+		targetScrollLeft: number,
+		cardSpan: number,
+		direction: number,
+	) {
+		stopRailAnimation();
+		animationStartLeftRef.current = rail.scrollLeft;
+		targetScrollLeftRef.current = targetScrollLeft;
+		animationStartTimeRef.current = window.performance.now();
+		animationDurationRef.current = getRailMotionDuration(
+			targetScrollLeft - rail.scrollLeft,
+			cardSpan,
+		);
+		wheelDirectionRef.current = direction;
+
+		if (
+			reducedMotionRef.current ||
+			Math.abs(targetScrollLeft - rail.scrollLeft) <= RAIL_REST_DISTANCE
+		) {
+			rail.scrollLeft = targetScrollLeft;
+			wheelDirectionRef.current = 0;
+			setRailMotionPhase('idle');
 			return;
 		}
 
+		setRailMotionPhase('animating');
 		scrollAnimationFrameRef.current = window.requestAnimationFrame(animateRailScroll);
 	}
 
@@ -152,7 +216,15 @@ export default function CategoryAccordion({
 
 	function clearWheelScrollState() {
 		stopRailAnimation();
-		setRailMotionPhase('idle');
+		const rail = railRef.current;
+		if (rail) {
+			targetScrollLeftRef.current = rail.scrollLeft;
+		}
+		wheelDirectionRef.current = 0;
+
+		if (railMotionPhaseRef.current !== 'closing') {
+			setRailMotionPhase('idle');
+		}
 	}
 
 	function requestCloseAccordion() {
@@ -275,39 +347,60 @@ export default function CategoryAccordion({
 			return;
 		}
 
-		const maxScrollLeft = getRailMaxScrollLeft(rail);
-		const canScroll = maxScrollLeft > 1;
 		const isMostlyVerticalWheel = Math.abs(event.deltaY) > Math.abs(event.deltaX);
-		const isAtStart = rail.scrollLeft <= 1;
-		const isAtEnd = rail.scrollLeft >= maxScrollLeft - 1;
-		const isScrollingLeft = event.deltaY < 0;
-		const isScrollingRight = event.deltaY > 0;
 
-		if (!canScroll || event.shiftKey || !isMostlyVerticalWheel || event.deltaY === 0) {
+		if (event.shiftKey || !isMostlyVerticalWheel || event.deltaY === 0) {
+			clearWheelScrollState();
 			return;
 		}
 
-		if ((isAtStart && isScrollingLeft) || (isAtEnd && isScrollingRight)) {
+		const maxScrollLeft = getRailMaxScrollLeft(rail);
+		const normalizedDelta = normalizeWheelDelta(
+			event.deltaY,
+			event.deltaMode,
+			rail.clientWidth,
+		);
+
+		if (maxScrollLeft <= 1 || normalizedDelta === 0) {
+			clearWheelScrollState();
+			return;
+		}
+
+		const direction = Math.sign(normalizedDelta);
+		const reversesDirection =
+			wheelDirectionRef.current !== 0 && wheelDirectionRef.current !== direction;
+		const cardSpan = getRailCardSpan(rail);
+		const baseTarget =
+			railMotionPhaseRef.current === 'animating' && !reversesDirection
+				? targetScrollLeftRef.current
+				: rail.scrollLeft;
+		const boundedTarget = getBoundedRailTarget(
+			{
+				scrollLeft: rail.scrollLeft,
+				targetScrollLeft: baseTarget,
+				maxScrollLeft,
+				cardSpan,
+			},
+			normalizedDelta,
+		);
+		const snapTarget = getNearestRailSnapTarget(
+			boundedTarget,
+			getRailCardSnapTargets(rail, maxScrollLeft),
+			cardSpan * RAIL_SNAP_DISTANCE_RATIO,
+			maxScrollLeft,
+		);
+		const nextTarget = snapTarget ?? boundedTarget;
+
+		if (Math.abs(nextTarget - rail.scrollLeft) <= RAIL_REST_DISTANCE) {
+			clearWheelScrollState();
 			return;
 		}
 
 		event.preventDefault();
-
-		if (railMotionPhaseRef.current === 'idle') {
-			targetScrollLeftRef.current = rail.scrollLeft;
-		}
-
-		targetScrollLeftRef.current = clamp(
-			targetScrollLeftRef.current + event.deltaY * WHEEL_SCROLL_FACTOR,
-			0,
-			maxScrollLeft,
-		);
-
-		setRailMotionPhase('wheel');
-		startRailAnimation();
+		startRailAnimation(rail, nextTarget, cardSpan, direction);
 	}
 
-	function animateRailScroll() {
+	function animateRailScroll(timestamp: number) {
 		const rail = railRef.current;
 
 		if (railMotionPhaseRef.current === 'closing' || !rail) {
@@ -315,71 +408,52 @@ export default function CategoryAccordion({
 			return;
 		}
 
-		const distance = targetScrollLeftRef.current - rail.scrollLeft;
+		const elapsed = timestamp - animationStartTimeRef.current;
+		const progress = clamp(elapsed / animationDurationRef.current, 0, 1);
+		const easedProgress = easeOutRailMotion(progress);
+		rail.scrollLeft =
+			animationStartLeftRef.current +
+			(targetScrollLeftRef.current - animationStartLeftRef.current) * easedProgress;
 
-		if (Math.abs(distance) <= WHEEL_REST_DISTANCE) {
+		if (progress >= 1) {
 			rail.scrollLeft = targetScrollLeftRef.current;
 			scrollAnimationFrameRef.current = null;
-
-			if (railMotionPhaseRef.current === 'wheel') {
-				const settleTarget = getNearestCardSettleTarget(rail);
-
-				if (settleTarget !== null) {
-					targetScrollLeftRef.current = settleTarget;
-					setRailMotionPhase('settling');
-					startRailAnimation();
-					return;
-				}
-
-				setRailMotionPhase('idle');
-				return;
-			}
-
-			if (railMotionPhaseRef.current === 'settling') {
-				setRailMotionPhase('idle');
-				return;
-			}
-
+			wheelDirectionRef.current = 0;
 			setRailMotionPhase('idle');
 			return;
 		}
 
-		rail.scrollLeft += distance * WHEEL_EASE;
 		scrollAnimationFrameRef.current = window.requestAnimationFrame(animateRailScroll);
 	}
 
-	function getNearestCardSettleTarget(rail: HTMLDivElement) {
-		const cards = Array.from(rail.querySelectorAll<HTMLElement>('.category-accordion__card'));
+	function getRailCardSpan(rail: HTMLDivElement) {
+		const firstCard = rail.querySelector<HTMLElement>('.category-accordion__card');
 
-		if (cards.length === 0) {
-			return null;
+		if (!firstCard) {
+			return Math.max(1, rail.clientWidth);
 		}
 
+		const railStyles = window.getComputedStyle(rail);
+		const gap = parseFloat(railStyles.columnGap || railStyles.gap || '0') || 0;
+		return Math.max(1, firstCard.getBoundingClientRect().width + gap);
+	}
+
+	function getRailCardSnapTargets(rail: HTMLDivElement, maxScrollLeft: number) {
 		const railRect = rail.getBoundingClientRect();
 		const railCenter = railRect.left + railRect.width / 2;
-		let nearestDistance = Number.POSITIVE_INFINITY;
-		let nearestCard: HTMLElement | null = null;
 
-		for (const card of cards) {
-			const cardRect = card.getBoundingClientRect();
-			const cardCenter = cardRect.left + cardRect.width / 2;
-			const distance = cardCenter - railCenter;
-
-			if (Math.abs(distance) < Math.abs(nearestDistance)) {
-				nearestDistance = distance;
-				nearestCard = card;
-			}
-		}
-
-		if (!nearestCard || Math.abs(nearestDistance) > SNAP_MAX_DISTANCE) {
-			return null;
-		}
-
-		return clamp(
-			rail.scrollLeft + nearestDistance,
-			0,
-			getRailMaxScrollLeft(rail),
+		return Array.from(
+			rail.querySelectorAll<HTMLElement>('.category-accordion__card'),
+			(card) => {
+				const cardRect = card.getBoundingClientRect();
+				const cardCenter = cardRect.left + cardRect.width / 2;
+				return clamp(rail.scrollLeft + cardCenter - railCenter, 0, maxScrollLeft);
+			},
 		);
+	}
+
+	function handleRailPointerDown() {
+		clearWheelScrollState();
 	}
 
 	function handlePointerMove(event: PointerEvent<HTMLButtonElement>) {
@@ -473,6 +547,7 @@ export default function CategoryAccordion({
 							className="category-accordion__rail-frame"
 							data-scroll-native
 							onWheel={handleRailWheel}
+							onPointerDown={handleRailPointerDown}
 						>
 							<div
 								className={[
