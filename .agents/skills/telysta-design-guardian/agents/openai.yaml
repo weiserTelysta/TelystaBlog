@@ -1,0 +1,4 @@
+interface:
+  display_name: "Telysta Design Guardian"
+  short_description: "守护 Telysta 的编辑视觉、阅读体验、动效与无障碍一致性"
+  default_prompt: "使用 $telysta-design-guardian 审查 Telysta UI 修改，确保保持既有视觉语言与阅读体验。"
