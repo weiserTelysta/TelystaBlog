@@ -1,166 +1,155 @@
-# Resource Content Guide
+# 资源内容字段指南
 
-Resources are maintained as Markdown files in `src/content/resources`. Each file describes one public resource entry for the resources page.
+资源条目位于 `src/content/resources`，使用 Markdown frontmatter 描述。资源页面是安静的个人资源索引，不是商城。
 
-Recommended paths for new resources:
-
-```text
-src/assets/images/resources/{type}/{resource-id}/
-src/content/resources/{type}/{resource-id}.md
-```
-
-Do not put notes, drafts, or README files in `src/content/resources`. Astro reads every Markdown file there as a resource entry.
-
-## Basic Fields
+## 基础模板
 
 ```md
 ---
-id: weiser_bunny_01
-title: Weiser Bunny
-summary: A short sentence shown in the resource list and detail view.
+id: example-resource
+title: Example Resource
+summary: 一句简短摘要。
 type: illustration
-status: available
-image: src/assets/images/resources/illustration/weiser_bunny_01/weiser_bunny.png
-publishedAt: 2026-06-06
-updatedAt: 2026-06-28
-formats:
-  - PNG
-  - PSD
-variantCount: 3
-license: Personal preview and communication only.
----
-```
-
-`id` must be unique.
-
-`type` controls filtering. Use the existing resource type ids configured in `src/config/content/resourceTypes.ts`.
-
-`status` is the resource lifecycle field. `available` is public, `draft` is hidden from the public list, and `unavailable` is public but marked as not currently available.
-
-Older entries may still use `draft: true`; new entries should prefer `status`.
-
-`image` is required. It is the original visual source for this resource.
-
-`cover` is optional. If omitted, the page uses `image`.
-
-`preview` is optional. If omitted, the page uses `image`.
-
-When the source is PNG, JPG, or JPEG, the build can use generated display variants automatically:
-
-- `example.cover.webp` is preferred for resource cards.
-- `example.preview.webp` is preferred for detail previews and gallery display.
-- If a generated WebP does not exist, the system falls back to the original source image.
-
-These generated WebP files are display assets. The original PNG, JPG, or JPEG remains the download source.
-
-## Gallery
-
-Use `gallery` when one resource contains multiple images under the same theme.
-
-```md
+status: draft
+image: src/assets/images/illustration/example/example.png
 gallery:
-  - src: src/assets/images/resources/illustration/weiser_bunny_01/weiser_bunny.png
-    label: Main
-    alt: Weiser Bunny main illustration
-  - src: src/assets/images/resources/illustration/weiser_bunny_01/weiser_bunny_alt.png
-    label: Alt
-    alt: Weiser Bunny alternate illustration
-```
-
-If `gallery` is omitted, the detail view falls back to `preview` or `image`.
-
-Each gallery item also becomes a selectable download option. Users should be able to view lighter WebP display images while downloading the original gallery file.
-
-## Credits
-
-Use `credits` for source, author, artist, project page, or other attribution links.
-
-```md
+  - src: src/assets/images/illustration/example/example.png
+    label: "01"
+    alt: 图片说明
 credits:
   - label: Artist
     name: Example Artist
     href: https://example.com
+publishedAt: 2026-08-14
+updatedAt: 2026-08-14
+formats: [PNG]
+license: Draft license. Replace before publishing.
+actions:
+  - type: download
+    label: 下载原图
+    href: src/assets/images/illustration/example/example.png
+    format: PNG
+    primary: true
+draft: true
+---
+
+这里写补充说明。
 ```
 
-`href` is optional. Without `href`, the credit is rendered as plain text.
+## 必填字段
+
+- `id`：稳定且全站唯一，不要因标题修改而变化。
+- `title`：显示标题。
+- `summary`：卡片和详情摘要。
+- `type`：必须来自 `src/config/content/resourceTypes.ts`。
+- `image`：主原图路径。
+- `publishedAt`：发布日期。
+- `updatedAt`：最后更新日期。
+
+## 状态
+
+- `available`：公开并可正常获取。
+- `draft`：不公开。
+- `unavailable`：公开展示记录，但下载可能不可用。
+
+旧内容仍支持 `draft` 布尔字段。新草稿同时使用 `status: draft` 和 `draft: true` 更直观；公开前确认两者不会互相冲突。
+
+## 图片字段
+
+- `image`：原图，也是默认下载来源。
+- `cover`：可选的卡片显示图。
+- `preview`：可选的详情显示图。
+- `gallery`：同一资源的多张原图。
+
+这些字段必须使用 `src/assets/images/resources/` 或 `src/assets/images/illustration/` 下、运行时可解析的 PNG、JPG、JPEG、WebP 或 AVIF 本地路径，不能直接引用外部主图。
+
+当原图是 PNG、JPG 或 JPEG 且未明确填写 `cover`/`preview` 时，构建会优先查找同目录自动生成的：
+
+- `<name>.cover.webp`
+- `<name>.preview.webp`
+
+它们只是显示产物，下载仍指向原图。
+
+## Gallery
+
+每项支持：
+
+- `src`：本地原图路径。
+- `label`：短编号或名称。
+- `alt`：对图片内容的简短描述。
+
+同一主题的多个变体放进一个资源的图库，不要为了每张图制造近似重复的资源卡片。
+
+## Credits
+
+每项支持：
+
+- `label`：角色，例如 Artist、Source 或 Commission。
+- `name`：名称。
+- `href`：可选外部链接。
+
+Credits 用于说明来源和参与者，不替代许可证。
 
 ## Actions
 
-Use `actions` for files, external download links, source pages, videos, mirrors, and related entries.
+支持的 `type`：
 
-```md
-actions:
-  - type: download
-    label: PNG
-    href: src/assets/images/resources/illustration/weiser_bunny_01/weiser_bunny.png
-    format: PNG
-    primary: true
-  - type: external
-    label: PSD
-    href: https://example.com/download
-    format: PSD
-    provider: Baidu Netdisk
-    code: abcd
-    note: Includes layered source files.
-```
+- `download`：本地或外部下载。
+- `external`：相关外部页面。
+- `preview`：视频或演示预览。
+- `source`：原始来源页面。
+- `mirror`：镜像地址。
 
-Local image paths are resolved during build only when they live under `src/assets/images/resources/` or the legacy-compatible `src/assets/images/illustration/` directory.
+常用字段：
 
-Do not use site identity asset paths such as `src/assets/images/logo/` or `src/assets/images/accordion/` for published resources.
+- `label`：按钮文字。
+- `href`：地址；除禁用项外必须存在。
+- `format`：PNG、PSD、ZIP 等。
+- `provider`：网盘或服务名称。
+- `code`：提取码等附加信息。
+- `primary`：主要动作。
+- `disabled`：暂不可用。
+- `note`：补充说明。
 
-External links are kept as links.
+本地下载路径必须指向上述两个资源图片目录中的真实原图。外部页面使用完整 HTTPS URL。
 
-Keep action labels short. Prefer `PNG`, `PSD`, `ZIP`, or `PROJECT` instead of long button text.
+## 许可证
 
-`download` actions are merged into the download menu. Local `download` actions should point to files that can be resolved during build. External `download` actions, such as PSD files on a netdisk, open as external links.
+`license` 由作者根据真实授权情况维护。草稿占位许可证不能代表正式授权；自动内容检查不会替作者作法律判断。
 
-Do not use `credits` for videos, netdisks, PSD links, mirrors, or project files unless the link is also an attribution source. Credits are for authorship and source attribution; actions are for what the visitor can do next.
+## 正文
 
-Recommended action grouping:
+Markdown 正文适合记录背景、用途、创作说明和限制。摘要保持简短，详细内容放正文。
 
-- `download`: PNG, PSD, ZIP, project file, or other downloadable file.
-- `source`: original source page, Skeb page, project page, or repository.
-- `preview`: video, Bilibili, YouTube, demo page, or high-level preview.
-- `mirror`: backup download location.
+## 图片生成与缓存
 
-For PSD files, prefer an external `download` action when the file is large:
-
-```md
-actions:
-  - type: download
-    label: PSD
-    href: https://example.com/download
-    format: PSD
-    provider: Baidu Netdisk
-    code: abcd
-```
-
-## Body Content
-
-Text after the frontmatter is used as resource detail paragraphs.
-
-```md
----
-...
----
-
-A short description of the resource.
-
-Another paragraph if needed.
-```
-
-Keep this section concise. The resource card and detail view should stay light and image-led.
-
-## Build Verification
-
-Resource display images are generated by:
+运行：
 
 ```sh
 npm run resources:images
 ```
 
-`npm run build` runs the same resource image step before building the site.
+当前参数：
 
-Generated `.cover.webp` and `.preview.webp` files are build artifacts. They are intentionally ignored by Git in the current project setup. Commit original source images and resource Markdown entries; let local development and GitHub Pages build regenerate display WebP files.
+- cover：最大 1200×1600、质量 84、透明度质量 95。
+- preview：最大 3200×3200、质量 92、透明度质量 98。
+- WebP effort：5。
+- 不放大小图，不覆盖原图。
 
-GitHub Actions caches generated WebP files together with `.tmp/resource-images-manifest.json` to reduce repeated image work. The cache is not a source of truth. The generator only reuses cached images when the source image hash and generation settings still match the manifest; otherwise it regenerates the affected files.
+脚本使用 `.tmp/resource-images-manifest.json` 记录原图、目标图、生成参数和生成器版本。只有所有信息匹配时才跳过压缩。
+
+## 发布检查
+
+```sh
+npm run content:check
+npm run resources:images
+npm run check
+```
+
+公开前人工确认：
+
+- 资源 ID 唯一。
+- 原图和图库路径正确。
+- 下载仍指向原图。
+- Credits 与 license 已确认。
+- 状态不是草稿。

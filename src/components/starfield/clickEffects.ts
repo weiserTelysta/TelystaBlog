@@ -151,7 +151,7 @@ export function createClickEffects({ bounds, isSubtle, reducedMotion }: ClickEff
 		maybeSpawnRare(pointFromPress(), time);
 	};
 
-	const handlePointerMove = (event: PointerEvent, time: number) => {
+	const handlePointerMove = (event: PointerEvent, _time: number) => {
 		if (!press.active || event.pointerId !== press.pointerId) return;
 
 		const point = getPoint(event, bounds);
@@ -364,7 +364,7 @@ export function createClickEffects({ bounds, isSubtle, reducedMotion }: ClickEff
 		}
 	};
 
-	const spawnSpark = (x: number, y: number, time: number, alpha: number, rare = false) => {
+	const spawnSpark = (x: number, y: number, _time: number, alpha: number, rare = false) => {
 		sparks.push({
 			x,
 			y,

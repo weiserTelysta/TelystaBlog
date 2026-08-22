@@ -1,136 +1,72 @@
-# Current Status
+# 当前状态
 
-Updated: 2026-07-02
+更新日期：2026-08-14
 
-## Completed
+## 已完成
 
-- Home page with the current Telysta's Melancholy atmosphere.
-- Canvas starfield background with interaction, breathing, meteors, long meteors, click dust, and constellation-style easter eggs.
-- Shared site header, optional footer, global back-to-top control, and Lenis-powered vertical smooth scrolling.
-- GitHub Pages deployment workflow.
-- Markdown-based blog content collection under `src/content/weiser-posts`.
-- Blog navigation page at `/blog`.
-- Static category pages at `/blog/category/[category]/`.
-- Article detail route and article reading layout.
-- Article metadata, tags, series navigation, and right-side TOC.
-- Year and month based blog timeline.
-- Blog timeline split into focused components such as `BlogTimeline`, `BlogMonthSection`, and `BlogPostItem`.
-- Visual category accordion for blog category filtering.
-- Category semantic config and visual config are separated.
-- Resource content collection under `src/content/resources`.
-- Resource index page at `/resources`.
-- Resource type filtering with URL state.
-- Resource masonry layout with image-led cards.
-- Resource detail overlay with multi-image preview, wheel switching, keyboard navigation, download menu, and related action links.
-- Resource display images can be generated as `.cover.webp` and `.preview.webp` from PNG, JPG, and JPEG source files.
-- Resource downloads merge gallery originals with local and external download actions.
-- Resource page motion uses Motion for card enter, exit, and layout transitions.
-- Back-to-top behavior adapts around the resource page.
-- Editable site, page, content, visual, typography, and interaction settings are centralized under `src/config` and `src/styles`.
-- Blog category, blog series, and resource type helper logic is separated into `src/lib`.
-- Project design and architecture principles are recorded in `docs/project-knowledge.md`.
-- Current stage decisions and follow-up candidates are recorded in `docs/stage-log.md`.
+- Astro 文章和资源 Content Collections。
+- 首页、博客导航、栏目页、文章页与资源页。
+- 文章标签、系列导航、年月时间线和右侧目录。
+- 资源图库、原图下载、相关动作和状态筛选。
+- 资源 `.cover.webp` 与 `.preview.webp` 自动生成。
+- 基于清单、原图哈希、目标哈希和参数的增量图片跳过。
+- GitHub Actions 资源图片缓存和 Astro 构建缓存。
+- `npm run post:new` 中文文章创建命令。
+- `npm run content:check` 跨内容检查。
+- Node 单元测试和 `astro check`。
+- Astro 7 与 unified Markdown 处理器配置。
+- GitHub Pages 在完整检查通过后部署。
+- 项目内 `$telysta-design-guardian` 风格 Skill。
 
-## Current Content Systems
+## 内容系统
 
-Posts live in `src/content/weiser-posts/`.
+文章位于 `src/content/weiser-posts`，资源位于 `src/content/resources`。
 
-Resources live in `src/content/resources/`.
+文章栏目定义在 `src/config/content/blogCategories.ts`，系列定义在 `src/config/content/blogSeries.ts`。系列 ID 由 Schema 约束，`series` 和 `seriesOrder` 必须同时填写。
 
-Both systems use Astro Content Collections, so schema errors are caught during development and build.
+资源类型与状态定义在 `src/config/content/resourceTypes.ts`。资源 ID、路径、日期和文章常见 Markdown 问题由内容脚本补充检查。
 
-## Blog System
+## 图片系统
 
-Each post uses frontmatter for:
+公开资源原图继续保存在项目中、进入 `dist/` 并提供下载。
 
-- `title`
-- `description`
-- `publishedAt`
-- `updatedAt`
-- `category`
-- `tags`
-- `draft`
-- optional `series`
-- optional `seriesOrder`
-- optional `cover`
+显示版本参数：
 
-Only posts with `draft: false` are public.
+- cover：最大 1200×1600，质量 84。
+- preview：最大 3200×3200，质量 92。
 
-Categories are defined in `src/config/content/blogCategories.ts`. Category ids should stay stable because they are used by frontmatter, routes, and filters.
+每次构建仍会扫描并计算哈希，但未变化图片不会重新调用 Sharp 压缩。Astro 仍会完整生成静态站点和部署产物；当前没有页面级增量部署。
 
-Category visual entries live in `src/config/visuals/categoryVisuals.ts`. This file connects category ids with OC images, short display titles, descriptions, image crop tuning, and visual tone settings.
+文章本地图片由 Astro 优化。文章专属图片采用 Markdown 文件旁的同名目录，共享图片放在 `src/assets/images`。
 
-Series entries live in `src/config/content/blogSeries.ts`.
+## 当前维护边界
 
-## Resource System
+- 保持当前深色、低饱和、安静的长文风格。
+- 不在普通维护任务中大规模修改 UI。
+- 不引入外部对象存储、Git LFS 或图片搜索命令。
+- 不修改资源压缩质量，除非先进行单独的图片质量评估。
+- 不把资源页改造成商城或重型图库。
 
-Each resource uses frontmatter for:
+## 已知风险
 
-- `id`
-- `title`
-- `summary`
-- `type`
-- `status`
-- `image`
-- `publishedAt`
-- `updatedAt`
-- `formats`
-- optional `cover`
-- optional `preview`
-- optional `variantCount`
-- optional `license`
-- optional `gallery`
-- optional `credits`
-- `actions`
+- 当前资源原图约 720 MiB，完整生产产物约 795 MiB；数值会随资源增减变化，因此构建、上传和仓库体积仍然较大。
+- 图片跳过前仍需读取原图和目标图计算哈希。
+- 复杂交互主要集中在分类手风琴、资源详情层和星空背景，后续修改需要单独验证键盘、滚动和 reduced-motion。
+- 资源许可证内容需要作者人工确认，自动检查不替代授权判断。
 
-`image` is required. `cover` and `preview` are optional optimization fields. When they are omitted, the resource system falls back to `image`.
+## 日常验证
 
-When generated WebP variants exist next to PNG, JPG, or JPEG sources, the resource system prefers `.cover.webp` for cards and `.preview.webp` for detail display. Original source images remain the download target.
+```sh
+npm run post:new -- --help
+npm run content:check
+npm test
+npm run typecheck
+npm run check
+```
 
-Resource types are defined in `src/config/content/resourceTypes.ts`. Adding a resource type should happen there first so schema validation, filters, and URL handling stay aligned.
+主要文档：
 
-## Current Risks
-
-- The working tree should still be grouped carefully before the next feature stage if more local edits are added after this snapshot.
-- Resource page visuals are much closer to the intended atmosphere, but they still need visual checks after large content batches.
-- Large source images are acceptable as originals, but the resource image generation step must run before local preview or production build.
-- Generated `.cover.webp` and `.preview.webp` files are ignored by Git. This is intentional while GitHub Pages runs the build, but it depends on the build pipeline continuing to execute `npm run build`.
-- `docs/resources.md` contains the right maintenance ideas, but it should be periodically checked in a UTF-8 aware editor because PowerShell may display Chinese documentation as mojibake.
-- The category accordion and starfield remain long-term interaction pressure points because they coordinate multiple animation and input states.
-- Resource detail interactions coordinate wheel events, scroll locking, focus trapping, image preloading, pending states, and reduced motion. Future changes should stay small and verified.
-
-## Code Quality Notes
-
-Current healthy points:
-
-- Editable content and derived logic have clearer boundaries: config describes data, lib handles lookup, counting, URL helpers, and data shaping.
-- Astro Content Collections provide typed Markdown data sources for posts and resources.
-- Site identity and navigation are centralized in `src/config/site.ts`.
-- Page copy is moving into `src/config/pages`.
-- Content taxonomy is moving into `src/config/content`.
-- Visual category configuration is separated from semantic category configuration.
-- Font roles and reusable typography classes are centralized in `src/styles/global.scss` and `src/styles/typography.scss`.
-
-Current maintenance risks:
-
-- Several components still carry both interaction and presentation responsibilities, especially resource and visual accordion components.
-- The working tree should be grouped into clear commits before another large feature round.
-- Some documentation still overlaps in responsibility. `docs/maintenance.md` should be the main operator guide, while this file should stay a status snapshot.
-- Resource optimization now has an automatic display image script, but original asset selection and external large-file hosting remain manual content decisions.
-
-## Short-Term Maintenance Principles
-
-- Do not mix visual tuning, interaction changes, content schema changes, and documentation updates in one large batch.
-- Keep editable content in `src/config` or `src/content`.
-- Keep derived logic in `src/lib`.
-- Keep components focused on rendering and interaction state.
-- Verify the visual path after changing any shared typography token.
-- Treat resource image optimization as a separate concern from resource page layout.
-
-## Next Stage Candidates
-
-1. Group the current working tree into clear commit boundaries.
-2. Visually verify the resource page after the current documentation and skill pass.
-3. Add more real posts and resources to test whether the current layouts scale naturally.
-4. Consider a small validation script for cross-file rules such as category visual coverage, series ids, resource type ids, and resource action paths.
-5. Revisit `docs/resources.md` in a UTF-8 aware editor if the Chinese resource guide should remain a primary document.
+- `docs/article-authoring.md`
+- `docs/maintenance.md`
+- `docs/resources.md`
+- `docs/deployment.md`

@@ -2,6 +2,7 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { BLOG_CATEGORY_IDS } from './config/content/blogCategories';
+import { BLOG_SERIES_IDS } from './config/content/blogSeries';
 import {
 	RESOURCE_ACTION_TYPES,
 	RESOURCE_STATUS_IDS,
@@ -13,18 +14,28 @@ const posts = defineCollection({
 		pattern: '**/*.md',
 		base: './src/content/weiser-posts',
 	}),
-	schema: z.object({
-		title: z.string().min(1),
-		description: z.string().min(1),
-		publishedAt: z.coerce.date(),
-		updatedAt: z.coerce.date(),
-		category: z.enum(BLOG_CATEGORY_IDS),
-		tags: z.array(z.string()).default([]),
-		draft: z.boolean().default(false),
-		cover: z.string().optional(),
-		series: z.string().min(1).optional(),
-		seriesOrder: z.coerce.number().int().positive().optional(),
-	}),
+	schema: z
+		.object({
+			title: z.string().min(1),
+			description: z.string().min(1),
+			publishedAt: z.coerce.date(),
+			updatedAt: z.coerce.date(),
+			category: z.enum(BLOG_CATEGORY_IDS),
+			tags: z.array(z.string()).default([]),
+			draft: z.boolean().default(false),
+			cover: z.string().min(1).optional(),
+			series: z.enum(BLOG_SERIES_IDS).optional(),
+			seriesOrder: z.coerce.number().int().positive().optional(),
+		})
+		.superRefine((post, context) => {
+			if (Boolean(post.series) !== (post.seriesOrder !== undefined)) {
+				context.addIssue({
+					code: 'custom',
+					path: post.series ? ['seriesOrder'] : ['series'],
+					message: 'series and seriesOrder must be provided together.',
+				});
+			}
+		}),
 });
 
 const resourceActionSchema = z
@@ -42,7 +53,7 @@ const resourceActionSchema = z
 	.superRefine((action, context) => {
 		if (!action.disabled && !action.href) {
 			context.addIssue({
-				code: z.ZodIssueCode.custom,
+				code: 'custom',
 				path: ['href'],
 				message: 'Resource action href is required unless disabled is true.',
 			});

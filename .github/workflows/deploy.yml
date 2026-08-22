@@ -38,6 +38,7 @@ jobs:
         uses: withastro/action@v6
         with:
           node-version: 22
+          build-cmd: npm run check
 
   deploy:
     needs: build

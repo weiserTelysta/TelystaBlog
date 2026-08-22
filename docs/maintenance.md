@@ -1,282 +1,125 @@
-# Maintenance Guide
+# Telysta 维护指南
 
-This guide explains where to edit common site content and configuration for Telysta's Melancholy.
+本文件是日常维护的主要入口。所有文本文件使用 UTF-8；不要直接修改 `dist/`，它会在构建时重新生成。
 
-Keep source files encoded as UTF-8. Do not edit generated files in `dist/`; they are rebuilt from source.
+## 项目边界
 
-Use `docs/project-knowledge.md` for the design and architecture principles behind these maintenance rules. Use `docs/current-status.md` for a short snapshot of current project state.
+- `src/config`：可编辑站点文案、栏目、系列、资源类型、视觉映射和交互参数。
+- `src/content`：Markdown 文章和资源条目。
+- `src/lib`：查找、验证、计数、排序、URL 和运行时逻辑。
+- `src/components`：页面渲染与局部交互状态。
+- `src/styles`：全局字体、色彩、排版和玻璃表面规则。
+- `scripts`：确定性的维护命令。
 
-## Project Boundaries
+不要把长期文案写进复杂组件，也不要把数据整理逻辑放进配置文件。
 
-The project uses a simple boundary model:
+## 常见维护入口
 
-- `src/config` describes editable site content, page copy, taxonomy, visuals, and interaction parameters.
-- `src/lib` derives data from config and content, including lookup helpers, counters, sorting, URL builders, and runtime utilities.
-- `src/content` stores Markdown-powered posts and resources.
-- `src/components` renders UI and owns interaction state.
-- `src/styles` stores global visual roles, typography, prose rules, and shared visual language.
+- `astro.config.mjs`：Astro 7 站点配置，以及通过 `@astrojs/markdown-remark` unified processor 接入的 Remark/Rehype 插件。
+- `src/content.config.ts`：文章和资源的 Content Collections Schema。
+- `src/config/content/blogCategories.ts`：稳定的文章栏目 ID 与显示信息。
+- `src/config/content/blogSeries.ts`：稳定的文章系列 ID 与显示信息。
+- `scripts/create-post.ts`、`scripts/lib/post-scaffold.ts`、`scripts/templates/post.md`：新文章命令、校验和唯一模板。
+- `scripts/validate-content.ts`、`scripts/lib/content-validation.ts`：跨文档内容检查。
+- `scripts/generate-resource-images.mjs`：资源 WebP 生成与哈希清单。
+- `src/lib/resources/resourceItems.ts`：资源图片、下载地址和页面数据的运行时解析。
+- `.github/workflows/deploy.yml`：Node 22 检查、图片缓存和 GitHub Pages 部署。
 
-Configuration files should stay data-focused. If a function validates ids, finds an item, counts posts, or builds a URL, it belongs in `src/lib` rather than `src/config`.
+## 日常命令
 
-## Site Identity
-
-Edit `src/config/site.ts` for global site information:
-
-- `name`: visible site name in the header.
-- `defaultTitle`: default browser title.
-- `defaultDescription`: default SEO description.
-- `authorName`: site author.
-- `icpRecord`: optional ICP record. Set it to a string to show it in the footer, or `undefined` to hide it.
-- `home.title` and `home.description`: home page metadata.
-- `navItems`: header navigation entries.
-
-Only add a navigation item after the target page exists. Disabled placeholder links make the site feel unfinished.
-
-## Home Page Modules
-
-Edit `src/config/pages/home.ts` to change the modules below the home hero.
-
-Each section supports:
-
-- `id`: stable identifier.
-- `type`: visual/content type.
-- `eyebrow`: small label.
-- `title`: section title.
-- `description`: main text.
-- `items`: optional links or entries.
-- `enabled`: set to `false` to hide a section.
-- `order`: controls display order.
-
-Use `external: true` for external links so the component can add the correct link behavior.
-
-Some current text in this file may still need copy cleanup. Keep future edits in UTF-8.
-
-## Home Hero Greetings
-
-Edit `src/config/pages/homeGreetings.ts` to change the random greeting shown below the home avatar.
-
-Each greeting supports:
-
-- `id`: stable identifier.
-- `text`: displayed text. Use `\n` for intentional line breaks.
-- `dayAffinity`: number from `0` to `1`. Values closer to `1` appear more often during daytime; values closer to `0` appear more often at night.
-- `weight`: optional base probability. Higher values appear more often before time weighting is applied.
-- `mood`: optional maintenance group such as `quiet`, `playful`, `poetic`, `hopeful`, `melancholy`, or `daily`.
-
-The home avatar and greeting are selected once in the browser when the page loads. The first-screen entrance is handled by `src/components/home/HomeIntro.tsx`: a neutral placeholder appears first, the selected avatar and name reveal with a restrained low-saturation tone, then the greeting begins. Short single-line greetings type out character by character, short multiline greetings type line by line, and very long or many-line greetings fade in as a whole so the home page does not feel slow. The weighted random selection logic lives in `src/lib/homeProfile.ts` and `src/lib/homeGreeting.ts`.
-
-## Blog Posts
-
-Markdown posts live in `src/content/weiser-posts`.
-
-Start from `src/content/weiser-posts/_template.md` when creating a new post. A typical post uses frontmatter like:
-
-```md
----
-title: "Post title"
-description: "Short summary shown in lists and metadata."
-publishedAt: 2026-06-03
-updatedAt: 2026-06-03
-category: manuscript
-tags:
-  - Astro
-  - Blog
-series: telysta-blog-build
-draft: false
----
+```sh
+npm run dev
+npm run post:new
+npm run content:check
+npm test
+npm run typecheck
+npm run check
 ```
 
-Write the article body below the frontmatter.
+提交前以 `npm run check` 为准。它会完成 Astro/TypeScript 检查、单元测试、内容检查、资源图片准备和生产构建。
 
-Images used inside posts should usually live in `public/images/posts`, then be referenced with normal Markdown:
+## 新文章
 
-```md
-![Image description](/images/posts/example.webp)
+使用 `npm run post:new` 创建草稿，不再复制内容集合内的模板。命令会读取 `src/config/content/blogCategories.ts` 和 `src/config/content/blogSeries.ts`，避免栏目与系列 ID 重复维护。
+
+文章默认位于 `src/content/weiser-posts/<category>/<slug>.md`，保持 `draft: true`，直到准备公开。完整说明见 [article-authoring.md](article-authoring.md)。
+
+## 文章图片
+
+文章专属原图建议使用同名目录：
+
+```txt
+src/content/weiser-posts/portraits/example.md
+src/content/weiser-posts/portraits/example/portrait-01.png
 ```
 
-## Resources
+文章引用 `./example/portrait-01.png`。Astro 会生成网页显示版本，原图仍作为内容源保存。不要手工创建文章 `.preview.webp`。
 
-Resource entries live in `src/content/resources`.
+共享图片放在 `src/assets/images`。只有固定公共 URL、无需处理的静态文件或直接下载附件才放进 `public`。
 
-Each resource needs at least:
+当前文章 `cover` 仍使用 `/images/posts/...` 公共路径；本轮没有改动封面 Schema 或文章头部组件。
 
-- `id`
-- `title`
-- `summary`
-- `type`
-- `image`
-- `publishedAt`
-- `updatedAt`
+## 资源图片与原图下载
 
-`image` is the required main image. `cover` and `preview` are optional optimization fields:
+资源条目位于 `src/content/resources`，原图位于 `src/assets/images/resources` 或兼容目录 `src/assets/images/illustration`。
 
-- If `cover` is omitted, the resource card uses `image`.
-- If `preview` is omitted, the detail view and high-resolution preview use `image`.
-- If `cover` or `preview` is provided, the path must resolve successfully during build.
-
-When a resource page starts to feel heavy, add a lighter `cover` first instead of changing resource components. Large originals, PSD files, videos, and project files should usually be exposed through `actions` or external links.
-
-Resource display images are generated by `scripts/generate-resource-images.mjs`.
+原图继续进入网站产物并提供下载。显示用 WebP 由以下命令生成：
 
 ```sh
 npm run resources:images
 ```
 
-The script scans `src/assets/images/resources` and the legacy-compatible `src/assets/images/illustration` directory. For PNG, JPG, and JPEG sources it creates:
+- `.cover.webp`：最大 1200×1600，质量 84，透明度质量 95。
+- `.preview.webp`：最大 3200×3200，质量 92，透明度质量 98。
+- 图片不会被放大。
+- 原图不会被覆盖。
 
-- `.cover.webp` for resource cards.
-- `.preview.webp` for detail and gallery display.
+每次运行都会扫描资源，但只有目标缺失、清单缺失、原图变化、目标 WebP 被修改、生成参数变化或生成器版本变化时才调用 Sharp 重压缩。
 
-`npm run build` runs this step automatically through `prebuild`. The generated WebP files are currently ignored by Git, so original source images and Markdown entries are the committed source of truth.
+清单位于 `.tmp/resource-images-manifest.json`。GitHub Actions 缓存资源 WebP 和清单；缓存只是加速层，不是数据源。
 
-GitHub Actions restores generated resource WebP files and `.tmp/resource-images-manifest.json` from cache before building. The cache is only an acceleration layer: `scripts/generate-resource-images.mjs` verifies each cached image against a manifest entry, the source image hash, and the generator settings before skipping work. If the cache is missing, stale, or invalid, the image is regenerated from the original source.
+详细字段见 [resource-content-guide.md](resource-content-guide.md)。
 
-Resource interaction maintenance notes:
+## 内容一致性检查
 
-- Keep the resource page a quiet index, not a marketplace.
-- Preserve layout stability. Masonry layouts should measure before appearing instead of rendering in a wrong position and then jumping.
-- Keep global Lenis scrolling separate from local overlays and scroll regions. Use `data-scroll-native` for resource dialogs, detail bodies, and previews that own their own wheel behavior.
-- When adding animation, check enter, exit, layout movement, pending/loading states, keyboard behavior, and `prefers-reduced-motion`.
-- Keep download actions compact. Local images and external PSD or netdisk links can share the download menu, but source pages and videos should stay in related actions.
+`npm run content:check` 检查：
 
-## Categories And Tags
+- 重复资源 ID。
+- 系列 ID、系列顺序与重复顺序。
+- 发布时间和更新时间。
+- 公开文章占位摘要。
+- Markdown 和资源本地图片路径。
+- 空文章封面、缺失文章封面和正文重复一级标题。
+- 资源主图、封面、预览、图库和本地下载是否位于运行时支持的资源目录。
+- Windows 与 Linux 路径大小写差异。
+- 容易被 KaTeX 误识别的中文金额 `$...$`。
 
-Categories are the main columns of the blog. They should be few, stable, and useful for filtering.
+许可证内容仍需作者人工确认，脚本不会替作者判断授权范围。
 
-Edit `src/config/content/blogCategories.ts` to change category ids, titles, subtitles, and descriptions.
+## 视觉维护
 
-Tags are lighter metadata written in each post frontmatter. They can be more flexible and more specific than categories.
+网站已经具有稳定风格。UI 修改应调用项目 Skill `$telysta-design-guardian`，并遵守：
 
-Do not use categories like tags. If a label describes the main home of a post, it is a category. If it describes a topic inside the post, it is a tag.
+- 阅读优先，保持深蓝黑、低饱和、留白和轻薄玻璃。
+- ACG 只作为身份信号。
+- 不把资源页改成商城或重型图库。
+- 不因修复一个状态而大规模重排页面。
+- 保留键盘焦点、原生语义和 reduced-motion。
 
-## Category Accordion Visuals
+设计背景见 `docs/project-knowledge.md` 和 `docs/project-vision.md`。
 
-Edit `src/config/visuals/categoryVisuals.ts` for the visual category selector.
-
-Accordion images are imported from `src/assets/images/accordion`.
-
-Common fields:
-
-- `cardInscription.prefix`: script-style name on the card.
-- `cardInscription.name`: category label on the card.
-- `shortTitle`: compact label.
-- `description`: short category preview text.
-- `image`: imported visual asset.
-- `imagePosition`: CSS object-position value.
-- `imageScale`: visual scale multiplier.
-- `tone`: visual tone key.
-
-Keep accordion images compressed. Large test images can make the first category interaction feel slow.
-
-## Fonts And Typography
-
-Font files are loaded in `src/styles/fonts.scss`.
-
-Global font roles are defined in `src/styles/global.scss`:
-
-- `--font-body`: general body text.
-- `--font-display`: restrained serif/display text such as navigation and labels.
-- `--font-script`: script signature text for the accordion.
-- `--font-hero-title`
-- `--font-page-title`
-- `--font-article-title`
-- `--font-item-title`
-- `--font-prose-heading`
-- `--font-meta`
-
-Reusable type classes live in `src/styles/typography.scss`.
-
-Prefer changing font roles instead of editing individual components one by one. This keeps the visual system consistent.
-
-## Smooth Scrolling
-
-Global vertical smooth scrolling is managed by:
-
-- `src/components/site/ScrollManager.tsx`
-- `src/config/interactions/scroll.ts`
-- `src/lib/scrollRuntime.ts`
-
-Local scrolling areas such as the category accordion, article TOC, and code blocks should stay native. Mark such areas with `data-scroll-native` when needed.
-
-Avoid routing horizontal accordion scrolling through the global Lenis instance.
-
-## Complex Interaction Components
-
-Some components contain more interaction logic than ordinary presentational UI.
-
-`src/components/blog/CategoryAccordion.tsx` currently owns:
-
-- modal open and close state.
-- focus trapping.
-- horizontal rail wheel behavior.
-- category preselection and confirmation.
-- card pointer tilt.
-
-If this file grows further, prefer extracting logic into small helpers before adding new visual effects. Good future boundaries include rail scroll control, focus trap logic, selection state, and card tilt behavior.
-
-`src/components/starfield/StarfieldBackground.tsx` currently owns:
-
-- canvas lifecycle.
-- starfield animation.
-- pointer interaction state.
-- click dust effects.
-- meteor and heart constellation events.
-
-When changing it, watch frame cost carefully. Decorative animation should never make reading or scrolling feel heavy.
-
-## Content Consistency Checks
-
-The content system is currently schema-checked by Astro, but a few cross-file rules are still maintained by convention:
-
-- Each post `category` should exist in `src/config/content/blogCategories.ts`.
-- Each category should have a visual entry in `src/config/visuals/categoryVisuals.ts`.
-- Each post `series`, when present, should exist in `src/config/content/blogSeries.ts`.
-- `seriesOrder` values should be unique inside the same series.
-
-These rules can become a small validation script later if the archive grows.
-
-## Taxonomy Helpers
-
-Blog categories, blog series, and resource types are configured in `src/config/content`.
-
-Their helper logic lives in:
-
-- `src/lib/blogCategoryUtils.ts`
-- `src/lib/blogSeriesUtils.ts`
-- `src/lib/resourceTypeUtils.ts`
-
-Use those helpers when a component or page needs to validate an id, find a configured item, count entries, or build an internal URL. This keeps configuration files readable for manual editing.
-
-## Deployment
-
-See `docs/deployment.md`.
-
-In normal use:
+## 提交前检查
 
 ```sh
 npm run check
+git diff --check
 git status
-git add ...
-git commit -m "..."
-git push
 ```
 
-GitHub Actions builds the site and publishes `dist/`.
+同时确认：
 
-## Before Committing
-
-Run:
-
-```sh
-npm run check
-```
-
-Also check:
-
-- New Markdown posts are not marked `draft: true` unless intentionally hidden.
-- New images are reasonably compressed.
-- Resource source images have generated display variants locally after `npm run resources:images` or `npm run build`.
-- Resource downloads still point to original files or intentional external links.
-- New categories have both data and visual config.
-- New navigation links point to existing pages.
-- Text files are saved as UTF-8.
+- 新文章的 `draft` 状态符合预期。
+- 新系列字段成对填写且顺序唯一。
+- 资源下载仍指向原图或明确的外部下载地址。
+- 新增文本为 UTF-8。
+- 没有提交 `dist/`、`.tmp/` 或资源生成 WebP。

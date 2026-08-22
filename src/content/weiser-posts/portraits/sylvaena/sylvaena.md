@@ -9,7 +9,6 @@ tags:
   - illustration
   - skeb
 draft: false
-cover: ""
 ---
 神戸新一様
 

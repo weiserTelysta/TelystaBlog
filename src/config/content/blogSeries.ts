@@ -1,5 +1,13 @@
+export const BLOG_SERIES_IDS = [
+	'telysta-blog-build',
+	'weiser-blog-construction-records',
+	'marketing-ecommerce-notes',
+] as const;
+
+export type BlogSeriesId = (typeof BLOG_SERIES_IDS)[number];
+
 export type BlogSeries = {
-	id: string;
+	id: BlogSeriesId;
 	title: string;
 	description: string;
 };

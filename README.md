@@ -1,92 +1,81 @@
 # Telysta's Melancholy
 
-Telysta's Melancholy is Weiser's personal writing space, built with Astro, React islands, SCSS, and Markdown content collections.
+Telysta's Melancholy 是 Weiser 的个人写作空间，使用 Astro 7、React Islands、SCSS 与 Markdown Content Collections 构建。
 
-The site is designed as a calm dark archive: quiet starfield, generous space, restrained motion, readable writing, and a few private visual details hidden in the atmosphere.
+网站保持安静、深色、低饱和与适合长文阅读的氛围。星空、玻璃表面和轻微 ACG 线索用于建立身份感，不应压过文章内容。
 
-## Current Features
+## 当前功能
 
-- Canvas starfield background with subtle motion, click effects, meteors, and small hidden constellations.
-- Personal home page with avatar, weighted random typewriter greeting, and configurable archive modules.
-- Lightweight glass navigation with only active entries shown.
-- Blog index at `/blog` with year/month timeline grouping.
-- Markdown-powered article pages from Astro content collections.
-- Static category pages at `/blog/category/[category]/`.
-- Visual category accordion for topic filtering.
-- Article metadata, tags, series navigation, and right-side TOC.
-- Resource index with masonry cards, generated WebP display images, detail preview, and compact download actions.
-- Global back-to-top control and Lenis-powered vertical smooth scrolling.
-- Optional ICP footer, currently hidden through `src/config/site.ts`.
+- 带克制交互和 reduced-motion 支持的 Canvas 星空背景。
+- 个人首页、随机问候与可配置档案模块。
+- 按年月整理的博客导航和静态栏目页面。
+- Markdown 文章、标签、系列导航和文章目录。
+- 图片型资源索引、图库预览与原图下载。
+- 资源封面和预览 WebP 自动生成。
+- GitHub Actions 自动检查并部署到 GitHub Pages。
 
-## Project Structure
+## 项目结构
 
 ```txt
-src/components/home       Home page hero, archive modules, and reveal behavior
-src/components/blog       Blog index, timeline, category filter, and accordion UI
-src/components/article    Article header, TOC, post list, and series navigation
-src/components/site       Shared header, footer, back-to-top, and scroll manager
-src/components/starfield  Canvas starfield and interaction effects
-src/config                Editable site, page, content, visual, and interaction config
-src/content/weiser-posts  Markdown post sources
-src/content/resources     Markdown resource entries
-src/lib                   Data helpers and runtime utilities
-src/styles                Global styles, fonts, typography tokens, and glass rules
-docs                      Vision, deployment, maintenance, and planning documents
-public/images/posts       Public post images referenced from Markdown
+src/components            页面组件与局部交互
+src/config                站点文案、栏目、系列、资源类型和交互参数
+src/content/weiser-posts  Markdown 文章
+src/content/resources     Markdown 资源条目
+src/assets/images         需要由构建系统处理的图片和资源原图
+src/lib                   数据整理、查找、排序与运行时工具
+src/styles                全局视觉、字体与排版规则
+scripts                   文章创建、内容检查与图片生成脚本
+tests                     Node 单元测试
+docs                      中文维护、写作、资源与部署文档
+.agents/skills            随项目维护的 Codex Skills
 ```
 
-## Commands
+## 常用命令
 
 ```sh
 npm run dev
+npm run post:new
+npm run content:check
+npm test
+npm run typecheck
 npm run resources:images
 npm run check
 npm run build
 npm run preview
 ```
 
-`npm run check` runs TypeScript checking and the Astro production build.
+- `npm run post:new`：通过中文提示创建新的草稿文章。
+- `npm run content:check`：检查跨文件内容规则、路径、日期和 Markdown 常见错误。
+- `npm run typecheck`：检查 `.astro`、TypeScript 和内容类型。
+- `npm run resources:images`：为资源原图生成显示用 WebP。
+- `npm run check`：依次运行类型检查、测试、内容检查和生产构建。
 
-`npm run resources:images` generates `.cover.webp` and `.preview.webp` display images for resource sources. `npm run build` runs this automatically before Astro builds the site. Generated resource WebP files stay out of Git; GitHub Actions restores them from cache when possible, and the generator uses a manifest plus source hashes to skip unchanged images.
+## 图片与原图规则
 
-## Content And Maintenance
+资源原图保存在项目中，并继续进入公开网站产物，作为访客下载目标。网页列表和详情优先使用自动生成的轻量显示版本：
 
-Use [docs/maintenance.md](docs/maintenance.md) as the main guide for editing the site.
-Use [docs/resource-content-guide.md](docs/resource-content-guide.md) for resource Markdown, gallery, credits, actions, downloads, and generated display images.
+- `.cover.webp`：资源卡片，质量 84，透明度质量 95。
+- `.preview.webp`：资源详情，质量 92，透明度质量 98。
 
-The project keeps editable content separate from derived logic:
+图片脚本使用清单、原图 SHA-256、目标文件 SHA-256 和生成参数判断是否需要重新压缩。未变化的图片会被跳过；GitHub Actions 会恢复这些 WebP 和清单缓存。
 
-- `src/config`: site copy, page settings, content taxonomy, visuals, and interaction parameters.
-- `src/lib`: helpers that derive, validate, count, sort, or build URLs from config and content.
-- `src/content`: Markdown posts and resource entries.
-- `src/components`: rendering and interaction components.
+文章专属图片放在文章旁边的同名目录，共享图片放在 `src/assets/images`。`public` 仅用于固定 URL、无需 Astro 处理或需要直接下载的文件。文章无需手工维护 `.preview.webp`。
 
-Common edit points:
+## 内容维护
 
-- Site name, navigation, SEO text, and optional ICP footer: `src/config/site.ts`
-- Home page modules: `src/config/pages/home.ts`
-- Home hero random greetings: `src/config/pages/homeGreetings.ts`
-- Blog page copy: `src/config/pages/blog.ts`
-- Article page copy: `src/config/pages/article.ts`
-- Resource page copy: `src/config/pages/resources.ts`
-- Blog categories: `src/config/content/blogCategories.ts`
-- Blog series: `src/config/content/blogSeries.ts`
-- Resource types: `src/config/content/resourceTypes.ts`
-- Category accordion visuals: `src/config/visuals/categoryVisuals.ts`
-- Scroll and chrome interaction settings: `src/config/interactions`
-- Markdown posts: `src/content/weiser-posts`
-- Resource entries: `src/content/resources`
-- Post images: `public/images/posts`
-- Fonts and type roles: `src/styles/fonts.scss`, `src/styles/global.scss`, `src/styles/typography.scss`
+- 中文文章写作：[docs/article-authoring.md](docs/article-authoring.md)
+- 总体维护：[docs/maintenance.md](docs/maintenance.md)
+- 资源维护：[docs/resources.md](docs/resources.md)
+- 资源字段详解：[docs/resource-content-guide.md](docs/resource-content-guide.md)
+- 部署：[docs/deployment.md](docs/deployment.md)
+- 当前状态：[docs/current-status.md](docs/current-status.md)
 
-## Deployment
+## Telysta 风格 Skill
 
-Deployment is handled by GitHub Pages through GitHub Actions. Push source code to the `main` branch; GitHub installs dependencies, runs `npm run build`, and publishes `dist/`.
+项目内的 `$telysta-design-guardian` 用于 UI 调整、阅读布局、动效和可访问性审查。它保护现有风格，不参与普通 Markdown 写作或资源录入。
 
-Production domain: `https://telysta.com`
+## 部署
 
-See [docs/deployment.md](docs/deployment.md) for setup notes.
+推送到 `main` 后，GitHub Actions 运行 `npm run check`，成功后发布 `dist/` 到 GitHub Pages。
 
-## Direction
-
-The project should stay quiet, spacious, and readable. Visual effects should serve the atmosphere instead of competing with the writing.
+生产域名：<https://telysta.com>
