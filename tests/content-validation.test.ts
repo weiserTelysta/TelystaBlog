@@ -59,7 +59,7 @@ test('发现日期倒置和公开文章占位摘要', async () => {
 	);
 });
 
-test('发现路径大小写错误，并接受大小写完全一致的路径', async () => {
+test('发现文件名大小写错误，并接受大小写完全一致的路径', async () => {
 	const rootDir = await createTemporaryContentRoot();
 	const imageDirectory = path.join(rootDir, 'src', 'assets', 'images', 'illustration');
 	await fs.mkdir(imageDirectory, { recursive: true });
@@ -71,6 +71,34 @@ test('发现路径大小写错误，并接受大小写完全一致的路径', as
 	await writeResource(rootDir, 'case.md', 'case-id', 'src/assets/images/illustration/Exact.png');
 	const validResult = runContentValidation(rootDir);
 	assert.equal(validResult.issues.some((issue) => issue.code.startsWith('local-path')), false);
+});
+
+test('发现目录名大小写错误', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	const imageDirectory = path.join(rootDir, 'src', 'assets', 'images', 'illustration');
+	await fs.mkdir(imageDirectory, { recursive: true });
+	await fs.writeFile(path.join(imageDirectory, 'Exact.png'), 'image');
+	await writePost(rootDir, 'directory-case.md', {
+		cover: 'src/assets/images/Illustration/Exact.png',
+	});
+	const result = runContentValidation(rootDir);
+
+	assert.ok(result.issues.some((issue) => issue.code === 'local-path-case'));
+	assert.equal(result.issues.some((issue) => issue.code === 'local-path-missing'), false);
+});
+
+test('把真正不存在的路径报告为缺失而不是大小写错误', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	await writeResource(
+		rootDir,
+		'missing.md',
+		'missing-id',
+		'src/assets/images/illustration/missing.png',
+	);
+	const result = runContentValidation(rootDir);
+
+	assert.ok(result.issues.some((issue) => issue.code === 'local-path-missing'));
+	assert.equal(result.issues.some((issue) => issue.code === 'local-path-case'), false);
 });
 
 test('发现文章缺失的 cover 路径和正文一级标题，但忽略代码块中的 H1', async () => {

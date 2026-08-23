@@ -11,6 +11,7 @@ const RESOURCE_IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.webp', '.a
 
 export type ContentKind = 'post' | 'resource';
 export type ValidationSeverity = 'error' | 'warning';
+type LocalPathStatus = 'exact' | 'case-mismatch' | 'missing';
 
 export type ValidationIssue = {
 	severity: ValidationSeverity;
@@ -471,7 +472,9 @@ export function validateLocalPath(
 		);
 	}
 
-	if (!fs.existsSync(absolutePath)) {
+	const localPathStatus = inspectLocalPath(rootDir, absolutePath);
+
+	if (localPathStatus === 'missing') {
 		return createIssue(
 			'error',
 			'local-path-missing',
@@ -481,7 +484,7 @@ export function validateLocalPath(
 		);
 	}
 
-	if (!hasExactPathCase(rootDir, absolutePath)) {
+	if (localPathStatus === 'case-mismatch') {
 		return createIssue(
 			'error',
 			'local-path-case',
@@ -590,21 +593,54 @@ function stripCode(body: string): string {
 		.join('\n');
 }
 
-function hasExactPathCase(rootDir: string, absolutePath: string): boolean {
+function inspectLocalPath(rootDir: string, absolutePath: string): LocalPathStatus {
 	const relativePath = path.relative(rootDir, absolutePath);
 	let currentPath = rootDir;
+	let hasCaseMismatch = false;
 
 	for (const segment of relativePath.split(path.sep).filter(Boolean)) {
-		const entries = fs.readdirSync(currentPath);
+		let entries: string[];
 
-		if (!entries.includes(segment)) {
-			return false;
+		try {
+			entries = fs.readdirSync(currentPath);
+		} catch (error) {
+			if (isMissingPathError(error)) {
+				return 'missing';
+			}
+
+			throw error;
 		}
 
-		currentPath = path.join(currentPath, segment);
+		const exactEntry = entries.find((entry) => entry === segment);
+
+		if (exactEntry) {
+			currentPath = path.join(currentPath, exactEntry);
+			continue;
+		}
+
+		const normalizedSegment = segment.toLocaleLowerCase('en-US');
+		const caseInsensitiveEntry = entries.find(
+			(entry) => entry.toLocaleLowerCase('en-US') === normalizedSegment,
+		);
+
+		if (!caseInsensitiveEntry) {
+			return 'missing';
+		}
+
+		hasCaseMismatch = true;
+		currentPath = path.join(currentPath, caseInsensitiveEntry);
 	}
 
-	return true;
+	return hasCaseMismatch ? 'case-mismatch' : 'exact';
+}
+
+function isMissingPathError(error: unknown): boolean {
+	if (!(error instanceof Error) || !('code' in error)) {
+		return false;
+	}
+
+	const errorCode = (error as NodeJS.ErrnoException).code;
+	return errorCode === 'ENOENT' || errorCode === 'ENOTDIR';
 }
 
 function isExternalReference(reference: string): boolean {
