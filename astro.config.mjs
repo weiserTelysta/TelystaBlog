@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import { unified } from '@astrojs/markdown-remark';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
+import remarkScore from './scripts/remark-score.mjs';
 
 import react from '@astrojs/react';
 
@@ -14,8 +15,13 @@ export default defineConfig({
     enabled: false,
   },
   markdown: {
+		syntaxHighlight: 'shiki',
+		shikiConfig: {
+			theme: 'github-dark-high-contrast',
+			wrap: false,
+		},
     processor: unified({
-      remarkPlugins: [remarkMath],
+      remarkPlugins: [remarkMath, remarkScore],
       rehypePlugins: [rehypeKatex],
     }),
   },

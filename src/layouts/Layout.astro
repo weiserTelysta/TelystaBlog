@@ -1,6 +1,6 @@
 ---
 import SiteFooter from '../components/site/SiteFooter.astro';
-import SiteHeader from '../components/site/SiteHeader';
+import SiteHeader from '../components/site/SiteHeader.astro';
 import BackToTop from '../components/site/BackToTop';
 import PageScrollIndicator from '../components/site/PageScrollIndicator';
 import ScrollManager from '../components/site/ScrollManager';
@@ -28,6 +28,7 @@ const {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://assets.telysta.com" crossorigin />
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
 		<link rel="icon" href="/favicon.ico" />
@@ -37,7 +38,7 @@ const {
 	</head>
 	<body>
 		{starfield && <StarfieldBackground client:idle variant={starfieldVariant} />}
-		<SiteHeader client:load />
+		<SiteHeader />
 		<div class="site-shell">
 			<slot />
 		</div>

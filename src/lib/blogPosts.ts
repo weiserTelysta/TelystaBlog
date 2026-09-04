@@ -1,6 +1,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import type { BlogCategoryId } from '../config/content/blogCategories';
 import { getBlogCategoryById, isBlogCategoryId } from './blogCategoryUtils';
+import { buildPostExcerpt } from './blogExcerpt';
 
 export type PostEntry = CollectionEntry<'posts'>;
 
@@ -10,6 +11,7 @@ export type PostListItem = {
 	href: string;
 	title: string;
 	description: string;
+	excerpt: string;
 	publishedAt: Date;
 	updatedAt: Date;
 	category: BlogCategoryId;
@@ -40,6 +42,21 @@ export type SeriesNavigation = {
 	next?: PostListItem;
 };
 
+const ENGLISH_MONTH_NAMES = [
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December',
+] as const;
+
 export function buildPostHref(entryId: string): string {
 	const normalizedId = entryId.replace(/\\/g, '/').replace(/^\/+|\/+$/g, '');
 	return `/blog/${normalizedId}/`;
@@ -55,6 +72,7 @@ export function toPostListItem(entry: PostEntry): PostListItem {
 		href: buildPostHref(entry.id),
 		title: entry.data.title,
 		description: entry.data.description,
+		excerpt: buildPostExcerpt(entry.body, entry.data.description),
 		publishedAt: entry.data.publishedAt,
 		updatedAt: entry.data.updatedAt,
 		category: category?.id ?? entry.data.category,
@@ -165,7 +183,11 @@ export function getSelectedCategoryId(value: string | null): BlogCategoryId | un
 }
 
 export function formatPostDate(date: Date): string {
-	return `${padNumber(date.getMonth() + 1)}-${padNumber(date.getDate())}`;
+	return `${ENGLISH_MONTH_NAMES[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+}
+
+export function formatArticleDate(date: Date): string {
+	return `${ENGLISH_MONTH_NAMES[date.getMonth()]} ${date.getDate()}`;
 }
 
 export function formatFullDate(date: Date): string {
@@ -173,7 +195,7 @@ export function formatFullDate(date: Date): string {
 }
 
 export function formatPostMonth(month: number): string {
-	return `${padNumber(month)} 月`;
+	return ENGLISH_MONTH_NAMES[month - 1] ?? String(month);
 }
 
 function padNumber(value: number): string {

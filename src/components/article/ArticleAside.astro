@@ -14,116 +14,260 @@ type Props = {
 
 const { headings } = Astro.props;
 const { toc } = ARTICLE_PAGE_CONFIG;
-const hasToc = headings.length > 0;
+const panelId = 'article-toc-panel';
 ---
 
-<aside class="article-aside" data-article-aside>
-	{
-		hasToc && (
-			<div class="article-aside__toc">
-				<p class="article-aside__toc-title">{toc.title}</p>
-				<div class="article-aside__toc-list" data-scroll-native data-article-toc-list>
-					<ArticleToc headings={headings} ariaLabel={toc.ariaLabel} />
-				</div>
+<aside class="article-aside" aria-label={toc.ariaLabel} data-article-aside>
+	<details class="article-aside__drawer" data-article-toc-disclosure>
+		<summary
+			class="article-aside__trigger"
+			aria-controls={panelId}
+			aria-label={toc.title}
+			title={toc.title}
+		>
+			<span class="article-aside__trigger-mark" aria-hidden="true"></span>
+		</summary>
+
+		<div class="article-aside__backdrop" data-article-toc-backdrop aria-hidden="true"></div>
+
+		<div class="article-aside__panel" id={panelId} data-article-toc-panel>
+			<div
+				class="article-aside__toc-list"
+				data-scroll-native
+				data-article-toc-list
+			>
+				<ArticleToc headings={headings} ariaLabel={toc.ariaLabel} />
 			</div>
-		)
-	}
+		</div>
+	</details>
 </aside>
 
 <style lang="scss">
 	.article-aside {
-		position: sticky;
-		top: var(--site-header-clearance);
-		display: grid;
-		min-width: 0;
-		max-height: calc(100vh - var(--site-header-clearance) - 24px);
-		min-height: 0;
+		position: fixed;
+		inset: 0;
+		z-index: 40;
+		pointer-events: none;
 	}
 
-	.article-aside__toc {
+	.article-aside__drawer {
+		--toc-drawer-resting-right: max(24px, calc((100vw - 1380px) / 2));
+		--toc-content-edge: calc(50vw + var(--article-reading-width) / 2);
+		--toc-drawer-top: clamp(92px, 8vw, 116px);
+
+		pointer-events: none;
+	}
+
+	.article-aside__trigger {
+		position: fixed;
+		top: auto;
+		right: auto;
+		bottom: clamp(72px, 10vh, 112px);
+		left: calc(var(--toc-content-edge) + 8px);
+		z-index: 3;
+		display: flex;
+		width: 40px;
+		height: 48px;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		cursor: pointer;
+		list-style: none;
+		color: rgba(156, 199, 232, 0.46);
+		pointer-events: auto;
+		transition: color 0.16s ease;
+	}
+
+	.article-aside__trigger::-webkit-details-marker {
+		display: none;
+	}
+
+	.article-aside__trigger::marker {
+		content: "";
+	}
+
+	.article-aside__trigger:focus:not(:focus-visible) {
+		outline: none;
+	}
+
+	.article-aside__trigger:hover,
+	.article-aside__drawer[open] .article-aside__trigger {
+		color: rgba(205, 221, 235, 0.76);
+	}
+
+	.article-aside__trigger:focus-visible {
+		border-radius: 2px;
+		outline: 1px solid rgba(156, 199, 232, 0.74);
+		outline-offset: 3px;
+	}
+
+	.article-aside__trigger-mark {
 		position: relative;
-		display: grid;
-		grid-template-rows: auto minmax(0, 1fr);
-		gap: 16px;
-		min-width: 0;
-		max-height: inherit;
-		min-height: 0;
-		padding-left: 22px;
+		display: block;
+		width: 14px;
+		height: 26px;
+		border-left: 1px solid currentColor;
+		transform: translateX(3px);
+		transition:
+			color var(--motion-fast) ease,
+			transform var(--motion-medium) var(--motion-ease-out);
 	}
 
-	.article-aside__toc::before {
+	.article-aside__trigger-mark::before {
+		content: "";
 		position: absolute;
-		top: 2px;
-		bottom: 2px;
-		left: 0;
-		width: 1px;
-		content: '';
-		background: linear-gradient(
-			180deg,
-			transparent,
-			rgba(156, 199, 232, 0.16) 18%,
-			rgba(156, 199, 232, 0.08) 74%,
-			transparent
-		);
+		top: 5px;
+		left: 4px;
+		width: 2px;
+		height: 2px;
+		border-radius: 50%;
+		background: currentColor;
+		box-shadow: 0 7px 0 currentColor, 0 14px 0 currentColor;
 	}
 
-	.article-aside__toc-title {
-		margin: 0;
-		color: rgba(156, 199, 232, 0.58);
-		font-family: var(--font-display);
-		font-size: 0.72rem;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
+	.article-aside__drawer[open] .article-aside__trigger-mark {
+		transform: translateX(-1px);
+	}
+
+	.article-aside__panel,
+	.article-aside__backdrop,
+	.article-aside__drawer:not([open]) > .article-aside__panel,
+	.article-aside__drawer:not([open]) > .article-aside__backdrop {
+		display: block;
+	}
+
+	.article-aside__panel {
+		position: fixed;
+		top: var(--toc-drawer-top);
+		right: var(--toc-drawer-resting-right);
+		bottom: 24px;
+		left: calc(var(--toc-content-edge) + 56px);
+		z-index: 2;
+		width: auto;
+		min-width: 0;
+		padding: 8px 10px 16px 0;
+		border: 0;
+		background: transparent;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transform: translate3d(calc(100% + var(--toc-drawer-resting-right)), 0, 0);
+		transition:
+			transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+			opacity 0.16s ease,
+			visibility 0s linear 0.22s;
+	}
+
+	.article-aside__drawer[open] .article-aside__panel {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		transform: translate3d(0, 0, 0);
+		transition-delay: 0s;
 	}
 
 	.article-aside__toc-list {
-		display: block;
+		height: 100%;
 		min-height: 0;
-		max-height: none;
-		min-width: 0;
 		overflow-y: auto;
-		padding: 2px 10px 72px 0;
+		padding: 2px 8px 48px 0;
 		overscroll-behavior: contain;
-		scroll-padding-block: 20px 72px;
+		scroll-padding-block: 18px 48px;
+		mask-image: linear-gradient(180deg, transparent, #000 18px, #000 calc(100% - 44px), transparent);
 		scrollbar-width: none;
+		-ms-overflow-style: none;
 	}
 
 	.article-aside__toc-list::-webkit-scrollbar {
 		display: none;
 	}
 
-	.article-aside__toc-list[data-toc-scrollable='false'] {
-		padding-bottom: 2px;
+	.article-aside__backdrop {
+		position: fixed;
+		inset: 0;
+		z-index: 1;
+		background: rgba(7, 12, 20, 0.44);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition:
+			opacity 0.18s ease,
+			visibility 0s linear 0.22s;
 	}
 
-	@media (max-width: 960px) {
-		.article-aside {
-			position: static;
-			max-height: none;
-			padding: 18px 0 0;
-			border-top: 1px solid rgba(255, 255, 255, 0.055);
+	:global(html.is-article-toc-overlay-open),
+	:global(html.is-article-toc-overlay-open body) {
+		overflow: hidden;
+	}
+
+	@media (max-width: 1359px) {
+		.article-aside__drawer {
+			--toc-drawer-width: min(340px, 86vw);
 		}
 
-		.article-aside__toc {
-			position: static;
-			padding-left: 0;
+		.article-aside__trigger {
+			left: auto;
+			right: 4px;
+			bottom: 84px;
 		}
 
-		.article-aside__toc-list {
-			max-height: none;
-			overflow: visible;
-			padding: 0;
+		.article-aside__panel {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: auto;
+			width: var(--toc-drawer-width);
+			padding: 72px 52px 28px 22px;
+			background: rgba(11, 15, 23, 0.92);
+			-webkit-backdrop-filter: blur(14px);
+			backdrop-filter: blur(14px);
+			transform: translate3d(100%, 0, 0);
 		}
 
-		.article-aside__toc::before {
-			display: none;
+		.article-aside__drawer[open] .article-aside__backdrop {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: auto;
+			transition-delay: 0s;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.article-aside__drawer {
+			--toc-drawer-width: min(360px, 91vw);
+		}
+
+		.article-aside__trigger {
+			right: 2px;
+			bottom: 72px;
+		}
+
+		.article-aside__panel {
+			padding-top: 64px;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.article-aside__trigger,
+		.article-aside__trigger-mark,
+		.article-aside__panel,
+		.article-aside__backdrop {
+			transition: none;
 		}
 	}
 </style>
 
 <script>
+	import {
+		bindArticleTocDrawerRuntime,
+		initArticleTocDrawerRuntime,
+	} from '../../lib/articleTocDrawerRuntime';
 	import { bindArticleTocRuntime, initArticleTocRuntime } from '../../lib/articleTocRuntime';
 
+	initArticleTocDrawerRuntime();
 	initArticleTocRuntime();
+	bindArticleTocDrawerRuntime();
 	bindArticleTocRuntime();
 </script>

@@ -4,9 +4,9 @@ title: Draft Character Reinforce
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/reinforce.png
+image: asset:characters/reinforce
 gallery:
-  - src: src/assets/images/illustration/characters/reinforce.png
+  - src: asset:characters/reinforce
     label: "01"
     alt: Draft character reinforce image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/reinforce.png
+    href: asset:characters/reinforce
     format: PNG
     primary: true
 draft: true

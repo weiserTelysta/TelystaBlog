@@ -9,9 +9,8 @@ type Props = {
 const { monthGroup } = Astro.props;
 ---
 
-<section class="blog-month" aria-label={`${monthGroup.year} 年 ${monthGroup.label}`}>
+<section class="blog-month" aria-label={`${monthGroup.label} ${monthGroup.year}`}>
 	<div class="blog-month__node" aria-hidden="true"></div>
-	<div class="blog-month__label">{monthGroup.label}</div>
 	<ol class="blog-month__posts">
 		{monthGroup.posts.map((post) => <BlogPostItem post={post} />)}
 	</ol>
@@ -21,88 +20,54 @@ const { monthGroup } = Astro.props;
 	.blog-month {
 		position: relative;
 		display: grid;
-		grid-template-columns: var(--axis-size) var(--month-size) minmax(0, 1fr);
-		align-items: start;
-		column-gap: clamp(12px, 2.2vw, 18px);
+		grid-template-columns: 16px minmax(0, 1fr);
+		column-gap: 14px;
 	}
 
 	.blog-month::before {
-		content: "";
 		position: absolute;
-		top: 2rem;
-		bottom: calc(-1 * var(--month-gap));
-		left: calc(var(--axis-size) / 2);
+		top: 15px;
+		bottom: calc(-1 * var(--month-stack-gap));
+		left: 7.5px;
 		width: 1px;
 		background: linear-gradient(
 			180deg,
-			rgba(156, 199, 232, 0.28),
-			rgba(156, 199, 232, 0.06)
+			rgba(156, 199, 232, 0.24),
+			rgba(156, 199, 232, 0.07)
 		);
-		transform: translateX(-0.5px);
+		content: "";
 	}
 
 	.blog-month:last-child::before {
-		bottom: 0.24rem;
+		bottom: 0;
 		background: linear-gradient(180deg, rgba(156, 199, 232, 0.2), transparent);
 	}
 
 	.blog-month__node {
 		position: relative;
-		z-index: 2;
+		z-index: 1;
 		grid-column: 1;
 		grid-row: 1;
-		width: 17px;
-		height: 17px;
-		margin-top: 0.4rem;
-		border: 1px solid rgba(156, 199, 232, 0.5);
+		width: 14px;
+		height: 14px;
+		margin-top: 0.55rem;
+		border: 1px solid rgba(156, 199, 232, 0.42);
 		border-radius: 50%;
 		background:
-			radial-gradient(circle, rgba(216, 222, 233, 0.42) 0 1.5px, transparent 2px),
-			radial-gradient(circle, rgba(7, 10, 16, 0.96) 0 55%, rgba(156, 199, 232, 0.14) 56% 100%);
-		box-shadow:
-			0 0 0 5px rgba(7, 10, 16, 0.84),
-			0 0 18px rgba(156, 199, 232, 0.1);
+			radial-gradient(circle, rgba(216, 222, 233, 0.5) 0 1.25px, transparent 1.75px),
+			var(--color-background);
+		box-shadow: 0 0 0 4px rgba(7, 10, 16, 0.86);
 		justify-self: center;
-	}
-
-	.blog-month__label {
-		grid-column: 2;
-		grid-row: 1;
-		width: fit-content;
-		margin-top: 0.22rem;
-		color: rgba(216, 222, 233, 0.72);
-		font-family: var(--font-display);
-		font-size: 0.92rem;
-		letter-spacing: 0.08em;
-		white-space: nowrap;
 	}
 
 	.blog-month__posts {
 		display: grid;
-		grid-column: 3;
+		grid-column: 2;
 		grid-row: 1;
-		gap: 18px;
+		gap: clamp(28px, 4vw, 36px);
 		min-width: 0;
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}
-
-	@media (max-width: 640px) {
-		.blog-month {
-			grid-template-columns: var(--axis-size) minmax(0, 1fr);
-			gap: 12px 14px;
-		}
-
-		.blog-month__label {
-			grid-column: 2;
-			grid-row: 1;
-			margin-top: 0.14rem;
-		}
-
-		.blog-month__posts {
-			grid-column: 2;
-			grid-row: 2;
-		}
 	}
 </style>

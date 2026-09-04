@@ -1,0 +1,100 @@
+---
+import type { ArticleTocNode } from '../../lib/articleTocOutline';
+
+type Props = {
+	nodes: ArticleTocNode[];
+	level?: number;
+};
+
+const { nodes, level = 1 } = Astro.props;
+---
+
+<ol class={`article-toc__branch article-toc__branch--level-${level}`}>
+	{
+		nodes.map((node) => (
+			<li class={`article-toc__item article-toc__item--depth-${node.depth}`}>
+				<a
+					href={`#${node.slug}`}
+					data-toc-link={node.slug}
+					data-toc-depth={node.depth}
+				>
+					{node.text}
+				</a>
+				{node.children.length > 0 && (
+					<Astro.self nodes={node.children} level={level + 1} />
+				)}
+			</li>
+		))
+	}
+</ol>
+
+<style lang="scss">
+	.article-toc__branch {
+		display: grid;
+		gap: 2px;
+		min-width: 0;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.article-toc__branch--level-1 {
+		gap: 8px;
+	}
+
+	.article-toc__branch:not(.article-toc__branch--level-1) {
+		margin-top: 3px;
+		margin-left: 0.32rem;
+		padding-left: 0.68rem;
+		border-left: 1px solid rgba(156, 199, 232, 0.09);
+	}
+
+	.article-toc__item {
+		min-width: 0;
+	}
+
+	.article-toc__item > a {
+		display: block;
+		min-width: 0;
+		padding: 4px 5px;
+		border-radius: 2px;
+		color: rgba(178, 190, 209, 0.54);
+		font-size: 0.76rem;
+		font-weight: 450;
+		line-height: 1.5;
+		text-decoration: none;
+		overflow-wrap: break-word;
+		transition: color 0.16s ease;
+	}
+
+	.article-toc__item--depth-2 > a {
+		color: rgba(198, 208, 223, 0.68);
+		font-size: 0.82rem;
+		font-weight: 520;
+	}
+
+	.article-toc__item--depth-3 > a {
+		color: rgba(184, 196, 214, 0.58);
+		font-size: 0.78rem;
+	}
+
+	.article-toc__item > a:hover {
+		color: rgba(216, 224, 236, 0.86);
+	}
+
+	.article-toc__item > a.is-active,
+	.article-toc__item > a[aria-current='location'] {
+		color: rgba(224, 231, 241, 0.94);
+	}
+
+	.article-toc__item > a:focus-visible {
+		outline: 1px solid rgba(156, 199, 232, 0.72);
+		outline-offset: 2px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.article-toc__item > a {
+			transition: none;
+		}
+	}
+</style>

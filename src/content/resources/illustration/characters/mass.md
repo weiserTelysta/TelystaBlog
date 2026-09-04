@@ -4,9 +4,9 @@ title: Draft Character Mass
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/mass.png
+image: asset:characters/mass
 gallery:
-  - src: src/assets/images/illustration/characters/mass.png
+  - src: asset:characters/mass
     label: "01"
     alt: Draft character mass image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/mass.png
+    href: asset:characters/mass
     format: PNG
     primary: true
 draft: true

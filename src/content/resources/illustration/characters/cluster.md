@@ -4,9 +4,9 @@ title: Draft Character Cluster
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/cluster.png
+image: asset:characters/cluster
 gallery:
-  - src: src/assets/images/illustration/characters/cluster.png
+  - src: asset:characters/cluster
     label: "01"
     alt: Draft character cluster image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/cluster.png
+    href: asset:characters/cluster
     format: PNG
     primary: true
 draft: true

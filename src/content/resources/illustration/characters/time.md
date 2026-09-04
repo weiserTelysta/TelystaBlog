@@ -4,9 +4,9 @@ title: Draft Character Time
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/time.png
+image: asset:characters/time
 gallery:
-  - src: src/assets/images/illustration/characters/time.png
+  - src: asset:characters/time
     label: "01"
     alt: Draft character time image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/time.png
+    href: asset:characters/time
     format: PNG
     primary: true
 draft: true

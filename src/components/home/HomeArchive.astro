@@ -1,6 +1,12 @@
 ---
 import HomeSection from './HomeSection.astro';
-import { HOME_ARCHIVE_INTRO, HOME_SECTIONS } from '../../config/pages/home';
+import HomeSocialNav from './HomeSocialNav.astro';
+import {
+	HOME_ARCHIVE_INTRO,
+	HOME_QR_CONTACTS,
+	HOME_SECTIONS,
+	HOME_SOCIAL_LINKS,
+} from '../../config/pages/home';
 import './HomeArchive.scss';
 
 const sections = HOME_SECTIONS.filter((section) => section.enabled !== false).sort(
@@ -18,5 +24,11 @@ const sections = HOME_SECTIONS.filter((section) => section.enabled !== false).so
 		<div class="home-archive__sections">
 			{sections.map((section, index) => <HomeSection section={section} index={index + 1} />)}
 		</div>
+
+		<HomeSocialNav
+			links={HOME_SOCIAL_LINKS}
+			contacts={HOME_QR_CONTACTS}
+			revealOrder={sections.length + 1}
+		/>
 	</div>
 </section>

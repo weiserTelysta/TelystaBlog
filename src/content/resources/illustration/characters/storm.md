@@ -4,9 +4,9 @@ title: Draft Character Storm
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/storm.png
+image: asset:characters/storm
 gallery:
-  - src: src/assets/images/illustration/characters/storm.png
+  - src: asset:characters/storm
     label: "01"
     alt: Draft character storm image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/storm.png
+    href: asset:characters/storm
     format: PNG
     primary: true
 draft: true

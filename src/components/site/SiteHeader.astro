@@ -1,0 +1,40 @@
+---
+import { SITE_CONFIG } from '../../config/site';
+import { SITE_CHROME_CONFIG } from '../../config/interactions/siteChrome';
+---
+
+<header class="site-header">
+	<a
+		class="site-header__brand"
+		href="/"
+		aria-label={`${SITE_CONFIG.name} ${SITE_CHROME_CONFIG.header.homeLabel}`}
+	>
+		<span>{SITE_CONFIG.name}</span>
+	</a>
+	<nav class="site-header__nav" aria-label={SITE_CHROME_CONFIG.header.navigationLabel}>
+		{
+			SITE_CONFIG.navItems.map((item, index) => {
+				const href = 'href' in item ? item.href : undefined;
+
+				return (
+					<>
+						{index > 0 && (
+							<span class="site-header__divider" aria-hidden="true">
+								/
+							</span>
+						)}
+						{href ? (
+							<a class="site-header__nav-item" href={href}>
+								{item.label}
+							</a>
+						) : (
+							<span class="site-header__nav-item is-disabled" aria-disabled="true">
+								{item.label}
+							</span>
+						)}
+					</>
+				);
+			})
+		}
+	</nav>
+</header>

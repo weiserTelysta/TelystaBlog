@@ -11,9 +11,9 @@ title: Example Resource
 summary: 一句简短摘要。
 type: illustration
 status: draft
-image: src/assets/images/illustration/example/example.png
+image: asset:Example/example
 gallery:
-  - src: src/assets/images/illustration/example/example.png
+  - src: asset:Example/example
     label: "01"
     alt: 图片说明
 credits:
@@ -22,14 +22,9 @@ credits:
     href: https://example.com
 publishedAt: 2026-08-14
 updatedAt: 2026-08-14
-formats: [PNG]
+formats: [PNG, PSD]
 license: Draft license. Replace before publishing.
-actions:
-  - type: download
-    label: 下载原图
-    href: src/assets/images/illustration/example/example.png
-    format: PNG
-    primary: true
+actions: []
 draft: true
 ---
 
@@ -42,7 +37,7 @@ draft: true
 - `title`：显示标题。
 - `summary`：卡片和详情摘要。
 - `type`：必须来自 `src/config/content/resourceTypes.ts`。
-- `image`：主原图路径。
+- `image`：主图资源引用。
 - `publishedAt`：发布日期。
 - `updatedAt`：最后更新日期。
 
@@ -56,25 +51,20 @@ draft: true
 
 ## 图片字段
 
-- `image`：原图，也是默认下载来源。
+- `image`：主图；必须写成 `asset:<清单键>`。
 - `cover`：可选的卡片显示图。
 - `preview`：可选的详情显示图。
 - `gallery`：同一资源的多张原图。
 
-这些字段必须使用 `src/assets/images/resources/` 或 `src/assets/images/illustration/` 下、运行时可解析的 PNG、JPG、JPEG、WebP 或 AVIF 本地路径，不能直接引用外部主图。
+这些字段使用 `src/generated/cdn-assets.json` 中已有的 `asset:<清单键>`。运行时会自动把它解析为 `assets.telysta.com` 上的 WebP，并把同组 PNG/JPG 和 PSD/AI 作为下载文件；不要在主图字段中手写完整 CDN URL或仓库本地路径。
 
-当原图是 PNG、JPG 或 JPEG 且未明确填写 `cover`/`preview` 时，构建会优先查找同目录自动生成的：
-
-- `<name>.cover.webp`
-- `<name>.preview.webp`
-
-它们只是显示产物，下载仍指向原图。
+清单组存在 `cover` 时，列表优先使用它；详情优先使用 `display`。没有单独 `cover` 时，两处都使用 `display`。下载仍指向原图。
 
 ## Gallery
 
 每项支持：
 
-- `src`：本地原图路径。
+- `src`：`asset:<清单键>`。
 - `label`：短编号或名称。
 - `alt`：对图片内容的简短描述。
 
@@ -111,7 +101,7 @@ Credits 用于说明来源和参与者，不替代许可证。
 - `disabled`：暂不可用。
 - `note`：补充说明。
 
-本地下载路径必须指向上述两个资源图片目录中的真实原图。外部页面使用完整 HTTPS URL。
+R2 中与主图同名的原图和源文件会自动加入下载列表，不必重复写 `actions`；不同名的独立 PSD 可以在 `download` 动作中填写完整 `https://assets.telysta.com/...` URL。其他外部页面使用完整 HTTPS URL。
 
 ## 许可证
 
@@ -121,28 +111,23 @@ Credits 用于说明来源和参与者，不替代许可证。
 
 Markdown 正文适合记录背景、用途、创作说明和限制。摘要保持简短，详细内容放正文。
 
-## 图片生成与缓存
+## R2 图片生成与缓存
 
 运行：
 
 ```sh
-npm run resources:images
+npm run assets:prepare -- --source "<素材目录>"
+npm run assets:manifest -- --source "<素材目录>" --collection "characters=<Character 目录>" --collection "avatars=<头像目录>"
 ```
 
-当前参数：
+R2 展示图参数：最长边 3200、质量 92、透明度质量 98、WebP effort 5。首次运行会接管已有 WebP，后续只重新生成原图指纹已变化、目标缺失或目标不一致的文件。
 
-- cover：最大 1200×1600、质量 84、透明度质量 95。
-- preview：最大 3200×3200、质量 92、透明度质量 98。
-- WebP effort：5。
-- 不放大小图，不覆盖原图。
-
-脚本使用 `.tmp/resource-images-manifest.json` 记录原图、目标图、生成参数和生成器版本。只有所有信息匹配时才跳过压缩。
+完整上传步骤见 [cdn-assets.md](cdn-assets.md)。
 
 ## 发布检查
 
 ```sh
 npm run content:check
-npm run resources:images
 npm run check
 ```
 

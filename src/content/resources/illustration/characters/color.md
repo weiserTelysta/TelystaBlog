@@ -4,9 +4,9 @@ title: Draft Character Color
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/color.png
+image: asset:characters/color
 gallery:
-  - src: src/assets/images/illustration/characters/color.png
+  - src: asset:characters/color
     label: "01"
     alt: Draft character color image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/color.png
+    href: asset:characters/color
     format: PNG
     primary: true
 draft: true

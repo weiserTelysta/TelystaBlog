@@ -1,76 +1,30 @@
 ---
 import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
-
-type Props = {
-	postCount: number;
-	selectedCategoryTitle?: string;
-	selectedCategoryDescription?: string;
-};
-
-const { postCount, selectedCategoryTitle, selectedCategoryDescription } = Astro.props;
 const { indexHeader } = BLOG_PAGE_CONFIG;
-const title = selectedCategoryTitle ?? indexHeader.title;
-const intro = selectedCategoryDescription ?? indexHeader.intro;
-const summary = selectedCategoryTitle
-	? `${postCount} ${indexHeader.categoryCountSuffix}`
-	: `${postCount} ${indexHeader.allCountSuffix}`;
 ---
 
 <header class="blog-index-header" aria-labelledby="blog-index-title">
-	<p class="blog-index-header__eyebrow">{indexHeader.eyebrow}</p>
-	<h1 id="blog-index-title">{title}</h1>
-	<p class="blog-index-header__intro">{intro}</p>
-	<p class="blog-index-header__summary">{summary}</p>
+	<h1 id="blog-index-title">{indexHeader.title}</h1>
 </header>
 
 <style lang="scss">
 	.blog-index-header {
-		display: grid;
-		gap: 12px;
-		max-width: 720px;
-		margin-bottom: clamp(30px, 4.6vw, 46px);
-	}
-
-	.blog-index-header__eyebrow,
-	.blog-index-header__summary {
-		margin: 0;
-		color: rgba(156, 199, 232, 0.52);
-		font-family: var(--type-display-label-font);
-		font-size: var(--type-display-label-size);
-		font-weight: var(--type-display-label-weight);
-		letter-spacing: var(--type-display-label-tracking);
-		text-transform: uppercase;
+		max-width: 100%;
 	}
 
 	h1 {
 		margin: 0;
-		color: rgba(237, 243, 251, 0.92);
+		color: rgba(216, 222, 233, 0.86);
 		font-family: var(--type-index-title-font);
-		font-size: clamp(2.25rem, 5.2vw, 4.2rem);
-		font-weight: var(--type-index-title-weight);
-		line-height: 1.08;
+		font-size: clamp(2rem, 4.2vw, 2.65rem);
+		font-weight: 650;
+		line-height: 1.16;
 		letter-spacing: 0;
 	}
 
-	.blog-index-header__intro {
-		max-width: 620px;
-		margin: 0;
-		color: rgba(190, 199, 214, 0.58);
-		font-size: clamp(1rem, 2vw, 1.16rem);
-		line-height: 1.85;
-	}
-
-	.blog-index-header__summary {
-		color: rgba(216, 222, 233, 0.36);
-	}
-
 	@media (max-width: 640px) {
-		.blog-index-header {
-			margin-bottom: 32px;
-		}
-
 		h1 {
-			font-size: clamp(2rem, 13vw, 3.2rem);
+			font-size: clamp(1.8rem, 8.5vw, 2.1rem);
 		}
 	}
 </style>

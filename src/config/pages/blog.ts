@@ -7,11 +7,7 @@ export const BLOG_PAGE_CONFIG = {
 		categoryTitleSuffix: `Blog - ${SITE_CONFIG.name}`,
 	},
 	indexHeader: {
-		eyebrow: 'Records',
-		title: '文章列表',
-		intro: '所有的思绪与技术累积，都会在这里留下足迹。',
-		allCountSuffix: '篇记录正在归档',
-		categoryCountSuffix: '篇文章',
+		title: "Weiser's Records",
 	},
 	emptyState: {
 		defaultMessage: '这里暂时还没有公开文章。',
@@ -30,8 +26,6 @@ export const BLOG_PAGE_CONFIG = {
 		entryLabel: 'Category',
 		allRecordsTitle: 'All Records',
 		recordLabel: 'records',
-		allPostsLabel: '全部文章',
-		entryHint: '星辰微光，愿片语对你有助。',
 		dialogEyebrow: 'Category Map',
 		dialogTitle: '渺渺星辰，亦有微光。',
 		closeLabel: '关闭类目选择',

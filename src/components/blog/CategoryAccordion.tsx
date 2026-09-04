@@ -25,14 +25,12 @@ type Props = {
 	visuals: BlogCategoryVisual[];
 	selectedCategoryId?: BlogCategoryId;
 	postCounts: CategoryPostCount;
-	totalCount: number;
 };
 
 export default function CategoryAccordion({
 	visuals,
 	selectedCategoryId,
 	postCounts,
-	totalCount,
 }: Props) {
 	const [open, setOpen] = useState(false);
 	const [isClosing, setIsClosing] = useState(false);
@@ -61,8 +59,6 @@ export default function CategoryAccordion({
 		() => visuals.find((visual) => visual.id === selectedCategoryId),
 		[visuals, selectedCategoryId],
 	);
-	const currentCount = selectedCategoryId ? postCounts[selectedCategoryId] : totalCount;
-
 	useEffect(() => {
 		const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -457,15 +453,18 @@ export default function CategoryAccordion({
 	}
 
 	function handlePointerMove(event: PointerEvent<HTMLButtonElement>) {
-		if (railMotionPhaseRef.current === 'closing') {
+		if (
+			railMotionPhaseRef.current === 'closing' ||
+			(event.pointerType !== 'mouse' && event.pointerType !== 'pen')
+		) {
 			return;
 		}
 
 		const rect = event.currentTarget.getBoundingClientRect();
 		const pointerX = ((event.clientX - rect.left) / rect.width) * 100;
 		const pointerY = ((event.clientY - rect.top) / rect.height) * 100;
-		const rotateY = (pointerX - 50) / 8;
-		const rotateX = (50 - pointerY) / 10;
+		const rotateY = (pointerX - 50) / 13;
+		const rotateX = (50 - pointerY) / 16;
 
 		event.currentTarget.style.setProperty('--pointer-x', `${pointerX}%`);
 		event.currentTarget.style.setProperty('--pointer-y', `${pointerY}%`);
@@ -486,23 +485,15 @@ export default function CategoryAccordion({
 				ref={entryButtonRef}
 				className="category-accordion__entry"
 				type="button"
+				aria-expanded={open}
+				aria-haspopup="dialog"
 				onClick={openAccordion}
 			>
 				<span className="category-accordion__entry-label">{ACCORDION_COPY.entryLabel}</span>
 				<span className="category-accordion__entry-title">
-					<strong>{selectedVisual?.title ?? ACCORDION_COPY.allRecordsTitle}</strong>
-					<em>
-						{currentCount} {ACCORDION_COPY.recordLabel}
-					</em>
-				</span>
-				<span className="category-accordion__entry-hint">
-					{ACCORDION_COPY.entryHint}
+					{selectedVisual?.title ?? ACCORDION_COPY.allRecordsTitle}
 				</span>
 			</button>
-
-			<a className="category-accordion__all-link" href={buildCategoryHref()}>
-				{ACCORDION_COPY.allPostsLabel} · {totalCount}
-			</a>
 
 			{open && (
 				<div
@@ -541,6 +532,16 @@ export default function CategoryAccordion({
 						<header className="category-accordion__heading">
 							<p>{ACCORDION_COPY.dialogEyebrow}</p>
 							<h2 id={CATEGORY_DIALOG_TITLE_ID}>{ACCORDION_COPY.dialogTitle}</h2>
+							{selectedCategoryId && (
+								<a
+									className="category-accordion__all-link"
+									href={buildCategoryHref()}
+									data-category-accordion-control
+								>
+									<span aria-hidden="true">←</span>
+									{ACCORDION_COPY.allRecordsTitle}
+								</a>
+							)}
 						</header>
 
 						<div

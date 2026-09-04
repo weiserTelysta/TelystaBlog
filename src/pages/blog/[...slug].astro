@@ -6,9 +6,6 @@ import ArticleSeriesNav from '../../components/article/ArticleSeriesNav.astro';
 import Layout from '../../layouts/Layout.astro';
 import { ARTICLE_PAGE_CONFIG } from '../../config/pages/article';
 import {
-	getPostsBySeries,
-	getPublishedPosts,
-	getSeriesNavigation,
 	toPostListItem,
 	type PostEntry,
 } from '../../lib/blogPosts';
@@ -33,10 +30,7 @@ type Props = {
 
 const { entry } = Astro.props;
 const post = toPostListItem(entry);
-const allPosts = await getPublishedPosts();
 const series = getBlogSeriesById(post.series);
-const seriesPosts = series ? getPostsBySeries(allPosts, series.id) : [];
-const seriesNavigation = getSeriesNavigation(allPosts, post);
 const { Content, headings } = await render(entry);
 const tocHeadings = headings.filter(
 	(heading) =>
@@ -53,75 +47,56 @@ const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 >
 	<main class="article-page">
 		<article class="article-page__inner">
-			<ArticleHeader post={post} series={series} />
+			<ArticleHeader post={post} />
 
-			<div class={`article-page__body ${hasToc ? 'has-toc' : 'no-toc'}`}>
+			<div class="article-page__body">
 				<div class="article-page__content prose" data-article-content>
 					<Content />
 				</div>
-
-				{
-					hasToc && <ArticleAside headings={tocHeadings} />
-				}
 			</div>
 
-			<ArticleSeriesNav
-				series={series}
-				seriesPosts={seriesPosts}
-				navigation={seriesNavigation}
-				labels={ARTICLE_PAGE_CONFIG.series}
-			/>
+			{hasToc && <ArticleAside headings={tocHeadings} />}
+
+			<ArticleSeriesNav series={series} />
 		</article>
 	</main>
 </Layout>
 
 <style lang="scss">
 	.article-page {
+		--article-reading-width: 760px;
+
 		position: relative;
 		z-index: 1;
 		min-height: 100vh;
 	}
 
 	.article-page__inner {
-		width: min(1080px, calc(100% - 48px));
+		width: min(1380px, calc(100% - 48px));
 		margin: 0 auto;
 		padding-bottom: clamp(92px, 13vw, 150px);
 	}
 
 	.article-page__body {
-		display: grid;
-		align-items: start;
+		width: min(var(--article-reading-width), 100%);
+		margin-inline: auto;
 		min-height: 70vh;
-	}
-
-	.article-page__body.has-toc {
-		grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
-		gap: clamp(44px, 6.4vw, 78px);
-	}
-
-	.article-page__body.no-toc {
-		grid-template-columns: minmax(0, 760px);
 	}
 
 	.article-page__content {
 		min-width: 0;
 	}
 
-	@media (max-width: 960px) {
-		.article-page__body,
-		.article-page__body.has-toc,
-		.article-page__body.no-toc {
-			grid-template-columns: 1fr;
-		}
-
-		:global(.article-aside) {
-			order: -1;
-		}
-	}
-
 	@media (max-width: 640px) {
 		.article-page__inner {
-			width: min(100% - 32px, 720px);
+			width: calc(100% - 32px);
 		}
 	}
 </style>
+
+<script>
+	import { bindArticleCodeRuntime, initArticleCodeRuntime } from '../../lib/articleCodeRuntime';
+
+	initArticleCodeRuntime();
+	bindArticleCodeRuntime();
+</script>

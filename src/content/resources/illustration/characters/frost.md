@@ -4,9 +4,9 @@ title: Draft Character Frost
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/frost.png
+image: asset:characters/frost
 gallery:
-  - src: src/assets/images/illustration/characters/frost.png
+  - src: asset:characters/frost
     label: "01"
     alt: Draft character frost image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/frost.png
+    href: asset:characters/frost
     format: PNG
     primary: true
 draft: true

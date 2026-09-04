@@ -4,18 +4,19 @@ title: Telysta Official Outfit Reference
 summary: Official outfit reference materials for Telysta
 type: illustration
 status: available
-image: src/assets/images/illustration/telysta/telysta_primary_character_01/telysta_primary_character_01.png
+image: asset:Telysta/Telysta_officialoutfit_fullbody
 gallery:
-  - src: src/assets/images/illustration/telysta/telysta_primary_character_01/telysta_primary_character_01.png
+  - src: asset:Telysta/Telysta_officialoutfit_fullbody
     label: "01"
     alt: Draft Telysta primary character image 01
-  - src: src/assets/images/illustration/telysta/telysta_primary_character_01/telysta_primary_character_02.png
+  - src: asset:Telysta/Telysta_officialoutfit_design
     label: "02"
     alt: Draft Telysta primary character image 02
 publishedAt: 2026-07-01
 updatedAt: 2026-07-01
 formats:
   - PNG
+  - PSD
 variantCount: 2
 license: Draft license. Replace before publishing.
 credits: 
@@ -24,10 +25,9 @@ credits:
     href: https://lit.link/zh-tw/hoja
 actions:
   - type: download
-    label: PNG
-    href: src/assets/images/illustration/telysta/telysta_primary_character_01/telysta_primary_character_01.png
-    format: PNG
-    primary: true
+    label: PSD
+    href: https://assets.telysta.com/telysta-images/Telysta/Telysta_officialoutfit.psd
+    format: PSD
 ---
 
 Telysta的官方服饰，她是一位冰冷其外，温柔其内的孩子，善良和求知是她的天性。

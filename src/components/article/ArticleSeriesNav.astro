@@ -1,156 +1,52 @@
 ---
-import { ARTICLE_PAGE_CONFIG } from '../../config/pages/article';
 import type { BlogSeries } from '../../config/content/blogSeries';
-import type { PostListItem, SeriesNavigation } from '../../lib/blogPosts';
 import { buildSeriesHref } from '../../lib/blogSeriesUtils';
 
 type Props = {
 	series?: BlogSeries;
-	seriesPosts: PostListItem[];
-	navigation?: SeriesNavigation;
-	labels?: {
-		sectionLabel: string;
-		fullSeriesPrefix: string;
-		previousLabel: string;
-		nextLabel: string;
-		emptyPrevious: string;
-		emptyNext: string;
-	};
 };
 
-const {
-	series,
-	seriesPosts,
-	navigation,
-	labels = ARTICLE_PAGE_CONFIG.series,
-} = Astro.props;
-const hasDirectionalLinks = Boolean(navigation?.previous || navigation?.next);
+const { series } = Astro.props;
 ---
 
 {
 	series && (
-		<section class="article-series" aria-label="所属系列">
-			<div class="article-series__intro">
-				<p>{labels.sectionLabel}</p>
-				<h2>{series.title}</h2>
-				<span>{series.description}</span>
-			</div>
-
-			<div class="article-series__actions">
-				<a href={buildSeriesHref(series.id)}>{labels.fullSeriesPrefix} · {seriesPosts.length}</a>
-			</div>
-
-			{hasDirectionalLinks && (
-				<nav class="article-series__nav" aria-label="系列上一篇和下一篇">
-					<div>
-						<span>{labels.previousLabel}</span>
-						{navigation?.previous ? (
-							<a href={navigation.previous.href}>{navigation.previous.title}</a>
-						) : (
-							<em>{labels.emptyPrevious}</em>
-						)}
-					</div>
-					<div>
-						<span>{labels.nextLabel}</span>
-						{navigation?.next ? (
-							<a href={navigation.next.href}>{navigation.next.title}</a>
-						) : (
-							<em>{labels.emptyNext}</em>
-						)}
-					</div>
-				</nav>
-			)}
-		</section>
+		<nav class="article-series" aria-label="所属系列">
+			<a href={buildSeriesHref(series.id)} aria-label={`所属系列：${series.title}`}>
+				{series.title}
+			</a>
+		</nav>
 	)
 }
 
 <style lang="scss">
 	.article-series {
-		display: grid;
-		gap: 22px;
+		width: min(var(--article-reading-width), 100%);
 		margin-top: clamp(54px, 9vw, 88px);
-		padding-top: 30px;
+		margin-inline: auto;
+		padding-top: 22px;
 		border-top: 1px solid rgba(255, 255, 255, 0.055);
 	}
 
-	.article-series__intro {
-		display: grid;
-		gap: 8px;
-		max-width: 680px;
-	}
-
-	.article-series__intro p,
-	.article-series__nav span {
-		margin: 0;
-		color: rgba(156, 199, 232, 0.55);
-		font-family: var(--type-display-label-font);
-		font-size: var(--type-display-label-size);
-		font-weight: var(--type-display-label-weight);
-		letter-spacing: var(--type-display-label-tracking);
-		text-transform: uppercase;
-	}
-
-	.article-series__intro h2 {
-		margin: 0;
-		color: rgba(237, 243, 251, 0.88);
-		font-family: var(--type-section-title-font);
-		font-size: var(--type-section-title-size);
-		font-weight: var(--type-section-title-weight);
-		line-height: var(--type-section-title-line);
-		letter-spacing: 0;
-	}
-
-	.article-series__intro span {
-		color: rgba(190, 199, 214, 0.58);
+	.article-series a {
+		color: rgba(156, 199, 232, 0.74);
 		font-size: 0.94rem;
-		line-height: 1.8;
-	}
-
-	.article-series__actions a,
-	.article-series__nav a {
-		color: rgba(216, 222, 233, 0.78);
-		transition: color 0.2s ease;
-	}
-
-	.article-series__actions a:hover,
-	.article-series__nav a:hover {
-		color: rgba(237, 243, 251, 0.94);
-	}
-
-	.article-series__actions {
-		color: rgba(156, 199, 232, 0.62);
-		font-size: 0.86rem;
-	}
-
-	.article-series__nav {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 18px;
-	}
-
-	.article-series__nav div {
-		display: grid;
-		gap: 8px;
-		min-width: 0;
-		padding-top: 16px;
-		border-top: 1px solid rgba(255, 255, 255, 0.045);
-	}
-
-	.article-series__nav a,
-	.article-series__nav em {
-		font-size: 0.94rem;
-		font-style: normal;
-		line-height: 1.7;
+		line-height: 1.6;
+		text-decoration: underline;
+		text-decoration-color: transparent;
+		text-underline-offset: 0.24em;
 		overflow-wrap: anywhere;
+		transition: color 0.16s ease, text-decoration-color 0.16s ease;
 	}
 
-	.article-series__nav em {
-		color: rgba(139, 149, 167, 0.58);
+	.article-series a:hover {
+		color: rgba(216, 222, 233, 0.9);
+		text-decoration-color: rgba(156, 199, 232, 0.42);
 	}
 
-	@media (max-width: 700px) {
-		.article-series__nav {
-			grid-template-columns: 1fr;
-		}
+	.article-series a:focus-visible {
+		border-radius: 2px;
+		outline: 1px solid rgba(156, 199, 232, 0.78);
+		outline-offset: 4px;
 	}
 </style>

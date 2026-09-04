@@ -4,9 +4,9 @@ title: Settings about Castor
 summary: Settings about Castor
 type: illustration
 status: available
-image: src/assets/images/illustration/archive/castor/castor_01.jpg
+image: asset:archive/giant_Otter
 gallery:
-  - src: src/assets/images/illustration/archive/castor/castor_01.jpg
+  - src: asset:archive/giant_Otter
     label: "01"
     alt: Draft archive Castor image 01
 publishedAt: 2026-07-01
@@ -16,12 +16,7 @@ formats:
 variantCount: 1
 license: Draft license. Replace before publishing.
 credits: []
-actions:
-  - type: download
-    label: JPG
-    href: src/assets/images/illustration/archive/castor/castor_01.jpg
-    format: JPG
-    primary: true
+actions: []
 ---
 
 来自林歌城的工程河狸设定。

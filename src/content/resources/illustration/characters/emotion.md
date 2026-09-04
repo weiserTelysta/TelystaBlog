@@ -4,9 +4,9 @@ title: Draft Character Emotion
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/emotion.png
+image: asset:characters/emotion
 gallery:
-  - src: src/assets/images/illustration/characters/emotion.png
+  - src: asset:characters/emotion
     label: "01"
     alt: Draft character emotion image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/emotion.png
+    href: asset:characters/emotion
     format: PNG
     primary: true
 draft: true

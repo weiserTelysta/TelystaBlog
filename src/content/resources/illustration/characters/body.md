@@ -4,9 +4,9 @@ title: Draft Character Body
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/body.png
+image: asset:characters/body
 gallery:
-  - src: src/assets/images/illustration/characters/body.png
+  - src: asset:characters/body
     label: "01"
     alt: Draft character body image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/body.png
+    href: asset:characters/body
     format: PNG
     primary: true
 draft: true

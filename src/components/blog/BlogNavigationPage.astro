@@ -3,7 +3,6 @@ import BlogCategoryIndex from './BlogCategoryIndex.astro';
 import BlogEmptyState from './BlogEmptyState.astro';
 import BlogIndexHeader from './BlogIndexHeader.astro';
 import BlogTimeline from './BlogTimeline.astro';
-import BlogYearJump from './BlogYearJump.astro';
 import Layout from '../../layouts/Layout.astro';
 import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
 import type { BlogCategoryId } from '../../config/content/blogCategories';
@@ -19,7 +18,6 @@ type Props = {
 const { allPosts, posts, selectedCategoryId } = Astro.props;
 const selectedCategory = getBlogCategoryById(selectedCategoryId);
 const groups = groupPostsByYearMonth(posts);
-const years = groups.map((group) => group.year);
 const postCounts = getCategoryPostCount(allPosts);
 const title = selectedCategory
 	? `${selectedCategory.title} - ${BLOG_PAGE_CONFIG.meta.categoryTitleSuffix}`
@@ -30,12 +28,14 @@ const description = selectedCategory?.description ?? BLOG_PAGE_CONFIG.meta.descr
 <Layout title={title} description={description}>
 	<main class="blog-page">
 		<div class="blog-page__body">
-			<section class="blog-page__main" aria-label="文章列表">
-				<BlogIndexHeader
-					postCount={posts.length}
-					selectedCategoryTitle={selectedCategory?.title}
-					selectedCategoryDescription={selectedCategory?.description}
-				/>
+			<section class="blog-page__main" aria-labelledby="blog-index-title">
+				<div class="blog-page__heading">
+					<BlogIndexHeader />
+					<BlogCategoryIndex
+						selectedCategoryId={selectedCategoryId}
+						postCounts={postCounts}
+					/>
+				</div>
 
 				{
 					groups.length > 0 ? (
@@ -45,15 +45,6 @@ const description = selectedCategory?.description ?? BLOG_PAGE_CONFIG.meta.descr
 					)
 				}
 			</section>
-
-			<aside class="blog-page__side" aria-label="文章筛选">
-				<BlogCategoryIndex
-					selectedCategoryId={selectedCategoryId}
-					postCounts={postCounts}
-					totalCount={allPosts.length}
-				/>
-				<BlogYearJump years={years} />
-			</aside>
 		</div>
 	</main>
 </Layout>
@@ -66,47 +57,31 @@ const description = selectedCategory?.description ?? BLOG_PAGE_CONFIG.meta.descr
 	}
 
 	.blog-page__body {
-		display: grid;
-		width: min(1080px, calc(100% - 48px));
-		grid-template-columns: minmax(0, 1fr) minmax(210px, 260px);
-		gap: clamp(40px, 6vw, 68px);
+		width: min(760px, calc(100% - 48px));
 		margin: 0 auto;
-		padding: clamp(118px, 13vw, 150px) 0 clamp(88px, 10vw, 128px);
+		padding: clamp(36px, 4vw, 52px) 0 clamp(88px, 10vw, 120px);
 	}
 
 	.blog-page__main {
 		min-width: 0;
 	}
 
-	.blog-page__side {
-		position: sticky;
-		top: 112px;
-		align-self: start;
-		padding-left: clamp(18px, 2.6vw, 30px);
-		border-left: 1px solid rgba(255, 255, 255, 0.045);
-	}
-
-	@media (max-width: 900px) {
-		.blog-page__body {
-			width: min(100% - 40px, 720px);
-			grid-template-columns: 1fr;
-			gap: 42px;
-			padding-top: 112px;
-		}
-
-		.blog-page__side {
-			position: static;
-			padding: 38px 0 0;
-			border-top: 1px solid rgba(255, 255, 255, 0.045);
-			border-right: 0;
-			border-left: 0;
-		}
+	.blog-page__heading {
+		display: grid;
+		gap: 12px;
+		margin-bottom: clamp(28px, 3.6vw, 38px);
 	}
 
 	@media (max-width: 640px) {
 		.blog-page__body {
-			width: min(100% - 32px, 720px);
-			padding-bottom: 92px;
+			width: min(100% - 32px, 760px);
+			padding-top: 32px;
+			padding-bottom: 80px;
+		}
+
+		.blog-page__heading {
+			gap: 10px;
+			margin-bottom: 30px;
 		}
 	}
 </style>

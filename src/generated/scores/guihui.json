@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "guihui",
+  "title": "归回",
+  "source": "src/content/scores/guihui.jly",
+  "sourceSha256": "ece77d682cc7236aa4204630692921502005a9a5782cd0d84f5c4138e2ea5bab",
+  "renderer": {
+    "jianpuLy": "1.889",
+    "lilypond": "2.24.x"
+  }
+}

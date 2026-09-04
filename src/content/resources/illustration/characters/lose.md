@@ -4,9 +4,9 @@ title: Draft Character Lose
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/lose.png
+image: asset:characters/lose
 gallery:
-  - src: src/assets/images/illustration/characters/lose.png
+  - src: asset:characters/lose
     label: "01"
     alt: Draft character lose image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/lose.png
+    href: asset:characters/lose
     format: PNG
     primary: true
 draft: true

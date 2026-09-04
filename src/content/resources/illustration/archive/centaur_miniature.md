@@ -4,15 +4,15 @@ title: Centaur Miniature
 summary: archive centaur miniature illustration resource. 
 type: illustration
 status: available
-image: src/assets/images/illustration/archive/centaur_miniature/centaur_miniature_01.jpg
+image: "asset:archive/centaur&persian_girl_01"
 gallery:
-  - src: src/assets/images/illustration/archive/centaur_miniature/centaur_miniature_01.jpg
+  - src: "asset:archive/centaur&persian_girl_01"
     label: "01"
     alt: Draft archive centaur miniature image 01
-  - src: src/assets/images/illustration/archive/centaur_miniature/centaur_miniature_02.jpg
+  - src: "asset:archive/centaur&persian_girl_02"
     label: "02"
     alt: Draft archive centaur miniature image 02
-  - src: src/assets/images/illustration/archive/centaur_miniature/centaur_miniature_03.jpg
+  - src: "asset:archive/centaur&persian_girl_03"
     label: "03"
     alt: Draft archive centaur miniature image 03
 publishedAt: 2026-07-01
@@ -22,12 +22,7 @@ formats:
 variantCount: 3
 license: Draft license. Replace before publishing.
 credits: []
-actions:
-  - type: download
-    label: JPG
-    href: src/assets/images/illustration/archive/centaur_miniature/centaur_miniature_01.jpg
-    format: JPG
-    primary: true
+actions: []
 ---
 
 细密画风格的半人马与作战中的少女。

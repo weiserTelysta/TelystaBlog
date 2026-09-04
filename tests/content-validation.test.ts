@@ -22,7 +22,34 @@ test('发现重复资源 id 和缺失资源图片', async () => {
 	const result = runContentValidation(rootDir);
 
 	assert.ok(result.issues.some((issue) => issue.code === 'resource-id-duplicate'));
-	assert.ok(result.issues.some((issue) => issue.code === 'local-path-missing'));
+	assert.ok(result.issues.some((issue) => issue.code === 'resource-image-cdn-required'));
+});
+
+test('发现不会被 Astro 收录的无扩展名内容文件', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	const filePath = path.join(
+		rootDir,
+		'src',
+		'content',
+		'weiser-posts',
+		'manuscript',
+		'forgot-extension',
+	);
+	await fs.writeFile(
+		filePath,
+		'---\ntitle: 被忽略的文章\n---\n\n正文\n',
+		'utf8',
+	);
+
+	const result = runContentValidation(rootDir);
+
+	assert.ok(
+		result.issues.some(
+			(issue) =>
+				issue.code === 'content-file-extension' &&
+				issue.filePath.endsWith('forgot-extension'),
+		),
+	);
 });
 
 test('发现系列顺序重复、字段不成对和未知系列', async () => {
@@ -36,11 +63,13 @@ test('发现系列顺序重复、字段不成对和未知系列', async () => {
 		seriesOrder: 1,
 	});
 	await writePost(rootDir, 'three.md', { series: 'unknown-series' });
+	await writePost(rootDir, 'unknown-category.md', { category: 'Notes' });
 	const result = runContentValidation(rootDir);
 
 	assert.ok(result.issues.some((issue) => issue.code === 'series-order-duplicate'));
 	assert.ok(result.issues.some((issue) => issue.code === 'series-pair'));
 	assert.ok(result.issues.some((issue) => issue.code === 'series-unknown'));
+	assert.ok(result.issues.some((issue) => issue.code === 'category-unknown'));
 });
 
 test('发现日期倒置和公开文章占位摘要', async () => {
@@ -64,11 +93,15 @@ test('发现文件名大小写错误，并接受大小写完全一致的路径',
 	const imageDirectory = path.join(rootDir, 'src', 'assets', 'images', 'illustration');
 	await fs.mkdir(imageDirectory, { recursive: true });
 	await fs.writeFile(path.join(imageDirectory, 'Exact.png'), 'image');
-	await writeResource(rootDir, 'case.md', 'case-id', 'src/assets/images/illustration/exact.png');
+	await writePost(rootDir, 'case.md', {
+		cover: 'src/assets/images/illustration/exact.png',
+	});
 	const invalidResult = runContentValidation(rootDir);
 	assert.ok(invalidResult.issues.some((issue) => issue.code === 'local-path-case'));
 
-	await writeResource(rootDir, 'case.md', 'case-id', 'src/assets/images/illustration/Exact.png');
+	await writePost(rootDir, 'case.md', {
+		cover: 'src/assets/images/illustration/Exact.png',
+	});
 	const validResult = runContentValidation(rootDir);
 	assert.equal(validResult.issues.some((issue) => issue.code.startsWith('local-path')), false);
 });
@@ -87,7 +120,7 @@ test('发现目录名大小写错误', async () => {
 	assert.equal(result.issues.some((issue) => issue.code === 'local-path-missing'), false);
 });
 
-test('把真正不存在的路径报告为缺失而不是大小写错误', async () => {
+test('资源图片必须使用 CDN 清单引用', async () => {
 	const rootDir = await createTemporaryContentRoot();
 	await writeResource(
 		rootDir,
@@ -97,8 +130,7 @@ test('把真正不存在的路径报告为缺失而不是大小写错误', async
 	);
 	const result = runContentValidation(rootDir);
 
-	assert.ok(result.issues.some((issue) => issue.code === 'local-path-missing'));
-	assert.equal(result.issues.some((issue) => issue.code === 'local-path-case'), false);
+	assert.ok(result.issues.some((issue) => issue.code === 'resource-image-cdn-required'));
 });
 
 test('发现文章缺失的 cover 路径和正文一级标题，但忽略代码块中的 H1', async () => {
@@ -126,23 +158,43 @@ test('拒绝资源目录之外的主图和外部主图', async () => {
 	await writeResource(rootDir, 'external.md', 'external-id', 'https://example.com/image.png');
 	const result = runContentValidation(rootDir);
 
-	assert.ok(result.issues.some((issue) => issue.code === 'resource-image-location'));
+	assert.ok(result.issues.some((issue) => issue.code === 'resource-image-cdn-required'));
 	assert.ok(result.issues.some((issue) => issue.code === 'resource-image-external'));
+});
+
+test('接受清单中的 CDN 资源引用并拒绝未知引用', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	await writeResource(
+		rootDir,
+		'cdn-valid.md',
+		'cdn-valid',
+		'asset:Telysta/telysta_crinoline_character_illustration',
+	);
+	await writeResource(
+		rootDir,
+		'cdn-missing.md',
+		'cdn-missing',
+		'asset:Telysta/not-in-the-manifest',
+	);
+
+	const result = runContentValidation(rootDir);
+
+	assert.equal(
+		result.issues.some((issue) => issue.filePath.endsWith('cdn-valid.md')),
+		false,
+	);
+	assert.ok(
+		result.issues.some(
+			(issue) =>
+				issue.filePath.endsWith('cdn-missing.md') &&
+				issue.code === 'cdn-asset-missing',
+		),
+	);
 });
 
 test('拒绝无法由资源运行时解析的本地下载，并接受 HTTPS 下载', async () => {
 	const rootDir = await createTemporaryContentRoot();
-	const imagePath = 'src/assets/images/illustration/example/source.png';
-	const imageDirectory = path.join(
-		rootDir,
-		'src',
-		'assets',
-		'images',
-		'illustration',
-		'example',
-	);
-	await fs.mkdir(imageDirectory, { recursive: true });
-	await fs.writeFile(path.join(imageDirectory, 'source.png'), 'image');
+	const imagePath = 'asset:Telysta/telysta_crinoline_character_illustration';
 	await writeResource(rootDir, 'local-download.md', 'local-download', imagePath, {
 		actions: [{ type: 'download', label: '错误路径', href: 'public/source.png' }],
 	});
@@ -155,7 +207,7 @@ test('拒绝无法由资源运行时解析的本地下载，并接受 HTTPS 下�
 		result.issues.some(
 			(issue) =>
 				issue.filePath.endsWith('local-download.md') &&
-				issue.code === 'resource-image-location',
+				issue.code === 'resource-image-cdn-required',
 		),
 	);
 	assert.equal(

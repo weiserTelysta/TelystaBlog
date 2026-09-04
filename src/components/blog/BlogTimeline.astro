@@ -15,7 +15,6 @@ const { groups } = Astro.props;
 			<section class="blog-year" id={yearGroup.id} aria-labelledby={`${yearGroup.id}-title`}>
 				<header class="blog-year__header">
 					<h2 id={`${yearGroup.id}-title`}>{yearGroup.year}</h2>
-					<span>{yearGroup.postCount} 篇文章</span>
 				</header>
 
 				<div class="blog-year__months">
@@ -31,7 +30,7 @@ const { groups } = Astro.props;
 <style lang="scss">
 	.blog-timeline {
 		display: grid;
-		gap: clamp(38px, 5.4vw, 56px);
+		gap: clamp(52px, 7vw, 72px);
 	}
 
 	.blog-year {
@@ -39,39 +38,22 @@ const { groups } = Astro.props;
 	}
 
 	.blog-year__header {
-		display: flex;
-		align-items: baseline;
-		gap: 14px;
-		margin-bottom: 20px;
+		margin-bottom: clamp(22px, 3vw, 28px);
 	}
 
 	.blog-year__header h2 {
 		margin: 0;
-		color: rgba(237, 243, 251, 0.94);
-		font-size: clamp(2.1rem, 5vw, 3rem);
-		font-weight: 720;
-		line-height: 1;
-		letter-spacing: 0;
-	}
-
-	.blog-year__header span {
-		color: rgba(156, 199, 232, 0.5);
-		font-size: 0.86rem;
+		color: rgba(216, 222, 233, 0.66);
+		font-size: clamp(1.12rem, 2.2vw, 1.3rem);
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: 0.025em;
 	}
 
 	.blog-year__months {
-		--axis-size: 18px;
-		--month-size: clamp(54px, 7vw, 76px);
-		--month-gap: clamp(24px, 3.8vw, 36px);
+		--month-stack-gap: clamp(34px, 5vw, 44px);
 
-		position: relative;
 		display: grid;
-		gap: var(--month-gap);
-	}
-
-	@media (max-width: 640px) {
-		.blog-year__months {
-			--axis-size: 16px;
-		}
+		gap: var(--month-stack-gap);
 	}
 </style>

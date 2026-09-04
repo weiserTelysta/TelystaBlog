@@ -5,6 +5,7 @@ import accordionRhaelysaImage01 from '../../assets/images/accordion/accordion_rh
 import accordionRhaelysaImage02 from '../../assets/images/accordion/accordion_rhaelysa_02.webp';
 import accordionAliceImage from '../../assets/images/accordion/accordion_alice.webp';
 import accordionSylvaenaImage from '../../assets/images/accordion/accordion_sylvaena.webp';
+import accordionWeiserArtNouveauImage from '../../assets/images/accordion/accordion_weiser_artnouveau.webp';
 
 import {
 	BLOG_CATEGORIES,
@@ -99,6 +100,18 @@ const VISUAL_COPY: Record<
 		shortTitle: 'Portrait',
 		image: accordionRhaelysaImage02,
 		description: '观察人物、角色与创作者表达方式的侧影。',
+		tone: 'ember',
+	},
+	notes: {
+		cardInscription: {
+			prefix: 'Weiser',
+			name: 'Notes',
+		},
+		shortTitle: 'Notes',
+		image: accordionWeiserArtNouveauImage,
+		description: '把行走、考察与现场观察留下的细节，收进一册缓慢展开的记录。',
+		imagePosition: 'center top',
+		imageScale: 1.02,
 		tone: 'ember',
 	},
 };

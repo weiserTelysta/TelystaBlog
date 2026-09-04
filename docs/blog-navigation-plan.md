@@ -43,7 +43,7 @@ draft: false
 Field meaning:
 
 - `title`: post title.
-- `description`: short summary for navigation and metadata.
+- `description`: authored summary for SEO and article metadata; it is also the archive fallback when no suitable body paragraph exists.
 - `publishedAt`: original publish date.
 - `updatedAt`: latest edit date. If no later edit exists, it can match `publishedAt`.
 - `category`: stable category id.
@@ -69,7 +69,7 @@ Category: manuscript
 Tags: Astro / React / Canvas / GitHub Pages
 ```
 
-The right-side category picker uses categories, not tags. Tags should stay visually quiet in the post metadata line.
+The compact Category entry below the page title uses categories, not tags. Archive rows may show at most two tags as supporting metadata; tags do not become a second navigation system.
 
 ## Category Config
 
@@ -120,43 +120,38 @@ Page structure:
 
 ```txt
 Top:
-  small low-contrast banner
-  fade mask
-  title and short intro
+  one English title
+  compact Category entry
 
 Main:
-  year -> month -> post timeline
-
-Side:
-  category entry
-  year jump list
+  centered, left-aligned year -> dated post archive
 ```
 
-The banner should be narrow and atmospheric. It should not occupy the whole viewport or compete with the timeline.
-
-The side area should stay secondary. On desktop it can hold category entry and year navigation. On smaller screens it should collapse into lightweight controls so the timeline remains the main reading path.
+The archive column should stay near the article reading measure instead of leaning against the left side of a wide two-column shell. Empty space remains visible around the column. The blog index does not use a permanent category sidebar or year-jump rail.
 
 ## Timeline
 
-The main post list should be grouped by:
+The main post list should be sorted internally by:
 
 ```txt
 Year -> Month -> Post
 ```
+
+Month groups remain part of the data model, but their names are not rendered as separate headings. The complete English publication date beneath each post already communicates the month without repeating it.
 
 Example:
 
 ```txt
 2026
 
-05
-  Post title
-  05-27 / Manuscript / Astro / Canvas / Updated 05-28
+  ○ Post title
+  Excerpt from the first substantial body paragraph…
+  May 27, 2026 / Manuscript / #Astro / #Canvas
 ```
 
-The title should occupy its own line. Date, category, tags, and latest update time should sit below the title in a quieter metadata line.
+The title should occupy its own line and remain visually stronger than the year marker. The excerpt is derived from the first substantial prose paragraph in the Markdown body, skipping structural headings, code, formulas, media, lists, and short fragments; it is clamped visually to two lines. The metadata line exposes the complete English published date, category, and at most two tags. The latest update time remains available on the article page but is omitted from the archive row.
 
-The timeline should avoid heavy cards. Use fine lines, spacing, and low-contrast text to separate sections.
+The timeline should avoid heavy cards. One fine rail and small circular nodes may retain month boundaries without visible month labels, while spacing and a restrained type hierarchy do most of the structural work.
 
 The timeline should be able to grow from a few posts to many posts. Empty years or months should not be fabricated. When there are only a few posts, the blank space should remain part of the atmosphere.
 
@@ -167,7 +162,7 @@ The category picker should be a visual accordion gallery, not a traditional text
 Default page state:
 
 ```txt
-Right side shows a light "Category" entry only.
+Below the page title, a light "Category" entry shows the current selection.
 ```
 
 After clicking the entry:
@@ -323,10 +318,9 @@ Mobile should not use a permanent right sidebar.
 Mobile structure:
 
 ```txt
-small banner
+page title
 category entry button
 timeline
-year jump control
 ```
 
 The category accordion can become a bottom drawer or full-screen light overlay on mobile. The two-step selection flow can remain:
@@ -347,7 +341,7 @@ src/assets/banner/blog-banner.png
 src/assets/images/accordion/accordion-weiser.png
 ```
 
-`blog-banner.png` works as a low-contrast horizontal atmosphere image, but should be darkened and faded into the page.
+`blog-banner.png` remains available as a low-contrast atmosphere asset, but the current centered archive intentionally does not render a banner. Reintroducing it should be a deliberate layout decision rather than a default page layer.
 
 The accordion OC image should preferably use a transparent background. Transparent images will blend better with the dark starfield page than white-background images.
 
@@ -366,9 +360,10 @@ src/assets/images/accordion/
 - Define frontmatter schema.
 - Add sample posts.
 - Create `/blog` page.
-- Render year -> month -> post timeline.
-- Add post metadata line with published date, updated date, category, and tags.
-- Add low-contrast banner.
+- Render the year -> dated-post timeline while keeping month grouping internal.
+- Derive each archive excerpt from the first substantial Markdown body paragraph, with `description` as fallback.
+- Add a compact metadata line with published date, category, and at most two tags.
+- Keep the first screen open; do not require a banner.
 - Add category config file.
 - Add basic URL category filtering.
 - Add lightweight category entry placeholder.

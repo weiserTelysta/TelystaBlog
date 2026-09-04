@@ -4,9 +4,9 @@ title: Draft Character Sky
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/sky.png
+image: asset:characters/sky
 gallery:
-  - src: src/assets/images/illustration/characters/sky.png
+  - src: asset:characters/sky
     label: "01"
     alt: Draft character sky image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/sky.png
+    href: asset:characters/sky
     format: PNG
     primary: true
 draft: true

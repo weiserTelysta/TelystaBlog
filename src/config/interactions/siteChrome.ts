@@ -1,6 +1,5 @@
 export const SITE_CHROME_CONFIG = {
 	header: {
-		idleDelay: 5200,
 		homeLabel: '首页',
 		navigationLabel: '主导航',
 	},

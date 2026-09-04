@@ -4,9 +4,9 @@ title: Draft Character Field
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/field.png
+image: asset:characters/field
 gallery:
-  - src: src/assets/images/illustration/characters/field.png
+  - src: asset:characters/field
     label: "01"
     alt: Draft character field image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/field.png
+    href: asset:characters/field
     format: PNG
     primary: true
 draft: true

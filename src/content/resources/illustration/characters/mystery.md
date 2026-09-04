@@ -4,9 +4,9 @@ title: Draft Character Mystery
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/mystery.png
+image: asset:characters/mystery
 gallery:
-  - src: src/assets/images/illustration/characters/mystery.png
+  - src: asset:characters/mystery
     label: "01"
     alt: Draft character mystery image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/mystery.png
+    href: asset:characters/mystery
     format: PNG
     primary: true
 draft: true

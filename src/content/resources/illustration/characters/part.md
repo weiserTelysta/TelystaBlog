@@ -4,9 +4,9 @@ title: Draft Character Part
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/part.png
+image: asset:characters/part
 gallery:
-  - src: src/assets/images/illustration/characters/part.png
+  - src: asset:characters/part
     label: "01"
     alt: Draft character part image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/part.png
+    href: asset:characters/part
     format: PNG
     primary: true
 draft: true

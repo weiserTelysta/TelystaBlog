@@ -24,7 +24,7 @@ import HomeIntro from './HomeIntro';
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		min-height: 100vh;
+		min-height: calc(100svh - var(--site-header-block-size));
 		padding: clamp(136px, 18vh, 188px) clamp(24px, 8vw, 112px) 124px;
 	}
 
@@ -238,7 +238,7 @@ import HomeIntro from './HomeIntro';
 
 	@media (max-width: 640px) {
 		.home {
-			padding: 124px 20px 92px;
+			padding: 92px 20px 84px;
 		}
 
 		:global(.time-greeting) {

@@ -4,9 +4,9 @@ title: Draft Character Weaken
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/weaken.png
+image: asset:characters/weaken
 gallery:
-  - src: src/assets/images/illustration/characters/weaken.png
+  - src: asset:characters/weaken
     label: "01"
     alt: Draft character weaken image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/weaken.png
+    href: asset:characters/weaken
     format: PNG
     primary: true
 draft: true

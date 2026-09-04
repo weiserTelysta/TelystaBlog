@@ -4,9 +4,9 @@ title: Draft Character Flame
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/flame.png
+image: asset:characters/flame
 gallery:
-  - src: src/assets/images/illustration/characters/flame.png
+  - src: asset:characters/flame
     label: "01"
     alt: Draft character flame image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/flame.png
+    href: asset:characters/flame
     format: PNG
     primary: true
 draft: true

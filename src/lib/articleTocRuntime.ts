@@ -114,6 +114,10 @@ const getTocScrollBehavior = (state: TocState, force: boolean): ScrollBehavior =
 );
 
 const revealLinkIfNeeded = (state: TocState, link: HTMLAnchorElement, force = false) => {
+	if (state.tocList.offsetParent === null) {
+		return;
+	}
+
 	const {
 		comfortAnchor,
 		comfortBottom,
@@ -168,7 +172,9 @@ const setActiveLink = (state: TocState, nextLink: HTMLAnchorElement) => {
 	}
 
 	state.activeLink?.classList.remove('is-active');
+	state.activeLink?.removeAttribute('aria-current');
 	nextLink.classList.add('is-active');
+	nextLink.setAttribute('aria-current', 'location');
 	state.activeLink = nextLink;
 };
 
@@ -325,6 +331,12 @@ const initTocList = (tocList: HTMLElement) => {
 	const syncTocOnly = () => {
 		syncTocScrollState(tocList);
 	};
+	const disclosure = tocList.closest<HTMLDetailsElement>('details');
+	const handleDisclosureToggle = () => {
+		if (disclosure?.open) {
+			requestUpdate();
+		}
+	};
 	const handleMouseEnter = () => {
 		state.isInspectingToc = true;
 		window.clearTimeout(state.revealRetryTimer);
@@ -365,6 +377,7 @@ const initTocList = (tocList: HTMLElement) => {
 	tocList.addEventListener('scroll', syncTocOnly, { passive: true });
 	tocList.addEventListener('mouseenter', handleMouseEnter);
 	tocList.addEventListener('mouseleave', handleMouseLeave);
+	disclosure?.addEventListener('toggle', handleDisclosureToggle);
 	window.addEventListener('scroll', requestUpdate, { passive: true });
 	window.addEventListener('resize', requestUpdate);
 
@@ -378,6 +391,7 @@ const initTocList = (tocList: HTMLElement) => {
 		tocList.removeEventListener('scroll', syncTocOnly);
 		tocList.removeEventListener('mouseenter', handleMouseEnter);
 		tocList.removeEventListener('mouseleave', handleMouseLeave);
+		disclosure?.removeEventListener('toggle', handleDisclosureToggle);
 		window.removeEventListener('scroll', requestUpdate);
 		window.removeEventListener('resize', requestUpdate);
 

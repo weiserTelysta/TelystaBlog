@@ -4,9 +4,9 @@ title: Draft Character Toxin
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/toxin.png
+image: asset:characters/toxin
 gallery:
-  - src: src/assets/images/illustration/characters/toxin.png
+  - src: asset:characters/toxin
     label: "01"
     alt: Draft character toxin image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/toxin.png
+    href: asset:characters/toxin
     format: PNG
     primary: true
 draft: true

@@ -53,7 +53,7 @@ const posts = getPostsBySeries(allPosts, series.id);
 		gap: clamp(44px, 7vw, 72px);
 		width: min(900px, calc(100% - 48px));
 		margin: 0 auto;
-		padding: clamp(132px, 16vw, 188px) 0 clamp(92px, 13vw, 150px);
+		padding: var(--site-page-top-spacing) 0 clamp(92px, 13vw, 150px);
 	}
 
 	.series-page__header {
@@ -102,7 +102,7 @@ const posts = getPostsBySeries(allPosts, series.id);
 	@media (max-width: 640px) {
 		.series-page__inner {
 			width: min(100% - 32px, 720px);
-			padding-top: 112px;
+			padding-top: var(--site-page-top-spacing);
 		}
 	}
 </style>

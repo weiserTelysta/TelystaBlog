@@ -54,10 +54,10 @@ draft: false
 
 ## 参考画像
 
-![Sylvaena character reference 01](../../../../assets/images/illustration/Sylvaena/sylvaena_character_primary/sylvaena_01.png)
+![Sylvaena character reference 01](https://assets.telysta.com/telysta-images/Sylvaena/sylvaena_officialoutfit_veil.webp)
 
-![Sylvaena character reference 02](../../../../assets/images/illustration/Sylvaena/sylvaena_character_primary/sylvaena_02.png)
+![Sylvaena character reference 02](https://assets.telysta.com/telysta-images/Sylvaena/sylvaena_officialoutfit_unveil.webp)
 
-![Sylvaena character reference 03](../../../../assets/images/illustration/Sylvaena/sylvaena_character_primary/sylvaena_03.png)
+![Sylvaena character reference 03](https://assets.telysta.com/telysta-images/Sylvaena/sylvaena_officialoutfit_design.webp)
 
 ![White Oriental poppy reference](./oriental-poppy.png)

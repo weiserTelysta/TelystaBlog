@@ -4,9 +4,9 @@ title: Draft Character Space
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/space.png
+image: asset:characters/space
 gallery:
-  - src: src/assets/images/illustration/characters/space.png
+  - src: asset:characters/space
     label: "01"
     alt: Draft character space image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/space.png
+    href: asset:characters/space
     format: PNG
     primary: true
 draft: true

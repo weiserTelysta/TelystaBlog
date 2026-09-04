@@ -4,9 +4,9 @@ title: Draft Character Liquid
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/liquid.png
+image: asset:characters/liquid
 gallery:
-  - src: src/assets/images/illustration/characters/liquid.png
+  - src: asset:characters/liquid
     label: "01"
     alt: Draft character liquid image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/liquid.png
+    href: asset:characters/liquid
     format: PNG
     primary: true
 draft: true

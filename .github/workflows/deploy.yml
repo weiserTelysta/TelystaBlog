@@ -21,19 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Restore resource image cache
-        uses: actions/cache@v6
-        with:
-          path: |
-            src/assets/images/resources/**/*.cover.webp
-            src/assets/images/resources/**/*.preview.webp
-            src/assets/images/illustration/**/*.cover.webp
-            src/assets/images/illustration/**/*.preview.webp
-            .tmp/resource-images-manifest.json
-          key: ${{ runner.os }}-resource-images-${{ hashFiles('scripts/generate-resource-images.mjs', 'package-lock.json', 'src/assets/images/resources/**/*.png', 'src/assets/images/resources/**/*.jpg', 'src/assets/images/resources/**/*.jpeg', 'src/assets/images/resources/**/*.PNG', 'src/assets/images/resources/**/*.JPG', 'src/assets/images/resources/**/*.JPEG', 'src/assets/images/illustration/**/*.png', 'src/assets/images/illustration/**/*.jpg', 'src/assets/images/illustration/**/*.jpeg', 'src/assets/images/illustration/**/*.PNG', 'src/assets/images/illustration/**/*.JPG', 'src/assets/images/illustration/**/*.JPEG') }}
-          restore-keys: |
-            ${{ runner.os }}-resource-images-
-
       - name: Install, build, and upload
         uses: withastro/action@v6
         with:

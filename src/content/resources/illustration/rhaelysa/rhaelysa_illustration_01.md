@@ -4,24 +4,20 @@ title: Rhaelysa Equestrian Outfit Illustration
 summary: Illustration of Rhaelysa in an equestrian outfit.
 type: illustration
 status: available
-image: src/assets/images/illustration/rhaelysa/rhaelysa_illustration_01/Rhaelysa_illustration_01.png
+image: asset:Rhaelysa/rhaelysa_ridinghabit
 gallery:
-  - src: src/assets/images/illustration/rhaelysa/rhaelysa_illustration_01/Rhaelysa_illustration_01.png
+  - src: asset:Rhaelysa/rhaelysa_ridinghabit
     label: "01"
     alt: Draft Rhaelysa illustration image 01
 publishedAt: 2026-07-01
 updatedAt: 2026-07-01
 formats:
   - PNG
+  - PSD
 variantCount: 1
 license: Draft license. Replace before publishing.
 credits: []
-actions:
-  - type: download
-    label: PNG
-    href: src/assets/images/illustration/rhaelysa/rhaelysa_illustration_01/Rhaelysa_illustration_01.png
-    format: PNG
-    primary: true
+actions: []
 ---
 
 rhaelysa的骑马服装扮，优雅而利落。

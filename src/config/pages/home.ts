@@ -1,4 +1,6 @@
-export type HomeSectionType = 'profile' | 'links' | 'resources' | 'note';
+export type HomeSectionType = 'profile' | 'resources';
+
+export type HomeSocialIcon = 'github' | 'bilibili' | 'email' | 'x' | 'steam' | 'qq' | 'wechat';
 
 export type HomeArchiveIntroConfig = {
 	eyebrow: string;
@@ -22,6 +24,20 @@ export type HomeSectionConfig = {
 	items?: HomeSectionItem[];
 	enabled?: boolean;
 	order: number;
+};
+
+export type HomeSocialLinkConfig = {
+	label: string;
+	href: string;
+	icon: HomeSocialIcon;
+	external?: boolean;
+};
+
+export type HomeQrContactConfig = {
+	id: 'qq' | 'wechat';
+	label: string;
+	icon: Extract<HomeSocialIcon, 'qq' | 'wechat'>;
+	imageFileName: string;
 };
 
 export const HOME_ARCHIVE_INTRO: HomeArchiveIntroConfig = {
@@ -49,59 +65,73 @@ export const HOME_SECTIONS: HomeSectionConfig[] = [
 		order: 10,
 	},
 	{
-		id: 'social-signals',
-		type: 'links',
-		eyebrow: 'Signals',
-		title: '一些无用的足痕',
-		description: [
-			'我在互联网之上，也留有不少痕迹。这些足迹既不厚重，也不璀璨，它们只会证明有人来过。',
-		],
-		items: [
-			{
-				label: 'GitHub',
-				href: 'https://github.com/weiserTelysta',
-				description: '代码、项目和一些想法的堆放处。',
-				external: true,
-				kind: 'code',
-			},
-			{
-				label: 'Email',
-				href: 'mailto:weiser@telysta.com',
-				description: '如果想认真聊点什么，可以从这里开始。',
-				kind: 'contact',
-			},
-			{
-				label: 'BiliBili',
-				href: 'https://space.bilibili.com/238283469?spm_id_from=333.1007.0.0',
-				description: '一些用心做的视频，它们会放在此处。',
-				external: true,
-				kind: 'media',
-			},
-		],
-		order: 20,
-	},
-	{
 		id: 'resource-corner',
 		type: 'resources',
-		eyebrow: 'Resources',
-		title: '无处安放的资源',
-		description: ['我想分享一些资源，但是似乎也没有什么值得分享的宝藏。'],
+		eyebrow: 'Navigation',
+		title: '一些无用的路标',
+		description: ['天空不见鸟儿的踪迹，因为他早已飞过。'],
 		items: [
 			{
 				label: 'Resource Index',
 				href: '/resources',
-				description: '还没想好，先留一个安静的位置。',
+				description: '好多美妙的宝藏，和你分享~',
 				kind: 'index',
 			},
+			{
+				label: 'Telysta Annals',
+				href: 'https://annals.telysta.com',
+				description: '何妨来听听写写，大家的故事',
+				external: true,
+				kind: 'world',
+			},
 		],
-		order: 30,
+		order: 20,
+	},
+];
+
+export const HOME_SOCIAL_LINKS: HomeSocialLinkConfig[] = [
+	{
+		label: 'GitHub',
+		href: 'https://github.com/weiserTelysta',
+		icon: 'github',
+		external: true,
 	},
 	{
-		id: 'quiet-note',
-		type: 'note',
-		eyebrow: 'Note',
-		title: '不知前方若何',
-		description: ['说不完所有想说的事情，做不完所有想做的事。万物还在生长，若有余隙，不妨多来看看。'],
-		order: 40,
+		label: 'Bilibili',
+		href: 'https://space.bilibili.com/238283469',
+		icon: 'bilibili',
+		external: true,
+	},
+	{
+		label: 'Email',
+		href: 'mailto:weiser@telysta.com',
+		icon: 'email',
+	},
+	{
+		label: 'X',
+		href: 'https://x.com/WeriserTelysta',
+		icon: 'x',
+		external: true,
+	},
+	{
+		label: 'Steam',
+		href: 'https://steamcommunity.com/profiles/76561199184928833/',
+		icon: 'steam',
+		external: true,
+	},
+];
+
+export const HOME_QR_CONTACTS: HomeQrContactConfig[] = [
+	{
+		id: 'qq',
+		label: 'QQ',
+		icon: 'qq',
+		imageFileName: 'qq.png',
+	},
+	{
+		id: 'wechat',
+		label: '微信',
+		icon: 'wechat',
+		imageFileName: 'wechat.png',
 	},
 ];

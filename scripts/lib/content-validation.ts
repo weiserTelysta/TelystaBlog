@@ -1,13 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { LineCounter, parseDocument } from 'yaml';
+import { BLOG_CATEGORY_IDS } from '../../src/config/content/blogCategories';
 import { BLOG_SERIES_IDS } from '../../src/config/content/blogSeries';
-
-const RESOURCE_IMAGE_DIRECTORIES = [
-	'src/assets/images/resources/',
-	'src/assets/images/illustration/',
-] as const;
-const RESOURCE_IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.webp', '.avif']);
+import { getCdnAsset, getCdnAssetKey, isCdnAssetReference } from '../../src/lib/cdnAssets';
 
 export type ContentKind = 'post' | 'resource';
 export type ValidationSeverity = 'error' | 'warning';
@@ -131,8 +127,20 @@ export function validatePostDocuments(
 		}
 
 		const { frontmatter } = document;
+		const category = readString(frontmatter.category);
 		const series = readString(frontmatter.series);
 		const seriesOrder = readNumber(frontmatter.seriesOrder);
+
+		if (category && !BLOG_CATEGORY_IDS.includes(category as (typeof BLOG_CATEGORY_IDS)[number])) {
+			issues.push(
+				createIssue(
+					'error',
+					'category-unknown',
+					document.relativePath,
+					`未知分类：${category}。可用值：${BLOG_CATEGORY_IDS.join(', ')}`,
+				),
+			);
+		}
 
 		if (series && !BLOG_SERIES_IDS.includes(series as (typeof BLOG_SERIES_IDS)[number])) {
 			issues.push(
@@ -388,6 +396,32 @@ function validateResourceImagePath(
 ): ValidationIssue | undefined {
 	const relativeSource = toRelativePath(rootDir, sourceFile);
 
+	if (isCdnAssetReference(reference)) {
+		const asset = getCdnAsset(reference);
+
+		if (!asset) {
+			return createIssue(
+				'error',
+				'cdn-asset-missing',
+				relativeSource,
+				`${label}引用了 CDN 清单中不存在的资源：${getCdnAssetKey(reference)}`,
+				line,
+			);
+		}
+
+		if (!allowExternalHttps && !asset.display) {
+			return createIssue(
+				'error',
+				'cdn-display-missing',
+				relativeSource,
+				`${label}引用的 CDN 资源没有 WebP 展示图：${getCdnAssetKey(reference)}`,
+				line,
+			);
+		}
+
+		return undefined;
+	}
+
 	if (/^https:\/\//i.test(reference)) {
 		return allowExternalHttps
 			? undefined
@@ -410,31 +444,13 @@ function validateResourceImagePath(
 		);
 	}
 
-	const normalizedReference = stripQueryAndHash(safeDecodeUri(reference))
-		.replace(/\\/g, '/')
-		.replace(/^\/+/, '');
-
-	if (!RESOURCE_IMAGE_DIRECTORIES.some((directory) => normalizedReference.startsWith(directory))) {
-		return createIssue(
-			'error',
-			'resource-image-location',
-			relativeSource,
-			`${label}必须位于 ${RESOURCE_IMAGE_DIRECTORIES.join(' 或 ')}：${reference}`,
-			line,
-		);
-	}
-
-	if (!RESOURCE_IMAGE_EXTENSIONS.has(path.extname(normalizedReference).toLocaleLowerCase('en-US'))) {
-		return createIssue(
-			'error',
-			'resource-image-format',
-			relativeSource,
-			`${label}不是运行时支持的图片格式：${reference}`,
-			line,
-		);
-	}
-
-	return validateLocalPath(normalizedReference, sourceFile, rootDir, label, line);
+	return createIssue(
+		'error',
+		'resource-image-cdn-required',
+		relativeSource,
+		`${label}必须使用 CDN 清单中的 asset: 引用：${reference}`,
+		line,
+	);
 }
 
 export function validateLocalPath(
@@ -500,6 +516,7 @@ export function validateLocalPath(
 export function runContentValidation(rootDir: string): ContentValidationResult {
 	const documents = loadContentDocuments(rootDir);
 	const issues = [
+		...validateContentDiscovery(rootDir),
 		...documents.flatMap((document) => document.parseIssues),
 		...validatePostDocuments(documents, rootDir),
 		...validateResourceDocuments(documents, rootDir),
@@ -511,6 +528,33 @@ export function runContentValidation(rootDir: string): ContentValidationResult {
 		errorCount: issues.filter((issue) => issue.severity === 'error').length,
 		warningCount: issues.filter((issue) => issue.severity === 'warning').length,
 	};
+}
+
+export function validateContentDiscovery(rootDir: string): ValidationIssue[] {
+	const contentDirectories = [
+		path.join(rootDir, 'src', 'content', 'weiser-posts'),
+		path.join(rootDir, 'src', 'content', 'resources'),
+	];
+	const issues: ValidationIssue[] = [];
+
+	for (const directory of contentDirectories) {
+		if (!fs.existsSync(directory)) {
+			continue;
+		}
+
+		for (const filePath of findUnrecognizedContentFiles(directory)) {
+			issues.push(
+				createIssue(
+					'error',
+					'content-file-extension',
+					toRelativePath(rootDir, filePath),
+					'该文件位于内容目录中，但不会被 Astro 收录；请将文件扩展名改为 .md。',
+				),
+			);
+		}
+	}
+
+	return issues;
 }
 
 export function formatValidationReport(result: ContentValidationResult): string {
@@ -566,6 +610,30 @@ function findMarkdownFiles(directory: string): string[] {
 		if (entry.isDirectory()) {
 			files.push(...findMarkdownFiles(absolutePath));
 		} else if (entry.isFile() && entry.name.toLocaleLowerCase('en-US').endsWith('.md')) {
+			files.push(absolutePath);
+		}
+	}
+
+	return files;
+}
+
+function findUnrecognizedContentFiles(directory: string): string[] {
+	const files: string[] = [];
+
+	for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+		const absolutePath = path.join(directory, entry.name);
+
+		if (entry.isDirectory()) {
+			files.push(...findUnrecognizedContentFiles(absolutePath));
+			continue;
+		}
+
+		if (!entry.isFile()) {
+			continue;
+		}
+
+		const extension = path.extname(entry.name).toLocaleLowerCase('en-US');
+		if (extension === '' || extension === '.markdown' || extension === '.mdx') {
 			files.push(absolutePath);
 		}
 	}

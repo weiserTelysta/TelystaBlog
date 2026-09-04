@@ -4,9 +4,9 @@ title: Draft Character Wisdom
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/wisdom.png
+image: asset:characters/wisdom
 gallery:
-  - src: src/assets/images/illustration/characters/wisdom.png
+  - src: asset:characters/wisdom
     label: "01"
     alt: Draft character wisdom image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/wisdom.png
+    href: asset:characters/wisdom
     format: PNG
     primary: true
 draft: true

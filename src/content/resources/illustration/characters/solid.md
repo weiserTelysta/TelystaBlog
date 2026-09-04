@@ -4,9 +4,9 @@ title: Draft Character Solid
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/solid.png
+image: asset:characters/solid
 gallery:
-  - src: src/assets/images/illustration/characters/solid.png
+  - src: asset:characters/solid
     label: "01"
     alt: Draft character solid image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/solid.png
+    href: asset:characters/solid
     format: PNG
     primary: true
 draft: true

@@ -1,13 +1,14 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import type { ResourceActionType, ResourceStatus, ResourceTypeId } from '../../config/content/resourceTypes';
-
-type ImageModule = {
-	default: {
-		src: string;
-		width?: number;
-		height?: number;
-	};
-};
+import {
+	buildCdnAssetUrl,
+	getCdnAsset,
+	getCdnAssetKey,
+	isCdnAssetReference,
+	isCdnAssetUrl,
+	type CdnAssetFile,
+	type CdnDisplayAssetFile,
+} from '../cdnAssets';
 
 type ResourceImageAsset = {
 	src: string;
@@ -15,19 +16,6 @@ type ResourceImageAsset = {
 	height?: number;
 	aspectRatio: number;
 };
-
-const resourceImages = import.meta.glob<ImageModule>(
-	[
-		'../../assets/images/resources/**/*.{png,jpg,jpeg,webp,avif}',
-		'../../assets/images/illustration/**/*.{png,jpg,jpeg,webp,avif}',
-	],
-	{ eager: true },
-);
-
-const RESOURCE_IMAGE_PATH_HINT = [
-	'src/assets/images/resources/**',
-	'src/assets/images/illustration/**',
-].join(', ');
 
 export type ResourceAction = {
 	type: ResourceActionType;
@@ -58,7 +46,7 @@ export type ResourceCredit = {
 };
 
 export type ResourceDownloadFile = {
-	kind: 'file' | 'external';
+	kind: 'file' | 'remote-file' | 'external';
 	label: string;
 	href: string;
 	format: string;
@@ -152,14 +140,18 @@ function toResourceListItem(resource: ResourceEntry): ResourceListItem {
 function resolveResourceGallery(resource: ResourceEntry, fallbackImage: ResourceImageAsset): ResourceGalleryImage[] {
 	const gallery = resource.data.gallery.map((image, index) => {
 		const displayImage = resolveDisplayResourceImageAsset(image.src, resource.data.id, `gallery[${index}]`, 'preview');
-		const downloadImage = resolveRequiredResourceImageAsset(image.src, resource.data.id, `gallery[${index}] download`);
+		const downloadTarget = resolveResourceDownloadTarget(
+			image.src,
+			resource.data.id,
+			`gallery[${index}] download`,
+		);
 
 		return {
 			src: displayImage.src,
 			width: displayImage.width,
 			height: displayImage.height,
 			aspectRatio: displayImage.aspectRatio,
-			downloadHref: downloadImage.src,
+			downloadHref: downloadTarget.href,
 			label: image.label,
 			alt: image.alt,
 		};
@@ -175,7 +167,7 @@ function resolveResourceGallery(resource: ResourceEntry, fallbackImage: Resource
 			width: fallbackImage.width,
 			height: fallbackImage.height,
 			aspectRatio: fallbackImage.aspectRatio,
-			downloadHref: resolveRequiredResourceImageAsset(resource.data.image, resource.data.id, 'image download').src,
+			downloadHref: resolveResourceDownloadTarget(resource.data.image, resource.data.id, 'image download').href,
 			label: 'Main',
 			alt: resource.data.title,
 		},
@@ -192,13 +184,15 @@ function resolveResourceDownloadFiles(resource: ResourceEntry): ResourceDownload
 				alt: resource.data.title,
 			},
 		];
-	const files = images.map((image, index) => ({
-		kind: 'file' as const,
-		label: image.label ?? String(index + 1).padStart(2, '0'),
-		href: resolveRequiredResourceImageAsset(image.src, resource.data.id, `downloadFiles[${index}]`).src,
-		format: getPathFormat(image.src),
-		sourceIndex: index,
-	}));
+	const files = images.flatMap((image, index) =>
+		resolveResourceImageDownloads(
+			image.src,
+			resource.data.id,
+			`downloadFiles[${index}]`,
+			image.label ?? String(index + 1).padStart(2, '0'),
+			index,
+		),
+	);
 	const actionFiles = resource.data.actions
 		.filter((action) => action.type === 'download' && !action.disabled && action.href)
 		.map((action) => resolveResourceDownloadAction(resource, action));
@@ -233,7 +227,7 @@ function resolveRequiredResourceImageAsset(path: string, resourceId: string, fie
 	if (!image) {
 		throw new Error(
 			`[resources] Unable to resolve ${field} for "${resourceId}": ${path}. ` +
-				`Allowed local resource image paths: ${RESOURCE_IMAGE_PATH_HINT}.`,
+				'Use an asset: reference from src/generated/cdn-assets.json.',
 		);
 	}
 
@@ -246,44 +240,51 @@ function resolveDisplayResourceImageAsset(
 	field: string,
 	variant: ResourceImageVariant,
 ): ResourceImageAsset {
-	return (
-		resolveDerivedResourceImage(path, variant) ??
-		resolveRequiredResourceImageAsset(path, resourceId, field)
-	);
-}
+	if (isCdnAssetReference(path)) {
+		const asset = getCdnAsset(path);
+		const image = variant === 'cover'
+			? asset?.cover ?? asset?.display
+			: asset?.display ?? asset?.cover;
 
-function resolveDerivedResourceImage(path: string, variant: ResourceImageVariant): ResourceImageAsset | undefined {
-	if (!/\.(png|jpe?g)$/i.test(path)) {
-		return undefined;
+		if (!image) {
+			return resolveRequiredResourceImageAsset(path, resourceId, field);
+		}
+
+		return toResourceImageAsset(image);
 	}
 
-	const derivedPath = path.replace(/\.(png|jpe?g)$/i, `.${variant}.webp`);
-	return resolveResourceImage(derivedPath);
+	return resolveRequiredResourceImageAsset(path, resourceId, field);
 }
 
 function resolveResourceImage(path: string): ResourceImageAsset | undefined {
-	const normalized = path.replace(/^\/+/, '');
-	const candidates = [
-		path,
-		normalized,
-		normalized.replace(/^src\/assets\//, '../../assets/'),
-		`../../assets/${normalized}`,
-	];
-	const image = candidates.map((candidate) => resourceImages[candidate]).find(Boolean);
+	if (isCdnAssetReference(path)) {
+		const asset = getCdnAsset(path);
+		const display = asset?.display ?? asset?.cover;
 
-	if (!image) {
-		return undefined;
+		if (!display) {
+			return undefined;
+		}
+
+		return toResourceImageAsset(display);
 	}
 
+	return undefined;
+}
+
+function toResourceImageAsset(image: CdnDisplayAssetFile): ResourceImageAsset {
 	return {
-		src: image.default.src,
-		width: image.default.width,
-		height: image.default.height,
-		aspectRatio: getImageAspectRatio(image.default.width, image.default.height),
+		src: buildCdnAssetUrl(image),
+		width: image.width,
+		height: image.height,
+		aspectRatio: getImageAspectRatio(image.width, image.height),
 	};
 }
 
 function resolveResourceActionHref(href: string, resourceId: string, label: string): string {
+	if (isCdnAssetReference(href)) {
+		return resolveResourceDownloadTarget(href, resourceId, `action "${label}" href`).href;
+	}
+
 	if (/^(https?:|mailto:)/.test(href)) {
 		return href;
 	}
@@ -303,19 +304,111 @@ function getPathFormat(path: string): string {
 
 function resolveResourceDownloadAction(resource: ResourceEntry, action: ResourceAction): ResourceDownloadFile {
 	const href = action.href ?? '';
+	if (isCdnAssetReference(href)) {
+		const target = resolveResourceDownloadTarget(
+			href,
+			resource.data.id,
+			`download action "${action.label}" href`,
+		);
+
+		return {
+			kind: target.kind,
+			label: action.label,
+			href: target.href,
+			format: action.format ?? target.format,
+			provider: action.provider,
+			code: action.code,
+			note: action.note,
+		};
+	}
+
 	const isExternal = isExternalHref(href);
 	const resolvedHref = isExternal
 		? href
 		: resolveRequiredResourceImageAsset(href, resource.data.id, `download action "${action.label}" href`).src;
 
 	return {
-		kind: isExternal ? 'external' : 'file',
+		kind: isExternal && isCdnAssetUrl(href) ? 'remote-file' : isExternal ? 'external' : 'file',
 		label: action.label,
 		href: resolvedHref,
 		format: action.format ?? getPathFormat(href),
 		provider: action.provider,
 		code: action.code,
 		note: action.note,
+	};
+}
+
+function resolveResourceImageDownloads(
+	reference: string,
+	resourceId: string,
+	field: string,
+	label: string,
+	sourceIndex: number,
+): ResourceDownloadFile[] {
+	if (!isCdnAssetReference(reference)) {
+		const target = resolveResourceDownloadTarget(reference, resourceId, field);
+
+		return [{ ...target, label, sourceIndex }];
+	}
+
+	const asset = getCdnAsset(reference);
+	if (!asset?.display) {
+		throw new Error(
+			`[resources] CDN asset "${getCdnAssetKey(reference)}" for "${resourceId}" has no display image.`,
+		);
+	}
+
+	const primaryFile = asset.original ?? asset.display;
+	const primary: ResourceDownloadFile = {
+		kind: 'remote-file',
+		label,
+		href: buildCdnAssetUrl(primaryFile),
+		format: primaryFile.format,
+		sourceIndex,
+	};
+	const sources = asset.sources.map((file) => ({
+		kind: 'remote-file' as const,
+		label: `${label} · ${file.format}`,
+		href: buildCdnAssetUrl(file),
+		format: file.format,
+	}));
+
+	return [primary, ...sources];
+}
+
+function resolveResourceDownloadTarget(
+	reference: string,
+	resourceId: string,
+	field: string,
+): Pick<ResourceDownloadFile, 'kind' | 'href' | 'format'> {
+	if (isCdnAssetReference(reference)) {
+		const asset = getCdnAsset(reference);
+		const file = asset?.original ?? asset?.display;
+
+		if (!file) {
+			throw new Error(
+				`[resources] Unable to resolve ${field} for "${resourceId}": ${reference}.`,
+			);
+		}
+
+		return toCdnDownloadTarget(file);
+	}
+
+	const localImage = resolveRequiredResourceImageAsset(reference, resourceId, field);
+	return {
+		kind: 'file',
+		href: localImage.src,
+		format: getPathFormat(reference),
+	};
+}
+
+function toCdnDownloadTarget(
+	file: CdnAssetFile,
+): Pick<ResourceDownloadFile, 'kind' | 'href' | 'format'> {
+	return {
+		kind: 'remote-file',
+		href: buildCdnAssetUrl(file),
+		format: file.format,
 	};
 }
 

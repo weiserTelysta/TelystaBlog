@@ -1,0 +1,2166 @@
+{
+  "version": 2,
+  "origin": "https://assets.telysta.com/",
+  "assets": {
+    "Alice/alice_illustration": {
+      "display": {
+        "path": "telysta-images/Alice/alice_illustration.webp",
+        "bytes": 2409362,
+        "format": "WEBP",
+        "width": 2295,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Alice/alice_illustration.png",
+        "bytes": 37789047,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Alice/alice_illustration.psd",
+          "bytes": 294957976,
+          "format": "PSD"
+        }
+      ]
+    },
+    "archive/camellia_motif_furisode": {
+      "sources": [
+        {
+          "path": "telysta-images/archive/camellia_motif_furisode.psd",
+          "bytes": 33346071,
+          "format": "PSD"
+        }
+      ]
+    },
+    "archive/camellia_motif_furisode_both": {
+      "display": {
+        "path": "telysta-images/archive/camellia_motif_furisode_both.webp",
+        "bytes": 911308,
+        "format": "WEBP",
+        "width": 3133,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/camellia_motif_furisode_both.png",
+        "bytes": 3953917,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "archive/camellia_motif_furisode_red": {
+      "display": {
+        "path": "telysta-images/archive/camellia_motif_furisode_red.webp",
+        "bytes": 1296950,
+        "format": "WEBP",
+        "width": 2526,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/camellia_motif_furisode_red.png",
+        "bytes": 8806974,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "archive/camellia_motif_furisode_white": {
+      "display": {
+        "path": "telysta-images/archive/camellia_motif_furisode_white.webp",
+        "bytes": 1340008,
+        "format": "WEBP",
+        "width": 2526,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/camellia_motif_furisode_white.jpg",
+        "bytes": 7597133,
+        "format": "JPG"
+      },
+      "sources": []
+    },
+    "archive/centaur&persian_girl_01": {
+      "display": {
+        "path": "telysta-images/archive/centaur&persian_girl_01.webp",
+        "bytes": 1816872,
+        "format": "WEBP",
+        "width": 2296,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/centaur&persian_girl_01.jpg",
+        "bytes": 14689881,
+        "format": "JPG"
+      },
+      "sources": []
+    },
+    "archive/centaur&persian_girl_02": {
+      "display": {
+        "path": "telysta-images/archive/centaur&persian_girl_02.webp",
+        "bytes": 2380508,
+        "format": "WEBP",
+        "width": 2296,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/centaur&persian_girl_02.jpg",
+        "bytes": 19365083,
+        "format": "JPG"
+      },
+      "sources": []
+    },
+    "archive/centaur&persian_girl_03": {
+      "display": {
+        "path": "telysta-images/archive/centaur&persian_girl_03.webp",
+        "bytes": 1820470,
+        "format": "WEBP",
+        "width": 2296,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/centaur&persian_girl_03.jpg",
+        "bytes": 14571275,
+        "format": "JPG"
+      },
+      "sources": []
+    },
+    "archive/giant_Otter": {
+      "display": {
+        "path": "telysta-images/archive/giant_Otter.webp",
+        "bytes": 353582,
+        "format": "WEBP",
+        "width": 1568,
+        "height": 1045
+      },
+      "original": {
+        "path": "telysta-images/archive/giant_Otter.jpg",
+        "bytes": 493171,
+        "format": "JPG"
+      },
+      "sources": []
+    },
+    "archive/manichaean_flag": {
+      "display": {
+        "path": "telysta-images/archive/manichaean_flag.webp",
+        "bytes": 108258,
+        "format": "WEBP",
+        "width": 1902,
+        "height": 1080
+      },
+      "original": {
+        "path": "telysta-images/archive/manichaean_flag.jpeg",
+        "bytes": 257234,
+        "format": "JPEG"
+      },
+      "sources": []
+    },
+    "archive/manichaean_priest": {
+      "display": {
+        "path": "telysta-images/archive/manichaean_priest.webp",
+        "bytes": 1587822,
+        "format": "WEBP",
+        "width": 2216,
+        "height": 2862
+      },
+      "original": {
+        "path": "telysta-images/archive/manichaean_priest.jpeg",
+        "bytes": 2324429,
+        "format": "JPEG"
+      },
+      "sources": []
+    },
+    "archive/manichean_woman": {
+      "display": {
+        "path": "telysta-images/archive/manichean_woman.webp",
+        "bytes": 1520942,
+        "format": "WEBP",
+        "width": 2216,
+        "height": 2862
+      },
+      "original": {
+        "path": "telysta-images/archive/manichean_woman.jpeg",
+        "bytes": 2251014,
+        "format": "JPEG"
+      },
+      "sources": []
+    },
+    "archive/mhs_test_01_redhair_bareshoulder": {
+      "display": {
+        "path": "telysta-images/archive/mhs_test_01_redhair_bareshoulder.webp",
+        "bytes": 808360,
+        "format": "WEBP",
+        "width": 2845,
+        "height": 2091
+      },
+      "original": {
+        "path": "telysta-images/archive/mhs_test_01_redhair_bareshoulder.png",
+        "bytes": 3103215,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "archive/mhs_test_01_redhair_cape": {
+      "display": {
+        "path": "telysta-images/archive/mhs_test_01_redhair_cape.webp",
+        "bytes": 845002,
+        "format": "WEBP",
+        "width": 2845,
+        "height": 2091
+      },
+      "original": {
+        "path": "telysta-images/archive/mhs_test_01_redhair_cape.png",
+        "bytes": 3429833,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "archive/mhs_test_02": {
+      "display": {
+        "path": "telysta-images/archive/mhs_test_02.webp",
+        "bytes": 328988,
+        "format": "WEBP",
+        "width": 2280,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/mhs_test_02.jpeg",
+        "bytes": 1006172,
+        "format": "JPEG"
+      },
+      "sources": []
+    },
+    "archive/mhs_test_03": {
+      "display": {
+        "path": "telysta-images/archive/mhs_test_03.webp",
+        "bytes": 414898,
+        "format": "WEBP",
+        "width": 2259,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/mhs_test_03.png",
+        "bytes": 1313909,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/archive/mhs_test_03.ai",
+          "bytes": 1827032,
+          "format": "AI"
+        }
+      ]
+    },
+    "archive/mhs_test_04": {
+      "display": {
+        "path": "telysta-images/archive/mhs_test_04.webp",
+        "bytes": 346876,
+        "format": "WEBP",
+        "width": 2280,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/mhs_test_04.jpeg",
+        "bytes": 1073325,
+        "format": "JPEG"
+      },
+      "sources": []
+    },
+    "archive/Minecraft_red": {
+      "display": {
+        "path": "telysta-images/archive/Minecraft_red.webp",
+        "bytes": 2298,
+        "format": "WEBP",
+        "width": 64,
+        "height": 64
+      },
+      "original": {
+        "path": "telysta-images/archive/Minecraft_red.png",
+        "bytes": 3984,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "archive/minecraft_yellow": {
+      "display": {
+        "path": "telysta-images/archive/minecraft_yellow.webp",
+        "bytes": 2482,
+        "format": "WEBP",
+        "width": 64,
+        "height": 64
+      },
+      "original": {
+        "path": "telysta-images/archive/minecraft_yellow.png",
+        "bytes": 2004,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "archive/Persian_Lady_flag": {
+      "display": {
+        "path": "telysta-images/archive/Persian_Lady_flag.webp",
+        "bytes": 329606,
+        "format": "WEBP",
+        "width": 1902,
+        "height": 1080
+      },
+      "original": {
+        "path": "telysta-images/archive/Persian_Lady_flag.jpeg",
+        "bytes": 609096,
+        "format": "JPEG"
+      },
+      "sources": []
+    },
+    "archive/Persian_Lady_illustration": {
+      "display": {
+        "path": "telysta-images/archive/Persian_Lady_illustration.webp",
+        "bytes": 1862606,
+        "format": "WEBP",
+        "width": 2216,
+        "height": 2862
+      },
+      "original": {
+        "path": "telysta-images/archive/Persian_Lady_illustration.jpeg",
+        "bytes": 2744947,
+        "format": "JPEG"
+      },
+      "sources": []
+    },
+    "archive/ranunculus": {
+      "display": {
+        "path": "telysta-images/archive/ranunculus.webp",
+        "bytes": 1466038,
+        "format": "WEBP",
+        "width": 1818,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/ranunculus.jpeg",
+        "bytes": 1660162,
+        "format": "JPEG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/archive/ranunculus.psd",
+          "bytes": 44175194,
+          "format": "PSD"
+        }
+      ]
+    },
+    "archive/skeb_test_01": {
+      "sources": [
+        {
+          "path": "telysta-images/archive/skeb_test_01.psd",
+          "bytes": 23451077,
+          "format": "PSD"
+        }
+      ]
+    },
+    "archive/skeb_test_01_pouty": {
+      "display": {
+        "path": "telysta-images/archive/skeb_test_01_pouty.webp",
+        "bytes": 612648,
+        "format": "WEBP",
+        "width": 1974,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/skeb_test_01_pouty.png",
+        "bytes": 4892727,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "archive/skeb_test_01_smile": {
+      "display": {
+        "path": "telysta-images/archive/skeb_test_01_smile.webp",
+        "bytes": 624542,
+        "format": "WEBP",
+        "width": 1974,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/skeb_test_01_smile.png",
+        "bytes": 4994788,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "archive/skeb_test_01_tsundere": {
+      "display": {
+        "path": "telysta-images/archive/skeb_test_01_tsundere.webp",
+        "bytes": 618498,
+        "format": "WEBP",
+        "width": 1974,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/skeb_test_01_tsundere.png",
+        "bytes": 4810387,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "archive/skeb_test_02": {
+      "sources": [
+        {
+          "path": "telysta-images/archive/skeb_test_02.psd",
+          "bytes": 60696601,
+          "format": "PSD"
+        }
+      ]
+    },
+    "archive/skeb_test_02_swordmaiden": {
+      "display": {
+        "path": "telysta-images/archive/skeb_test_02_swordmaiden.webp",
+        "bytes": 1504058,
+        "format": "WEBP",
+        "width": 1920,
+        "height": 3000
+      },
+      "original": {
+        "path": "telysta-images/archive/skeb_test_02_swordmaiden.png",
+        "bytes": 8151230,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "archive/Telysta_Legacy/telysta_legacy_01": {
+      "display": {
+        "path": "telysta-images/archive/Telysta_Legacy/telysta_legacy_01.webp",
+        "bytes": 1587718,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 2417
+      },
+      "original": {
+        "path": "telysta-images/archive/Telysta_Legacy/telysta_legacy_01.png",
+        "bytes": 42154836,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/archive/Telysta_Legacy/telysta_legacy_01.psd",
+          "bytes": 398028511,
+          "format": "PSD"
+        }
+      ]
+    },
+    "archive/Telysta_Legacy/telysta_legacy_02": {
+      "display": {
+        "path": "telysta-images/archive/Telysta_Legacy/telysta_legacy_02.webp",
+        "bytes": 1185490,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 2410
+      },
+      "original": {
+        "path": "telysta-images/archive/Telysta_Legacy/telysta_legacy_02.png",
+        "bytes": 8310084,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/archive/Telysta_Legacy/telysta_legacy_02.psd",
+          "bytes": 67581503,
+          "format": "PSD"
+        }
+      ]
+    },
+    "archive/Telysta_Legacy/telysta_legacy_03": {
+      "display": {
+        "path": "telysta-images/archive/Telysta_Legacy/telysta_legacy_03.webp",
+        "bytes": 1574886,
+        "format": "WEBP",
+        "width": 2337,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/archive/Telysta_Legacy/telysta_legacy_03.png",
+        "bytes": 11818267,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/archive/Telysta_Legacy/telysta_legacy_03.psd",
+          "bytes": 69463487,
+          "format": "PSD"
+        }
+      ]
+    },
+    "archive/Telysta_Legacy/telysta_legacy_04": {
+      "display": {
+        "path": "telysta-images/archive/Telysta_Legacy/telysta_legacy_04.webp",
+        "bytes": 2240272,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 3059
+      },
+      "original": {
+        "path": "telysta-images/archive/Telysta_Legacy/telysta_legacy_04.png",
+        "bytes": 15786793,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/archive/Telysta_Legacy/telysta_legacy_04.psd",
+          "bytes": 93947431,
+          "format": "PSD"
+        }
+      ]
+    },
+    "archive/xiazhixian_song_Illustration_01": {
+      "display": {
+        "path": "telysta-images/archive/xiazhixian_song_Illustration_01.webp",
+        "bytes": 403938,
+        "format": "WEBP",
+        "width": 2784,
+        "height": 1920
+      },
+      "original": {
+        "path": "telysta-images/archive/xiazhixian_song_Illustration_01.png",
+        "bytes": 1850831,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "archive/xiazhixian_song_Illustration_02": {
+      "display": {
+        "path": "telysta-images/archive/xiazhixian_song_Illustration_02.webp",
+        "bytes": 390278,
+        "format": "WEBP",
+        "width": 2675,
+        "height": 1830
+      },
+      "original": {
+        "path": "telysta-images/archive/xiazhixian_song_Illustration_02.png",
+        "bytes": 1608941,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "archive/xiazhixian_song_Illustration_03": {
+      "display": {
+        "path": "telysta-images/archive/xiazhixian_song_Illustration_03.webp",
+        "bytes": 420482,
+        "format": "WEBP",
+        "width": 2675,
+        "height": 1830
+      },
+      "original": {
+        "path": "telysta-images/archive/xiazhixian_song_Illustration_03.png",
+        "bytes": 1363105,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "avatars/Profile_Alice_01": {
+      "display": {
+        "path": "avatars/Profile_Alice_01.avatar.webp",
+        "bytes": 57944,
+        "format": "WEBP",
+        "width": 384,
+        "height": 384
+      },
+      "original": {
+        "path": "avatars/Profile_Alice_01.png",
+        "bytes": 940893,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "avatars/Profile_Rhaelysa_01": {
+      "display": {
+        "path": "avatars/Profile_Rhaelysa_01.avatar.webp",
+        "bytes": 51324,
+        "format": "WEBP",
+        "width": 384,
+        "height": 384
+      },
+      "original": {
+        "path": "avatars/Profile_Rhaelysa_01.png",
+        "bytes": 368319,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "avatars/Profile_Rhaelysa_02": {
+      "display": {
+        "path": "avatars/Profile_Rhaelysa_02.avatar.webp",
+        "bytes": 89970,
+        "format": "WEBP",
+        "width": 384,
+        "height": 384
+      },
+      "original": {
+        "path": "avatars/Profile_Rhaelysa_02.png",
+        "bytes": 1056635,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "avatars/Profile_Sylvaena": {
+      "display": {
+        "path": "avatars/Profile_Sylvaena.avatar.webp",
+        "bytes": 57264,
+        "format": "WEBP",
+        "width": 384,
+        "height": 384
+      },
+      "original": {
+        "path": "avatars/Profile_Sylvaena.png",
+        "bytes": 262856,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "avatars/Profile_Telysta_01": {
+      "display": {
+        "path": "avatars/Profile_Telysta_01.avatar.webp",
+        "bytes": 55322,
+        "format": "WEBP",
+        "width": 384,
+        "height": 384
+      },
+      "original": {
+        "path": "avatars/Profile_Telysta_01.png",
+        "bytes": 659076,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "avatars/Profile_Weiser": {
+      "display": {
+        "path": "avatars/Profile_Weiser.avatar.webp",
+        "bytes": 56074,
+        "format": "WEBP",
+        "width": 384,
+        "height": 384
+      },
+      "original": {
+        "path": "avatars/Profile_Weiser.png",
+        "bytes": 1567435,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "avatars/Profile_Weiser_artnouveau": {
+      "display": {
+        "path": "avatars/Profile_Weiser_artnouveau.avatar.webp",
+        "bytes": 79758,
+        "format": "WEBP",
+        "width": 384,
+        "height": 384
+      },
+      "original": {
+        "path": "avatars/Profile_Weiser_artnouveau.png",
+        "bytes": 2516791,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/accquire": {
+      "cover": {
+        "path": "characters/accquire.cover.webp",
+        "bytes": 18298,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/accquire.preview.webp",
+        "bytes": 18298,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/accquire.png",
+        "bytes": 36243,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/acid-base": {
+      "cover": {
+        "path": "characters/acid-base.cover.webp",
+        "bytes": 14360,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/acid-base.preview.webp",
+        "bytes": 14360,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/acid-base.png",
+        "bytes": 30088,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/all the magic rune": {
+      "cover": {
+        "path": "characters/all the magic rune.cover.webp",
+        "bytes": 1194722,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1594
+      },
+      "display": {
+        "path": "characters/all the magic rune.preview.webp",
+        "bytes": 3349512,
+        "format": "WEBP",
+        "width": 2000,
+        "height": 2657
+      },
+      "original": {
+        "path": "characters/all the magic rune.png",
+        "bytes": 11778082,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/artifacts": {
+      "cover": {
+        "path": "characters/artifacts.cover.webp",
+        "bytes": 15440,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/artifacts.preview.webp",
+        "bytes": 15440,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/artifacts.png",
+        "bytes": 31895,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/body": {
+      "cover": {
+        "path": "characters/body.cover.webp",
+        "bytes": 13796,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/body.preview.webp",
+        "bytes": 13796,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/body.png",
+        "bytes": 28490,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/chaos": {
+      "cover": {
+        "path": "characters/chaos.cover.webp",
+        "bytes": 15338,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/chaos.preview.webp",
+        "bytes": 15338,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/chaos.png",
+        "bytes": 32134,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/cluster": {
+      "cover": {
+        "path": "characters/cluster.cover.webp",
+        "bytes": 18184,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/cluster.preview.webp",
+        "bytes": 18184,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/cluster.png",
+        "bytes": 33133,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/color": {
+      "cover": {
+        "path": "characters/color.cover.webp",
+        "bytes": 11472,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/color.preview.webp",
+        "bytes": 11472,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/color.png",
+        "bytes": 23380,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/comprehend": {
+      "cover": {
+        "path": "characters/comprehend.cover.webp",
+        "bytes": 11342,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/comprehend.preview.webp",
+        "bytes": 11342,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/comprehend.png",
+        "bytes": 23312,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/dark": {
+      "cover": {
+        "path": "characters/dark.cover.webp",
+        "bytes": 11800,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/dark.preview.webp",
+        "bytes": 11800,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/dark.png",
+        "bytes": 23654,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/destory": {
+      "cover": {
+        "path": "characters/destory.cover.webp",
+        "bytes": 15704,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/destory.preview.webp",
+        "bytes": 15704,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/destory.png",
+        "bytes": 31859,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/emotion": {
+      "cover": {
+        "path": "characters/emotion.cover.webp",
+        "bytes": 14364,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/emotion.preview.webp",
+        "bytes": 14364,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/emotion.png",
+        "bytes": 29557,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/evil": {
+      "cover": {
+        "path": "characters/evil.cover.webp",
+        "bytes": 11452,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/evil.preview.webp",
+        "bytes": 11452,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/evil.png",
+        "bytes": 24151,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/fate": {
+      "cover": {
+        "path": "characters/fate.cover.webp",
+        "bytes": 14736,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/fate.preview.webp",
+        "bytes": 14736,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/fate.png",
+        "bytes": 30244,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/field": {
+      "cover": {
+        "path": "characters/field.cover.webp",
+        "bytes": 12958,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/field.preview.webp",
+        "bytes": 12958,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/field.png",
+        "bytes": 25496,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/flame": {
+      "cover": {
+        "path": "characters/flame.cover.webp",
+        "bytes": 17298,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/flame.preview.webp",
+        "bytes": 17298,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/flame.png",
+        "bytes": 36464,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/frost": {
+      "cover": {
+        "path": "characters/frost.cover.webp",
+        "bytes": 11824,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/frost.preview.webp",
+        "bytes": 11824,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/frost.png",
+        "bytes": 24466,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/gas": {
+      "cover": {
+        "path": "characters/gas.cover.webp",
+        "bytes": 13714,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/gas.preview.webp",
+        "bytes": 13714,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/gas.png",
+        "bytes": 29132,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/grond": {
+      "cover": {
+        "path": "characters/grond.cover.webp",
+        "bytes": 13348,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/grond.preview.webp",
+        "bytes": 13348,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/grond.png",
+        "bytes": 28257,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/imagination": {
+      "cover": {
+        "path": "characters/imagination.cover.webp",
+        "bytes": 14664,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/imagination.preview.webp",
+        "bytes": 14664,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/imagination.png",
+        "bytes": 28853,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/kind": {
+      "cover": {
+        "path": "characters/kind.cover.webp",
+        "bytes": 11766,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/kind.preview.webp",
+        "bytes": 11766,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/kind.png",
+        "bytes": 24405,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/life": {
+      "cover": {
+        "path": "characters/life.cover.webp",
+        "bytes": 14790,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/life.preview.webp",
+        "bytes": 14790,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/life.png",
+        "bytes": 29454,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/light": {
+      "cover": {
+        "path": "characters/light.cover.webp",
+        "bytes": 11318,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/light.preview.webp",
+        "bytes": 11318,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/light.png",
+        "bytes": 23861,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/lightning": {
+      "cover": {
+        "path": "characters/lightning.cover.webp",
+        "bytes": 12724,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/lightning.preview.webp",
+        "bytes": 12724,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/lightning.png",
+        "bytes": 23863,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/liquid": {
+      "cover": {
+        "path": "characters/liquid.cover.webp",
+        "bytes": 15044,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/liquid.preview.webp",
+        "bytes": 15044,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/liquid.png",
+        "bytes": 28904,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/lose": {
+      "cover": {
+        "path": "characters/lose.cover.webp",
+        "bytes": 16202,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/lose.preview.webp",
+        "bytes": 16202,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/lose.png",
+        "bytes": 33426,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/mass": {
+      "cover": {
+        "path": "characters/mass.cover.webp",
+        "bytes": 15246,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/mass.preview.webp",
+        "bytes": 15246,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/mass.png",
+        "bytes": 30816,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/mystery": {
+      "cover": {
+        "path": "characters/mystery.cover.webp",
+        "bytes": 12688,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/mystery.preview.webp",
+        "bytes": 12688,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/mystery.png",
+        "bytes": 26558,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/nature": {
+      "cover": {
+        "path": "characters/nature.cover.webp",
+        "bytes": 14562,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/nature.preview.webp",
+        "bytes": 14562,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/nature.png",
+        "bytes": 30755,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/order": {
+      "cover": {
+        "path": "characters/order.cover.webp",
+        "bytes": 13290,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/order.preview.webp",
+        "bytes": 13290,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/order.png",
+        "bytes": 25512,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/part": {
+      "cover": {
+        "path": "characters/part.cover.webp",
+        "bytes": 14156,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/part.preview.webp",
+        "bytes": 14156,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/part.png",
+        "bytes": 28485,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/permanent": {
+      "cover": {
+        "path": "characters/permanent.cover.webp",
+        "bytes": 15512,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/permanent.preview.webp",
+        "bytes": 15512,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/permanent.png",
+        "bytes": 32699,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/regression": {
+      "cover": {
+        "path": "characters/regression.cover.webp",
+        "bytes": 13084,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/regression.preview.webp",
+        "bytes": 13084,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/regression.png",
+        "bytes": 26720,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/reinforce": {
+      "cover": {
+        "path": "characters/reinforce.cover.webp",
+        "bytes": 13496,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/reinforce.preview.webp",
+        "bytes": 13496,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/reinforce.png",
+        "bytes": 27417,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/sky": {
+      "cover": {
+        "path": "characters/sky.cover.webp",
+        "bytes": 10562,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/sky.preview.webp",
+        "bytes": 10562,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/sky.png",
+        "bytes": 21161,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/solid": {
+      "cover": {
+        "path": "characters/solid.cover.webp",
+        "bytes": 16542,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/solid.preview.webp",
+        "bytes": 16542,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/solid.png",
+        "bytes": 35435,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/sound": {
+      "cover": {
+        "path": "characters/sound.cover.webp",
+        "bytes": 11610,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/sound.preview.webp",
+        "bytes": 11610,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/sound.png",
+        "bytes": 23984,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/source": {
+      "cover": {
+        "path": "characters/source.cover.webp",
+        "bytes": 14442,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/source.preview.webp",
+        "bytes": 14442,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/source.png",
+        "bytes": 26387,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/space": {
+      "cover": {
+        "path": "characters/space.cover.webp",
+        "bytes": 15024,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/space.preview.webp",
+        "bytes": 15024,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/space.png",
+        "bytes": 30111,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/spirituality": {
+      "cover": {
+        "path": "characters/spirituality.cover.webp",
+        "bytes": 14930,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/spirituality.preview.webp",
+        "bytes": 14930,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/spirituality.png",
+        "bytes": 30160,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/spread": {
+      "cover": {
+        "path": "characters/spread.cover.webp",
+        "bytes": 18290,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/spread.preview.webp",
+        "bytes": 18290,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/spread.png",
+        "bytes": 33302,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/star": {
+      "cover": {
+        "path": "characters/star.cover.webp",
+        "bytes": 11136,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/star.preview.webp",
+        "bytes": 11136,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/star.png",
+        "bytes": 22423,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/storm": {
+      "cover": {
+        "path": "characters/storm.cover.webp",
+        "bytes": 12980,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/storm.preview.webp",
+        "bytes": 12980,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/storm.png",
+        "bytes": 26776,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/theory": {
+      "cover": {
+        "path": "characters/theory.cover.webp",
+        "bytes": 14548,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/theory.preview.webp",
+        "bytes": 14548,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/theory.png",
+        "bytes": 27869,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/time": {
+      "cover": {
+        "path": "characters/time.cover.webp",
+        "bytes": 16314,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/time.preview.webp",
+        "bytes": 16314,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/time.png",
+        "bytes": 33074,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/toxin": {
+      "cover": {
+        "path": "characters/toxin.cover.webp",
+        "bytes": 11670,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/toxin.preview.webp",
+        "bytes": 11670,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/toxin.png",
+        "bytes": 23581,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/weaken": {
+      "cover": {
+        "path": "characters/weaken.cover.webp",
+        "bytes": 14106,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/weaken.preview.webp",
+        "bytes": 14106,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/weaken.png",
+        "bytes": 28642,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "characters/wisdom": {
+      "cover": {
+        "path": "characters/wisdom.cover.webp",
+        "bytes": 11772,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "display": {
+        "path": "characters/wisdom.preview.webp",
+        "bytes": 11772,
+        "format": "WEBP",
+        "width": 1200,
+        "height": 1500
+      },
+      "original": {
+        "path": "characters/wisdom.png",
+        "bytes": 23609,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "Rhaelysa/rhaelysa_officialoutfit_design": {
+      "display": {
+        "path": "telysta-images/Rhaelysa/rhaelysa_officialoutfit_design.webp",
+        "bytes": 1112214,
+        "format": "WEBP",
+        "width": 2863,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Rhaelysa/rhaelysa_officialoutfit_design.png",
+        "bytes": 24691200,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Rhaelysa/rhaelysa_officialoutfit_design.psd",
+          "bytes": 129992297,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Rhaelysa/rhaelysa_ridinghabit": {
+      "display": {
+        "path": "telysta-images/Rhaelysa/rhaelysa_ridinghabit.webp",
+        "bytes": 3807386,
+        "format": "WEBP",
+        "width": 2791,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Rhaelysa/rhaelysa_ridinghabit.png",
+        "bytes": 82300475,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Rhaelysa/rhaelysa_ridinghabit.psd",
+          "bytes": 471550674,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Rhaelysa/rhaelysa&telysta_librarystaircase_01": {
+      "display": {
+        "path": "telysta-images/Rhaelysa/rhaelysa&telysta_librarystaircase_01.webp",
+        "bytes": 1549714,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 2036
+      },
+      "original": {
+        "path": "telysta-images/Rhaelysa/rhaelysa&telysta_librarystaircase_01.png",
+        "bytes": 57802362,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Rhaelysa/rhaelysa&telysta_librarystaircase_01.psd",
+          "bytes": 477460556,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Rhaelysa/rhaelysa&telysta_librarystaircase_02": {
+      "sources": [
+        {
+          "path": "telysta-images/Rhaelysa/rhaelysa&telysta_librarystaircase_02.psd",
+          "bytes": 480040560,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Rhaelysa/rhaelysa&telysta_librarystaircase_03": {
+      "display": {
+        "path": "telysta-images/Rhaelysa/rhaelysa&telysta_librarystaircase_03.webp",
+        "bytes": 1547442,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 2036
+      },
+      "original": {
+        "path": "telysta-images/Rhaelysa/rhaelysa&telysta_librarystaircase_03.png",
+        "bytes": 59865641,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Rhaelysa/rhaelysa&telysta_librarystaircase_03.psd",
+          "bytes": 485724094,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Rhaelysa/rhaelysa&telysta_librarystaircase_04": {
+      "display": {
+        "path": "telysta-images/Rhaelysa/rhaelysa&telysta_librarystaircase_04.webp",
+        "bytes": 1591966,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 2036
+      },
+      "original": {
+        "path": "telysta-images/Rhaelysa/rhaelysa&telysta_librarystaircase_04.png",
+        "bytes": 59042916,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Rhaelysa/rhaelysa&telysta_librarystaircase_04.psd",
+          "bytes": 484078371,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Sylvaena/sylvaena_officialoutfit_design": {
+      "display": {
+        "path": "telysta-images/Sylvaena/sylvaena_officialoutfit_design.webp",
+        "bytes": 1068184,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 1903
+      },
+      "original": {
+        "path": "telysta-images/Sylvaena/sylvaena_officialoutfit_design.png",
+        "bytes": 25259999,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Sylvaena/sylvaena_officialoutfit_design.psd",
+          "bytes": 99904756,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Sylvaena/sylvaena_officialoutfit_unveil": {
+      "display": {
+        "path": "telysta-images/Sylvaena/sylvaena_officialoutfit_unveil.webp",
+        "bytes": 2376874,
+        "format": "WEBP",
+        "width": 2766,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Sylvaena/sylvaena_officialoutfit_unveil.png",
+        "bytes": 90493760,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Sylvaena/sylvaena_officialoutfit_unveil.psd",
+          "bytes": 468193380,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Sylvaena/sylvaena_officialoutfit_veil": {
+      "display": {
+        "path": "telysta-images/Sylvaena/sylvaena_officialoutfit_veil.webp",
+        "bytes": 2334604,
+        "format": "WEBP",
+        "width": 2766,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Sylvaena/sylvaena_officialoutfit_veil.png",
+        "bytes": 90806394,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Sylvaena/sylvaena_officialoutfit_veil.psd",
+          "bytes": 478097947,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Telysta/telysta_crinoline": {
+      "sources": [
+        {
+          "path": "telysta-images/Telysta/telysta_crinoline.psd",
+          "bytes": 68095290,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Telysta/telysta_crinoline_character_illustration": {
+      "display": {
+        "path": "telysta-images/Telysta/telysta_crinoline_character_illustration.webp",
+        "bytes": 1141612,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 3041
+      },
+      "original": {
+        "path": "telysta-images/Telysta/telysta_crinoline_character_illustration.png",
+        "bytes": 11029235,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "Telysta/telysta_crinoline_design": {
+      "display": {
+        "path": "telysta-images/Telysta/telysta_crinoline_design.webp",
+        "bytes": 1088202,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 2365
+      },
+      "original": {
+        "path": "telysta-images/Telysta/telysta_crinoline_design.png",
+        "bytes": 18299962,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "Telysta/Telysta_officialoutfit": {
+      "sources": [
+        {
+          "path": "telysta-images/Telysta/Telysta_officialoutfit.psd",
+          "bytes": 405266418,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Telysta/Telysta_officialoutfit_design": {
+      "display": {
+        "path": "telysta-images/Telysta/Telysta_officialoutfit_design.webp",
+        "bytes": 1274802,
+        "format": "WEBP",
+        "width": 2961,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Telysta/Telysta_officialoutfit_design.png",
+        "bytes": 29577970,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "Telysta/Telysta_officialoutfit_fullbody": {
+      "display": {
+        "path": "telysta-images/Telysta/Telysta_officialoutfit_fullbody.webp",
+        "bytes": 1592600,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 2417
+      },
+      "original": {
+        "path": "telysta-images/Telysta/Telysta_officialoutfit_fullbody.png",
+        "bytes": 40723058,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "Telysta/Telysta_officialoutfit_halfbody": {
+      "display": {
+        "path": "telysta-images/Telysta/Telysta_officialoutfit_halfbody.webp",
+        "bytes": 1544966,
+        "format": "WEBP",
+        "width": 3126,
+        "height": 2352
+      },
+      "original": {
+        "path": "telysta-images/Telysta/Telysta_officialoutfit_halfbody.png",
+        "bytes": 8756586,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Telysta/Telysta_officialoutfit_halfbody.psd",
+          "bytes": 52530543,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Weiser/mhs_weiser_test": {
+      "display": {
+        "path": "telysta-images/Weiser/mhs_weiser_test.webp",
+        "bytes": 632552,
+        "format": "WEBP",
+        "width": 2262,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Weiser/mhs_weiser_test.png",
+        "bytes": 4256015,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "Weiser/weiser_artnouveau_fullbody": {
+      "display": {
+        "path": "telysta-images/Weiser/weiser_artnouveau_fullbody.webp",
+        "bytes": 3370694,
+        "format": "WEBP",
+        "width": 2117,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Weiser/weiser_artnouveau_fullbody.png",
+        "bytes": 75720945,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Weiser/weiser_artnouveau_fullbody.psd",
+          "bytes": 470929866,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Weiser/weiser_artnouveau_ornaments": {
+      "display": {
+        "path": "telysta-images/Weiser/weiser_artnouveau_ornaments.webp",
+        "bytes": 1123582,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 2013
+      },
+      "original": {
+        "path": "telysta-images/Weiser/weiser_artnouveau_ornaments.png",
+        "bytes": 5579476,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Weiser/weiser_artnouveau_ornaments.psd",
+          "bytes": 16507590,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Weiser/weiser_bunny": {
+      "sources": [
+        {
+          "path": "telysta-images/Weiser/weiser_bunny.psd",
+          "bytes": 36261145,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Weiser/weiser_bunny_chiding": {
+      "display": {
+        "path": "telysta-images/Weiser/weiser_bunny_chiding.webp",
+        "bytes": 677430,
+        "format": "WEBP",
+        "width": 2652,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Weiser/weiser_bunny_chiding.png",
+        "bytes": 7113203,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "Weiser/weiser_bunny_fullornaments": {
+      "display": {
+        "path": "telysta-images/Weiser/weiser_bunny_fullornaments.webp",
+        "bytes": 677490,
+        "format": "WEBP",
+        "width": 2652,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Weiser/weiser_bunny_fullornaments.png",
+        "bytes": 8549026,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "Weiser/weiser_bunny_sulky": {
+      "display": {
+        "path": "telysta-images/Weiser/weiser_bunny_sulky.webp",
+        "bytes": 649902,
+        "format": "WEBP",
+        "width": 2652,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Weiser/weiser_bunny_sulky.png",
+        "bytes": 6783601,
+        "format": "PNG"
+      },
+      "sources": []
+    },
+    "Weiser/weiser_officialoutfit_design": {
+      "display": {
+        "path": "telysta-images/Weiser/weiser_officialoutfit_design.webp",
+        "bytes": 875186,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 2424
+      },
+      "original": {
+        "path": "telysta-images/Weiser/weiser_officialoutfit_design.png",
+        "bytes": 21695349,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Weiser/weiser_officialoutfit_design.psd",
+          "bytes": 85451215,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Weiser/weiser_officialoutfit_fullbody": {
+      "display": {
+        "path": "telysta-images/Weiser/weiser_officialoutfit_fullbody.webp",
+        "bytes": 1645840,
+        "format": "WEBP",
+        "width": 2423,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Weiser/weiser_officialoutfit_fullbody.png",
+        "bytes": 53516213,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Weiser/weiser_officialoutfit_fullbody.psd",
+          "bytes": 247064289,
+          "format": "PSD"
+        }
+      ]
+    },
+    "Weiser/weiser_officialoutfit_halfbody": {
+      "display": {
+        "path": "telysta-images/Weiser/weiser_officialoutfit_halfbody.webp",
+        "bytes": 1595308,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 2425
+      },
+      "original": {
+        "path": "telysta-images/Weiser/weiser_officialoutfit_halfbody.png",
+        "bytes": 15403958,
+        "format": "PNG"
+      },
+      "sources": [
+        {
+          "path": "telysta-images/Weiser/weiser_officialoutfit_halfbody.psd",
+          "bytes": 68075337,
+          "format": "PSD"
+        }
+      ]
+    }
+  }
+}

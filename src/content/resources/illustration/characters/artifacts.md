@@ -4,9 +4,9 @@ title: Draft Character Artifacts
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/artifacts.png
+image: asset:characters/artifacts
 gallery:
-  - src: src/assets/images/illustration/characters/artifacts.png
+  - src: asset:characters/artifacts
     label: "01"
     alt: Draft character artifacts image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/artifacts.png
+    href: asset:characters/artifacts
     format: PNG
     primary: true
 draft: true

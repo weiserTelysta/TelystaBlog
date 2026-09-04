@@ -26,29 +26,29 @@
 }
 
 .prose h2 {
-	margin: 3.2em 0 0.85em;
+	margin: 2.35em 0 0.72em;
 	font-size: clamp(1.42rem, 3vw, 1.92rem);
 }
 
 .prose h3 {
-	margin: 2.45em 0 0.75em;
+	margin: 1.9em 0 0.62em;
 	font-size: clamp(1.18rem, 2.2vw, 1.42rem);
 }
 
 .prose h4 {
-	margin: 2em 0 0.65em;
+	margin: 1.55em 0 0.5em;
 	font-size: 1.05rem;
 }
 
 .prose h5 {
-	margin: 1.72em 0 0.58em;
+	margin: 1.42em 0 0.46em;
 	color: rgba(220, 228, 240, 0.82);
 	font-size: 1rem;
 	font-weight: 640;
 }
 
 .prose h6 {
-	margin: 1.55em 0 0.5em;
+	margin: 1.32em 0 0.42em;
 	color: rgba(190, 199, 214, 0.74);
 	font-size: 0.98rem;
 	font-weight: 620;
@@ -102,6 +102,7 @@
 	background: rgba(255, 255, 255, 0.045);
 	color: rgba(237, 243, 251, 0.9);
 	font-size: 0.9em;
+	font-family: var(--font-code);
 	padding: 0.12em 0.34em;
 }
 
@@ -109,16 +110,84 @@
 	overflow: auto;
 	border: 1px solid rgba(255, 255, 255, 0.06);
 	border-radius: 8px;
-	background: rgba(8, 12, 19, 0.76);
-	padding: 18px;
-	scrollbar-width: thin;
-	scrollbar-color: rgba(156, 199, 232, 0.22) transparent;
+	background: rgba(6, 10, 17, 0.9) !important;
+	padding: 20px 18px;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.prose pre::-webkit-scrollbar {
+	display: none;
 }
 
 .prose pre code {
 	border: 0;
 	background: transparent;
 	padding: 0;
+	font-family: var(--font-code);
+	font-size: 0.88rem;
+	line-height: 1.72;
+	tab-size: 2;
+}
+
+.prose .code-block {
+	position: relative;
+	margin: 1.35em 0;
+}
+
+.prose .code-block > pre {
+	margin: 0;
+	padding-top: 46px;
+}
+
+.prose .code-block__toolbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 2;
+	display: flex;
+	height: 36px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 9px 0 16px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+	pointer-events: none;
+}
+
+.prose .code-block__language {
+	color: rgba(156, 199, 232, 0.55);
+	font-family: var(--font-code);
+	font-size: 0.68rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.prose .code-block__copy {
+	padding: 4px 8px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background: transparent;
+	color: rgba(190, 199, 214, 0.62);
+	cursor: pointer;
+	font: 500 0.72rem/1.4 var(--font-body);
+	pointer-events: auto;
+	transition:
+		border-color var(--motion-fast) ease,
+		background var(--motion-fast) ease,
+		color var(--motion-fast) ease;
+}
+
+.prose .code-block__copy:hover,
+.prose .code-block__copy[data-state='copied'] {
+	border-color: rgba(156, 199, 232, 0.16);
+	background: rgba(156, 199, 232, 0.055);
+	color: rgba(226, 234, 245, 0.9);
+}
+
+.prose .code-block__copy:focus-visible {
+	outline: 1px solid rgba(156, 199, 232, 0.78);
+	outline-offset: 2px;
 }
 
 .prose .katex {
@@ -132,23 +201,14 @@
 	overflow-y: hidden;
 	padding: 0.65em 0.2em 0.75em;
 	color: rgba(226, 233, 244, 0.88);
-	scrollbar-width: thin;
-	scrollbar-color: rgba(156, 199, 232, 0.2) transparent;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
 	overscroll-behavior-x: contain;
 	overscroll-behavior-y: auto;
 }
 
 .prose .katex-display::-webkit-scrollbar {
-	height: 3px;
-}
-
-.prose .katex-display::-webkit-scrollbar-track {
-	background: transparent;
-}
-
-.prose .katex-display::-webkit-scrollbar-thumb {
-	border-radius: 999px;
-	background: rgba(156, 199, 232, 0.2);
+	display: none;
 }
 
 .prose .katex-display > .katex {
@@ -163,6 +223,114 @@
 	margin: 2em auto;
 	border-radius: 8px;
 	filter: saturate(0.86) brightness(0.82);
+}
+
+.prose .music-score {
+	margin: 2.2em 0;
+	width: min(1180px, calc(100vw - 48px));
+	max-width: none;
+	margin-left: 50%;
+	overflow: hidden;
+	border: 1px solid rgba(156, 199, 232, 0.14);
+	border-radius: 10px;
+	background: rgba(8, 12, 19, 0.54);
+	transform: translateX(-50%);
+}
+
+.prose .music-score__header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 13px 16px 12px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.prose .music-score__header p {
+	margin: 0;
+	color: rgba(190, 199, 214, 0.66);
+	font-size: 0.76rem;
+	line-height: 1.5;
+	letter-spacing: 0.08em;
+}
+
+.prose .music-score__header .music-score__eyebrow {
+	color: rgba(156, 199, 232, 0.72);
+	font-family: var(--font-display);
+	font-size: 0.7rem;
+	letter-spacing: 0.18em;
+}
+
+.prose .music-score__header .music-score__hint {
+	color: rgba(190, 199, 214, 0.48);
+	font-size: 0.68rem;
+	letter-spacing: 0.025em;
+}
+
+.prose .music-score__sr-title {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+.prose .music-score__viewport {
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 24px 20px 20px;
+	color: rgba(226, 233, 244, 0.88);
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	overscroll-behavior-x: contain;
+	touch-action: pan-x pan-y;
+}
+
+.prose .music-score__viewport:focus-visible {
+	outline: 1px solid rgba(156, 199, 232, 0.72);
+	outline-offset: -3px;
+}
+
+.prose .music-score__viewport::-webkit-scrollbar {
+	display: none;
+}
+
+.prose .music-score__svg {
+	display: block;
+	width: max(100%, 1080px);
+	min-width: 1080px;
+	height: auto;
+	margin: 0;
+}
+
+.prose .music-score__text {
+	border-top: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.prose .music-score__text summary {
+	cursor: pointer;
+	padding: 12px 18px;
+	color: rgba(156, 199, 232, 0.74);
+	font-size: 0.82rem;
+	line-height: 1.5;
+}
+
+.prose .music-score__text summary:focus-visible {
+	outline: 1px solid rgba(156, 199, 232, 0.72);
+	outline-offset: -3px;
+}
+
+.prose .music-score__text pre {
+	margin: 0;
+	border: 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.045);
+	border-radius: 0;
+	background: rgba(4, 7, 12, 0.42);
+	font-size: 0.76rem;
+	line-height: 1.75;
 }
 
 .prose table {
@@ -187,5 +355,29 @@
 	.prose {
 		font-size: 0.98rem;
 		line-height: 1.9;
+	}
+
+	.prose .music-score {
+		width: calc(100vw - 24px);
+	}
+
+	.prose .music-score__header {
+		padding-inline: 14px;
+	}
+
+	.prose .music-score__viewport {
+		padding: 18px 14px 16px;
+	}
+
+	.prose .music-score__svg {
+		width: 960px;
+		min-width: 960px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.prose a,
+	.prose .code-block__copy {
+		transition: none;
 	}
 }

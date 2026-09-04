@@ -4,9 +4,9 @@ title: Draft Character Kind
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/kind.png
+image: asset:characters/kind
 gallery:
-  - src: src/assets/images/illustration/characters/kind.png
+  - src: asset:characters/kind
     label: "01"
     alt: Draft character kind image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/kind.png
+    href: asset:characters/kind
     format: PNG
     primary: true
 draft: true

@@ -4,9 +4,9 @@ title: The phased setting about sword maiden
 summary: The phased setting about sword maiden
 type: illustration
 status: available
-image: src/assets/images/illustration/archive/sword_maiden/sword_maiden_01.png
+image: asset:archive/mhs_test_04
 gallery:
-  - src: src/assets/images/illustration/archive/sword_maiden/sword_maiden_01.png
+  - src: asset:archive/mhs_test_04
     label: "01"
     alt: Draft archive sword maiden image 01
 publishedAt: 2026-07-01
@@ -16,12 +16,7 @@ formats:
 variantCount: 1
 license: Draft license. Replace before publishing.
 credits: []
-actions:
-  - type: download
-    label: PNG
-    href: src/assets/images/illustration/archive/sword_maiden/sword_maiden_01.png
-    format: PNG
-    primary: true
+actions: []
 ---
 
 对于一位剑士少女的初步设定。

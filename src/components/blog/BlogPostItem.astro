@@ -1,5 +1,6 @@
 ---
 import type { PostListItem } from '../../lib/blogPosts';
+import { buildCategoryHref } from '../../lib/blogCategoryUtils';
 import { formatFullDate, formatPostDate } from '../../lib/blogPosts';
 
 type Props = {
@@ -7,6 +8,7 @@ type Props = {
 };
 
 const { post } = Astro.props;
+const visibleTags = post.tags.slice(0, 2);
 ---
 
 <li class="blog-post">
@@ -14,12 +16,11 @@ const { post } = Astro.props;
 		<h3>
 			<a href={post.href}>{post.title}</a>
 		</h3>
-		<p>{post.description}</p>
-		<div class="blog-post__meta" aria-label="文章元信息">
-			<span>{formatPostDate(post.publishedAt)}</span>
-			<span>更新 {formatFullDate(post.updatedAt)}</span>
-			<span>{post.categoryTitle}</span>
-			{post.tags.map((tag) => <span class="blog-post__tag">#{tag}</span>)}
+		<p>{post.excerpt}</p>
+		<div class="blog-post__meta" aria-label="文章信息">
+			<time datetime={formatFullDate(post.publishedAt)}>{formatPostDate(post.publishedAt)}</time>
+			<a href={buildCategoryHref(post.category)}>{post.categoryTitle}</a>
+			{visibleTags.map((tag) => <span class="blog-post__tag">#{tag}</span>)}
 		</div>
 	</article>
 </li>
@@ -28,8 +29,6 @@ const { post } = Astro.props;
 	.blog-post {
 		position: relative;
 		min-width: 0;
-		padding-bottom: 20px;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.045);
 		animation: blog-post-reveal 0.38s ease both;
 	}
 
@@ -40,52 +39,71 @@ const { post } = Astro.props;
 	.blog-post h3 {
 		margin: 0;
 		font-family: var(--type-card-title-font);
-		font-size: var(--type-card-title-size);
-		font-weight: var(--type-card-title-weight);
-		line-height: var(--type-card-title-line);
+		font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+		font-weight: 650;
+		line-height: 1.35;
 		letter-spacing: 0;
 		overflow-wrap: anywhere;
 	}
 
 	.blog-post h3 a {
-		color: rgba(237, 243, 251, 0.88);
+		color: rgba(216, 222, 233, 0.84);
 		text-decoration: none;
 		transition: color 0.2s ease, text-shadow 0.2s ease;
 	}
 
 	.blog-post h3 a:hover {
-		color: rgba(255, 255, 255, 0.96);
+		color: var(--color-text);
 		text-shadow: 0 0 22px rgba(156, 199, 232, 0.12);
 	}
 
 	.blog-post p {
+		display: -webkit-box;
 		max-width: 700px;
-		margin: 10px 0 0;
-		color: rgba(190, 199, 214, 0.52);
-		font-size: 0.94rem;
-		line-height: 1.8;
+		overflow: hidden;
+		margin: 8px 0 0;
+		color: var(--color-text-muted);
+		font-size: 0.95rem;
+		line-height: 1.75;
 		overflow-wrap: anywhere;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
 	}
 
 	.blog-post__meta {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 8px 13px;
-		margin-top: 13px;
-		color: rgba(139, 149, 167, 0.72);
+		align-items: baseline;
+		margin-top: 12px;
+		color: rgba(139, 149, 167, 0.88);
 		font-family: var(--type-meta-font);
 		font-size: var(--type-meta-size);
 		line-height: var(--type-meta-line);
-		overflow-wrap: anywhere;
 	}
 
-	.blog-post__meta span {
-		min-width: 0;
-		overflow-wrap: anywhere;
+	.blog-post__meta > * + *::before {
+		margin: 0 9px;
+		color: rgba(139, 149, 167, 0.48);
+		content: "·";
+	}
+
+	.blog-post__meta a {
+		color: rgba(156, 199, 232, 0.76);
+		transition: color 0.18s ease;
+	}
+
+	.blog-post__meta a:hover {
+		color: var(--color-accent);
+	}
+
+	.blog-post__meta a:focus-visible {
+		border-radius: 2px;
+		outline: 1px solid rgba(156, 199, 232, 0.7);
+		outline-offset: 3px;
 	}
 
 	.blog-post__tag {
-		color: rgba(214, 167, 200, 0.58);
+		color: rgba(214, 167, 200, 0.76);
 	}
 
 	@keyframes blog-post-reveal {

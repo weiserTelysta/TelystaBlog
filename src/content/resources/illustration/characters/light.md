@@ -4,9 +4,9 @@ title: Draft Character Light
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/light.png
+image: asset:characters/light
 gallery:
-  - src: src/assets/images/illustration/characters/light.png
+  - src: asset:characters/light
     label: "01"
     alt: Draft character light image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/light.png
+    href: asset:characters/light
     format: PNG
     primary: true
 draft: true

@@ -4,9 +4,9 @@ title: Draft Character Regression
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/regression.png
+image: asset:characters/regression
 gallery:
-  - src: src/assets/images/illustration/characters/regression.png
+  - src: asset:characters/regression
     label: "01"
     alt: Draft character regression image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/regression.png
+    href: asset:characters/regression
     format: PNG
     primary: true
 draft: true

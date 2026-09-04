@@ -1,17 +1,13 @@
 ---
-import type { BlogSeries } from '../../config/content/blogSeries';
 import { ARTICLE_PAGE_CONFIG } from '../../config/pages/article';
-import { buildCategoryHref } from '../../lib/blogCategoryUtils';
 import type { PostListItem } from '../../lib/blogPosts';
-import { formatFullDate } from '../../lib/blogPosts';
-import { buildSeriesHref } from '../../lib/blogSeriesUtils';
+import { formatArticleDate, formatFullDate, formatPostDate } from '../../lib/blogPosts';
 
 type Props = {
 	post: PostListItem;
-	series?: BlogSeries;
 };
 
-const { post, series } = Astro.props;
+const { post } = Astro.props;
 const cover = post.cover?.startsWith('/images/posts/') ? post.cover : undefined;
 const { header } = ARTICLE_PAGE_CONFIG;
 ---
@@ -25,44 +21,33 @@ const { header } = ARTICLE_PAGE_CONFIG;
 		)
 	}
 
-	<div class="article-header__intro">
-		<a class="article-header__back" href="/blog">{header.backLabel}</a>
-		<h1>{post.title}</h1>
-		<p>{post.description}</p>
-	</div>
+	<h1>{post.title}</h1>
 
-	<div class="article-header__meta" aria-label={header.metaAriaLabel}>
-		<div class="article-header__path">
-			<a href={buildCategoryHref(post.category)}>{post.categoryTitle}</a>
-			{
-				series && (
-					<a href={buildSeriesHref(series.id)} aria-label={`${header.seriesAriaPrefix} ${series.title} ${header.seriesAriaSuffix}`}>
-						{series.title}
-					</a>
-				)
-			}
-		</div>
-
-		{
-			post.tags.length > 0 && (
-				<div class="article-header__tags">
-					{post.tags.map((tag) => <span class="article-header__tag">#{tag}</span>)}
-				</div>
-			)
-		}
-
-		<div class="article-header__dates">
-			<span>{header.publishedLabel} {formatFullDate(post.publishedAt)}</span>
-			<span>{header.updatedLabel} {formatFullDate(post.updatedAt)}</span>
-		</div>
+	<div class="article-header__dates" aria-label={header.metaAriaLabel}>
+		<span>
+			{header.publishedLabel}{' '}
+			<time
+				datetime={formatFullDate(post.publishedAt)}
+				aria-label={formatPostDate(post.publishedAt)}
+			>{formatArticleDate(post.publishedAt)}</time>
+		</span>
+		<span>
+			{header.updatedLabel}{' '}
+			<time
+				datetime={formatFullDate(post.updatedAt)}
+				aria-label={formatPostDate(post.updatedAt)}
+			>{formatArticleDate(post.updatedAt)}</time>
+		</span>
 	</div>
 </header>
 
 <style lang="scss">
 	.article-header {
 		display: grid;
-		gap: clamp(22px, 4vw, 36px);
-		padding: clamp(124px, 15vw, 172px) 0 clamp(34px, 6vw, 58px);
+		gap: clamp(14px, 2vw, 18px);
+		width: min(var(--article-reading-width), 100%);
+		margin-inline: auto;
+		padding: clamp(46px, 5vw, 72px) 0 clamp(36px, 5vw, 52px);
 	}
 
 	.article-header__cover {
@@ -92,99 +77,35 @@ const { header } = ARTICLE_PAGE_CONFIG;
 		filter: saturate(0.76) brightness(0.62);
 	}
 
-	.article-header__intro {
-		display: grid;
-		gap: 14px;
-	}
-
-	.article-header__back {
-		width: fit-content;
-		color: rgba(156, 199, 232, 0.58);
-		font-family: var(--type-display-label-font);
-		font-size: var(--type-display-label-size);
-		font-weight: var(--type-display-label-weight);
-		letter-spacing: var(--type-display-label-tracking);
-		text-transform: uppercase;
-		transition: color 0.2s ease;
-	}
-
-	.article-header__back:hover {
-		color: rgba(216, 222, 233, 0.86);
-	}
-
 	.article-header h1 {
 		margin: 0;
-		color: rgba(237, 243, 251, 0.94);
+		color: rgba(216, 222, 233, 0.9);
 		font-family: var(--type-article-title-font);
-		font-size: var(--type-article-title-size);
-		font-weight: var(--type-article-title-weight);
-		line-height: var(--type-article-title-line);
+		font-size: clamp(2rem, 3vw, 2.75rem);
+		font-weight: 600;
+		line-height: 1.2;
 		letter-spacing: 0;
 		overflow-wrap: anywhere;
 	}
 
-	.article-header p {
-		max-width: 720px;
-		margin: 0;
-		color: rgba(190, 199, 214, 0.58);
-		font-family: var(--font-body);
-		font-size: clamp(0.98rem, 1.8vw, 1.08rem);
-		line-height: 1.9;
-		overflow-wrap: anywhere;
-	}
-
-	.article-header__meta {
-		display: grid;
-		gap: 6px;
-		max-width: 860px;
-		color: rgba(139, 149, 167, 0.58);
-		font-family: var(--type-meta-font);
-		font-size: var(--type-meta-size);
-		line-height: var(--type-meta-line);
-	}
-
-	.article-header__dates,
-	.article-header__path,
-	.article-header__tags {
+	.article-header__dates {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 8px 16px;
+		align-items: baseline;
 		min-width: 0;
+		color: rgba(190, 199, 214, 0.66);
+		font-family: var(--type-meta-font);
+		font-size: 0.78rem;
+		line-height: 1.6;
 	}
 
-	.article-header__dates {
-		color: rgba(139, 149, 167, 0.46);
-		font-size: 0.74rem;
-	}
-
-	.article-header__path a {
-		color: rgba(156, 199, 232, 0.66);
-		font-size: 0.84rem;
-		font-weight: 520;
-	}
-
-	.article-header__tags {
-		gap: 7px 13px;
-		font-size: 0.76rem;
-	}
-
-	.article-header__tag {
-		color: rgba(214, 167, 200, 0.42);
-	}
-
-	.article-header__path a {
-		transition: color 0.2s ease;
-	}
-
-	.article-header__path a:hover {
-		color: rgba(216, 222, 233, 0.9);
+	.article-header__dates > * + *::before {
+		margin: 0 10px;
+		color: rgba(139, 149, 167, 0.5);
+		content: "·";
 	}
 
 	@media (max-width: 760px) {
-		.article-header {
-			padding-top: 104px;
-		}
-
 		.article-header__cover {
 			aspect-ratio: 16 / 8;
 		}

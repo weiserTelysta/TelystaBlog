@@ -4,15 +4,15 @@ title: Weiser Bunny
 summary: 长灵Weiser的Bunny服饰立绘插画，包含 PNG 原图与 PSD 源文件。
 type: illustration
 status: available
-image: src/assets/images/illustration/weiser/weiser_bunny_01/weiser_bunny_01.png
+image: asset:Weiser/weiser_bunny_fullornaments
 gallery:
-  - src: src/assets/images/illustration/weiser/weiser_bunny_01/weiser_bunny_01.png
+  - src: asset:Weiser/weiser_bunny_fullornaments
     label: "01"
     alt: Weiser Bunny 立绘插画 01
-  - src: src/assets/images/illustration/weiser/weiser_bunny_01/weiser_bunny_02.png
+  - src: asset:Weiser/weiser_bunny_sulky
     label: "02"
     alt: Weiser Bunny 立绘插画 02
-  - src: src/assets/images/illustration/weiser/weiser_bunny_01/weiser_bunny_03.png
+  - src: asset:Weiser/weiser_bunny_chiding
     label: "03"
     alt: Weiser Bunny 立绘插画 03
 publishedAt: 2026-06-06
@@ -28,16 +28,9 @@ credits:
     href: https://x.com/KEI_takanashi
 actions:
   - type: download
-    label: PNG
-    href: src/assets/images/illustration/weiser/weiser_bunny_01/weiser_bunny_01.png
-    format: PNG
-    primary: true
-  - type: external
     label: PSD
-    href: https://pan.baidu.com/s/1akmdWMJcLvJDLHfqlLwEZA?pwd=xrz2
+    href: https://assets.telysta.com/telysta-images/Weiser/weiser_bunny.psd
     format: PSD
-    provider: 百度网盘
-    code: xrz2
     note: 其中包含 3 个差分。
 ---
 

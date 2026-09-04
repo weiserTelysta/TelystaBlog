@@ -4,9 +4,9 @@ title: Draft Character Fate
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/fate.png
+image: asset:characters/fate
 gallery:
-  - src: src/assets/images/illustration/characters/fate.png
+  - src: asset:characters/fate
     label: "01"
     alt: Draft character fate image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/fate.png
+    href: asset:characters/fate
     format: PNG
     primary: true
 draft: true

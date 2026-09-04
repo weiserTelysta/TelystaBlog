@@ -4,15 +4,15 @@ title: Furisode Outfit
 summary: A cute furisode.
 type: illustration
 status: available
-image: src/assets/images/illustration/archive/furisode/furisode_01.jpg
+image: asset:archive/camellia_motif_furisode_white
 gallery:
-  - src: src/assets/images/illustration/archive/furisode/furisode_01.jpg
+  - src: asset:archive/camellia_motif_furisode_white
     label: "01"
     alt: Draft archive furisode image 01
-  - src: src/assets/images/illustration/archive/furisode/furisode_02.png
+  - src: asset:archive/camellia_motif_furisode_red
     label: "02"
     alt: Draft archive furisode image 02
-  - src: src/assets/images/illustration/archive/furisode/furisode_03.png
+  - src: asset:archive/camellia_motif_furisode_both
     label: "03"
     alt: Draft archive furisode image 03
 publishedAt: 2026-07-01
@@ -20,15 +20,15 @@ updatedAt: 2026-07-01
 formats:
   - JPG
   - PNG
+  - PSD
 variantCount: 3
 license: Draft license. Replace before publishing.
 credits: []
 actions:
   - type: download
-    label: JPG
-    href: src/assets/images/illustration/archive/furisode/furisode_01.jpg
-    format: JPG
-    primary: true
+    label: PSD
+    href: https://assets.telysta.com/telysta-images/archive/camellia_motif_furisode.psd
+    format: PSD
 ---
 
 以茶花为主题的少女振袖。

@@ -4,9 +4,9 @@ title: Draft Character Comprehend
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/comprehend.png
+image: asset:characters/comprehend
 gallery:
-  - src: src/assets/images/illustration/characters/comprehend.png
+  - src: asset:characters/comprehend
     label: "01"
     alt: Draft character comprehend image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/comprehend.png
+    href: asset:characters/comprehend
     format: PNG
     primary: true
 draft: true

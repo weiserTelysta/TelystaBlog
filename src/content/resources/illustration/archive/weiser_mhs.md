@@ -4,9 +4,9 @@ title: Weiser‘s setting from MHS
 summary: Weiser‘s setting from MHS
 type: illustration
 status: available
-image: src/assets/images/illustration/archive/weiser_mhs/weiser_mhs.png
+image: asset:Weiser/mhs_weiser_test
 gallery:
-  - src: src/assets/images/illustration/archive/weiser_mhs/weiser_mhs.png
+  - src: asset:Weiser/mhs_weiser_test
     label: "01"
     alt: Draft archive Weiser MHS image 01
 publishedAt: 2026-07-01
@@ -16,12 +16,7 @@ formats:
 variantCount: 1
 license: Draft license. Replace before publishing.
 credits: []
-actions:
-  - type: download
-    label: PNG
-    href: src/assets/images/illustration/archive/weiser_mhs/weiser_mhs.png
-    format: PNG
-    primary: true
+actions: []
 ---
 
 从米画师而来的初步设定。

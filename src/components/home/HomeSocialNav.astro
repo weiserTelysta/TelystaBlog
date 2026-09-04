@@ -1,0 +1,227 @@
+---
+import type { ImageMetadata } from 'astro';
+import type { HomeQrContactConfig, HomeSocialLinkConfig } from '../../config/pages/home';
+import SocialIcon from './SocialIcon.astro';
+
+type Props = {
+	links: HomeSocialLinkConfig[];
+	contacts: HomeQrContactConfig[];
+	revealOrder: number;
+};
+
+const { links, contacts, revealOrder } = Astro.props;
+const contactImageModules = import.meta.glob<{ default: ImageMetadata }>(
+	'../../assets/contact/*.{png,jpg,jpeg}',
+	{ eager: true },
+);
+const availableContacts = contacts.flatMap((contact) => {
+	const imageModule = Object.entries(contactImageModules).find(([path]) =>
+		path.endsWith(`/${contact.imageFileName}`),
+	)?.[1];
+
+	return imageModule ? [{ ...contact, image: imageModule.default }] : [];
+});
+const dialogId = 'home-contact-dialog';
+---
+
+<nav
+	class="home-social"
+	aria-label="社交平台与联系方式"
+	data-home-social
+	data-home-reveal
+	style={`--reveal-order: ${revealOrder}`}
+>
+	<ul>
+		{
+			links.map((link) => (
+				<li>
+					<a
+						href={link.href}
+						aria-label={link.label}
+						title={link.label}
+						target={link.external ? '_blank' : undefined}
+						rel={link.external ? 'me noreferrer' : undefined}
+					>
+						<SocialIcon name={link.icon} />
+						<span>{link.label}</span>
+					</a>
+				</li>
+			))
+		}
+		{
+			availableContacts.map((contact) => (
+				<li>
+					<a
+						href={contact.image.src}
+						aria-label={`通过${contact.label}联系`}
+						aria-controls={dialogId}
+						aria-haspopup="dialog"
+						title={contact.label}
+						data-home-contact-trigger={contact.id}
+					>
+						<SocialIcon name={contact.icon} />
+						<span>{contact.label}</span>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</nav>
+
+{
+	availableContacts.length > 0 && (
+		<dialog
+			id={dialogId}
+			class="home-contact-dialog"
+			aria-labelledby={`home-contact-${availableContacts[0].id}-title`}
+			data-scroll-native
+		>
+			<div class="home-contact-dialog__surface">
+				<form>
+					<button
+						class="home-contact-dialog__close"
+						type="button"
+						aria-label="关闭联系方式"
+						data-home-contact-close
+					>
+						<span aria-hidden="true">×</span>
+					</button>
+				</form>
+
+				{availableContacts.map((contact, index) => (
+					<section
+						class="home-contact-dialog__panel"
+						data-home-contact-panel={contact.id}
+						hidden={index !== 0}
+					>
+						<h2 id={`home-contact-${contact.id}-title`}>{contact.label}</h2>
+						<a
+							class="home-contact-dialog__qr-link"
+							href={contact.image.src}
+							target="_blank"
+							rel="noreferrer"
+							aria-label={`查看${contact.label}二维码原图`}
+						>
+							<img
+								src={contact.image.src}
+								width={contact.image.width}
+								height={contact.image.height}
+								alt={`Weiser 的${contact.label}联系二维码`}
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+					</section>
+				))}
+			</div>
+		</dialog>
+	)
+}
+
+<script>
+	const socialNav = document.querySelector<HTMLElement>('[data-home-social]');
+	const contactDialog = document.querySelector<HTMLDialogElement>('#home-contact-dialog');
+
+	if (socialNav && contactDialog && !socialNav.dataset.contactDialogReady) {
+		socialNav.dataset.contactDialogReady = 'true';
+		const contactTriggers = socialNav.querySelectorAll<HTMLElement>(
+			'[data-home-contact-trigger]',
+		);
+		const contactPanels = contactDialog.querySelectorAll<HTMLElement>(
+			'[data-home-contact-panel]',
+		);
+		const closeButton = contactDialog.querySelector<HTMLElement>('[data-home-contact-close]');
+		let activeTrigger: HTMLElement | null = null;
+		let closeTimer = 0;
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+		const finishClose = () => {
+			window.clearTimeout(closeTimer);
+			closeTimer = 0;
+			contactDialog.classList.remove('is-visible', 'is-closing');
+			if (contactDialog.open) contactDialog.close();
+		};
+
+		const requestClose = () => {
+			if (!contactDialog.open || contactDialog.classList.contains('is-closing')) return;
+			if (reducedMotion.matches) {
+				finishClose();
+				return;
+			}
+			contactDialog.classList.remove('is-visible');
+			contactDialog.classList.add('is-closing');
+			closeTimer = window.setTimeout(finishClose, 180);
+		};
+
+		contactTriggers.forEach((trigger) => {
+			trigger.addEventListener('click', (event) => {
+				if (
+					event instanceof MouseEvent &&
+					(event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+				) {
+					return;
+				}
+
+				if (typeof contactDialog.showModal !== 'function') {
+					return;
+				}
+
+				const contactId = trigger.dataset.homeContactTrigger;
+				const activePanel = Array.from(contactPanels).find(
+					(panel) => panel.dataset.homeContactPanel === contactId,
+				);
+
+				if (!contactId || !activePanel) {
+					return;
+				}
+
+				event.preventDefault();
+				activeTrigger = trigger;
+				contactPanels.forEach((panel) => {
+					panel.hidden = panel !== activePanel;
+				});
+				contactDialog.setAttribute('aria-labelledby', `home-contact-${contactId}-title`);
+				document.documentElement.classList.add('is-home-contact-dialog-open');
+				document.body.classList.add('is-home-contact-dialog-open');
+				contactDialog.showModal();
+				window.requestAnimationFrame(() => {
+					contactDialog.classList.add('is-visible');
+					closeButton?.focus();
+				});
+			});
+		});
+
+		closeButton?.addEventListener('click', requestClose);
+		contactDialog.addEventListener('cancel', (event) => {
+			event.preventDefault();
+			requestClose();
+		});
+
+		contactDialog.addEventListener('click', (event) => {
+			if (event.target !== contactDialog) {
+				return;
+			}
+
+			const bounds = contactDialog.getBoundingClientRect();
+			const clickedOutside =
+				event.clientX < bounds.left ||
+				event.clientX > bounds.right ||
+				event.clientY < bounds.top ||
+				event.clientY > bounds.bottom;
+
+			if (clickedOutside) {
+				requestClose();
+			}
+		});
+
+		contactDialog.addEventListener('close', () => {
+			window.clearTimeout(closeTimer);
+			closeTimer = 0;
+			contactDialog.classList.remove('is-visible', 'is-closing');
+			document.documentElement.classList.remove('is-home-contact-dialog-open');
+			document.body.classList.remove('is-home-contact-dialog-open');
+			activeTrigger?.focus({ preventScroll: true });
+			activeTrigger = null;
+		});
+	}
+</script>

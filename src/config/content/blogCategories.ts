@@ -9,6 +9,7 @@ export const BLOG_CATEGORY_IDS = [
 	'reading',
 	'life',
 	'portraits',
+	'notes',
 ] as const;
 
 export type BlogCategoryId = (typeof BLOG_CATEGORY_IDS)[number];
@@ -67,5 +68,12 @@ export const BLOG_CATEGORIES = [
 		subtitle: 'People & Character Studies',
 		description: '对人物、角色和创作者表达方式的观察。',
 		foil: 'embers',
+	},
+	{
+		id: 'notes',
+		title: 'Field Notes',
+		subtitle: 'Observation & Inquiry',
+		description: '在行走与考察中，记录场所、礼仪和社会生活。',
+		foil: 'starlight',
 	},
 ] as const satisfies readonly BlogCategory[];

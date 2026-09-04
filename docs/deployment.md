@@ -25,22 +25,17 @@ npm run check
 1. Astro 与 TypeScript 检查。
 2. Node 单元测试。
 3. 内容一致性检查。
-4. 资源图片准备。
-5. Astro 生产构建。
+4. Astro 生产构建。
 
 输出目录为 `dist/`，不得提交到 Git。
 
-## 图片缓存与产物
+## 图片与产物
 
-工作流在构建前恢复：
+插画资源、Character 和首页轮换头像不进入 `dist/`，而是从 Cloudflare R2 下载。favicon、字体、风琴页视觉和文章图片仍随静态网站发布，文章图片由 Astro 优化。
 
-- 资源 `.cover.webp`
-- 资源 `.preview.webp`
-- `.tmp/resource-images-manifest.json`
+CI 不保存 R2 密钥，不生成资源 WebP，也不会在部署时上传素材；R2 上传和 `src/generated/cdn-assets.json` 更新由作者在推送前完成。Astro Action 仍可复用 Astro 自身的构建缓存。
 
-脚本会重新核对清单、原图和目标文件哈希，未变化的图片不会重新压缩。Astro Action 还会缓存 `node_modules/.astro` 中的文章图片优化结果。
-
-公开资源原图继续进入 `dist/`，这是当前明确保留的下载能力，不是构建错误。
+完整流程见 [cdn-assets.md](cdn-assets.md)。
 
 ## 自定义域名
 

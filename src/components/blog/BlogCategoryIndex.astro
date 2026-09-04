@@ -7,10 +7,9 @@ import { BLOG_CATEGORY_VISUALS } from '../../config/visuals/categoryVisuals';
 type Props = {
 	selectedCategoryId?: BlogCategoryId;
 	postCounts: CategoryPostCount;
-	totalCount: number;
 };
 
-const { selectedCategoryId, postCounts, totalCount } = Astro.props;
+const { selectedCategoryId, postCounts } = Astro.props;
 const { categoryIndex } = BLOG_PAGE_CONFIG;
 ---
 
@@ -20,13 +19,13 @@ const { categoryIndex } = BLOG_PAGE_CONFIG;
 		visuals={BLOG_CATEGORY_VISUALS}
 		selectedCategoryId={selectedCategoryId}
 		postCounts={postCounts}
-		totalCount={totalCount}
 	/>
 </section>
 
 <style lang="scss">
 	.blog-category-index {
-		display: grid;
-		gap: 12px;
+		display: flex;
+		width: fit-content;
+		max-width: 100%;
 	}
 </style>

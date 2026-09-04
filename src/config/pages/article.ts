@@ -3,20 +3,20 @@ export const ARTICLE_PAGE_CONFIG = {
 		titleSeparator: ' - ',
 	},
 	header: {
-		backLabel: 'Blog',
 		coverAriaLabel: '文章主图',
 		metaAriaLabel: '文章信息',
-		seriesAriaPrefix: '查看',
-		seriesAriaSuffix: '系列',
-		publishedLabel: '发布',
-		updatedLabel: '更新',
+		publishedLabel: 'Published',
+		updatedLabel: 'Updated',
 	},
 	toc: {
 		minHeadingCount: 3,
 		minDepth: 2,
 		maxDepth: 4,
-		title: 'On This Page',
+		title: 'Contents',
 		ariaLabel: '文章目录',
+		drawer: {
+			compactMediaQuery: '(max-width: 1359px)',
+		},
 		behavior: {
 			readingLineOffset: 72,
 			bottomThreshold: 96,
@@ -36,11 +36,5 @@ export const ARTICLE_PAGE_CONFIG = {
 	},
 	series: {
 		pageLabel: 'Series',
-		sectionLabel: 'Series',
-		fullSeriesPrefix: '查看完整系列',
-		previousLabel: 'Previous',
-		nextLabel: 'Next',
-		emptyPrevious: '暂无更早的篇章',
-		emptyNext: '暂无后续篇章',
 	},
 } as const;

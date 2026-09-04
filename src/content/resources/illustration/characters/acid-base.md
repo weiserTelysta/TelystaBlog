@@ -4,9 +4,9 @@ title: Draft Character Acid Base
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/acid-base.png
+image: asset:characters/acid-base
 gallery:
-  - src: src/assets/images/illustration/characters/acid-base.png
+  - src: asset:characters/acid-base
     label: "01"
     alt: Draft character acid base image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/acid-base.png
+    href: asset:characters/acid-base
     format: PNG
     primary: true
 draft: true

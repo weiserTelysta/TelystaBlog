@@ -111,8 +111,8 @@ const DOWNLOAD_MENU_EASE = [0.2, 0.78, 0.28, 1] as const;
 
 function getPrimaryDownload(files: ResourceDownloadFile[], activeIndex: number) {
 	return (
-		files.find((file) => file.kind === 'file' && file.sourceIndex === activeIndex) ??
-		files.find((file) => file.kind === 'file') ??
+		files.find((file) => file.kind !== 'external' && file.sourceIndex === activeIndex) ??
+		files.find((file) => file.kind !== 'external') ??
 		files[0]
 	);
 }
@@ -120,6 +120,14 @@ function getPrimaryDownload(files: ResourceDownloadFile[], activeIndex: number) 
 function getDownloadLinkProps(file: ResourceDownloadFile) {
 	if (file.kind === 'external') {
 		return {
+			target: '_blank',
+			rel: 'noreferrer',
+		};
+	}
+
+	if (file.kind === 'remote-file') {
+		return {
+			download: true,
 			target: '_blank',
 			rel: 'noreferrer',
 		};

@@ -4,9 +4,9 @@ title: Draft Character Gas
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/gas.png
+image: asset:characters/gas
 gallery:
-  - src: src/assets/images/illustration/characters/gas.png
+  - src: asset:characters/gas
     label: "01"
     alt: Draft character gas image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/gas.png
+    href: asset:characters/gas
     format: PNG
     primary: true
 draft: true

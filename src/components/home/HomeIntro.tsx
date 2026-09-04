@@ -192,6 +192,10 @@ export default function HomeIntro() {
 						height="128"
 						loading="eager"
 						decoding="async"
+						onError={(event) => {
+							event.currentTarget.onerror = null;
+							event.currentTarget.src = '/favicon-192x192.png';
+						}}
 					/>
 				</span>
 				<h1 className="home-identity__name" id="hero-title" aria-live="polite">

@@ -4,9 +4,9 @@ title: Draft Character Order
 summary: Draft character symbol illustration resource. Replace before publishing.
 type: illustration
 status: draft
-image: src/assets/images/illustration/characters/order.png
+image: asset:characters/order
 gallery:
-  - src: src/assets/images/illustration/characters/order.png
+  - src: asset:characters/order
     label: "01"
     alt: Draft character order image 01
 publishedAt: 2026-07-01
@@ -19,7 +19,7 @@ credits: []
 actions:
   - type: download
     label: PNG
-    href: src/assets/images/illustration/characters/order.png
+    href: asset:characters/order
     format: PNG
     primary: true
 draft: true
