@@ -38,7 +38,7 @@ function scoreFigure(id, bundle) {
 		<h3 class="music-score__sr-title" id="${titleId}">${escapeHtml(parsed.title)}</h3>
 		<p class="music-score__hint"><span aria-hidden="true">↔</span> 横向拖动查看</p>
 	</div>
-	<div class="music-score__viewport" data-lenis-prevent data-scroll-native tabindex="0" aria-label="${escapeHtml(`${parsed.title}简谱，可横向滚动查看`)}">
+	<div class="music-score__viewport" data-lenis-prevent data-scroll-native tabindex="0" aria-label="${escapeHtml(`${parsed.title}数字简谱；窄屏时可横向滚动查看`)}">
 		${decorateSvg(svg)}
 	</div>
 	<details class="music-score__text">

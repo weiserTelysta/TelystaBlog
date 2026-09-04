@@ -227,14 +227,12 @@
 
 .prose .music-score {
 	margin: 2.2em 0;
-	width: min(1180px, calc(100vw - 48px));
-	max-width: none;
-	margin-left: 50%;
+	width: 100%;
+	max-width: 760px;
 	overflow: hidden;
 	border: 1px solid rgba(156, 199, 232, 0.14);
 	border-radius: 10px;
 	background: rgba(8, 12, 19, 0.54);
-	transform: translateX(-50%);
 }
 
 .prose .music-score__header {
@@ -262,6 +260,7 @@
 }
 
 .prose .music-score__header .music-score__hint {
+	display: none;
 	color: rgba(190, 199, 214, 0.48);
 	font-size: 0.68rem;
 	letter-spacing: 0.025em;
@@ -279,9 +278,9 @@
 }
 
 .prose .music-score__viewport {
-	overflow-x: auto;
+	overflow-x: hidden;
 	overflow-y: hidden;
-	padding: 24px 20px 20px;
+	padding: 20px 18px 18px;
 	color: rgba(226, 233, 244, 0.88);
 	scrollbar-width: none;
 	-ms-overflow-style: none;
@@ -300,8 +299,8 @@
 
 .prose .music-score__svg {
 	display: block;
-	width: max(100%, 1080px);
-	min-width: 1080px;
+	width: 100%;
+	min-width: 0;
 	height: auto;
 	margin: 0;
 }
@@ -358,20 +357,25 @@
 	}
 
 	.prose .music-score {
-		width: calc(100vw - 24px);
+		width: 100%;
 	}
 
 	.prose .music-score__header {
 		padding-inline: 14px;
 	}
 
+	.prose .music-score__header .music-score__hint {
+		display: block;
+	}
+
 	.prose .music-score__viewport {
+		overflow-x: auto;
 		padding: 18px 14px 16px;
 	}
 
 	.prose .music-score__svg {
-		width: 960px;
-		min-width: 960px;
+		width: 620px;
+		min-width: 620px;
 	}
 }
 

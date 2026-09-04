@@ -334,7 +334,21 @@ const initTocList = (tocList: HTMLElement) => {
 	const disclosure = tocList.closest<HTMLDetailsElement>('details');
 	const handleDisclosureToggle = () => {
 		if (disclosure?.open) {
-			requestUpdate();
+			state.isInspectingToc = false;
+			state.userIntentUntil = 0;
+			state.inspectionUntil = 0;
+			window.clearTimeout(state.scrollSettleTimer);
+			window.clearTimeout(state.revealRetryTimer);
+
+			if (state.frame) {
+				window.cancelAnimationFrame(state.frame);
+				state.frame = 0;
+			}
+
+			state.frame = window.requestAnimationFrame(() => {
+				syncTocScrollState(tocList);
+				updateActiveLink(state, true);
+			});
 		}
 	};
 	const handleMouseEnter = () => {
