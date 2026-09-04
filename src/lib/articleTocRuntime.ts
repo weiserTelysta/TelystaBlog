@@ -168,7 +168,7 @@ const revealLinkIfNeeded = (state: TocState, link: HTMLAnchorElement, force = fa
 
 const setActiveLink = (state: TocState, nextLink: HTMLAnchorElement) => {
 	if (state.activeLink === nextLink) {
-		return;
+		return false;
 	}
 
 	state.activeLink?.classList.remove('is-active');
@@ -176,6 +176,8 @@ const setActiveLink = (state: TocState, nextLink: HTMLAnchorElement) => {
 	nextLink.classList.add('is-active');
 	nextLink.setAttribute('aria-current', 'location');
 	state.activeLink = nextLink;
+
+	return true;
 };
 
 const findCurrentItem = (state: TocState) => {
@@ -220,8 +222,8 @@ const updateActiveLink = (state: TocState, forceReveal = false) => {
 		const manualItem = state.items.find((item) => item.link.dataset.tocLink === state.manualTargetSlug);
 
 		if (manualItem) {
-			setActiveLink(state, manualItem.link);
-			revealLinkIfNeeded(state, manualItem.link, forceReveal);
+			const activeLinkChanged = setActiveLink(state, manualItem.link);
+			revealLinkIfNeeded(state, manualItem.link, forceReveal || activeLinkChanged);
 		}
 
 		return;
@@ -229,8 +231,8 @@ const updateActiveLink = (state: TocState, forceReveal = false) => {
 
 	state.manualTargetSlug = null;
 	const currentItem = findCurrentItem(state);
-	setActiveLink(state, currentItem.link);
-	revealLinkIfNeeded(state, currentItem.link, forceReveal);
+	const activeLinkChanged = setActiveLink(state, currentItem.link);
+	revealLinkIfNeeded(state, currentItem.link, forceReveal || activeLinkChanged);
 };
 
 const requestActiveLinkUpdate = (state: TocState) => {

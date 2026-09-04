@@ -66,6 +66,8 @@ npm run check
 
 上传脚本使用 `rclone copy`，不会删除 R2 上已有对象，并排除 PowerShell、BAT、CMD 和常见系统文件。需要删除远端对象时，应先用 `rclone lsf` 核对精确路径，再单独执行删除，不要把日常上传改成 `rclone sync`。
 
+重新生成同名 WebP 后不需要先手工删除远端文件：`rclone copy` 会上传发生变化的文件并覆盖同名对象。只有资源改名或正式下线后留下的远端孤儿对象才需要清理；删除前必须确认 `src/generated/cdn-assets.json`、文章和页面配置均已不再引用该对象。
+
 ## WebP 质量与增量规则
 
 CDN 展示图参数为：
