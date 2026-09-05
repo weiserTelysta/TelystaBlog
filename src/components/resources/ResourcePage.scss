@@ -7,7 +7,7 @@
 	--resource-blue: rgba(126, 171, 201, 0.82);
 	--resource-sticky-offset: var(--site-header-block-size);
 	position: relative;
-	width: min(1360px, calc(100% - 72px));
+	width: min(1120px, calc(100% - 48px));
 	min-height: calc(100vh - var(--resource-sticky-offset));
 	margin: 0 auto;
 	padding: var(--site-page-top-spacing) 0 clamp(96px, 14vh, 160px);

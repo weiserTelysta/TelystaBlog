@@ -1,5 +1,16 @@
 # Stage Log
 
+## 2026-09-05：资源画廊与系列整理
+
+- 资源页以插画为主，按后续明确要求另收录两款 Minecraft 皮肤；Character、头像、茶花文章配图和草稿不进入画廊。
+- 旧的固定多列、横图跨格和客户端测量隐藏方案，改为原比例等高行式画廊。旧“图片与详情分栏”结构由单一全屏看图器替代。
+- 仅保留图片、标题、切换、关闭和下载入口；不展示 PSD 下载或作者跳转。标题根据输入方式适时淡出，下载框完整列出同组图片。
+- Blog 中 Category / Series 左右分布；系列总索引按 category 分组，过滤空系列，移除历史空配置。
+- 本节为当前实现；下文 7 月的等待测量、Motion 布局和旧详情层记录仅供历史回溯，不作为当前规范。
+- 详细计划、研究参考和测试范围见 [资源画廊重构记录](resource-gallery-2026-09-05.md)。
+- 最新修正：Category / Series 共用对齐样式；图片内集中操作、真实键盘与开场输入队列、阴影/文字显隐、星空暂停；补齐波斯少女、摩尼教、花毛茛与 Minecraft。
+- 文档新增统一索引和架构说明，四份旧规划移入 `docs/archive`；旧详情组件及多余浏览器数据字段移除。临时目录删除/归档遇到策略与 OneDrive 权限限制，未完成磁盘清理。
+
 ## 2026-07-02
 
 This stage focused on making the resource page feel like a quiet visual index while keeping source assets and downloads maintainable.
@@ -10,7 +21,7 @@ This stage focused on making the resource page feel like a quiet visual index wh
 - Resource display images can now be generated as `.cover.webp` and `.preview.webp` while original images remain available for download.
 - Resource cards gained Motion-powered enter, exit, and layout transitions.
 - The detail overlay gained multi-image navigation, wheel-based switching, image preloading, pending states, and compact download selection.
-- Download files now merge gallery originals with local and external download actions, so PSD and netdisk files can live in the same download model without becoming resource categories.
+- Download files merge gallery originals with local and external actions without turning file formats into resource categories. PSD source files are now filtered from the public download model.
 - Back-to-top behavior was adjusted to avoid fighting the resource page's wider visual surface.
 
 ### Principles Learned

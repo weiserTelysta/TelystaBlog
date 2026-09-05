@@ -1,0 +1,214 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { BLOG_CATEGORIES } from '../../config/content/blogCategories';
+import { BLOG_SERIES } from '../../config/content/blogSeries';
+import { SITE_CONFIG } from '../../config/site';
+import { getPostsBySeries, getPublishedPosts } from '../../lib/blogPosts';
+import { buildSeriesHref } from '../../lib/blogSeriesUtils';
+
+const allPosts = await getPublishedPosts();
+const seriesEntries = BLOG_SERIES.map((series) => {
+	const posts = getPostsBySeries(allPosts, series.id);
+	return {
+		...series,
+		postCount: posts.length,
+	};
+}).filter((series) => series.postCount > 0);
+const seriesGroups = BLOG_CATEGORIES.map((category) => ({
+	category,
+	series: seriesEntries.filter((series) => series.category === category.id),
+})).filter((group) => group.series.length > 0);
+---
+
+<Layout
+	title={`Series Archive - ${SITE_CONFIG.name}`}
+	description={`${SITE_CONFIG.name} 的全部文章系列。`}
+	starfieldVariant="subtle"
+>
+	<main class="series-index">
+		<section class="series-index__inner" aria-labelledby="series-index-title">
+			<header class="series-index__header">
+				<p>All Records</p>
+				<h1 id="series-index-title">Series Archive</h1>
+			</header>
+
+			<div class="series-index__groups">
+				{seriesGroups.map(({ category, series }) => (
+					<section class="series-index__group" aria-labelledby={`series-category-${category.id}`}>
+						<header class="series-index__group-header">
+							<p>{category.subtitle}</p>
+							<h2 id={`series-category-${category.id}`}>{category.title}</h2>
+						</header>
+
+						<ol class="series-index__list">
+							{series.map((item) => (
+								<li>
+									<a href={buildSeriesHref(item.id)}>
+										<strong>{item.title}</strong>
+										<span aria-label={`共 ${item.postCount} 篇`}>
+											{String(item.postCount).padStart(2, '0')}
+										</span>
+									</a>
+								</li>
+							))}
+						</ol>
+					</section>
+				))}
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style lang="scss">
+	.series-index {
+		position: relative;
+		z-index: 1;
+		min-height: 100vh;
+	}
+
+	.series-index__inner {
+		display: grid;
+		gap: clamp(34px, 4.5vw, 46px);
+		width: min(760px, calc(100% - 48px));
+		margin: 0 auto;
+		padding: clamp(58px, 7vw, 84px) 0 clamp(92px, 13vw, 150px);
+	}
+
+	.series-index__header {
+		display: grid;
+		gap: 8px;
+	}
+
+	.series-index__header p,
+	.series-index__header h1 {
+		margin: 0;
+	}
+
+	.series-index__groups {
+		display: grid;
+		gap: clamp(34px, 5vw, 52px);
+	}
+
+	.series-index__group {
+		display: grid;
+		gap: 10px;
+	}
+
+	.series-index__group-header {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 16px;
+		padding-inline: 2px;
+	}
+
+	.series-index__group-header p,
+	.series-index__group-header h2 {
+		margin: 0;
+	}
+
+	.series-index__group-header p {
+		order: 2;
+		color: rgba(139, 149, 167, 0.46);
+		font-family: var(--type-meta-font);
+		font-size: 0.7rem;
+		letter-spacing: 0.05em;
+	}
+
+	.series-index__group-header h2 {
+		color: rgba(156, 199, 232, 0.63);
+		font-family: var(--type-display-label-font);
+		font-size: 0.76rem;
+		font-weight: var(--type-display-label-weight);
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.series-index__header p {
+		color: rgba(156, 199, 232, 0.6);
+		font-family: var(--type-display-label-font);
+		font-size: var(--type-display-label-size);
+		letter-spacing: var(--type-display-label-tracking);
+		text-transform: uppercase;
+	}
+
+	.series-index__header h1 {
+		color: rgba(237, 243, 251, 0.9);
+		font-family: var(--type-index-title-font);
+		font-size: clamp(1.9rem, 4vw, 2.5rem);
+		font-weight: var(--type-index-title-weight);
+		line-height: 1.16;
+	}
+
+	.series-index__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.series-index__list li {
+		border-top: 1px solid rgba(255, 255, 255, 0.055);
+	}
+
+	.series-index__list li:last-child {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+	}
+
+	.series-index__list a {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		gap: 18px;
+		align-items: baseline;
+		padding: clamp(18px, 3vw, 24px) 2px;
+		text-decoration: none;
+	}
+
+	.series-index__list strong {
+		color: rgba(216, 222, 233, 0.84);
+		font-size: clamp(1.02rem, 2vw, 1.2rem);
+		font-weight: 610;
+		line-height: 1.45;
+		overflow-wrap: anywhere;
+		transition: color var(--motion-fast) ease;
+	}
+
+	.series-index__list span {
+		color: rgba(156, 199, 232, 0.54);
+		font-family: var(--type-display-label-font);
+		font-size: var(--type-meta-size);
+		letter-spacing: 0.08em;
+	}
+
+	.series-index__list a:hover strong,
+	.series-index__list a:focus-visible strong {
+		color: rgba(245, 249, 253, 0.96);
+	}
+
+	.series-index__list a:focus-visible {
+		border-radius: 2px;
+		outline: 1px solid rgba(156, 199, 232, 0.68);
+		outline-offset: 3px;
+	}
+
+	@media (max-width: 640px) {
+		.series-index__inner {
+			width: min(100% - 32px, 760px);
+			padding-top: 48px;
+		}
+
+		.series-index__group-header {
+			display: grid;
+			gap: 3px;
+		}
+
+		.series-index__group-header p {
+			order: initial;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.series-index__list strong {
+			transition: none;
+		}
+	}
+</style>

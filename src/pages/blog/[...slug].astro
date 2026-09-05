@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import ArticleAside from '../../components/article/ArticleAside.astro';
+import ArticleComments from '../../components/article/ArticleComments.astro';
 import ArticleHeader from '../../components/article/ArticleHeader.astro';
 import ArticleSeriesNav from '../../components/article/ArticleSeriesNav.astro';
 import Layout from '../../layouts/Layout.astro';
@@ -15,20 +16,25 @@ import 'katex/dist/katex.min.css';
 
 export async function getStaticPaths() {
 	const entries = (await getCollection('posts')) as PostEntry[];
+	const publishedEntries = entries.filter((entry) => !entry.data.draft);
 
-	return entries
-		.filter((entry) => !entry.data.draft)
-		.map((entry) => ({
+	return publishedEntries.map((entry) => ({
 			params: { slug: entry.id },
-			props: { entry },
+			props: {
+				entry,
+				seriesPostCount: entry.data.series
+					? publishedEntries.filter((candidate) => candidate.data.series === entry.data.series).length
+					: undefined,
+			},
 		}));
 }
 
 type Props = {
 	entry: PostEntry;
+	seriesPostCount?: number;
 };
 
-const { entry } = Astro.props;
+const { entry, seriesPostCount } = Astro.props;
 const post = toPostListItem(entry);
 const series = getBlogSeriesById(post.series);
 const { Content, headings } = await render(entry);
@@ -53,11 +59,13 @@ const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 				<div class="article-page__content prose" data-article-content>
 					<Content />
 				</div>
+
+				<ArticleSeriesNav series={series} postCount={seriesPostCount} />
+
+				<ArticleComments />
 			</div>
 
 			{hasToc && <ArticleAside headings={tocHeadings} />}
-
-			<ArticleSeriesNav series={series} />
 		</article>
 	</main>
 </Layout>

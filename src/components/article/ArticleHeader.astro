@@ -44,7 +44,7 @@ const { header } = ARTICLE_PAGE_CONFIG;
 <style lang="scss">
 	.article-header {
 		display: grid;
-		gap: clamp(14px, 2vw, 18px);
+		gap: clamp(12px, 1.6vw, 16px);
 		width: min(var(--article-reading-width), 100%);
 		margin-inline: auto;
 		padding: clamp(46px, 5vw, 72px) 0 clamp(36px, 5vw, 52px);
@@ -81,8 +81,8 @@ const { header } = ARTICLE_PAGE_CONFIG;
 		margin: 0;
 		color: rgba(216, 222, 233, 0.9);
 		font-family: var(--type-article-title-font);
-		font-size: clamp(2rem, 3vw, 2.75rem);
-		font-weight: 600;
+		font-size: clamp(1.9rem, 3vw, 2.5rem);
+		font-weight: var(--type-article-title-weight);
 		line-height: 1.2;
 		letter-spacing: 0;
 		overflow-wrap: anywhere;

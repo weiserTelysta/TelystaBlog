@@ -12,45 +12,12 @@ body.is-category-accordion-open {
 	overflow: hidden;
 }
 
-.category-accordion__entry {
-	display: inline-flex;
-	flex-wrap: wrap;
-	align-items: baseline;
-	gap: 12px;
-	width: fit-content;
-	padding: 0;
-	border: 0;
-	background: transparent;
-	cursor: pointer;
-	font: inherit;
-	text-align: left;
-}
-
 .category-accordion__entry:focus-visible,
 .category-accordion__all-link:focus-visible,
 .category-accordion__close:focus-visible,
 .category-accordion__card:focus-visible {
 	outline: 1px solid rgba(156, 199, 232, 0.58);
 	outline-offset: 4px;
-}
-
-.category-accordion__entry-label {
-	color: rgba(156, 199, 232, 0.72);
-	font-family: var(--font-display);
-	font-size: 0.74rem;
-	font-weight: 540;
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
-	transition: color 0.2s ease;
-}
-
-.category-accordion__entry-title {
-	min-width: 0;
-	color: var(--color-text-muted);
-	font-size: 0.78rem;
-	line-height: 1.5;
-	overflow-wrap: anywhere;
-	transition: color 0.2s ease;
 }
 
 .category-accordion__all-link {
@@ -66,11 +33,6 @@ body.is-category-accordion-open {
 	transition: color 0.2s ease;
 }
 
-.category-accordion__entry:hover .category-accordion__entry-label {
-	color: var(--color-accent);
-}
-
-.category-accordion__entry:hover .category-accordion__entry-title,
 .category-accordion__all-link:hover {
 	color: var(--color-text);
 }

@@ -1,5 +1,7 @@
 # Telysta Blog Project Vision
 
+> 历史规划，部分设想已调整。当前入口见 [文档索引](../README.md)。
+
 ## Project Goal
 
 Telysta Blog is a personal blog built with Astro and deployed through GitHub. The goal is not to copy an existing theme, but to create a long-term personal writing space with a calm, dark, layered, and readable atmosphere.

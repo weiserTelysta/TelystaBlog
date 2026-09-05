@@ -1,0 +1,54 @@
+/* Category (button) and Series (link) share one baseline and hit-area recipe. */
+.blog-index-control {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 12px;
+	min-width: 0;
+	min-height: 32px;
+	padding: 4px 0;
+	border: 0;
+	background: transparent;
+	color: var(--color-text-muted);
+	font: inherit;
+	line-height: 1.5;
+	text-align: left;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.blog-index-control__label {
+	color: rgba(156, 199, 232, 0.72);
+	font-family: var(--type-display-label-font);
+	font-size: 0.74rem;
+	font-weight: 540;
+	line-height: 1.5;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.blog-index-control__title {
+	min-width: 0;
+	font-size: 0.78rem;
+	font-weight: 400;
+	line-height: 1.5;
+	overflow-wrap: anywhere;
+}
+
+.blog-index-control__label,
+.blog-index-control__title { transition: color var(--motion-fast) ease; }
+.blog-index-control:hover .blog-index-control__label { color: var(--color-accent); }
+.blog-index-control:hover .blog-index-control__title { color: var(--color-text); }
+.blog-index-control:focus-visible {
+	outline: 1px solid rgba(156, 199, 232, 0.68);
+	outline-offset: 4px;
+	border-radius: 2px;
+}
+
+@media (max-width: 480px) {
+	.blog-index-control { display: grid; gap: 2px; align-content: start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.blog-index-control__label,
+	.blog-index-control__title { transition: none; }
+}

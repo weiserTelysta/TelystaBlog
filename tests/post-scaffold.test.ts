@@ -40,7 +40,7 @@ test('解析命令行参数和去重标签', () => {
 		'--tags',
 		'Astro, Blog,Astro',
 		'--series',
-		'telysta-blog-build',
+		'weiser-blog-construction-records',
 		'--series-order',
 		'2',
 		'--with-assets',
@@ -54,7 +54,7 @@ test('解析命令行参数和去重标签', () => {
 test('拒绝 Windows 保留名称和不完整系列字段', () => {
 	const reserved = createOptions({ slug: 'con' });
 	const incompleteSeries = createOptions({
-		series: 'telysta-blog-build',
+		series: 'weiser-blog-construction-records',
 		seriesOrder: undefined,
 	});
 
@@ -72,7 +72,7 @@ test('模板生成有效 frontmatter 且不重复文章 H1', () => {
 		createOptions({
 			title: '含有: 冒号的标题',
 			tags: ['Astro', '中文'],
-			series: 'telysta-blog-build',
+			series: 'weiser-blog-construction-records',
 			seriesOrder: 1,
 		}),
 	);

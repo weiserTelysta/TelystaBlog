@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import type { ResourceActionType, ResourceStatus, ResourceTypeId } from '../../config/content/resourceTypes';
+import type { ResourceTypeId } from '../../config/content/resourceTypes';
 import {
 	buildCdnAssetUrl,
 	getCdnAsset,
@@ -9,6 +9,10 @@ import {
 	type CdnAssetFile,
 	type CdnDisplayAssetFile,
 } from '../cdnAssets';
+import {
+	isPublicResourceDownload,
+} from './resourceDownloadPolicy';
+import { isPublicIllustration } from './resourceDisplayPolicy';
 
 type ResourceImageAsset = {
 	src: string;
@@ -17,32 +21,12 @@ type ResourceImageAsset = {
 	aspectRatio: number;
 };
 
-export type ResourceAction = {
-	type: ResourceActionType;
-	label: string;
-	href?: string;
-	format?: string;
-	provider?: string;
-	code?: string;
-	primary: boolean;
-	disabled: boolean;
-	note?: string;
-};
-
 export type ResourceGalleryImage = {
 	src: string;
 	width?: number;
 	height?: number;
 	aspectRatio: number;
-	downloadHref: string;
-	label?: string;
 	alt?: string;
-};
-
-export type ResourceCredit = {
-	label: string;
-	name: string;
-	href?: string;
 };
 
 export type ResourceDownloadFile = {
@@ -56,29 +40,17 @@ export type ResourceDownloadFile = {
 	sourceIndex?: number;
 };
 
-export type ResourceRelatedAction = ResourceAction;
-
+// Only send the gallery's display data to the React island. Authored metadata stays in Markdown.
 export type ResourceListItem = {
 	id: string;
-	slug: string;
 	title: string;
-	summary: string;
 	type: ResourceTypeId;
-	status: ResourceStatus;
 	cover: string;
 	coverAspectRatio: number;
+	pixelArt: boolean;
 	preview: string;
 	gallery: ResourceGalleryImage[];
-	credits: ResourceCredit[];
-	publishedAt: string;
-	updatedAt: string;
-	formats: string[];
-	variantCount?: number;
-	license?: string;
-	actions: ResourceAction[];
 	downloadFiles: ResourceDownloadFile[];
-	relatedActions: ResourceRelatedAction[];
-	details: string[];
 };
 
 type ResourceEntry = CollectionEntry<'resources'>;
@@ -87,13 +59,13 @@ const DEFAULT_RESOURCE_ASPECT_RATIO = 0.78;
 
 export async function getResourceItems(): Promise<ResourceListItem[]> {
 	const resources = await getCollection('resources');
-	const visibleResources = resources.filter((resource) => !isDraftResource(resource));
+	const visibleResources = resources.filter((resource) => isPublicIllustration(resource.data));
 
 	assertUniqueResourceIds(visibleResources);
 
 	return visibleResources
-		.map(toResourceListItem)
-		.sort((left, right) => right.updatedAt.localeCompare(left.updatedAt));
+		.sort((left, right) => right.data.updatedAt.getTime() - left.data.updatedAt.getTime())
+		.map(toResourceListItem);
 }
 
 function toResourceListItem(resource: ResourceEntry): ResourceListItem {
@@ -106,53 +78,29 @@ function toResourceListItem(resource: ResourceEntry): ResourceListItem {
 		: resolveDisplayResourceImageAsset(resource.data.image, resource.data.id, 'preview', 'preview');
 	const gallery = resolveResourceGallery(resource, preview);
 	const downloadFiles = resolveResourceDownloadFiles(resource);
-	const actions = resource.data.actions.map((action) => ({
-		...action,
-		href: action.href && !action.disabled
-			? resolveResourceActionHref(action.href, resource.data.id, action.label)
-			: undefined,
-	}));
 
 	return {
 		id: resource.data.id,
-		slug: resource.id,
 		title: resource.data.title,
-		summary: resource.data.summary,
 		type: resource.data.type,
-		status: resource.data.status,
 		cover: cover.src,
 		coverAspectRatio: cover.aspectRatio,
+		pixelArt: Boolean(cover.width && cover.height && cover.width <= 128 && cover.height <= 128),
 		preview: preview.src,
 		gallery,
-		credits: resource.data.credits,
-		publishedAt: toDateText(resource.data.publishedAt),
-		updatedAt: toDateText(resource.data.updatedAt),
-		formats: resource.data.formats,
-		variantCount: resource.data.variantCount,
-		license: resource.data.license,
-		actions,
 		downloadFiles,
-		relatedActions: actions.filter((action) => action.type !== 'download'),
-		details: getResourceDetails(resource),
 	};
 }
 
 function resolveResourceGallery(resource: ResourceEntry, fallbackImage: ResourceImageAsset): ResourceGalleryImage[] {
 	const gallery = resource.data.gallery.map((image, index) => {
 		const displayImage = resolveDisplayResourceImageAsset(image.src, resource.data.id, `gallery[${index}]`, 'preview');
-		const downloadTarget = resolveResourceDownloadTarget(
-			image.src,
-			resource.data.id,
-			`gallery[${index}] download`,
-		);
 
 		return {
 			src: displayImage.src,
 			width: displayImage.width,
 			height: displayImage.height,
 			aspectRatio: displayImage.aspectRatio,
-			downloadHref: downloadTarget.href,
-			label: image.label,
 			alt: image.alt,
 		};
 	});
@@ -167,8 +115,6 @@ function resolveResourceGallery(resource: ResourceEntry, fallbackImage: Resource
 			width: fallbackImage.width,
 			height: fallbackImage.height,
 			aspectRatio: fallbackImage.aspectRatio,
-			downloadHref: resolveResourceDownloadTarget(resource.data.image, resource.data.id, 'image download').href,
-			label: 'Main',
 			alt: resource.data.title,
 		},
 	];
@@ -197,7 +143,7 @@ function resolveResourceDownloadFiles(resource: ResourceEntry): ResourceDownload
 		.filter((action) => action.type === 'download' && !action.disabled && action.href)
 		.map((action) => resolveResourceDownloadAction(resource, action));
 
-	return dedupeDownloadFiles([...files, ...actionFiles]);
+	return dedupeDownloadFiles([...files, ...actionFiles]).filter(isPublicResourceDownload);
 }
 
 function assertUniqueResourceIds(resources: ResourceEntry[]) {
@@ -211,14 +157,6 @@ function assertUniqueResourceIds(resources: ResourceEntry[]) {
 
 		usedIds.add(id);
 	}
-}
-
-function isDraftResource(resource: ResourceEntry): boolean {
-	return resource.data.draft || resource.data.status === 'draft';
-}
-
-function resolveRequiredResourceImage(path: string, resourceId: string, field: string): string {
-	return resolveRequiredResourceImageAsset(path, resourceId, field).src;
 }
 
 function resolveRequiredResourceImageAsset(path: string, resourceId: string, field: string): ResourceImageAsset {
@@ -280,18 +218,6 @@ function toResourceImageAsset(image: CdnDisplayAssetFile): ResourceImageAsset {
 	};
 }
 
-function resolveResourceActionHref(href: string, resourceId: string, label: string): string {
-	if (isCdnAssetReference(href)) {
-		return resolveResourceDownloadTarget(href, resourceId, `action "${label}" href`).href;
-	}
-
-	if (/^(https?:|mailto:)/.test(href)) {
-		return href;
-	}
-
-	return resolveRequiredResourceImage(href, resourceId, `action "${label}" href`);
-}
-
 function getPathFormat(path: string): string {
 	const extension = path.split(/[?#]/)[0]?.split('.').pop()?.toUpperCase();
 
@@ -302,7 +228,7 @@ function getPathFormat(path: string): string {
 	return extension || 'FILE';
 }
 
-function resolveResourceDownloadAction(resource: ResourceEntry, action: ResourceAction): ResourceDownloadFile {
+function resolveResourceDownloadAction(resource: ResourceEntry, action: ResourceEntry['data']['actions'][number]): ResourceDownloadFile {
 	const href = action.href ?? '';
 	if (isCdnAssetReference(href)) {
 		const target = resolveResourceDownloadTarget(
@@ -437,16 +363,4 @@ function getImageAspectRatio(width?: number, height?: number): number {
 
 function isExternalHref(href: string): boolean {
 	return /^(https?:|mailto:)/.test(href);
-}
-
-function getResourceDetails(resource: ResourceEntry): string[] {
-	return (resource.body ?? '')
-		.trim()
-		.split(/\n\s*\n/)
-		.map((paragraph) => paragraph.replace(/\s+/g, ' ').trim())
-		.filter(Boolean);
-}
-
-function toDateText(date: Date): string {
-	return date.toISOString().slice(0, 10);
 }

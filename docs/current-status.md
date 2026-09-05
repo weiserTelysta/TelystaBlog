@@ -6,14 +6,16 @@
 
 - Astro 文章和资源 Content Collections。
 - 首页、博客导航、栏目页、文章页与资源页。
-- 文章标签、系列导航、年月时间线，以及默认关闭、无边框、由正文右下缘低对比箭头触发的 H2–H4 文章目录。
-- 资源图库、原图下载、相关动作和状态筛选。
+- 文章标签、年月时间线，以及默认关闭、无边框、由正文右下缘低对比刻度触发的 H2–H4 文章目录。
+- Category / Series 共享对齐入口；系列总索引按 category 分组，自动排除空系列。
+- 文章底部“正文与附件 → 系列 → Giscus 评论”，其他页面不加载 Giscus。
+- 原比例等高行式画廊、按需全屏看图、图片内聚操作与原图选择下载，不展示 PSD 或作者跳转。
 - Cloudflare R2/CDN 资源清单，以及原图、Character 和首页头像分发。
 - 基于原图哈希、目标哈希和参数的 CDN 图片增量跳过。
 - GitHub Actions 中的 Astro 构建缓存。
 - `npm run post:new` 中文文章创建命令。
 - `npm run content:check` 跨内容检查。
-- Node 单元测试和 `astro check`。
+- Node 单元测试、`astro check` 和独立 Edge / Chromium 浏览器回归测试。
 - Astro 7 与 unified Markdown 处理器配置。
 - GitHub Pages 在完整检查通过后部署。
 - 项目内 `$telysta-design-guardian` 风格 Skill。
@@ -32,6 +34,7 @@
 
 显示版本参数：
 
+- 普通 display：最长边 3200，质量 95。
 - cover：最大 1200×1600，质量 94。
 - preview：最大 3200×3200，质量 96。
 - avatar：384×384，质量 95。
@@ -54,6 +57,9 @@
 - 运行 `assets:prepare` 时仍需读取原图和目标图计算哈希。
 - 复杂交互主要集中在分类手风琴、资源详情层和星空背景，后续修改需要单独验证键盘、滚动和 reduced-motion。
 - 资源许可证内容需要作者人工确认，自动检查不替代授权判断。
+- 移出看图图片或闲置约 2.2 秒后隐藏文字与操作阴影；键盘/触控保留可发现性，键盘支持左右和 Escape。看图期间暂停背后星空绘制，关闭后恢复。
+- 资源原图尚无强制下载响应头，目前在新标签打开后保存；隐藏 PSD 链接不等于将 R2 对象设为私有。
+- 临时目录清理受到环境策略与 OneDrive 权限限制，未完成删除；具体保留规则见 [架构说明](architecture.md)。
 
 ## 日常验证
 
@@ -63,6 +69,7 @@ npm run content:check
 npm test
 npm run typecheck
 npm run check
+npm run test:browser
 ```
 
 主要文档：

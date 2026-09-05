@@ -55,11 +55,11 @@ test('发现不会被 Astro 收录的无扩展名内容文件', async () => {
 test('发现系列顺序重复、字段不成对和未知系列', async () => {
 	const rootDir = await createTemporaryContentRoot();
 	await writePost(rootDir, 'one.md', {
-		series: 'telysta-blog-build',
+		series: 'weiser-blog-construction-records',
 		seriesOrder: 1,
 	});
 	await writePost(rootDir, 'two.md', {
-		series: 'telysta-blog-build',
+		series: 'weiser-blog-construction-records',
 		seriesOrder: 1,
 	});
 	await writePost(rootDir, 'three.md', { series: 'unknown-series' });

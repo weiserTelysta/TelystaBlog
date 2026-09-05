@@ -445,6 +445,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		};
 
 		const handlePointerMove = (event: PointerEvent) => {
+			if (!running || reducedMotion) return;
 			pointer.x = (event.clientX / bounds.width - 0.5) * -1;
 			pointer.y = (event.clientY / bounds.height - 0.5) * -1;
 
@@ -468,7 +469,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		};
 
 		const handlePointerDown = (event: PointerEvent) => {
-			if (reducedMotion || !event.isPrimary || ('button' in event && event.button !== 0)) return;
+			if (!running || reducedMotion || !event.isPrimary || ('button' in event && event.button !== 0)) return;
 
 			cancelPointerIntent();
 			pointerIntent.phase = 'pending';
@@ -564,7 +565,10 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		};
 
 		const handleVisibility = () => {
-			running = document.visibilityState === 'visible';
+			const shouldRun = document.visibilityState === 'visible'
+				&& !document.documentElement.classList.contains('has-modal-open');
+			if (running === shouldRun) return;
+			running = shouldRun;
 
 			if (running) {
 				lastTime = performance.now();
@@ -578,6 +582,10 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 
 		setupCanvas();
 		animationFrame = window.requestAnimationFrame(animate);
+		handleVisibility();
+		// Freeze the obscured canvas while a modal owns interaction; retain its last frame.
+		const modalObserver = new MutationObserver(handleVisibility);
+		modalObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
 		window.addEventListener('pointermove', handlePointerMove, { passive: true });
 		window.addEventListener('pointerdown', handlePointerDown, { passive: true });
@@ -588,6 +596,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		document.addEventListener('visibilitychange', handleVisibility);
 
 		return () => {
+			modalObserver.disconnect();
 			running = false;
 			window.cancelAnimationFrame(animationFrame);
 			cancelPointerIntent();

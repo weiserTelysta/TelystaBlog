@@ -1,7 +1,7 @@
 ---
 import type { PostListItem } from '../../lib/blogPosts';
 import { buildCategoryHref } from '../../lib/blogCategoryUtils';
-import { formatFullDate, formatPostDate } from '../../lib/blogPosts';
+import { formatFullDate, formatIndexDate } from '../../lib/blogPosts';
 
 type Props = {
 	post: PostListItem;
@@ -18,7 +18,7 @@ const visibleTags = post.tags.slice(0, 2);
 		</h3>
 		<p>{post.excerpt}</p>
 		<div class="blog-post__meta" aria-label="文章信息">
-			<time datetime={formatFullDate(post.publishedAt)}>{formatPostDate(post.publishedAt)}</time>
+			<time datetime={formatFullDate(post.publishedAt)}>{formatIndexDate(post.publishedAt)}</time>
 			<a href={buildCategoryHref(post.category)}>{post.categoryTitle}</a>
 			{visibleTags.map((tag) => <span class="blog-post__tag">#{tag}</span>)}
 		</div>
@@ -39,9 +39,9 @@ const visibleTags = post.tags.slice(0, 2);
 	.blog-post h3 {
 		margin: 0;
 		font-family: var(--type-card-title-font);
-		font-size: clamp(1.25rem, 2.4vw, 1.55rem);
-		font-weight: 650;
-		line-height: 1.35;
+		font-size: clamp(1.08rem, 2vw, 1.32rem);
+		font-weight: 610;
+		line-height: 1.4;
 		letter-spacing: 0;
 		overflow-wrap: anywhere;
 	}
@@ -59,12 +59,12 @@ const visibleTags = post.tags.slice(0, 2);
 
 	.blog-post p {
 		display: -webkit-box;
-		max-width: 700px;
+		max-width: 640px;
 		overflow: hidden;
-		margin: 8px 0 0;
+		margin: 6px 0 0;
 		color: var(--color-text-muted);
-		font-size: 0.95rem;
-		line-height: 1.75;
+		font-size: 0.88rem;
+		line-height: 1.68;
 		overflow-wrap: anywhere;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
@@ -74,7 +74,7 @@ const visibleTags = post.tags.slice(0, 2);
 		display: flex;
 		flex-wrap: wrap;
 		align-items: baseline;
-		margin-top: 12px;
+		margin-top: 9px;
 		color: rgba(139, 149, 167, 0.88);
 		font-family: var(--type-meta-font);
 		font-size: var(--type-meta-size);

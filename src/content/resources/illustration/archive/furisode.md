@@ -4,17 +4,17 @@ title: Furisode Outfit
 summary: A cute furisode.
 type: illustration
 status: available
-image: asset:archive/camellia_motif_furisode_white
+image: asset:archive/camellia_motif_furisode_both
 gallery:
-  - src: asset:archive/camellia_motif_furisode_white
-    label: "01"
-    alt: Draft archive furisode image 01
-  - src: asset:archive/camellia_motif_furisode_red
-    label: "02"
-    alt: Draft archive furisode image 02
   - src: asset:archive/camellia_motif_furisode_both
-    label: "03"
-    alt: Draft archive furisode image 03
+    label: 合图
+    alt: 红白两款振袖设计合图
+  - src: asset:archive/camellia_motif_furisode_white
+    label: 白色款
+    alt: 白色振袖设计
+  - src: asset:archive/camellia_motif_furisode_red
+    label: 红色款
+    alt: 红色振袖设计
 publishedAt: 2026-07-01
 updatedAt: 2026-07-01
 formats:

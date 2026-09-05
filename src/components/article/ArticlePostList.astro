@@ -1,6 +1,6 @@
 ---
 import type { PostListItem } from '../../lib/blogPosts';
-import { formatFullDate } from '../../lib/blogPosts';
+import { formatFullDate, formatIndexDate } from '../../lib/blogPosts';
 
 type Props = {
 	posts: PostListItem[];
@@ -16,7 +16,7 @@ const { posts } = Astro.props;
 				<a href={post.href}>
 					<span>{post.seriesOrder ? String(post.seriesOrder).padStart(2, '0') : '·'}</span>
 					<strong>{post.title}</strong>
-					<em>{formatFullDate(post.publishedAt)}</em>
+					<time datetime={formatFullDate(post.publishedAt)}>{formatIndexDate(post.publishedAt)}</time>
 					<p>{post.description}</p>
 				</a>
 			</li>
@@ -34,14 +34,30 @@ const { posts } = Astro.props;
 	}
 
 	.article-post-list li {
+		position: relative;
 		border-top: 1px solid rgba(255, 255, 255, 0.055);
+	}
+
+	.article-post-list li:last-child {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+	}
+
+	.article-post-list li::before {
+		position: absolute;
+		top: -1px;
+		left: 0;
+		width: 0;
+		height: 1px;
+		content: "";
+		background: rgba(156, 199, 232, 0.62);
+		transition: width var(--motion-medium) var(--motion-ease-out);
 	}
 
 	.article-post-list a {
 		display: grid;
 		grid-template-columns: 42px minmax(0, 1fr) auto;
 		gap: 10px 18px;
-		padding: 24px 0;
+		padding: clamp(22px, 3.5vw, 28px) 4px;
 		align-items: baseline;
 	}
 
@@ -51,6 +67,7 @@ const { posts } = Astro.props;
 		font-size: var(--type-meta-size);
 		font-weight: var(--type-display-label-weight);
 		letter-spacing: 0.08em;
+		transition: color var(--motion-fast) ease;
 	}
 
 	.article-post-list strong {
@@ -60,10 +77,10 @@ const { posts } = Astro.props;
 		font-weight: var(--type-card-title-weight);
 		line-height: var(--type-card-title-line);
 		overflow-wrap: anywhere;
-		transition: color 0.2s ease;
+		transition: color var(--motion-fast) ease, transform var(--motion-medium) var(--motion-ease-out);
 	}
 
-	.article-post-list em {
+	.article-post-list time {
 		color: rgba(139, 149, 167, 0.64);
 		font-family: var(--type-meta-font);
 		font-size: var(--type-meta-size);
@@ -83,6 +100,28 @@ const { posts } = Astro.props;
 
 	.article-post-list a:hover strong {
 		color: rgba(255, 255, 255, 0.96);
+		transform: translateX(4px);
+	}
+
+	.article-post-list li:hover::before,
+	.article-post-list li:focus-within::before {
+		width: min(124px, 28%);
+	}
+
+	.article-post-list a:hover > span,
+	.article-post-list a:focus-visible > span {
+		color: rgba(156, 199, 232, 0.86);
+	}
+
+	.article-post-list a:focus-visible {
+		border-radius: 2px;
+		outline: 1px solid rgba(156, 199, 232, 0.76);
+		outline-offset: 3px;
+	}
+
+	.article-post-list a:focus-visible strong {
+		color: rgba(255, 255, 255, 0.96);
+		transform: translateX(4px);
 	}
 
 	@media (max-width: 640px) {
@@ -90,9 +129,22 @@ const { posts } = Astro.props;
 			grid-template-columns: 34px minmax(0, 1fr);
 		}
 
-		.article-post-list em,
+		.article-post-list time,
 		.article-post-list p {
 			grid-column: 2;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.article-post-list li::before,
+		.article-post-list strong,
+		.article-post-list span {
+			transition: none;
+		}
+
+		.article-post-list a:hover strong,
+		.article-post-list a:focus-visible strong {
+			transform: none;
 		}
 	}
 </style>

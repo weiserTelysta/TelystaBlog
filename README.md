@@ -27,7 +27,7 @@ src/generated             提交到 Git 的 R2 清单与生成乐谱
 src/lib                   数据整理、查找、排序与运行时工具
 src/styles                全局视觉、字体与排版规则
 scripts                   文章创建、内容检查与图片生成脚本
-tests                     Node 单元测试
+tests                     Node 单元测试与浏览器回归测试
 docs                      中文维护、写作、资源与部署文档
 .agents/skills            随项目维护的 Codex Skills
 ```
@@ -46,6 +46,7 @@ npm run assets:prepare -- --source "<素材目录>"
 npm run assets:manifest -- --source "<素材目录>" --collection "characters=<Character 目录>" --collection "avatars=<头像目录>"
 npm run assets:sync -- -Source "<素材目录>"
 npm run check
+npm run test:browser
 npm run build
 npm run preview
 ```
@@ -73,6 +74,8 @@ CDN 图片脚本使用原图与目标文件指纹判断是否需要重新压缩�
 文章专属图片放在文章旁边的同名目录，共享图片放在 `src/assets/images`。`public` 仅用于固定 URL、无需 Astro 处理或需要直接下载的文件。文章无需手工维护 `.preview.webp`。
 
 ## 内容维护
+
+统一入口：[开发文档索引](docs/README.md)；目录职责与保留规则见 [架构说明](docs/architecture.md)。旧方案集中于 `docs/archive`，不作为当前实施规范。
 
 - 中文文章写作：[docs/article-authoring.md](docs/article-authoring.md)
 - 总体维护：[docs/maintenance.md](docs/maintenance.md)

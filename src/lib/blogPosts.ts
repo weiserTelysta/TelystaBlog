@@ -1,7 +1,16 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import type { BlogCategoryId } from '../config/content/blogCategories';
 import { getBlogCategoryById, isBlogCategoryId } from './blogCategoryUtils';
+import { formatPostMonth } from './blogDate';
 import { buildPostExcerpt } from './blogExcerpt';
+
+export {
+	formatArticleDate,
+	formatFullDate,
+	formatIndexDate,
+	formatPostDate,
+	formatPostMonth,
+} from './blogDate';
 
 export type PostEntry = CollectionEntry<'posts'>;
 
@@ -41,21 +50,6 @@ export type SeriesNavigation = {
 	previous?: PostListItem;
 	next?: PostListItem;
 };
-
-const ENGLISH_MONTH_NAMES = [
-	'January',
-	'February',
-	'March',
-	'April',
-	'May',
-	'June',
-	'July',
-	'August',
-	'September',
-	'October',
-	'November',
-	'December',
-] as const;
 
 export function buildPostHref(entryId: string): string {
 	const normalizedId = entryId.replace(/\\/g, '/').replace(/^\/+|\/+$/g, '');
@@ -180,22 +174,6 @@ export function getSelectedCategoryId(value: string | null): BlogCategoryId | un
 	}
 
 	return value;
-}
-
-export function formatPostDate(date: Date): string {
-	return `${ENGLISH_MONTH_NAMES[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-}
-
-export function formatArticleDate(date: Date): string {
-	return `${ENGLISH_MONTH_NAMES[date.getMonth()]} ${date.getDate()}`;
-}
-
-export function formatFullDate(date: Date): string {
-	return `${date.getFullYear()}-${padNumber(date.getMonth() + 1)}-${padNumber(date.getDate())}`;
-}
-
-export function formatPostMonth(month: number): string {
-	return ENGLISH_MONTH_NAMES[month - 1] ?? String(month);
 }
 
 function padNumber(value: number): string {

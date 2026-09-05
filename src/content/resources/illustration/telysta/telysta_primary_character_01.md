@@ -12,12 +12,15 @@ gallery:
   - src: asset:Telysta/Telysta_officialoutfit_design
     label: "02"
     alt: Draft Telysta primary character image 02
+  - src: asset:Telysta/Telysta_officialoutfit_halfbody
+    label: "03 · 半身"
+    alt: Telysta 官方服装半身插画
 publishedAt: 2026-07-01
-updatedAt: 2026-07-01
+updatedAt: 2026-09-05
 formats:
   - PNG
   - PSD
-variantCount: 2
+variantCount: 3
 license: Draft license. Replace before publishing.
 credits: 
   - label: 画师

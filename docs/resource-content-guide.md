@@ -35,7 +35,7 @@ draft: true
 
 - `id`：稳定且全站唯一，不要因标题修改而变化。
 - `title`：显示标题。
-- `summary`：卡片和详情摘要。
+- `summary`：保留在内容数据中的简短摘要；当前图片画廊与全屏看图器不重复展示。
 - `type`：必须来自 `src/config/content/resourceTypes.ts`。
 - `image`：主图资源引用。
 - `publishedAt`：发布日期。
@@ -56,7 +56,7 @@ draft: true
 - `preview`：可选的详情显示图。
 - `gallery`：同一资源的多张原图。
 
-这些字段使用 `src/generated/cdn-assets.json` 中已有的 `asset:<清单键>`。运行时会自动把它解析为 `assets.telysta.com` 上的 WebP，并把同组 PNG/JPG 和 PSD/AI 作为下载文件；不要在主图字段中手写完整 CDN URL或仓库本地路径。
+这些字段使用 `src/generated/cdn-assets.json` 中已有的 `asset:<清单键>`。运行时会自动把它解析为 `assets.telysta.com` 上的 WebP，并把同组 PNG/JPG 原图作为下载文件；PSD 会由公开下载策略过滤。不要在主图字段中手写完整 CDN URL 或仓库本地路径。
 
 清单组存在 `cover` 时，列表优先使用它；详情优先使用 `display`。没有单独 `cover` 时，两处都使用 `display`。下载仍指向原图。
 
@@ -80,6 +80,8 @@ draft: true
 
 Credits 用于说明来源和参与者，不替代许可证。
 
+当前看图器只显示图片、标题和图片下载，不渲染 Credits 或作者链接；源数据继续保留，便于维护来源。
+
 ## Actions
 
 支持的 `type`：
@@ -101,7 +103,7 @@ Credits 用于说明来源和参与者，不替代许可证。
 - `disabled`：暂不可用。
 - `note`：补充说明。
 
-R2 中与主图同名的原图和源文件会自动加入下载列表，不必重复写 `actions`；不同名的独立 PSD 可以在 `download` 动作中填写完整 `https://assets.telysta.com/...` URL。其他外部页面使用完整 HTTPS URL。
+R2 中与主图同名的 PNG/JPG 原图会自动加入下载列表，不必重复写 `actions`。PSD 即使存在于清单或旧的 `download` 动作中也会被过滤；其他外部页面使用完整 HTTPS URL。
 
 ## 许可证
 
@@ -110,6 +112,8 @@ R2 中与主图同名的原图和源文件会自动加入下载列表，不必�
 ## 正文
 
 Markdown 正文适合记录背景、用途、创作说明和限制。摘要保持简短，详细内容放正文。
+
+这些维护资料不在当前全屏看图器中渲染。资源页以已发布的 `illustration` 条目为主，另明确放行两款 Minecraft 皮肤 `image` 条目；Character、头像及茶花等文章配图继续用于原来的页面，不作为画廊作品。公开范围集中在 `resourceDisplayPolicy.ts`，不是把整个 R2 清单自动展示出来。
 
 ## R2 图片生成与缓存
 
@@ -120,7 +124,7 @@ npm run assets:prepare -- --source "<素材目录>"
 npm run assets:manifest -- --source "<素材目录>" --collection "characters=<Character 目录>" --collection "avatars=<头像目录>"
 ```
 
-R2 展示图参数：最长边 3200、质量 92、透明度质量 98、WebP effort 5。首次运行会接管已有 WebP，后续只重新生成原图指纹已变化、目标缺失或目标不一致的文件。
+R2 展示图参数：最长边 3200、质量 95、透明度质量 100、WebP effort 6。首次运行会接管已有 WebP，后续只重新生成原图指纹已变化、目标缺失或目标不一致的文件。
 
 完整上传步骤见 [cdn-assets.md](cdn-assets.md)。
 

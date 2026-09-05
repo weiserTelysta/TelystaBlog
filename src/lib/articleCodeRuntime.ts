@@ -1,10 +1,33 @@
 const ENHANCED_ATTRIBUTE = 'data-code-block-enhanced';
+const COPY_ICON = `
+	<svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+		<rect x="8" y="8" width="11" height="11" rx="2"></rect>
+		<path d="M16 8V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h1"></path>
+	</svg>`;
+const COPIED_ICON = `
+	<svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+		<path d="m6.5 12.5 3.5 3.5 7.5-8"></path>
+	</svg>`;
+const ERROR_ICON = `
+	<svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+		<path d="m8 8 8 8M16 8l-8 8"></path>
+	</svg>`;
 
-function getLanguage(pre: HTMLPreElement, code: HTMLElement) {
-	const languageClass = Array.from(code.classList).find((className) =>
-		className.startsWith('language-'),
-	);
-	return pre.dataset.language || languageClass?.slice('language-'.length) || 'text';
+type CopyState = 'idle' | 'copied' | 'error';
+
+function setCopyState(
+	button: HTMLButtonElement,
+	status: HTMLElement,
+	state: CopyState,
+) {
+	const label =
+		state === 'copied' ? '已复制' : state === 'error' ? '复制失败' : '复制代码';
+	button.dataset.state = state;
+	button.setAttribute('aria-label', label);
+	button.title = label;
+	button.innerHTML =
+		state === 'copied' ? COPIED_ICON : state === 'error' ? ERROR_ICON : COPY_ICON;
+	status.textContent = state === 'idle' ? '' : label;
 }
 
 async function copyText(text: string) {
@@ -21,39 +44,32 @@ function enhanceCodeBlock(pre: HTMLPreElement) {
 	pre.setAttribute(ENHANCED_ATTRIBUTE, 'true');
 	const wrapper = document.createElement('div');
 	wrapper.className = 'code-block';
-	const toolbar = document.createElement('div');
-	toolbar.className = 'code-block__toolbar';
-
-	const language = document.createElement('span');
-	language.className = 'code-block__language';
-	language.textContent = getLanguage(pre, code);
 
 	const copyButton = document.createElement('button');
 	copyButton.className = 'code-block__copy';
 	copyButton.type = 'button';
-	copyButton.textContent = '复制';
-	copyButton.setAttribute('aria-label', '复制代码');
+	const copyStatus = document.createElement('span');
+	copyStatus.className = 'code-block__status';
+	copyStatus.setAttribute('role', 'status');
+	copyStatus.setAttribute('aria-live', 'polite');
+	setCopyState(copyButton, copyStatus, 'idle');
 
 	let resetTimer = 0;
 	copyButton.addEventListener('click', async () => {
 		window.clearTimeout(resetTimer);
 		try {
 			await copyText(code.textContent ?? '');
-			copyButton.dataset.state = 'copied';
-			copyButton.textContent = '已复制';
+			setCopyState(copyButton, copyStatus, 'copied');
 		} catch {
-			copyButton.dataset.state = 'error';
-			copyButton.textContent = '复制失败';
+			setCopyState(copyButton, copyStatus, 'error');
 		}
 		resetTimer = window.setTimeout(() => {
-			delete copyButton.dataset.state;
-			copyButton.textContent = '复制';
+			setCopyState(copyButton, copyStatus, 'idle');
 		}, 1800);
 	});
 
 	pre.before(wrapper);
-	wrapper.append(toolbar, pre);
-	toolbar.append(language, copyButton);
+	wrapper.append(pre, copyButton, copyStatus);
 }
 
 export const initArticleCodeRuntime = () => {

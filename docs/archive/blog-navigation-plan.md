@@ -1,5 +1,7 @@
 # Blog Navigation Plan
 
+> 历史导航方案，部分交互已替换。当前入口见 [文档索引](../README.md)。
+
 ## Page Role
 
 `/blog` is the article navigation page. It is not the article detail page.

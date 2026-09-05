@@ -5,8 +5,8 @@ export const ARTICLE_PAGE_CONFIG = {
 	header: {
 		coverAriaLabel: '文章主图',
 		metaAriaLabel: '文章信息',
-		publishedLabel: 'Published',
-		updatedLabel: 'Updated',
+		publishedLabel: 'Published on',
+		updatedLabel: 'Updated on',
 	},
 	toc: {
 		minHeadingCount: 3,
@@ -36,5 +36,7 @@ export const ARTICLE_PAGE_CONFIG = {
 	},
 	series: {
 		pageLabel: 'Series',
+		recordsLabel: 'records',
+		emptyLabel: '这个系列暂时还没有公开文章。',
 	},
 } as const;

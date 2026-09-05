@@ -71,7 +71,7 @@ slug 默认从标题生成，会保留中文，转换空格并删除不适合作
 
 风琴页图片属于站点 UI，应保留本地优化版 WebP；不要直接导入数 MiB 的 PNG 原图。原图放在仓库外素材目录保存。
 
-新增系列只需在 `src/config/content/blogSeries.ts` 添加稳定的英文 slug ID、标题和说明；文章中的 `series` 使用这个 ID，并同时填写唯一的 `seriesOrder`。`npm run content:check` 会直接报告未知分类、未知系列、缺少配对字段或重复顺序。
+新增系列只需在 `src/config/content/blogSeries.ts` 添加稳定的英文 slug ID、所属 `category`、标题和说明；`category` 使用已有栏目 ID，决定系列总索引的分组。没有公开文章的系列不会出现在总索引中。文章中的 `series` 必须使用 `id`，不能填写面向读者的系列标题，并同时填写唯一的 `seriesOrder`。例如页面显示“Telysta 札记”，文章应写 `series: telysta-notes`。`npm run content:check` 会直接报告未知分类、未知系列、缺少配对字段或重复顺序。
 
 ## 在文章中插入简谱
 

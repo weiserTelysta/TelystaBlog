@@ -13,6 +13,7 @@ import {
 	normalizeWheelDelta,
 } from './categoryAccordionMotion';
 import './CategoryAccordion.scss';
+import './BlogIndexControl.scss';
 
 const ACCORDION_COPY = BLOG_PAGE_CONFIG.categoryAccordion;
 const CATEGORY_DIALOG_TITLE_ID = ACCORDION_COPY.dialogTitleId;
@@ -483,14 +484,14 @@ export default function CategoryAccordion({
 		<div className="category-accordion">
 			<button
 				ref={entryButtonRef}
-				className="category-accordion__entry"
+				className="category-accordion__entry blog-index-control"
 				type="button"
 				aria-expanded={open}
 				aria-haspopup="dialog"
 				onClick={openAccordion}
 			>
-				<span className="category-accordion__entry-label">{ACCORDION_COPY.entryLabel}</span>
-				<span className="category-accordion__entry-title">
+				<span className="category-accordion__entry-label blog-index-control__label">{ACCORDION_COPY.entryLabel}</span>
+				<span className="category-accordion__entry-title blog-index-control__title">
 					{selectedVisual?.title ?? ACCORDION_COPY.allRecordsTitle}
 				</span>
 			</button>

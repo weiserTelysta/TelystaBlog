@@ -12,12 +12,15 @@ gallery:
   - src: "asset:Rhaelysa/rhaelysa&telysta_librarystaircase_03"
     label: "02"
     alt: Draft Rhaelysa and Telysta illustration image 02
+  - src: "asset:Rhaelysa/rhaelysa&telysta_librarystaircase_04"
+    label: "03"
+    alt: Rhaelysa 与 Telysta 图书馆阶梯场景差分
 publishedAt: 2026-07-01
-updatedAt: 2026-07-01
+updatedAt: 2026-09-05
 formats:
   - PNG
   - PSD
-variantCount: 2
+variantCount: 3
 license: Draft license. Replace before publishing.
 credits: 
   - label: 画师

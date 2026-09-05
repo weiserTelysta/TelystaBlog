@@ -20,6 +20,7 @@ type Props = {
 const { series } = Astro.props;
 const allPosts = await getPublishedPosts();
 const posts = getPostsBySeries(allPosts, series.id);
+const postCountLabel = String(posts.length).padStart(2, '0');
 ---
 
 <Layout
@@ -29,14 +30,22 @@ const posts = getPostsBySeries(allPosts, series.id);
 >
 	<main class="series-page">
 		<section class="series-page__inner" aria-labelledby="series-title">
-			<div class="series-page__header">
-				<a href="/blog">Blog</a>
-				<p>{ARTICLE_PAGE_CONFIG.series.pageLabel}</p>
+			<header class="series-page__header">
+				<p class="series-page__eyebrow">
+					{ARTICLE_PAGE_CONFIG.series.pageLabel}
+					<span aria-hidden="true">·</span>
+					<span>{postCountLabel} {ARTICLE_PAGE_CONFIG.series.recordsLabel}</span>
+				</p>
 				<h1 id="series-title">{series.title}</h1>
-				<span>{series.description}</span>
-			</div>
+			</header>
 
-			<ArticlePostList posts={posts} />
+			{
+				posts.length > 0 ? (
+					<ArticlePostList posts={posts} />
+				) : (
+					<p class="series-page__empty">{ARTICLE_PAGE_CONFIG.series.emptyLabel}</p>
+				)
+			}
 		</section>
 	</main>
 </Layout>
@@ -50,21 +59,21 @@ const posts = getPostsBySeries(allPosts, series.id);
 
 	.series-page__inner {
 		display: grid;
-		gap: clamp(44px, 7vw, 72px);
-		width: min(900px, calc(100% - 48px));
+		gap: clamp(32px, 4.5vw, 44px);
+		width: min(760px, calc(100% - 48px));
 		margin: 0 auto;
-		padding: var(--site-page-top-spacing) 0 clamp(92px, 13vw, 150px);
+		padding: clamp(64px, 8vw, 96px) 0 clamp(92px, 13vw, 150px);
 	}
 
 	.series-page__header {
 		display: grid;
-		gap: 12px;
-		max-width: 760px;
+		gap: 10px;
 	}
 
-	.series-page__header a,
-	.series-page__header p {
-		width: fit-content;
+	.series-page__eyebrow {
+		display: flex;
+		gap: 10px;
+		align-items: baseline;
 		margin: 0;
 		color: rgba(156, 199, 232, 0.58);
 		font-family: var(--type-display-label-font);
@@ -74,35 +83,37 @@ const posts = getPostsBySeries(allPosts, series.id);
 		text-transform: uppercase;
 	}
 
-	.series-page__header a {
-		transition: color 0.2s ease;
+	.series-page__eyebrow > span:first-of-type {
+		color: rgba(139, 149, 167, 0.4);
 	}
 
-	.series-page__header a:hover {
-		color: rgba(216, 222, 233, 0.86);
+	.series-page__eyebrow > span:last-of-type {
+		color: rgba(139, 149, 167, 0.62);
 	}
 
 	.series-page__header h1 {
 		margin: 0;
 		color: rgba(237, 243, 251, 0.94);
 		font-family: var(--type-index-title-font);
-		font-size: var(--type-index-title-size);
+		font-size: clamp(2rem, 4.2vw, 3.1rem);
 		font-weight: var(--type-index-title-weight);
-		line-height: var(--type-index-title-line);
+		line-height: 1.14;
 		letter-spacing: 0;
+		overflow-wrap: anywhere;
 	}
 
-	.series-page__header span {
-		max-width: 660px;
-		color: rgba(190, 199, 214, 0.58);
-		font-size: clamp(1rem, 2vw, 1.12rem);
-		line-height: 1.9;
+	.series-page__empty {
+		margin: 0;
+		padding: 28px 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+		color: rgba(139, 149, 167, 0.72);
+		line-height: 1.8;
 	}
 
 	@media (max-width: 640px) {
 		.series-page__inner {
 			width: min(100% - 32px, 720px);
-			padding-top: var(--site-page-top-spacing);
+			padding-top: 56px;
 		}
 	}
 </style>

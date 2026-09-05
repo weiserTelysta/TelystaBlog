@@ -1,5 +1,7 @@
 # Project Knowledge
 
+> 历史设计记录，不作为当前实现规范。当前入口见 [文档索引](../README.md)。
+
 Updated: 2026-07-01
 
 This document records the design and architecture principles behind Telysta's Melancholy. It is not a task list. It is the shared memory for future development decisions.

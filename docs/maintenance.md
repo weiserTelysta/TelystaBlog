@@ -18,11 +18,13 @@
 - `astro.config.mjs`：Astro 7 站点配置，以及通过 `@astrojs/markdown-remark` unified processor 接入的 Remark/Rehype 插件。
 - `src/content.config.ts`：文章和资源的 Content Collections Schema。
 - `src/config/content/blogCategories.ts`：稳定的文章栏目 ID 与显示信息。
-- `src/config/content/blogSeries.ts`：稳定的文章系列 ID 与显示信息。
+- `src/config/content/blogSeries.ts`：稳定的文章系列 ID、所属 category 与显示信息；总索引仅显示有公开文章的系列。
 - `scripts/create-post.ts`、`scripts/lib/post-scaffold.ts`、`scripts/templates/post.md`：新文章命令、校验和唯一模板。
 - `scripts/validate-content.ts`、`scripts/lib/content-validation.ts`：跨文档内容检查。
 - `scripts/prepare-cdn-assets.mjs`、`scripts/generate-cdn-manifest.mjs`：外部素材的增量 WebP 与公开清单。
 - `src/lib/resources/resourceItems.ts`：资源图片、下载地址和页面数据的运行时解析。
+- `src/lib/resources/resourceDisplayPolicy.ts`：展示已发布插画与两款明确收录的 Minecraft 皮肤，排除 Character、头像和文章配图。
+- `src/components/resources/resourceLightbox.ts`：按需加载的全屏看图器与下载选择，替代旧详情分栏。详见 [资源画廊记录](resource-gallery-2026-09-05.md)。
 - `.github/workflows/deploy.yml`：Node 22 检查和 GitHub Pages 部署。
 
 ## 日常命令
@@ -94,6 +96,16 @@ R2 素材的增量 WebP、清单和上传流程见 [cdn-assets.md](cdn-assets.md
 
 许可证内容仍需作者人工确认，脚本不会替作者判断授权范围。
 
+## 文章评论
+
+所有公开文章通过 `src/pages/blog/[...slug].astro` 统一渲染，页面顺序固定为“正文 → 系列入口 → 评论”。Giscus 只在该路由的正文主体内加载；评论配置集中在 `src/components/article/ArticleComments.astro`，首页、文章索引、系列页和资源页不会引入评论脚本。
+
+当前使用 `pathname` 映射和 `preferred_color_scheme` 主题。不要修改文章 URL、slug 或路由，否则会改变 discussion 的映射键。评论仓库必须保持公开、启用 Discussions，并安装 Giscus GitHub App。
+
+父页面只能使用 `.giscus` 和 `.giscus-frame` 调整 iframe 的宽度、间距与外部边界，不能用本站 CSS 穿透跨域 iframe。若以后需要让评论内部完全采用 Telysta 配色，可以在本站公开托管一份 Giscus 自定义主题 CSS，并把 `data-theme` 改成该文件的绝对 HTTPS URL；若再加入站内 Light/Dark 切换，则通过 Giscus `postMessage` 的 `setConfig.theme` 同步，不需要更换评论组件或数据层。
+
+系列入口与 `/series/<id>/` 页面继续使用深蓝黑画布、月光蓝状态色、细分隔线和低幅度交互，不使用正文下划线、厚卡片或持续动画。系列 ID 是数据与 URL 的稳定标识，显示标题可以是中文；文章 frontmatter 只能填写 ID。
+
 ## 视觉维护
 
 网站已经具有稳定风格。UI 修改应调用项目 Skill `$telysta-design-guardian`，并遵守：
@@ -104,12 +116,13 @@ R2 素材的增量 WebP、清单和上传流程见 [cdn-assets.md](cdn-assets.md
 - 不因修复一个状态而大规模重排页面。
 - 保留键盘焦点、原生语义和 reduced-motion。
 
-设计背景见 `docs/project-knowledge.md` 和 `docs/project-vision.md`。
+当前职责与清理规则见 [架构说明](architecture.md)，早期设计背景见 [历史记录](archive/project-knowledge.md)。
 
 ## 提交前检查
 
 ```sh
 npm run check
+npm run test:browser
 git diff --check
 git status
 ```
@@ -121,3 +134,5 @@ git status
 - 资源下载仍指向原图或明确的外部下载地址。
 - 新增文本为 UTF-8。
 - 没有提交 `dist/`、`.tmp/` 或资源原图。
+
+`test:browser` 先构建，再用独立浏览器测试本机 `127.0.0.1:4322` 预览。Windows 默认使用已安装 Edge，不读取用户浏览器 profile；其他平台先运行 `npx playwright install chromium`。可用 `TELYSTA_TEST_BROWSER` 选择已安装的 channel。不要把 4322 用于其他服务；本地允许复用同项目 preview，CI 不复用。脚本覆盖布局、键盘、遮罩、下载与减少动态，不代替真机触摸手感测试。

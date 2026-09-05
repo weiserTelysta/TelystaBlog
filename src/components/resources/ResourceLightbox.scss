@@ -1,0 +1,129 @@
+.telysta-lightbox {
+ --pswp-bg: var(--color-background);
+ --pswp-placeholder-bg: transparent;
+ --pswp-icon-color: var(--color-text);
+ font-family: var(--font-body);
+}
+
+.resource-viewer-frame {
+ position: absolute;
+ pointer-events: none;
+ /* The overlay follows the rendered image, not the browser edges. */
+}
+
+.resource-viewer-toolbar {
+ position: absolute;
+ inset: auto 0 0;
+ display: flex;
+ flex-wrap: wrap;
+ align-items: flex-end;
+ justify-content: space-between;
+ gap: 4px 12px;
+ padding: 48px 16px 12px;
+ color: var(--color-text-strong);
+ background: linear-gradient(transparent, rgba(7, 10, 16, 0.78));
+ opacity: 1;
+ transition: opacity var(--motion-fast) ease;
+}
+
+.resource-viewer-toolbar h2 {
+ flex: 1 1 160px;
+ margin: 0;
+ padding-block: 10px;
+ font-size: clamp(0.78rem, 1.1vw, 0.95rem);
+ font-weight: 500;
+ line-height: 1.5;
+ text-wrap: balance;
+ text-shadow: 0 1px 5px #070a10;
+}
+
+.resource-viewer-actions {
+ display: flex;
+ align-items: center;
+ margin-left: auto;
+ pointer-events: auto;
+}
+
+.resource-viewer-button {
+ display: grid;
+ place-items: center;
+ width: 44px;
+ height: 44px;
+ padding: 0;
+ border: 0;
+ border-radius: 4px;
+ background: transparent;
+ color: inherit;
+ cursor: pointer;
+ transition: color var(--motion-fast) ease, background var(--motion-fast) ease;
+}
+.resource-viewer-button:hover { color: var(--color-accent); background: rgba(156, 199, 232, 0.08); }
+.resource-viewer-button:disabled { opacity: 0.28; cursor: default; }
+.resource-viewer-button:focus-visible { outline: 1px solid var(--color-accent); outline-offset: -3px; }
+.resource-viewer-frame.is-idle .resource-viewer-toolbar { opacity: 0; }
+.resource-viewer-frame.is-idle .resource-viewer-actions { pointer-events: none; }
+.telysta-lightbox.is-pixel-art .pswp__img { image-rendering: pixelated; }
+
+.resource-download-dialog {
+ width: min(420px, calc(100vw - 32px));
+ max-height: min(520px, calc(100dvh - 48px));
+ padding: 24px;
+ border: 1px solid rgba(156, 199, 232, 0.16);
+ border-radius: 8px;
+ background: var(--color-background-soft);
+ color: var(--color-text);
+ font-family: var(--font-body);
+ font-size: 0.82rem;
+ overflow-y: auto;
+ touch-action: pan-y;
+ overscroll-behavior: contain;
+ scrollbar-width: none;
+}
+.resource-download-dialog[open] { animation: resource-download-enter 180ms ease-out; }
+.resource-download-dialog[open].is-closing { animation: resource-download-exit 160ms ease-in forwards; }
+.resource-download-dialog::backdrop { background: rgba(4, 7, 12, 0.65); }
+.resource-download-dialog::-webkit-scrollbar { display: none; }
+.resource-download-dialog h2 { margin: 0 40px 12px 0; font-size: 1rem; font-weight: 500; }
+.resource-download-dialog__hint { margin: 0 0 16px; font-size: 0.72rem; color: var(--color-text-muted); }
+.resource-download-dialog ul { margin: 0; padding: 0; list-style: none; }
+.resource-download-dialog a {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 16px;
+ min-height: 48px;
+ padding: 8px 4px;
+ border-top: 1px solid var(--color-border);
+ text-decoration: none;
+ transition: color var(--motion-fast) ease;
+}
+.resource-download-dialog a small { color: var(--color-text-muted); }
+.resource-download-dialog a[aria-current] { color: var(--color-accent); }
+.resource-download-dialog a[aria-current] span::after { content: ' · 当前'; font-size: 0.7rem; }
+.resource-download-dialog a:hover { color: var(--color-accent); }
+.resource-download-dialog a:focus-visible,
+.resource-download-dialog button:focus-visible { outline: 1px solid var(--color-accent); outline-offset: 2px; }
+.resource-download-dialog__close {
+ position: absolute;
+ top: 12px;
+ right: 12px;
+ width: 44px;
+ height: 44px;
+ border: 0;
+ background: transparent;
+ color: inherit;
+ font: inherit;
+ font-size: 1.5rem;
+ cursor: pointer;
+}
+@keyframes resource-download-enter { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes resource-download-exit { to { opacity: 0; transform: translateY(4px); } }
+
+@media (max-width: 640px) {
+ .resource-viewer-toolbar { padding: 36px 10px 8px; gap: 0; }
+ .resource-viewer-toolbar h2 { flex-basis: 100%; padding: 4px; font-size: 0.78rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .resource-viewer-toolbar, .resource-viewer-button,
+ .resource-download-dialog, .resource-download-dialog a { animation: none !important; transition: none !important; }
+}

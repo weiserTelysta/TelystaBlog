@@ -12,7 +12,7 @@ gallery:
   - src: asset:Alice/alice_illustration
 ```
 
-`asset:` 后面的内容对应 `src/generated/cdn-assets.json` 中的键。页面会自动选择同组 `.webp` 显示，并把 PNG/JPG 原图及同名 PSD/AI 加入下载列表。这样以后即使更换对象存储，只需修改清单 origin 或 URL 解析层，不必批量重写文章。
+`asset:` 后面的内容对应 `src/generated/cdn-assets.json` 中的键。页面会自动选择同组 `.webp` 显示，并把 PNG/JPG 原图加入下载列表。PSD 可以继续作为作者源文件保存在素材目录和 R2，但网站运行时会过滤 PSD，不向访客生成下载链接。这样以后即使更换对象存储，只需修改清单 origin 或 URL 解析层，不必批量重写文章。
 
 不要把 Cloudflare 控制台地址写进内容。控制台地址只用于管理，不是访客可访问的资源 URL。
 
@@ -39,8 +39,8 @@ TelystaAssets/
 
 - PNG/JPG/JPEG：访客下载的原图。
 - 同名 WebP：页面展示图。
-- 同名 PSD/AI：自动出现的源文件下载项。
-- 不同名的独立 PSD：在资源 `actions` 中显式填写 CDN URL。
+- 同名 PSD：仅作为作者源文件保存，不进入公开下载列表。
+- AI 等其他源文件是否公开必须逐项确认授权；不要把 PSD 作为 `actions` 下载项重新暴露。
 - 文件名一旦公开尽量保持稳定；内容发生明显变化时优先使用新文件名，避免 CDN 缓存旧内容。
 
 脚本、密码、rclone 配置、临时文件和访问令牌不得放入素材目录或上传 R2。
