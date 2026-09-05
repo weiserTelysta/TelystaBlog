@@ -11,6 +11,9 @@
  /* The overlay follows the rendered image, not the browser edges. */
 }
 
+/* PhotoSwipe's .pswp--ui-visible rule otherwise makes the whole frame intercept image clicks. */
+.telysta-lightbox.pswp--ui-visible .resource-viewer-frame { pointer-events: none; }
+
 .resource-viewer-toolbar {
  position: absolute;
  inset: auto 0 0;
@@ -60,6 +63,18 @@
 .resource-viewer-button:hover { color: var(--color-accent); background: rgba(156, 199, 232, 0.08); }
 .resource-viewer-button:disabled { opacity: 0.28; cursor: default; }
 .resource-viewer-button:focus-visible { outline: 1px solid var(--color-accent); outline-offset: -3px; }
+.resource-viewer-arrow {
+ position: absolute;
+ top: calc(50% - 22px);
+ pointer-events: auto;
+ color: var(--color-text-strong);
+ background: rgba(7, 10, 16, 0.6);
+ transition: opacity var(--motion-fast) ease, color var(--motion-fast) ease, background var(--motion-fast) ease;
+}
+.resource-viewer-arrow--previous { left: 8px; }
+.resource-viewer-arrow--next { right: 8px; }
+.resource-viewer-arrow:hover { background: rgba(7, 10, 16, 0.78); }
+.resource-viewer-frame.is-idle .resource-viewer-arrow { opacity: 0; pointer-events: none; }
 .resource-viewer-frame.is-idle .resource-viewer-toolbar { opacity: 0; }
 .resource-viewer-frame.is-idle .resource-viewer-actions { pointer-events: none; }
 .telysta-lightbox.is-pixel-art .pswp__img { image-rendering: pixelated; }

@@ -42,6 +42,8 @@ export function createDownloadPicker(root: HTMLElement, files: ResourceDownloadF
 				list.append(item);
 			});
 			dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
+			// Let the download list scroll natively without reaching PhotoSwipe's wheel handler.
+			dialog.addEventListener('wheel', event => event.stopPropagation(), { passive: true });
 			dialog.addEventListener('click', event => {
 				if (event.target !== dialog) return;
 				const rect = dialog!.getBoundingClientRect();

@@ -1,0 +1,31 @@
+<script>
+	import { getVisitProfile } from '../../lib/homeProfile';
+	import { TAB_GREETINGS } from '../../config/tabGreetings';
+	const profile = getVisitProfile();
+	const icon = new Image();
+	icon.onload = () => {
+		// Replace all competing rel=icon candidates together; keep Apple/home-screen identity fixed.
+		const link = document.createElement('link');
+		link.rel = 'icon'; link.type = 'image/png'; link.sizes.value = '48x48';
+		link.href = icon.src;
+		document.querySelectorAll('link[rel="icon"]').forEach(element => element.remove());
+		document.head.append(link);
+	};
+	icon.src = `/favicons/${profile.id}-48.png`;
+	let originalTitle = document.title;
+	let showingGreeting = false;
+	function restoreTitle() {
+		if (showingGreeting) document.title = originalTitle;
+		showingGreeting = false;
+	}
+	document.addEventListener('visibilitychange', () => {
+		if (document.hidden) {
+			if (showingGreeting) return;
+			originalTitle = document.title;
+			document.title = TAB_GREETINGS[Math.floor(Math.random() * TAB_GREETINGS.length)];
+			showingGreeting = true;
+		} else restoreTitle();
+	});
+	window.addEventListener('pagehide', restoreTitle);
+	window.addEventListener('pageshow', restoreTitle);
+</script>

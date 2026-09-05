@@ -3,6 +3,7 @@ import type { ResourceListItem } from '../../lib/resources/resourceItems';
 import { getLightboxDownloads, getLightboxSlides } from '../../lib/resources/resourceLightboxData';
 import { startSmoothScroll, stopSmoothScroll } from '../../lib/scrollRuntime';
 import { createDownloadPicker } from './resourceDownloadPicker';
+import { createGalleryWheel } from '../../lib/resources/galleryWheel';
 
 const icon = (path: string) => `<svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><path d="${path}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const ICONS = {
@@ -32,6 +33,7 @@ export function openResourceLightbox(resource: ResourceListItem, trigger: HTMLAn
  let locked = false;
  let box = { left: 0, top: 0, right: 0, bottom: 0 };
  const abort = new AbortController();
+ const wheelStep = createGalleryWheel();
  const viewer = new PhotoSwipe({
   dataSource: slides, index: 0, mainClass: 'telysta-lightbox',
   bgOpacity: 0.96, showHideAnimationType: 'fade',
@@ -130,8 +132,10 @@ export function openResourceLightbox(resource: ResourceListItem, trigger: HTMLAn
     actions.setAttribute('role', 'group');
     actions.setAttribute('aria-label', '图片操作');
     if (slides.length > 1) {
-     previous = button('上一张图片', ICONS.previous, () => navigate(-1), actions);
-     next = button('下一张图片', ICONS.next, () => navigate(1), actions);
+     previous = button('上一张图片', ICONS.previous, () => navigate(-1), frame);
+     next = button('下一张图片', ICONS.next, () => navigate(1), frame);
+     previous.classList.add('resource-viewer-arrow', 'resource-viewer-arrow--previous');
+     next.classList.add('resource-viewer-arrow', 'resource-viewer-arrow--next');
     }
     if (downloads.length) {
      const download = button('下载图片', ICONS.download, () => picker?.open(), actions);
@@ -147,6 +151,18 @@ export function openResourceLightbox(resource: ResourceListItem, trigger: HTMLAn
   });
  });
  viewer.on('change', updateCaption);
+ viewer.on('wheel', event => {
+  const wheel = event.originalEvent;
+  const slide = viewer.currSlide;
+  if (picker?.isOpen) { event.preventDefault(); return; }
+  // Preserve pinch/Ctrl zoom and PhotoSwipe panning while zoomed in.
+  if (slides.length < 2 || !slide || wheel.ctrlKey || wheel.metaKey || wheel.altKey
+   || slide.currZoomLevel > slide.zoomLevels.initial + 0.01) return;
+  event.preventDefault();
+  const delta = Math.abs(wheel.deltaX) > Math.abs(wheel.deltaY) ? wheel.deltaX : wheel.deltaY;
+  const direction = wheelStep(delta, wheel.deltaMode, performance.now());
+  if (direction && !viewer.mainScroll.isShifted()) navigate(direction);
+ });
  viewer.on('zoomPanUpdate', event => { if (event.slide === viewer.currSlide) queueFrame(); });
  viewer.on('resize', queueFrame);
  viewer.on('openingAnimationEnd', () => {

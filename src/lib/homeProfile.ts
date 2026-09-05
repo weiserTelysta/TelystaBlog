@@ -4,6 +4,19 @@ import {
 	type HomeProfile,
 } from '../config/pages/homeProfiles';
 
+let visitingProfile: HomeProfile | undefined;
+export function getVisitProfile(): HomeProfile {
+	if (typeof window === 'undefined') return DEFAULT_HOME_PROFILE;
+	if (visitingProfile) return visitingProfile;
+	try {
+		const stored = sessionStorage.getItem('telysta:visit-profile');
+		visitingProfile = HOME_PROFILES.find(profile => profile.id === stored && profile.enabled !== false);
+	} catch { /* Storage may be disabled; the in-memory selection still works. */ }
+	visitingProfile ??= getWeightedHomeProfile();
+	try { sessionStorage.setItem('telysta:visit-profile', visitingProfile.id); } catch { /* Optional persistence. */ }
+	return visitingProfile;
+}
+
 export function getWeightedHomeProfile(random: () => number = Math.random): HomeProfile {
 	const enabledProfiles = HOME_PROFILES.filter((profile) => profile.enabled !== false);
 

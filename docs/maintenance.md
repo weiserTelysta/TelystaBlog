@@ -25,6 +25,9 @@
 - `src/lib/resources/resourceItems.ts`：资源图片、下载地址和页面数据的运行时解析。
 - `src/lib/resources/resourceDisplayPolicy.ts`：展示已发布插画与两款明确收录的 Minecraft 皮肤，排除 Character、头像和文章配图。
 - `src/components/resources/resourceLightbox.ts`：按需加载的全屏看图器与下载选择，替代旧详情分栏。详见 [资源画廊记录](resource-gallery-2026-09-05.md)。
+- `src/components/blog/BlogSearch.astro`、`src/lib/blogSearch.ts`：简约搜索交互、匹配与命中句；`src/pages/blog/search-index.json.ts` 在构建时生成已发布文章索引，不要手改生成文件。
+- `src/lib/homeProfile.ts`、`src/components/site/TabIdentity.astro`：同一标签页会话共享头像与 favicon，刷新不重新抽取；离开时的多语言标题集中在 `src/config/tabGreetings.ts`。
+- `scripts/prepare-favicons.ts`：新增头像方案后运行 `npm run assets:favicons -- --cdn`（或 `--source <本地 avatars 目录>`），检查并提交 `public/favicons/` 的小尺寸 PNG。普通构建不会重新下载生成。详见 [标签页、搜索与组图记录](tab-search-gallery-2026-09-05.md)。
 - `.github/workflows/deploy.yml`：Node 22 检查和 GitHub Pages 部署。
 
 ## 日常命令

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import type { HomeProfileTone } from '../../config/pages/homeProfiles';
 import { getWeightedGreeting } from '../../lib/homeGreeting';
-import { getWeightedHomeProfile } from '../../lib/homeProfile';
+import { getVisitProfile } from '../../lib/homeProfile';
 
 type IntroPhase = 'summoning' | 'revealed' | 'speaking' | 'settled';
 type GreetingDisplayMode = 'type' | 'fade';
@@ -47,7 +47,7 @@ export default function HomeIntro() {
 		const now = new Date();
 
 		return {
-			profile: getWeightedHomeProfile(),
+			profile: getVisitProfile(),
 			greeting: getWeightedGreeting(now.getHours()).text,
 		};
 	});

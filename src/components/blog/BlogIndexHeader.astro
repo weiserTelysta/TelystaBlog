@@ -1,18 +1,25 @@
 ---
 import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
+import BlogSearch from './BlogSearch.astro';
 const { indexHeader } = BLOG_PAGE_CONFIG;
 ---
 
 <header class="blog-index-header" aria-labelledby="blog-index-title">
 	<h1 id="blog-index-title">{indexHeader.title}</h1>
+	<BlogSearch />
 </header>
 
 <style lang="scss">
 	.blog-index-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
 		max-width: 100%;
 	}
 
 	h1 {
+		min-width: 0;
 		margin: 0;
 		color: rgba(216, 222, 233, 0.86);
 		font-family: var(--type-index-title-font);
