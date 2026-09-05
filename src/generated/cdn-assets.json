@@ -21,7 +21,14 @@
           "bytes": 294957976,
           "format": "PSD"
         }
-      ]
+      ],
+      "cover": {
+        "path": "covers/Alice/alice_illustration.f996502b5b4b66f1a56c2fd5517ce93dc51b4770e16644fbf6ade5c2abe71a07.webp",
+        "bytes": 263462,
+        "format": "WEBP",
+        "width": 688,
+        "height": 960
+      }
     },
     "archive/camellia_motif_furisode": {
       "sources": [
@@ -45,7 +52,14 @@
         "bytes": 3953917,
         "format": "PNG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/archive/camellia_motif_furisode_both.ff6b581e5e321d7ca56688e0305b4990bf2c2d83b928be38eea6710601bbc681.webp",
+        "bytes": 141886,
+        "format": "WEBP",
+        "width": 940,
+        "height": 960
+      }
     },
     "archive/camellia_motif_furisode_red": {
       "display": {
@@ -90,7 +104,14 @@
         "bytes": 14689881,
         "format": "JPG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/archive/centaur&persian_girl_01.ad9f671af6245054b8d20a0eead9796f0c95ada00e231cbc5968365091b15107.webp",
+        "bytes": 232220,
+        "format": "WEBP",
+        "width": 689,
+        "height": 960
+      }
     },
     "archive/centaur&persian_girl_02": {
       "display": {
@@ -135,7 +156,14 @@
         "bytes": 493171,
         "format": "JPG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/archive/giant_Otter.3232bbc40fdb8451435e2682e87031fb9359b17fd5d0ef70c1c05736681fc98b.webp",
+        "bytes": 115312,
+        "format": "WEBP",
+        "width": 960,
+        "height": 640
+      }
     },
     "archive/manichaean_flag": {
       "display": {
@@ -165,7 +193,14 @@
         "bytes": 2324429,
         "format": "JPEG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/archive/manichaean_priest.f93872866008d20f1a0fe2b1cfdf0436cf4290fff563dd9f10bb55fe0207286a.webp",
+        "bytes": 225996,
+        "format": "WEBP",
+        "width": 743,
+        "height": 960
+      }
     },
     "archive/manichean_woman": {
       "display": {
@@ -195,7 +230,14 @@
         "bytes": 3103215,
         "format": "PNG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/archive/mhs_test_01_redhair_bareshoulder.f2c7b3ebb66ee51f04380cdb54bffb843caf6acfbcac0d4827981221fe57a627.webp",
+        "bytes": 146948,
+        "format": "WEBP",
+        "width": 960,
+        "height": 706
+      }
     },
     "archive/mhs_test_01_redhair_cape": {
       "display": {
@@ -261,7 +303,14 @@
         "bytes": 1073325,
         "format": "JPEG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/archive/mhs_test_04.f0f1bd122bbb769d53801e351f72c9568a744472163328124c72bfee1cf99d7e.webp",
+        "bytes": 53908,
+        "format": "WEBP",
+        "width": 684,
+        "height": 960
+      }
     },
     "archive/Minecraft_red": {
       "display": {
@@ -321,7 +370,14 @@
         "bytes": 2744947,
         "format": "JPEG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/archive/Persian_Lady_illustration.c394b4a90228e732726bdef1303c55fecf2a71435efe952c6184521fb76719f6.webp",
+        "bytes": 272586,
+        "format": "WEBP",
+        "width": 743,
+        "height": 960
+      }
     },
     "archive/ranunculus": {
       "display": {
@@ -342,7 +398,14 @@
           "bytes": 44175194,
           "format": "PSD"
         }
-      ]
+      ],
+      "cover": {
+        "path": "covers/archive/ranunculus.c7990b7ce03a8d709785442186ec738aeebc38ddd2082a703ed62b513cd65d34.webp",
+        "bytes": 125488,
+        "format": "WEBP",
+        "width": 546,
+        "height": 960
+      }
     },
     "archive/skeb_test_01": {
       "sources": [
@@ -381,7 +444,14 @@
         "bytes": 4994788,
         "format": "PNG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/archive/skeb_test_01_smile.5d304d1df29c920f71adaaa23b5fd1c0549f162e16e2b908119f30a29c8f92af.webp",
+        "bytes": 97464,
+        "format": "WEBP",
+        "width": 592,
+        "height": 960
+      }
     },
     "archive/skeb_test_01_tsundere": {
       "display": {
@@ -420,7 +490,14 @@
         "bytes": 8151230,
         "format": "PNG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/archive/skeb_test_02_swordmaiden.66d10c7486ff08051be70607ab40021088d924699b73c6386e649fea851bb10b.webp",
+        "bytes": 198188,
+        "format": "WEBP",
+        "width": 614,
+        "height": 960
+      }
     },
     "archive/Telysta_Legacy/telysta_legacy_01": {
       "display": {
@@ -519,7 +596,14 @@
         "bytes": 1850831,
         "format": "PNG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/archive/xiazhixian_song_Illustration_01.21180dffa7e9036c58aed880a162af4c37948dfdc03452a4d6af37a5e6c2300d.webp",
+        "bytes": 79962,
+        "format": "WEBP",
+        "width": 960,
+        "height": 662
+      }
     },
     "archive/xiazhixian_song_Illustration_02": {
       "display": {
@@ -1731,7 +1815,14 @@
           "bytes": 129992297,
           "format": "PSD"
         }
-      ]
+      ],
+      "cover": {
+        "path": "covers/Rhaelysa/rhaelysa_officialoutfit_design.5a48c6cdd7eaa97a2884327750e5998153b57b274bc04dc14578af5e8f7ff2dc.webp",
+        "bytes": 123148,
+        "format": "WEBP",
+        "width": 859,
+        "height": 960
+      }
     },
     "Rhaelysa/rhaelysa_ridinghabit": {
       "display": {
@@ -1752,7 +1843,14 @@
           "bytes": 471550674,
           "format": "PSD"
         }
-      ]
+      ],
+      "cover": {
+        "path": "covers/Rhaelysa/rhaelysa_ridinghabit.2dc542c74eb94a0b2050bc09328d95a41f7ce226cf6f15483d3e6e4b04e93dfb.webp",
+        "bytes": 244978,
+        "format": "WEBP",
+        "width": 837,
+        "height": 960
+      }
     },
     "Rhaelysa/rhaelysa&telysta_librarystaircase_01": {
       "display": {
@@ -1773,7 +1871,14 @@
           "bytes": 477460556,
           "format": "PSD"
         }
-      ]
+      ],
+      "cover": {
+        "path": "covers/Rhaelysa/rhaelysa&telysta_librarystaircase_01.f21ee8951d751cf7a4e9ac1fa7e792b209dac7d9c2a35db39426929405cdffdb.webp",
+        "bytes": 150916,
+        "format": "WEBP",
+        "width": 960,
+        "height": 611
+      }
     },
     "Rhaelysa/rhaelysa&telysta_librarystaircase_02": {
       "sources": [
@@ -1887,7 +1992,14 @@
           "bytes": 478097947,
           "format": "PSD"
         }
-      ]
+      ],
+      "cover": {
+        "path": "covers/Sylvaena/sylvaena_officialoutfit_veil.8f13de778f3f440a2f7249ec326fa8868de5d31a613fb53c0d9c088fd9b06772.webp",
+        "bytes": 156948,
+        "format": "WEBP",
+        "width": 830,
+        "height": 960
+      }
     },
     "Telysta/telysta_crinoline": {
       "sources": [
@@ -1911,7 +2023,14 @@
         "bytes": 11029235,
         "format": "PNG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/Telysta/telysta_crinoline_character_illustration.dcaad96ff2d80c61cba9b3509ac227ab586985d276ae3d99514ac4b58d215da8.webp",
+        "bytes": 143418,
+        "format": "WEBP",
+        "width": 960,
+        "height": 912
+      }
     },
     "Telysta/telysta_crinoline_design": {
       "display": {
@@ -1965,7 +2084,14 @@
         "bytes": 40723058,
         "format": "PNG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/Telysta/Telysta_officialoutfit_fullbody.7b0aa80aefa73dda05d02a5aef577315dfd27092939f66c40a0a931b5fbd58d4.webp",
+        "bytes": 163280,
+        "format": "WEBP",
+        "width": 960,
+        "height": 725
+      }
     },
     "Telysta/Telysta_officialoutfit_halfbody": {
       "display": {
@@ -2001,7 +2127,14 @@
         "bytes": 4256015,
         "format": "PNG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/Weiser/mhs_weiser_test.c4b977a114968b860a1ce9b4a1ba9d9713a1bbe0f46c71d559fb234609aa15e1.webp",
+        "bytes": 100020,
+        "format": "WEBP",
+        "width": 679,
+        "height": 960
+      }
     },
     "Weiser/weiser_artnouveau_fullbody": {
       "display": {
@@ -2022,7 +2155,14 @@
           "bytes": 470929866,
           "format": "PSD"
         }
-      ]
+      ],
+      "cover": {
+        "path": "covers/Weiser/weiser_artnouveau_fullbody.545e7da3fce198b4b8b328f7d60ab42cd44546e65a8c42a6b02f72c38a69a1f7.webp",
+        "bytes": 286718,
+        "format": "WEBP",
+        "width": 635,
+        "height": 960
+      }
     },
     "Weiser/weiser_artnouveau_ornaments": {
       "display": {
@@ -2082,7 +2222,14 @@
         "bytes": 8549026,
         "format": "PNG"
       },
-      "sources": []
+      "sources": [],
+      "cover": {
+        "path": "covers/Weiser/weiser_bunny_fullornaments.b414e6bdf07636c445da653a243e67f163e0929c0ab35ba7e58cd91260531754.webp",
+        "bytes": 75632,
+        "format": "WEBP",
+        "width": 795,
+        "height": 960
+      }
     },
     "Weiser/weiser_bunny_sulky": {
       "display": {
@@ -2139,7 +2286,14 @@
           "bytes": 247064289,
           "format": "PSD"
         }
-      ]
+      ],
+      "cover": {
+        "path": "covers/Weiser/weiser_officialoutfit_fullbody.186b8bd16b9e4e3887c1a1410dc33d6194b02dc8d059d797feb5f5a5cd491ab5.webp",
+        "bytes": 174024,
+        "format": "WEBP",
+        "width": 727,
+        "height": 960
+      }
     },
     "Weiser/weiser_officialoutfit_halfbody": {
       "display": {

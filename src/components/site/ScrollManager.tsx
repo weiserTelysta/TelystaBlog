@@ -43,6 +43,9 @@ export default function ScrollManager() {
 			try {
 				lenis = new Lenis({
 					...SCROLL_CONFIG.options,
+					// Native wheel scrolling preserves reading position across image/iframe reflow.
+					// Anchor navigation remains smooth; other pages retain their existing feel.
+					smoothWheel: document.querySelector('[data-article-content]') ? false : SCROLL_CONFIG.options.smoothWheel,
 					prevent: shouldKeepNativeScroll,
 				});
 			} catch {

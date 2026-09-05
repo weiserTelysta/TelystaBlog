@@ -1,6 +1,6 @@
 # Cloudflare R2 与 CDN 资源维护
 
-插画原图、PSD/AI、Character 资源和首页轮换头像存放在 Cloudflare R2 bucket `telysta-blog-assets`，并通过自定义域名 `https://assets.telysta.com` 分发。当前对象前缀为 `telysta-images/`、`characters/` 和 `avatars/`。仓库只提交公开资源清单，不提交 R2 凭据。
+插画原图、PSD/AI、Character 资源和首页轮换头像存放在 Cloudflare R2 bucket `telysta-blog-assets`，并通过自定义域名 `https://assets.telysta.com` 分发。当前对象前缀为 `telysta-images/`、`characters/`、`avatars/` 和独立列表封面的 `covers/`。仓库只提交公开资源清单，不提交 R2 凭据。
 
 ## 为什么使用清单键
 
@@ -81,10 +81,31 @@ Character 与头像使用专用档位：cover quality 94、preview quality 96、
 
 缓存记录位于 `.tmp/cdn-image-manifest.json`。第一次遇到已经存在的 WebP 时，脚本只记录原图和 WebP 指纹，不重新压缩，因此旧文件会保留原有尺寸；以后只有原图变化、WebP 缺失、目标指纹变化或生成参数升级时才按上述参数生成新文件。需要有意识地统一重建全部旧 WebP 时才使用 `--force`。
 
+## 资源列表独立 Cover
+
+公开资源列表优先使用清单的 `cover`；看图器仍使用 `display`，下载仍使用 `original`。无需修改资源 Markdown，常规 build 也不会重新压缩插画。当前档位为最长边 960px / WebP quality 92 / alphaQuality 100，不裁切、不放大小图；两款 Minecraft 像素图直接复用。
+
+```powershell
+npm run assets:covers -- --source "C:\Users\weise\Desktop\TelystaImages"
+rclone copy .tmp/cdn-covers/files r2:telysta-blog-assets/covers --files-from .tmp/cdn-covers/upload.txt --immutable --metadata --metadata-set "cache-control=public, max-age=31536000, immutable" --dry-run
+# 核对清单后执行上传（copy 不删除旧文件）
+rclone copy .tmp/cdn-covers/files r2:telysta-blog-assets/covers --files-from .tmp/cdn-covers/upload.txt --immutable --metadata --metadata-set "cache-control=public, max-age=31536000, immutable" --transfers 4 --checkers 8
+rclone check .tmp/cdn-covers/files r2:telysta-blog-assets/covers --files-from .tmp/cdn-covers/upload.txt --one-way
+npm run assets:covers -- --publish
+npm run check
+npx playwright test
+```
+
+准备阶段仅写 `.tmp/cdn-covers/files`、上传列表和计划；不在桌面新建素材副本，不修改公开引用。`--publish` 在逐个下载 CDN 文件并验证哈希后，更新 `src/generated/cdn-covers.json` 和 `cdn-assets.json`，网络校验失败则不发布引用。图片本身不提交 Git。
+
+主清单生成器默认合并独立 cover 索引，并读取本地来源校验 SHA-256。若替换原图导致拒绝沿用旧 cover，先以原有完整 `--source` / `--collection` 参数运行 `assets:manifest -- --without-covers ...`，再重新准备、上传、发布 cover；中间结果不要提交。新增资源按同一流程生成，未运行 cover 维护时仍可回退高清显示图。
+
+`covers/` 使用内容哈希文件名，可长期缓存；旧 `telysta-images/` 同名可覆盖对象不自动套用一年 immutable。旧 cover 保留供已部署网页使用，不自动删除。若需回滚，只回滚代码/清单即可，不必删除 R2 图片。R2 元数据与 CDN 缓存响应分别检查；已有边缘响应可能暂时保留旧四小时缓存头。
+
 ## R2 与域名设置
 
 - bucket：`telysta-blog-assets`
-- 对象前缀：`telysta-images/`、`characters/`、`avatars/`
+- 对象前缀：`telysta-images/`、`characters/`、`avatars/`、`covers/`
 - 公开域名：`assets.telysta.com`
 - rclone remote：`r2:`
 

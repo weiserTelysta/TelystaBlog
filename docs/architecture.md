@@ -18,6 +18,8 @@
 
 文章仅通过 `src/pages/blog/[...slug].astro` 渲染，正文和附件后是系列，再到独立 `ArticleComments`。不复制第二套文章 Layout。系列总索引按 category 分组，空系列不展示。
 
+`scripts/rehype-cdn-images.mjs` 从已有 CDN 清单为文章外部图片补充尺寸，避免加载时推开正文；不下载或生成图片。文章滚轮保持原生，Lenis 只保留定点导航的平滑动作，首页/资源页仍使用原有配置。详情见 [加载稳定性记录](loading-stability-2026-09-05.md)。
+
 Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边距和最小高度。不要再次给某一侧加 `top` 或负 margin 修补基线。
 
 ## 资源实现
@@ -29,6 +31,8 @@ Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边�
 图片上的标题和操作条使用 PhotoSwipe 尺寸计算，不在每次指针移动时测量 DOM。轻微 hover 只变换图片，不更改布局；闲置定时器复用。看图期间暂停 Lenis 和被遮挡的星空，关闭时恢复监听、滚动和焦点。
 
 ## 数据保留与清理规则
+
+资源列表 cover 的离线生成由 `scripts/prepare-resource-covers.ts` 负责，复用公开资源筛选规则。`scripts/lib/cdn-covers.mjs` 负责独立索引合并与来源指纹校验；`src/generated/cdn-covers.json` 和主清单提交 Git，图片只上传 R2 `covers/`。`.tmp/cdn-covers` 为可重新生成的准备区，不参与 Astro build，也不作为网站公开目录。
 
 - R2 和作者外部素材目录保存原图、PSD、Character 和头像。仓库保存必要图标、字体、风琴视觉及文章图片；不要为了“本地可见”复制整套原图。
 - `characters` 资源草稿未在资源页展示，不等于无用；文章、原稿、许可证与其他手写内容不可因零引用直接删除。

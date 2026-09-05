@@ -10,6 +10,7 @@
     "build": "astro build",
     "prebuild": "npm run content:check && npm run score:check",
     "assets:prepare": "node scripts/prepare-cdn-assets.mjs",
+    "assets:covers": "tsx scripts/prepare-resource-covers.ts",
     "assets:manifest": "node scripts/generate-cdn-manifest.mjs",
     "assets:sync": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/sync-r2-assets.ps1",
     "post:new": "tsx scripts/create-post.ts",

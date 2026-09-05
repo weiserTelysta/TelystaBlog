@@ -1,5 +1,25 @@
 import { test, expect } from '@playwright/test';
 
+test('列表使用独立 cover，高清图仅在看图器打开后请求', async ({ page }, testInfo) => {
+	const fullImages: string[] = [];
+	page.on('request', request => {
+		if (request.resourceType() === 'image' && request.url().includes('/telysta-images/') && !/Minecraft_red|minecraft_yellow/.test(request.url())) fullImages.push(request.url());
+	});
+	await page.goto('/resources/');
+	const cover = page.getByRole('link', { name: '查看资源：Telysta · 克里诺林裙', exact: true }).locator('img');
+	await expect(cover).toHaveAttribute('src', /\/covers\/Telysta\/.+\.[a-f0-9]{64}\.webp$/);
+	await cover.evaluate((image: HTMLImageElement) => image.decode());
+	expect(await cover.evaluate((image: HTMLImageElement) => Math.max(image.naturalWidth, image.naturalHeight))).toBeLessThanOrEqual(960);
+	expect(fullImages).toEqual([]);
+	await page.screenshot({ path: testInfo.outputPath('cdn-covers-desktop.png') });
+	await cover.click();
+	const full = page.locator('.pswp img[src$="telysta_crinoline_character_illustration.webp"]');
+	await expect(full).toBeInViewport();
+	await full.evaluate((image: HTMLImageElement) => image.decode());
+	expect(await full.evaluate((image: HTMLImageElement) => Math.max(image.naturalWidth, image.naturalHeight))).toBeGreaterThan(960);
+	await page.keyboard.press('Escape');
+});
+
 test('图片内聚操作、移出/闲置隐藏、下载分层关闭与焦点恢复', async ({ page }, testInfo) => {
 	await page.goto('/resources/');
 	const trigger = page.getByRole('link', { name: '查看资源：波斯少女', exact: true });

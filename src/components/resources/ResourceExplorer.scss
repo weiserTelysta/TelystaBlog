@@ -1,11 +1,13 @@
 .resource-explorer {
 	display: grid;
+	align-content: start;
 	gap: clamp(32px, 5vw, 50px);
 	min-height: calc(100vh - var(--resource-sticky-offset));
 }
 
 .resource-hero {
 	display: grid;
+	align-content: start;
 	gap: 12px;
 	width: min(740px, 100%);
 	color: var(--resource-muted);

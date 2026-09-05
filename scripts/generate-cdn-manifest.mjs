@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import sharp from 'sharp';
+import { mergeCovers, readCoverIndex } from './lib/cdn-covers.mjs';
 
 const DEFAULT_ORIGIN = 'https://assets.telysta.com/';
 const DEFAULT_OUTPUT = 'src/generated/cdn-assets.json';
@@ -32,6 +33,7 @@ const collections = [
 	})),
 ];
 const assets = {};
+const coverSources = {};
 const ignoredFiles = [];
 
 for (const collection of collections) {
@@ -61,6 +63,7 @@ for (const collection of collections) {
 			.map((extension) => group.find((file) => file.role === 'original' && file.extension === extension))
 			.find(Boolean);
 		const sourceFiles = group.filter((file) => file.role === 'source');
+		coverSources[assetKey] = (originalFile ?? displayFile)?.absolutePath;
 		const cover = coverFile ? await toDisplayManifestFile(coverFile) : undefined;
 		const display = displayFile ? await toDisplayManifestFile(displayFile) : cover;
 
@@ -71,6 +74,10 @@ for (const collection of collections) {
 			sources: sourceFiles.map(toManifestFile),
 		};
 	}
+}
+
+if (!options.withoutCovers) {
+	await mergeCovers(assets, await readCoverIndex(), (key) => fs.readFile(coverSources[key]));
 }
 
 const sortedAssets = Object.fromEntries(
@@ -118,6 +125,10 @@ function parseArguments(argv) {
 
 	for (let index = 0; index < argv.length; index += 1) {
 		const argument = argv[index];
+		if (argument === '--without-covers') {
+			parsed.withoutCovers = true;
+			continue;
+		}
 
 		if (argument === '--check') {
 			parsed.check = true;
