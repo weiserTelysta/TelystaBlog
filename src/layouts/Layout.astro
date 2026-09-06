@@ -2,6 +2,7 @@
 import SiteFooter from '../components/site/SiteFooter.astro';
 import SiteHeader from '../components/site/SiteHeader.astro';
 import TabIdentity from '../components/site/TabIdentity.astro';
+import ShareMetadata from '../components/site/ShareMetadata.astro';
 import BackToTop from '../components/site/BackToTop';
 import PageScrollIndicator from '../components/site/PageScrollIndicator';
 import ScrollManager from '../components/site/ScrollManager';
@@ -12,6 +13,9 @@ import '../styles/global.scss';
 type Props = {
 	title?: string;
 	description?: string;
+	shareImage?: string;
+	shareImageAlt?: string;
+	article?: { publishedAt: Date; updatedAt: Date; tags: string[] };
 	starfield?: boolean;
 	starfieldVariant?: 'immersive' | 'subtle';
 };
@@ -19,6 +23,9 @@ type Props = {
 const {
 	title = SITE_CONFIG.defaultTitle,
 	description = SITE_CONFIG.defaultDescription,
+	shareImage,
+	shareImageAlt,
+	article,
 	starfield = true,
 	starfieldVariant = 'immersive',
 } = Astro.props;
@@ -36,6 +43,7 @@ const {
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<meta name="description" content={description} />
 		<title>{title}</title>
+		<ShareMetadata title={title} description={description} image={shareImage} imageAlt={shareImageAlt} article={article} />
 		<TabIdentity />
 	</head>
 	<body>

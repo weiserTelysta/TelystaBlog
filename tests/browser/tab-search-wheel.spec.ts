@@ -1,3 +1,5 @@
+import { BLOG_PAGE_CONFIG } from '../../src/config/pages/blog';
+import { RESOURCE_PAGE_CONFIG } from '../../src/config/pages/resources';
 import { test, expect } from '@playwright/test';
 import { HOME_PROFILES } from '../../src/config/pages/homeProfiles';
 
@@ -6,9 +8,9 @@ test('搜索按需加载全文索引、焦点与关闭恢复', async ({ page }, 
 	page.on('request', request => { if (request.url().endsWith('/blog/search-index.json')) requests++; });
 	await page.goto('/blog/');
 	expect(requests).toBe(0);
-	const trigger = page.getByRole('button', { name: '搜索文章', exact: true });
+	const trigger = page.getByRole('button', { name: BLOG_PAGE_CONFIG.search.label, exact: true });
 	await trigger.click();
-	const dialog = page.getByRole('dialog', { name: '搜索文章' });
+	const dialog = page.getByRole('dialog', { name: BLOG_PAGE_CONFIG.search.label });
 	const input = dialog.getByRole('searchbox');
 	await expect(input).toBeFocused();
 	await expect.poll(() => dialog.evaluate(element => element.getAnimations().filter(animation => animation.playState === 'running').length)).toBe(0);
@@ -23,7 +25,7 @@ test('搜索按需加载全文索引、焦点与关闭恢复', async ({ page }, 
 	expect((await dialog.boundingBox())!.height).toBeCloseTo(originalHeight, 1);
 	await page.screenshot({ path: info.outputPath('search-desktop.png') });
 	await input.fill('zzzzz不存在');
-	await expect(dialog.getByRole('status')).toContainText('没有找到');
+	await expect(dialog.getByRole('status')).toContainText(BLOG_PAGE_CONFIG.search.empty);
 	expect(Math.abs((await input.boundingBox())!.y - originalBox.y)).toBeLessThan(1);
 	expect((await dialog.boundingBox())!.height).toBeCloseTo(originalHeight, 1);
 	await page.keyboard.press('Escape');
@@ -40,7 +42,7 @@ test('窄屏搜索保持边界与键盘可达，减少动态', async ({ page }, 
 	await page.setViewportSize({ width: 320, height: 740 });
 	await page.emulateMedia({ reducedMotion: 'reduce' });
 	await page.goto('/blog/');
-	await page.getByRole('button', { name: '搜索文章', exact: true }).click();
+	await page.getByRole('button', { name: BLOG_PAGE_CONFIG.search.label, exact: true }).click();
 	const dialog = page.getByRole('dialog');
 	await dialog.getByRole('searchbox').fill('Telysta');
 	await expect(dialog.getByRole('link').first()).toBeVisible();
@@ -82,20 +84,22 @@ test('组图两侧箭头与滚轮切换，连续惯性不跳片，下载弹窗�
 	await page.goto('/resources/');
 	await page.getByRole('link', { name: '查看资源：波斯少女', exact: true }).click();
 	const frame = page.locator('.resource-viewer-frame');
-	const prev = page.getByRole('button', { name: '上一张图片', exact: true });
-	const next = page.getByRole('button', { name: '下一张图片', exact: true });
+	const prev = page.getByRole('button', { name: RESOURCE_PAGE_CONFIG.viewer.previousLabel, exact: true });
+	const next = page.getByRole('button', { name: RESOURCE_PAGE_CONFIG.viewer.nextLabel, exact: true });
 	await expect(next).toBeVisible();
 	await expect.poll(async () => {
 		const f = (await frame.boundingBox())!; const p = (await prev.boundingBox())!; const n = (await next.boundingBox())!;
 		return Math.abs(p.y + 22 - (f.y + f.height / 2)) < 2 && p.x < f.x + 20 && n.x + 44 > f.x + f.width - 20;
 	}).toBe(true);
 	const f = (await frame.boundingBox())!; await page.mouse.move(f.x + f.width / 2, f.y + f.height / 2);
-	await page.mouse.wheel(0, 100);
-	await expect(page.locator('#resource-lightbox-title')).toContainText('2 / 2');
-	await page.mouse.wheel(0, -100);
+	// Dispatch one gesture in one browser task: an awaited assertion between native
+	// wheel calls can exceed the 220ms reset window on a busy machine.
+	await page.locator('.pswp').evaluate(element => {
+		for (const deltaY of [100, -100]) element.dispatchEvent(new WheelEvent('wheel', { deltaY, bubbles: true, cancelable: true }));
+	});
 	await expect(page.locator('#resource-lightbox-title')).toContainText('2 / 2');
 	await page.screenshot({ path: info.outputPath('side-arrows.png') });
-	await page.getByRole('button', { name: '下载图片', exact: true }).click();
+	await page.getByRole('button', { name: RESOURCE_PAGE_CONFIG.viewer.downloadLabel, exact: true }).click();
 	await page.locator('.resource-download-dialog').dispatchEvent('wheel', { deltaY: -500 });
 	await expect(page.locator('#resource-lightbox-title')).toContainText('2 / 2');
 	await page.keyboard.press('Escape'); await expect(page.locator('.resource-download-dialog')).not.toBeVisible();
@@ -117,18 +121,18 @@ test('搜索失败可以重试，存储被禁用时图标仍可显示', async ({
 	await page.route('**/blog/search-index.json', route => ++attempt === 1 ? route.fulfill({ status: 503, body: 'unavailable' }) : route.continue());
 	await page.goto('/blog/');
 	await expect(page.locator('link[rel="icon"]')).toHaveCount(1);
-	await page.getByRole('button', { name: '搜索文章', exact: true }).click();
-	await expect(page.getByRole('status')).toContainText('暂时无法加载');
+	await page.getByRole('button', { name: BLOG_PAGE_CONFIG.search.label, exact: true }).click();
+	await expect(page.getByRole('status')).toContainText(BLOG_PAGE_CONFIG.search.error);
 	await page.keyboard.press('Escape');
 	await expect(page.getByRole('dialog')).not.toBeVisible();
-	await page.getByRole('button', { name: '搜索文章', exact: true }).click();
+	await page.getByRole('button', { name: BLOG_PAGE_CONFIG.search.label, exact: true }).click();
 	await page.getByRole('searchbox').fill('Telysta');
 	await expect(page.locator('.blog-search__results a').first()).toBeVisible();
 });
 
 test('搜索组词暂不刷新结果，快速开关不残留动画或滚动锁', async ({ page }) => {
 	await page.goto('/blog/');
-	const trigger = page.getByRole('button', { name: '搜索文章', exact: true });
+	const trigger = page.getByRole('button', { name: BLOG_PAGE_CONFIG.search.label, exact: true });
 	await trigger.click(); await page.keyboard.press('Escape');
 	await expect(page.getByRole('dialog')).not.toBeVisible();
 	await trigger.click();

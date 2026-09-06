@@ -49,6 +49,9 @@ const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 <Layout
 	title={`${post.title}${ARTICLE_PAGE_CONFIG.meta.titleSeparator}${SITE_CONFIG.name}`}
 	description={post.description}
+	shareImage={post.cover}
+	shareImageAlt={post.title}
+	article={{ publishedAt: post.publishedAt, updatedAt: post.updatedAt, tags: post.tags }}
 	starfieldVariant="subtle"
 >
 	<main class="article-page">

@@ -1,11 +1,15 @@
+---
+import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
+const copy = BLOG_PAGE_CONFIG.search;
+---
 <div class="blog-search">
-	<button type="button" class="blog-search__trigger" aria-label="搜索文章" title="搜索文章" aria-haspopup="dialog" hidden>
+	<button type="button" class="blog-search__trigger" aria-label={copy.label} title={copy.label} aria-haspopup="dialog" hidden>
 		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
 	</button>
-	<dialog class="blog-search__dialog" aria-label="搜索文章" data-scroll-native>
+	<dialog class="blog-search__dialog" aria-label={copy.label} data-scroll-native>
 		<form role="search">
-			<input id="blog-search-input" type="search" aria-label="搜索文章" maxlength="160" placeholder="搜索文章…" autocomplete="off" autofocus />
-			<button type="button" class="blog-search__close" aria-label="关闭搜索">×</button>
+			<input id="blog-search-input" type="search" aria-label={copy.label} maxlength="160" placeholder={copy.placeholder} autocomplete="off" autofocus />
+			<button type="button" class="blog-search__close" aria-label={copy.closeLabel}>×</button>
 		</form>
 		<div class="blog-search__matches" data-scroll-native>
 			<p class="blog-search__status" role="status" aria-live="polite"></p>
@@ -15,6 +19,8 @@
 </div>
 
 <script>
+	import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
+	const copy = BLOG_PAGE_CONFIG.search;
 	import { searchPosts, searchSnippet, matchRanges, type SearchPost } from '../../lib/blogSearch';
 	import { startSmoothScroll, stopSmoothScroll } from '../../lib/scrollRuntime';
 	const root = document.querySelector<HTMLElement>('.blog-search');
@@ -52,7 +58,7 @@
 			if (!input.value.trim()) { status.textContent = ''; return; }
 			const matches = searchPosts(posts, input.value);
 			status.classList.toggle('is-sr-only', matches.length > 0);
-			status.textContent = matches.length ? `${matches.length} 篇文章${matches.length > 20 ? ' · 显示前 20 篇，请细化关键词' : ''}` : '没有找到相关文章，试试其他关键词。';
+			status.textContent = matches.length ? copy.resultCount.replaceAll('{count}', String(matches.length)) + (matches.length > 20 ? copy.limited.replaceAll('{limit}', '20') : '') : copy.empty;
 			for (const post of matches.slice(0, 20)) {
 				const item = document.createElement('li');
 				const link = document.createElement('a'); link.href = post.href;
@@ -65,13 +71,13 @@
 		async function load() {
 			if (posts) { render(); return; }
 			if (loading) return loading;
-			status.classList.add('is-sr-only'); status.textContent = '正在加载文章索引…';
+			status.classList.add('is-sr-only'); status.textContent = copy.loading;
 			loading = (async () => {
 				try {
 					const response = await fetch('/blog/search-index.json', { signal: AbortSignal.timeout(15000) });
 					if (!response.ok) throw new Error('Search unavailable');
 					posts = await response.json(); render();
-				} catch { status.classList.remove('is-sr-only'); status.textContent = '索引暂时无法加载，请关闭后重新打开重试。'; }
+				} catch { status.classList.remove('is-sr-only'); status.textContent = copy.error; }
 				finally { loading = undefined; }
 			})();
 			return loading;

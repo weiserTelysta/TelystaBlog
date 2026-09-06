@@ -1,3 +1,4 @@
+import { RESOURCE_PAGE_CONFIG } from '../src/config/pages/resources';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { createElement } from 'react';
@@ -97,7 +98,7 @@ test('全屏看图、切换第七张、下载选择、分层关闭和焦点返�
 		assert.equal(dom.document.body.style.overflow, 'hidden');
 		assert.ok(dom.document.querySelector('.pswp[role="dialog"]'));
 		for (let index = 0; index < 6; index++) {
-			dom.document.querySelector<InstanceType<typeof dom.HTMLButtonElement>>('[aria-label="下一张图片"]')!.click();
+			dom.document.querySelector<InstanceType<typeof dom.HTMLButtonElement>>(`[aria-label="${RESOURCE_PAGE_CONFIG.viewer.nextLabel}"]`)!.click();
 		}
 		assert.equal(viewer.currIndex, 6);
 		assert.equal(dom.document.querySelector('#resource-lightbox-title')?.textContent, '插画与差分 · 7 / 7');
@@ -108,7 +109,7 @@ test('全屏看图、切换第七张、下载选择、分层关闭和焦点返�
 		assert.equal(viewer.currIndex, 5);
 		assert.ok(!root.querySelector('.resource-viewer-frame')?.classList.contains('is-idle'));
 		dom.document.dispatchEvent(new dom.KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
-		dom.document.querySelector<InstanceType<typeof dom.HTMLButtonElement>>('[aria-label="下载图片"]')!.click();
+		dom.document.querySelector<InstanceType<typeof dom.HTMLButtonElement>>(`[aria-label="${RESOURCE_PAGE_CONFIG.viewer.downloadLabel}"]`)!.click();
 		const dialog = dom.document.querySelector('dialog')!;
 		assert.equal(dialog.open, true);
 		const links = dialog.querySelectorAll('a');
@@ -120,9 +121,9 @@ test('全屏看图、切换第七张、下载选择、分层关闭和焦点返�
 		dialog.dispatchEvent(new dom.Event('cancel', { cancelable: true }));
 		assert.equal(dialog.open, false);
 		assert.equal(destroyed, 0);
-		assert.equal(dom.document.activeElement?.getAttribute('aria-label'), '下载图片');
+		assert.equal(dom.document.activeElement?.getAttribute('aria-label'), RESOURCE_PAGE_CONFIG.viewer.downloadLabel);
 		const closed = new Promise<void>((resolve) => viewer!.on('destroy', () => resolve()));
-		dom.document.querySelector<InstanceType<typeof dom.HTMLButtonElement>>('[aria-label="关闭图片"]')!.click();
+		dom.document.querySelector<InstanceType<typeof dom.HTMLButtonElement>>(`[aria-label="${RESOURCE_PAGE_CONFIG.viewer.closeLabel}"]`)!.click();
 		await closed;
 		assert.equal(destroyed, 1);
 		assert.equal(dom.document.querySelector('.pswp'), null);

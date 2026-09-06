@@ -1,3 +1,5 @@
+import { ARTICLE_PAGE_CONFIG } from '../config/pages/article';
+
 const ENHANCED_ATTRIBUTE = 'data-code-block-enhanced';
 const COPY_ICON = `
 	<svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
@@ -20,8 +22,7 @@ function setCopyState(
 	status: HTMLElement,
 	state: CopyState,
 ) {
-	const label =
-		state === 'copied' ? '已复制' : state === 'error' ? '复制失败' : '复制代码';
+	const label = ARTICLE_PAGE_CONFIG.codeCopy[state];
 	button.dataset.state = state;
 	button.setAttribute('aria-label', label);
 	button.title = label;

@@ -1,4 +1,9 @@
 export const ARTICLE_PAGE_CONFIG = {
+	codeCopy: {
+		idle: '复制代码',
+		copied: '已复制',
+		error: '复制失败',
+	},
 	meta: {
 		titleSeparator: ' - ',
 	},

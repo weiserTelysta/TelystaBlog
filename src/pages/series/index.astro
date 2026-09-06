@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import { BLOG_CATEGORIES } from '../../config/content/blogCategories';
 import { BLOG_SERIES } from '../../config/content/blogSeries';
 import { SITE_CONFIG } from '../../config/site';
+import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
+const copy = BLOG_PAGE_CONFIG.seriesIndex;
 import { getPostsBySeries, getPublishedPosts } from '../../lib/blogPosts';
 import { buildSeriesHref } from '../../lib/blogSeriesUtils';
 
@@ -21,15 +23,15 @@ const seriesGroups = BLOG_CATEGORIES.map((category) => ({
 ---
 
 <Layout
-	title={`Series Archive - ${SITE_CONFIG.name}`}
-	description={`${SITE_CONFIG.name} 的全部文章系列。`}
+	title={`${copy.title} - ${SITE_CONFIG.name}`}
+	description={copy.description}
 	starfieldVariant="subtle"
 >
 	<main class="series-index">
 		<section class="series-index__inner" aria-labelledby="series-index-title">
 			<header class="series-index__header">
-				<p>All Records</p>
-				<h1 id="series-index-title">Series Archive</h1>
+				<p>{copy.eyebrow}</p>
+				<h1 id="series-index-title">{copy.title}</h1>
 			</header>
 
 			<div class="series-index__groups">
@@ -45,7 +47,7 @@ const seriesGroups = BLOG_CATEGORIES.map((category) => ({
 								<li>
 									<a href={buildSeriesHref(item.id)}>
 										<strong>{item.title}</strong>
-										<span aria-label={`共 ${item.postCount} 篇`}>
+										<span aria-label={copy.countLabel.replaceAll('{count}', String(item.postCount))}>
 											{String(item.postCount).padStart(2, '0')}
 										</span>
 									</a>

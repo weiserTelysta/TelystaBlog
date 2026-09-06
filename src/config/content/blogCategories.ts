@@ -2,30 +2,17 @@
  * Keep this file data-only so content.config.ts can import category ids without
  * loading visual assets. Category images and foil visuals can be mapped later.
  */
-export const BLOG_CATEGORY_IDS = [
-	'manuscript',
-	'collection',
-	'essays',
-	'reading',
-	'life',
-	'portraits',
-	'notes',
-] as const;
-
-export type BlogCategoryId = (typeof BLOG_CATEGORY_IDS)[number];
-
 export type FoilPreset = 'starlight' | 'aurora' | 'moonlit' | 'prism' | 'embers' | 'ripple';
 
-export type BlogCategory = {
-	id: BlogCategoryId;
+type BlogCategoryDefinition = {
+	id: string;
 	title: string;
 	subtitle: string;
 	description: string;
 	foil: FoilPreset;
 };
 
-export type CategoryPostCount = Record<BlogCategoryId, number>;
-
+// 新栏目只在这里添加；下方 ID 与类型自动派生。已有 ID 是稳定路由标识，不随标题改名。
 export const BLOG_CATEGORIES = [
 	{
 		id: 'manuscript',
@@ -76,4 +63,9 @@ export const BLOG_CATEGORIES = [
 		description: '在行走与考察中，记录场所、礼仪和社会生活。',
 		foil: 'starlight',
 	},
-] as const satisfies readonly BlogCategory[];
+] as const satisfies readonly [BlogCategoryDefinition, ...BlogCategoryDefinition[]];
+
+export type BlogCategoryId = (typeof BLOG_CATEGORIES)[number]['id'];
+export type BlogCategory = Omit<BlogCategoryDefinition, 'id'> & { id: BlogCategoryId };
+export type CategoryPostCount = Record<BlogCategoryId, number>;
+export const BLOG_CATEGORY_IDS = BLOG_CATEGORIES.map(category => category.id) as [BlogCategoryId, ...BlogCategoryId[]];

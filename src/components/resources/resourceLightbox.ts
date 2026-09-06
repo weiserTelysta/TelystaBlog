@@ -1,4 +1,6 @@
 import PhotoSwipe from 'photoswipe';
+import { RESOURCE_PAGE_CONFIG } from '../../config/pages/resources';
+const copy = RESOURCE_PAGE_CONFIG.viewer;
 import type { ResourceListItem } from '../../lib/resources/resourceItems';
 import { getLightboxDownloads, getLightboxSlides } from '../../lib/resources/resourceLightboxData';
 import { startSmoothScroll, stopSmoothScroll } from '../../lib/scrollRuntime';
@@ -50,7 +52,7 @@ export function openResourceLightbox(resource: ResourceListItem, trigger: HTMLAn
   close: false, arrowPrev: false, arrowNext: false,
   // Our scoped capture handler also accepts keys during the opening animation.
   arrowKeys: false, escKey: false, returnFocus: false,
-  errorMsg: '图片暂时无法加载，请关闭后重试。',
+  errorMsg: copy.error,
   imageClickAction: 'zoom', bgClickAction: () => closeViewer(),
   tapAction: () => showInfo(), doubleTapAction: 'zoom',
  });
@@ -130,21 +132,21 @@ export function openResourceLightbox(resource: ResourceListItem, trigger: HTMLAn
     const actions = document.createElement('div');
     actions.className = 'resource-viewer-actions';
     actions.setAttribute('role', 'group');
-    actions.setAttribute('aria-label', '图片操作');
+    actions.setAttribute('aria-label', copy.actionsLabel);
     if (slides.length > 1) {
-     previous = button('上一张图片', ICONS.previous, () => navigate(-1), frame);
-     next = button('下一张图片', ICONS.next, () => navigate(1), frame);
+     previous = button(copy.previousLabel, ICONS.previous, () => navigate(-1), frame);
+     next = button(copy.nextLabel, ICONS.next, () => navigate(1), frame);
      previous.classList.add('resource-viewer-arrow', 'resource-viewer-arrow--previous');
      next.classList.add('resource-viewer-arrow', 'resource-viewer-arrow--next');
     }
     if (downloads.length) {
-     const download = button('下载图片', ICONS.download, () => picker?.open(), actions);
+     const download = button(copy.downloadLabel, ICONS.download, () => picker?.open(), actions);
      download.setAttribute('aria-haspopup', 'dialog');
      picker = createDownloadPicker(viewer.element!, downloads, download, {
       reduced: () => reduced.matches, currentIndex: () => viewer.currIndex, onToggle: () => showInfo(),
      });
     }
-    button('关闭图片', ICONS.close, closeViewer, actions);
+    button(copy.closeLabel, ICONS.close, closeViewer, actions);
     toolbar.append(title, actions);
     frame.append(toolbar);
    },

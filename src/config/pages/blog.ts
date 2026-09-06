@@ -9,6 +9,26 @@ export const BLOG_PAGE_CONFIG = {
 	indexHeader: {
 		title: "Weiser's Records",
 	},
+	search: {
+		label: '搜索文章',
+		placeholder: '搜索文章…',
+		closeLabel: '关闭搜索',
+		loading: '正在加载文章索引…',
+		error: '索引暂时无法加载，请关闭后重新打开重试。',
+		empty: '没有找到相关文章，试试其他关键词。',
+		// 保留 {count} / {limit} 占位符；用于屏幕阅读器播报。
+		resultCount: '{count} 篇文章',
+		limited: ' · 显示前 {limit} 篇，请细化关键词',
+	},
+	seriesIndex: {
+		entryLabel: 'Series',
+		allLabel: 'All Series',
+		ariaLabel: '查看全部系列',
+		title: 'Series Archive',
+		eyebrow: 'All Records',
+		description: `${SITE_CONFIG.name} 的全部文章系列。`,
+		countLabel: '共 {count} 篇',
+	},
 	emptyState: {
 		defaultMessage: '这里暂时还没有公开文章。',
 		categorySuffix: '还没有公开文章。',
@@ -22,7 +42,6 @@ export const BLOG_PAGE_CONFIG = {
 		ariaLabel: '文章类目',
 	},
 	categoryAccordion: {
-		dialogTitleId: 'category-accordion-title',
 		entryLabel: 'Category',
 		allRecordsTitle: 'All Records',
 		recordLabel: 'records',

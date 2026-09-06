@@ -1,4 +1,6 @@
 import type { ResourceDownloadFile } from '../../lib/resources/resourceItems';
+import { RESOURCE_PAGE_CONFIG } from '../../config/pages/resources';
+const copy = RESOURCE_PAGE_CONFIG.download;
 
 export function createDownloadPicker(root: HTMLElement, files: ResourceDownloadFile[], trigger: HTMLButtonElement,
 	options: { reduced: () => boolean; currentIndex: () => number; onToggle: (open: boolean) => void }) {
@@ -22,7 +24,11 @@ export function createDownloadPicker(root: HTMLElement, files: ResourceDownloadF
 			dialog.className = 'resource-download-dialog';
 			dialog.setAttribute('aria-labelledby', 'resource-download-heading');
 			dialog.setAttribute('data-scroll-native', '');
-			dialog.innerHTML = '<h2 id="resource-download-heading">选择图片</h2><button type="button" class="resource-download-dialog__close" aria-label="关闭下载选择">×</button><p class="resource-download-dialog__hint">打开原图后，可右键或长按保存。</p><ul></ul>';
+			dialog.innerHTML = '<h2 id="resource-download-heading"></h2><button type="button" class="resource-download-dialog__close">×</button><p class="resource-download-dialog__hint"></p><ul></ul>';
+			// Editable copy remains plain text, never interpolated into HTML.
+			dialog.querySelector('h2')!.textContent = copy.title;
+			dialog.querySelector('button')!.setAttribute('aria-label', copy.closeLabel);
+			dialog.querySelector('p')!.textContent = copy.hint;
 			dialog.querySelector('button')!.addEventListener('click', close);
 			const list = dialog.querySelector('ul')!;
 			files.forEach((file, index) => {
@@ -34,7 +40,7 @@ export function createDownloadPicker(root: HTMLElement, files: ResourceDownloadF
 				link.rel = 'noopener noreferrer';
 				link.dataset.sourceIndex = String(file.sourceIndex ?? -1);
 				const label = document.createElement('span');
-				label.textContent = file.label || `图片 ${index + 1}`;
+				label.textContent = file.label || copy.imageLabel.replaceAll('{index}', String(index + 1));
 				const format = document.createElement('small');
 				format.textContent = file.format;
 				link.append(label, format);

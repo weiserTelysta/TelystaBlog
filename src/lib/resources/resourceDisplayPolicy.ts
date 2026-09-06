@@ -1,3 +1,5 @@
+import { RESOURCE_GALLERY_CONFIG } from '../../config/content/resourceGallery';
+
 type ResourceVisibility = {
 	type: string;
 	image: string;
@@ -5,7 +7,7 @@ type ResourceVisibility = {
 	draft?: boolean;
 };
 
-const FEATURED_IMAGES = new Set(['asset:archive/Minecraft_red', 'asset:archive/minecraft_yellow']);
+const FEATURED_IMAGES = new Set<string>(RESOURCE_GALLERY_CONFIG.featuredImages);
 
 // 插画为主，另按作者要求展示两款 Minecraft 皮肤；R2 清单不等于公开画廊。
 export function isPublicIllustration(resource: ResourceVisibility): boolean {

@@ -16,7 +16,7 @@ import './CategoryAccordion.scss';
 import './BlogIndexControl.scss';
 
 const ACCORDION_COPY = BLOG_PAGE_CONFIG.categoryAccordion;
-const CATEGORY_DIALOG_TITLE_ID = ACCORDION_COPY.dialogTitleId;
+const CATEGORY_DIALOG_TITLE_ID = 'category-accordion-title';
 const CLOSE_ANIMATION_MS = 200;
 const RAIL_REST_DISTANCE = 0.5;
 

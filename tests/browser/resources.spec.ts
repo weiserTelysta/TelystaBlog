@@ -1,3 +1,4 @@
+import { RESOURCE_PAGE_CONFIG } from '../../src/config/pages/resources';
 import { test, expect } from '@playwright/test';
 
 test('列表使用独立 cover，高清图仅在看图器打开后请求', async ({ page }, testInfo) => {
@@ -43,7 +44,7 @@ test('图片内聚操作、移出/闲置隐藏、下载分层关闭与焦点恢�
 	await expect(toolbar).toHaveCSS('opacity', '0', { timeout: 4000 });
 	await page.keyboard.press('Tab');
 	await expect(toolbar).toHaveCSS('opacity', '1');
-	await page.getByRole('button', { name: '下载图片', exact: true }).click();
+	await page.getByRole('button', { name: RESOURCE_PAGE_CONFIG.viewer.downloadLabel, exact: true }).click();
 	const picker = page.locator('.resource-download-dialog');
 	await expect(picker).toBeVisible();
 	await expect(picker.locator('a')).toHaveCount(2);
@@ -51,7 +52,7 @@ test('图片内聚操作、移出/闲置隐藏、下载分层关闭与焦点恢�
 	await page.keyboard.press('Escape');
 	await expect(picker).not.toBeVisible();
 	await expect(page.locator('.pswp')).toBeVisible();
-	await expect(page.getByRole('button', { name: '下载图片', exact: true })).toBeFocused();
+	await expect(page.getByRole('button', { name: RESOURCE_PAGE_CONFIG.viewer.downloadLabel, exact: true })).toBeFocused();
 	await page.mouse.move(5, 5);
 	await expect(toolbar).toHaveCSS('opacity', '0');
 	await page.keyboard.press('ArrowRight');
@@ -75,11 +76,11 @@ test('触屏窄屏与减少动态：按钮不溢出，像素皮肤保留 PNG', a
 		const image = page.locator('.pswp img[src$="Minecraft_red.webp"]');
 		await expect(image).toBeInViewport();
 		await expect(image).toHaveCSS('image-rendering', 'pixelated');
-		await page.getByRole('button', { name: '下载图片', exact: true }).tap();
+		await page.getByRole('button', { name: RESOURCE_PAGE_CONFIG.viewer.downloadLabel, exact: true }).tap();
 		await expect(page.locator('.resource-download-dialog a')).toHaveAttribute('href', /Minecraft_red\.png$/);
 		await page.screenshot({ path: testInfo.outputPath('mobile-download.png') });
 		await page.keyboard.press('Escape');
-		await page.getByRole('button', { name: '关闭图片', exact: true }).tap();
+		await page.getByRole('button', { name: RESOURCE_PAGE_CONFIG.viewer.closeLabel, exact: true }).tap();
 		await expect(page.locator('.pswp')).toHaveCount(0);
 	} finally { await context.close(); }
 });
@@ -121,5 +122,8 @@ test('生产 HTML 包含指定资源，没有 Character / 头像 / 文章配图�
 		expect(html).toContain(`查看资源：${title}`);
 	}
 	expect(html).not.toMatch(/https[^\s"<>]*\.psd(?:[?"<\s]|$)/i);
-	expect(html).not.toMatch(/assets\.telysta\.com\/(characters|avatars|blog_imgs)\//i);
+	// The head may declare a site-level avatar for link sharing; it is not a gallery item.
+	const body = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1];
+	expect(body).toBeTruthy();
+	expect(body).not.toMatch(/assets\.telysta\.com\/(characters|avatars|blog_imgs)\//i);
 });

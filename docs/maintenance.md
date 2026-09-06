@@ -15,6 +15,9 @@
 
 ## 常见维护入口
 
+日常改文案先看 [作者配置入口](../src/config/README.md)，无需查找组件内部。
+
+- `src/config/site.ts`、`src/components/site/ShareMetadata.astro`：默认分享图及静态 Open Graph/Twitter 信息；文章封面与日期由文章路由传入。详见 [链接分享记录](link-sharing-2026-09-06.md)。
 - `astro.config.mjs`：Astro 7 站点配置，以及通过 `@astrojs/markdown-remark` unified processor 接入的 Remark/Rehype 插件。
 - `src/content.config.ts`：文章和资源的 Content Collections Schema。
 - `src/config/content/blogCategories.ts`：稳定的文章栏目 ID 与显示信息。

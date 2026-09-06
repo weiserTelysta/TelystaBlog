@@ -27,12 +27,13 @@ test('搜索中文全文、多个关键词、标签与系列，标题结果优�
 });
 
 test('所有角色有本地 32/48 PNG，祝福覆盖多种语言', () => {
-	for (const profile of HOME_PROFILES) for (const size of [32, 48]) {
+	for (const profile of HOME_PROFILES.filter(profile => profile.enabled !== false)) for (const size of [32, 48]) {
 		const data = fs.readFileSync(`public/favicons/${profile.id}-${size}.png`);
 		assert.equal(data.readUInt32BE(16), size);
 		assert.equal(data.readUInt32BE(20), size);
 	}
-	assert.equal(TAB_GREETINGS.length, 9);
+	assert.ok(TAB_GREETINGS.length > 0, '至少保留一句标签页祝福');
+	assert.ok(TAB_GREETINGS.every(text => text.trim().length > 0), '祝福不能是空白');
 });
 
 test('结果摘要截取真正命中句，而非文章开头；重音与重叠词高亮位置准确', () => {
