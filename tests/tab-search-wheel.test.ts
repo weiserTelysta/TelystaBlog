@@ -15,14 +15,27 @@ test('滚轮归一化、阈值、连续惯性只切一张，停顿后重新响�
 	assert.equal(step(1, 2, 1700), 1);
 });
 
-const post: SearchPost = { title: 'Telysta 的设计', description: '角色介绍', body: '红色巨龙与国家责任', href: '/blog/example/', category: 'Portraits', tags: ['人物'], series: 'Telysta 札记' };
+const post: SearchPost = {
+	title: 'Telysta 的设计',
+	titleEn: "Telysta's Design",
+	description: '角色介绍',
+	descriptionEn: 'Character introduction',
+	body: '红色巨龙与国家责任',
+	href: '/blog/example/',
+	category: '人物札记',
+	categoryEn: 'Portrait Notes',
+	tags: ['人物'],
+	series: 'Telysta 札记',
+	seriesEn: 'Notes on Telysta',
+};
 test('搜索中文全文、多个关键词、标签与系列，标题结果优先', () => {
 	assert.equal(searchPosts([post], '巨龙 责任').length, 1);
 	assert.equal(searchPosts([post], '人物').length, 1);
 	assert.equal(searchPosts([post], '札记').length, 1);
+	assert.equal(searchPosts([post], 'character introduction').length, 1);
 	assert.equal(searchPosts([post], '不存在').length, 0);
 	assert.equal(searchPosts([post], ' ').length, 0);
-	assert.equal(searchPosts([{ ...post, title: 'Other', body: 'telysta' }, post], 'TELYSTA')[0].title, post.title);
+	assert.equal(searchPosts([{ ...post, title: 'Other', titleEn: 'Other', body: 'telysta' }, post], 'TELYSTA')[0].title, post.title);
 	assert.equal(searchPosts([{ ...post, title: 'Café' }], 'cafe').length, 1);
 });
 

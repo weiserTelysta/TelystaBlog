@@ -17,11 +17,13 @@ const HELP_TEXT = `创建新的 Telysta 博客草稿
 
 用法：
   npm run post:new
-  npm run post:new -- --title "标题" --description "摘要" --category manuscript
+  npm run post:new -- --title "标题" --title-en "Title" --description "摘要" --description-en "Summary" --category manuscript
 
 参数：
-  --title           文章标题
-  --description     文章摘要
+  --title           中文文章标题
+  --title-en        英文文章标题
+  --description     中文文章摘要
+  --description-en  英文文章摘要
   --category        栏目 id
   --slug            可选 URL slug
   --date            YYYY-MM-DD，默认使用上海日期
@@ -61,7 +63,7 @@ async function main() {
 
 async function promptForCreatePostOptions(): Promise<CreatePostCliInput> {
 	if (!process.stdin.isTTY || !process.stdout.isTTY) {
-		throw new Error('非交互环境必须提供 --title、--description 和 --category。');
+		throw new Error('非交互环境必须提供 --title、--title-en、--description、--description-en 和 --category。');
 	}
 
 	const prompt = createInterface({ input: process.stdin, output: process.stdout });
@@ -72,8 +74,10 @@ async function promptForCreatePostOptions(): Promise<CreatePostCliInput> {
 			process.stdout.write(`  ${category.id}  ${category.title}\n`);
 		});
 
-		const title = await askRequired(prompt, '标题：');
-		const description = await askRequired(prompt, '摘要：');
+		const title = await askRequired(prompt, '中文标题：');
+		const titleEn = await askRequired(prompt, '英文标题：');
+		const description = await askRequired(prompt, '中文摘要：');
+		const descriptionEn = await askRequired(prompt, '英文摘要：');
 		const category = await askRequired(prompt, '栏目 id：');
 		const suggestedSlug = normalizePostSlug(title);
 		const slugInput = (await prompt.question(`slug（默认 ${suggestedSlug}）：`)).trim();
@@ -93,7 +97,9 @@ async function promptForCreatePostOptions(): Promise<CreatePostCliInput> {
 
 		return {
 			title,
+			titleEn,
 			description,
+			descriptionEn,
 			category: category as CreatePostCliInput['category'],
 			slug: slugInput || suggestedSlug,
 			date: dateInput || getShanghaiDate(),

@@ -5,9 +5,10 @@ import { formatArticleDate, formatFullDate, formatPostDate } from '../../lib/blo
 
 type Props = {
 	post: PostListItem;
+	title: string;
 };
 
-const { post } = Astro.props;
+const { post, title } = Astro.props;
 const cover = post.cover?.startsWith('/images/posts/') ? post.cover : undefined;
 const { header } = ARTICLE_PAGE_CONFIG;
 ---
@@ -21,7 +22,7 @@ const { header } = ARTICLE_PAGE_CONFIG;
 		)
 	}
 
-	<h1>{post.title}</h1>
+	<h1>{title}</h1>
 
 	<div class="article-header__dates" aria-label={header.metaAriaLabel}>
 		<span>

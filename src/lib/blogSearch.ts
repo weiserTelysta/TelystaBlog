@@ -1,12 +1,32 @@
-export type SearchPost = { href: string; title: string; description: string; category: string; tags: string[]; series: string; body: string };
+export type SearchPost = {
+	href: string;
+	title: string;
+	titleEn: string;
+	description: string;
+	descriptionEn: string;
+	category: string;
+	categoryEn: string;
+	tags: string[];
+	series: string;
+	seriesEn: string;
+	body: string;
+};
 export const normalizeSearch = (text: string) => text.normalize('NFKD').replace(/\p{M}/gu, '').toLocaleLowerCase().replace(/\s+/g, ' ').trim();
 
 export function searchPosts(posts: SearchPost[], query: string): SearchPost[] {
 	const terms = normalizeSearch(query).slice(0, 160).split(' ').filter(Boolean);
 	if (!terms.length) return [];
 	return posts.map(post => {
-		const title = normalizeSearch(post.title);
-		const metadata = normalizeSearch([post.description, post.category, post.series, ...post.tags].join(' '));
+		const title = normalizeSearch([post.title, post.titleEn].join(' '));
+		const metadata = normalizeSearch([
+			post.description,
+			post.descriptionEn,
+			post.category,
+			post.categoryEn,
+			post.series,
+			post.seriesEn,
+			...post.tags,
+		].join(' '));
 		const body = normalizeSearch(post.body);
 		const score = terms.every(term => `${title} ${metadata} ${body}`.includes(term))
 			? terms.reduce((sum, term) => sum + (title.includes(term) ? 10 : metadata.includes(term) ? 3 : 1), 0) : 0;
@@ -47,7 +67,12 @@ export function matchRanges(text: string, query: string): Array<[number, number]
 
 export function searchSnippet(post: SearchPost, query: string): string {
 	// Prefer the actual matched body sentence, never the unrelated opening excerpt.
-	const candidates = [post.body, post.description, [post.category, post.series, ...post.tags].join(' · ')];
+	const candidates = [
+		post.body,
+		post.description,
+		post.descriptionEn,
+		[post.category, post.categoryEn, post.series, post.seriesEn, ...post.tags].join(' · '),
+	];
 	const text = candidates.find(text => matchRanges(text, query).length) ?? post.description;
 	const hit = matchRanges(text, query)[0] ?? [0, 0];
 	let start = 0, end = text.length;

@@ -1,6 +1,8 @@
 ---
 title: TELYSTA BLOG 的第一阶段
-description: The first page of Weiser's blogs
+titleEn: The First Stage of TELYSTA BLOG
+description: 记录 TELYSTA BLOG 第一阶段的完成，以及这个个人博客从此开始承载分享与见闻。
+descriptionEn: The first page of Weiser's blog, marking the completion of TELYSTA BLOG's first stage.
 publishedAt: 2026-05-27
 updatedAt: 2026-06-10
 category: manuscript
@@ -12,6 +14,8 @@ draft: false
 series: weiser-blog-construction-records
 seriesOrder: 1
 ---
+# TELYSTA BLOG 的第一阶段
+
 ## 开始的本篇
 是的，从此伊始，我的博客已经正式搭建完成拉。从主页到博客的内容页，这俩最重要的部分已经建设完毕，从此时开始，分享知识与一些有趣的见闻都变得容易了许多呢！
 

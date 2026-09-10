@@ -37,7 +37,10 @@ type Props = {
 const { entry, seriesPostCount } = Astro.props;
 const post = toPostListItem(entry);
 const series = getBlogSeriesById(post.series);
-const { Content, headings } = await render(entry);
+const { Content, headings, remarkPluginFrontmatter } = await render(entry);
+const articleTitle = typeof remarkPluginFrontmatter.articleTitle === 'string'
+	? remarkPluginFrontmatter.articleTitle
+	: post.title;
 const tocHeadings = headings.filter(
 	(heading) =>
 		heading.depth >= ARTICLE_PAGE_CONFIG.toc.minDepth &&
@@ -56,7 +59,7 @@ const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 >
 	<main class="article-page">
 		<article class="article-page__inner">
-			<ArticleHeader post={post} />
+			<ArticleHeader post={post} title={articleTitle} />
 
 			<div class="article-page__body">
 				<div class="article-page__content prose" data-article-content>

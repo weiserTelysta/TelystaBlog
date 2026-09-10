@@ -9,8 +9,20 @@ export async function GET() {
 	entries.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
 	const index: SearchPost[] = entries.map(entry => {
 		const post = toPostListItem(entry);
-		return { href: post.href, title: post.title, description: post.excerpt, category: post.categoryTitle,
-			tags: post.tags, series: BLOG_SERIES.find(series => series.id === post.series)?.title ?? '', body: searchBody(entry.body ?? '') };
+		const series = BLOG_SERIES.find(series => series.id === post.series);
+		return {
+			href: post.href,
+			title: post.title,
+			titleEn: post.titleEn,
+			description: post.excerpt,
+			descriptionEn: post.descriptionEn,
+			category: post.categoryTitle,
+			categoryEn: post.categoryTitleEn,
+			tags: post.tags,
+			series: series?.title ?? '',
+			seriesEn: series?.titleEn ?? '',
+			body: searchBody(entry.body ?? ''),
+		};
 	});
 	return new Response(JSON.stringify(index), { headers: { 'Content-Type': 'application/json; charset=utf-8' } });
 }

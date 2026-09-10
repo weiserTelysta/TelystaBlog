@@ -12,7 +12,9 @@ import {
 
 export type CreatePostOptions = {
 	title: string;
+	titleEn: string;
 	description: string;
+	descriptionEn: string;
 	category: BlogCategoryId;
 	slug: string;
 	date: string;
@@ -68,7 +70,9 @@ const WINDOWS_RESERVED_NAMES = new Set([
 
 const VALUE_FLAGS = new Set([
 	'title',
+	'title-en',
 	'description',
+	'description-en',
 	'category',
 	'slug',
 	'date',
@@ -121,7 +125,9 @@ export function parseCreatePostArgs(argv: string[]): CreatePostCliInput {
 
 	const seriesOrderValue = values.get('series-order');
 	const title = values.get('title');
+	const titleEn = values.get('title-en');
 	const description = values.get('description');
+	const descriptionEn = values.get('description-en');
 	const category = values.get('category');
 	const slug = values.get('slug');
 	const date = values.get('date');
@@ -129,7 +135,9 @@ export function parseCreatePostArgs(argv: string[]): CreatePostCliInput {
 
 	return {
 		...(title !== undefined ? { title } : {}),
+		...(titleEn !== undefined ? { titleEn } : {}),
 		...(description !== undefined ? { description } : {}),
+		...(descriptionEn !== undefined ? { descriptionEn } : {}),
 		...(category !== undefined ? { category: category as BlogCategoryId } : {}),
 		...(slug !== undefined ? { slug } : {}),
 		...(date !== undefined ? { date } : {}),
@@ -166,12 +174,16 @@ export function getShanghaiDate(now = new Date()): string {
 
 export function completeCreatePostOptions(input: CreatePostCliInput): CreatePostOptions {
 	const title = input.title?.trim() ?? '';
+	const titleEn = input.titleEn?.trim() ?? '';
 	const description = input.description?.trim() ?? '';
+	const descriptionEn = input.descriptionEn?.trim() ?? '';
 	const normalizedSlug = normalizePostSlug(input.slug?.trim() || title);
 
 	return {
 		title,
+		titleEn,
 		description,
+		descriptionEn,
 		category: input.category as BlogCategoryId,
 		slug: normalizedSlug,
 		date: input.date?.trim() || getShanghaiDate(),
@@ -186,11 +198,19 @@ export function validateCreatePostOptions(options: CreatePostOptions): Validatio
 	const errors: string[] = [];
 
 	if (!options.title) {
-		errors.push('文章标题不能为空。');
+		errors.push('中文文章标题不能为空。');
+	}
+
+	if (!options.titleEn) {
+		errors.push('英文文章标题不能为空。');
 	}
 
 	if (!options.description) {
-		errors.push('文章摘要不能为空。');
+		errors.push('中文文章摘要不能为空。');
+	}
+
+	if (!options.descriptionEn) {
+		errors.push('英文文章摘要不能为空。');
 	}
 
 	if (!BLOG_CATEGORY_IDS.includes(options.category)) {
@@ -251,10 +271,15 @@ export function renderPostTemplate(template: string, options: CreatePostOptions)
 	if (!template.includes('{{frontmatter}}')) {
 		throw new Error('文章模板缺少 {{frontmatter}} 占位符。');
 	}
+	if (!template.includes('{{title}}')) {
+		throw new Error('文章模板缺少 {{title}} 占位符。');
+	}
 
 	const frontmatter: Record<string, unknown> = {
 		title: options.title,
+		titleEn: options.titleEn,
 		description: options.description,
+		descriptionEn: options.descriptionEn,
 		publishedAt: options.date,
 		updatedAt: options.date,
 		category: options.category,
@@ -273,7 +298,10 @@ export function renderPostTemplate(template: string, options: CreatePostOptions)
 		defaultKeyType: 'PLAIN',
 	});
 
-	return template.replace('{{frontmatter}}', yaml).replace(/\r\n/g, '\n');
+	return template
+		.replace('{{frontmatter}}', yaml)
+		.replace('{{title}}', options.title)
+		.replace(/\r\n/g, '\n');
 }
 
 export async function createPost(

@@ -4,6 +4,7 @@ import { unified } from '@astrojs/markdown-remark';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 import remarkScore from './scripts/remark-score.mjs';
+import remarkArticleTitle from './scripts/remark-article-title.mjs';
 import rehypeCdnImages from './scripts/rehype-cdn-images.mjs';
 
 import react from '@astrojs/react';
@@ -22,7 +23,7 @@ export default defineConfig({
 			wrap: false,
 		},
     processor: unified({
-      remarkPlugins: [remarkMath, remarkScore],
+      remarkPlugins: [remarkArticleTitle, remarkMath, remarkScore],
       rehypePlugins: [rehypeKatex, rehypeCdnImages],
     }),
   },

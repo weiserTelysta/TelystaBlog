@@ -131,6 +131,24 @@ export function validatePostDocuments(
 		const series = readString(frontmatter.series);
 		const seriesOrder = readNumber(frontmatter.seriesOrder);
 
+		for (const [field, label] of [
+			['title', '中文标题'],
+			['titleEn', '英文标题'],
+			['description', '中文摘要'],
+			['descriptionEn', '英文摘要'],
+		] as const) {
+			if (!readString(frontmatter[field])) {
+				issues.push(
+					createIssue(
+						'error',
+						`post-${field}-missing`,
+						document.relativePath,
+						`文章缺少${label}字段 ${field}。`,
+					),
+				);
+			}
+		}
+
 		if (category && !BLOG_CATEGORY_IDS.includes(category as (typeof BLOG_CATEGORY_IDS)[number])) {
 			issues.push(
 				createIssue(
@@ -333,18 +351,64 @@ export function validateMarkdownBody(
 ): ValidationIssue[] {
 	const issues: ValidationIssue[] = [];
 	const searchableBody = stripCode(document.body);
-	const levelOneHeadingPattern = /^ {0,3}#(?!#)\s+\S.*$/gm;
 
-	for (const match of searchableBody.matchAll(levelOneHeadingPattern)) {
-		issues.push(
-			createIssue(
-				'error',
-				'markdown-body-h1',
-				document.relativePath,
-				'正文不能包含一级标题；页面标题已由文章布局生成，请从二级标题开始。',
-				getLineNumber(document, match.index ?? 0),
-			),
-		);
+	if (document.kind === 'post') {
+		const levelOneHeadingPattern = /^ {0,3}#(?!#)[ \t]+(.+?)\s*#*\s*$/gm;
+		const headings = [...searchableBody.matchAll(levelOneHeadingPattern)];
+		const firstContentOffset = searchableBody.search(/\S/);
+
+		if (headings.length === 0) {
+			issues.push(
+				createIssue(
+					'error',
+					'markdown-body-h1-missing',
+					document.relativePath,
+					'正文必须以“# 中文标题”开始。',
+					document.bodyStartLine,
+				),
+			);
+		} else {
+			const firstHeading = headings[0];
+			const headingOffset = firstHeading.index ?? 0;
+			const headingText = normalizeHeadingText(firstHeading[1] ?? '');
+			const frontmatterTitle = normalizeHeadingText(readString(document.frontmatter.title) ?? '');
+
+			if (headingOffset !== firstContentOffset) {
+				issues.push(
+					createIssue(
+						'error',
+						'markdown-body-h1-position',
+						document.relativePath,
+						'一级标题必须是正文的第一个非空内容。',
+						getLineNumber(document, headingOffset),
+					),
+				);
+			}
+
+			if (headingText !== frontmatterTitle) {
+				issues.push(
+					createIssue(
+						'error',
+						'markdown-body-h1-mismatch',
+						document.relativePath,
+						'正文一级标题必须与 frontmatter.title 一致。',
+						getLineNumber(document, headingOffset),
+					),
+				);
+			}
+		}
+
+		for (const heading of headings.slice(1)) {
+			issues.push(
+				createIssue(
+					'error',
+					'markdown-body-h1-multiple',
+					document.relativePath,
+					'每篇文章只能包含一个一级标题；后续章节请使用二级及以下标题。',
+					getLineNumber(document, heading.index ?? 0),
+				),
+			);
+		}
 	}
 
 	const imagePattern = /!\[[^\]]*\]\((<[^>]+>|[^)\s]+)(?:\s+["'][^)]*["'])?\)/g;
@@ -384,6 +448,17 @@ export function validateMarkdownBody(
 	}
 
 	return issues;
+}
+
+function normalizeHeadingText(value: string): string {
+	return value
+		.normalize('NFKC')
+		.replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1')
+		.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+		.replace(/[*_`~]/g, '')
+		.replace(/<[^>]+>/g, '')
+		.replace(/\s+/g, ' ')
+		.trim();
 }
 
 function validateResourceImagePath(

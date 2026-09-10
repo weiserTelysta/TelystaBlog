@@ -88,6 +88,18 @@ test('发现日期倒置和公开文章占位摘要', async () => {
 	);
 });
 
+test('要求文章分别提供中英文标题与摘要', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	await writePost(rootDir, 'bilingual.md', {
+		titleEn: '',
+		descriptionEn: '',
+	});
+	const result = runContentValidation(rootDir);
+
+	assert.ok(result.issues.some((issue) => issue.code === 'post-titleEn-missing'));
+	assert.ok(result.issues.some((issue) => issue.code === 'post-descriptionEn-missing'));
+});
+
 test('发现文件名大小写错误，并接受大小写完全一致的路径', async () => {
 	const rootDir = await createTemporaryContentRoot();
 	const imageDirectory = path.join(rootDir, 'src', 'assets', 'images', 'illustration');
@@ -133,7 +145,7 @@ test('资源图片必须使用 CDN 清单引用', async () => {
 	assert.ok(result.issues.some((issue) => issue.code === 'resource-image-cdn-required'));
 });
 
-test('发现文章缺失的 cover 路径和正文一级标题，但忽略代码块中的 H1', async () => {
+test('发现文章缺失的 cover 路径和重复一级标题，但忽略代码块中的 H1', async () => {
 	const rootDir = await createTemporaryContentRoot();
 	await writePost(
 		rootDir,
@@ -142,7 +154,7 @@ test('发现文章缺失的 cover 路径和正文一级标题，但忽略代码�
 		'# 重复标题\n\n```md\n# 代码示例\n```\n',
 	);
 	const result = runContentValidation(rootDir);
-	const headingIssues = result.issues.filter((issue) => issue.code === 'markdown-body-h1');
+	const headingIssues = result.issues.filter((issue) => issue.code === 'markdown-body-h1-multiple');
 
 	assert.ok(result.issues.some((issue) => issue.code === 'local-path-missing'));
 	assert.equal(headingIssues.length, 1);
@@ -268,7 +280,9 @@ async function writePost(
 ) {
 	const frontmatter = {
 		title: fileName,
+		titleEn: `English title for ${fileName}`,
 		description: '有效摘要。',
+		descriptionEn: 'A valid summary.',
 		publishedAt: '2026-08-14',
 		updatedAt: '2026-08-14',
 		category: 'manuscript',
@@ -276,10 +290,11 @@ async function writePost(
 		draft: true,
 		...overrides,
 	};
+	const articleBody = `# ${String(frontmatter.title)}\n\n${body}`;
 	await writeMarkdown(
 		path.join(rootDir, 'src', 'content', 'weiser-posts', 'manuscript', fileName),
 		frontmatter,
-		body,
+		articleBody,
 	);
 }
 

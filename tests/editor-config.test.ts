@@ -19,7 +19,14 @@ test('栏目与系列 ID 从资料派生，唯一且关联有效', () => {
 		for (const item of list) {
 			assert.match(item.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 			assert.ok(item.title.trim());
+			assert.ok(item.titleEn.trim());
+			assert.ok(item.description.trim());
+			assert.ok(item.descriptionEn.trim());
 		}
+	}
+	for (const category of BLOG_CATEGORIES) {
+		assert.ok(category.subtitle.trim());
+		assert.ok(category.subtitleEn.trim());
 	}
 	for (const series of BLOG_SERIES) assert.ok(BLOG_CATEGORY_IDS.includes(series.category));
 });

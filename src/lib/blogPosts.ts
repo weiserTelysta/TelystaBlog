@@ -19,12 +19,15 @@ export type PostListItem = {
 	slug: string;
 	href: string;
 	title: string;
+	titleEn: string;
 	description: string;
+	descriptionEn: string;
 	excerpt: string;
 	publishedAt: Date;
 	updatedAt: Date;
 	category: BlogCategoryId;
 	categoryTitle: string;
+	categoryTitleEn: string;
 	tags: string[];
 	cover?: string;
 	series?: string;
@@ -65,12 +68,15 @@ export function toPostListItem(entry: PostEntry): PostListItem {
 		slug: entry.id,
 		href: buildPostHref(entry.id),
 		title: entry.data.title,
+		titleEn: entry.data.titleEn,
 		description: entry.data.description,
+		descriptionEn: entry.data.descriptionEn,
 		excerpt: buildPostExcerpt(entry.body, entry.data.description),
 		publishedAt: entry.data.publishedAt,
 		updatedAt: entry.data.updatedAt,
 		category: category?.id ?? entry.data.category,
 		categoryTitle: category?.title ?? entry.data.category,
+		categoryTitleEn: category?.titleEn ?? entry.data.category,
 		tags: entry.data.tags,
 		cover: cover || undefined,
 		series: entry.data.series,

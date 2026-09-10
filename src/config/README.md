@@ -44,6 +44,10 @@
 
 只往 `BLOG_SERIES` 或 `BLOG_CATEGORIES` 添加完整对象，ID 列表和 TypeScript 类型自动派生，不再手工修改第二份名单。系列的 `category` 填已有分类 ID。已有 ID 涉及文章引用、URL 与评论映射，改显示标题不等于改 ID。
 
+博客文章、栏目与系列都将中文和英文资料分开保存：`title` / `description`（以及栏目的 `subtitle`）用于当前中文页面，`titleEn` / `descriptionEn` / `subtitleEn` 保存对应英文。不要在同一个字段里拼接两种语言；新文章脚本也会要求两套标题与摘要。英文资料会参与站内搜索，并为后续独立英文路由保留，但不会在同一个中文 URL 上重复输出第二份 SEO 描述。
+
+每篇博客正文必须以一个 `# 中文标题` 开始，并与 frontmatter 的 `title` 完全一致；后续章节从 `##` 开始。Markdown 渲染插件会把这个 H1 交给文章页头排版，因此最终页面不会产生重复标题。`npm run content:check` 会拒绝缺失、错位、不一致或重复的一级标题。
+
 新系列需有公开文章引用才会出现在索引。新分类还需在 `visuals/categoryVisuals.ts` 配置图片与文案映射，类型检查会提醒缺项；不要忽略错误。两份主配置至少保留一项。
 
 ## 资源和头像

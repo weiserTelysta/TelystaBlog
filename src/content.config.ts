@@ -17,7 +17,9 @@ const posts = defineCollection({
 	schema: z
 		.object({
 			title: z.string().min(1),
+			titleEn: z.string().min(1),
 			description: z.string().min(1),
+			descriptionEn: z.string().min(1),
 			publishedAt: z.coerce.date(),
 			updatedAt: z.coerce.date(),
 			category: z.enum(BLOG_CATEGORY_IDS),

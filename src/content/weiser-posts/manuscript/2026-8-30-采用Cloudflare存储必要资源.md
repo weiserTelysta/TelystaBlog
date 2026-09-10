@@ -1,6 +1,8 @@
 ---
-title: 阶段更新：采用Cloudflare对象存储作为必要资源分发系统
-description: 技术更新，我们的博客页面采用了Cloudflare作为内容分发的工具，可以大幅度提升体验，并且可以支持后续的大型文件下载了。
+title: 阶段更新：采用 Cloudflare 对象存储分发必要资源
+titleEn: "Project Update: Using Cloudflare Object Storage for Essential Assets"
+description: 技术更新：博客采用 Cloudflare 分发必要资源，以改善访问体验并支持后续的大型文件下载。
+descriptionEn: A technical update on using Cloudflare to distribute essential assets, improve access, and support future large-file downloads.
 publishedAt: 2026-8-30
 updatedAt: 2026-8-30
 category: manuscript
@@ -11,6 +13,8 @@ draft: false
 series: weiser-blog-construction-records
 seriesOrder: 2
 ---
+# 阶段更新：采用 Cloudflare 对象存储分发必要资源
+
 ## 进度介绍
 目前，由于Github仓库有一定的容量限制，而同时我们的网站希望能够将一些必要的资源快速且高效的分发。在权衡利弊之后，我选择使用Cloudflare R2对象存储作为必要资源的承载方式。
 

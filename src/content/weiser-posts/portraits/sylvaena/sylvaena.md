@@ -1,6 +1,8 @@
 ---
-title: Skeb To 神戸新一
-description: Skeb Commission for 神戸新一
+title: 神戸新一的 Skeb 委托
+titleEn: Skeb Commission for Shinichi Kobe
+description: 为神戸新一创作的 Skeb 委托作品。
+descriptionEn: A Skeb commission created for Shinichi Kobe.
 publishedAt: 2026-07-02
 updatedAt: 2026-07-02
 category: portraits
@@ -10,6 +12,8 @@ tags:
   - skeb
 draft: false
 ---
+# 神戸新一的 Skeb 委托
+
 神戸新一様
 
 こんにちは。

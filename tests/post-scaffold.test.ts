@@ -34,7 +34,10 @@ test('解析命令行参数和去重标签', () => {
 	const parsed = parseCreatePostArgs([
 		'--title',
 		'测试文章',
+		'--title-en',
+		'Test Post',
 		'--description=测试摘要',
+		'--description-en=Test summary',
 		'--category',
 		'manuscript',
 		'--tags',
@@ -47,6 +50,8 @@ test('解析命令行参数和去重标签', () => {
 	]);
 
 	assert.deepEqual(parsed.tags, ['Astro', 'Blog']);
+	assert.equal(parsed.titleEn, 'Test Post');
+	assert.equal(parsed.descriptionEn, 'Test summary');
 	assert.equal(parsed.seriesOrder, 2);
 	assert.equal(parsed.withAssets, true);
 });
@@ -66,9 +71,9 @@ test('使用上海时区生成日期', () => {
 	assert.equal(getShanghaiDate(new Date('2026-08-13T16:30:00.000Z')), '2026-08-14');
 });
 
-test('模板生成有效 frontmatter 且不重复文章 H1', () => {
+test('模板生成有效 frontmatter 和由作者维护的单一文章 H1', () => {
 	const content = renderPostTemplate(
-		'---\n{{frontmatter}}---\n\n这里开始写正文。\n',
+		'---\n{{frontmatter}}---\n\n# {{title}}\n\n这里开始写正文。\n',
 		createOptions({
 			title: '含有: 冒号的标题',
 			tags: ['Astro', '中文'],
@@ -80,8 +85,10 @@ test('模板生成有效 frontmatter 且不重复文章 H1', () => {
 
 	assert.ok(match);
 	assert.deepEqual(parse(match[1]).tags, ['Astro', '中文']);
+	assert.equal(parse(match[1]).titleEn, 'Test Post');
+	assert.equal(parse(match[1]).descriptionEn, 'Test summary');
 	assert.equal(parse(match[1]).seriesOrder, 1);
-	assert.equal(/^# /m.test(content), false);
+	assert.deepEqual(content.match(/^# .+$/gm), ['# 含有: 冒号的标题']);
 });
 
 test('创建 UTF-8 草稿和专属资源目录，并拒绝覆盖', async () => {
@@ -139,7 +146,9 @@ test('复用已有专属资源目录，并拒绝同名文件占用资源路径',
 test('补全非交互输入的默认 slug、日期和标签', () => {
 	const completed = completeCreatePostOptions({
 		title: '新的文章',
+		titleEn: 'A New Post',
 		description: '摘要',
+		descriptionEn: 'Summary',
 		category: 'essays',
 	});
 
@@ -151,7 +160,9 @@ test('补全非交互输入的默认 slug、日期和标签', () => {
 function createOptions(overrides: Partial<CreatePostOptions> = {}): CreatePostOptions {
 	return {
 		title: '测试文章',
+		titleEn: 'Test Post',
 		description: '测试摘要',
+		descriptionEn: 'Test summary',
 		category: 'manuscript',
 		slug: 'test-post',
 		date: '2026-08-14',
@@ -168,7 +179,7 @@ async function createTemporaryProject(): Promise<string> {
 	await fs.mkdir(templateDirectory, { recursive: true });
 	await fs.writeFile(
 		path.join(templateDirectory, 'post.md'),
-		'---\n{{frontmatter}}---\n\n这里开始写正文。\n',
+		'---\n{{frontmatter}}---\n\n# {{title}}\n\n这里开始写正文。\n',
 		'utf8',
 	);
 	return rootDir;
