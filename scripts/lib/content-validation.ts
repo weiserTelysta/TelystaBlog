@@ -357,21 +357,9 @@ export function validateMarkdownBody(
 		const headings = [...searchableBody.matchAll(levelOneHeadingPattern)];
 		const firstContentOffset = searchableBody.search(/\S/);
 
-		if (headings.length === 0) {
-			issues.push(
-				createIssue(
-					'error',
-					'markdown-body-h1-missing',
-					document.relativePath,
-					'正文必须以“# 中文标题”开始。',
-					document.bodyStartLine,
-				),
-			);
-		} else {
+		if (headings.length > 0) {
 			const firstHeading = headings[0];
 			const headingOffset = firstHeading.index ?? 0;
-			const headingText = normalizeHeadingText(firstHeading[1] ?? '');
-			const frontmatterTitle = normalizeHeadingText(readString(document.frontmatter.title) ?? '');
 
 			if (headingOffset !== firstContentOffset) {
 				issues.push(
@@ -380,18 +368,6 @@ export function validateMarkdownBody(
 						'markdown-body-h1-position',
 						document.relativePath,
 						'一级标题必须是正文的第一个非空内容。',
-						getLineNumber(document, headingOffset),
-					),
-				);
-			}
-
-			if (headingText !== frontmatterTitle) {
-				issues.push(
-					createIssue(
-						'error',
-						'markdown-body-h1-mismatch',
-						document.relativePath,
-						'正文一级标题必须与 frontmatter.title 一致。',
 						getLineNumber(document, headingOffset),
 					),
 				);
@@ -448,17 +424,6 @@ export function validateMarkdownBody(
 	}
 
 	return issues;
-}
-
-function normalizeHeadingText(value: string): string {
-	return value
-		.normalize('NFKC')
-		.replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1')
-		.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
-		.replace(/[*_`~]/g, '')
-		.replace(/<[^>]+>/g, '')
-		.replace(/\s+/g, ' ')
-		.trim();
 }
 
 function validateResourceImagePath(

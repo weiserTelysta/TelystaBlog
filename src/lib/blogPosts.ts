@@ -3,6 +3,7 @@ import type { BlogCategoryId } from '../config/content/blogCategories';
 import { getBlogCategoryById, isBlogCategoryId } from './blogCategoryUtils';
 import { formatPostMonth } from './blogDate';
 import { buildPostExcerpt } from './blogExcerpt';
+import { resolvePostTitle } from './markdownTitle';
 
 export {
 	formatArticleDate,
@@ -67,7 +68,7 @@ export function toPostListItem(entry: PostEntry): PostListItem {
 		id: entry.id,
 		slug: entry.id,
 		href: buildPostHref(entry.id),
-		title: entry.data.title,
+		title: resolvePostTitle(entry.body ?? '', entry.data.title),
 		titleEn: entry.data.titleEn,
 		description: entry.data.description,
 		descriptionEn: entry.data.descriptionEn,

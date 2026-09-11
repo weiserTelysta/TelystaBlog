@@ -161,6 +161,46 @@ test('发现文章缺失的 cover 路径和重复一级标题，但忽略代码�
 	assert.equal(typeof headingIssues[0]?.line, 'number');
 });
 
+test('允许正文省略 H1 或使用不同于 frontmatter 的 H1', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	await writeMarkdown(
+		path.join(rootDir, 'src', 'content', 'weiser-posts', 'manuscript', 'fallback.md'),
+		{
+			title: '格式标题',
+			titleEn: 'Frontmatter title',
+			description: '有效摘要。',
+			descriptionEn: 'A valid summary.',
+			publishedAt: '2026-08-14',
+			updatedAt: '2026-08-14',
+			category: 'manuscript',
+			tags: [],
+			draft: true,
+		},
+		'## 第一节\n\n正文。\n',
+	);
+	await writeMarkdown(
+		path.join(rootDir, 'src', 'content', 'weiser-posts', 'manuscript', 'preferred.md'),
+		{
+			title: '格式标题',
+			titleEn: 'Frontmatter title',
+			description: '有效摘要。',
+			descriptionEn: 'A valid summary.',
+			publishedAt: '2026-08-14',
+			updatedAt: '2026-08-14',
+			category: 'manuscript',
+			tags: [],
+			draft: true,
+		},
+		'# 正文标题\n',
+	);
+	const result = runContentValidation(rootDir);
+
+	assert.equal(
+		result.issues.some((issue) => issue.code.startsWith('markdown-body-h1')),
+		false,
+	);
+});
+
 test('拒绝资源目录之外的主图和外部主图', async () => {
 	const rootDir = await createTemporaryContentRoot();
 	const publicDirectory = path.join(rootDir, 'public');
