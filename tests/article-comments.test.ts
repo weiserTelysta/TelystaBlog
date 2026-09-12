@@ -49,7 +49,7 @@ test('评论区与系列入口复用文章正文宽度，不创建独立全屏�
 	assert.doesNotMatch(comments, /Discussion|在这里留下回应/);
 	assert.doesNotMatch(series, /series\.description|viewLabel/);
 	assert.ok(series.indexOf('<strong>') < series.indexOf('article-series__count'));
-	assert.doesNotMatch(series, /ARTICLE_PAGE_CONFIG|article-series__meta/);
+	assert.doesNotMatch(series, /article-series__meta/);
 	assert.doesNotMatch(series, /article-series__signal/);
 	assert.doesNotMatch(series, /radial-gradient|linear-gradient|pointermove|series-pointer|scaleX/);
 	assert.match(series, /prefers-reduced-motion: reduce/);

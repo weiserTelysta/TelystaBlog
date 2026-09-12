@@ -43,5 +43,12 @@ export const ARTICLE_PAGE_CONFIG = {
 		pageLabel: 'Series',
 		recordsLabel: 'records',
 		emptyLabel: '这个系列暂时还没有公开文章。',
+		navigation: {
+			ariaLabel: '系列文章导航',
+			previousLabel: '上一章',
+			contentsLabel: '目录',
+			nextLabel: '下一章',
+			unavailableLabel: '不可用',
+		},
 	},
 } as const;

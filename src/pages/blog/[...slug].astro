@@ -7,8 +7,10 @@ import ArticleSeriesNav from '../../components/article/ArticleSeriesNav.astro';
 import Layout from '../../layouts/Layout.astro';
 import { ARTICLE_PAGE_CONFIG } from '../../config/pages/article';
 import {
+	getSeriesNavigation,
 	toPostListItem,
 	type PostEntry,
+	type SeriesNavigation,
 } from '../../lib/blogPosts';
 import { getBlogSeriesById } from '../../lib/blogSeriesUtils';
 import { SITE_CONFIG } from '../../config/site';
@@ -17,11 +19,13 @@ import 'katex/dist/katex.min.css';
 export async function getStaticPaths() {
 	const entries = (await getCollection('posts')) as PostEntry[];
 	const publishedEntries = entries.filter((entry) => !entry.data.draft);
+	const publishedPosts = publishedEntries.map(toPostListItem);
 
-	return publishedEntries.map((entry) => ({
+	return publishedEntries.map((entry, index) => ({
 			params: { slug: entry.id },
 			props: {
 				entry,
+				navigation: getSeriesNavigation(publishedPosts, publishedPosts[index]),
 				seriesPostCount: entry.data.series
 					? publishedEntries.filter((candidate) => candidate.data.series === entry.data.series).length
 					: undefined,
@@ -32,9 +36,10 @@ export async function getStaticPaths() {
 type Props = {
 	entry: PostEntry;
 	seriesPostCount?: number;
+	navigation?: SeriesNavigation;
 };
 
-const { entry, seriesPostCount } = Astro.props;
+const { entry, seriesPostCount, navigation } = Astro.props;
 const post = toPostListItem(entry);
 const series = getBlogSeriesById(post.series);
 const { Content, headings, remarkPluginFrontmatter } = await render(entry);
@@ -66,7 +71,7 @@ const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 					<Content />
 				</div>
 
-				<ArticleSeriesNav series={series} postCount={seriesPostCount} />
+				<ArticleSeriesNav series={series} postCount={seriesPostCount} navigation={navigation} />
 
 				<ArticleComments />
 			</div>
