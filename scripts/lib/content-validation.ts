@@ -3,6 +3,8 @@ import path from 'node:path';
 import { LineCounter, parseDocument } from 'yaml';
 import { BLOG_CATEGORY_IDS } from '../../src/config/content/blogCategories';
 import { BLOG_SERIES_IDS } from '../../src/config/content/blogSeries';
+import { completePostMetadata } from '../../src/lib/postMetadata';
+import { splitMarkdownSource } from '../../src/lib/markdownSource';
 import { getCdnAsset, getCdnAssetKey, isCdnAssetReference } from '../../src/lib/cdnAssets';
 
 export type ContentKind = 'post' | 'resource';
@@ -69,26 +71,26 @@ export function parseContentDocument(
 	kind: ContentKind,
 	rootDir: string,
 ): ContentDocument {
-	const normalizedSource = source.replace(/\r\n/g, '\n');
+	const { normalizedSource, frontmatter: yaml, body, bodyStartLine } = splitMarkdownSource(source);
 	const relativePath = toRelativePath(rootDir, filePath);
-	const match = /^---\n([\s\S]*?)\n---(?:\n|$)/.exec(normalizedSource);
 
-	if (!match) {
+	if (yaml === undefined) {
+		const plainPost = kind === 'post' && !/^\s*---/.test(normalizedSource);
 		return {
 			kind,
 			filePath,
 			relativePath,
-			frontmatter: {},
+			frontmatter: plainPost ? completePostMetadata({}, normalizedSource, relativePath) : {},
 			body: normalizedSource,
 			bodyStartLine: 1,
-			parseIssues: [
-				createIssue('error', 'frontmatter-missing', relativePath, '缺少有效的 YAML frontmatter。', 1),
+			parseIssues: plainPost ? [] : [
+				createIssue('error', 'frontmatter-missing', relativePath, '无法识别 YAML frontmatter：开头和结尾的 --- 必须单独顶格书写。', 1),
 			],
 		};
 	}
 
 	const lineCounter = new LineCounter();
-	const yamlDocument = parseDocument(match[1], {
+	const yamlDocument = parseDocument(yaml, {
 		lineCounter,
 		prettyErrors: false,
 		uniqueKeys: true,
@@ -99,15 +101,19 @@ export function parseContentDocument(
 		return createIssue('error', 'frontmatter-invalid', relativePath, error.message, line);
 	});
 	const value = parseIssues.length === 0 ? yamlDocument.toJS() : {};
+	if (yamlDocument.contents !== null && !isRecord(value)) {
+		parseIssues.push(createIssue(
+			'error', 'frontmatter-invalid', relativePath,
+			'frontmatter 必须使用 key: value 字段，不能是列表或普通文本。', 2,
+		));
+	}
 	const frontmatter = isRecord(value) ? value : {};
-	const body = normalizedSource.slice(match[0].length);
-	const bodyStartLine = match[0].split('\n').length;
 
 	return {
 		kind,
 		filePath,
 		relativePath,
-		frontmatter,
+		frontmatter: kind === 'post' ? completePostMetadata(frontmatter, body, relativePath) : frontmatter,
 		body,
 		bodyStartLine,
 		parseIssues,
@@ -130,6 +136,21 @@ export function validatePostDocuments(
 		const category = readString(frontmatter.category);
 		const series = readString(frontmatter.series);
 		const seriesOrder = readNumber(frontmatter.seriesOrder);
+		const validSeriesOrder = seriesOrder !== undefined && Number.isInteger(seriesOrder) && seriesOrder > 0;
+		if (frontmatter.seriesOrder !== undefined && !validSeriesOrder) {
+			issues.push(createIssue(
+				'error', 'series-order-invalid', document.relativePath,
+				'seriesOrder 必须是正整数。',
+			));
+		}
+		if (!category) {
+			issues.push(createIssue('error', 'category-missing', document.relativePath,
+				`无法从目录推导分类，请填写 category。可用值：${BLOG_CATEGORY_IDS.join(', ')}`));
+		}
+		if (frontmatter.publishedAt === undefined) {
+			issues.push(createIssue('error', 'published-date-missing', document.relativePath,
+				'请填写 publishedAt，或使用 YYYY-M-D-标题.md 文件名。'));
+		}
 
 		for (const [field, label] of [
 			['title', '中文标题'],
@@ -177,7 +198,7 @@ export function validatePostDocuments(
 			);
 		}
 
-		if (series && seriesOrder !== undefined) {
+		if (series && validSeriesOrder) {
 			const key = `${series}::${seriesOrder}`;
 			const previous = seriesOrders.get(key);
 
@@ -355,13 +376,12 @@ export function validateMarkdownBody(
 	if (document.kind === 'post') {
 		const levelOneHeadingPattern = /^ {0,3}#(?!#)[ \t]+(.+?)\s*#*\s*$/gm;
 		const headings = [...searchableBody.matchAll(levelOneHeadingPattern)];
-		const firstContentOffset = searchableBody.search(/\S/);
 
 		if (headings.length > 0) {
 			const firstHeading = headings[0];
 			const headingOffset = firstHeading.index ?? 0;
 
-			if (headingOffset !== firstContentOffset) {
+			if (searchableBody.slice(0, headingOffset).trim()) {
 				issues.push(
 					createIssue(
 						'error',

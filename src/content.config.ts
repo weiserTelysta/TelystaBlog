@@ -3,6 +3,7 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { BLOG_CATEGORY_IDS } from './config/content/blogCategories';
 import { BLOG_SERIES_IDS } from './config/content/blogSeries';
+import { postLoader } from './lib/postLoader';
 import {
 	RESOURCE_ACTION_TYPES,
 	RESOURCE_STATUS_IDS,
@@ -10,10 +11,7 @@ import {
 } from './config/content/resourceTypes';
 
 const posts = defineCollection({
-	loader: glob({
-		pattern: '**/*.md',
-		base: './src/content/weiser-posts',
-	}),
+	loader: postLoader(),
 	schema: z
 		.object({
 			title: z.string().min(1),

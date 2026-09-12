@@ -2,6 +2,21 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import remarkArticleTitle from '../scripts/remark-article-title.mjs';
 
+test('没有 frontmatter 的博客也只在文章头部展示一次标题', () => {
+	const tree = { children: [
+		{ type: 'heading', depth: 1, children: [{ type: 'text', value: '新文章' }] },
+		{ type: 'paragraph', children: [{ type: 'text', value: '正文' }] },
+	] };
+	const frontmatter: Record<string, unknown> = {};
+	remarkArticleTitle()(tree, {
+		path: 'C:\\project\\src\\content\\weiser-posts\\notes\\2026-9-13-test.md',
+		data: { astro: { frontmatter } },
+	});
+	assert.equal(frontmatter.articleTitle, '新文章');
+	assert.equal(tree.children.length, 1);
+	assert.equal(tree.children[0].type, 'paragraph');
+});
+
 test('从博客正文提取唯一 H1 并保留后续章节', () => {
 	const tree = {
 		type: 'root',

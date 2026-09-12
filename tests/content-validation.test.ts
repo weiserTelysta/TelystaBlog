@@ -63,7 +63,7 @@ test('发现系列顺序重复、字段不成对和未知系列', async () => {
 		seriesOrder: 1,
 	});
 	await writePost(rootDir, 'three.md', { series: 'unknown-series' });
-	await writePost(rootDir, 'unknown-category.md', { category: 'Notes' });
+	await writePost(rootDir, 'unknown-category.md', { category: 'unknown-category' });
 	const result = runContentValidation(rootDir);
 
 	assert.ok(result.issues.some((issue) => issue.code === 'series-order-duplicate'));
@@ -88,7 +88,7 @@ test('发现日期倒置和公开文章占位摘要', async () => {
 	);
 });
 
-test('要求文章分别提供中英文标题与摘要', async () => {
+test('英文标题与摘要留空时自动回退到中文', async () => {
 	const rootDir = await createTemporaryContentRoot();
 	await writePost(rootDir, 'bilingual.md', {
 		titleEn: '',
@@ -96,8 +96,78 @@ test('要求文章分别提供中英文标题与摘要', async () => {
 	});
 	const result = runContentValidation(rootDir);
 
-	assert.ok(result.issues.some((issue) => issue.code === 'post-titleEn-missing'));
-	assert.ok(result.issues.some((issue) => issue.code === 'post-descriptionEn-missing'));
+	assert.equal(result.errorCount, 0);
+	assert.equal(result.documents[0].frontmatter.titleEn, 'bilingual.md');
+	assert.equal(result.documents[0].frontmatter.descriptionEn, '有效摘要。');
+});
+
+test('仅日期文件名和 Markdown 正文即可发布，检查不会改写源文件', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	const filePath = path.join(rootDir, 'src/content/weiser-posts/manuscript/2026-9-13-新文章.md');
+	const source = '  # 新文章\n\n这是一篇直接新建的文章，正文首段足够完整，可以自动作为文章摘要。\n';
+	await fs.writeFile(filePath, source);
+	const result = runContentValidation(rootDir);
+	assert.equal(result.errorCount, 0);
+	assert.equal(result.documents[0].frontmatter.title, '新文章');
+	assert.equal(result.documents[0].frontmatter.category, 'manuscript');
+	assert.equal(result.documents[0].frontmatter.publishedAt, '2026-09-13');
+	assert.equal(result.documents[0].frontmatter.updatedAt, '2026-09-13');
+	assert.match(String(result.documents[0].frontmatter.description), /^这是一篇/);
+	assert.equal(await fs.readFile(filePath, 'utf8'), source);
+});
+
+test('兼容 letters、空可选字段，同时保留孤立系列序号的错误', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	await writePost(rootDir, 'letters.md', { category: 'letters', series: null, seriesOrder: null, cover: '', description: null });
+	let result = runContentValidation(rootDir);
+	assert.equal(result.errorCount, 0);
+	assert.equal(result.documents[0].frontmatter.category, 'essays');
+	assert.equal(result.documents[0].frontmatter.series, undefined);
+	await writePost(rootDir, 'letters.md', { category: 'letters', series: null, seriesOrder: 1 });
+	result = runContentValidation(rootDir);
+	assert.ok(result.issues.some(issue => issue.code === 'series-pair'));
+});
+
+test('无法推导日期或遇到损坏的 frontmatter 时仍明确报错', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	const directory = path.join(rootDir, 'src/content/weiser-posts/manuscript');
+	await fs.writeFile(path.join(directory, 'no-date.md'), '# 标题\n\n正文\n');
+	await fs.writeFile(path.join(directory, '2026-9-13-invalid.md'), '  ---\n  title: 错误\n  ---\n正文\n');
+	const result = runContentValidation(rootDir);
+	assert.ok(result.issues.some(issue => issue.code === 'published-date-missing'));
+	assert.ok(result.issues.some(issue => issue.code === 'frontmatter-missing'));
+});
+
+test('接受空 frontmatter，并保留正文与正确行号', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	const filePath = path.join(rootDir, 'src/content/weiser-posts/manuscript/2026-9-13-empty.md');
+	await fs.writeFile(filePath, '\uFEFF---\r\n---\r\n# 空元数据\r\n\r\n正文。\r\n');
+	const result = runContentValidation(rootDir);
+	assert.equal(result.errorCount, 0);
+	assert.equal(result.documents[0].frontmatter.title, '空元数据');
+	assert.equal(result.documents[0].bodyStartLine, 3);
+	assert.equal(result.documents[0].body, '# 空元数据\n\n正文。\n');
+});
+
+test('拒绝列表或标量 frontmatter，不能静默当作空元数据', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	const directory = path.join(rootDir, 'src/content/weiser-posts/manuscript');
+	for (const [name, yaml] of [['list', '- draft: true'], ['scalar', 'draft true'], ['null', 'null']]) {
+		await fs.writeFile(path.join(directory, `2026-9-13-${name}.md`), `---\n${yaml}\n---\n正文。\n`);
+	}
+	const result = runContentValidation(rootDir);
+	assert.equal(result.issues.filter(issue => issue.code === 'frontmatter-invalid').length, 3);
+});
+
+test('系列序号须为正整数，同时接受 YAML 中的数字字符串', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	for (const [index, order] of [0, -1, 1.5, 'abc', false].entries()) {
+		await writePost(rootDir, `invalid-${index}.md`, { series: 'weiser-blog-construction-records', seriesOrder: order });
+	}
+	await writePost(rootDir, 'valid.md', { series: 'weiser-blog-construction-records', seriesOrder: '2' });
+	const result = runContentValidation(rootDir);
+	assert.equal(result.issues.filter(issue => issue.code === 'series-order-invalid').length, 5);
+	assert.ok(result.issues.every(issue => !issue.filePath.endsWith('/valid.md')));
 });
 
 test('发现文件名大小写错误，并接受大小写完全一致的路径', async () => {

@@ -19,7 +19,7 @@ const visibleTags = post.tags.slice(0, 2);
 		<p>{post.excerpt}</p>
 		<div class="blog-post__meta" aria-label="文章信息">
 			<time datetime={formatFullDate(post.publishedAt)}>{formatIndexDate(post.publishedAt)}</time>
-			<a href={buildCategoryHref(post.category)}>{post.categoryTitle}</a>
+			<a href={buildCategoryHref(post.category)}>{post.category}</a>
 			{visibleTags.map((tag) => <span class="blog-post__tag">#{tag}</span>)}
 		</div>
 	</article>

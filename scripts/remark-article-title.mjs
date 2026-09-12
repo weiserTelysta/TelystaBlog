@@ -1,14 +1,14 @@
 /**
  * Treat the first Markdown H1 as the authored article title while keeping the
  * site header responsible for its final visual placement beside cover/meta.
- * Content validation guarantees that published posts contain exactly one H1
- * and that it matches frontmatter.title.
+ * Posts may omit frontmatter and use their filename/directory for metadata.
  */
 export default function remarkArticleTitle() {
 	return (tree, file) => {
 		const frontmatter = file.data.astro?.frontmatter;
+		const isPostFile = /(?:^|\/)src\/content\/weiser-posts\//.test(String(file.path ?? '').replace(/\\/g, '/'));
 
-		if (!frontmatter || typeof frontmatter.category !== 'string') return;
+		if (!frontmatter || (typeof frontmatter.category !== 'string' && !isPostFile)) return;
 
 		const headingIndex = tree.children.findIndex(
 			(node) => node.type === 'heading' && node.depth === 1,
