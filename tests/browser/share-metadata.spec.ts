@@ -1,11 +1,12 @@
 import { test, expect } from '@playwright/test';
+import { SITE_CONFIG } from '../../src/config/site';
 
 test('无 JavaScript 也能获取首页与文章的静态分享信息', async ({ browser }) => {
 	const context = await browser.newContext({ javaScriptEnabled: false });
 	const page = await context.newPage();
 	try {
 		await page.goto('http://127.0.0.1:4322/?from=share');
-		await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', 'https://assets.telysta.com/avatars/Profile_Weiser.avatar.webp');
+		await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', SITE_CONFIG.shareImage.url);
 		await expect(page.locator('meta[property="og:url"]')).toHaveAttribute('content', 'https://telysta.com/');
 		await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://telysta.com/');
 		await expect(page.locator('meta[property="og:type"]')).toHaveAttribute('content', 'website');

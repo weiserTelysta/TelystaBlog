@@ -1,5 +1,7 @@
 # 2026-09-05 开发记录：CDN、阅读体验与交互动效
 
+> 历史记录：保留当时的决策、测量与验收结果，不作为当前操作规范。当前能力见 [功能与配置核对](../../feature-map.md)，维护方式见 [维护指南](../../maintenance.md)。
+
 本轮维护继续保留 Telysta 已有的深蓝黑、低饱和与安静留白。阅读页以局部调整为主；资源页按最新要求重构为图片主导的画廊与全屏看图器。
 
 ## CDN 与 WebP
@@ -89,7 +91,7 @@ npm run assets:prepare -- --source "C:\Users\weise\Desktop\TelystaAssets\avatars
 
 最新迭代将前后、下载、关闭集中在图片内侧下缘，文字与阴影一起显隐；修复开场按键丢失以及提前切换造成空白画面的时序问题。共享 `BlogIndexControl.scss` 解决 Category / Series 3.6px–12.4px 的基线差异。增加九项真实 Edge 回归，包含触控窄屏模拟与减少动态；同时暂停被遮罩的星空绘制，使用不改变布局的轻微 hover 缩放。
 
-开发文档统一由 [索引](README.md) 导航；历史规划归档，源数据与生成产物的保留规则见 [架构说明](architecture.md)。删除旧详情层和冗余前端字段，不删除资源原稿。临时目录清理受环境和 OneDrive 限制，未完成磁盘删除。
+开发文档统一由 [索引](../../README.md) 导航；历史规划归档，源数据与生成产物的保留规则见 [架构说明](../../architecture.md)。删除旧详情层和冗余前端字段，不删除资源原稿。临时目录清理受环境和 OneDrive 限制，未完成磁盘删除。
 
 - 桌面、移动端、键盘操作和 reduced-motion 均需检查。
 - 提交前运行 `npm run check`、`npm run test:browser` 与 `git diff --check`。

@@ -11,15 +11,21 @@ type Props = {
 
 const { links, contacts, revealOrder } = Astro.props;
 const contactImageModules = import.meta.glob<{ default: ImageMetadata }>(
-	'../../assets/contact/*.{png,jpg,jpeg}',
+	'../../assets/contact/*.{png,jpg,jpeg,webp}',
 	{ eager: true },
 );
 const availableContacts = contacts.flatMap((contact) => {
 	const imageModule = Object.entries(contactImageModules).find(([path]) =>
-		path.endsWith(`/${contact.imageFileName}`),
+		path.endsWith(`/${contact.imageSrc.split('/').at(-1)}`) &&
+		contact.imageSrc.startsWith('src/assets/contact/'),
 	)?.[1];
 
-	return imageModule ? [{ ...contact, image: imageModule.default }] : [];
+	const image = imageModule?.default ?? (
+		/^(?:https:\/\/|\/media\/)/.test(contact.imageSrc)
+			? { src: contact.imageSrc, width: undefined, height: undefined }
+			: undefined
+	);
+	return image ? [{ ...contact, image }] : [];
 });
 const dialogId = 'home-contact-dialog';
 ---

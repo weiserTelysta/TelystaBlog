@@ -17,7 +17,9 @@
 
 日常改文案先看 [作者配置入口](../src/config/README.md)，无需查找组件内部。
 
-- `src/config/site.ts`、`src/components/site/ShareMetadata.astro`：默认分享图及静态 Open Graph/Twitter 信息；文章封面与日期由文章路由传入。详见 [链接分享记录](link-sharing-2026-09-06.md)。
+也可运行 `npm run admin` 使用本地浏览器编辑；网站预览另运行 `npm run dev`。保存只改当前工作区，冲突时保留输入并重新读取后合并，详细流程见 [本地后台](local-admin.md)。
+
+- `src/config/site.ts`、`src/components/site/ShareMetadata.astro`：默认分享图及静态 Open Graph/Twitter 信息；文章封面与日期由文章路由传入。详见 [链接分享记录](archive/2026-09/link-sharing-2026-09-06.md)。
 - `astro.config.mjs`：Astro 7 站点配置，以及通过 `@astrojs/markdown-remark` unified processor 接入的 Remark/Rehype 插件。
 - `src/content.config.ts`：文章和资源的 Content Collections Schema。
 - `src/config/content/blogCategories.ts`：稳定的文章栏目 ID 与显示信息。
@@ -27,10 +29,10 @@
 - `scripts/prepare-cdn-assets.mjs`、`scripts/generate-cdn-manifest.mjs`：外部素材的增量 WebP 与公开清单。
 - `src/lib/resources/resourceItems.ts`：资源图片、下载地址和页面数据的运行时解析。
 - `src/lib/resources/resourceDisplayPolicy.ts`：展示已发布插画与两款明确收录的 Minecraft 皮肤，排除 Character、头像和文章配图。
-- `src/components/resources/resourceLightbox.ts`：按需加载的全屏看图器与下载选择，替代旧详情分栏。详见 [资源画廊记录](resource-gallery-2026-09-05.md)。
+- `src/components/resources/resourceLightbox.ts`：按需加载的全屏看图器与下载选择，替代旧详情分栏。详见 [资源画廊记录](archive/2026-09/resource-gallery-2026-09-05.md)。
 - `src/components/blog/BlogSearch.astro`、`src/lib/blogSearch.ts`：简约搜索交互、匹配与命中句；`src/pages/blog/search-index.json.ts` 在构建时生成已发布文章索引，不要手改生成文件。
 - `src/lib/homeProfile.ts`、`src/components/site/TabIdentity.astro`：同一标签页会话共享头像与 favicon，刷新不重新抽取；离开时的多语言标题集中在 `src/config/tabGreetings.ts`。
-- `scripts/prepare-favicons.ts`：新增头像方案后运行 `npm run assets:favicons -- --cdn`（或 `--source <本地 avatars 目录>`），检查并提交 `public/favicons/` 的小尺寸 PNG。普通构建不会重新下载生成。详见 [标签页、搜索与组图记录](tab-search-gallery-2026-09-05.md)。
+- `scripts/prepare-favicons.ts`：新增头像方案后运行 `npm run assets:favicons -- --cdn`（或 `--source <本地 avatars 目录>`），检查并提交 `public/favicons/` 的小尺寸 PNG。普通构建不会重新下载生成。详见 [标签页、搜索与组图记录](archive/2026-09/tab-search-gallery-2026-09-05.md)。
 - `.github/workflows/deploy.yml`：Node 22 检查和 GitHub Pages 部署。
 
 ## 日常命令
@@ -53,7 +55,7 @@ npm run check
 
 使用 `npm run post:new` 创建草稿，不再复制内容集合内的模板。命令会读取 `src/config/content/blogCategories.ts` 和 `src/config/content/blogSeries.ts`，避免栏目与系列 ID 重复维护。
 
-文章默认位于 `src/content/weiser-posts/<category>/<slug>.md`，保持 `draft: true`，直到准备公开。完整说明见 [article-authoring.md](article-authoring.md)。
+脚本创建的文章默认位于 `src/content/weiser-posts/<category>/<slug>.md`，保持 `draft: true`，直到准备公开。也可以直接新建日期文件名的 Markdown，由加载器补全元数据；这种方式省略 `draft` 时默认公开。完整说明见 [article-authoring.md](article-authoring.md)。
 
 ## 文章图片
 
@@ -95,7 +97,7 @@ R2 素材的增量 WebP、清单和上传流程见 [cdn-assets.md](cdn-assets.md
 - 发布时间和更新时间。
 - 公开文章占位摘要。
 - Markdown 本地图片路径和 CDN 清单键。
-- 空文章封面、缺失文章封面和正文重复一级标题。
+- 缺失的文章封面路径和正文重复／错位一级标题；空可选封面在元数据补全阶段按未填写处理。
 - 资源主图、封面、预览和图库是否使用可解析的 `asset:` 引用。
 - Windows 与 Linux 路径大小写差异。
 - 容易被 KaTeX 误识别的中文金额 `$...$`。

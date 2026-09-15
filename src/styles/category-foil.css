@@ -1,0 +1,106 @@
+/* Shared by the public category cards and the local editor. Original gradient textures;
+   layered-light technique studied at https://poke-holo.simey.me/ (no external artwork). */
+[data-foil] {
+	--foil-texture:
+		radial-gradient(
+			circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+			#d8e9ff 0,
+			transparent 32%
+		),
+		repeating-linear-gradient(
+			125deg,
+			transparent 0 15px,
+			#9cc7e84d 16px,
+			transparent 17px 30px
+		);
+}
+[data-foil='aurora'] {
+	--foil-texture: conic-gradient(
+		from 200deg at var(--pointer-x, 50%) var(--pointer-y, 50%),
+		transparent,
+		#aecdb9,
+		#b6b9e8,
+		transparent 48%,
+		#9cc7e8,
+		transparent
+	);
+}
+[data-foil='moonlit'] {
+	--foil-texture: radial-gradient(
+		ellipse at var(--pointer-x, 50%) var(--pointer-y, 50%),
+		#eef2ff 0,
+		#a7c7dd77 18%,
+		transparent 58%
+	);
+}
+[data-foil='prism'] {
+	--foil-texture: repeating-linear-gradient(
+		115deg,
+		#d6a7c888 0%,
+		#c4b4df99 9%,
+		#9cc7e888 18%,
+		#b8d5c588 27%,
+		transparent 36%
+	);
+}
+[data-foil='embers'] {
+	--foil-texture:
+		radial-gradient(
+			ellipse at var(--pointer-x, 50%) var(--pointer-y, 50%),
+			#f1d8b4 0,
+			#c9936980 20%,
+			transparent 55%
+		),
+		repeating-linear-gradient(
+			30deg,
+			transparent 0 8px,
+			#d8a48a44 9px,
+			transparent 10px 16px
+		);
+}
+[data-foil='ripple'] {
+	--foil-texture: repeating-radial-gradient(
+		ellipse at var(--pointer-x, 50%) var(--pointer-y, 50%),
+		transparent 0 18px,
+		#a7cedd88 20px,
+		transparent 23px 40px
+	);
+}
+[data-foil='crosshatch'] {
+	--foil-texture:
+		repeating-linear-gradient(
+			45deg,
+			transparent 0 20px,
+			#aec9e677 21px,
+			transparent 23px 40px
+		),
+		repeating-linear-gradient(
+			-45deg,
+			transparent 0 20px,
+			#d6a7c877 21px,
+			transparent 23px 40px
+		);
+}
+[data-foil='satin'] {
+	--foil-texture: repeating-linear-gradient(
+		100deg,
+		transparent 0%,
+		#d9d4e699 14%,
+		#9cc7e877 22%,
+		transparent 36%
+	);
+}
+[data-foil] .category-accordion__card-inner::before,
+.role-frame[data-foil]::before {
+	background-image: var(--foil-texture);
+	background-size: 150% 150%;
+	background-position: var(--pointer-x, 50%) var(--pointer-y, 50%);
+	background-blend-mode: screen;
+	mix-blend-mode: screen;
+}
+@media (prefers-reduced-motion: reduce) {
+	[data-foil] {
+		--pointer-x: 50% !important;
+		--pointer-y: 50% !important;
+	}
+}

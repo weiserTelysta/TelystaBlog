@@ -10,7 +10,7 @@
 这里写文章的第一段。构建会从正文提取摘要，不需要再手填中英文摘要。
 ```
 
-标题优先使用正文的一级标题；未写时使用去掉日期的文件名。发布日期从文件名前缀推导（支持 `YYYY-M-D` 和 `YYYY.M.D`），更新日期默认等于发布日期，分类使用 `weiser-posts` 下的第一层目录，支持在其下继续建子目录。已有分类包括 `manuscript`、`collection`、`essays`、`reading`、`life`、`portraits`、`notes`；目录 `Notes` 也能识别，`letters` 兼容为 `essays`。
+标题优先使用正文的一级标题；未写时使用去掉日期的文件名。发布日期从文件名前缀推导（支持 `YYYY-M-D` 和 `YYYY.M.D`），更新日期默认等于发布日期，分类使用 `weiser-posts` 下的第一层目录，支持在其下继续建子目录。已有分类包括 `manuscript`、`collection`、`letters`、`reading`、`life`、`portraits`、`notes`；目录 `Notes` 也能识别。`letters` 是正式分类，`essays` 已移除，不再作为别名接受。
 
 省略 frontmatter 时文章默认公开；尚未写完请加上：
 
@@ -26,7 +26,7 @@ draft: true
 
 只保留两条相邻的 `---` 也可以，效果与省略 frontmatter 相同。填写字段时必须使用 `key: value` 格式，不能把整块元数据写成列表或普通文本；系列序号必须为正整数。
 
-文章列表下方的分类链接统一显示英文 ID，栏目入口继续使用原有名称。移动文章目录会改变 URL，已有外链的文章尽量保持原路径。
+文章列表下方的分类链接统一显示英文 ID；栏目入口未选择时使用 `Category / All Records`，选择后使用 `Weiser's Manuscript`、`Telysta's Collection` 等英文所属名称。分类卡片收起时作为角色展示窗口，使用花体角色名及英文题签（例如 `Weiser / Manuscript`），在 `src/config/visuals/categoryVisuals.ts` 维护；选中分类的入口名称也由这两个字段派生。展开后的中文栏目标题在 `src/config/content/blogCategories.ts` 维护。角色题签与中文栏目名称用途不同，不应统一替换。移动文章目录会改变 URL，已有外链的文章尽量保持原路径。
 
 ## 创建草稿
 
@@ -129,7 +129,7 @@ src/content/weiser-posts/portraits/sylvaena-note/reference-01.png
 Markdown 引用：
 
 ```md
-![图片说明](./sylvaena-note/reference-01.png)
+![图片说明](sylvaena-note/reference-01.png)
 ```
 
 这里保存原始 PNG、JPG 或 JPEG，Astro 在构建时生成显示版本。不要手工维护哈希文件或 `.preview.webp`。

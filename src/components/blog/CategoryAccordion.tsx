@@ -1,3 +1,4 @@
+import '../../styles/category-foil.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CSSProperties, MouseEvent, PointerEvent, WheelEvent } from 'react';
 import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
@@ -492,7 +493,9 @@ export default function CategoryAccordion({
 			>
 				<span className="category-accordion__entry-label blog-index-control__label">{ACCORDION_COPY.entryLabel}</span>
 				<span className="category-accordion__entry-title blog-index-control__title">
-					{selectedVisual?.title ?? ACCORDION_COPY.allRecordsTitle}
+					{selectedVisual
+						? `${selectedVisual.cardInscription.prefix}'s ${selectedVisual.cardInscription.name}`
+						: ACCORDION_COPY.allRecordsTitle}
 				</span>
 			</button>
 
@@ -578,6 +581,7 @@ export default function CategoryAccordion({
 												.join(' ')}
 											type="button"
 											data-tone={visual.tone}
+											data-foil={visual.foil}
 											style={
 												{
 													'--card-index': index,

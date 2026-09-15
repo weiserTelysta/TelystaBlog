@@ -8,9 +8,10 @@ const { values } = parseArgs({ options: { source: { type: 'string' }, cdn: { typ
 if (!values.source && !values.cdn) throw new Error('Use --source <local avatars directory> or --cdn');
 await fs.mkdir('public/favicons', { recursive: true });
 for (const profile of HOME_PROFILES.filter(profile => profile.enabled !== false)) {
-	const filename = decodeURIComponent(new URL(profile.avatar.src).pathname.split('/').at(-1)!);
+	const filename = decodeURIComponent(new URL(profile.avatar.src, 'https://assets.telysta.com/').pathname.split('/').at(-1)!);
 	let source: string | Buffer;
-	if (values.source) source = path.join(values.source, filename);
+	if (profile.avatar.src.startsWith('/media/')) source = await fs.readFile(path.join('public', profile.avatar.src));
+	else if (values.source) source = path.join(values.source, filename);
 	else {
 		const response = await fetch(profile.avatar.src, { signal: AbortSignal.timeout(30000) });
 		if (!response.ok) throw new Error(`Avatar download failed: ${profile.id} (${response.status})`);

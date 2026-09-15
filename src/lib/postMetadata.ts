@@ -5,11 +5,6 @@ import { extractMarkdownTitle } from './markdownTitle';
 const isBlank = (value: unknown) => value == null || (typeof value === 'string' && !value.trim());
 const categoryIds: ReadonlySet<string> = new Set(BLOG_CATEGORY_IDS);
 
-function canonicalCategory(value: string): string {
-	const id = value.trim().toLowerCase();
-	return id === 'letters' ? 'essays' : id;
-}
-
 export function needsPostBody(data: Record<string, unknown>): boolean {
 	return isBlank(data.title) || isBlank(data.description);
 }
@@ -19,6 +14,7 @@ export function completePostMetadata(
 	raw: Record<string, unknown>,
 	body: string,
 	filePath: string,
+	knownCategories: ReadonlySet<string> = categoryIds,
 ): Record<string, unknown> {
 	const data = { ...raw };
 	const segments = filePath.replace(/\\/g, '/').split('/');
@@ -37,10 +33,10 @@ export function completePostMetadata(
 		// Only the first directory under weiser-posts determines the category.
 		const rootIndex = segments.lastIndexOf('weiser-posts');
 		const folder = rootIndex >= 0 ? segments[rootIndex + 1] : segments[0];
-		const candidate = canonicalCategory(folder ?? '');
-		if (categoryIds.has(candidate)) data.category = candidate;
+		const candidate = (folder ?? '').trim().toLowerCase();
+		if (knownCategories.has(candidate)) data.category = candidate;
 	} else if (typeof data.category === 'string') {
-		data.category = canonicalCategory(data.category);
+		data.category = data.category.trim().toLowerCase();
 	}
 	for (const key of ['cover', 'series', 'seriesOrder']) {
 		if (isBlank(data[key])) delete data[key];

@@ -10,9 +10,9 @@ export function getDayAffinityForHour(hour: number): number {
 	return (Math.cos(radians) + 1) / 2;
 }
 
-export function getWeightedGreeting(hour: number, random: () => number = Math.random): HomeGreeting {
+export function getWeightedGreeting(hour: number, random: () => number = Math.random, greetings: readonly HomeGreeting[] = HOME_GREETINGS): HomeGreeting {
 	const currentDayAffinity = getDayAffinityForHour(hour);
-	const weightedGreetings = HOME_GREETINGS.map((greeting) => {
+	const weightedGreetings = greetings.map((greeting) => {
 		const baseWeight = greeting.weight ?? 1;
 		const distance = Math.abs(greeting.dayAffinity - currentDayAffinity);
 		const timeMatch = MIN_TIME_WEIGHT + Math.pow(1 - distance, TIME_CURVE_POWER);

@@ -1,5 +1,7 @@
 # 2026-09-13 文章构建修复
 
+> 后续更正：本文记录当时的修复过程，其中将 `letters` 映射为 `essays` 的决定有误，现已撤销。正式分类为 `letters`，不保留 `essays` 别名或旧地址跳转；当前规则见 [分类修正记录](category-localization-2026-09-13.md) 与 [文章写作指南](article-authoring.md)。
+
 ## 失败原因
 
 本地 `npm run build` 复现了内容检查失败：

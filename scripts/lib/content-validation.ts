@@ -36,7 +36,7 @@ export type ContentValidationResult = {
 	warningCount: number;
 };
 
-export function loadContentDocuments(rootDir: string): ContentDocument[] {
+export function loadContentDocuments(rootDir: string, categoryIds?: ReadonlySet<string>): ContentDocument[] {
 	const groups: Array<{ kind: ContentKind; directory: string }> = [
 		{
 			kind: 'post',
@@ -56,7 +56,7 @@ export function loadContentDocuments(rootDir: string): ContentDocument[] {
 
 		for (const filePath of findMarkdownFiles(group.directory)) {
 			const source = fs.readFileSync(filePath, 'utf8');
-			documents.push(parseContentDocument(filePath, source, group.kind, rootDir));
+			documents.push(parseContentDocument(filePath, source, group.kind, rootDir, categoryIds));
 		}
 	}
 
@@ -70,6 +70,7 @@ export function parseContentDocument(
 	source: string,
 	kind: ContentKind,
 	rootDir: string,
+	categoryIds?: ReadonlySet<string>,
 ): ContentDocument {
 	const { normalizedSource, frontmatter: yaml, body, bodyStartLine } = splitMarkdownSource(source);
 	const relativePath = toRelativePath(rootDir, filePath);
@@ -80,7 +81,7 @@ export function parseContentDocument(
 			kind,
 			filePath,
 			relativePath,
-			frontmatter: plainPost ? completePostMetadata({}, normalizedSource, relativePath) : {},
+			frontmatter: plainPost ? completePostMetadata({}, normalizedSource, relativePath, categoryIds) : {},
 			body: normalizedSource,
 			bodyStartLine: 1,
 			parseIssues: plainPost ? [] : [
@@ -113,7 +114,7 @@ export function parseContentDocument(
 		kind,
 		filePath,
 		relativePath,
-		frontmatter: kind === 'post' ? completePostMetadata(frontmatter, body, relativePath) : frontmatter,
+		frontmatter: kind === 'post' ? completePostMetadata(frontmatter, body, relativePath, categoryIds) : frontmatter,
 		body,
 		bodyStartLine,
 		parseIssues,
@@ -123,6 +124,7 @@ export function parseContentDocument(
 export function validatePostDocuments(
 	documents: ContentDocument[],
 	rootDir: string,
+	catalog: { categories: readonly string[]; series: readonly string[] } = { categories: BLOG_CATEGORY_IDS, series: BLOG_SERIES_IDS },
 ): ValidationIssue[] {
 	const issues: ValidationIssue[] = [];
 	const seriesOrders = new Map<string, ContentDocument>();
@@ -145,7 +147,7 @@ export function validatePostDocuments(
 		}
 		if (!category) {
 			issues.push(createIssue('error', 'category-missing', document.relativePath,
-				`无法从目录推导分类，请填写 category。可用值：${BLOG_CATEGORY_IDS.join(', ')}`));
+				`无法从目录推导分类，请填写 category。可用值：${catalog.categories.join(', ')}`));
 		}
 		if (frontmatter.publishedAt === undefined) {
 			issues.push(createIssue('error', 'published-date-missing', document.relativePath,
@@ -170,18 +172,18 @@ export function validatePostDocuments(
 			}
 		}
 
-		if (category && !BLOG_CATEGORY_IDS.includes(category as (typeof BLOG_CATEGORY_IDS)[number])) {
+		if (category && !catalog.categories.includes(category)) {
 			issues.push(
 				createIssue(
 					'error',
 					'category-unknown',
 					document.relativePath,
-					`未知分类：${category}。可用值：${BLOG_CATEGORY_IDS.join(', ')}`,
+					`未知分类：${category}。可用值：${catalog.categories.join(', ')}`,
 				),
 			);
 		}
 
-		if (series && !BLOG_SERIES_IDS.includes(series as (typeof BLOG_SERIES_IDS)[number])) {
+		if (series && !catalog.series.includes(series)) {
 			issues.push(
 				createIssue('error', 'series-unknown', document.relativePath, `未知系列：${series}`),
 			);

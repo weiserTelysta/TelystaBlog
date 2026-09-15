@@ -6,6 +6,7 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "admin": "tsx scripts/admin/server.ts",
     "dev": "npm run content:check && npm run score:check && astro dev",
     "build": "astro build",
     "prebuild": "npm run content:check && npm run score:check",
@@ -21,6 +22,7 @@
     "score:check": "node scripts/render-score.mjs --check",
     "test": "tsx --test tests/*.test.ts",
     "test:browser": "npm run build && playwright test",
+    "test:admin": "playwright test --config playwright.admin.config.ts",
     "typecheck": "astro check && tsc --noEmit",
     "check": "npm run typecheck && npm test && npm run build",
     "preview": "astro preview",

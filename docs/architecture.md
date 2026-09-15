@@ -1,8 +1,10 @@
 # 架构与目录维护
 
-更新：2026-09-06。
+核对更新：2026-09-14。当前功能对应关系见 [功能核对](feature-map.md)。
 
-作者入口见 [配置说明](../src/config/README.md)。`config/pages` 按页面归集可编辑文案，`config/content` 保存分类、系列及额外资源收录；分类/系列 ID 从资料数组派生。配置不依赖组件，组件读取配置并负责安全文本渲染；内部 DOM ID、焦点恢复与滚轮算法不作为作者选项。详情见 [配置整理记录](config-entrypoints-2026-09-06.md)。
+作者入口见 [配置说明](../src/config/README.md)。`config/pages` 按页面归集可编辑文案，`config/content` 保存分类、系列及额外资源收录；分类/系列 ID 从资料数组派生。配置不依赖组件，组件读取配置并负责安全文本渲染；内部 DOM ID、焦点恢复与滚轮算法不作为作者选项。详情见 [配置整理记录](archive/2026-09/config-entrypoints-2026-09-06.md)。
+
+本地管理服务位于 `scripts/admin`，通过固定声明的 AST 适配器编辑现有 TS 字面量，不维护第二套配置文件；Markdown 保留原文保存。该服务独立于 Astro 启动、只绑定回环地址，不产生公开路由，也不进入部署产物。请求校验、版本保存、素材与功能边界见 [后台说明](local-admin.md)。
 
 ## 页面与内容边界
 
@@ -20,7 +22,7 @@
 
 文章仅通过 `src/pages/blog/[...slug].astro` 渲染，正文和附件后是系列，再到独立 `ArticleComments`。不复制第二套文章 Layout。系列总索引按 category 分组，空系列不展示。
 
-`scripts/rehype-cdn-images.mjs` 从已有 CDN 清单为文章外部图片补充尺寸，避免加载时推开正文；不下载或生成图片。文章滚轮保持原生，Lenis 只保留定点导航的平滑动作，首页/资源页仍使用原有配置。详情见 [加载稳定性记录](loading-stability-2026-09-05.md)。
+`scripts/rehype-cdn-images.mjs` 从已有 CDN 清单为文章外部图片补充尺寸，避免加载时推开正文；不下载或生成图片。文章滚轮保持原生，Lenis 只保留定点导航的平滑动作，首页/资源页仍使用原有配置。详情见 [加载稳定性记录](archive/2026-09/loading-stability-2026-09-05.md)。
 
 Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边距和最小高度。不要再次给某一侧加 `top` 或负 margin 修补基线。
 
@@ -44,4 +46,4 @@ Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边�
 - `.tmp/browser-results` 存测试截图和失败 trace，不提交。浏览器 profile 可能含会话数据，不当作普通截图缓存删除。
 - 删除前核对绝对路径、文件内容和引用，避免递归操作越界或碰到 OneDrive 链接。能恢复的旧文档放 `docs/archive`，而非直接丢弃。
 
-本次尝试清理旧空图片目录和约 38.3 MiB 临时产物时，删除被环境策略阻止，可恢复归档也遇到 OneDrive 目录权限错误。因此没有宣称完成磁盘清理；原稿和远端文件均未删除。`.tmp/retired-2026-09-05` 可能保留归档尝试产生的空目录，后续可由作者在文件管理器核查处理。
+2026-09-05 曾遇到临时产物清理被环境策略或 OneDrive 权限阻止，属于历史执行记录，不用于判断当前权限。此次只将七份旧阶段文档移入 `docs/archive/2026-09` 并修复引用，没有清理素材、工具缓存或 R2。

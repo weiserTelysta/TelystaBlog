@@ -116,16 +116,28 @@ test('仅日期文件名和 Markdown 正文即可发布，检查不会改写源�
 	assert.equal(await fs.readFile(filePath, 'utf8'), source);
 });
 
-test('兼容 letters、空可选字段，同时保留孤立系列序号的错误', async () => {
+test('接受 letters、空可选字段，同时保留孤立系列序号的错误', async () => {
 	const rootDir = await createTemporaryContentRoot();
 	await writePost(rootDir, 'letters.md', { category: 'letters', series: null, seriesOrder: null, cover: '', description: null });
 	let result = runContentValidation(rootDir);
 	assert.equal(result.errorCount, 0);
-	assert.equal(result.documents[0].frontmatter.category, 'essays');
+	assert.equal(result.documents[0].frontmatter.category, 'letters');
 	assert.equal(result.documents[0].frontmatter.series, undefined);
 	await writePost(rootDir, 'letters.md', { category: 'letters', series: null, seriesOrder: 1 });
 	result = runContentValidation(rootDir);
 	assert.ok(result.issues.some(issue => issue.code === 'series-pair'));
+});
+
+test('letters 目录自动归类，已移除的 essays 不作为别名接受', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	const directory = path.join(rootDir, 'src/content/weiser-posts/letters');
+	await fs.mkdir(directory, { recursive: true });
+	await fs.writeFile(path.join(directory, '2026-9-13-书简.md'), '# 书简\n\n记录今天的见闻与感想。\n');
+	const result = runContentValidation(rootDir);
+	assert.equal(result.errorCount, 0);
+	assert.equal(result.documents[0].frontmatter.category, 'letters');
+	await writePost(rootDir, 'removed-category.md', { category: 'essays' });
+	assert.ok(runContentValidation(rootDir).issues.some(issue => issue.code === 'category-unknown'));
 });
 
 test('无法推导日期或遇到损坏的 frontmatter 时仍明确报错', async () => {

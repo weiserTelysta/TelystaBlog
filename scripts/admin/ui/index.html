@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Telysta · 本地管理</title>
+		<link rel="icon" href="data:," />
+		<link rel="stylesheet" href="/style.css" />
+		<link rel="stylesheet" href="/foil.css" />
+		<script src="/app.js" defer></script>
+	</head>
+	<body>
+		<a class="skip" href="#workspace">跳转到编辑区</a>
+		<header>
+			<div>
+				<span class="eyebrow">TELYSTA / LOCAL</span>
+				<h1>内容与设置</h1>
+			</div>
+			<a href="http://127.0.0.1:4321/" target="_blank" rel="noopener"
+				>打开网站预览 ↗</a
+			>
+		</header>
+		<p class="intro">
+			本地后台：<code>npm run admin</code> ·
+			<code>127.0.0.1:4323</code>。网站预览另运行
+			<code>npm run dev</code>；提交和推送仍通过 Git 完成。
+		</p>
+		<div class="layout">
+			<nav id="navigation" aria-label="管理功能"></nav>
+			<main id="workspace" tabindex="-1"><p>正在读取本地配置…</p></main>
+		</div>
+		<p id="status" role="status" aria-live="polite"></p>
+		<noscript>本地编辑器需要 JavaScript。</noscript>
+	</body>
+</html>

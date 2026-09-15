@@ -37,7 +37,7 @@ export type HomeQrContactConfig = {
 	id: 'qq' | 'wechat';
 	label: string;
 	icon: Extract<HomeSocialIcon, 'qq' | 'wechat'>;
-	imageFileName: string;
+	imageSrc: string;
 };
 
 export const HOME_ARCHIVE_INTRO: HomeArchiveIntroConfig = {
@@ -126,12 +126,12 @@ export const HOME_QR_CONTACTS: HomeQrContactConfig[] = [
 		id: 'qq',
 		label: 'QQ',
 		icon: 'qq',
-		imageFileName: 'qq.png',
+		imageSrc: 'src/assets/contact/qq.png',
 	},
 	{
 		id: 'wechat',
 		label: '微信',
 		icon: 'wechat',
-		imageFileName: 'wechat.png',
+		imageSrc: 'src/assets/contact/wechat.png',
 	},
 ];

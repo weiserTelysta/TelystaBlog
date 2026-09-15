@@ -3,7 +3,7 @@ import { glob, type Loader } from 'astro/loaders';
 import { splitMarkdownSource } from './markdownSource';
 import { completePostMetadata, needsPostBody } from './postMetadata';
 
-const POST_METADATA_VERSION = 2;
+const POST_METADATA_VERSION = 3;
 
 /** Keep Astro's Markdown rendering, relative assets, IDs and dev watcher. */
 export function postLoader(): Loader {

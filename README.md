@@ -84,7 +84,7 @@ CDN 图片脚本使用原图与目标文件指纹判断是否需要重新压缩�
 - R2 与 CDN 资源流程：[docs/cdn-assets.md](docs/cdn-assets.md)
 - 部署：[docs/deployment.md](docs/deployment.md)
 - 当前状态：[docs/current-status.md](docs/current-status.md)
-- 最新开发记录：[docs/development-record-2026-09-05.md](docs/development-record-2026-09-05.md)
+- 开发文档索引：[docs/README.md](docs/README.md)
 
 ## Telysta 风格 Skill
 

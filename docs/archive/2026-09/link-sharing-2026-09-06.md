@@ -1,5 +1,7 @@
 # 链接分享元信息
 
+> 历史记录：保留当时的决策、测量与验收结果，不作为当前操作规范。当前能力见 [功能与配置核对](../../feature-map.md)，维护方式见 [维护指南](../../maintenance.md)。
+
 ## 原因与实现
 
 此前公共 Layout 只有 title、description 和 favicon，没有 Open Graph 图片声明。首页头像由客户端 React 渲染，不能依赖分享抓取器从初始 HTML 中找到随机头像。

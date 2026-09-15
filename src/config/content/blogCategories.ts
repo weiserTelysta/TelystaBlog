@@ -2,7 +2,8 @@
  * Keep this file data-only so content.config.ts can import category ids without
  * loading visual assets. Category images and foil visuals can be mapped later.
  */
-export type FoilPreset = 'starlight' | 'aurora' | 'moonlit' | 'prism' | 'embers' | 'ripple';
+import type { FoilPreset } from '../visuals/foilPresets';
+export type { FoilPreset } from '../visuals/foilPresets';
 
 type BlogCategoryDefinition = {
 	id: string;
@@ -38,7 +39,7 @@ export const BLOG_CATEGORIES = [
 		foil: 'aurora',
 	},
 	{
-		id: 'essays',
+		id: 'letters',
 		title: '静默书简',
 		titleEn: 'Quiet Letters',
 		subtitle: '随笔与思考',

@@ -149,7 +149,7 @@ test('补全非交互输入的默认 slug、日期和标签', () => {
 		titleEn: 'A New Post',
 		description: '摘要',
 		descriptionEn: 'Summary',
-		category: 'essays',
+		category: 'letters',
 	});
 
 	assert.equal(completed.slug, '新的文章');
