@@ -71,3 +71,13 @@ npm run check
 - `npm audit` 报告 **0 项漏洞**；依赖锁文件使用已有 semver 范围内的修复，没有把验证用 WASI 包加入生产依赖。
 - `npm run check` 在上述 WASI 环境复核；文档相对链接与 `git diff --check` 检查通过。生产产物仅包含静态站点，本地管理服务随源码提供，不生成线上后台路由。
 - 发布按现有流程推送 `main`，在 [Deploy to GitHub Pages](https://github.com/weiserTelysta/TelystaBlog/actions/workflows/deploy.yml) 核对**本次提交 SHA** 的 `build` 与 `deploy` 两个作业；工作流使用 Ubuntu／Node 22 执行完整检查。本地通过与推送成功不等于线上发布成功，具体操作见 [部署指南](deployment.md)。
+
+### 首次云端检查发现的跨平台问题
+
+首次提交 `fdb8dbc` 已推送，但 [Actions 34952216151](https://github.com/weiserTelysta/TelystaBlog/actions/runs/34952216151) 在单元测试阶段中止（97 项通过、1 项失败），未进入部署。类型检查通过；失败不是 Satteri 或文章内容，而是新增路径的大小写校验。
+
+Windows 通常将 `Site.ts` 解析为已有的 `site.ts`，随后能发现名字不一致；Linux 将它视为不存在的文件，旧代码在允许新建时直接返回，漏掉同目录的大小写冲突。`safePath` 现在在最终文件不存在时也读取同级名称，拒绝这种冲突，确保不同系统检出仓库后不会产生歧义。
+
+原有断言保留，并增加一个模拟 Linux `ENOENT` 分支的回归测试，使 Windows 本地检查也能覆盖该行为；正常新路径仍可返回且检查本身不创建文件。此次修复只涉及本地后台的文件保存边界，不改变公开页面 UI。
+
+修复后本地重新执行完整检查：156 个类型检查文件无错误／警告／提示，**99 项单元测试通过**，82 个内容文档无错误／警告，简谱有效，26 页生产构建成功；后台 **6 项浏览器测试再次通过**。公开页面保持此前 33 项通过的结果；后续 Linux 构建与部署需核对修复提交的 Actions 运行。

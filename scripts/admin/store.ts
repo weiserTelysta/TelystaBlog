@@ -58,8 +58,16 @@ export async function safePath(
 				allowMissing &&
 				i === parts.length - 1 &&
 				(error as NodeJS.ErrnoException).code === 'ENOENT'
-			)
+			) {
+				// Linux reports a case variant as missing; still reject names that
+				// would collide when this checkout is opened on Windows or macOS.
+				const siblings = await fs.readdir(path.dirname(current));
+				if (
+					siblings.some((name) => name.toLowerCase() === parts[i].toLowerCase())
+				)
+					throw new AdminError('路径大小写不一致');
 				return current;
+			}
 			throw error;
 		}
 	}

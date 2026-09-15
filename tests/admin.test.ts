@@ -209,7 +209,10 @@ test('write paths reject traversal, case mismatches and junctions; media upload 
 			'src/config/Site.ts',
 			'src/config/CON.md',
 		])
-			await assert.rejects(() => safePath(fixture.root, invalid, true));
+			await assert.rejects(
+				() => safePath(fixture.root, invalid, true),
+				invalid,
+			);
 		const target = path.join(fixture.root, 'src/content/weiser-posts/letters');
 		const link = path.join(fixture.root, 'src/content/weiser-posts/link');
 		await fs.symlink(
@@ -250,6 +253,37 @@ test('write paths reject traversal, case mismatches and junctions; media upload 
 		assert.ok(media.some((m: { source: string }) => m.source === 'R2 头像'));
 		assert.ok(media.every((m: { url: string }) => !m.url.endsWith('.psd')));
 	} finally {
+		await fixture.close();
+	}
+});
+
+test('case-sensitive missing-file lookup still rejects an existing case variant', async (context) => {
+	const fixture = await adminFixture();
+	const lstat = fs.lstat;
+	const variant = path.join(fixture.root, 'src/config/Site.ts');
+	try {
+		// Exercise Linux's ENOENT branch even on case-insensitive Windows disks.
+		context.mock.method(fs, 'lstat', (target: string) => {
+			if (target === variant)
+				return Promise.reject(
+					Object.assign(new Error('missing'), { code: 'ENOENT' }),
+				);
+			return lstat(target);
+		});
+		await assert.rejects(
+			() => safePath(fixture.root, 'src/config/Site.ts', true),
+			/大小写/,
+		);
+		const fresh = 'src/config/new-config.ts';
+		assert.equal(
+			await safePath(fixture.root, fresh, true),
+			path.join(fixture.root, fresh),
+		);
+		await assert.rejects(fs.stat(path.join(fixture.root, fresh)), {
+			code: 'ENOENT',
+		});
+	} finally {
+		context.mock.restoreAll();
 		await fixture.close();
 	}
 });
