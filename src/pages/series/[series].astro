@@ -24,11 +24,11 @@ const postCountLabel = String(posts.length).padStart(2, '0');
 ---
 
 <Layout
-	title={`${series.title}${ARTICLE_PAGE_CONFIG.meta.titleSeparator}${SITE_CONFIG.name}`}
-	description={series.description}
+	title={`${series.titleEn}${ARTICLE_PAGE_CONFIG.meta.titleSeparator}${SITE_CONFIG.name}`}
+	description={series.descriptionEn}
 	starfieldVariant="subtle"
 >
-	<main class="series-page">
+	<main class="series-page" lang="en">
 		<section class="series-page__inner" aria-labelledby="series-title">
 			<header class="series-page__header">
 				<p class="series-page__eyebrow">
@@ -36,12 +36,12 @@ const postCountLabel = String(posts.length).padStart(2, '0');
 					<span aria-hidden="true">·</span>
 					<span>{postCountLabel} {ARTICLE_PAGE_CONFIG.series.recordsLabel}</span>
 				</p>
-				<h1 id="series-title">{series.title}</h1>
+				<h1 id="series-title">{series.titleEn}</h1>
 			</header>
 
 			{
 				posts.length > 0 ? (
-					<ArticlePostList posts={posts} />
+					<ArticlePostList posts={posts} language="en" appearance="directory" />
 				) : (
 					<p class="series-page__empty">{ARTICLE_PAGE_CONFIG.series.emptyLabel}</p>
 				)

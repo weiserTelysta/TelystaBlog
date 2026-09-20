@@ -64,13 +64,13 @@ for (const collection of collections) {
 			.find(Boolean);
 		const sourceFiles = group.filter((file) => file.role === 'source');
 		coverSources[assetKey] = (originalFile ?? displayFile)?.absolutePath;
-		const cover = coverFile ? await toDisplayManifestFile(coverFile) : undefined;
-		const display = displayFile ? await toDisplayManifestFile(displayFile) : cover;
+		const cover = coverFile ? await toImageManifestFile(coverFile) : undefined;
+		const display = displayFile ? await toImageManifestFile(displayFile) : cover;
 
 		assets[assetKey] = {
 			...(cover ? { cover } : {}),
 			...(display ? { display } : {}),
-			...(originalFile ? { original: toManifestFile(originalFile) } : {}),
+			...(originalFile ? { original: await toImageManifestFile(originalFile) } : {}),
 			sources: sourceFiles.map(toManifestFile),
 		};
 	}
@@ -239,17 +239,18 @@ function groupByAssetKey(files) {
 	return [...groups.entries()].sort(([current], [next]) => current.localeCompare(next));
 }
 
-async function toDisplayManifestFile(file) {
+async function toImageManifestFile(file) {
 	const metadata = await sharp(file.absolutePath, { failOn: 'none' }).metadata();
 
 	if (!metadata.width || !metadata.height) {
-		throw new Error(`无法读取 CDN 展示图尺寸：${file.manifestPath}`);
+		throw new Error(`无法读取 CDN 图片尺寸：${file.manifestPath}`);
 	}
 
 	return {
 		...toManifestFile(file),
-		width: metadata.width,
-		height: metadata.height,
+		// Browsers apply EXIF orientation when displaying JPEG originals.
+		width: metadata.autoOrient.width,
+		height: metadata.autoOrient.height,
 	};
 }
 

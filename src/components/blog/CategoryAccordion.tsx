@@ -456,6 +456,7 @@ export default function CategoryAccordion({
 
 	function handlePointerMove(event: PointerEvent<HTMLButtonElement>) {
 		if (
+			reducedMotionRef.current ||
 			railMotionPhaseRef.current === 'closing' ||
 			(event.pointerType !== 'mouse' && event.pointerType !== 'pen')
 		) {
@@ -603,10 +604,13 @@ export default function CategoryAccordion({
 												<img
 													className="category-accordion__image"
 													src={visual.image.src}
+													srcSet={visual.imageSrcSet}
+													sizes="(max-width: 362px) 58vw, (max-width: 760px) 210px, (max-width: 1171px) 164px, (max-width: 1643px) 14vw, 230px"
 													width={visual.image.width}
 													height={visual.image.height}
 													alt=""
 													loading="lazy"
+													decoding="async"
 												/>
 												<span className="category-accordion__card-shade" aria-hidden="true" />
 												<span className="category-accordion__card-title">

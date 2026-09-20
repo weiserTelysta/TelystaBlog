@@ -43,6 +43,14 @@ export const BLOG_SERIES = [
 		descriptionEn: "Notes on Telysta's character design, visual language, and worldbuilding.",
 	},
 	{
+		id: 'rhaelysa-notes',
+		category: 'portraits',
+		title: 'Rhaelysa 札记',
+		titleEn: 'Notes on Rhaelysa',
+		description: '关于 Rhaelysa 的人物设定、设计理念与创作记录。',
+		descriptionEn: "Notes on Rhaelysa's character design, ideas, and development.",
+	},
+	{
 		id: 'plants-in-their-season',
 		category: 'notes',
 		title: '草木有时',

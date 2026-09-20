@@ -42,7 +42,7 @@ export const ARTICLE_PAGE_CONFIG = {
 	series: {
 		pageLabel: 'Series',
 		recordsLabel: 'records',
-		emptyLabel: '这个系列暂时还没有公开文章。',
+		emptyLabel: 'No published records in this series yet.',
 		navigation: {
 			ariaLabel: '系列文章导航',
 			previousLabel: '上一章',

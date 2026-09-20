@@ -27,3 +27,16 @@ test('保留作者尺寸与加载策略，只补缺失比例，未知来源不�
 	assert.equal(nodes[2].properties.loading, 'lazy');
 	assert.equal(nodes[3].properties.width, undefined);
 });
+
+test('原图使用自身尺寸，旧清单缺失原图尺寸时不套用可能裁切的展示图', () => {
+	const original = { path: 'telysta-images/photo.jpeg', width: 2400, height: 3200 };
+	const source = { ...manifest, assets: {
+		photo: { original, display: { path: 'telysta-images/photo.webp', width: 800, height: 800 } },
+		legacy: { original: { path: 'telysta-images/legacy.png' }, display: { path: 'telysta-images/legacy.webp', width: 400, height: 400 } },
+	} };
+	const nodes = [image({ src: `${manifest.origin}${original.path}` }), image({ src: `${manifest.origin}telysta-images/legacy.png` })];
+	reserveCdnImageSpace({ children: nodes }, source);
+	assert.equal(nodes[0].properties.width, 2400);
+	assert.equal(nodes[0].properties.height, 3200);
+	assert.equal(nodes[1].properties.width, undefined);
+});

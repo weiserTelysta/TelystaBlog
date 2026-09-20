@@ -18,6 +18,9 @@
 
 ## 开发记录
 
+- [分类虹彩、资源与英文元数据发布](category-resource-release-2026-09-21.md)：最终 Series 题签、角色配色、Telysta 新资源与发布核验。
+- [单 Markdown 中／英／日展示研判](multilingual-markdown-assessment-2026-09-21.md)：单文件语言块、译文缓存、路由和风险；仅调研。
+- [分类光泽、英文系列目录与歌谱](category-series-scores-2026-09-20.md)：复合反射、响应式角色图、Cloudflare 核查与日志 02／03 附件。
 - [本地管理 UI 与功能补全](admin-ux-plan-2026-09-15.md)：当前实施计划、设计调研、图片处理、新增流程与最新验收。
 - [本地写作体验](admin-writing-2026-09-15.md)：文章元数据表单、原文保留与隔离草稿预览。
 - [后台第一版计划](admin-plan-2026-09-13.md)：本地优先的技术选择、第一版范围与历史验收。

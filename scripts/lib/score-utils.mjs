@@ -37,18 +37,19 @@ export function parseScoreSource(source) {
 		const line = rawLine.trim();
 		if (!line || line.startsWith('%')) continue;
 
-		const header = line.match(/^([A-Za-z][A-Za-z0-9]*)=(.*)$/);
+		const header = line.match(/^([A-Za-z][A-Za-z0-9]*|1)=(.*)$/);
 		if (header) {
 			headers.set(header[1], header[2].trim());
 			continue;
 		}
 
 		if (/^H:\s*/.test(line)) {
-			lyrics.push(line.replace(/^H:\s*/, ''));
+			// Jianpu-ly uses an underscore to group Chinese syllables on one melisma.
+			lyrics.push(line.replace(/^H:\s*/, '').replace(/(?<=\p{Script=Han})_(?=\p{Script=Han})/gu, ''));
 			continue;
 		}
 
-		if (/^\d+\/\d+(?:,\d+)?$/.test(line)) {
+		if (/^\d+\/\d+(?:,\d+\.?)?$/.test(line)) {
 			headers.set('meter', line.split(',')[0]);
 			inMusic = true;
 			continue;

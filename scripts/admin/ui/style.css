@@ -575,18 +575,13 @@ legend {
 	aspect-ratio: auto;
 	filter: brightness(0.8) saturate(0.9);
 }
-.role-frame::before {
+.role-frame::before,
+.role-frame::after {
 	content: '';
 	position: absolute;
 	inset: 0;
 	z-index: 1;
 	pointer-events: none;
-	opacity: 0.28;
-	transition: opacity 160ms ease;
-}
-.role-frame:hover::before,
-.role-frame:focus-visible::before {
-	opacity: 0.44;
 }
 .role-frame:focus-visible {
 	outline: 2px solid var(--accent);

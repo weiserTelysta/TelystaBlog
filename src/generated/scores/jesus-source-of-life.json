@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "jesus-source-of-life",
+  "title": "耶稣基督是生命源",
+  "source": "src/content/scores/jesus-source-of-life.jly",
+  "sourceSha256": "830c3e6b09cd4d4ba0f5dceaad8e6481692b648b500be2eba93207c5071bfde3",
+  "renderer": {
+    "jianpuLy": "1.889",
+    "lilypond": "2.24.x"
+  }
+}

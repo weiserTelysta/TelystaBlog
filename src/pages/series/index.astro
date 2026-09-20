@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { BLOG_CATEGORIES } from '../../config/content/blogCategories';
 import { BLOG_SERIES } from '../../config/content/blogSeries';
+import { getBlogCategoryVisualById } from '../../config/visuals/categoryVisuals';
 import { SITE_CONFIG } from '../../config/site';
 import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
 const copy = BLOG_PAGE_CONFIG.seriesIndex;
@@ -18,6 +19,8 @@ const seriesEntries = BLOG_SERIES.map((series) => {
 }).filter((series) => series.postCount > 0);
 const seriesGroups = BLOG_CATEGORIES.map((category) => ({
 	category,
+	// A newly registered category may not have artwork or an inscription yet.
+	categoryName: getBlogCategoryVisualById(category.id)?.cardInscription.name ?? category.id,
 	series: seriesEntries.filter((series) => series.category === category.id),
 })).filter((group) => group.series.length > 0);
 ---
@@ -27,7 +30,7 @@ const seriesGroups = BLOG_CATEGORIES.map((category) => ({
 	description={copy.description}
 	starfieldVariant="subtle"
 >
-	<main class="series-index">
+	<main class="series-index" lang="en">
 		<section class="series-index__inner" aria-labelledby="series-index-title">
 			<header class="series-index__header">
 				<p>{copy.eyebrow}</p>
@@ -35,20 +38,24 @@ const seriesGroups = BLOG_CATEGORIES.map((category) => ({
 			</header>
 
 			<div class="series-index__groups">
-				{seriesGroups.map(({ category, series }) => (
+				{seriesGroups.map(({ category, categoryName, series }) => (
 					<section class="series-index__group" aria-labelledby={`series-category-${category.id}`}>
 						<header class="series-index__group-header">
-							<p>{category.subtitle}</p>
-							<h2 id={`series-category-${category.id}`}>{category.title}</h2>
+							<h2 id={`series-category-${category.id}`}>{categoryName}</h2>
+							<p>{category.subtitleEn}</p>
 						</header>
 
 						<ol class="series-index__list">
 							{series.map((item) => (
 								<li>
 									<a href={buildSeriesHref(item.id)}>
-										<strong>{item.title}</strong>
+										<div class="series-index__summary">
+											<strong>{item.titleEn}</strong>
+											<p>{item.descriptionEn}</p>
+										</div>
 										<span aria-label={copy.countLabel.replaceAll('{count}', String(item.postCount))}>
 											{String(item.postCount).padStart(2, '0')}
+											<small>records</small>
 										</span>
 									</a>
 								</li>
@@ -62,155 +69,100 @@ const seriesGroups = BLOG_CATEGORIES.map((category) => ({
 </Layout>
 
 <style lang="scss">
-	.series-index {
-		position: relative;
-		z-index: 1;
-		min-height: 100vh;
-	}
-
+	.series-index { position: relative; z-index: 1; min-height: 100vh; }
 	.series-index__inner {
-		display: grid;
-		gap: clamp(34px, 4.5vw, 46px);
-		width: min(760px, calc(100% - 48px));
+		width: min(1040px, calc(100% - 64px));
 		margin: 0 auto;
-		padding: clamp(58px, 7vw, 84px) 0 clamp(92px, 13vw, 150px);
+		padding: clamp(64px, 8vw, 104px) 0 120px;
 	}
-
-	.series-index__header {
-		display: grid;
-		gap: 8px;
-	}
-
-	.series-index__header p,
-	.series-index__header h1 {
-		margin: 0;
-	}
-
-	.series-index__groups {
-		display: grid;
-		gap: clamp(34px, 5vw, 52px);
-	}
-
-	.series-index__group {
-		display: grid;
-		gap: 10px;
-	}
-
-	.series-index__group-header {
-		display: flex;
-		align-items: baseline;
-		justify-content: space-between;
-		gap: 16px;
-		padding-inline: 2px;
-	}
-
-	.series-index__group-header p,
-	.series-index__group-header h2 {
-		margin: 0;
-	}
-
-	.series-index__group-header p {
-		order: 2;
-		color: rgba(139, 149, 167, 0.46);
-		font-family: var(--type-meta-font);
-		font-size: 0.7rem;
-		letter-spacing: 0.05em;
-	}
-
-	.series-index__group-header h2 {
-		color: rgba(156, 199, 232, 0.63);
-		font-family: var(--type-display-label-font);
-		font-size: 0.76rem;
-		font-weight: var(--type-display-label-weight);
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-	}
-
+	.series-index__header { margin-bottom: clamp(52px, 7vw, 88px); }
 	.series-index__header p {
-		color: rgba(156, 199, 232, 0.6);
+		margin: 0 0 14px;
+		color: #9cb9cf;
 		font-family: var(--type-display-label-font);
 		font-size: var(--type-display-label-size);
-		letter-spacing: var(--type-display-label-tracking);
-		text-transform: uppercase;
+		letter-spacing: 0.14em;
 	}
-
 	.series-index__header h1 {
-		color: rgba(237, 243, 251, 0.9);
-		font-family: var(--type-index-title-font);
-		font-size: clamp(1.9rem, 4vw, 2.5rem);
-		font-weight: var(--type-index-title-weight);
-		line-height: 1.16;
-	}
-
-	.series-index__list {
 		margin: 0;
-		padding: 0;
-		list-style: none;
+		color: #d8dee9;
+		font-family: var(--type-index-title-font);
+		font-size: clamp(2.25rem, 5vw, 3.2rem);
+		line-height: 1.15;
+		font-weight: var(--type-index-title-weight);
 	}
-
-	.series-index__list li {
-		border-top: 1px solid rgba(255, 255, 255, 0.055);
+	.series-index__groups { display: grid; gap: clamp(48px, 6vw, 76px); }
+	.series-index__group {
+		display: grid;
+		grid-template-columns: minmax(160px, 0.9fr) minmax(0, 2.3fr);
+		gap: clamp(32px, 5vw, 80px);
+		align-items: start;
 	}
-
-	.series-index__list li:last-child {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+	.series-index__group-header { padding-top: 7px; }
+	.series-index__group-header h2 {
+		margin: 0 0 10px;
+		color: #adc8dc;
+		font-family: var(--type-display-label-font);
+		font-size: clamp(0.96rem, 1.4vw, 1.12rem);
+		line-height: 1.55;
+		font-weight: 500;
+		letter-spacing: 0.035em;
 	}
-
+	.series-index__group-header p {
+		margin: 0;
+		color: #909cad;
+		font-size: 0.78rem;
+		line-height: 1.65;
+	}
+	.series-index__list { display: grid; gap: 24px; list-style: none; padding: 0; margin: 0; }
 	.series-index__list a {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) auto;
-		gap: 18px;
+		gap: 24px;
+		padding: 4px 0 12px;
 		align-items: baseline;
-		padding: clamp(18px, 3vw, 24px) 2px;
 		text-decoration: none;
 	}
-
-	.series-index__list strong {
-		color: rgba(216, 222, 233, 0.84);
-		font-size: clamp(1.02rem, 2vw, 1.2rem);
-		font-weight: 610;
-		line-height: 1.45;
+	.series-index__summary strong {
+		color: #d8dee9;
+		font-size: clamp(1.2rem, 2vw, 1.55rem);
+		font-weight: 550;
+		line-height: 1.4;
 		overflow-wrap: anywhere;
-		transition: color var(--motion-fast) ease;
+		transition: color 160ms ease;
 	}
-
-	.series-index__list span {
-		color: rgba(156, 199, 232, 0.54);
+	.series-index__summary p {
+		margin: 12px 0 0;
+		color: #96a2b5;
+		font-size: 0.87rem;
+		line-height: 1.8;
+		max-width: 48ch;
+	}
+	.series-index__list a > span {
+		display: grid;
+		gap: 5px;
+		color: #a6bfd3;
 		font-family: var(--type-display-label-font);
-		font-size: var(--type-meta-size);
+		font-size: 1.1rem;
+		font-variant-numeric: tabular-nums;
+		text-align: right;
+	}
+	.series-index__list small {
+		color: #929eaf;
+		font-family: var(--type-meta-font);
+		font-size: 0.62rem;
 		letter-spacing: 0.08em;
 	}
-
 	.series-index__list a:hover strong,
-	.series-index__list a:focus-visible strong {
-		color: rgba(245, 249, 253, 0.96);
-	}
-
-	.series-index__list a:focus-visible {
-		border-radius: 2px;
-		outline: 1px solid rgba(156, 199, 232, 0.68);
-		outline-offset: 3px;
-	}
-
+	.series-index__list a:focus-visible strong { color: #abd6f2; }
+	.series-index__list a:focus-visible { outline: 1px solid #9cc7e8; outline-offset: 7px; border-radius: 2px; }
 	@media (max-width: 640px) {
-		.series-index__inner {
-			width: min(100% - 32px, 760px);
-			padding-top: 48px;
-		}
-
-		.series-index__group-header {
-			display: grid;
-			gap: 3px;
-		}
-
-		.series-index__group-header p {
-			order: initial;
-		}
+		.series-index__inner { width: calc(100% - 40px); padding-top: 48px; }
+		.series-index__group { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+		.series-index__group-header p { margin-top: 5px; }
+		.series-index__list a { gap: 18px; }
 	}
-
 	@media (prefers-reduced-motion: reduce) {
-		.series-index__list strong {
-			transition: none;
-		}
+		.series-index__summary strong { transition: none; }
 	}
 </style>

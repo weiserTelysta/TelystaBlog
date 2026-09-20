@@ -188,11 +188,8 @@ body.is-category-accordion-open {
 	--rotate-x: 0deg;
 	--rotate-y: 0deg;
 	--card-scale: 1;
-	--foil-opacity: 0.075;
-	--glare-opacity: 0;
-	--foil-color: #9cc7e8;
-	--foil-secondary: #d6a7c8;
-	--foil-tertiary: #a8d8ca;
+	--foil-opacity: 0.1;
+	--glare-opacity: 0.03;
 
 	position: relative;
 	flex: 0 0 clamp(164px, 14vw, 230px);
@@ -220,6 +217,7 @@ body.is-category-accordion-open {
 
 .category-accordion__card-inner {
 	position: absolute;
+	display: block;
 	inset: 0;
 	overflow: hidden;
 	border-radius: inherit;
@@ -237,67 +235,14 @@ body.is-category-accordion-open {
 	content: "";
 	position: absolute;
 	inset: 0;
-	z-index: 3;
+	z-index: 2;
 	pointer-events: none;
 }
 
-.category-accordion__card-inner::before {
-	background:
-		radial-gradient(
-			circle at var(--pointer-x) var(--pointer-y),
-			rgba(255, 255, 255, 0.42) 0,
-			transparent 20%
-		),
-		conic-gradient(
-			from 210deg at var(--pointer-x) var(--pointer-y),
-			transparent 0 10%,
-			color-mix(in srgb, var(--foil-secondary) 62%, transparent) 18%,
-			color-mix(in srgb, var(--foil-color) 68%, transparent) 31%,
-			transparent 43% 55%,
-			color-mix(in srgb, var(--foil-tertiary) 60%, transparent) 68%,
-			color-mix(in srgb, var(--foil-secondary) 54%, transparent) 82%,
-			transparent 94%
-		),
-		linear-gradient(
-			120deg,
-			transparent 12%,
-			color-mix(in srgb, var(--foil-color, #9cc7e8) 34%, transparent) 36%,
-			transparent 58%
-		),
-		repeating-linear-gradient(
-			128deg,
-			rgba(255, 255, 255, 0.038) 0 1px,
-			transparent 1px 7px
-		);
-	background-position:
-		center,
-		center,
-		var(--pointer-x) var(--pointer-y),
-		center;
-	background-size:
-		100% 100%,
-		145% 145%,
-		160% 160%,
-		auto;
-	background-blend-mode: screen, color, screen, normal;
-	mix-blend-mode: screen;
-	opacity: var(--foil-opacity);
-	filter: saturate(0.88);
-}
-
-.category-accordion__card-inner::after {
-	background: radial-gradient(
-		circle at var(--pointer-x) var(--pointer-y),
-		rgba(255, 255, 255, 0.34),
-		transparent 34%
-	);
-	mix-blend-mode: overlay;
-	opacity: var(--glare-opacity);
-}
 
 .category-accordion__card:hover {
 	--foil-opacity: 0.28;
-	--glare-opacity: 0.22;
+	--glare-opacity: 0.07;
 
 	filter: saturate(1.04) brightness(1.035);
 }
@@ -310,8 +255,8 @@ body.is-category-accordion-open {
 
 .category-accordion__card.is-preselected {
 	--card-scale: 1.025;
-	--foil-opacity: 0.44;
-	--glare-opacity: 0.27;
+	--foil-opacity: 0.32;
+	--glare-opacity: 0.09;
 
 	z-index: 4;
 	border-color: rgba(156, 199, 232, 0.24);
@@ -333,39 +278,9 @@ body.is-category-accordion-open {
 	--foil-opacity: 0.28;
 }
 
-.category-accordion__card[data-tone="violet"] {
-	--foil-color: #cbb7ff;
-	--foil-secondary: #9cc7e8;
-	--foil-tertiary: #e6b5d4;
-}
-
-.category-accordion__card[data-tone="silver"] {
-	--foil-color: #d8dee9;
-	--foil-secondary: #a7c7dd;
-	--foil-tertiary: #d5c5ea;
-}
-
-.category-accordion__card[data-tone="prism"] {
-	--foil-color: #bbd5ff;
-	--foil-secondary: #efb8d2;
-	--foil-tertiary: #b8e1ca;
-}
-
-.category-accordion__card[data-tone="rose"] {
-	--foil-color: #d6a7c8;
-	--foil-secondary: #9fc9ea;
-	--foil-tertiary: #ead0a6;
-}
-
-.category-accordion__card[data-tone="ember"] {
-	--foil-color: #e0b184;
-	--foil-secondary: #d69eaa;
-	--foil-tertiary: #9cc7e8;
-}
-
 .category-accordion__card:focus-visible {
 	--foil-opacity: 0.22;
-	--glare-opacity: 0.16;
+	--glare-opacity: 0.06;
 }
 
 .category-accordion__image {
@@ -385,7 +300,7 @@ body.is-category-accordion-open {
 
 .category-accordion__card:hover .category-accordion__image,
 .category-accordion__card.is-preselected .category-accordion__image {
-	filter: brightness(0.84) saturate(1);
+	filter: brightness(0.76) saturate(1);
 	transform: scale(var(--image-active-scale, 1.08));
 }
 

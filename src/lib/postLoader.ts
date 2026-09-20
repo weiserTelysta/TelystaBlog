@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises';
 import { glob, type Loader } from 'astro/loaders';
 import { splitMarkdownSource } from './markdownSource';
 import { completePostMetadata, needsPostBody } from './postMetadata';
+import cdnManifest from '../generated/cdn-assets.json';
 
 const POST_METADATA_VERSION = 3;
 
@@ -11,10 +12,13 @@ export function postLoader(): Loader {
 	return {
 		name: 'telysta-post-loader',
 		async load(context) {
+			// Rendered Markdown contains CDN dimensions. A manifest-only update must
+			// invalidate Astro's cached HTML even when the article text is unchanged.
+			const imageManifestDigest = context.generateDigest(cdnManifest);
 			await loader.load({
 				...context,
 				// Invalidate cached metadata when the completion rules change.
-				generateDigest: (data) => context.generateDigest({ version: POST_METADATA_VERSION, data }),
+				generateDigest: (data) => context.generateDigest({ version: POST_METADATA_VERSION, imageManifestDigest, data }),
 				async parseData(options) {
 					const body = options.filePath && needsPostBody(options.data)
 						? splitMarkdownSource(await readFile(options.filePath, 'utf8')).body

@@ -49,7 +49,8 @@ test('文章图片未下载时已经预留高度，评论有初始占位', async
 	try {
 		await page.goto(article, { waitUntil: 'domcontentloaded' });
 		const images = page.locator('[data-article-content] img');
-		await expect(images).toHaveCount(4);
+		// Authors may add illustrations; every current image must reserve its space.
+		await expect(images.first()).toBeAttached();
 		for (const image of await images.all()) {
 			await expect(image).toHaveAttribute('width', /^[1-9]\d*$/);
 			await expect(image).toHaveAttribute('height', /^[1-9]\d*$/);

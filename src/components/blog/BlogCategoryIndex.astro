@@ -1,8 +1,9 @@
 ---
+import { getImage } from 'astro:assets';
 import CategoryAccordion from './CategoryAccordion';
 import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
 import { type BlogCategoryId, type CategoryPostCount } from '../../config/content/blogCategories';
-import { BLOG_CATEGORY_VISUALS } from '../../config/visuals/categoryVisuals';
+import { BLOG_CATEGORY_VISUALS, type BlogCategoryVisual } from '../../config/visuals/categoryVisuals';
 
 type Props = {
 	selectedCategoryId?: BlogCategoryId;
@@ -11,12 +12,24 @@ type Props = {
 
 const { selectedCategoryId, postCounts } = Astro.props;
 const { categoryIndex } = BLOG_PAGE_CONFIG;
+// Imported artwork is resized once per build and reused across category routes.
+// Admin-created public/media images have already been processed on upload.
+const visuals = await Promise.all(BLOG_CATEGORY_VISUALS.map(async (visual): Promise<BlogCategoryVisual> => {
+	if (visual.image.src.startsWith('/media/')) return visual;
+	const widths = [...new Set([Math.min(480, visual.image.width), Math.min(800, visual.image.width)])];
+	const images = await Promise.all(widths.map(width => getImage({ src: visual.image, width, format: 'webp', quality: 85 })));
+	return {
+		...visual,
+		image: { ...visual.image, src: images[0].src },
+		imageSrcSet: images.map((image, index) => `${image.src} ${widths[index]}w`).join(', '),
+	};
+}));
 ---
 
 <section class="blog-category-index" aria-label={categoryIndex.ariaLabel}>
 	<CategoryAccordion
 		client:load
-		visuals={BLOG_CATEGORY_VISUALS}
+		visuals={visuals}
 		selectedCategoryId={selectedCategoryId}
 		postCounts={postCounts}
 	/>

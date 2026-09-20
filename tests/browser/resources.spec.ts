@@ -1,6 +1,29 @@
 import { RESOURCE_PAGE_CONFIG } from '../../src/config/pages/resources';
 import { test, expect } from '@playwright/test';
 
+for (const width of [390, 1440]) {
+	test(`中亚服饰资源显示小封面、高清图与 JPEG 原图下载：${width}px`, async ({ page }, testInfo) => {
+		await page.setViewportSize({ width, height: 1000 });
+		await page.goto('/resources/', { waitUntil: 'domcontentloaded' });
+		const trigger = page.getByRole('link', { name: '查看资源：Telysta · 中亚风格服饰', exact: true });
+		await expect(trigger.locator('img')).toHaveAttribute('src', /\/covers\/Telysta\/Telysta_Central-Asia_clouth_half_body\.[a-f0-9]{64}\.webp$/);
+		await trigger.click();
+		const image = page.locator('.pswp img[src$="Telysta_Central-Asia_clouth_half_body.webp"]');
+		await expect(image).toBeInViewport();
+		await image.evaluate((element: HTMLImageElement) => element.decode());
+		await page.keyboard.press('Tab');
+		await page.getByRole('button', { name: RESOURCE_PAGE_CONFIG.viewer.downloadLabel, exact: true }).click();
+		await expect(page.locator('.resource-download-dialog a')).toHaveAttribute('href', 'https://assets.telysta.com/telysta-images/Telysta/Telysta_Central-Asia_clouth_half_body.jpeg');
+		await page.screenshot({ path: testInfo.outputPath('central-asian-resource.png') });
+		await page.keyboard.press('Escape');
+		await expect(page.locator('.resource-download-dialog')).not.toBeVisible();
+		await expect(page.getByRole('button', { name: RESOURCE_PAGE_CONFIG.viewer.downloadLabel, exact: true })).toBeFocused();
+		await page.keyboard.press('Escape');
+		await expect(page.locator('.pswp')).toHaveCount(0);
+		await expect(trigger).toBeFocused();
+	});
+}
+
 test('列表使用独立 cover，高清图仅在看图器打开后请求', async ({ page }, testInfo) => {
 	const fullImages: string[] = [];
 	page.on('request', request => {

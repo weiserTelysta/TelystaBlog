@@ -214,6 +214,7 @@ function rolePreview(visual, foil) {
 	);
 	area.refresh = (v, f) => {
 		frame.dataset.foil = f;
+		frame.dataset.tone = v.tone ?? 'blue';
 		const src = v.image?.src ?? v.image;
 		img.src = imagePreviews[src] ?? src;
 		img.alt = `${v.cardInscription.prefix} 角色裁切预览`;

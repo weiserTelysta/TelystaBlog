@@ -6,7 +6,7 @@ const navSelector = '.article-series';
 const rowSelector = '.article-series__chapters';
 
 async function chapters(page: Page, route = seriesIndex) {
-	await page.goto(route);
+	await page.goto(route, { waitUntil: 'domcontentloaded' });
 	return page.locator('.article-post-list a').evaluateAll(links =>
 		links.map(link => link.getAttribute('href')!),
 	);
@@ -15,12 +15,12 @@ async function chapters(page: Page, route = seriesIndex) {
 test('所有公开系列的首章、中间章、末章与单篇系列链接对应目录顺序', async ({ page }, testInfo) => {
 	const errors: string[] = [];
 	page.on('pageerror', error => errors.push(error.message));
-	for (const series of ['weiser-blog-construction-records', 'ningbo-catholic-observation-log', 'marketing-ecommerce-notes', 'telysta-notes', 'plants-in-their-season']) {
+	for (const series of ['weiser-blog-construction-records', 'ningbo-catholic-observation-log', 'marketing-ecommerce-notes', 'telysta-notes', 'rhaelysa-notes', 'plants-in-their-season']) {
 		const route = `/series/${series}/`;
 		const hrefs = await chapters(page, route);
 		expect(hrefs.length).toBeGreaterThan(0);
 		for (const [index, href] of hrefs.entries()) {
-			await page.goto(href);
+			await page.goto(href, { waitUntil: 'domcontentloaded' });
 			const controls = page.locator(`${rowSelector} > li > *`);
 			await expect(controls).toHaveCount(3);
 			for (const [position, target] of [hrefs[index - 1], route, hrefs[index + 1]].entries()) {
@@ -44,7 +44,7 @@ test('所有公开系列的首章、中间章、末章与单篇系列链接对�
 });
 
 test('无系列文章保留三个禁用入口，点击不会导航', async ({ page }) => {
-	await page.goto(standalone);
+	await page.goto(standalone, { waitUntil: 'domcontentloaded' });
 	const controls = page.locator(`${rowSelector} [aria-disabled="true"]`);
 	await expect(controls).toHaveCount(3);
 	await expect(page.locator(`${navSelector} a`)).toHaveCount(0);
@@ -60,7 +60,7 @@ for (const width of [320, 390, 768, 1440]) {
 	test(`章节导航三等分、无边框且字号小于正文：${width}px`, async ({ page }, testInfo) => {
 		await page.setViewportSize({ width, height: 900 });
 		const hrefs = await chapters(page);
-		await page.goto(hrefs[1]);
+		await page.goto(hrefs[1], { waitUntil: 'domcontentloaded' });
 		await page.evaluate(() => document.fonts.ready);
 		await page.locator(navSelector).scrollIntoViewIfNeeded();
 		const geometry = await page.locator(rowSelector).evaluate(el => {
@@ -89,7 +89,7 @@ test('原生链接支持键盘、跳过禁用项，无 JavaScript 仍能前后�
 	const page = await context.newPage();
 	try {
 		const hrefs = await chapters(page);
-		await page.goto(hrefs[0]);
+		await page.goto(hrefs[0], { waitUntil: 'domcontentloaded' });
 		await page.locator('.article-series__link').focus();
 		await page.keyboard.press('Tab');
 		const contents = page.locator('.article-series__chapter--contents');
@@ -108,7 +108,7 @@ test('原生链接支持键盘、跳过禁用项，无 JavaScript 仍能前后�
 
 test('箭头只移动 2px，按下变淡，快速反向与减少动态效果不会残留位移', async ({ page }) => {
 	const hrefs = await chapters(page);
-	await page.goto(hrefs[1]);
+	await page.goto(hrefs[1], { waitUntil: 'domcontentloaded' });
 	const link = page.locator('.article-series__chapter--next');
 	const arrow = link.locator('svg');
 	await link.scrollIntoViewIfNeeded();

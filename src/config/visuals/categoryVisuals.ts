@@ -20,6 +20,7 @@ export type BlogCategoryVisual = BlogCategory & {
 		name: string;
 	};
 	image: ImageMetadata;
+	imageSrcSet?: string;
 	imagePosition: string;
 	imageScale: number;
 	tone: string;

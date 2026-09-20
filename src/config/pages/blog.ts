@@ -26,8 +26,8 @@ export const BLOG_PAGE_CONFIG = {
 		ariaLabel: '查看全部系列',
 		title: 'Series Archive',
 		eyebrow: 'All Records',
-		description: `${SITE_CONFIG.name} 的全部文章系列。`,
-		countLabel: '共 {count} 篇',
+		description: `Collected series from ${SITE_CONFIG.name}.`,
+		countLabel: '{count} records',
 	},
 	emptyState: {
 		defaultMessage: '这里暂时还没有公开文章。',

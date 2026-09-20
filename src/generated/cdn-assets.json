@@ -2001,6 +2001,30 @@
         "height": 960
       }
     },
+    "Telysta/Telysta_Central-Asia_clouth_half_body": {
+      "display": {
+        "path": "telysta-images/Telysta/Telysta_Central-Asia_clouth_half_body.webp",
+        "bytes": 2022718,
+        "format": "WEBP",
+        "width": 2216,
+        "height": 2862
+      },
+      "original": {
+        "path": "telysta-images/Telysta/Telysta_Central-Asia_clouth_half_body.jpeg",
+        "bytes": 2887269,
+        "format": "JPEG",
+        "width": 2216,
+        "height": 2862
+      },
+      "sources": [],
+      "cover": {
+        "path": "covers/Telysta/Telysta_Central-Asia_clouth_half_body.f82e05a2da11b1961d5e2ecb2c2f1d08c35aa6d7dc2643951e89ab35577ace0a.webp",
+        "bytes": 267684,
+        "format": "WEBP",
+        "width": 743,
+        "height": 960
+      }
+    },
     "Telysta/telysta_crinoline": {
       "sources": [
         {

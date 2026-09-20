@@ -4,7 +4,7 @@ import cdnManifest from '../src/generated/cdn-assets.json' with { type: 'json' }
 export function reserveCdnImageSpace(tree, manifest) {
 	const files = new Map();
 	for (const asset of Object.values(manifest.assets)) {
-		for (const file of [asset.display, asset.cover]) {
+		for (const file of [asset.display, asset.cover, asset.original]) {
 			if (file?.width > 0 && file?.height > 0) files.set(file.path, file);
 		}
 	}

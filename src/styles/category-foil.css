@@ -1,106 +1,129 @@
-/* Shared by the public category cards and the local editor. Original gradient textures;
-   layered-light technique studied at https://poke-holo.simey.me/ (no external artwork). */
+/* Original layered foil; technique reference: poke-holo.simey.me.
+   Grain, interference bands and reflection move at different scales.
+   Shared with the local editor; no downloaded textures or animation loops. */
 [data-foil] {
-	--foil-texture:
-		radial-gradient(
-			circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
-			#d8e9ff 0,
-			transparent 32%
-		),
-		repeating-linear-gradient(
-			125deg,
-			transparent 0 15px,
-			#9cc7e84d 16px,
-			transparent 17px 30px
-		);
+	--foil-angle: 125deg;
+	--foil-a: #9cc7e8;
+	--foil-b: #d6a7c8;
+	--foil-c: #a8cfc5;
+	--foil-grain: repeating-linear-gradient(35deg, #e4e9f04d 0 0.6px, transparent 0.9px 5px);
+	--foil-band-size: 280% 240%;
+	--foil-opacity: 0.1;
+	--glare-opacity: 0.03;
 }
 [data-foil='aurora'] {
-	--foil-texture: conic-gradient(
-		from 200deg at var(--pointer-x, 50%) var(--pointer-y, 50%),
-		transparent,
-		#aecdb9,
-		#b6b9e8,
-		transparent 48%,
-		#9cc7e8,
-		transparent
-	);
+	--foil-angle: 155deg;
+	--foil-a: #9ccfbf;
+	--foil-b: #b7ace0;
+	--foil-c: #8cbace;
+	--foil-band-size: 340% 200%;
 }
 [data-foil='moonlit'] {
-	--foil-texture: radial-gradient(
-		ellipse at var(--pointer-x, 50%) var(--pointer-y, 50%),
-		#eef2ff 0,
-		#a7c7dd77 18%,
-		transparent 58%
-	);
+	--foil-angle: 105deg;
+	--foil-a: #cbdbe7;
+	--foil-b: #b5bed6;
+	--foil-c: #ded5e4;
+	--foil-grain: repeating-linear-gradient(0deg, #dce6f033 0 0.6px, transparent 1px 4px);
 }
 [data-foil='prism'] {
-	--foil-texture: repeating-linear-gradient(
-		115deg,
-		#d6a7c888 0%,
-		#c4b4df99 9%,
-		#9cc7e888 18%,
-		#b8d5c588 27%,
-		transparent 36%
-	);
+	--foil-angle: 115deg;
+	--foil-band-size: 200% 180%;
+	--foil-grain: repeating-linear-gradient(115deg, #e5def055 0 0.5px, transparent 1px 8px);
 }
 [data-foil='embers'] {
-	--foil-texture:
-		radial-gradient(
-			ellipse at var(--pointer-x, 50%) var(--pointer-y, 50%),
-			#f1d8b4 0,
-			#c9936980 20%,
-			transparent 55%
-		),
-		repeating-linear-gradient(
-			30deg,
-			transparent 0 8px,
-			#d8a48a44 9px,
-			transparent 10px 16px
-		);
+	--foil-angle: 35deg;
+	--foil-a: #d8ad87;
+	--foil-b: #c88caa;
+	--foil-c: #c5bea0;
+	--foil-grain: repeating-linear-gradient(-35deg, #e9bc9744 0 0.7px, transparent 1px 6px);
 }
+/* Keep the stable ID; replace concentric rings with broad crossing wave bands. */
 [data-foil='ripple'] {
-	--foil-texture: repeating-radial-gradient(
-		ellipse at var(--pointer-x, 50%) var(--pointer-y, 50%),
-		transparent 0 18px,
-		#a7cedd88 20px,
-		transparent 23px 40px
-	);
+	--foil-angle: 65deg;
+	--foil-a: #9abfd1;
+	--foil-b: #a8c6c4;
+	--foil-c: #c1b1cf;
+	--foil-grain: repeating-linear-gradient(-18deg, transparent 0 14px, #c3e0e422 18px, transparent 23px 38px);
+	--foil-band-size: 310% 280%;
 }
 [data-foil='crosshatch'] {
-	--foil-texture:
-		repeating-linear-gradient(
-			45deg,
-			transparent 0 20px,
-			#aec9e677 21px,
-			transparent 23px 40px
-		),
-		repeating-linear-gradient(
-			-45deg,
-			transparent 0 20px,
-			#d6a7c877 21px,
-			transparent 23px 40px
-		);
+	--foil-angle: 45deg;
+	--foil-grain: repeating-linear-gradient(-45deg, #d9d0e955 0 0.7px, transparent 1px 7px);
+	--foil-band-size: 220% 220%;
 }
 [data-foil='satin'] {
-	--foil-texture: repeating-linear-gradient(
-		100deg,
-		transparent 0%,
-		#d9d4e699 14%,
-		#9cc7e877 22%,
-		transparent 36%
-	);
+	--foil-angle: 95deg;
+	--foil-a: #bfcde0;
+	--foil-b: #c9b9cb;
+	--foil-c: #d6cfbf;
+	--foil-grain: repeating-linear-gradient(95deg, #e2d9e633 0 0.5px, transparent 1px 3px);
+	--foil-band-size: 360% 200%;
+}
+/* Character palette comes from the existing visual tone, independently of texture.
+   Shared by the public cards and the editor's preview. */
+[data-foil][data-tone='blue'] {
+	--foil-a: #bd985d;
+	--foil-b: #638fba;
+	--foil-c: #a481af;
+}
+[data-foil][data-tone='violet'] {
+	--foil-a: #b05a76;
+	--foil-b: #8e70b4;
+	--foil-c: #b79a65;
+}
+[data-foil][data-tone='silver'],
+[data-foil][data-tone='ember'] {
+	--foil-a: #b76269;
+	--foil-b: #bc965f;
+	--foil-c: #9779b3;
+}
+[data-foil][data-tone='prism'] {
+	--foil-a: #748ebe;
+	--foil-b: #a58ac1;
+	--foil-c: #c0a273;
+}
+[data-foil][data-tone='rose'] {
+	--foil-a: #789b8e;
+	--foil-b: #b6a477;
+	--foil-c: #a88baf;
 }
 [data-foil] .category-accordion__card-inner::before,
 .role-frame[data-foil]::before {
-	background-image: var(--foil-texture);
-	background-size: 150% 150%;
-	background-position: var(--pointer-x, 50%) var(--pointer-y, 50%);
-	background-blend-mode: screen;
+	background-image:
+		var(--foil-grain),
+		repeating-linear-gradient(var(--foil-angle), var(--foil-a) 0%, var(--foil-b) 12%, var(--foil-c) 24%, var(--foil-a) 36%),
+		linear-gradient(calc(var(--foil-angle) + 65deg), #07101c 35%, #71829b 49%, #091320 62%);
+	background-size: auto, var(--foil-band-size), 240% 220%;
+	background-position: center, var(--pointer-x, 50%) var(--pointer-y, 50%), var(--pointer-y, 50%) var(--pointer-x, 50%);
+	background-blend-mode: screen, color, normal;
 	mix-blend-mode: screen;
+	mask-image: linear-gradient(transparent 12%, #0003 30%, #000 48% 60%, #0002 78%, transparent);
+	opacity: var(--foil-opacity);
+	transition: opacity 180ms ease;
+}
+[data-foil] .category-accordion__card-inner::after,
+.role-frame[data-foil]::after {
+	background-image: linear-gradient(115deg, transparent 40%, var(--foil-b) 49%, var(--foil-a) 52%, transparent 61%);
+	background-size: 250% 210%;
+	background-position: var(--pointer-x, 50%) var(--pointer-y, 50%);
+	mix-blend-mode: screen;
+	mask-image: linear-gradient(transparent 18%, #0009 45% 65%, transparent 85%);
+	opacity: var(--glare-opacity);
+	transition: opacity 180ms ease;
+}
+.role-frame[data-foil]:is(:hover, :focus-visible) {
+	--foil-opacity: 0.28;
+	--glare-opacity: 0.07;
 }
 @media (prefers-reduced-motion: reduce) {
 	[data-foil] {
 		--pointer-x: 50% !important;
 		--pointer-y: 50% !important;
+	}
+	[data-foil] .category-accordion__card-inner::before,
+	[data-foil] .category-accordion__card-inner::after,
+	.role-frame[data-foil]::before,
+	.role-frame[data-foil]::after {
+		transition: none;
 	}
 }
