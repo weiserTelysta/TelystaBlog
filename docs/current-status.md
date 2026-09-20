@@ -1,6 +1,6 @@
 # 当前状态
 
-核对日期：2026-09-21。本轮分类、资源、文章元数据与歌谱的验证及部署结果统一见 [发布记录](category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
+核对日期：2026-09-21。代码提交 `2fddbd6` 已通过 Linux 构建、Pages 部署和线上内容核对，详见 [发布记录](category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
 
 ## 已完成
 

@@ -48,4 +48,7 @@
 
 ## 发布记录
 
-本地验证完成，待本次提交推送；随后核对对应提交的 Actions 构建、Pages 部署与线上内容，并补充实际结果。
+- 代码与内容提交 `2fddbd6` 已推送至 `main`。[GitHub Actions 35543890654](https://github.com/weiserTelysta/TelystaBlog/actions/runs/35543890654) 的 Linux `build` 与 Pages `deploy` 均为 success，验证了实际部署环境。
+- 部署后直接请求 `https://telysta.com`（未加缓存绕过参数）：Series 的 Manuscript／Reading／Portrait／Notes 题签正确；资源页包含新插画与对应内容哈希封面；两篇 Telysta 文章均输出原图 2216×2862 尺寸；Rhaelysa 新文与日志 02／03 正常返回，两份简谱已渲染。
+- 博客引用的两份线上样式表均正常返回，包含 Telysta 与 Sylvaena 的角色配色规则。原图、展示图、封面的 CDN 字节核验见上文。
+- 本次提交不包含线上后台或多语言功能。日志 02 的旧点号 URL 仍未重定向；此项延续作者的文件重命名，旧链接／按路径关联的评论需按实际使用情况处理。
