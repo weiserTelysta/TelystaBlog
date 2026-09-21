@@ -1,5 +1,10 @@
 # Stage Log
 
+## 2026-09-22：WikiLink 部署验收
+
+- 代码 `37a423d` 已推送，GitHub Actions [构建与 Pages 部署](https://github.com/weiserTelysta/TelystaBlog/actions/runs/35606760273) 均成功。
+- 线上核对 Rhaelysa → Telysta 链接由别名自动生成，两篇文章均返回 HTTP 200；canonical 与 pathname 评论配置保持原有行为。本地完整检查为 110 项单元测试、44 项公开页面和 6 项后台浏览器测试通过，详见 [验证记录](wikilinks-2026-09-21.md)。
+
 ## 2026-09-21：可选 aliases 与 WikiLink
 
 - 按最终确认采用 `aliases` → 当前文章地址的自动解析；撤回手填历史路径与短地址方案，不新增路由或修改评论关联。
