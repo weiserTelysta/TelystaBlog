@@ -6,6 +6,7 @@ import remarkMath from 'remark-math';
 import remarkScore from './scripts/remark-score.mjs';
 import remarkArticleTitle from './scripts/remark-article-title.mjs';
 import rehypeCdnImages from './scripts/rehype-cdn-images.mjs';
+import remarkPostLinks from './scripts/remark-post-links.mjs';
 
 import react from '@astrojs/react';
 
@@ -23,7 +24,7 @@ export default defineConfig({
 			wrap: false,
 		},
     processor: unified({
-      remarkPlugins: [remarkArticleTitle, remarkMath, remarkScore],
+      remarkPlugins: [remarkArticleTitle, remarkPostLinks, remarkMath, remarkScore],
       rehypePlugins: [rehypeKatex, rehypeCdnImages],
     }),
   },

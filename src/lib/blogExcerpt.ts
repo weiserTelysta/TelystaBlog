@@ -100,6 +100,7 @@ function isStructuralMarkdownLine(line: string): boolean {
 
 function cleanInlineMarkdown(value: string): string {
 	return value
+		.replace(/\[\[([^\]\n|]+)(?:\|([^\]\n]+))?\]\]/g, (_, target, label) => label ?? target)
 		.replace(/!\[[^\]]*\](?:\([^)]*\)|\[[^\]]*\])/g, '')
 		.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
 		.replace(/\[([^\]]+)\]\[[^\]]*\]/g, '$1')

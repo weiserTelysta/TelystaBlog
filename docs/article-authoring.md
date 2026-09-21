@@ -2,6 +2,12 @@
 
 英文 `titleEn` / `descriptionEn` 仅用于标题和介绍，留空仍回退中文，不会自动翻译正文。本轮已补齐现有 13 篇文章的这些字段；单文件中／英／日展示仍在 [方案调研](multilingual-markdown-assessment-2026-09-21.md) 阶段，示例语言块尚不可用于生产文章。
 
+## 文章互相引用
+
+现在可以用 `[[Telysta]]` 或 `[[Telysta|她的姐姐]]`。只需在目标文章的 frontmatter 中登记 `aliases: [Telysta]`，构建会查找该文章并自动生成链接；不需要手填 slug、路径或 redirectFrom。改文件名或移动目录时保留 alias，站内 WikiLink 会自动跟随。
+
+aliases 是可选字段；只有主动登记名称的文章才能用该名称引用。完整示例、错误提示与外部旧 URL 的边界见 [WikiLink 使用与开发记录](wikilinks-2026-09-21.md)。普通 Markdown 链接仍可使用，但不要把文件目录直接当作页面 URL。
+
 ## 直接新建 Markdown（最少填写）
 
 在已有分类目录中保存 `2026-9-13-文章标题.md`，直接写正文即可，例如：

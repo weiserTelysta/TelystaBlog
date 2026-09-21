@@ -5,6 +5,7 @@ import type { Root as MdRoot } from 'mdast';
 import type { Root as HtmlRoot, Element } from 'hast';
 import { splitMarkdownSource } from '../../src/lib/markdownSource';
 import remarkArticleTitle from '../remark-article-title.mjs';
+import remarkPostLinks from '../remark-post-links.mjs';
 import { extractMarkdownTitle } from '../../src/lib/markdownTitle';
 
 const escape = (text: string) =>
@@ -43,7 +44,7 @@ export async function renderPostPreview(
 ) {
 	const processor = await createMarkdownProcessor({
 		syntaxHighlight: false,
-		remarkPlugins: [remarkArticleTitle, inertHtml, remarkMath],
+		remarkPlugins: [remarkArticleTitle, [remarkPostLinks, { preview: true }], inertHtml, remarkMath],
 		rehypePlugins: [
 			[rehypeKatex, { output: 'mathml', trust: false }],
 			function previewElements() {

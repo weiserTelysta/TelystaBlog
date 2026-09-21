@@ -18,6 +18,7 @@
 
 ## 开发记录
 
+- [WikiLink 与自动跳转](wikilinks-2026-09-21.md)：可选 aliases、自动解析目标、文件改名与缓存验证。
 - [分类虹彩、资源与英文元数据发布](category-resource-release-2026-09-21.md)：最终 Series 题签、角色配色、Telysta 新资源与发布核验。
 - [单 Markdown 中／英／日展示研判](multilingual-markdown-assessment-2026-09-21.md)：单文件语言块、译文缓存、路由和风险；仅调研。
 - [分类光泽、英文系列目录与歌谱](category-series-scores-2026-09-20.md)：复合反射、响应式角色图、Cloudflare 核查与日志 02／03 附件。

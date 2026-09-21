@@ -14,6 +14,7 @@ const posts = defineCollection({
 	loader: postLoader(),
 	schema: z
 		.object({
+			aliases: z.array(z.string().trim().min(1)).optional(),
 			title: z.string().min(1),
 			titleEn: z.string().min(1),
 			description: z.string().min(1),

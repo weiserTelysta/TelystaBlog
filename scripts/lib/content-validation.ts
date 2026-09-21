@@ -6,6 +6,11 @@ import { BLOG_SERIES_IDS } from '../../src/config/content/blogSeries';
 import { completePostMetadata } from '../../src/lib/postMetadata';
 import { splitMarkdownSource } from '../../src/lib/markdownSource';
 import { getCdnAsset, getCdnAssetKey, isCdnAssetReference } from '../../src/lib/cdnAssets';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkMath from 'remark-math';
+import remarkPostLinks from '../remark-post-links.mjs';
+import { createPostLinkIndex, legacyPostId } from '../../src/lib/postLinks.mjs';
 
 export type ContentKind = 'post' | 'resource';
 export type ValidationSeverity = 'error' | 'warning';
@@ -581,6 +586,7 @@ export function runContentValidation(rootDir: string): ContentValidationResult {
 		...validateContentDiscovery(rootDir),
 		...documents.flatMap((document) => document.parseIssues),
 		...validatePostDocuments(documents, rootDir),
+		...validatePostLinks(documents),
 		...validateResourceDocuments(documents, rootDir),
 	].sort(compareIssues);
 
@@ -590,6 +596,31 @@ export function runContentValidation(rootDir: string): ContentValidationResult {
 		errorCount: issues.filter((issue) => issue.severity === 'error').length,
 		warningCount: issues.filter((issue) => issue.severity === 'warning').length,
 	};
+}
+
+export function validatePostLinks(documents: ContentDocument[]): ValidationIssue[] {
+	const posts = documents.filter(document => document.kind === 'post' && !document.parseIssues.length);
+	let index;
+	try {
+		index = createPostLinkIndex(posts.map(document => ({
+			id: legacyPostId(document.relativePath.split('weiser-posts/').at(-1)),
+			file: document.relativePath, data: document.frontmatter,
+		})));
+	} catch (error) {
+		return [createIssue('error', 'post-link-index', 'src/content/weiser-posts', String(error))];
+	}
+	const processor = unified().use(remarkParse).use(remarkMath).use(remarkPostLinks, { index });
+	const issues: ValidationIssue[] = [];
+	for (const document of posts) {
+		if (document.frontmatter.draft === true) continue;
+		try { processor.runSync(processor.parse(document.body), { value: document.body }); }
+		catch (error) {
+			const failure = error as Error & { line?: number };
+			issues.push(createIssue('error', 'wikilink-invalid', document.relativePath, failure.message,
+				failure.line ? failure.line + document.bodyStartLine - 1 : undefined));
+		}
+	}
+	return issues;
 }
 
 export function validateContentDiscovery(rootDir: string): ValidationIssue[] {

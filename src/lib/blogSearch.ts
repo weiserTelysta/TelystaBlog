@@ -35,7 +35,8 @@ export function searchPosts(posts: SearchPost[], query: string): SearchPost[] {
 }
 
 export function searchBody(markdown: string): string {
-	return markdown.replace(/<!--[\s\S]*?-->/g, ' ').replace(/<[^>]*>/g, ' ')
+	return markdown.replace(/\[\[([^\]\n|]+)(?:\|([^\]\n]+))?\]\]/g, (_, target, label) => label ?? target)
+		.replace(/<!--[\s\S]*?-->/g, ' ').replace(/<[^>]*>/g, ' ')
 		.replace(/!\[[^\]]*\]\([^)]*\)/g, ' ').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
 		.replace(/[#*`~>|]/g, ' ').replace(/\s+/g, ' ').trim();
 }

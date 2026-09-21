@@ -13,6 +13,7 @@ import {
 	loadContentDocuments,
 	parseContentDocument,
 	validatePostDocuments,
+	validatePostLinks,
 } from '../lib/content-validation';
 import { getWeightedGreeting } from '../../src/lib/homeGreeting';
 import type { HomeGreeting } from '../../src/config/pages/homeGreetings';
@@ -150,7 +151,8 @@ export function createAdminServer(root = projectRoot) {
 				categories,
 				series: seriesIds,
 			}),
-		].filter((issue) => issue.filePath === relative);
+		].filter((issue) => issue.filePath === relative)
+			.concat(validatePostLinks([...documents, document]));
 		if (issues.some((issue) => issue.severity === 'error'))
 			throw new AdminError(
 				issues

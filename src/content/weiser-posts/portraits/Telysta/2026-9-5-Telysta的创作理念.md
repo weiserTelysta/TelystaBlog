@@ -1,4 +1,6 @@
 ---
+aliases:
+  - Telysta
 title: Telysta 的设计信息分享
 titleEn: Notes on Telysta's Design
 description: Telysta 的角色设定、服装设计与相关世界观记录。
