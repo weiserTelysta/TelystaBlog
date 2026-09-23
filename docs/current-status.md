@@ -1,8 +1,10 @@
 # 当前状态
 
-核对日期：2026-09-22。最新代码提交 `37a423d` 的 WikiLink 已通过 Linux 构建、Pages 部署和线上跳转核对，详见 [WikiLink 验收记录](wikilinks-2026-09-21.md)。此前角色虹彩与资源更新的代码提交 `2fddbd6` 验收见 [发布记录](category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
+核对日期：2026-09-24。本轮正文图片点击放大的范围与验证见 [验收记录](article-image-viewer-2026-09-24.md)。此前 WikiLink 与角色虹彩／资源更新分别见 [WikiLink 记录](wikilinks-2026-09-21.md) 和 [发布记录](category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
 
 ## 已完成
+
+- 博客正文普通图片自动支持点击放大、滚轮／触摸缩放，关闭后恢复焦点与阅读位置；按需加载，保留作者图片链接与模块失败回退。见 [图片放大记录](article-image-viewer-2026-09-24.md)。
 
 - 可选 aliases 与 WikiLink：`[[Telysta]]` 自动解析当前文章地址，支持自定义显示文字、改名／移动后的缓存失效和开发热更新；原有路由、评论和文章样式保持不变。见 [记录与验证](wikilinks-2026-09-21.md)。
 - 2026-09-21 本地更新：分类卡片共用复合反射，角色图新增构建时 480／800 WebP；Series 索引统一英文并采用无横线分组，两篇观察日志加入矢量简谱。后续已收敛为角色配色虹彩，Series 分组仅保留英文分类名；新增 Telysta 中亚服饰资源并补齐空缺英文元数据。最终状态见 [发布记录](category-resource-release-2026-09-21.md)。

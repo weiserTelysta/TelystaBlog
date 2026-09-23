@@ -18,6 +18,8 @@
 
 ## 开发记录
 
+- [博客图片点击放大](article-image-viewer-2026-09-24.md)：按需 PhotoSwipe、手机缩放、焦点与滚动恢复、失败回退。
+
 - [WikiLink 与自动跳转](wikilinks-2026-09-21.md)：可选 aliases、自动解析目标、文件改名与缓存验证。
 - [分类虹彩、资源与英文元数据发布](category-resource-release-2026-09-21.md)：最终 Series 题签、角色配色、Telysta 新资源与发布核验。
 - [单 Markdown 中／英／日展示研判](multilingual-markdown-assessment-2026-09-21.md)：单文件语言块、译文缓存、路由和风险；仅调研。

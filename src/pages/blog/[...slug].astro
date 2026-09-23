@@ -15,6 +15,8 @@ import {
 import { getBlogSeriesById } from '../../lib/blogSeriesUtils';
 import { SITE_CONFIG } from '../../config/site';
 import 'katex/dist/katex.min.css';
+import 'photoswipe/style.css';
+import '../../components/article/ArticleImageViewer.scss';
 
 export async function getStaticPaths() {
 	const entries = (await getCollection('posts')) as PostEntry[];
@@ -115,7 +117,10 @@ const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 
 <script>
 	import { bindArticleCodeRuntime, initArticleCodeRuntime } from '../../lib/articleCodeRuntime';
+	import { bindArticleImageRuntime, initArticleImageRuntime } from '../../lib/articleImageRuntime';
 
 	initArticleCodeRuntime();
 	bindArticleCodeRuntime();
+	initArticleImageRuntime();
+	bindArticleImageRuntime();
 </script>

@@ -1,0 +1,35 @@
+.prose .article-image-link {
+	display: block;
+	text-decoration: none;
+	cursor: zoom-in;
+	border-radius: 8px;
+}
+.prose .article-image-link:focus-visible {
+	outline: 2px solid var(--color-accent);
+	outline-offset: 4px;
+}
+.article-lightbox {
+	--pswp-bg: var(--color-background);
+	--pswp-placeholder-bg: transparent;
+	--pswp-icon-color: var(--color-text);
+	--pswp-icon-color-secondary: var(--color-background);
+	font-family: var(--font-body);
+}
+.article-lightbox .pswp__button {
+	width: 48px;
+	height: 48px;
+	margin: 6px;
+}
+.article-lightbox .pswp__icn {
+	width: 28px;
+	height: 28px;
+	left: 10px;
+	top: 10px;
+}
+.article-lightbox .pswp__button:focus-visible {
+	outline: 2px solid var(--color-accent);
+	outline-offset: -4px;
+}
+@media (prefers-reduced-motion: reduce) {
+	.article-lightbox *, .prose .article-image-link { transition: none !important; animation: none !important; }
+}

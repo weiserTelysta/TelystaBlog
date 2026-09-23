@@ -1,4 +1,11 @@
 export const ARTICLE_PAGE_CONFIG = {
+	imageViewer: {
+		openLabel: '放大图片',
+		dialogLabel: '图片预览',
+		closeLabel: '关闭图片预览',
+		zoomLabel: '放大／缩小图片',
+		errorLabel: '图片加载失败，请关闭后重试。',
+	},
 	codeCopy: {
 		idle: '复制代码',
 		copied: '已复制',
