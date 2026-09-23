@@ -1,5 +1,14 @@
 # Stage Log
 
+## 2026-09-24：Sylvaena 新委托与花卉参考图
+
+- 新建 `2026-9-24-コクノコ委托.md`，以日文简要说明人物背景、外貌与性格、白色东方罂粟及仪式服饰锚点，邀请画师自由设计新服饰，并表达增额意愿。填写中英文元数据，经作者审阅确认设为 `draft: false` 公开；未向画师发送。
+- 将 `oriental-poppy.png` 转为 `sylvaena-white-oriental-poppy-reference-2026-09-24.webp`，上传 R2 `blog_imgs/`。保持 1080×1440，质量 95，体积由 2,201,878 降为 215,530 字节；仅上传 WebP，新旧委托均引用 CDN 地址。
+- CDN 下载 SHA-256 与本地一致：`fdc7ddef1faf047c7535f5ce80d7dc3fc2ba88e7bcc424b4d2d7431b41fb1d0b`。原 PNG 从内容目录移入本地忽略目录 `.tmp/sylvaena-commission-2026-09-24/oriental-poppy-source.png` 备份，不作为站点资源发布。
+- Skeb 个人页无法通过本轮网页工具读取，委托依据作者提供的画集印象与现有人物设定撰写，未添加画师作品或接稿状态等未经核实的信息。
+- 按作者补充，新委托明确她在战时负责收殓遗体、以火净化并送别死者，和平时期照料孤儿与寡妇；设计锚点同步改为送别与净化之火。
+- 公开后验证：87 个内容文档零错误／警告，生产构建 31 页成功，新旧委托构建产物均使用新 WebP 地址，源码不再引用原 PNG。经作者确认公开文章并提交与推送。
+
 ## 2026-09-22：WikiLink 部署验收
 
 - 代码 `37a423d` 已推送，GitHub Actions [构建与 Pages 部署](https://github.com/weiserTelysta/TelystaBlog/actions/runs/35606760273) 均成功。

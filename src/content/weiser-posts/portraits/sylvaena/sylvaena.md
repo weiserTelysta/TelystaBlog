@@ -64,4 +64,4 @@ draft: false
 
 ![Sylvaena character reference 03](https://assets.telysta.com/telysta-images/Sylvaena/sylvaena_officialoutfit_design.webp)
 
-![White Oriental poppy reference](./oriental-poppy.png)
+![White Oriental poppy reference](https://assets.telysta.com/blog_imgs/sylvaena-white-oriental-poppy-reference-2026-09-24.webp)
