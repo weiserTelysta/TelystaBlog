@@ -38,7 +38,7 @@ Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边�
 
 资源列表 cover 的离线生成由 `scripts/prepare-resource-covers.ts` 负责，复用公开资源筛选规则。`scripts/lib/cdn-covers.mjs` 负责独立索引合并与来源指纹校验；`src/generated/cdn-covers.json` 和主清单提交 Git，图片只上传 R2 `covers/`。`.tmp/cdn-covers` 为可重新生成的准备区，不参与 Astro build，也不作为网站公开目录。
 
-- R2 和作者外部素材目录保存原图、PSD、Character 和头像。仓库保存必要图标、字体、风琴视觉及文章图片；不要为了“本地可见”复制整套原图。
+- R2 分发原图与 WebP、Character 图片和头像；不再上传 PSD／AI，远端 PSD 已清理。仅一个历史 AI 对象保留，详见 CDN 维护记录。仓库保存必要图标、字体、风琴视觉及文章图片，不复制整套原图。
 - `characters` 资源草稿未在资源页展示，不等于无用；文章、原稿、许可证与其他手写内容不可因零引用直接删除。
 - `.agents/skills` 是项目规范。作者有意删除的 `AGENTS.md` 不重建。
 - `dist/`、`.astro/`、`node_modules/` 为可重建产物；构建和测试会使用，不需每次提交前清空。

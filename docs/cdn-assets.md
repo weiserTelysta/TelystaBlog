@@ -1,6 +1,6 @@
 # Cloudflare R2 与 CDN 资源维护
 
-插画原图、PSD/AI、Character 资源和首页轮换头像存放在 Cloudflare R2 bucket `telysta-blog-assets`，并通过自定义域名 `https://assets.telysta.com` 分发。当前对象前缀为 `telysta-images/`、`characters/`、`avatars/` 和独立列表封面的 `covers/`。仓库只提交公开资源清单，不提交 R2 凭据。
+插画原图与 WebP、Character 图片和首页轮换头像存放在 Cloudflare R2 bucket `telysta-blog-assets`，并通过自定义域名 `https://assets.telysta.com` 分发。当前对象前缀为 `telysta-images/`、`characters/`、`avatars/`、文章配图 `blog_imgs/` 和独立列表封面的 `covers/`。自 2026-09-29 起，上传允许列表为 PNG／JPG／JPEG／WebP；PSD 已清理，PSD／AI 不再上传。历史对象 `telysta-images/archive/mhs_test_03.ai` 未在本次 PSD 删除范围内，仍保留远端，但不登记在清单。见 [执行记录](r2-resource-update-2026-09-29.md)。仓库不提交 R2 凭据。
 
 ## 为什么使用清单键
 
@@ -16,7 +16,7 @@ gallery:
   - src: asset:Alice/alice_illustration
 ```
 
-`asset:` 后面的内容对应 `src/generated/cdn-assets.json` 中的键。页面会自动选择同组 `.webp` 显示，并把 PNG/JPG 原图加入下载列表。PSD 可以继续作为作者源文件保存在素材目录和 R2，但网站运行时会过滤 PSD，不向访客生成下载链接。这样以后即使更换对象存储，只需修改清单 origin 或 URL 解析层，不必批量重写文章。
+`asset:` 后面的内容对应 `src/generated/cdn-assets.json` 中的键。页面会自动选择同组 `.webp` 显示，并把 PNG/JPG 原图加入下载列表。PSD／AI 不上传，也不登记到公开清单；运行时继续保留工程文件下载拦截。这样以后更换对象存储只需修改清单 origin 或 URL 解析层。
 
 不要把 Cloudflare 控制台地址写进内容。控制台地址只用于管理，不是访客可访问的资源 URL。
 
@@ -43,8 +43,7 @@ TelystaAssets/
 
 - PNG/JPG/JPEG：访客下载的原图。
 - 同名 WebP：页面展示图。
-- 同名 PSD：仅作为作者源文件保存，不进入公开下载列表。
-- AI 等其他源文件是否公开必须逐项确认授权；不要把 PSD 作为 `actions` 下载项重新暴露。
+- 同名 PSD／AI：仅作为本地源文件保存，不上传公开 R2、不进入资源清单或下载列表。
 - 文件名一旦公开尽量保持稳定；内容发生明显变化时优先使用新文件名，避免 CDN 缓存旧内容。
 
 脚本、密码、rclone 配置、临时文件和访问令牌不得放入素材目录或上传 R2。
@@ -55,7 +54,7 @@ TelystaAssets/
 
 ```powershell
 npm run assets:prepare -- --source "C:\Users\weise\Desktop\TelystaImages"
-npm run assets:manifest -- --source "C:\Users\weise\Desktop\TelystaImages" --collection "characters=C:\Users\weise\Desktop\TelystaAssets\characters" --collection "avatars=C:\Users\weise\Desktop\TelystaAssets\avatars"
+npm run assets:manifest -- --source "C:\Users\weise\Desktop\TelystaImages" --collection "characters=C:\Users\weise\Desktop\TelystaImages\TelystaAssets\characters" --collection "avatars=C:\Users\weise\Desktop\TelystaImages\TelystaAssets\avatars"
 npm run assets:sync -- -Source "C:\Users\weise\Desktop\TelystaImages"
 npm run assets:sync -- -Source "C:\Users\weise\Desktop\TelystaImages" -Apply
 npm run check
@@ -68,7 +67,7 @@ npm run check
 5. `npm run check` 验证内容、类型、测试和生产构建。
 6. 确认 CDN 文件已经可访问后，再提交并推送网站代码。
 
-上传脚本使用 `rclone copy`，不会删除 R2 上已有对象，并排除 PowerShell、BAT、CMD 和常见系统文件。需要删除远端对象时，应先用 `rclone lsf` 核对精确路径，再单独执行删除，不要把日常上传改成 `rclone sync`。
+上传脚本使用 `rclone copy`，不会删除 R2 上已有对象。它只允许 PNG／JPG／JPEG／WebP，忽略扩展名大小写，并排除嵌套的 `TelystaAssets`；Character 和头像需要以各自目录作为 `-Source`、各自 R2 前缀作为 `-Remote` 单独同步。清单生成器也排除嵌套集合，避免重复登记。需要删除对象时，先核对准确名单并预演，再单独执行，不要把日常上传改成 `rclone sync`。
 
 重新生成同名 WebP 后不需要先手工删除远端文件：`rclone copy` 会上传发生变化的文件并覆盖同名对象。只有资源改名或正式下线后留下的远端孤儿对象才需要清理；删除前必须确认 `src/generated/cdn-assets.json`、文章和页面配置均已不再引用该对象。
 
@@ -91,9 +90,9 @@ Character 与头像使用专用档位：cover quality 94、preview quality 96、
 
 ```powershell
 npm run assets:covers -- --source "C:\Users\weise\Desktop\TelystaImages"
-rclone copy .tmp/cdn-covers/files r2:telysta-blog-assets/covers --files-from .tmp/cdn-covers/upload.txt --immutable --metadata --metadata-set "cache-control=public, max-age=31536000, immutable" --dry-run
+rclone copy .tmp/cdn-covers/files r2:telysta-blog-assets/covers --files-from .tmp/cdn-covers/upload.txt --immutable --checksum --metadata --metadata-set "cache-control=public, max-age=31536000, immutable" --dry-run
 # 核对清单后执行上传（copy 不删除旧文件）
-rclone copy .tmp/cdn-covers/files r2:telysta-blog-assets/covers --files-from .tmp/cdn-covers/upload.txt --immutable --metadata --metadata-set "cache-control=public, max-age=31536000, immutable" --transfers 4 --checkers 8
+rclone copy .tmp/cdn-covers/files r2:telysta-blog-assets/covers --files-from .tmp/cdn-covers/upload.txt --immutable --checksum --metadata --metadata-set "cache-control=public, max-age=31536000, immutable" --transfers 4 --checkers 8
 rclone check .tmp/cdn-covers/files r2:telysta-blog-assets/covers --files-from .tmp/cdn-covers/upload.txt --one-way
 npm run assets:covers -- --publish
 npm run check
@@ -104,7 +103,7 @@ npx playwright test
 
 主清单生成器默认合并独立 cover 索引，并读取本地来源校验 SHA-256。若替换原图导致拒绝沿用旧 cover，先以原有完整 `--source` / `--collection` 参数运行 `assets:manifest -- --without-covers ...`，再重新准备、上传、发布 cover；中间结果不要提交。新增资源按同一流程生成，未运行 cover 维护时仍可回退高清显示图。
 
-`covers/` 使用内容哈希文件名，可长期缓存；旧 `telysta-images/` 同名可覆盖对象不自动套用一年 immutable。旧 cover 保留供已部署网页使用，不自动删除。若需回滚，只回滚代码/清单即可，不必删除 R2 图片。R2 元数据与 CDN 缓存响应分别检查；已有边缘响应可能暂时保留旧四小时缓存头。
+`covers/` 使用内容哈希文件名，可长期缓存；上传加 `--checksum`，避免重新生成同一内容后仅因修改时间不同被 `--immutable` 拒绝。发布步骤仍逐字节验证 SHA-256。旧 `telysta-images/` 同名可覆盖对象不自动套用一年 immutable。旧 cover 保留供已部署网页使用，不自动删除。R2 元数据与 CDN 缓存响应分别检查。
 
 ## R2 与域名设置
 

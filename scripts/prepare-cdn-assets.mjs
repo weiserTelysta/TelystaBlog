@@ -209,6 +209,8 @@ async function listSourceFiles(directory) {
 	for (const entry of entries) {
 		const absolutePath = path.join(directory, entry.name);
 		if (entry.isDirectory()) {
+			// These collections use character/avatar profiles, not display defaults.
+			if (entry.name.toLowerCase() === 'telystaassets') continue;
 			files.push(...await listSourceFiles(absolutePath));
 		} else if (entry.isFile() && sourceExtensions.has(path.extname(entry.name).toLowerCase())) {
 			files.push(absolutePath);

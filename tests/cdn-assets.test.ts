@@ -7,12 +7,12 @@ import {
 	isCdnAssetUrl,
 } from '../src/lib/cdnAssets';
 
-test('解析 CDN 资源清单中的展示图、原图和源文件', () => {
+test('CDN 资源清单包含展示图和原图，不公开工程源文件', () => {
 	const asset = getCdnAsset('asset:Alice/alice_illustration');
 
 	assert.ok(asset?.display);
 	assert.equal(asset.original?.format, 'PNG');
-	assert.equal(asset.sources[0]?.format, 'PSD');
+	assert.deepEqual(asset.sources, []);
 	assert.ok(asset.display.width > 0);
 	assert.ok(asset.display.height > 0);
 });

@@ -8,8 +8,8 @@ const DEFAULT_ORIGIN = 'https://assets.telysta.com/';
 const DEFAULT_OUTPUT = 'src/generated/cdn-assets.json';
 const DEFAULT_PRIMARY_PATH_PREFIX = 'telysta-images';
 const ORIGINAL_EXTENSIONS = ['.png', '.jpg', '.jpeg'];
-const SOURCE_EXTENSIONS = ['.psd', '.ai'];
-const SUPPORTED_EXTENSIONS = new Set(['.webp', ...ORIGINAL_EXTENSIONS, ...SOURCE_EXTENSIONS]);
+// Public R2 stores images only; editable sources stay on the author's computer.
+const SUPPORTED_EXTENSIONS = new Set(['.webp', ...ORIGINAL_EXTENSIONS]);
 
 const options = parseArguments(process.argv.slice(2));
 const primarySource = options.source ?? process.env.TELYSTA_ASSET_SOURCE;
@@ -175,6 +175,10 @@ async function listFiles(directory, rootDirectory = directory) {
 		const absolutePath = path.join(directory, entry.name);
 
 		if (entry.isDirectory()) {
+			// TelystaAssets is reserved for separately mapped UI collections.
+			// Also exclude explicitly supplied nested collections from parent scans.
+			if (entry.name.toLowerCase() === 'telystaassets'
+				|| collections.some((collection) => collection.sourceDirectory === absolutePath)) continue;
 			files.push(...await listFiles(absolutePath, rootDirectory));
 			continue;
 		}

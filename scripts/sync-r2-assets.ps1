@@ -16,11 +16,11 @@ $rcloneArguments = @(
 	'copy',
 	$resolvedSource,
 	$Remote,
-	'--exclude', '*.ps1',
-	'--exclude', '*.bat',
-	'--exclude', '*.cmd',
-	'--exclude', '.DS_Store',
-	'--exclude', 'Thumbs.db',
+	# Ordered allowlist: nested UI collections have their own R2 prefixes.
+	'--ignore-case',
+	'--filter', '- /TelystaAssets/**',
+	'--filter', '+ *.{png,jpg,jpeg,webp}',
+	'--filter', '- **',
 	'--transfers', '8',
 	'--checkers', '16',
 	'--progress'

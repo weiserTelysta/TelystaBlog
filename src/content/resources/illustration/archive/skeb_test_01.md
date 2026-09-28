@@ -19,15 +19,10 @@ publishedAt: 2026-07-01
 updatedAt: 2026-07-01
 formats:
   - PNG
-  - PSD
 variantCount: 3
 license: Draft license. Replace before publishing.
 credits: []
-actions:
-  - type: download
-    label: PSD
-    href: https://assets.telysta.com/telysta-images/archive/skeb_test_01.psd
-    format: PSD
+actions: []
 ---
 
 skeb上的第一次尝试。

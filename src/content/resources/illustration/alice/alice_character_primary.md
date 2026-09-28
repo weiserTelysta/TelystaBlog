@@ -13,7 +13,6 @@ publishedAt: 2026-07-01
 updatedAt: 2026-07-01
 formats:
   - PNG
-  - PSD
 variantCount: 1
 license: 仅供个人欣赏、预览与交流使用，请勿商用或二次分发。
 credits: 

@@ -52,10 +52,10 @@ Telysta，我推荐的中文音译是特莉丝塔，这是一个很优雅、很�
 - 象征花卉：重瓣[赤丹](https://assets.telysta.com/blog_imgs/telysta_chidan.png)红茶花。
 
 ### 图片资源
-![设定图](https://assets.telysta.com/telysta-images/Telysta/Telysta_officialoutfit_design.webp)
+![设定图](https://assets.telysta.com/telysta-images/archive/Telysta_Legacy/Telysta_officialoutfit_design.webp)
 *图 1：Telysta 官方服装设定图，由 Hoja 绘制。*
 
-![立绘](https://assets.telysta.com/telysta-images/Telysta/Telysta_officialoutfit_fullbody.webp)
+![立绘](https://assets.telysta.com/telysta-images/archive/Telysta_Legacy/Telysta_officialoutfit_fullbody.webp)
 *图 2：Telysta 立绘，由 Hoja 绘制。*
 
 ![克里诺林裙立绘](https://assets.telysta.com/telysta-images/Telysta/telysta_crinoline_character_illustration.webp)

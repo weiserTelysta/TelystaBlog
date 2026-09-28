@@ -19,7 +19,6 @@ publishedAt: 2026-07-01
 updatedAt: 2026-09-05
 formats:
   - PNG
-  - PSD
 variantCount: 3
 license: Draft license. Replace before publishing.
 credits: 

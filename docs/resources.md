@@ -8,19 +8,19 @@
 src/content/resources/              资源 Markdown
 src/generated/cdn-assets.json       R2 公开资源清单
 C:\Users\weise\Desktop\TelystaImages       大型插画素材源
-C:\Users\weise\Desktop\TelystaAssets       Character 与头像素材源
+C:\Users\weise\Desktop\TelystaImages\TelystaAssets       Character 与头像素材源（单独映射前缀）
 ```
 
 原图是数据源和访客下载目标，必须保留。资源原图保存在作者掌控的外部素材目录，并通过 Cloudflare R2 分发；不需要把它们重复放入网站仓库。favicon、站点图标、字体和风琴页等关键 UI 视觉继续在仓库内保存。
 
 ## 新增流程
 
-1. 在外部素材目录中为资源建立稳定目录，放入 PNG/JPG 原图；PSD/AI 尽量与原图同名。
+1. 在外部素材目录中为资源建立稳定目录，放入 PNG/JPG 原图；PSD/AI 只在本地保留，不上传。
 2. 运行 `npm run assets:prepare -- --source "<素材目录>"`，只生成缺少或已经过期的高质量 WebP。
 3. 运行 `npm run assets:manifest -- --source "<素材目录>"`，更新公开清单。
 4. 先运行 `npm run assets:sync -- -Source "<素材目录>"` 预演，确认后追加 `-Apply` 上传 R2。
 5. 在 `src/content/resources` 创建 Markdown，初始使用草稿状态。
-6. 用 `asset:<清单键>` 填写主图和图库；同名 PNG/JPG 原图会自动成为下载项。网站不生成 PSD 下载链接，但公开 R2 中的对象仍可能通过已知 URL 访问。
+6. 用 `asset:<清单键>` 填写主图和图库；同名 PNG/JPG 原图会自动成为下载项。不要登记 PSD 格式或源文件下载动作。
 7. 在源文件中维护 Credits、许可证；新看图器不展示作者跳转或额外详情。
 8. 运行 `npm run check`，本地预览卡片、详情和下载。
 9. 确认授权后公开并推送。
@@ -62,7 +62,7 @@ Character 素材保留 `.cover.webp`、`.preview.webp` 与原始 PNG；首页头
 - 不把格式当成分类。
 - 不用大面积高饱和色强调下载。
 - 原图用于下载，WebP 用于网页显示。
-- PSD 不生成公开下载链接；若要从公网彻底禁止直接访问，还应将其移出公开 R2 域名或改放私有 bucket。
+- PSD 已从公开 R2 删除，上传脚本与清单均排除工程源文件。原有本地 PSD 保留；详见 [2026-09-29 清理记录](r2-resource-update-2026-09-29.md)。
 - 修改交互前使用 `$telysta-design-guardian` 审查风格和可访问性。
 
 ### 原图保存与 R2 响应头

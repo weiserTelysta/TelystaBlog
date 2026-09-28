@@ -1,7 +1,7 @@
 ---
 id: weiser_bunny_01
 title: Weiser Bunny
-summary: 长灵Weiser的Bunny服饰立绘插画，包含 PNG 原图与 PSD 源文件。
+summary: 长灵Weiser的Bunny服饰立绘插画，提供 PNG 原图。
 type: illustration
 status: available
 image: asset:Weiser/weiser_bunny_fullornaments
@@ -19,19 +19,13 @@ publishedAt: 2026-06-06
 updatedAt: 2026-06-28
 formats:
   - PNG
-  - PSD
 variantCount: 3
 license: 仅供个人欣赏、预览与交流使用，请勿商用或二次分发。
 credits:
   - label: 画师
     name: 小鳥遊啓
     href: https://x.com/KEI_takanashi
-actions:
-  - type: download
-    label: PSD
-    href: https://assets.telysta.com/telysta-images/Weiser/weiser_bunny.psd
-    format: PSD
-    note: 其中包含 3 个差分。
+actions: []
 ---
 
 世界观之中，Weiser的Bunny服饰装扮，真是可爱又美丽的一只精灵。

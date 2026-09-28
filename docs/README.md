@@ -18,6 +18,8 @@
 
 ## 开发记录
 
+- [R2 清理与三组新资源](r2-resource-update-2026-09-29.md)：删除远端 PSD、图片上传允许列表、Sylvaena 插画及 Telysta 细剑／新服饰设计。
+
 - [博客图片点击放大](article-image-viewer-2026-09-24.md)：按需 PhotoSwipe、手机缩放、焦点与滚动恢复、失败回退。
 
 - [WikiLink 与自动跳转](wikilinks-2026-09-21.md)：可选 aliases、自动解析目标、文件改名与缓存验证。

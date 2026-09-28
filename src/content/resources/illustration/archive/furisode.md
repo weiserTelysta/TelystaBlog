@@ -20,15 +20,10 @@ updatedAt: 2026-07-01
 formats:
   - JPG
   - PNG
-  - PSD
 variantCount: 3
 license: Draft license. Replace before publishing.
 credits: []
-actions:
-  - type: download
-    label: PSD
-    href: https://assets.telysta.com/telysta-images/archive/camellia_motif_furisode.psd
-    format: PSD
+actions: []
 ---
 
 以茶花为主题的少女振袖。
