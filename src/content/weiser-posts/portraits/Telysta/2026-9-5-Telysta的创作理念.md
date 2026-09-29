@@ -53,10 +53,10 @@ Telysta，我推荐的中文音译是特莉丝塔，这是一个很优雅、很�
 
 ### 图片资源
 ![设定图](https://assets.telysta.com/telysta-images/archive/Telysta_Legacy/Telysta_officialoutfit_design.webp)
-*图 1：Telysta 官方服装设定图，由 Hoja 绘制。*
+*图 1：Telysta 官方服装设定图，由 [Hoja](https://x.com/hoja1214) 绘制。*
 
 ![立绘](https://assets.telysta.com/telysta-images/archive/Telysta_Legacy/Telysta_officialoutfit_fullbody.webp)
-*图 2：Telysta 立绘，由 Hoja 绘制。*
+*图 2：Telysta 立绘，由 [Hoja](https://x.com/hoja1214) 绘制。*
 
 ![克里诺林裙立绘](https://assets.telysta.com/telysta-images/Telysta/telysta_crinoline_character_illustration.webp)
 *图 3：Telysta 克里诺林裙立绘，由 んゆ 绘制。*
@@ -65,4 +65,4 @@ Telysta，我推荐的中文音译是特莉丝塔，这是一个很优雅、很�
 *图 4：Telysta 克里诺林裙设计，由 んゆ 绘制。*
 
 ![Telysta的中亚服饰](https://assets.telysta.com/telysta-images/Telysta/Telysta_Central-Asia_clouth_half_body.jpeg)
-*图 5：身着中亚服饰的 Telysta，由 武郡王 绘制。*
+*图 5：身着中亚服饰的 Telysta，由 [武郡王](https://www.mihuashi.com/profiles/1025628?role=painter) 绘制。*

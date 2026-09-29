@@ -43,10 +43,10 @@ Rhaelysa，或者音译为蕾莉萨也可以。
 
 ### 图片资源
 ![设定图](https://assets.telysta.com/telysta-images/Rhaelysa/rhaelysa_officialoutfit_design.webp)
-*图 1：Rhaelysa 官方服装设定图，由 Hoja 绘制。*
+*图 1：Rhaelysa 官方服装设定图，由 [Hoja](https://x.com/hoja1214) 绘制。*
 
 ![骑马服立绘](https://assets.telysta.com/telysta-images/Rhaelysa/rhaelysa_ridinghabit.webp)
-*图 2：Rhaelysa 骑马服插画，由 Hoja 绘制。*
+*图 2：Rhaelysa 骑马服插画，由 [Hoja](https://x.com/hoja1214) 绘制。*
 
 ![双人插画](https://assets.telysta.com/telysta-images/Rhaelysa/rhaelysa%26telysta_librarystaircase_01.webp)
-*图 3：Rhaelysa 与 Telysta 双人插画，由 Hoja 绘制。*
+*图 3：Rhaelysa 与 Telysta 双人插画，由 [Hoja](https://x.com/hoja1214) 绘制。*
