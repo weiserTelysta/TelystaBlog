@@ -18,6 +18,8 @@
 
 ## 开发记录
 
+- [Serava 更名与 Telysta 插画日志](serava-rename-2026-09-29.md)：角色、分类、头像、R2 与文章同步更名，保留旧委托链接。
+
 - [R2 清理与三组新资源](r2-resource-update-2026-09-29.md)：删除远端 PSD、图片上传允许列表、Sylvaena 插画及 Telysta 细剑／新服饰设计。
 
 - [博客图片点击放大](article-image-viewer-2026-09-24.md)：按需 PhotoSwipe、手机缩放、焦点与滚动恢复、失败回退。

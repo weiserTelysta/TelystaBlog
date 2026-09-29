@@ -1,5 +1,7 @@
 # R2 图片整理与三组新资源
 
+本批提交 `a923bfb` 的 [GitHub Actions 构建与部署](https://github.com/weiserTelysta/TelystaBlog/actions/runs/36455518940) 已成功。随后角色更名为 Serava，参见 [后续更名记录](serava-rename-2026-09-29.md)；下文保留本批执行时的名称和数量。
+
 ## 范围与计划
 
 以 `C:\Users\weise\Desktop\TelystaImages` 为本地主数据源，核对 R2 全桶对象清单；新增三组资源，删除远端全部 PSD，仅同步 PNG／JPG／JPEG 原图与 WebP。保留本地工程文件、既有远端图片和历史 URL。

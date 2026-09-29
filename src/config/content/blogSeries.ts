@@ -51,6 +51,14 @@ export const BLOG_SERIES = [
 		descriptionEn: "Notes on Rhaelysa's character design, ideas, and development.",
 	},
 	{
+		id: 'serava-notes',
+		category: 'portraits',
+		title: 'Serava 札记',
+		titleEn: 'Notes on Serava',
+		description: '关于 Serava 的人物设定、净化之火与视觉创作记录。',
+		descriptionEn: "Notes on Serava's character design, cleansing fire, and visual development.",
+	},
+	{
 		id: 'plants-in-their-season',
 		category: 'notes',
 		title: '草木有时',

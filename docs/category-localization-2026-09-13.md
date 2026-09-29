@@ -4,7 +4,7 @@
 
 最初将收起和展开两种文案统一为中文，误解了角色展示窗口的用途。经作者澄清，最终保留两种状态的区别：收起时使用原来的花体角色名与英文分类题签（例如 `Weiser / Manuscript`、`Telysta / Collection`），展开后使用中文栏目标题与介绍。入口恢复 `Category / All Records`，系列入口保持 `Series / All Series`；`Category Map`、`records`、`Current` 也恢复原英文。文章列表的分类小标签仍显示英文 ID。
 
-选中分类后的入口也使用完整英文所属名称：`Weiser's Manuscript`、`Telysta's Collection`、`Rhaelysa's Letters`、`Alice's Reading`、`Sylvaena's Life`、`Rhaelysa's Portrait`、`Weiser's Notes`。名称由角色名与英文题签派生，不再读取中文标题，也不只显示 `Manuscript` 等短名。返回总览后恢复 `All Records`。
+选中分类后的入口也使用完整英文所属名称：`Weiser's Manuscript`、`Telysta's Collection`、`Rhaelysa's Letters`、`Alice's Reading`、`Serava's Life`、`Rhaelysa's Portrait`、`Weiser's Notes`。名称由角色名与英文题签派生，不再读取中文标题，也不只显示 `Manuscript` 等短名。返回总览后恢复 `All Records`。
 
 正式分类是 `letters`，此前将其映射到 `essays` 的处理有误。配置、自动元数据和文章创建测试已同步修正。按作者要求，直接移除 `essays`，不保留别名或旧地址跳转。旧分类地址将不再生成；Lamy 文章本身的路径不变。
 

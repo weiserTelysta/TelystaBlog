@@ -73,9 +73,9 @@
         "height": 960
       }
     },
-    "Sylvaena/sylvaena_officialoutfit_illustration_01": {
+    "Serava/serava_officialoutfit_illustration_01": {
       "source": {
-        "path": "telysta-images/Sylvaena/sylvaena_officialoutfit_illustration_01.png",
+        "path": "telysta-images/Serava/serava_officialoutfit_illustration_01.png",
         "bytes": 18990109,
         "format": "PNG",
         "width": 2524,
@@ -84,16 +84,16 @@
       "sourceHash": "370eec149ec9373d02a67fae5215f531efa1d4de8e8c9f6ec47ac7c77f5e0387",
       "outputHash": "77aaf291bd358d2f1af060b522f7c1bd6fefab0d6b2c8501d7080631b52c3e55",
       "cover": {
-        "path": "covers/Sylvaena/sylvaena_officialoutfit_illustration_01.77aaf291bd358d2f1af060b522f7c1bd6fefab0d6b2c8501d7080631b52c3e55.webp",
+        "path": "covers/Serava/serava_officialoutfit_illustration_01.77aaf291bd358d2f1af060b522f7c1bd6fefab0d6b2c8501d7080631b52c3e55.webp",
         "bytes": 378734,
         "format": "WEBP",
         "width": 656,
         "height": 960
       }
     },
-    "Sylvaena/sylvaena_officialoutfit_veil": {
+    "Serava/serava_officialoutfit_veil": {
       "source": {
-        "path": "telysta-images/Sylvaena/sylvaena_officialoutfit_veil.png",
+        "path": "telysta-images/Serava/serava_officialoutfit_veil.png",
         "bytes": 90806394,
         "format": "PNG",
         "width": 7080,
@@ -102,7 +102,7 @@
       "sourceHash": "5dd0fc9a96b8f9c5f22de0b03291d406dbf5d32bca7c84f4dbe47d1c1fa1afea",
       "outputHash": "8f13de778f3f440a2f7249ec326fa8868de5d31a613fb53c0d9c088fd9b06772",
       "cover": {
-        "path": "covers/Sylvaena/sylvaena_officialoutfit_veil.8f13de778f3f440a2f7249ec326fa8868de5d31a613fb53c0d9c088fd9b06772.webp",
+        "path": "covers/Serava/serava_officialoutfit_veil.8f13de778f3f440a2f7249ec326fa8868de5d31a613fb53c0d9c088fd9b06772.webp",
         "bytes": 156948,
         "format": "WEBP",
         "width": 830,
