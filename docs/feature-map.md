@@ -4,6 +4,8 @@
 
 ## 身份、首页与文案
 
+搜索基础已补齐 robots、自动 sitemap 与站点／作者／文章 JSON-LD；`src/pages/about.md` 维护独立 About，入口位于首页 Navigation，与 Resource Index 同级。实现及搜索平台操作边界见 [专题记录](seo-about-2026-10-02.md)。
+
 | 功能 | 当前行为 | 真实入口 |
 | --- | --- | --- |
 | 站点名称与描述 | 默认页面标题、SEO 介绍与首页描述；页面可以提供自身标题和描述 | `src/config/site.ts`、`src/config/pages/*.ts`、`src/layouts/Layout.astro` |

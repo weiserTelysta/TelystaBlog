@@ -1,0 +1,29 @@
+---
+import type { MarkdownLayoutProps } from 'astro';
+import Layout from './Layout.astro';
+import { SITE_CONFIG } from '../config/site';
+
+type Props = MarkdownLayoutProps<{ title: string; description: string }>;
+const { title, description } = Astro.props.frontmatter;
+---
+
+<Layout title={`${title} · ${SITE_CONFIG.name}`} description={description} starfieldVariant="subtle">
+	<main class="markdown-page">
+		<article>
+			<header><h1 class="text-article-title">{title}</h1></header>
+			<div class="prose"><slot /></div>
+		</article>
+	</main>
+</Layout>
+
+<style>
+	.markdown-page {
+		position: relative;
+		width: min(760px, calc(100% - 48px));
+		margin-inline: auto;
+		padding: clamp(46px, 5vw, 72px) 0 clamp(92px, 13vw, 150px);
+	}
+	header { margin-bottom: clamp(36px, 5vw, 52px); }
+	h1 { margin: 0; }
+	@media (max-width: 640px) { .markdown-page { width: calc(100% - 32px); } }
+</style>

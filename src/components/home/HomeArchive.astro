@@ -32,3 +32,13 @@ const sections = HOME_SECTIONS.filter((section) => section.enabled !== false).so
 		/>
 	</div>
 </section>
+
+<noscript>
+	<style is:global>
+		.home-archive [data-home-reveal], .home-archive .home-section__reveal-part {
+			opacity: 1 !important;
+			transform: none !important;
+			filter: none !important;
+		}
+	</style>
+</noscript>

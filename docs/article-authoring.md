@@ -1,5 +1,7 @@
 # 中文文章写作指南
 
+独立介绍页 About 直接编辑 `src/pages/about.md`，保留 frontmatter 的 `layout`、`title`、`description`，正文从段落或二级标题开始；页面标题由布局渲染，不必再写一个 H1。它不属于博客文章，也不出现在文章时间线中。
+
 目录约定：观察笔记统一放在 `src/content/weiser-posts/notes/`，使用小写分类目录。此次 `Notes` → `notes` 仅大小写规范化；路由生成原本就会转小写，因此已发布 URL 和评论映射不变。一般文件改名仍可能改变 URL，站内关联优先使用 aliases／WikiLink。
 
 英文 `titleEn` / `descriptionEn` 仅用于标题和介绍，留空仍回退中文，不会自动翻译正文。本轮已补齐现有 13 篇文章的这些字段；单文件中／英／日展示仍在 [方案调研](multilingual-markdown-assessment-2026-09-21.md) 阶段，示例语言块尚不可用于生产文章。

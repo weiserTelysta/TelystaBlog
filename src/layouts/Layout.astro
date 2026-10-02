@@ -7,6 +7,7 @@ import BackToTop from '../components/site/BackToTop';
 import PageScrollIndicator from '../components/site/PageScrollIndicator';
 import StarfieldBackground from '../components/starfield/StarfieldBackground';
 import { SITE_CONFIG } from '../config/site';
+import type { ArticleMetadata } from '../lib/structuredData';
 import '../styles/global.scss';
 
 type Props = {
@@ -14,7 +15,7 @@ type Props = {
 	description?: string;
 	shareImage?: string;
 	shareImageAlt?: string;
-	article?: { publishedAt: Date; updatedAt: Date; tags: string[] };
+	article?: ArticleMetadata;
 	starfield?: boolean;
 	starfieldVariant?: 'immersive' | 'subtle';
 };
@@ -41,6 +42,7 @@ const {
 		<link rel="icon" href="/favicon.ico" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<meta name="description" content={description} />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 		<title>{title}</title>
 		<ShareMetadata title={title} description={description} image={shareImage} imageAlt={shareImageAlt} article={article} />
 		<TabIdentity />

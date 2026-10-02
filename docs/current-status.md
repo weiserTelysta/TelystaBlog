@@ -4,6 +4,7 @@
 
 ## 已完成
 
+- About 使用 `src/pages/about.md` 维护，入口与首页 Resource Index 同级；新增 robots、自动 sitemap 和站点／作者／文章 JSON-LD。星空改用暂停感知的动画时间，恢复时不再跳动，详见 [执行记录](seo-about-2026-10-02.md)。
 - 全站恢复原生滚轮／触摸滚动；星空缓存渐变、限制绘制频率并在滚动时暂停；进度条直接跟随拖动。`Notes` 目录规范为 `notes`，既有文章 URL 与评论映射不变。11 份完成的阶段记录归档。
 
 - Sylvaena 现统一更名为 Serava：分类、首页身份、资源和 R2 地址已同步，コクノコ委托保留原名与旧页面地址；Telysta 插画日志补齐两组作品。见 [更名记录](archive/2026-09/serava-rename-2026-09-29.md)。

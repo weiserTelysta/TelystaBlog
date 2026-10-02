@@ -1,21 +1,29 @@
 ---
 import { SITE_CONFIG } from '../../config/site';
-import { resolveShareImage } from '../../lib/shareMetadata';
+import { resolveCanonicalUrl, resolveShareImage } from '../../lib/shareMetadata';
+import { buildStructuredData, serializeStructuredData, type ArticleMetadata } from '../../lib/structuredData';
 
 type Props = {
 	title: string;
 	description: string;
 	image?: string;
 	imageAlt?: string;
-	article?: { publishedAt: Date; updatedAt: Date; tags: string[] };
+	article?: ArticleMetadata;
 };
 const { title, description, image, imageAlt, article } = Astro.props;
 if (!Astro.site) throw new Error('Sharing metadata requires Astro site configuration.');
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const canonical = resolveCanonicalUrl(Astro.url.pathname, Astro.site);
 const shareImage = resolveShareImage(image, Astro.site, imageAlt);
+const structuredData = buildStructuredData({
+	site: Astro.site, pathname: Astro.url.pathname, title, description,
+	// A fallback author avatar is useful for sharing, but is not an article illustration.
+	image: image && shareImage.url !== SITE_CONFIG.shareImage.url ? shareImage.url : undefined,
+	article,
+});
 ---
 
 <link rel="canonical" href={canonical} />
+<script type="application/ld+json" set:html={serializeStructuredData(structuredData)} />
 <meta property="og:site_name" content={SITE_CONFIG.name} />
 <meta property="og:locale" content="zh_CN" />
 <meta property="og:type" content={article ? 'article' : 'website'} />

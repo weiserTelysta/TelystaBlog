@@ -2,6 +2,14 @@ import { SITE_CONFIG } from '../config/site';
 
 type ShareImage = { url: string; alt: string; width?: number; height?: number; type?: string };
 
+export function resolveCanonicalUrl(pathname: string, site: URL): string {
+	const url = new URL(pathname, site);
+	url.search = '';
+	url.hash = '';
+	if (!url.pathname.endsWith('/')) url.pathname += '/';
+	return url.href;
+}
+
 export function resolveShareImage(image: string | undefined, site: URL, alt?: string): ShareImage {
 	const source = image?.trim();
 	// Existing cover fields support public-root paths or public HTTP(S) URLs.

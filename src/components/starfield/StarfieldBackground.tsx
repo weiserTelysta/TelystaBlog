@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { createAnimationClock } from './animationClock';
 import { createClickEffects } from './clickEffects';
 import { createHeartPoints, type HeartConstellation } from './heartConstellation';
 import { LONG_METEOR_COLORS, SPECIAL_COLOR_RATE } from './starfieldConfig';
@@ -87,6 +88,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		const pointer = { x: 0, y: 0, easedX: 0, easedY: 0 };
 		const bounds = { width: 0, height: 0, dpr: 1 };
 		const stars: Star[] = [];
+		const animationClock = createAnimationClock();
 		let clickEffects = createClickEffects({ bounds, isSubtle, reducedMotion });
 		const meteor: Meteor = {
 			active: false,
@@ -97,7 +99,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			alpha: 0,
 			life: 0,
 			maxLife: 0,
-			nextAt: performance.now() + randomBetween(12000, 26000),
+			nextAt: animationClock.now + randomBetween(12000, 26000),
 		};
 		const longMeteor: LongMeteor = {
 			active: false,
@@ -109,7 +111,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			alpha: 0,
 			life: 0,
 			maxLife: 0,
-			nextAt: performance.now() + randomBetween(36000, 76000),
+			nextAt: animationClock.now + randomBetween(36000, 76000),
 			color: LONG_METEOR_COLORS[0],
 			lineWidth: 1,
 			glow: 0,
@@ -118,13 +120,12 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			active: false,
 			startedAt: 0,
 			duration: 7600,
-			nextCheckAt: performance.now() + 30000,
+			nextCheckAt: animationClock.now + 30000,
 			points: [],
 		};
 
 		let animationFrame = 0;
 		let running = true;
-		let lastTime = performance.now();
 		let lastPaint = 0;
 		let vignette: CanvasGradient;
 		let scrollPaused = false;
@@ -180,7 +181,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 				blinkStartedAt: 0,
 				blinkDuration: 0,
 				blinkStrength: 0,
-				nextBlinkAt: blinkable ? performance.now() + randomBetween(6000, 22000) : Number.POSITIVE_INFINITY,
+				nextBlinkAt: blinkable ? animationClock.now + randomBetween(6000, 22000) : Number.POSITIVE_INFINITY,
 			};
 		};
 
@@ -205,7 +206,8 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			canvas.style.width = `${bounds.width}px`;
 			canvas.style.height = `${bounds.height}px`;
 			context.setTransform(bounds.dpr, 0, 0, bounds.dpr, 0, 0);
-			createStarField();
+			// Keep existing stars when mobile browser chrome changes viewport height.
+			if (stars.length === 0) createStarField();
 			// This background depends on viewport size, not animation time.
 			vignette = context.createRadialGradient(
 				bounds.width * 0.5,
@@ -429,16 +431,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			}
 		};
 
-		const animate = (time: number) => {
-			if (!running) return;
-			if (!reducedMotion && time - lastPaint < frameInterval - 1) {
-				animationFrame = window.requestAnimationFrame(animate);
-				return;
-			}
-			lastPaint = time;
-
-			const delta = Math.min(time - lastTime, 50);
-			lastTime = time;
+		const drawFrame = (time: number, delta: number) => {
 			const cycleGlow = reducedMotion ? 0 : getCycleGlow(time);
 			const breathBrightness = reducedMotion ? 1 : getBreathBrightness(time);
 
@@ -452,6 +445,17 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			drawHeart(time);
 			clickEffects.update(time, delta);
 			clickEffects.draw(context);
+		};
+
+		const animate = (frameTime: number) => {
+			if (!running) return;
+			if (!reducedMotion && frameTime - lastPaint < frameInterval - 1) {
+				animationFrame = window.requestAnimationFrame(animate);
+				return;
+			}
+			lastPaint = frameTime;
+			const { time, delta } = animationClock.tick(frameTime);
+			drawFrame(time, delta);
 
 			if (!reducedMotion) {
 				animationFrame = window.requestAnimationFrame(animate);
@@ -478,7 +482,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			}
 
 			if (pointerIntent.phase === 'dust-active') {
-				clickEffects.handlePointerMove(event, performance.now());
+				clickEffects.handlePointerMove(event, animationClock.now);
 			}
 		};
 
@@ -490,7 +494,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			pointerIntent.pointerId = event.pointerId;
 			pointerIntent.startX = event.clientX;
 			pointerIntent.startY = event.clientY;
-			pointerIntent.startedAt = performance.now();
+			pointerIntent.startedAt = animationClock.now;
 			pointerIntent.startedOnSelectableText = isSelectableTextTarget(event.target);
 			pointerIntent.dustTimer = window.setTimeout(
 				() => startDustInteraction(event),
@@ -502,7 +506,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			if (event.pointerId !== pointerIntent.pointerId) return;
 
 			if (pointerIntent.phase === 'dust-active') {
-				clickEffects.handlePointerUp(event, performance.now());
+				clickEffects.handlePointerUp(event, animationClock.now);
 				resetPointerIntent();
 				return;
 			}
@@ -512,7 +516,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 
 				if (!pointerIntent.startedOnSelectableText) {
 					startDustInteraction(event);
-					clickEffects.handlePointerUp(event, performance.now());
+					clickEffects.handlePointerUp(event, animationClock.now);
 				}
 
 				resetPointerIntent();
@@ -532,7 +536,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			if (pointerIntent.phase !== 'pending' || event.pointerId !== pointerIntent.pointerId) return;
 
 			pointerIntent.phase = 'dust-active';
-			clickEffects.handlePointerDown(event, performance.now());
+			clickEffects.handlePointerDown(event, animationClock.now);
 			enableSelectionGuard();
 		};
 
@@ -565,7 +569,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 
 		const cancelPointerIntent = () => {
 			if (pointerIntent.phase === 'dust-active') {
-				clickEffects.handlePointerCancel(performance.now());
+				clickEffects.handlePointerCancel(animationClock.now);
 			} else {
 				clickEffects.cancelPress();
 			}
@@ -580,7 +584,8 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 				if (bounds.width === window.innerWidth && bounds.height === window.innerHeight) return;
 				setupCanvas();
 				clickEffects.reset();
-				if (reducedMotion && running) animationFrame = window.requestAnimationFrame(animate);
+				// Resizing clears the bitmap: repaint the frozen time, even while scrolling.
+				drawFrame(animationClock.now, 0);
 			}, 160);
 		};
 
@@ -593,7 +598,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			running = shouldRun;
 
 			if (running) {
-				lastTime = performance.now();
+				animationClock.resetFrame();
 				window.cancelAnimationFrame(animationFrame);
 				animationFrame = window.requestAnimationFrame(animate);
 			} else {
@@ -625,6 +630,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			clickEffects = createClickEffects({ bounds, isSubtle, reducedMotion });
 			window.cancelAnimationFrame(animationFrame);
 			lastPaint = 0;
+			animationClock.resetFrame();
 			if (running) animationFrame = window.requestAnimationFrame(animate);
 		};
 		motionQuery.addEventListener('change', handleMotionChange);

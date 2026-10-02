@@ -52,6 +52,7 @@ export const HOME_SECTIONS: HomeSectionConfig[] = [
 		eyebrow: 'About Me',
 		title: '一些多余的话',
 		description: [
+			'telysta.com 是 Weiser 的个人主页与博客，记录技术开发、原创角色与设计，以及阅读和生活。',
 			'如蒙不弃，你可以叫我 Weiser，或者，那个你所熟悉的名字。',
 			'曾经的曾经，过去的过去，我无知、荒唐、不自量力、幼稚天真。以至于现在，我也未必能分清所有选择是对或是错，一切因缘是行或是止。',
 			'但好在，我还是一个好人，或者我希望自己是一个好人。即使这么些年，我也发现无私的付出不一定有回报，贸然献出的真心也未必带回任何善果。',
@@ -71,6 +72,12 @@ export const HOME_SECTIONS: HomeSectionConfig[] = [
 		title: '一些无用的路标',
 		description: ['天空不见鸟儿的踪迹，因为他早已飞过。'],
 		items: [
+			{
+				label: 'About',
+				href: '/about/',
+				description: '关于我，也关于这个小小的写作空间。',
+				kind: 'index',
+			},
 			{
 				label: 'Resource Index',
 				href: '/resources',

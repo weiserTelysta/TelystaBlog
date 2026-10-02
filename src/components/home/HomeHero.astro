@@ -1,5 +1,6 @@
 ---
 import HomeIntro from './HomeIntro';
+import { SITE_CONFIG } from '../../config/site';
 ---
 
 <section class="home" aria-label="Telysta home introduction" data-home-hero>
@@ -15,6 +16,10 @@ import HomeIntro from './HomeIntro';
 				</p>
 			</div>
 		</HomeIntro>
+		<noscript>
+			<style is:global>.home-intro--fallback { display: none; }</style>
+			<h1 class="text-hero-title">{SITE_CONFIG.name}</h1><p>{SITE_CONFIG.home.description}</p>
+		</noscript>
 	</div>
 </section>
 

@@ -1,5 +1,49 @@
 import { test, expect } from '@playwright/test';
 
+test('星空恢复首帧延续暂停位置，不追赶暂停期间的时间', async ({ page }) => {
+	await page.addInitScript(() => {
+		const frames: number[][] = [];
+		Object.assign(window, { starFrames: frames });
+		const clear = CanvasRenderingContext2D.prototype.clearRect;
+		const arc = CanvasRenderingContext2D.prototype.arc;
+		let first = false;
+		CanvasRenderingContext2D.prototype.clearRect = function(...args) {
+			if (this.canvas.classList.contains('starfield__canvas')) first = true;
+			return clear.apply(this, args);
+		};
+		CanvasRenderingContext2D.prototype.arc = function(...args) {
+			if (first && this.canvas.classList.contains('starfield__canvas')) { frames.push([args[0], args[1]]); first = false; }
+			return arc.apply(this, args);
+		};
+	});
+	await page.goto('/blog/');
+	await expect.poll(() => page.evaluate(() => (window as any).starFrames.length)).toBeGreaterThan(3);
+	const frozen = await page.evaluate(async () => {
+		for (let i = 0; i < 20; i++) {
+			dispatchEvent(new Event('scroll'));
+			await new Promise(resolve => setTimeout(resolve, 100));
+		}
+		const frames = (window as any).starFrames as number[][];
+		return { count: frames.length, point: frames.at(-1)! };
+	});
+	await expect.poll(() => page.evaluate(() => (window as any).starFrames.length)).toBeGreaterThan(frozen.count);
+	const resumed = await page.evaluate(i => (window as any).starFrames[i] as number[], frozen.count);
+	expect(resumed[0]).toBeCloseTo(frozen.point[0], 5);
+	expect(resumed[1]).toBeCloseTo(frozen.point[1], 5);
+	const beforeResize = await page.evaluate(async () => {
+		document.documentElement.classList.add('has-modal-open');
+		await Promise.resolve();
+		const frames = (window as any).starFrames as number[][];
+		return { count: frames.length, point: frames.at(-1)! };
+	});
+	await page.setViewportSize({ width: 1440, height: 1100 });
+	await expect.poll(() => page.evaluate(() => (window as any).starFrames.length)).toBeGreaterThan(beforeResize.count);
+	const resized = await page.evaluate(i => (window as any).starFrames[i] as number[], beforeResize.count);
+	expect(resized[0]).toBeCloseTo(beforeResize.point[0], 5);
+	expect(resized[1]).toBeCloseTo(beforeResize.point[1], 5);
+	await page.evaluate(() => document.documentElement.classList.remove('has-modal-open'));
+});
+
 for (const route of ['/blog/', '/resources/']) {
 	test(`滚轮由浏览器处理，不取消输入或增加距离：${route}`, async ({ page }) => {
 		await page.goto(route);

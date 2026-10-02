@@ -9,6 +9,7 @@ import rehypeCdnImages from './scripts/rehype-cdn-images.mjs';
 import remarkPostLinks from './scripts/remark-post-links.mjs';
 
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,5 +29,5 @@ export default defineConfig({
       rehypePlugins: [rehypeKatex, rehypeCdnImages],
     }),
   },
-  integrations: [react()],
+  integrations: [react(), sitemap({ filter: (page) => !new URL(page).pathname.endsWith('.json') })],
 });
