@@ -5,7 +5,6 @@ import TabIdentity from '../components/site/TabIdentity.astro';
 import ShareMetadata from '../components/site/ShareMetadata.astro';
 import BackToTop from '../components/site/BackToTop';
 import PageScrollIndicator from '../components/site/PageScrollIndicator';
-import ScrollManager from '../components/site/ScrollManager';
 import StarfieldBackground from '../components/starfield/StarfieldBackground';
 import { SITE_CONFIG } from '../config/site';
 import '../styles/global.scss';
@@ -55,6 +54,5 @@ const {
 		<SiteFooter />
 		<PageScrollIndicator client:idle />
 		<BackToTop client:idle />
-		<ScrollManager client:idle />
 	</body>
 </html>

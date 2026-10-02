@@ -1,6 +1,6 @@
 import PhotoSwipe from 'photoswipe';
 import { ARTICLE_PAGE_CONFIG } from '../../config/pages/article';
-import { startSmoothScroll, stopSmoothScroll } from '../../lib/scrollRuntime';
+import { unlockPageScroll, lockPageScroll } from '../../lib/scrollRuntime';
 
 export function openArticleImage(image: HTMLImageElement, trigger: HTMLAnchorElement, onDestroy: () => void) {
 	const copy = ARTICLE_PAGE_CONFIG.imageViewer;
@@ -33,7 +33,7 @@ export function openArticleImage(image: HTMLImageElement, trigger: HTMLAnchorEle
 		hadModalClass = document.documentElement.classList.contains('has-modal-open');
 		document.body.style.overflow = 'hidden';
 		document.documentElement.classList.add('has-modal-open');
-		stopSmoothScroll();
+		lockPageScroll();
 		locked = true;
 		root.focus({ preventScroll: true });
 		root.addEventListener('click', event => {
@@ -70,7 +70,7 @@ export function openArticleImage(image: HTMLImageElement, trigger: HTMLAnchorEle
 		if (locked) {
 			document.body.style.overflow = originalOverflow;
 			if (!hadModalClass) document.documentElement.classList.remove('has-modal-open');
-			startSmoothScroll();
+			unlockPageScroll();
 		}
 		if (trigger.isConnected) trigger.focus({ preventScroll: true });
 		onDestroy();

@@ -51,11 +51,13 @@ export default function BackToTop() {
 
 		updateCompactState();
 		window.addEventListener('resize', updateCompactState);
-		window.addEventListener('scroll', updateCompactState, { passive: true });
+		const observer = new ResizeObserver(updateCompactState);
+		const resourcePage = document.querySelector('.resource-page');
+		if (resourcePage) observer.observe(resourcePage);
 
 		return () => {
 			window.removeEventListener('resize', updateCompactState);
-			window.removeEventListener('scroll', updateCompactState);
+			observer.disconnect();
 		};
 	}, []);
 

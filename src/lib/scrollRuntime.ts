@@ -1,61 +1,38 @@
+import { SCROLL_CONFIG } from '../config/interactions/scroll';
+
 type ScrollTarget = number | string | HTMLElement;
+type ScrollOptions = { offset?: number; immediate?: boolean };
 
-export type ScrollController = {
-	scrollTo: (target: ScrollTarget, options?: { offset?: number }) => void;
-	start: () => void;
-	stop: () => void;
-};
+let lockCount = 0;
 
-let activeController: ScrollController | null = null;
-
-export function setScrollController(controller: ScrollController) {
-	activeController = controller;
-}
-
-export function clearScrollController(controller: ScrollController) {
-	if (activeController === controller) {
-		activeController = null;
+export function lockPageScroll() {
+	if (lockCount++ === 0) {
+		// Cancel an in-flight anchor animation before a dialog takes focus.
+		window.scrollTo({ top: window.scrollY, left: window.scrollX, behavior: 'instant' });
+		document.documentElement.classList.add('is-page-scroll-locked');
 	}
 }
 
-export function isSmoothScrollReady() {
-	return activeController !== null;
-}
-
-export function startSmoothScroll() {
-	activeController?.start();
-}
-
-export function stopSmoothScroll() {
-	activeController?.stop();
+export function unlockPageScroll() {
+	lockCount = Math.max(0, lockCount - 1);
+	if (lockCount === 0) document.documentElement.classList.remove('is-page-scroll-locked');
 }
 
 export function scrollToTop() {
-	if (activeController) {
-		activeController.scrollTo(0);
-		return;
-	}
-
-	window.scrollTo({ top: 0, behavior: 'smooth' });
+	scrollToTarget(0);
 }
 
-export function scrollToTarget(target: ScrollTarget, options?: { offset?: number }) {
-	if (activeController) {
-		activeController.scrollTo(target, options);
-		return;
-	}
-
+export function scrollToTarget(target: ScrollTarget, options: ScrollOptions = {}) {
+	if (lockCount > 0) return;
+	let top: number;
 	if (typeof target === 'number') {
-		window.scrollTo({ top: target + (options?.offset ?? 0), behavior: 'smooth' });
-		return;
+		top = target;
+	} else {
+		const element = typeof target === 'string' ? document.querySelector<HTMLElement>(target) : target;
+		if (!element) return;
+		top = element.getBoundingClientRect().top + window.scrollY;
 	}
-
-	const element = typeof target === 'string' ? document.querySelector<HTMLElement>(target) : target;
-
-	if (!element) {
-		return;
-	}
-
-	const top = element.getBoundingClientRect().top + window.scrollY + (options?.offset ?? 0);
-	window.scrollTo({ top, behavior: 'smooth' });
+	const immediate = options.immediate || !SCROLL_CONFIG.smoothNavigation
+		|| window.matchMedia(SCROLL_CONFIG.reducedMotionQuery).matches;
+	window.scrollTo({ top: top + (options.offset ?? 0), behavior: immediate ? 'instant' : 'smooth' });
 }

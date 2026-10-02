@@ -1,6 +1,6 @@
 # 架构与目录维护
 
-核对更新：2026-09-14。当前功能对应关系见 [功能核对](feature-map.md)。
+核对更新：2026-10-02。当前功能对应关系见 [功能核对](feature-map.md)。
 
 作者入口见 [配置说明](../src/config/README.md)。`config/pages` 按页面归集可编辑文案，`config/content` 保存分类、系列及额外资源收录；分类/系列 ID 从资料数组派生。配置不依赖组件，组件读取配置并负责安全文本渲染；内部 DOM ID、焦点恢复与滚轮算法不作为作者选项。详情见 [配置整理记录](archive/2026-09/config-entrypoints-2026-09-06.md)。
 
@@ -22,7 +22,7 @@
 
 文章仅通过 `src/pages/blog/[...slug].astro` 渲染，正文和附件后是系列，再到独立 `ArticleComments`。不复制第二套文章 Layout。系列总索引按 category 分组，空系列不展示。
 
-`scripts/rehype-cdn-images.mjs` 从已有 CDN 清单为文章外部图片补充尺寸，避免加载时推开正文；不下载或生成图片。文章滚轮保持原生，Lenis 只保留定点导航的平滑动作，首页/资源页仍使用原有配置。详情见 [加载稳定性记录](archive/2026-09/loading-stability-2026-09-05.md)。
+`scripts/rehype-cdn-images.mjs` 从已有 CDN 清单为文章外部图片补充尺寸，避免加载时推开正文；不下载或生成图片。全站滚轮与触摸滚动交由浏览器处理，不再加载 Lenis。`scrollRuntime.ts` 只管理显式定点导航与可嵌套的页面滚动锁，减少动态时立即定位。星空绘制上限为 30fps，滚动时暂停、停止后恢复；详情见 [滚动优化记录](scroll-performance-2026-10-02.md)。
 
 Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边距和最小高度。不要再次给某一侧加 `top` 或负 margin 修补基线。
 
@@ -32,7 +32,7 @@ Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边�
 
 `ResourceExplorer` 输出可直接访问的图片链接，CSS 根据比例排等高行。点击后按需载入 `resourceLightbox.ts`；下载选择独立在 `resourceDownloadPicker.ts`，图片/下载转换与发布政策保持为纯函数。旧 `ResourceDetailOverlay` 和分裂下载按钮已移除，Git 历史可恢复，不并存两套详情状态。
 
-图片上的标题和操作条使用 PhotoSwipe 尺寸计算，不在每次指针移动时测量 DOM。轻微 hover 只变换图片，不更改布局；闲置定时器复用。看图期间暂停 Lenis 和被遮挡的星空，关闭时恢复监听、滚动和焦点。
+图片上的标题和操作条使用 PhotoSwipe 尺寸计算，不在每次指针移动时测量 DOM。轻微 hover 只变换图片，不更改布局；闲置定时器复用。看图期间锁定页面滚动、暂停被遮挡的星空，关闭时恢复监听、滚动和焦点。
 
 ## 数据保留与清理规则
 
@@ -46,4 +46,4 @@ Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边�
 - `.tmp/browser-results` 存测试截图和失败 trace，不提交。浏览器 profile 可能含会话数据，不当作普通截图缓存删除。
 - 删除前核对绝对路径、文件内容和引用，避免递归操作越界或碰到 OneDrive 链接。能恢复的旧文档放 `docs/archive`，而非直接丢弃。
 
-2026-09-05 曾遇到临时产物清理被环境策略或 OneDrive 权限阻止，属于历史执行记录，不用于判断当前权限。此次只将七份旧阶段文档移入 `docs/archive/2026-09` 并修复引用，没有清理素材、工具缓存或 R2。
+2026-09-05 的临时产物清理失败属于历史记录，不用于判断当前权限。2026-10-02 新归档 11 份已完成的九月阶段记录，修复文档引用并建立月度索引；当前使用规范留在 docs 根目录。未清理素材、工具缓存或 R2。

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { startSmoothScroll, stopSmoothScroll } from '../lib/scrollRuntime';
+import { unlockPageScroll, lockPageScroll } from '../lib/scrollRuntime';
 
 export function usePageScrollLock(active: boolean) {
 	useEffect(() => {
@@ -9,11 +9,11 @@ export function usePageScrollLock(active: boolean) {
 
 		const originalOverflow = document.body.style.overflow;
 		document.body.style.overflow = 'hidden';
-		stopSmoothScroll();
+		lockPageScroll();
 
 		return () => {
 			document.body.style.overflow = originalOverflow;
-			startSmoothScroll();
+			unlockPageScroll();
 		};
 	}, [active]);
 }

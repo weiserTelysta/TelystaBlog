@@ -1,5 +1,5 @@
 import { ARTICLE_PAGE_CONFIG } from '../config/pages/article';
-import { startSmoothScroll, stopSmoothScroll } from './scrollRuntime';
+import { unlockPageScroll, lockPageScroll } from './scrollRuntime';
 
 type DrawerState = {
 	cleanup: () => void;
@@ -24,9 +24,9 @@ const setDocumentScrollLocked = (locked: boolean) => {
 	document.documentElement.classList.toggle('is-article-toc-overlay-open', locked);
 
 	if (locked) {
-		stopSmoothScroll();
+		lockPageScroll();
 	} else {
-		startSmoothScroll();
+		unlockPageScroll();
 	}
 };
 

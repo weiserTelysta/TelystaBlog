@@ -1,6 +1,6 @@
 # 当前功能与配置核对
 
-核对日期：2026-09-21。依据配置、组件、内容加载器、维护脚本与部署工作流；本轮验证和部署状态见 [发布记录](category-resource-release-2026-09-21.md)。本文描述已实现能力；本地后台见 [使用说明](local-admin.md)，阶段进度及后续增强见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
+核对日期：2026-10-02。滚动与目录规范见 [本轮记录](scroll-performance-2026-10-02.md)。依据配置、组件、内容加载器、维护脚本与部署工作流；2026-09-21 验证和部署状态见 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。本文描述已实现能力；本地后台见 [使用说明](local-admin.md)，阶段进度及后续增强见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
 
 ## 身份、首页与文案
 
@@ -29,7 +29,7 @@ Hero 句子没有语言字段，也没有精确的“几点到几点”开关，
 | 分类 | 正式 ID 为 `manuscript`、`collection`、`letters`、`reading`、`life`、`portraits`、`notes`；当前工作区已取消 `essays`，没有别名或重定向 |
 | 分类入口 | 总览 `Category / All Records`；选中后是 `Weiser's Manuscript`、`Telysta's Collection` 等英文所属名称 |
 | 角色卡片 | 收起时花体角色名＋英文分类小字；展开后中文标题与介绍。题签在 `visuals/categoryVisuals.ts`，中文栏目在 `content/blogCategories.ts` |
-| 卡片光泽与图片 | 前后台共用 `src/styles/category-foil.css` 的八种复合反射预设，角色 tone 决定虹彩配色，减少白光曝光，无同心圆；导入的角色图在构建时生成 480／800 WebP，`public/media` 上传图沿用上传处理结果。Cloudflare 缓存与图片变换是不同能力，见 [核查记录](category-series-scores-2026-09-20.md) |
+| 卡片光泽与图片 | 前后台共用 `src/styles/category-foil.css` 的八种复合反射预设，角色 tone 决定虹彩配色，减少白光曝光，无同心圆；导入的角色图在构建时生成 480／800 WebP，`public/media` 上传图沿用上传处理结果。Cloudflare 缓存与图片变换是不同能力，见 [核查记录](archive/2026-09/category-series-scores-2026-09-20.md) |
 | 卡片比例 | `.category-accordion__card` 当前 CSS 宽:高为 **2:5**，不是 1:2。图片以 cover 裁切，可设置 `imagePosition` 与 `imageScale`；原图比例、卡片框比例、头像 1:1 是不同概念 |
 | 文章创建 | 日期文件名＋正文可自动补标题、日期、摘要和分类；英文空字段回退中文。直接新建 Markdown 默认公开，`post:new` 默认草稿 |
 | 系列 | 配置系列 ID、所属分类与文案；文章填写配对的 `series` / `seriesOrder`。目录与前后章按公开文章排序自动生成 |
@@ -37,8 +37,9 @@ Hero 句子没有语言字段，也没有精确的“几点到几点”开关，
 | 导航与目录 | `Series / All Series` 与分类入口对齐；文章底部三等分前后章／系列目录，缺失目标禁用，无系列全禁用；正文 H2–H4 目录是另一个功能 |
 | 搜索 | 构建静态索引，页面按需加载，搜全部公开文章；包含正文及元数据，不是语义／拼音搜索 |
 | Markdown | 支持数学公式、代码复制、本地／CDN 图片、简谱引用；简谱排版是主动维护命令，普通构建只检查是否过期 |
-| 正文图片放大 | 普通图片点击／Enter 打开单图 PhotoSwipe；支持滚轮、双指缩放和焦点／阅读位置恢复，已有图片链接保留原用途；按需加载与失败回退，见 [验收记录](article-image-viewer-2026-09-24.md) |
+| 正文图片放大 | 普通图片点击／Enter 打开单图 PhotoSwipe；支持滚轮、双指缩放和焦点／阅读位置恢复，已有图片链接保留原用途；按需加载与失败回退，见 [验收记录](archive/2026-09/article-image-viewer-2026-09-24.md) |
 | WikiLink | 可选 `aliases` 登记引用名，`[[Telysta]]`／`[[Telysta\|显示文字]]` 在构建时查找目标当前路径；改名／移动后自动更新站内引用，无需手写 URL。重复别名、缺失目标或公开引用草稿会报错；不改变现有路由及评论，见 [使用说明](wikilinks-2026-09-21.md) |
+| 页面滚动 | 全站原生滚轮／触摸；显式导航才平滑，减少动态时立即定位。滚动期间暂停星空 Canvas，桌面进度条拖动立即跟随指针 |
 | 评论 | 仅文章路由加载 Giscus，使用 pathname 映射；移动已有文章路径会影响链接与评论关联 |
 
 已有独立 `npm run admin` 本地写作和配置后台，默认 `127.0.0.1:4323`；支持原始 Markdown、草稿创建、14 个配置入口、素材选择、源码对照、冲突校验与只读历史。没有站内英文路由切换器、在线写作后台、GitHub 登录管理入口、后台恢复按钮或自动 R2 上传。英文元数据存在并可参与搜索，不代表已有双语站点。
@@ -50,7 +51,7 @@ R2 是文件存储与分发层，`src/generated/cdn-assets.json` 是资源地址
 - 当前画廊展示公开插画及明确收录的两款 Minecraft 皮肤；不自动纳入 Character、头像、文章配图或草稿。
 - 列表优先独立 cover，看图使用高清 display，下载选择仅保留允许的图片格式。Schema 能记录其他动作，不代表当前看图器渲染全部动作、Credits、许可证和正文。
 - 看图箭头在图片两侧中部，下载／关闭在图片底部右侧；旧版“四按钮集中底部”的记录已归档。
-- PSD 不产生网站下载链接，但公开 bucket 中的对象仍可能通过已知 URL 访问；UI 隐藏不构成访问控制。
+- 2026-09-29 已清理远端 PSD；后续只上传允许的原图与 WebP，不上传 PSD／AI；一个历史 AI 对象保留。详见 [CDN 维护](cdn-assets.md)。
 - R2 准备、cover、上传与 favicon 生成由维护命令主动运行；`assets:sync` 实际用 `rclone copy`，默认预演，不做远端删除。普通部署不执行 R2 上传。
 - `.github/workflows/deploy.yml` 在 `main` push／手动触发后执行 `npm run check` 再发布 Pages；当前无 PR 检查／预览工作流。浏览器测试是独立命令，不在该部署检查中自动执行。
 

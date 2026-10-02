@@ -106,21 +106,7 @@ html::-webkit-scrollbar {
 	display: none;
 }
 
-html.lenis,
-html.lenis body {
-	height: auto;
-}
-
-.lenis.lenis-smooth {
-	scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent],
-.lenis.lenis-smooth [data-scroll-native] {
-	overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
+html.is-page-scroll-locked {
 	overflow: hidden;
 }
 
@@ -286,6 +272,7 @@ a {
 }
 
 .page-scroll-indicator.is-dragging span {
+	transition: none;
 	box-shadow: 0 0 22px rgba(156, 199, 232, 0.22);
 }
 

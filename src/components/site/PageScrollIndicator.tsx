@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import type { CSSProperties } from 'react';
 import { scrollToTarget } from '../../lib/scrollRuntime';
 
 const IDLE_DELAY = 920;
@@ -11,13 +10,19 @@ function clampProgress(value: number) {
 }
 
 export default function PageScrollIndicator() {
-	const [progress, setProgress] = useState(0);
+	const progress = useRef(0);
+	const fillRef = useRef<HTMLSpanElement | null>(null);
 	const [visible, setVisible] = useState(false);
 	const [isDragging, setIsDragging] = useState(false);
 	const trackRef = useRef<HTMLDivElement | null>(null);
 	const idleTimer = useRef<number | undefined>(undefined);
 	const frame = useRef<number | undefined>(undefined);
 	const isDraggingRef = useRef(false);
+	const setProgress = (value: number) => {
+		progress.current = value;
+		fillRef.current?.style.setProperty('--scroll-progress', String(value));
+		trackRef.current?.setAttribute('aria-valuenow', String(Math.round(value * MAX_PROGRESS)));
+	};
 
 	const clearIdleTimer = () => {
 		if (idleTimer.current) {
@@ -51,7 +56,7 @@ export default function PageScrollIndicator() {
 		const normalizedProgress = clampProgress(nextProgress);
 		setProgress(normalizedProgress);
 		setVisible(true);
-		scrollToTarget(scrollableDistance * normalizedProgress);
+		scrollToTarget(scrollableDistance * normalizedProgress, { immediate: isDraggingRef.current });
 	};
 
 	useEffect(() => {
@@ -168,19 +173,15 @@ export default function PageScrollIndicator() {
 
 		if (event.key === 'ArrowUp' || event.key === 'PageUp') {
 			event.preventDefault();
-			scrollToProgress(progress - step);
+			scrollToProgress(progress.current - step);
 			return;
 		}
 
 		if (event.key === 'ArrowDown' || event.key === 'PageDown') {
 			event.preventDefault();
-			scrollToProgress(progress + step);
+			scrollToProgress(progress.current + step);
 		}
 	};
-
-	const progressStyle = {
-		'--scroll-progress': progress,
-	} as CSSProperties;
 
 	return (
 		<div
@@ -191,11 +192,11 @@ export default function PageScrollIndicator() {
 			aria-label="Page scroll position"
 			aria-valuemin={0}
 			aria-valuemax={MAX_PROGRESS}
-			aria-valuenow={Math.round(progress * MAX_PROGRESS)}
+			aria-valuenow={0}
 			onPointerDown={handlePointerDown}
 			onKeyDown={handleKeyDown}
 		>
-			<span style={progressStyle} />
+			<span ref={fillRef} />
 		</div>
 	);
 }

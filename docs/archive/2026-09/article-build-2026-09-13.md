@@ -1,6 +1,6 @@
 # 2026-09-13 文章构建修复
 
-> 后续更正：本文记录当时的修复过程，其中将 `letters` 映射为 `essays` 的决定有误，现已撤销。正式分类为 `letters`，不保留 `essays` 别名或旧地址跳转；当前规则见 [分类修正记录](category-localization-2026-09-13.md) 与 [文章写作指南](article-authoring.md)。
+> 后续更正：本文记录当时的修复过程，其中将 `letters` 映射为 `essays` 的决定有误，现已撤销。正式分类为 `letters`，不保留 `essays` 别名或旧地址跳转；当前规则见 [分类修正记录](category-localization-2026-09-13.md) 与 [文章写作指南](../../article-authoring.md)。
 
 ## 失败原因
 
@@ -15,7 +15,7 @@
 
 ## 后续写作规则
 
-完整用法见 [文章写作指南](article-authoring.md)。最简方式是在已有分类目录下新建 `YYYY-M-D-标题.md`，写标题和正文后推送到 `main`。
+完整用法见 [文章写作指南](../../article-authoring.md)。最简方式是在已有分类目录下新建 `YYYY-M-D-标题.md`，写标题和正文后推送到 `main`。
 
 - 标题：已填 `title` 保留；未填则取正文 H1 或去掉日期的文件名。文章页面仍优先展示正文 H1。
 - 日期：未填 `publishedAt` 时取文件名前缀；`updatedAt` 默认等于发布日期，不使用构建时间。

@@ -4,7 +4,7 @@
 
 ## 核查与依据
 
-- 原有方案记录于 [本地后台体验记录](admin-ux-plan-2026-09-15.md)。共享 CSS 中的部分预设以单个渐变替换整个纹理，`ripple` 使用重复径向渐变，形成明显同心圆；另外组件 SCSS 还保留另一组光泽定义，职责重复。
+- 原有方案记录于 [本地后台体验记录](../../admin-ux-plan-2026-09-15.md)。共享 CSS 中的部分预设以单个渐变替换整个纹理，`ripple` 使用重复径向渐变，形成明显同心圆；另外组件 SCSS 还保留另一组光泽定义，职责重复。
 - 学习 [原案例](https://poke-holo.simey.me/)、[基础光泽分层](https://github.com/simeydotme/pokemon-cards-css/blob/main/public/css/cards/base.css) 与 [普通镭射卡](https://github.com/simeydotme/pokemon-cards-css/blob/main/public/css/cards/regular-holo.css)：纹理、色彩反射与表面高光分别混合、使用不同背景尺寸和位移。采用本站原创 CSS，不下载卡牌素材或照搬高强度效果。作者也说明这是 [演示项目而非可直接安装的模块](https://github.com/simeydotme/pokemon-cards-css/issues/19)，因此限制层数并保留减少动态模式。
 - 分类图片来自 `src/assets/images/accordion/*.webp`，由 Astro 导入后随 Pages 发布；不能因站点使用 Cloudflare 就把它们称为 R2 图片或实时图片变换。需分别核对本地格式／体积与线上缓存响应。
 - Series 索引当前使用 `category.title`、`subtitle` 和 `series.title`，尚未统一英文；条目用上下横线分隔，分类题签较小。

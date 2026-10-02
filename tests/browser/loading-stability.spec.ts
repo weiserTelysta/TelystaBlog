@@ -63,7 +63,7 @@ test('文章图片未下载时已经预留高度，评论有初始占位', async
 test('文章滚轮不经过第二层插值，图片和评论区域仍可正常阅读', async ({ page }) => {
 	await page.route('https://giscus.app/**', route => route.abort());
 	await page.goto(article, { waitUntil: 'domcontentloaded' });
-	await expect(page.locator('html')).toHaveClass(/lenis/);
+	await expect(page.locator('html')).not.toHaveClass(/lenis/);
 	await page.evaluate(() => {
 		Object.assign(window, { smoothWheelSeen: false });
 		new MutationObserver(() => {

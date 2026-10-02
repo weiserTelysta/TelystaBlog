@@ -3,7 +3,7 @@ import { RESOURCE_PAGE_CONFIG } from '../../config/pages/resources';
 const copy = RESOURCE_PAGE_CONFIG.viewer;
 import type { ResourceListItem } from '../../lib/resources/resourceItems';
 import { getLightboxDownloads, getLightboxSlides } from '../../lib/resources/resourceLightboxData';
-import { startSmoothScroll, stopSmoothScroll } from '../../lib/scrollRuntime';
+import { unlockPageScroll, lockPageScroll } from '../../lib/scrollRuntime';
 import { createDownloadPicker } from './resourceDownloadPicker';
 import { createGalleryWheel } from '../../lib/resources/galleryWheel';
 
@@ -185,7 +185,7 @@ export function openResourceLightbox(resource: ResourceListItem, trigger: HTMLAn
   originalOverflow = document.body.style.overflow;
   document.body.style.overflow = 'hidden';
   document.documentElement.classList.add('has-modal-open');
-  stopSmoothScroll();
+  lockPageScroll();
   locked = true;
   root.focus({ preventScroll: true });
   updateCaption();
@@ -217,7 +217,7 @@ export function openResourceLightbox(resource: ResourceListItem, trigger: HTMLAn
   if (locked) {
    document.body.style.overflow = originalOverflow;
    document.documentElement.classList.remove('has-modal-open');
-   startSmoothScroll();
+   unlockPageScroll();
   }
   if (trigger.isConnected) trigger.focus({ preventScroll: true });
   onDestroy();

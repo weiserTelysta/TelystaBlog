@@ -62,7 +62,7 @@ Character 素材保留 `.cover.webp`、`.preview.webp` 与原始 PNG；首页头
 - 不把格式当成分类。
 - 不用大面积高饱和色强调下载。
 - 原图用于下载，WebP 用于网页显示。
-- PSD 已从公开 R2 删除，上传脚本与清单均排除工程源文件。原有本地 PSD 保留；详见 [2026-09-29 清理记录](r2-resource-update-2026-09-29.md)。
+- PSD 已从公开 R2 删除，上传脚本与清单均排除工程源文件。原有本地 PSD 保留；详见 [2026-09-29 清理记录](archive/2026-09/r2-resource-update-2026-09-29.md)。
 - 修改交互前使用 `$telysta-design-guardian` 审查风格和可访问性。
 
 ### 原图保存与 R2 响应头

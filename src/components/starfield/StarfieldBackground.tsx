@@ -79,12 +79,15 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		const context = canvas.getContext('2d', { alpha: true });
 		if (!context) return;
 
-		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+		let reducedMotion = motionQuery.matches;
+		const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+		const frameInterval = 1000 / 30;
 		const isSubtle = variant === 'subtle';
 		const pointer = { x: 0, y: 0, easedX: 0, easedY: 0 };
 		const bounds = { width: 0, height: 0, dpr: 1 };
 		const stars: Star[] = [];
-		const clickEffects = createClickEffects({ bounds, isSubtle, reducedMotion });
+		let clickEffects = createClickEffects({ bounds, isSubtle, reducedMotion });
 		const meteor: Meteor = {
 			active: false,
 			x: 0,
@@ -122,6 +125,11 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		let animationFrame = 0;
 		let running = true;
 		let lastTime = performance.now();
+		let lastPaint = 0;
+		let vignette: CanvasGradient;
+		let scrollPaused = false;
+		let scrollTimer = 0;
+		let resizeTimer = 0;
 		const pointerIntent: {
 			phase: 'idle' | 'pending' | 'dust-active' | 'text-selecting';
 			pointerId: number;
@@ -191,18 +199,15 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		const setupCanvas = () => {
 			bounds.width = window.innerWidth;
 			bounds.height = window.innerHeight;
-			bounds.dpr = Math.min(window.devicePixelRatio || 1, 2);
+			bounds.dpr = Math.min(window.devicePixelRatio || 1, coarsePointer ? 1.5 : 2);
 			canvas.width = Math.floor(bounds.width * bounds.dpr);
 			canvas.height = Math.floor(bounds.height * bounds.dpr);
 			canvas.style.width = `${bounds.width}px`;
 			canvas.style.height = `${bounds.height}px`;
 			context.setTransform(bounds.dpr, 0, 0, bounds.dpr, 0, 0);
 			createStarField();
-		};
-
-		const drawBackground = () => {
-			context.clearRect(0, 0, bounds.width, bounds.height);
-			const vignette = context.createRadialGradient(
+			// This background depends on viewport size, not animation time.
+			vignette = context.createRadialGradient(
 				bounds.width * 0.5,
 				bounds.height * 0.45,
 				0,
@@ -214,6 +219,10 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			vignette.addColorStop(0, 'rgba(10, 15, 24, 0.12)');
 			vignette.addColorStop(0.72, 'rgba(7, 10, 16, 0.04)');
 			vignette.addColorStop(1, 'rgba(0, 0, 0, 0.38)');
+		};
+
+		const drawBackground = () => {
+			context.clearRect(0, 0, bounds.width, bounds.height);
 			context.fillStyle = vignette;
 			context.fillRect(0, 0, bounds.width, bounds.height);
 		};
@@ -422,6 +431,11 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 
 		const animate = (time: number) => {
 			if (!running) return;
+			if (!reducedMotion && time - lastPaint < frameInterval - 1) {
+				animationFrame = window.requestAnimationFrame(animate);
+				return;
+			}
+			lastPaint = time;
 
 			const delta = Math.min(time - lastTime, 50);
 			lastTime = time;
@@ -454,7 +468,7 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			if (pointerIntent.phase === 'pending') {
 				const distance = Math.hypot(event.clientX - pointerIntent.startX, event.clientY - pointerIntent.startY);
 
-				if (pointerIntent.startedOnSelectableText && distance > 11) {
+				if ((event.pointerType === 'touch' || pointerIntent.startedOnSelectableText) && distance > 11) {
 					pointerIntent.phase = 'text-selecting';
 					window.clearTimeout(pointerIntent.dustTimer);
 					clickEffects.cancelPress();
@@ -560,13 +574,21 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		};
 
 		const handleResize = () => {
-			setupCanvas();
-			clickEffects.reset();
+			// Mobile browser chrome can emit many resizes during one swipe.
+			window.clearTimeout(resizeTimer);
+			resizeTimer = window.setTimeout(() => {
+				if (bounds.width === window.innerWidth && bounds.height === window.innerHeight) return;
+				setupCanvas();
+				clickEffects.reset();
+				if (reducedMotion && running) animationFrame = window.requestAnimationFrame(animate);
+			}, 160);
 		};
 
 		const handleVisibility = () => {
 			const shouldRun = document.visibilityState === 'visible'
-				&& !document.documentElement.classList.contains('has-modal-open');
+				&& !scrollPaused
+				&& !document.documentElement.classList.contains('has-modal-open')
+				&& !document.documentElement.classList.contains('is-page-scroll-locked');
 			if (running === shouldRun) return;
 			running = shouldRun;
 
@@ -580,12 +602,32 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			}
 		};
 
+		const handleScroll = () => {
+			if (reducedMotion) return;
+			scrollPaused = true;
+			handleVisibility();
+			window.clearTimeout(scrollTimer);
+			scrollTimer = window.setTimeout(() => {
+				scrollPaused = false;
+				handleVisibility();
+			}, 150);
+		};
+
 		setupCanvas();
 		animationFrame = window.requestAnimationFrame(animate);
 		handleVisibility();
 		// Freeze the obscured canvas while a modal owns interaction; retain its last frame.
 		const modalObserver = new MutationObserver(handleVisibility);
 		modalObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+		const handleMotionChange = () => {
+			reducedMotion = motionQuery.matches;
+			cancelPointerIntent();
+			clickEffects = createClickEffects({ bounds, isSubtle, reducedMotion });
+			window.cancelAnimationFrame(animationFrame);
+			lastPaint = 0;
+			if (running) animationFrame = window.requestAnimationFrame(animate);
+		};
+		motionQuery.addEventListener('change', handleMotionChange);
 
 		window.addEventListener('pointermove', handlePointerMove, { passive: true });
 		window.addEventListener('pointerdown', handlePointerDown, { passive: true });
@@ -593,12 +635,17 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 		window.addEventListener('pointercancel', handlePointerCancel, { passive: true });
 		window.addEventListener('blur', handlePointerCancel);
 		window.addEventListener('resize', handleResize);
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		window.addEventListener('touchmove', handleScroll, { passive: true });
 		document.addEventListener('visibilitychange', handleVisibility);
 
 		return () => {
 			modalObserver.disconnect();
+			motionQuery.removeEventListener('change', handleMotionChange);
 			running = false;
 			window.cancelAnimationFrame(animationFrame);
+			window.clearTimeout(scrollTimer);
+			window.clearTimeout(resizeTimer);
 			cancelPointerIntent();
 			window.removeEventListener('pointermove', handlePointerMove);
 			window.removeEventListener('pointerdown', handlePointerDown);
@@ -606,6 +653,8 @@ export default function StarfieldBackground({ variant = 'immersive' }: Starfield
 			window.removeEventListener('pointercancel', handlePointerCancel);
 			window.removeEventListener('blur', handlePointerCancel);
 			window.removeEventListener('resize', handleResize);
+			window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener('touchmove', handleScroll);
 			document.removeEventListener('visibilitychange', handleVisibility);
 		};
 	}, [variant]);

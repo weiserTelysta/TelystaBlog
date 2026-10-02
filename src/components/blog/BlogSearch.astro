@@ -22,7 +22,7 @@ const copy = BLOG_PAGE_CONFIG.search;
 	import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
 	const copy = BLOG_PAGE_CONFIG.search;
 	import { searchPosts, searchSnippet, matchRanges, type SearchPost } from '../../lib/blogSearch';
-	import { startSmoothScroll, stopSmoothScroll } from '../../lib/scrollRuntime';
+	import { unlockPageScroll, lockPageScroll } from '../../lib/scrollRuntime';
 	const root = document.querySelector<HTMLElement>('.blog-search');
 	if (root) {
 		const trigger = root.querySelector<HTMLButtonElement>('.blog-search__trigger')!;
@@ -97,14 +97,14 @@ const copy = BLOG_PAGE_CONFIG.search;
 			originalOverflow = document.body.style.overflow;
 			dialog.showModal(); input.focus({ preventScroll: true });
 			document.body.style.overflow = 'hidden';
-			document.documentElement.classList.add('has-modal-open'); stopSmoothScroll();
+			document.documentElement.classList.add('has-modal-open'); lockPageScroll();
 			if (!reduced()) entering = dialog.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 180, easing: 'ease-out' });
 			void load();
 		});
 		dialog.addEventListener('close', () => {
 			closing?.cancel(); closing = undefined;
 			document.body.style.overflow = originalOverflow;
-			document.documentElement.classList.remove('has-modal-open'); startSmoothScroll();
+			document.documentElement.classList.remove('has-modal-open'); unlockPageScroll();
 			trigger.focus({ preventScroll: true });
 		});
 		dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });

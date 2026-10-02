@@ -1,6 +1,6 @@
 # Cloudflare R2 与 CDN 资源维护
 
-插画原图与 WebP、Character 图片和首页轮换头像存放在 Cloudflare R2 bucket `telysta-blog-assets`，并通过自定义域名 `https://assets.telysta.com` 分发。当前对象前缀为 `telysta-images/`、`characters/`、`avatars/`、文章配图 `blog_imgs/` 和独立列表封面的 `covers/`。自 2026-09-29 起，上传允许列表为 PNG／JPG／JPEG／WebP；PSD 已清理，PSD／AI 不再上传。历史对象 `telysta-images/archive/mhs_test_03.ai` 未在本次 PSD 删除范围内，仍保留远端，但不登记在清单。见 [执行记录](r2-resource-update-2026-09-29.md)。仓库不提交 R2 凭据。
+插画原图与 WebP、Character 图片和首页轮换头像存放在 Cloudflare R2 bucket `telysta-blog-assets`，并通过自定义域名 `https://assets.telysta.com` 分发。当前对象前缀为 `telysta-images/`、`characters/`、`avatars/`、文章配图 `blog_imgs/` 和独立列表封面的 `covers/`。自 2026-09-29 起，上传允许列表为 PNG／JPG／JPEG／WebP；PSD 已清理，PSD／AI 不再上传。历史对象 `telysta-images/archive/mhs_test_03.ai` 未在本次 PSD 删除范围内，仍保留远端，但不登记在清单。见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。仓库不提交 R2 凭据。
 
 ## 为什么使用清单键
 
