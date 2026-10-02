@@ -39,7 +39,7 @@ Rhaelysa，或者音译为蕾莉萨也可以。
 ### 其他特征信息
 - 家族纹章：核心元素为生命之花、红龙、剑。
 - 诅咒：她的家族诅咒表现为蜕皮，新生的皮肤经常会流血。
-- 象征花卉：茶花-[**大红金心**](https://assets.telysta.com/blog_imgs/Rhealysa_dahong_2026-9-20.webp),开放、古典型的品种，少而宽的单瓣花瓣，金色花心。
+- 象征花卉：茶花-[**大红金心**](https://assets.telysta.com/blog_imgs/Rhealysa_dahong_2026-9-20.webp)，开放、古典型的品种，少而宽的单瓣花瓣，金色花心。
 
 ### 图片资源
 ![设定图](https://assets.telysta.com/telysta-images/Rhaelysa/rhaelysa_officialoutfit_design.webp)

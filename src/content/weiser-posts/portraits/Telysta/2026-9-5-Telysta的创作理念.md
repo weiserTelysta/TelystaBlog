@@ -16,7 +16,6 @@ series: telysta-notes
 seriesOrder: 1
 ---
 # Telysta 的设计信息分享
-
 Telysta是我最为看重与喜欢的角色之一，可以说她是最核心的角色也不为过。
 
 所以，我觉得有必要介绍一下她的设计理念，并且本篇文章会不断更新。
