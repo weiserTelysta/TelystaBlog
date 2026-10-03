@@ -1,17 +1,29 @@
 import { test, expect } from '@playwright/test';
 
 for (const width of [390, 1440]) {
-	test(`Series uses English grouping and borderless lists at ${width}px`, async ({ page }, testInfo) => {
+	test(`Series uses Chinese titles with English accents and borderless lists at ${width}px`, async ({ page }, testInfo) => {
 		await page.setViewportSize({ width, height: 1000 });
 		await page.goto('/series/');
 		const main = page.locator('main');
-		await expect(main).toHaveAttribute('lang', 'en');
-		expect(await main.innerText()).not.toMatch(/\p{Script=Han}/u);
+		await expect(main).not.toHaveAttribute('lang', 'en');
+		await expect(page.getByRole('heading', { level: 1 })).toHaveText('系列文章');
+		await expect(page.locator('.series-index__header p')).toHaveText('Series Archive');
+		await expect(page.locator('.series-index__summary strong').first()).toHaveText('博客建设记录');
+		await expect(page.locator('.series-index__summary p').first()).toContainText('记录这个安静博客');
 		await expect(page.locator('.series-index__group-header h2').first()).toHaveText('Manuscript');
 		expect((await page.locator('.series-index__group-header').allTextContents()).join(' ')).not.toMatch(/Weiser|Alice|Rhaelysa/);
 		await page.screenshot({ path: testInfo.outputPath('series.png'), fullPage: true });
 		await page.locator('.series-index__list a').first().click();
+		await expect(page.getByRole('heading', { level: 1 })).toHaveText('博客建设记录');
+		await expect(page).toHaveTitle(/博客建设记录/);
+		await expect(page.locator('meta[name=description]')).toHaveAttribute('content', /记录这个安静博客/);
+		await expect(page.locator('.series-page__eyebrow')).toContainText('Series');
 		const rows = page.locator('.article-post-list li');
+		for (const row of await rows.all()) {
+			await expect(row.locator('strong')).toHaveText(/\p{Script=Han}/u);
+			await expect(row.locator('p')).toHaveText(/\p{Script=Han}/u);
+		}
+		await page.screenshot({ path: testInfo.outputPath('series-directory.png'), fullPage: true });
 		await expect(rows.first()).toBeVisible();
 		for (const row of await rows.all()) {
 			await expect(row).toHaveCSS('border-top-width', '0px');

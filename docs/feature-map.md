@@ -1,6 +1,6 @@
 # 当前功能与配置核对
 
-核对日期：2026-10-02。滚动与目录规范见 [本轮记录](scroll-performance-2026-10-02.md)。依据配置、组件、内容加载器、维护脚本与部署工作流；2026-09-21 验证和部署状态见 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。本文描述已实现能力；本地后台见 [使用说明](local-admin.md)，阶段进度及后续增强见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
+核对日期：2026-10-03。滚动与目录规范见 [本轮记录](scroll-performance-2026-10-02.md)。依据配置、组件、内容加载器、维护脚本与部署工作流；2026-09-21 验证和部署状态见 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。本文描述已实现能力；本地后台见 [使用说明](local-admin.md)，阶段进度及后续增强见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
 
 ## 身份、首页与文案
 
@@ -16,7 +16,7 @@
 | 头像方案 | 当前 7 套；字段含稳定 ID、角色名、头像、alt、tone、权重、启用状态。默认项是数组第一项 | `pages/homeProfiles.ts` 的 `HOME_PROFILES` / `DEFAULT_HOME_PROFILE` |
 | 访问身份与 favicon | 同一标签页会话保留角色，首页头像与动态 favicon 共用选择；存储失效时退回页面内存。不是每次刷新重新抽头像 | `src/lib/homeProfile.ts`、`HomeIntro.tsx`、`TabIdentity.astro` |
 | 图标准备 | 既有头像由 R2 提供，后台新增头像保存在本地 `public/media`；每套对应的 32／48px favicon 本地生成并提交，运行时加载 48px；Apple 图标保持固定 | `scripts/prepare-favicons.ts`、`scripts/admin/catalog.ts`、`public/favicons/`、`Layout.astro` |
-| 首页介绍与区块 | 介绍段落、资源路标、排序与启用；现有区块类型为 `profile` / `resources` | `src/config/pages/home.ts`、`HomeArchive.astro` |
+| 首页介绍与区块 | 作者维护介绍段落；Navigation 桌面固定两列、窄屏单列，新增入口自动换行；支持排序与启用，现有区块类型为 `profile` / `resources` | `src/config/pages/home.ts`、`HomeArchive.astro` |
 | 导航与社交 | 顶部导航独立于首页社交链接；社交图标是固定类型集合，不是任意上传图标 | `site.ts` 的 `navItems`、`home.ts` 的 `HOME_SOCIAL_LINKS`、`SocialIcon.astro` |
 | QQ／微信二维码 | `imageSrc` 使用源码资源地址、`/media/` 本地地址或 R2 HTTPS 地址；后台支持选择与上传无损 WebP，保存前核对本地引用存在 | `home.ts` 的 `HOME_QR_CONTACTS`、`HomeSocialNav.astro` |
 
@@ -35,7 +35,7 @@ Hero 句子没有语言字段，也没有精确的“几点到几点”开关，
 | 卡片比例 | `.category-accordion__card` 当前 CSS 宽:高为 **2:5**，不是 1:2。图片以 cover 裁切，可设置 `imagePosition` 与 `imageScale`；原图比例、卡片框比例、头像 1:1 是不同概念 |
 | 文章创建 | 日期文件名＋正文可自动补标题、日期、摘要和分类；英文空字段回退中文。直接新建 Markdown 默认公开，`post:new` 默认草稿 |
 | 系列 | 配置系列 ID、所属分类与文案；文章填写配对的 `series` / `seriesOrder`。目录与前后章按公开文章排序自动生成 |
-| 系列展示 | Series 总索引使用 Manuscript 等英文分类名（不含角色名）、英文标题和说明，以留白分组；详情目录优先使用已有英文文章元数据，缺省仍回退原文，不自动翻译正文 |
+| 系列展示 | 系列总索引、详情主标题、文章标题与简介使用中文字段；Manuscript 等分类小标题、Series／Records 题签保留英文点缀，沿用留白分组。英文元数据仍保留，不自动翻译正文；见 [显示规范](home-series-language-2026-10-03.md) |
 | 导航与目录 | `Series / All Series` 与分类入口对齐；文章底部三等分前后章／系列目录，缺失目标禁用，无系列全禁用；正文 H2–H4 目录是另一个功能 |
 | 搜索 | 构建静态索引，页面按需加载，搜全部公开文章；包含正文及元数据，不是语义／拼音搜索 |
 | Markdown | 支持数学公式、代码复制、本地／CDN 图片、简谱引用；简谱排版是主动维护命令，普通构建只检查是否过期 |

@@ -414,7 +414,7 @@ body.is-home-contact-dialog-open {
 
 @media (min-width: 721px) {
 	.home-section--resources .home-section__links {
-		grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		column-gap: clamp(24px, 4vw, 42px);
 		row-gap: 12px;
 	}

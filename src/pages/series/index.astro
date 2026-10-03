@@ -30,7 +30,7 @@ const seriesGroups = BLOG_CATEGORIES.map((category) => ({
 	description={copy.description}
 	starfieldVariant="subtle"
 >
-	<main class="series-index" lang="en">
+	<main class="series-index">
 		<section class="series-index__inner" aria-labelledby="series-index-title">
 			<header class="series-index__header">
 				<p>{copy.eyebrow}</p>
@@ -50,8 +50,8 @@ const seriesGroups = BLOG_CATEGORIES.map((category) => ({
 								<li>
 									<a href={buildSeriesHref(item.id)}>
 										<div class="series-index__summary">
-											<strong>{item.titleEn}</strong>
-											<p>{item.descriptionEn}</p>
+											<strong>{item.title}</strong>
+											<p>{item.description}</p>
 										</div>
 										<span aria-label={copy.countLabel.replaceAll('{count}', String(item.postCount))}>
 											{String(item.postCount).padStart(2, '0')}

@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { HOME_SECTIONS } from '../../src/config/pages/home';
 
 test('robots 与 sitemap 指向可抓取的正式页面，元信息与 JSON-LD 一致', async ({ request }) => {
 	const robots = await request.get('/robots.txt');
@@ -26,12 +27,15 @@ test('robots 与 sitemap 指向可抓取的正式页面，元信息与 JSON-LD �
 	}
 });
 
-test('About 与首页身份说明不依赖 JavaScript，入口与资源同级', async ({ browser }) => {
+test('About 与作者首页文案不依赖 JavaScript，入口与资源同级', async ({ browser }) => {
 	const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
 	try {
 		const page = await context.newPage();
 		await page.goto('/');
-		await expect(page.getByText('telysta.com 是 Weiser 的个人主页与博客', { exact: false })).toBeVisible();
+		const intro = HOME_SECTIONS.find(section => section.type === 'profile')!;
+		for (const paragraph of intro.description) {
+			await expect(page.getByText(paragraph, { exact: true })).toBeVisible();
+		}
 		const links = page.locator('.home-section__links');
 		await expect(links.getByRole('link', { name: /Resource Index/ })).toBeVisible();
 		await links.getByRole('link', { name: /^About/ }).click();
