@@ -108,11 +108,11 @@ R2 素材的增量 WebP、清单和上传流程见 [cdn-assets.md](cdn-assets.md
 
 所有公开文章通过 `src/pages/blog/[...slug].astro` 统一渲染，页面顺序固定为“正文 → 系列入口 → 评论”。Giscus 只在该路由的正文主体内加载；评论配置集中在 `src/components/article/ArticleComments.astro`，首页、文章索引、系列页和资源页不会引入评论脚本。
 
-当前使用 `pathname` 映射和 `preferred_color_scheme` 主题。不要修改文章 URL、slug 或路由，否则会改变 discussion 的映射键。评论仓库必须保持公开、启用 Discussions，并安装 Giscus GitHub App。
+当前使用 `pathname` 映射和 `preferred_color_scheme` 主题。通常保持文章 URL 稳定；明确更名迁移时应同步文件、内部引用、canonical、sitemap 和旧地址跳转。pathname 变化会改变 discussion 的映射键，旧讨论仍保留在评论仓库，路由跳转不会自动迁移评论。评论仓库必须保持公开、启用 Discussions，并安装 Giscus GitHub App。
 
 父页面只能使用 `.giscus` 和 `.giscus-frame` 调整 iframe 的宽度、间距与外部边界，不能用本站 CSS 穿透跨域 iframe。若以后需要让评论内部完全采用 Telysta 配色，可以在本站公开托管一份 Giscus 自定义主题 CSS，并把 `data-theme` 改成该文件的绝对 HTTPS URL；若再加入站内 Light/Dark 切换，则通过 Giscus `postMessage` 的 `setConfig.theme` 同步，不需要更换评论组件或数据层。
 
-系列入口与 `/series/<id>/` 页面继续使用深蓝黑画布、月光蓝状态色、细分隔线和低幅度交互，不使用正文下划线、厚卡片或持续动画。系列 ID 是数据与 URL 的稳定标识，显示标题可以是中文；文章 frontmatter 只能填写 ID。
+系列入口与 `/series/<id>/` 页面继续使用深蓝黑画布、月光蓝状态色、留白分组和低幅度交互，不使用正文下划线、厚卡片或持续动画。系列 ID 是数据与 URL 的稳定标识，显示标题可以是中文；文章 frontmatter 只能填写 ID。
 
 ## 视觉维护
 
@@ -144,3 +144,15 @@ git status
 - 没有提交 `dist/`、`.tmp/` 或资源原图。
 
 `test:browser` 先构建，再用独立浏览器测试本机 `127.0.0.1:4322` 预览。Windows 默认使用已安装 Edge，不读取用户浏览器 profile；其他平台先运行 `npx playwright install chromium`。可用 `TELYSTA_TEST_BROWSER` 选择已安装的 channel。不要把 4322 用于其他服务；本地允许复用同项目 preview，CI 不复用。脚本覆盖布局、键盘、遮罩、下载与减少动态，不代替真机触摸手感测试。
+
+## Windows 本机原生模块加载失败
+
+若错误为 Windows Application Control 阻止 Satteri 原生模块（ERR_DLOPEN_FAILED），不要当作 Markdown 缺字段。此工作区曾在被忽略的 .tmp/admin-wasi 中安装匹配版本的官方 WASI 后端，不改生产依赖或系统策略。只有该目录确实存在时，才在单独的 PowerShell 终端执行：
+
+```powershell
+$env:NODE_PATH = (Resolve-Path '.tmp/admin-wasi/node_modules').Path
+$env:NAPI_RS_FORCE_WASI = 'true'
+npm run check
+```
+
+同一终端可运行 npm run dev；普通 npm run admin 不依赖该原生模块。其他电脑先按普通安装流程执行，不应依赖这份本地临时目录。WASI 的实验性提示是已知环境提示，不能据此修改线上 CI 配置。

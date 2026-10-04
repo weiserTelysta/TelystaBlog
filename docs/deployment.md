@@ -56,7 +56,7 @@ npm run preview
 
 提交涉及交互时，另运行 `npm run test:browser`；涉及本地后台时运行 `npm run test:admin`。这两组浏览器检查目前不在 Pages 工作流中，不能从 Actions 的构建成功推断它们已经执行。
 
-当前这台 Windows 电脑若出现 Satteri 原生模块被 Application Control 阻止的错误，请查看 [已验证的 WASI 兼容方式](admin-ux-plan-2026-09-15.md#本机构建环境的区别)。本地兼容方式不修改 CI 环境，也不随 Git 提交临时依赖。
+当前这台 Windows 电脑若出现 Satteri 原生模块被 Application Control 阻止的错误，请查看 [已验证的 WASI 兼容方式](maintenance.md#windows-本机原生模块加载失败)。本地兼容方式不修改 CI 环境，也不随 Git 提交临时依赖。
 
 ## 发布结果核对
 

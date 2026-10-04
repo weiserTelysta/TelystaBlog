@@ -1,5 +1,5 @@
 ---
-id: serava_official_illustration_01
+id: mirelle_official_illustration_01
 title: Mirelle · 礼魂插画
 summary: 以金色调描绘 Mirelle 与战场亡魂的场景插画。
 type: illustration

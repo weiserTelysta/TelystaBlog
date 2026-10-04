@@ -1,31 +1,38 @@
-# 开发文档
+# 文档导航
 
-先看当前规范；历史记录保存当时的方案与验收数据，不代表今天仍需按旧流程操作。最后整理：2026-10-04。
+日常操作从下面直接进入具体指南，不必先翻计划或阶段日志。更新：2026-10-04。[回到项目首页](../README.md)
 
-## 日常使用
+## 常用入口
 
-| 要做什么 | 文档 |
+| 要做什么 | 操作与指南 |
 | --- | --- |
-| 了解现有功能和限制 | [当前状态](current-status.md)、[功能与配置](feature-map.md) |
-| 写文章、系列、图片署名 | [文章写作](article-authoring.md)、[WikiLink](wikilinks-2026-09-21.md) |
-| 修改文案、头像、分类与联系方式 | [配置入口](../src/config/README.md)、[本地后台](local-admin.md) |
-| 发布资源与上传 R2 | [资源维护](resources.md)、[字段说明](resource-content-guide.md)、[CDN 管理](cdn-assets.md) |
-| 修改代码、测试与部署 | [架构](architecture.md)、[维护](maintenance.md)、[部署](deployment.md) |
+| 打开管理后台 | `npm run admin` → http://127.0.0.1:4323/；[完整使用说明](local-admin.md) |
+| 打开网站预览 | 另开终端 `npm run dev`；[环境与排错](maintenance.md) |
+| 写文章与插入图片 | [文章写作](article-authoring.md) |
+| 引用另一篇文章 | [WikiLink](wikilinks-2026-09-21.md) |
+| 修改首页、问候语和配置 | [配置文件地图](../src/config/README.md) |
+| 编辑 About | [Markdown 源文档](../src/pages/about.md) |
+| 新增资源条目 | [资源维护](resources.md) · [完整字段](resource-content-guide.md) |
+| 上传 R2、转 WebP、更新封面 | [CDN 操作流程](cdn-assets.md) |
+| 检查与部署 | [维护指南](maintenance.md) · [部署指南](deployment.md) |
+| 查功能和工程结构 | [功能与配置](feature-map.md) · [架构](architecture.md) |
 
-## 当前专题与待实施方案
+## 当前状态与待办
 
-- [Mirelle 更名与素材迁移](mirelle-rename-2026-10-04.md)：现行名称、稳定地址与 R2 兼容对象。
+- [当前状态](current-status.md)：近期完成与尚未实现的能力。
+- 后台现有功能、保存和图片处理统一以 [本地后台](local-admin.md) 为准；[后台阶段计划](admin-ux-plan-2026-09-15.md) 保留执行过程与剩余计划，不作为启动指南。
+- [云端后台研判](local-admin-assessment-2026-09-13.md)：线上认证与 R2 上传仍未实施。
+- [多语言 Markdown 研判](multilingual-markdown-assessment-2026-09-21.md)：方案研究，尚未实施正文语言切换。
 
-- [首页导航与系列语言规范](home-series-language-2026-10-03.md)：桌面两列、中文阅读为主、英文题签点缀。
+## 变更记录
 
-- [搜索入口、Markdown About 与星空恢复](seo-about-2026-10-02.md)：SEO 基础、维护入口及暂停后跳动修复。
-- [滚动性能、目录小写与文档整理](scroll-performance-2026-10-02.md)：本轮定位、修改与验证边界。
-- [本地后台功能计划与验收](admin-ux-plan-2026-09-15.md)：已实现范围和后续增强，实际操作以本地后台说明为准。
-- [后台方案研判](local-admin-assessment-2026-09-13.md)：本地与云端管理、认证和媒体管线的取舍；线上管理未实现。
-- [多语言 Markdown 研判](multilingual-markdown-assessment-2026-09-21.md)：方案记录，尚未实现多语言正文切换。
+这些文档解释当时的决策与验证；日常使用不需要逐份阅读。
 
-## 历史记录
+- [阶段日志](stage-log.md)：按日期检索全部变更。
+- [Mirelle 全量迁移](mirelle-rename-2026-10-04.md)：名称、网址、ID 与 R2。
+- [导航两列与系列中文标题](home-series-language-2026-10-03.md)。
+- [SEO、Markdown About 与星空恢复](seo-about-2026-10-02.md)。
+- [原生滚动与目录整理](scroll-performance-2026-10-02.md)。
+- [九月档案](archive/2026-09/README.md)：旧阶段方案和验收，保留历史，不当作当前规范。
 
-- [阶段日志](stage-log.md)：按日期检索重要变更。
-- [2026 年 9 月档案](archive/2026-09/README.md)：已完成的阶段方案、调研与验收；归档时修复相对链接，不删除记录。
-- 早期背景：[项目愿景](archive/project-vision.md)、[架构与设计](archive/project-knowledge.md)、[博客方向](archive/BLOG_DIRECTION.md)、[导航方案](archive/blog-navigation-plan.md)。
+维护文档时优先更新对应操作指南；计划、排错过程与数字记录留在阶段日志，不再为同一操作创建多个入口。

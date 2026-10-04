@@ -49,19 +49,7 @@
 
 ### 本机构建环境的区别
 
-本轮普通 `npm run check` 首次失败的原因是 Windows Application Control 阻止 `@bruits/satteri-win32-x64-msvc` 原生模块加载，错误码为 `ERR_DLOPEN_FAILED`；不是文章内容错误，也不是缺失 MD 字段。没有关闭系统策略或更改生产依赖来解决。
-
-为继续验证，使用相同版本的官方 `@bruits/satteri-wasm32-wasi@0.10.5`，仅安装在被忽略的 `.tmp/admin-wasi/` 下。该包声明 `cpu: wasm32`，所以隔离安装使用 npm `--force --ignore-scripts`，仅跳过包的 CPU 安装检查，不执行原生文件或关闭 Windows 策略；生产 `package.json`／锁文件未增加此依赖。通过依赖自带的 `NAPI_RS_FORCE_WASI=true` 与进程级 `NODE_PATH` 运行完整检查，结果如上，WASI 仍会输出实验性提示。
-
-若此工作区仍保留验证目录，可在 PowerShell 的**单独终端**使用：
-
-```powershell
-$env:NODE_PATH = (Resolve-Path '.tmp/admin-wasi/node_modules').Path
-$env:NAPI_RS_FORCE_WASI = 'true'
-npm run check
-```
-
-同一终端运行 `npm run dev` 可使用相同后端预览；普通 `npm run admin` 不依赖该原生模块。临时目录不会提交，其他电脑不应依赖它。Windows 原生加载限制尚未解决，不能把此验收描述为“普通环境无条件构建通过”；也未据此宣称 GitHub Actions 或线上部署已经完成。
+当前排错与启动步骤统一维护在 [维护指南](maintenance.md#windows-本机原生模块加载失败)。本轮验证使用该文描述的隔离 WASI 后端；以下测试数和部署结果保留当时记录。
 
 ## 提交前审查（2026-09-15）
 

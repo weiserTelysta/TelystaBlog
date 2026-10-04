@@ -51,7 +51,7 @@ export const BLOG_SERIES = [
 		descriptionEn: "Notes on Rhaelysa's character design, ideas, and development.",
 	},
 	{
-		id: 'serava-notes',
+		id: 'mirelle-notes',
 		category: 'portraits',
 		title: 'Mirelle 札记',
 		titleEn: 'Notes on Mirelle',

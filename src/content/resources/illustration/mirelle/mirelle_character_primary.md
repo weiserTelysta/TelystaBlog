@@ -1,5 +1,5 @@
 ---
-id: serava_character_primary
+id: mirelle_character_primary
 title: Mirelle Official Outfit Reference
 summary: Official outfit reference materials for Mirelle
 type: illustration

@@ -140,14 +140,14 @@ guihui
 使用 `--with-assets` 时会创建文章旁边的同名目录：
 
 ```txt
-src/content/weiser-posts/portraits/serava-note.md
-src/content/weiser-posts/portraits/serava-note/reference-01.png
+src/content/weiser-posts/portraits/mirelle-note.md
+src/content/weiser-posts/portraits/mirelle-note/reference-01.png
 ```
 
 Markdown 引用：
 
 ```md
-![图片说明](serava-note/reference-01.png)
+![图片说明](mirelle-note/reference-01.png)
 ```
 
 这里保存原始 PNG、JPG 或 JPEG，Astro 在构建时生成显示版本。不要手工维护哈希文件或 `.preview.webp`。

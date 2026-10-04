@@ -66,7 +66,7 @@ export const HOME_PROFILES: HomeProfile[] = [
 		weight: 1,
 	},
 	{
-		id: 'serava',
+		id: 'mirelle',
 		name: 'Mirelle',
 		avatar: createCdnAvatar('Profile_Mirelle.avatar.webp'),
 		alt: 'Mirelle avatar',
