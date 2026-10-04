@@ -705,6 +705,23 @@
       },
       "sources": []
     },
+    "avatars/Profile_Mirelle": {
+      "display": {
+        "path": "avatars/Profile_Mirelle.avatar.webp",
+        "bytes": 57264,
+        "format": "WEBP",
+        "width": 384,
+        "height": 384
+      },
+      "original": {
+        "path": "avatars/Profile_Mirelle.png",
+        "bytes": 262856,
+        "format": "PNG",
+        "width": 423,
+        "height": 423
+      },
+      "sources": []
+    },
     "avatars/Profile_Rhaelysa_01": {
       "display": {
         "path": "avatars/Profile_Rhaelysa_01.avatar.webp",
@@ -736,23 +753,6 @@
         "format": "PNG",
         "width": 671,
         "height": 671
-      },
-      "sources": []
-    },
-    "avatars/Profile_Serava": {
-      "display": {
-        "path": "avatars/Profile_Serava.avatar.webp",
-        "bytes": 57264,
-        "format": "WEBP",
-        "width": 384,
-        "height": 384
-      },
-      "original": {
-        "path": "avatars/Profile_Serava.png",
-        "bytes": 262856,
-        "format": "PNG",
-        "width": 423,
-        "height": 423
       },
       "sources": []
     },
@@ -1959,6 +1959,88 @@
       },
       "sources": []
     },
+    "Mirelle/mirelle_officialoutfit_design": {
+      "display": {
+        "path": "telysta-images/Mirelle/mirelle_officialoutfit_design.webp",
+        "bytes": 1068184,
+        "format": "WEBP",
+        "width": 3200,
+        "height": 1903
+      },
+      "original": {
+        "path": "telysta-images/Mirelle/mirelle_officialoutfit_design.png",
+        "bytes": 25259999,
+        "format": "PNG",
+        "width": 7188,
+        "height": 4274
+      },
+      "sources": []
+    },
+    "Mirelle/mirelle_officialoutfit_illustration_01": {
+      "display": {
+        "path": "telysta-images/Mirelle/mirelle_officialoutfit_illustration_01.webp",
+        "bytes": 4434994,
+        "format": "WEBP",
+        "width": 2187,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Mirelle/mirelle_officialoutfit_illustration_01.png",
+        "bytes": 18990109,
+        "format": "PNG",
+        "width": 2524,
+        "height": 3693
+      },
+      "sources": [],
+      "cover": {
+        "path": "covers/Mirelle/mirelle_officialoutfit_illustration_01.77aaf291bd358d2f1af060b522f7c1bd6fefab0d6b2c8501d7080631b52c3e55.webp",
+        "bytes": 378734,
+        "format": "WEBP",
+        "width": 656,
+        "height": 960
+      }
+    },
+    "Mirelle/mirelle_officialoutfit_unveil": {
+      "display": {
+        "path": "telysta-images/Mirelle/mirelle_officialoutfit_unveil.webp",
+        "bytes": 2376874,
+        "format": "WEBP",
+        "width": 2766,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Mirelle/mirelle_officialoutfit_unveil.png",
+        "bytes": 90493760,
+        "format": "PNG",
+        "width": 7080,
+        "height": 8192
+      },
+      "sources": []
+    },
+    "Mirelle/mirelle_officialoutfit_veil": {
+      "display": {
+        "path": "telysta-images/Mirelle/mirelle_officialoutfit_veil.webp",
+        "bytes": 2334604,
+        "format": "WEBP",
+        "width": 2766,
+        "height": 3200
+      },
+      "original": {
+        "path": "telysta-images/Mirelle/mirelle_officialoutfit_veil.png",
+        "bytes": 90806394,
+        "format": "PNG",
+        "width": 7080,
+        "height": 8192
+      },
+      "sources": [],
+      "cover": {
+        "path": "covers/Mirelle/mirelle_officialoutfit_veil.8f13de778f3f440a2f7249ec326fa8868de5d31a613fb53c0d9c088fd9b06772.webp",
+        "bytes": 156948,
+        "format": "WEBP",
+        "width": 830,
+        "height": 960
+      }
+    },
     "Rhaelysa/rhaelysa_officialoutfit_design": {
       "display": {
         "path": "telysta-images/Rhaelysa/rhaelysa_officialoutfit_design.webp",
@@ -2064,88 +2146,6 @@
         "height": 5213
       },
       "sources": []
-    },
-    "Serava/serava_officialoutfit_design": {
-      "display": {
-        "path": "telysta-images/Serava/serava_officialoutfit_design.webp",
-        "bytes": 1068184,
-        "format": "WEBP",
-        "width": 3200,
-        "height": 1903
-      },
-      "original": {
-        "path": "telysta-images/Serava/serava_officialoutfit_design.png",
-        "bytes": 25259999,
-        "format": "PNG",
-        "width": 7188,
-        "height": 4274
-      },
-      "sources": []
-    },
-    "Serava/serava_officialoutfit_illustration_01": {
-      "display": {
-        "path": "telysta-images/Serava/serava_officialoutfit_illustration_01.webp",
-        "bytes": 4434994,
-        "format": "WEBP",
-        "width": 2187,
-        "height": 3200
-      },
-      "original": {
-        "path": "telysta-images/Serava/serava_officialoutfit_illustration_01.png",
-        "bytes": 18990109,
-        "format": "PNG",
-        "width": 2524,
-        "height": 3693
-      },
-      "sources": [],
-      "cover": {
-        "path": "covers/Serava/serava_officialoutfit_illustration_01.77aaf291bd358d2f1af060b522f7c1bd6fefab0d6b2c8501d7080631b52c3e55.webp",
-        "bytes": 378734,
-        "format": "WEBP",
-        "width": 656,
-        "height": 960
-      }
-    },
-    "Serava/serava_officialoutfit_unveil": {
-      "display": {
-        "path": "telysta-images/Serava/serava_officialoutfit_unveil.webp",
-        "bytes": 2376874,
-        "format": "WEBP",
-        "width": 2766,
-        "height": 3200
-      },
-      "original": {
-        "path": "telysta-images/Serava/serava_officialoutfit_unveil.png",
-        "bytes": 90493760,
-        "format": "PNG",
-        "width": 7080,
-        "height": 8192
-      },
-      "sources": []
-    },
-    "Serava/serava_officialoutfit_veil": {
-      "display": {
-        "path": "telysta-images/Serava/serava_officialoutfit_veil.webp",
-        "bytes": 2334604,
-        "format": "WEBP",
-        "width": 2766,
-        "height": 3200
-      },
-      "original": {
-        "path": "telysta-images/Serava/serava_officialoutfit_veil.png",
-        "bytes": 90806394,
-        "format": "PNG",
-        "width": 7080,
-        "height": 8192
-      },
-      "sources": [],
-      "cover": {
-        "path": "covers/Serava/serava_officialoutfit_veil.8f13de778f3f440a2f7249ec326fa8868de5d31a613fb53c0d9c088fd9b06772.webp",
-        "bytes": 156948,
-        "format": "WEBP",
-        "width": 830,
-        "height": 960
-      }
     },
     "Telysta/Telysta_Central-Asia_clouth_half_body": {
       "display": {

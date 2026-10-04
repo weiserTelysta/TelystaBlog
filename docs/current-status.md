@@ -1,6 +1,6 @@
 # 当前状态
 
-核对日期：2026-10-03。滚动性能与文档整理见 [本轮记录](scroll-performance-2026-10-02.md)。2026-09-29 的 R2 清理与三组资源更新见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。正文图片点击放大的范围与验证见 [验收记录](archive/2026-09/article-image-viewer-2026-09-24.md)。此前 WikiLink 与角色虹彩／资源更新分别见 [WikiLink 记录](wikilinks-2026-09-21.md) 和 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
+核对日期：2026-10-04。滚动性能与文档整理见 [本轮记录](scroll-performance-2026-10-02.md)。2026-09-29 的 R2 清理与三组资源更新见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。正文图片点击放大的范围与验证见 [验收记录](archive/2026-09/article-image-viewer-2026-09-24.md)。此前 WikiLink 与角色虹彩／资源更新分别见 [WikiLink 记录](wikilinks-2026-09-21.md) 和 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
 
 ## 已完成
 
@@ -9,7 +9,9 @@
 - About 使用 `src/pages/about.md` 维护，入口与首页 Resource Index 同级；新增 robots、自动 sitemap 和站点／作者／文章 JSON-LD。星空改用暂停感知的动画时间，恢复时不再跳动，详见 [执行记录](seo-about-2026-10-02.md)。
 - 全站恢复原生滚轮／触摸滚动；星空缓存渐变、限制绘制频率并在滚动时暂停；进度条直接跟随拖动。`Notes` 目录规范为 `notes`，既有文章 URL 与评论映射不变。11 份完成的阶段记录归档。
 
-- Sylvaena 现统一更名为 Serava：分类、首页身份、资源和 R2 地址已同步，コクノコ委托保留原名与旧页面地址；Telysta 插画日志补齐两组作品。见 [更名记录](archive/2026-09/serava-rename-2026-09-29.md)。
+- 角色现用名为 Mirelle（2026-10-04），分类、首页身份、系列与资源统一英文名；中文名仅写入设计理念文章。R2 新路径与旧链接兼容策略见 [本轮记录](mirelle-rename-2026-10-04.md)。
+
+- 2026-09-29 曾将 Sylvaena 更名为 Serava：分类、首页身份、资源和 R2 地址已同步，コクノコ委托保留原名与旧页面地址；Telysta 插画日志补齐两组作品。见 [更名记录](archive/2026-09/serava-rename-2026-09-29.md)。
 
 - 博客正文普通图片自动支持点击放大、滚轮／触摸缩放，关闭后恢复焦点与阅读位置；按需加载，保留作者图片链接与模块失败回退。见 [图片放大记录](archive/2026-09/article-image-viewer-2026-09-24.md)。
 

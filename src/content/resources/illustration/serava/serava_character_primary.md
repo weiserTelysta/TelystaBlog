@@ -1,20 +1,20 @@
 ---
 id: serava_character_primary
-title: Serava Official Outfit Reference
-summary: Official outfit reference materials for Serava
+title: Mirelle Official Outfit Reference
+summary: Official outfit reference materials for Mirelle
 type: illustration
 status: available
-image: asset:Serava/serava_officialoutfit_veil
+image: asset:Mirelle/mirelle_officialoutfit_veil
 gallery:
-  - src: asset:Serava/serava_officialoutfit_veil
+  - src: asset:Mirelle/mirelle_officialoutfit_veil
     label: "01"
-    alt: Draft Serava character primary image 01
-  - src: asset:Serava/serava_officialoutfit_unveil
+    alt: Draft Mirelle character primary image 01
+  - src: asset:Mirelle/mirelle_officialoutfit_unveil
     label: "02"
-    alt: Draft Serava character primary image 02
-  - src: asset:Serava/serava_officialoutfit_design
+    alt: Draft Mirelle character primary image 02
+  - src: asset:Mirelle/mirelle_officialoutfit_design
     label: "03"
-    alt: Draft Serava character primary image 03
+    alt: Draft Mirelle character primary image 03
 publishedAt: 2026-07-01
 updatedAt: 2026-07-01
 formats:

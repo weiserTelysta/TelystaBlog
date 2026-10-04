@@ -53,10 +53,10 @@ export const BLOG_SERIES = [
 	{
 		id: 'serava-notes',
 		category: 'portraits',
-		title: 'Serava 札记',
-		titleEn: 'Notes on Serava',
-		description: '关于 Serava 的人物设定、净化之火与视觉创作记录。',
-		descriptionEn: "Notes on Serava's character design, cleansing fire, and visual development.",
+		title: 'Mirelle 札记',
+		titleEn: 'Notes on Mirelle',
+		description: '关于 Mirelle 的人物设定、净化之火与视觉创作记录。',
+		descriptionEn: "Notes on Mirelle's character design, cleansing fire, and visual development.",
 	},
 	{
 		id: 'plants-in-their-season',

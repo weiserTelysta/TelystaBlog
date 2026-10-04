@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { RESOURCE_PAGE_CONFIG } from '../../src/config/pages/resources';
 
 const groups = [
-	{ title: 'Serava · 礼魂插画', images: ['serava_officialoutfit_illustration_01'] },
+	{ title: 'Mirelle · 礼魂插画', images: ['mirelle_officialoutfit_illustration_01'] },
 	{ title: 'Telysta · 细剑版服饰', images: ['Telysta_officialoutfit_fullbody_slimsword', 'Telysta_officialoutfit_design_slimsword', 'Telysta_officialoutfit_sword_slimsword'] },
 	{ title: 'Telysta · 新服饰设计', images: ['Telysta_freestyle_fullbody_02', 'Telysta_freestyle_fullbody_01', 'Telysta_freestyle_design_01', 'Telysta_freestyle_sketch_01'] },
 ];

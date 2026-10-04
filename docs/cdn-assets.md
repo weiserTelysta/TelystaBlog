@@ -2,6 +2,8 @@
 
 插画原图与 WebP、Character 图片和首页轮换头像存放在 Cloudflare R2 bucket `telysta-blog-assets`，并通过自定义域名 `https://assets.telysta.com` 分发。当前对象前缀为 `telysta-images/`、`characters/`、`avatars/`、文章配图 `blog_imgs/` 和独立列表封面的 `covers/`。自 2026-09-29 起，上传允许列表为 PNG／JPG／JPEG／WebP；PSD 已清理，PSD／AI 不再上传。历史对象 `telysta-images/archive/mhs_test_03.ai` 未在本次 PSD 删除范围内，仍保留远端，但不登记在清单。见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。仓库不提交 R2 凭据。
 
+2026-10-04 角色现行素材改用 Mirelle 路径，旧 Serava／Sylvaena 对象保留兼容已发布引用；日常维护使用新路径，见 [更名记录](mirelle-rename-2026-10-04.md)。
+
 ## 为什么使用清单键
 
 清单生成器现在为原图也记录经过 EXIF 方向校正的宽高。文章直接引用清单中的 JPEG／PNG 原图地址时，可以在下载前预留正确比例；旧清单缺少原图尺寸时需重新生成对应条目，不会借用可能经过裁切的 cover／display 比例，也不会在构建时请求 R2 猜测尺寸。

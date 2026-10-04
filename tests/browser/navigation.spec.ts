@@ -12,7 +12,7 @@ for (const width of [390, 1440]) {
 		const dialog = page.getByRole('dialog');
 		await expect(dialog).toBeVisible();
 		await expect(dialog.locator('.category-accordion__card-title-prefix')).toHaveText([
-			'Weiser', 'Telysta', 'Rhaelysa', 'Alice', 'Serava', 'Rhaelysa', 'Weiser',
+			'Weiser', 'Telysta', 'Rhaelysa', 'Alice', 'Mirelle', 'Rhaelysa', 'Weiser',
 		]);
 		await expect(dialog.locator('.category-accordion__card-title-name')).toHaveText([
 			'Manuscript', 'Collection', 'Letters', 'Reading', 'Life', 'Portrait', 'Notes',
@@ -49,7 +49,7 @@ for (const width of [390, 1440]) {
 test('全部分类页及返回总览的入口使用英文题签', async ({ page }) => {
 	for (const [id, label] of Object.entries({
 		manuscript: "Weiser's Manuscript", collection: "Telysta's Collection", letters: "Rhaelysa's Letters",
-		reading: "Alice's Reading", life: "Serava's Life", portraits: "Rhaelysa's Portrait", notes: "Weiser's Notes",
+		reading: "Alice's Reading", life: "Mirelle's Life", portraits: "Rhaelysa's Portrait", notes: "Weiser's Notes",
 	})) {
 		await page.goto(`/blog/category/${id}/`);
 		await expect(page.locator('.category-accordion__entry-label')).toHaveText('Category');

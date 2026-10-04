@@ -4,7 +4,7 @@ import accordionTelystaImage from '../../assets/images/accordion/accordion_telys
 import accordionRhaelysaImage01 from '../../assets/images/accordion/accordion_rhaelysa_01.webp';
 import accordionRhaelysaImage02 from '../../assets/images/accordion/accordion_rhaelysa_02.webp';
 import accordionAliceImage from '../../assets/images/accordion/accordion_alice.webp';
-import accordionSeravaImage from '../../assets/images/accordion/accordion_serava.webp';
+import accordionMirelleImage from '../../assets/images/accordion/accordion_mirelle.webp';
 import accordionWeiserArtNouveauImage from '../../assets/images/accordion/accordion_weiser_artnouveau.webp';
 
 import {
@@ -79,10 +79,10 @@ const VISUAL_COPY: Record<
 	},
 	life: {
 		cardInscription: {
-			prefix: 'Serava',
+			prefix: 'Mirelle',
 			name: 'Life',
 		},
-		image: accordionSeravaImage,
+		image: accordionMirelleImage,
 		description: '普通日子也会有细小的光，偶尔落在这里。',
 		tone: 'rose',
 	},
