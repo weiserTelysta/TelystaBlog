@@ -7,26 +7,48 @@
 		<link rel="icon" href="data:," />
 		<link rel="stylesheet" href="/style.css" />
 		<link rel="stylesheet" href="/foil.css" />
-		<script src="/app.js" defer></script>
+		<script src="/app.js" type="module"></script>
 	</head>
 	<body>
 		<a class="skip" href="#workspace">跳转到编辑区</a>
 		<header>
 			<div>
 				<span class="eyebrow">TELYSTA / LOCAL</span>
-				<h1>内容与设置</h1>
+				<h1>内容与设置<span class="local-badge">本地工作台</span></h1>
 			</div>
-			<a href="http://127.0.0.1:4321/" target="_blank" rel="noopener"
-				>打开网站预览 ↗</a
-			>
+			<div class="header-tools">
+				<span id="save-state">已读取本地文件</span>
+				<a href="http://127.0.0.1:4321/" target="_blank" rel="noopener"
+					>打开网站预览 ↗</a
+				>
+			</div>
 		</header>
 		<p class="intro">
-			本地后台：<code>npm run admin</code> ·
-			<code>127.0.0.1:4323</code>。网站预览另运行
-			<code>npm run dev</code>；提交和推送仍通过 Git 完成。
+			在这里写作、整理角色与维护网站。保存到本地后，用网站预览核对效果。
 		</p>
 		<div class="layout">
-			<nav id="navigation" aria-label="管理功能"></nav>
+			<aside class="sidebar" data-open="false">
+				<button
+					class="nav-toggle"
+					type="button"
+					aria-expanded="false"
+					aria-controls="navigation-panel"
+				>
+					管理功能 <span id="nav-current">站点身份</span>
+				</button>
+				<div id="navigation-panel">
+					<input
+						id="nav-search"
+						type="search"
+						placeholder="查找功能…"
+						aria-label="查找管理功能"
+					/>
+					<nav id="navigation" aria-label="管理功能"></nav>
+					<p class="sidebar-note">
+						网站预览：<code>npm run dev</code><br />保存后通过 Git 提交与发布。
+					</p>
+				</div>
+			</aside>
 			<main id="workspace" tabindex="-1"><p>正在读取本地配置…</p></main>
 		</div>
 		<p id="status" role="status" aria-live="polite"></p>

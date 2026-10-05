@@ -1,8 +1,10 @@
 # 当前状态
 
-核对日期：2026-10-04。滚动性能与文档整理见 [本轮记录](scroll-performance-2026-10-02.md)。2026-09-29 的 R2 清理与三组资源更新见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。正文图片点击放大的范围与验证见 [验收记录](archive/2026-09/article-image-viewer-2026-09-24.md)。此前 WikiLink 与角色虹彩／资源更新分别见 [WikiLink 记录](wikilinks-2026-09-21.md) 和 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
+核对日期：2026-10-05。滚动性能与文档整理见 [本轮记录](scroll-performance-2026-10-02.md)。2026-09-29 的 R2 清理与三组资源更新见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。正文图片点击放大的范围与验证见 [验收记录](archive/2026-09/article-image-viewer-2026-09-24.md)。此前 WikiLink 与角色虹彩／资源更新分别见 [WikiLink 记录](wikilinks-2026-09-21.md) 和 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
 
 ## 已完成
+
+- 2026-10-05 本地后台整理深色工作台、可搜索导航与手机菜单，新增文章筛选、行级差异、快捷保存和写作助手；支持正文摘要、系列序号建议、问题定位与图片插入。使用本地内容规则，操作与边界见 [后台说明](local-admin.md)。
 
 - 首页 Navigation 恢复每行最多两项，窄屏单列；保留作者恢复的主页文案。系列主标题、条目标题与简介恢复中文，英文只作题签与分类小标题。见 [修正记录](home-series-language-2026-10-03.md)。
 

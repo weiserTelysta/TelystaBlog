@@ -742,14 +742,14 @@ function stripCode(body: string): string {
 		.map((line) => {
 			if (/^\s*(```|~~~)/.test(line)) {
 				insideFence = !insideFence;
-				return '';
+				return ' '.repeat(line.length);
 			}
 
 			if (insideFence) {
-				return '';
+				return ' '.repeat(line.length);
 			}
 
-			return line.replace(/`[^`]*`/g, '');
+			return line.replace(/`[^`]*`/g, match => ' '.repeat(match.length));
 		})
 		.join('\n');
 }

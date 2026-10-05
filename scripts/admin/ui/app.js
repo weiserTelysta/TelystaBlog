@@ -1,6 +1,18 @@
 /* The editor keeps user input in memory on validation or version conflicts. Never render editable HTML. */
+import {
+	diffLines,
+	localDate,
+	imageReference,
+	contentDate,
+} from './workbench.mjs';
 const main = document.querySelector('main');
 const statusMessage = document.querySelector('#status');
+new ResizeObserver(() => {
+	document.documentElement.style.setProperty(
+		'--status-height',
+		`${Math.ceil(statusMessage.getBoundingClientRect().height)}px`,
+	);
+}).observe(statusMessage);
 let token = '',
 	dirty = false,
 	active = '',
@@ -103,6 +115,9 @@ function el(tag, text, className) {
 function message(text = '', error = false) {
 	statusMessage.textContent = text;
 	statusMessage.dataset.error = String(error);
+	const state = document.querySelector('#save-state');
+	state.textContent = dirty ? '有未保存修改' : '无未保存修改';
+	state.dataset.dirty = String(dirty);
 }
 function changed() {
 	dirty = true;
@@ -152,6 +167,7 @@ function toolbar(...buttons) {
 function heading(title, hint) {
 	main.append(el('h2', title));
 	if (hint) main.append(el('p', hint, 'hint'));
+	document.title = `${title} · Telysta 本地管理`;
 }
 function searchBox(placeholder, onInput) {
 	const input = el('input');
@@ -841,15 +857,50 @@ function formField(value, field, key, set, section) {
 	return inputLabel(labels[key] ?? (key || '内容'), input);
 }
 function sourcePreview(previous, proposed) {
-	const area = el('details');
-	area.open = true;
-	area.append(el('summary', '保存前后的完整源码'));
+	const area = el('section', undefined, 'source-review');
+	const rows = diffLines(previous, proposed);
+	const added = rows.filter((row) => row.kind === 'add').length;
+	const removed = rows.filter((row) => row.kind === 'remove').length;
 	area.append(
+		el('h3', '保存差异'),
+		el(
+			'p',
+			rows.length ? `新增 ${added} 行 · 移除 ${removed} 行` : '内容没有变化',
+			'hint',
+		),
+	);
+	const diff = el('div', undefined, 'source-diff');
+	diff.setAttribute('aria-label', '逐行源码差异');
+	let sameRun = 0;
+	for (const row of rows.slice(0, 1200)) {
+		sameRun = row.kind === 'same' ? sameRun + 1 : 0;
+		if (sameRun > 4) {
+			if (sameRun === 5) diff.append(el('div', '… 未修改的内容 …', 'diff-gap'));
+			continue;
+		}
+		const line = el('div', undefined, `diff-line diff-${row.kind}`);
+		line.append(
+			el('span', row.oldLine ?? '', 'line-number'),
+			el('span', row.newLine ?? '', 'line-number'),
+			el('span', { add: '+', remove: '−', same: ' ' }[row.kind], 'diff-sign'),
+			el('code', row.text || ' '),
+		);
+		diff.append(line);
+	}
+	if (rows.length > 1200)
+		diff.append(
+			el('p', '仅显示前 1200 行；展开完整源码查看其余内容。', 'hint'),
+		);
+	if (rows.length) area.append(diff);
+	const full = el('details');
+	full.append(el('summary', '保存前后的完整源码'));
+	full.append(
 		el('h3', '当前文件'),
 		el('pre', previous),
 		el('h3', '将保存'),
 		el('pre', proposed),
 	);
+	area.append(full);
 	return area;
 }
 async function configPage(id, serial) {
@@ -947,11 +998,13 @@ async function configPage(id, serial) {
 	const preview = el('div');
 	const actions = toolbar(
 		button('查看保存差异', async () => {
+			const revision = editRevision;
 			const result = await api(`/api/config?id=${id}`, {
 				version: current.version,
 				value,
 				preview: true,
 			});
+			if (serial !== navigationSerial || revision !== editRevision) return;
 			preview.replaceChildren(sourcePreview(result.previous, result.source));
 			message('已校验，尚未写入文件');
 		}),
@@ -977,6 +1030,7 @@ async function configPage(id, serial) {
 		),
 		button('重新读取', () => navigate(id)),
 	);
+	actions.querySelector('.primary').dataset.save = 'true';
 	actions.classList.add('actions');
 	main.append(preview, actions);
 }
@@ -988,17 +1042,75 @@ async function postsPage(serial) {
 		'新文章先保存为草稿；原文编辑保留 YAML 注释、未知字段与 Markdown 扩展。正文及元数据预检后，使用网站预览核对渲染。',
 	);
 	const list = el('div', undefined, 'post-list');
-	const draw = (query) => {
+	let query = '';
+	const category = el('select'),
+		state = el('select'),
+		sort = el('select');
+	category.append(new Option('全部分类', ''));
+	for (const item of data.categories)
+		category.append(new Option(item.title, item.id));
+	state.append(
+		new Option('全部状态', ''),
+		new Option('草稿', 'draft'),
+		new Option('已公开', 'published'),
+	);
+	sort.append(
+		new Option('最近更新', 'updated'),
+		new Option('最近发布', 'published'),
+		new Option('标题顺序', 'title'),
+	);
+	const count = el('p', undefined, 'list-count');
+	count.setAttribute('aria-live', 'polite');
+	const draw = () => {
 		list.replaceChildren();
-		for (const post of data.posts.filter((p) =>
-			`${p.title} ${p.path}`.toLocaleLowerCase().includes(query),
-		)) {
-			const b = button(String(post.title), () => openPost(post.path));
-			b.append(el('small', `${post.draft ? '草稿 · ' : ''}${post.path}`));
+		const posts = data.posts.filter(
+			(p) =>
+				`${p.title} ${p.path}`.toLocaleLowerCase().includes(query) &&
+				(!category.value || p.category === category.value) &&
+				(!state.value || p.draft === (state.value === 'draft')),
+		);
+		posts.sort((a, b) =>
+			sort.value === 'title'
+				? String(a.title).localeCompare(String(b.title), 'zh-CN')
+				: contentDate(
+						b[sort.value === 'published' ? 'publishedAt' : 'updatedAt'],
+					).localeCompare(
+						contentDate(
+							a[sort.value === 'published' ? 'publishedAt' : 'updatedAt'],
+						),
+					) || a.path.localeCompare(b.path),
+		);
+		count.textContent = `${posts.length} / ${data.posts.length} 篇文章 · ${data.posts.filter((p) => p.draft).length} 篇草稿`;
+		for (const post of posts) {
+			const b = button('', () => openPost(post.path));
+			const title = el('div', undefined, 'post-row-title');
+			title.append(
+				el('strong', String(post.title)),
+				el(
+					'span',
+					post.draft ? '草稿' : '已公开',
+					`post-badge ${post.draft ? 'draft' : ''}`,
+				),
+			);
+			b.append(
+				title,
+				el(
+					'small',
+					`${data.categories.find((c) => c.id === post.category)?.title ?? post.category ?? '未分类'} · ${contentDate(post.updatedAt ?? post.publishedAt) || '日期未填写'}`,
+				),
+			);
+			const location = el('small', post.path, 'post-path');
+			b.append(location);
 			list.append(b);
 		}
+		if (!posts.length)
+			list.append(
+				el('p', '没有匹配的文章，试试调整搜索或筛选条件。', 'empty-state'),
+			);
 	};
-	draw('');
+	for (const input of [category, state, sort])
+		input.addEventListener('change', draw);
+	draw();
 	const title = el('input');
 	title.placeholder = '文章标题';
 	const folder = el('select');
@@ -1014,7 +1126,7 @@ async function postsPage(serial) {
 		inputLabel('分类目录', folder),
 		button('创建草稿编辑页', () => {
 			if (!title.value.trim()) throw new Error('请填写标题');
-			const date = new Date().toLocaleDateString('en-CA');
+			const date = localDate();
 			const filename = `${date}-${title.value
 				.trim()
 				.replace(/[<>:"/\\|?*\u0000-\u001f]/g, '-')
@@ -1026,11 +1138,23 @@ async function postsPage(serial) {
 			});
 		}),
 	);
-	main.append(create, searchBox('搜索文章标题或路径', draw), list);
+	const filters = el('div', undefined, 'post-filters');
+	filters.append(
+		searchBox('搜索文章标题或路径', (q) => {
+			query = q;
+			draw();
+		}),
+		inputLabel('筛选分类', category),
+		inputLabel('文章状态', state),
+		inputLabel('排序', sort),
+	);
+	main.append(create, filters, count, list);
 }
 async function openPost(path) {
 	if (!protectNavigation()) return;
+	const serial = ++navigationSerial;
 	const current = await api(`/api/post?path=${encodeURIComponent(path)}`);
+	if (serial !== navigationSerial) return;
 	editPost(current);
 }
 function editPost(current) {
@@ -1039,7 +1163,7 @@ function editPost(current) {
 	dirty = current.version === null;
 	heading(
 		current.version === null ? '新建草稿' : '编辑文章',
-		'元数据表单先应用到源码，再保存文章。留空的可选字段沿用自动补全；现有文章路径保持不变。',
+		'编辑文章信息与 Markdown，预览和保存会应用表单修改。使用右侧助手检查内容、提取摘要与选择章节序号。',
 	);
 	main.append(el('p', current.path, 'path'));
 	const text = el('textarea', undefined, 'markdown');
@@ -1048,6 +1172,18 @@ function editPost(current) {
 	text.setAttribute('aria-label', 'Markdown 源码');
 	text.addEventListener('input', changed);
 	const preview = el('div');
+	const assistant = el('aside', undefined, 'writing-assistant');
+	assistant.setAttribute('aria-label', '写作助手');
+	const checks = el('div', undefined, 'writing-checks');
+	const suggestions = el('div', undefined, 'writing-suggestions');
+	const stats = el('p', undefined, 'writing-stats');
+	const updateStats = () => {
+		stats.textContent = `${text.value.length.toLocaleString()} 字符 · ${text.value.split('\n').length} 行`;
+		if (checks.children.length)
+			checks.replaceChildren(el('p', '内容已变化，请重新检查。', 'hint'));
+	};
+	text.addEventListener('input', updateStats);
+	updateStats();
 	const editorSource = () => {
 		const normalized = current.source.replace(/\r\n/g, '\n');
 		if (text.value === normalized) return current.source;
@@ -1058,11 +1194,18 @@ function editPost(current) {
 	const metadataPanel = el('details');
 	metadataPanel.open = true;
 	metadataPanel.append(el('summary', '文章信息'));
-	const metadataFields = el('div');
+	const metadataFields = el('div', undefined, 'post-metadata');
+	metadataFields.append(el('p', '正在读取文章信息…', 'hint'));
+	let fieldControls = {},
+		fieldInfo,
+		writing;
 	let pendingFields = false,
 		metadataBasis = '',
 		fieldPatch = {};
 	const renderFields = (info) => {
+		fieldInfo = info;
+		writing = info.writing;
+		fieldControls = {};
 		metadataFields.replaceChildren();
 		metadataBasis = editorSource();
 		fieldPatch = {};
@@ -1111,6 +1254,9 @@ function editPost(current) {
 				input.step = '1';
 			}
 			const labelNode = inputLabel(label, input);
+			fieldControls[key] = input;
+			if (['description', 'descriptionEn', 'tags', 'cover'].includes(key))
+				labelNode.classList.add('wide-field');
 			if (value == null && info.metadata[key] != null && type !== 'checkbox')
 				labelNode.append(
 					el(
@@ -1136,9 +1282,96 @@ function editPost(current) {
 				if (key === 'series' && !input.value) fieldPatch.seriesOrder = null;
 				pendingFields = true;
 				changed();
+				updateStats();
+				if (['series', 'category'].includes(key)) refreshSuggestions();
 			});
 			metadataFields.append(labelNode);
 		}
+		refreshSuggestions();
+	};
+	const refreshSuggestions = () => {
+		if (!fieldInfo) return;
+		suggestions.replaceChildren();
+		const controls = fieldControls;
+		const category = controls.category.value || fieldInfo.metadata.category;
+		for (const option of controls.series.options) {
+			const item = fieldInfo.series.find((s) => s.id === option.value);
+			option.disabled = Boolean(
+				item &&
+				item.category !== category &&
+				option.value !== controls.series.value,
+			);
+		}
+		const selected = fieldInfo.series.find(
+			(s) => s.id === controls.series.value,
+		);
+		controls.seriesOrder.disabled = !controls.series.value;
+		if (
+			writing?.title &&
+			writing.title !== (controls.title.value || fieldInfo.metadata.title)
+		)
+			suggestions.append(
+				el(
+					'p',
+					`正文一级标题为「${writing.title}」。页面优先使用正文标题。`,
+					'hint',
+				),
+				button(
+					'同步正文标题到表单',
+					() => {
+						controls.title.value = writing.title;
+						controls.title.dispatchEvent(new Event('input', { bubbles: true }));
+					},
+					'small',
+				),
+			);
+		if (selected && selected.category !== category)
+			suggestions.append(
+				el(
+					'p',
+					'当前系列与分类不一致，请选择同一分类下的系列。',
+					'field-warning',
+				),
+			);
+		if (writing?.excerpt && writing.excerpt !== controls.description.value)
+			suggestions.append(
+				el('p', writing.excerpt, 'excerpt-suggestion'),
+				button(
+					'使用首段摘要',
+					() => {
+						controls.description.value = writing.excerpt;
+						controls.description.dispatchEvent(
+							new Event('input', { bubbles: true }),
+						);
+						message('摘要建议已填入表单，保存时会应用到源码。');
+					},
+					'small',
+				),
+			);
+		if (selected) {
+			const next = writing?.seriesOrders?.[selected.id] ?? 1;
+			suggestions.append(
+				el(
+					'p',
+					`「${selected.title}」下一个可用序号：${next}（含草稿）`,
+					'hint',
+				),
+				button(
+					'使用建议序号',
+					() => {
+						controls.seriesOrder.value = String(next);
+						controls.seriesOrder.dispatchEvent(
+							new Event('input', { bubbles: true }),
+						);
+					},
+					'small',
+				),
+			);
+		}
+		if (!suggestions.children.length)
+			suggestions.append(
+				el('p', '从正文首段提取摘要；选择系列后可查看章节序号建议。', 'hint'),
+			);
 	};
 	const reloadFields = async () => {
 		if (
@@ -1149,8 +1382,38 @@ function editPost(current) {
 		const source = editorSource(),
 			revision = editRevision;
 		const info = await api('/api/post-fields', { path: current.path, source });
-		if (serial !== navigationSerial || revision !== editRevision) return;
+		if (serial !== navigationSerial) return;
+		if (revision !== editRevision) {
+			if (!fieldInfo)
+				setTimeout(() => {
+					if (serial === navigationSerial && !fieldInfo)
+						reloadFields().catch((error) => {
+							metadataFields.replaceChildren(el('p', error.message, 'hint'));
+						});
+				}, 350);
+			return;
+		}
 		renderFields(info);
+	};
+	const applyFields = async () => {
+		if (!pendingFields) return;
+		if (metadataBasis !== editorSource())
+			throw new Error(
+				'读取表单后源码已变化，请先复制字段输入，再从源码重新读取。',
+			);
+		const revision = editRevision;
+		const info = await api('/api/post-fields', {
+			path: current.path,
+			source: editorSource(),
+			patch: fieldPatch,
+		});
+		if (serial !== navigationSerial || revision !== editRevision)
+			throw new Error('等待期间输入已变化，已保留当前输入，请重新应用。');
+		text.value = info.source;
+		changed();
+		updateStats();
+		renderFields(info);
+		preview.replaceChildren();
 	};
 	metadataPanel.append(
 		metadataFields,
@@ -1159,22 +1422,7 @@ function editPost(current) {
 			button(
 				'应用字段到源码',
 				async () => {
-					if (metadataBasis !== editorSource())
-						throw new Error(
-							'读取表单后源码已变化，请先复制字段输入，再从源码重新读取。',
-						);
-					const revision = editRevision;
-					const info = await api('/api/post-fields', {
-						path: current.path,
-						source: editorSource(),
-						patch: fieldPatch,
-					});
-					if (serial !== navigationSerial || revision !== editRevision)
-						throw new Error('等待期间输入已变化，已保留当前输入，请重新应用。');
-					text.value = info.source;
-					changed();
-					renderFields(info);
-					preview.replaceChildren();
+					await applyFields();
 					message('字段已应用到源码，尚未保存文件。');
 				},
 				'primary',
@@ -1182,22 +1430,86 @@ function editPost(current) {
 		),
 	);
 	reloadFields().catch((error) => {
+		if (serial !== navigationSerial) return;
 		metadataFields.replaceChildren(el('p', error.message, 'hint'));
 	});
-	const ensureFieldsApplied = () => {
-		if (pendingFields)
-			throw new Error(
-				'请先点击「应用字段到源码」，或重新读取表单放弃字段修改。',
-			);
+	const jumpToLine = (line) => {
+		const lines = text.value.split('\n');
+		const start = lines
+			.slice(0, line - 1)
+			.reduce((sum, value) => sum + value.length + 1, 0);
+		text.focus();
+		text.setSelectionRange(start, start + (lines[line - 1]?.length ?? 0));
+		text.scrollTop = Math.max(
+			0,
+			(line - 4) * parseFloat(getComputedStyle(text).lineHeight),
+		);
 	};
+	assistant.append(
+		el('span', 'WRITING NOTES', 'eyebrow'),
+		el('h3', '写作助手'),
+		el('p', '检查当前内容，建议由你选择使用。', 'hint'),
+		stats,
+		button('检查当前文章', async () => {
+			await applyFields();
+			const revision = editRevision;
+			const result = await api('/api/post-assist', {
+				path: current.path,
+				source: editorSource(),
+			});
+			if (serial !== navigationSerial || revision !== editRevision) return;
+			writing = result.writing;
+			refreshSuggestions();
+			checks.replaceChildren();
+			const problems = [
+				...result.issues,
+				...result.writing.hints.map((h) => ({ ...h, severity: 'hint' })),
+			];
+			checks.append(
+				el(
+					'p',
+					result.issues.some((i) => i.severity === 'error')
+						? '请先修正以下内容'
+						: '内容检查通过',
+					'check-summary',
+				),
+			);
+			for (const issue of problems) {
+				const prefix = `${issue.severity === 'error' ? '需修正' : issue.severity === 'hint' ? '格式建议' : '提醒'}${issue.filePath && issue.filePath !== current.path ? ` · ${issue.filePath}` : ''}${issue.line ? ` · 第 ${issue.line} 行` : ''}`;
+				const node =
+					issue.line && (!issue.filePath || issue.filePath === current.path)
+						? button(
+								`${prefix}：${issue.message}`,
+								() => jumpToLine(issue.line),
+								'issue-link',
+							)
+						: el('p', `${prefix}：${issue.message}`, 'hint');
+				checks.append(node);
+			}
+			if (!problems.length)
+				checks.append(
+					el(
+						'p',
+						'未发现内容问题。发布前仍需运行项目检查并核对网站效果。',
+						'hint',
+					),
+				);
+			message('已检查当前文章，尚未写入文件。');
+		}),
+		checks,
+		el('h3', '可用建议'),
+		suggestions,
+	);
 	const actions = toolbar(
 		button('校验与预览', async () => {
-			ensureFieldsApplied();
+			await applyFields();
+			const revision = editRevision;
 			const result = await api('/api/post', {
 				...current,
 				source: editorSource(),
 				preview: true,
 			});
+			if (serial !== navigationSerial || revision !== editRevision) return;
 			const frame = el('iframe');
 			frame.title = '草稿正文预览';
 			frame.setAttribute('sandbox', '');
@@ -1222,7 +1534,7 @@ function editPost(current) {
 		button(
 			'保存文章',
 			async () => {
-				ensureFieldsApplied();
+				await applyFields();
 				const source = editorSource(),
 					revision = editRevision;
 				const result = await api('/api/post', {
@@ -1245,8 +1557,116 @@ function editPost(current) {
 		),
 		button('返回文章列表', () => navigate('posts')),
 	);
+	actions.querySelector('.primary').dataset.save = 'true';
 	actions.classList.add('actions');
-	main.append(metadataPanel, text, preview, actions);
+	const editor = el('section', undefined, 'writing-editor');
+	const writingLayout = el('div', undefined, 'writing-layout');
+	const insert = (before, after = '') => {
+		const start = text.selectionStart,
+			end = text.selectionEnd;
+		text.setRangeText(
+			before + text.value.slice(start, end) + after,
+			start,
+			end,
+			'select',
+		);
+		text.focus();
+		text.dispatchEvent(new Event('input', { bubbles: true }));
+	};
+	const imagePanel = el('section', undefined, 'inline-media');
+	imagePanel.hidden = true;
+	imagePanel.setAttribute('aria-label', '文章图片选择');
+	const chooseImage = async () => {
+		if (!imagePanel.hidden) {
+			imagePanel.hidden = true;
+			text.focus();
+			return;
+		}
+		const range = [text.selectionStart, text.selectionEnd],
+			basis = text.value,
+			revision = editRevision;
+		const media = await api('/api/media');
+		if (serial !== navigationSerial || revision !== editRevision) return;
+		const alt = el('input');
+		alt.placeholder = '描述图片内容，例如：Telysta 身着中亚风格服饰';
+		const grid = el('div', undefined, 'inline-media-grid');
+		const draw = (query) => {
+			grid.replaceChildren();
+			const matches = media.filter(
+				(item) =>
+					imageReference(item, current.path) &&
+					item.label.toLocaleLowerCase().includes(query),
+			);
+			for (const item of matches.slice(0, 24)) {
+				const b = button(
+					'',
+					() => {
+						if (!alt.value.trim()) throw new Error('请先填写图片说明。');
+						if (basis !== text.value)
+							throw new Error(
+								'选择图片期间源码已变化，请重新打开图片选择以定位插入位置。',
+							);
+						const caption = alt.value
+							.trim()
+							.replace(/[\r\n]/g, ' ')
+							.replace(/[\\\[\]]/g, '\\$&');
+						text.setSelectionRange(...range);
+						insert(
+							`\n\n![${caption}](<${imageReference(item, current.path)}>)\n\n`,
+						);
+						imagePanel.hidden = true;
+						message('图片引用已插入源码，尚未保存。');
+					},
+					'inline-media-item',
+				);
+				const img = el('img');
+				img.src = item.url;
+				img.alt = '';
+				img.loading = 'lazy';
+				b.append(img, el('span', item.label));
+				grid.append(b);
+			}
+			if (!matches.length) grid.append(el('p', '没有匹配的图片。', 'hint'));
+			if (matches.length > 24)
+				grid.append(
+					el(
+						'p',
+						`显示前 24 张，共 ${matches.length} 张；输入名称缩小范围。`,
+						'hint',
+					),
+				);
+		};
+		const search = searchBox('搜索可插入的图片', draw);
+		imagePanel.replaceChildren(
+			el('h3', '选择文章图片'),
+			inputLabel('图片说明', alt),
+			search,
+			grid,
+			button(
+				'关闭图片选择',
+				() => {
+					imagePanel.hidden = true;
+					text.focus();
+				},
+				'small',
+			),
+		);
+		draw('');
+		imagePanel.hidden = false;
+		alt.focus();
+	};
+	const tools = toolbar(
+		button('二级标题', () => insert('\n\n## ', '\n\n'), 'small'),
+		button('加粗', () => insert('**', '**'), 'small'),
+		button('引用', () => insert('\n\n> ', '\n\n'), 'small'),
+		button('链接', () => insert('[', '](https://)'), 'small'),
+		button('插入图片', chooseImage, 'small'),
+	);
+	tools.classList.add('markdown-tools');
+	editor.append(metadataPanel, tools, imagePanel, text);
+	writingLayout.append(editor, assistant);
+	main.append(writingLayout, preview, actions);
+	message(dirty ? '新草稿尚未保存。' : '已读取文章。');
 }
 async function mediaPage(serial) {
 	const media = await api('/api/media');
@@ -1354,13 +1774,19 @@ async function navigate(id) {
 	dirty = false;
 	active = id;
 	const serial = ++navigationSerial;
-	main.replaceChildren();
+	main.replaceChildren(el('p', '正在读取…', 'hint'));
+	main.setAttribute('aria-busy', 'true');
 	message();
 	for (const b of document.querySelectorAll('nav button')) {
-		if (b.dataset.id === id) b.setAttribute('aria-current', 'page');
-		else b.removeAttribute('aria-current');
+		if (b.dataset.id === id) {
+			b.setAttribute('aria-current', 'page');
+			document.querySelector('#nav-current').textContent = b.textContent;
+		} else b.removeAttribute('aria-current');
 	}
+	document.querySelector('.sidebar').dataset.open = 'false';
+	document.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false');
 	try {
+		main.replaceChildren();
 		if (id === 'posts') await postsPage(serial);
 		else if (id === 'media') await mediaPage(serial);
 		else if (id === 'history') await historyPage(serial);
@@ -1373,6 +1799,8 @@ async function navigate(id) {
 				button('重新读取', () => navigate(active)),
 			);
 		}
+	} finally {
+		if (serial === navigationSerial) main.removeAttribute('aria-busy');
 	}
 }
 async function start() {
@@ -1393,7 +1821,8 @@ async function start() {
 			['posts', 'media', 'blog', 'article', 'resources', 'history'],
 		],
 	]) {
-		nav.append(el('h2', title));
+		const group = el('section', undefined, 'nav-group');
+		group.append(el('h2', title));
 		for (const id of ids) {
 			const b = button(
 				names[id] ??
@@ -1401,9 +1830,57 @@ async function start() {
 				() => navigate(id),
 			);
 			b.dataset.id = id;
-			nav.append(b);
+			group.append(b);
 		}
+		nav.append(group);
 	}
+	const navSearch = document.querySelector('#nav-search');
+	navSearch.addEventListener('input', () => {
+		const query = navSearch.value.trim().toLocaleLowerCase();
+		for (const group of nav.children) {
+			for (const b of group.querySelectorAll('button'))
+				b.hidden = !b.textContent.toLocaleLowerCase().includes(query);
+			group.hidden = !group.querySelector('button:not([hidden])');
+		}
+	});
+	document.querySelector('.nav-toggle').addEventListener('click', () => {
+		const sidebar = document.querySelector('.sidebar');
+		const open = sidebar.dataset.open !== 'true';
+		sidebar.dataset.open = String(open);
+		document
+			.querySelector('.nav-toggle')
+			.setAttribute('aria-expanded', String(open));
+	});
+	document.addEventListener('keydown', (event) => {
+		if (!(event.ctrlKey || event.metaKey) || event.altKey) return;
+		if (event.key.toLowerCase() === 's') {
+			const save = main.querySelector('[data-save]');
+			if (!save) return;
+			event.preventDefault();
+			if (!save.disabled) save.click();
+		}
+		if (event.key.toLowerCase() === 'k') {
+			event.preventDefault();
+			document.querySelector('.sidebar').dataset.open = 'true';
+			document
+				.querySelector('.nav-toggle')
+				.setAttribute('aria-expanded', 'true');
+			navSearch.focus();
+		}
+	});
+	document.addEventListener('focusin', (event) => {
+		if (
+			!main.contains(event.target) ||
+			!event.target.matches('input, select, textarea, button')
+		)
+			return;
+		const bar = main.querySelector('.actions');
+		if (!bar || bar.contains(event.target)) return;
+		const bounds = event.target.getBoundingClientRect(),
+			actions = bar.getBoundingClientRect();
+		if (bounds.bottom > actions.top && bounds.top < actions.bottom)
+			event.target.scrollIntoView({ block: 'center' });
+	});
 	await navigate('site');
 }
 start().catch((e) => message(e.message, true));

@@ -14,6 +14,7 @@ import {
 	parseContentDocument,
 	validatePostDocuments,
 	validatePostLinks,
+	type ValidationIssue,
 } from '../lib/content-validation';
 import { getWeightedGreeting } from '../../src/lib/homeGreeting';
 import type { HomeGreeting } from '../../src/config/pages/homeGreetings';
@@ -22,6 +23,8 @@ import { renderPostPreview } from './post-preview';
 import { readCatalog, createCatalogEntry, uploadQr } from './catalog';
 import { SOCIAL_ICON_PATHS } from '../../src/config/visuals/socialIcons';
 import { FOIL_PRESETS } from '../../src/config/visuals/foilPresets';
+import { writingContext } from './post-assist';
+import { resolvePostTitle } from '../../src/lib/markdownTitle';
 
 const exec = promisify(execFile);
 const directory = path.dirname(fileURLToPath(import.meta.url));
@@ -38,6 +41,10 @@ const staticFiles: Record<string, { file: string; type: string }> = {
 	'/style.css': {
 		file: path.join(directory, 'ui/style.css'),
 		type: 'text/css; charset=utf-8',
+	},
+	'/workbench.mjs': {
+		file: path.join(directory, 'ui/workbench.mjs'),
+		type: 'text/javascript; charset=utf-8',
 	},
 	'/foil.css': {
 		file: path.join(projectRoot, 'src/styles/category-foil.css'),
@@ -107,7 +114,11 @@ export function createAdminServer(root = projectRoot) {
 			throw new AdminError('只允许编辑文章 Markdown');
 		return value;
 	};
-	async function inspectPost(relative: string, source: string) {
+	async function inspectPost(
+		relative: string,
+		source: string,
+		reportOnly = false,
+	) {
 		const file = await safePath(root, relative, true);
 		const catalog = await readCatalog(root);
 		const categories = (
@@ -125,35 +136,45 @@ export function createAdminServer(root = projectRoot) {
 			categoryIds,
 		);
 		const meta = document.frontmatter;
+		const fieldIssues: ValidationIssue[] = [];
+		const fieldError = (message: string) =>
+			fieldIssues.push({
+				severity: 'error',
+				code: 'admin-field',
+				filePath: relative,
+				message,
+			});
 		if (typeof meta.series === 'string') {
 			const series = catalog.series.value as Record<string, Value>[];
 			const selected = series.find((item) => item.id === meta.series);
 			if (selected && selected.category !== meta.category)
-				throw new AdminError('所选系列与文章分类不一致，请同时核对分类和系列');
+				fieldError('所选系列与文章分类不一致，请同时核对分类和系列');
 		}
 		if (meta.draft !== undefined && typeof meta.draft !== 'boolean')
-			throw new AdminError('draft 必须是 true 或 false');
+			fieldError('draft 必须是 true 或 false');
 		if (
 			meta.tags !== undefined &&
 			(!Array.isArray(meta.tags) ||
 				meta.tags.some((t) => typeof t !== 'string'))
 		)
-			throw new AdminError('tags 必须是字符串列表');
+			fieldError('tags 必须是字符串列表');
 		for (const key of ['cover', 'series'])
 			if (meta[key] !== undefined && typeof meta[key] !== 'string')
-				throw new AdminError(`${key} 必须是字符串`);
+				fieldError(`${key} 必须是字符串`);
 		const documents = loadContentDocuments(root, categoryIds).filter(
 			(item) => item.relativePath !== relative,
 		);
 		const issues = [
+			...fieldIssues,
 			...document.parseIssues,
 			...validatePostDocuments([...documents, document], root, {
 				categories,
 				series: seriesIds,
 			}),
-		].filter((issue) => issue.filePath === relative)
+		]
+			.filter((issue) => issue.filePath === relative)
 			.concat(validatePostLinks([...documents, document]));
-		if (issues.some((issue) => issue.severity === 'error'))
+		if (!reportOnly && issues.some((issue) => issue.severity === 'error'))
 			throw new AdminError(
 				issues
 					.map(
@@ -164,7 +185,11 @@ export function createAdminServer(root = projectRoot) {
 			);
 		return {
 			metadata: document.frontmatter,
-			warnings: issues.map((issue) => issue.message),
+			warnings: issues
+				.filter((issue) => issue.severity === 'warning')
+				.map((issue) => issue.message),
+			issues,
+			writing: writingContext(source, relative, documents),
 		};
 	}
 	async function collectMedia() {
@@ -517,9 +542,16 @@ export function createAdminServer(root = projectRoot) {
 					.filter((d) => d.kind === 'post')
 					.map((d) => ({
 						path: d.relativePath,
-						title: d.frontmatter.title ?? path.basename(d.filePath),
+						title: resolvePostTitle(
+							d.body,
+							String(d.frontmatter.title ?? path.basename(d.filePath)),
+						),
 						draft: d.frontmatter.draft === true,
 						category: d.frontmatter.category,
+						publishedAt: d.frontmatter.publishedAt,
+						updatedAt: d.frontmatter.updatedAt,
+						series: d.frontmatter.series,
+						seriesOrder: d.frontmatter.seriesOrder,
 					}));
 				const folders = await fs.readdir(
 					await safePath(root, POST_ROOT.slice(0, -1)),
@@ -527,6 +559,7 @@ export function createAdminServer(root = projectRoot) {
 				);
 				return send({
 					posts,
+					categories: catalog.categories.value,
 					folders: folders
 						.filter((f) => f.isDirectory() && !f.isSymbolicLink())
 						.map((f) => f.name),
@@ -553,7 +586,22 @@ export function createAdminServer(root = projectRoot) {
 					),
 					categories,
 					series: catalog.series.value,
+					writing: writingContext(
+						source,
+						relative,
+						loadContentDocuments(
+							root,
+							new Set(categories.map((c) => String(c.id))),
+						),
+					),
 				});
+			}
+			if (url.pathname === '/api/post-assist' && req.method === 'POST') {
+				const data = await payload(req),
+					relative = postPath(data.path);
+				if (typeof data.source !== 'string' || data.source.length > 2e6)
+					throw new AdminError('正文无效或过大');
+				return send(await inspectPost(relative, data.source, true));
 			}
 			if (url.pathname === '/api/post') {
 				if (req.method === 'GET') {

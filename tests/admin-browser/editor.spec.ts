@@ -54,7 +54,7 @@ test('本地表单保存、冲突保留输入、Markdown 与素材入口', async
 		await expect(
 			page.getByRole('heading', { name: '素材选择', exact: true }),
 		).toBeVisible();
-		await page.getByRole('searchbox').fill('wechat');
+		await page.getByRole('searchbox', { name: '搜索素材名称' }).fill('wechat');
 		await expect(page.locator('.media-card')).toHaveCount(1);
 		expect(errors).toEqual([]);
 	} finally {
@@ -189,7 +189,7 @@ test('源码在表单读取后变化时保留双方输入，不允许直接覆�
 		await expect(title).toHaveValue('尚未应用的标题');
 		await expect(source).toHaveValue(/源码里的新内容/);
 		await page.getByRole('button', { name: '保存文章', exact: true }).click();
-		await expect(page.getByRole('status')).toContainText('请先点击');
+		await expect(page.getByRole('status')).toContainText('源码已变化');
 		expect(
 			await fs.readFile(path.join(fixture.root, fixture.relative), 'utf8'),
 		).not.toContain('源码里的新内容');

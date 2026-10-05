@@ -55,6 +55,7 @@ test('分类光泽、关联角色、图标和图片选择在桌面与手机上�
 			),
 		).toBeTruthy();
 		await page.screenshot({ path: '.tmp/admin-role-mobile.png' });
+		await page.getByRole('button', { name: /^管理功能/ }).click();
 		await page.getByRole('button', { name: '社交链接', exact: true }).click();
 		const before = await page.locator('.social-preview path').getAttribute('d');
 		await page.getByRole('combobox', { name: '图标' }).selectOption('email');
@@ -63,6 +64,7 @@ test('分类光泽、关联角色、图标和图片选择在桌面与手机上�
 		).not.toBe(before);
 		await page.getByRole('button', { name: '保存到本地', exact: true }).click();
 		await expect(page.getByRole('status')).toContainText('已保存到本地');
+		await page.getByRole('button', { name: /^管理功能/ }).click();
 		await page
 			.getByRole('button', { name: 'QQ / 微信二维码', exact: true })
 			.click();
