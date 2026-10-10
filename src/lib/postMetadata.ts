@@ -1,6 +1,7 @@
 import { BLOG_CATEGORY_IDS } from '../config/content/blogCategories';
 import { buildPostExcerpt } from './blogExcerpt';
 import { extractMarkdownTitle } from './markdownTitle';
+import { parseContentDate } from './contentDate';
 
 const isBlank = (value: unknown) => value == null || (typeof value === 'string' && !value.trim());
 const categoryIds: ReadonlySet<string> = new Set(BLOG_CATEGORY_IDS);
@@ -29,6 +30,11 @@ export function completePostMetadata(
 		data.publishedAt = `${datePrefix[1]}-${datePrefix[2].padStart(2, '0')}-${datePrefix[3].padStart(2, '0')}`;
 	}
 	if (isBlank(data.updatedAt)) data.updatedAt = data.publishedAt;
+	for (const key of ['publishedAt', 'updatedAt']) {
+		if (typeof data[key] === 'string' && /^\d{4}-\d{1,2}-\d{1,2}$/.test(data[key])) {
+			data[key] = parseContentDate(data[key])?.toISOString().slice(0, 10) ?? data[key];
+		}
+	}
 	if (isBlank(data.category)) {
 		// Only the first directory under weiser-posts determines the category.
 		const rootIndex = segments.lastIndexOf('weiser-posts');

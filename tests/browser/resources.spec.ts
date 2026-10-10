@@ -2,6 +2,26 @@ import { RESOURCE_PAGE_CONFIG } from '../../src/config/pages/resources';
 import { test, expect } from '@playwright/test';
 
 for (const width of [390, 1440]) {
+	test(`看图器正反向 Tab 始终留在可用操作中：${width}px`, async ({ page }) => {
+		await page.setViewportSize({ width, height: 900 });
+		await page.goto('/resources/');
+		const trigger = page.getByRole('link', { name: '查看资源：Minecraft · 红色皮肤', exact: true });
+		await trigger.click();
+		await expect(page.locator('.pswp')).toBeVisible();
+		for (const key of ['Tab', 'Shift+Tab']) {
+			for (let index = 0; index < 6; index++) {
+				await page.keyboard.press(key);
+				expect(await page.evaluate(() => document.activeElement?.matches('.pswp button:not([disabled])'))).toBe(true);
+			}
+		}
+		await page.getByRole('button', { name: RESOURCE_PAGE_CONFIG.viewer.downloadLabel, exact: true }).click();
+		await expect(page.locator('.resource-download-dialog')).toBeVisible();
+		await page.keyboard.press('Escape');
+		await expect(page.getByRole('button', { name: RESOURCE_PAGE_CONFIG.viewer.downloadLabel, exact: true })).toBeFocused();
+		await page.keyboard.press('Escape');
+		await expect(trigger).toBeFocused();
+	});
+
 	test(`中亚服饰资源显示小封面、高清图与 JPEG 原图下载：${width}px`, async ({ page }, testInfo) => {
 		await page.setViewportSize({ width, height: 1000 });
 		await page.goto('/resources/', { waitUntil: 'domcontentloaded' });

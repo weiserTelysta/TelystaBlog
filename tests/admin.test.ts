@@ -26,6 +26,23 @@ test('all registered config sections preserve exact source on unchanged round tr
 		);
 	}
 });
+
+test('素材索引中大写扩展名的图片返回正确格式和原始字节', async () => {
+	const fixture = await adminFixture();
+	try {
+		const bytes = await fs.readFile(path.join(fixture.root, 'src/assets/contact/qq.png'));
+		await fs.writeFile(path.join(fixture.root, 'src/assets/contact/Upper.PNG'), bytes);
+		const media = await (await fixture.request('/api/media')).json();
+		const image = media.find((item: { label: string }) => item.label === 'Upper.PNG');
+		assert.ok(image);
+		const response = await fixture.request(image.url);
+		assert.equal(response.status, 200);
+		assert.equal(response.headers.get('content-type'), 'image/png');
+		assert.deepEqual(Buffer.from(await response.arrayBuffer()), bytes);
+	} finally {
+		await fixture.close();
+	}
+});
 test('literal edits preserve code, comments and ASCII strings; protected fields reject writes', async () => {
 	const section = sections.find((s) => s[0] === 'profiles')!;
 	const source = await fs.readFile(path.join(projectRoot, section[2]), 'utf8');

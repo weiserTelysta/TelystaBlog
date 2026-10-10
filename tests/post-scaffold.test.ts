@@ -157,6 +157,26 @@ test('补全非交互输入的默认 slug、日期和标签', () => {
 	assert.deepEqual(completed.tags, []);
 });
 
+test('并发创建同名文章只允许一个成功，保留成功方全文且不留下临时文件', async () => {
+	const rootDir = await createTemporaryProject();
+	const options = [createOptions({ title: '第一个作者' }), createOptions({ title: '第二个作者' })];
+	const results = await Promise.allSettled(options.map(option => createPost(option, rootDir)));
+	assert.equal(results.filter(result => result.status === 'fulfilled').length, 1);
+	assert.equal(results.filter(result => result.status === 'rejected').length, 1);
+	const winner = results.findIndex(result => result.status === 'fulfilled');
+	const directory = path.join(rootDir, 'src/content/weiser-posts/manuscript');
+	const content = await fs.readFile(path.join(directory, 'test-post.md'), 'utf8');
+	const template = await fs.readFile(path.join(rootDir, 'scripts/templates/post.md'), 'utf8');
+	assert.equal(content, renderPostTemplate(template, options[winner]));
+	assert.deepEqual(await fs.readdir(directory), ['test-post.md']);
+});
+
+test('创建命令在写入前拒绝与文章分类不符的系列', () => {
+	const result = validateCreatePostOptions(createOptions({ series: 'telysta-notes', seriesOrder: 1 }));
+	assert.equal(result.valid, false);
+	assert.ok(result.errors.some(error => error.includes('分类不一致')));
+});
+
 function createOptions(overrides: Partial<CreatePostOptions> = {}): CreatePostOptions {
 	return {
 		title: '测试文章',

@@ -1,6 +1,6 @@
 # 架构与目录维护
 
-核对更新：2026-10-02。当前功能对应关系见 [功能核对](feature-map.md)。
+核对更新：2026-10-11。当前功能对应关系见 [功能核对](feature-map.md)。
 
 作者入口见 [配置说明](../src/config/README.md)。`config/pages` 按页面归集可编辑文案，`config/content` 保存分类、系列及额外资源收录；分类/系列 ID 从资料数组派生。配置不依赖组件，组件读取配置并负责安全文本渲染；内部 DOM ID、焦点恢复与滚轮算法不作为作者选项。详情见 [配置整理记录](archive/2026-09/config-entrypoints-2026-09-06.md)。
 
@@ -21,6 +21,10 @@
 | `scripts` / `tests` / `tests/browser` | 维护命令 / 单元测试 / 真实浏览器回归 |
 
 文章仅通过 `src/pages/blog/[...slug].astro` 渲染，正文和附件后是系列，再到独立 `ArticleComments`。不复制第二套文章 Layout。系列总索引按 category 分组，空系列不展示。
+
+文章自动补全、Content Collections Schema 与维护检查共用 `contentDate.ts`；日期必须真实存在，纯日期按 UTC 解释，显示和年月归档也使用 UTC，避免本机与 CI 的时区差异。标题提取与 Markdown 图片／一级标题检查使用 Remark 语法树，避免代码示例和引用式图片被正则误判。自动补全不改写原稿。
+
+当前静态站点、本地编辑服务和离线素材命令的分工继续保留。2026-10-11 的问题、验证和后续拆分建议见 [项目排查](project-audit-2026-10-11.md)。
 
 `scripts/rehype-cdn-images.mjs` 从已有 CDN 清单为文章外部图片补充尺寸，避免加载时推开正文；不下载或生成图片。全站滚轮与触摸滚动交由浏览器处理，不再加载 Lenis。`scrollRuntime.ts` 只管理显式定点导航与可嵌套的页面滚动锁，减少动态时立即定位。星空绘制上限为 30fps，滚动时暂停、停止后恢复；详情见 [滚动优化记录](scroll-performance-2026-10-02.md)。
 

@@ -70,7 +70,7 @@ src/content/weiser-posts/portraits/example/portrait-01.png
 
 共享图片放在 `src/assets/images`。只有固定公共 URL、无需处理的静态文件或直接下载附件才放进 `public`。
 
-当前文章 `cover` 仍使用 `/images/posts/...` 公共路径；本轮没有改动封面 Schema 或文章头部组件。
+文章 `cover` 使用 `/images/posts/...` 公共路径，Schema 和内容检查均限制此前缀并检查本地文件；其他图片放入正文。
 
 ## 资源图片与原图下载
 
@@ -93,13 +93,14 @@ R2 素材的增量 WebP、清单和上传流程见 [cdn-assets.md](cdn-assets.md
 `npm run content:check` 检查：
 
 - 重复资源 ID。
-- 分类 ID、系列 ID、系列顺序与重复顺序。
-- 发布时间和更新时间。
+- 分类 ID、系列 ID、系列所属分类、系列顺序与重复顺序，以及文章 `draft` / `tags` 字段类型。
+- 发布时间和更新时间是否为真实日期、更新是否早于发布；纯日期及归档统一使用 UTC。
 - 公开文章占位摘要。
-- Markdown 本地图片路径和 CDN 清单键。
+- Markdown 普通／引用式图片路径、含转义字符的文件名和 CDN 清单键；代码块与代码示例不作为图片引用。
 - 缺失的文章封面路径和正文重复／错位一级标题；空可选封面在元数据补全阶段按未填写处理。
 - 资源主图、封面、预览和图库是否使用可解析的 `asset:` 引用。
-- Windows 与 Linux 路径大小写差异。
+- Windows 与 Linux 路径大小写差异；文章必须使用小写 `.md` 扩展名，图片路径必须指向文件。
+- `featuredImages` 的重复、真实资源匹配、资源类型和公开范围。
 - 容易被 KaTeX 误识别的中文金额 `$...$`。
 
 许可证内容仍需作者人工确认，脚本不会替作者判断授权范围。
@@ -143,7 +144,11 @@ git status
 - 新增文本为 UTF-8。
 - 没有提交 `dist/`、`.tmp/` 或资源原图。
 
-`test:browser` 先构建，再用独立浏览器测试本机 `127.0.0.1:4322` 预览。Windows 默认使用已安装 Edge，不读取用户浏览器 profile；其他平台先运行 `npx playwright install chromium`。可用 `TELYSTA_TEST_BROWSER` 选择已安装的 channel。不要把 4322 用于其他服务；本地允许复用同项目 preview，CI 不复用。脚本覆盖布局、键盘、遮罩、下载与减少动态，不代替真机触摸手感测试。
+`test:browser` 先构建，再用独立浏览器测试本机 `127.0.0.1:4322` 预览。Playwright 通过 `scripts/browser-preview.mjs` 使用 Astro 的程序化 preview API，直接管理服务生命周期，避免 CLI 在代理环境自动转入后台后测试误判服务退出。Windows 默认使用已安装 Edge，不读取用户浏览器 profile；其他平台先运行 `npx playwright install chromium`。可用 `TELYSTA_TEST_BROWSER` 选择已安装的 channel。不要把 4322 用于其他服务；本地允许复用同项目 preview，CI 不复用。脚本覆盖布局、键盘、遮罩、下载与减少动态，不代替真机触摸手感测试。
+
+## 依赖更新
+
+定期执行 `npm audit`，更新后运行 `npm run check`，涉及前端交互或后台再运行对应浏览器测试；不使用 `--force` 跳过兼容性评估。当前 `package.json` 的 `overrides.katex` 引用根依赖，统一数学渲染插件与页面 CSS 所用版本，避免插件带回旧版 KaTeX。移除 override 前确认上游依赖已支持安全版本，并检查公式渲染。2026-10-11 的审计与更新记录见 [排查报告](project-audit-2026-10-11.md)。
 
 ## Windows 本机原生模块加载失败
 

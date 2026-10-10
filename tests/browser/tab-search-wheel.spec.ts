@@ -38,6 +38,30 @@ test('搜索按需加载全文索引、焦点与关闭恢复', async ({ page }, 
 	expect(await page.evaluate(() => document.body.style.overflow)).not.toBe('hidden');
 });
 
+test('原生关闭事件延迟到重新打开后，不解除新弹窗锁或遗留旧锁', async ({ page }) => {
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	await page.goto('/blog/');
+	const trigger = page.getByRole('button', { name: BLOG_PAGE_CONFIG.search.label, exact: true });
+	await expect(trigger).toBeVisible();
+	await page.evaluate(() => {
+		const button = document.querySelector<HTMLButtonElement>('.blog-search__trigger')!;
+		const dialog = document.querySelector<HTMLDialogElement>('.blog-search__dialog')!;
+		button.click();
+		dialog.close();
+		button.click();
+	});
+	// Let the first native close event arrive while the second dialog is open.
+	await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+	await expect(page.getByRole('searchbox')).toBeFocused();
+	expect(await page.evaluate(() => document.body.style.overflow)).toBe('hidden');
+	await expect(page.locator('html')).toHaveClass(/is-page-scroll-locked/);
+	await page.keyboard.press('Escape');
+	await expect(page.getByRole('dialog')).not.toBeVisible();
+	await expect(trigger).toBeFocused();
+	expect(await page.evaluate(() => document.body.style.overflow)).toBe('');
+	await expect(page.locator('html')).not.toHaveClass(/has-modal-open|is-page-scroll-locked/);
+});
+
 test('窄屏搜索保持边界与键盘可达，减少动态', async ({ page }, info) => {
 	await page.setViewportSize({ width: 320, height: 740 });
 	await page.emulateMedia({ reducedMotion: 'reduce' });

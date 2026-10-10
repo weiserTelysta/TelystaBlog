@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { LineCounter, parseDocument } from 'yaml';
 import { BLOG_CATEGORY_IDS } from '../../src/config/content/blogCategories';
-import { BLOG_SERIES_IDS } from '../../src/config/content/blogSeries';
+import { BLOG_SERIES, BLOG_SERIES_IDS } from '../../src/config/content/blogSeries';
 import { completePostMetadata } from '../../src/lib/postMetadata';
 import { splitMarkdownSource } from '../../src/lib/markdownSource';
 import { getCdnAsset, getCdnAssetKey, isCdnAssetReference } from '../../src/lib/cdnAssets';
@@ -11,6 +11,10 @@ import remarkParse from 'remark-parse';
 import remarkMath from 'remark-math';
 import remarkPostLinks from '../remark-post-links.mjs';
 import { createPostLinkIndex, legacyPostId } from '../../src/lib/postLinks.mjs';
+import { parseContentDate } from '../../src/lib/contentDate';
+import type { Nodes } from 'mdast';
+
+const markdownParser = unified().use(remarkParse).use(remarkMath);
 
 export type ContentKind = 'post' | 'resource';
 export type ValidationSeverity = 'error' | 'warning';
@@ -129,7 +133,11 @@ export function parseContentDocument(
 export function validatePostDocuments(
 	documents: ContentDocument[],
 	rootDir: string,
-	catalog: { categories: readonly string[]; series: readonly string[] } = { categories: BLOG_CATEGORY_IDS, series: BLOG_SERIES_IDS },
+	catalog: { categories: readonly string[]; series: readonly string[]; seriesCategories?: Readonly<Record<string, string>> } = {
+		categories: BLOG_CATEGORY_IDS,
+		series: BLOG_SERIES_IDS,
+		seriesCategories: Object.fromEntries(BLOG_SERIES.map(series => [series.id, series.category])),
+	},
 ): ValidationIssue[] {
 	const issues: ValidationIssue[] = [];
 	const seriesOrders = new Map<string, ContentDocument>();
@@ -144,6 +152,16 @@ export function validatePostDocuments(
 		const series = readString(frontmatter.series);
 		const seriesOrder = readNumber(frontmatter.seriesOrder);
 		const validSeriesOrder = seriesOrder !== undefined && Number.isInteger(seriesOrder) && seriesOrder > 0;
+		if (series && catalog.seriesCategories?.[series] && catalog.seriesCategories[series] !== category) {
+			issues.push(createIssue('error', 'series-category-mismatch', document.relativePath,
+				`系列 ${series} 属于 ${catalog.seriesCategories[series]}，与文章分类 ${category} 不一致。`));
+		}
+		if (frontmatter.draft !== undefined && typeof frontmatter.draft !== 'boolean') {
+			issues.push(createIssue('error', 'post-draft-invalid', document.relativePath, 'draft 必须是 true 或 false。'));
+		}
+		if (frontmatter.tags !== undefined && (!Array.isArray(frontmatter.tags) || frontmatter.tags.some(tag => typeof tag !== 'string'))) {
+			issues.push(createIssue('error', 'post-tags-invalid', document.relativePath, 'tags 必须是字符串列表。'));
+		}
 		if (frontmatter.seriesOrder !== undefined && !validSeriesOrder) {
 			issues.push(createIssue(
 				'error', 'series-order-invalid', document.relativePath,
@@ -238,6 +256,10 @@ export function validatePostDocuments(
 					),
 				);
 			} else {
+				if (!cover.startsWith('/images/posts/')) {
+					issues.push(createIssue('error', 'post-cover-unsupported', document.relativePath,
+						'文章 cover 仅支持 /images/posts/ 下的公共图片路径；其他图片请放入正文。'));
+				}
 				const coverIssue = validateLocalPath(
 					cover,
 					document.filePath,
@@ -378,15 +400,26 @@ export function validateMarkdownBody(
 	rootDir: string,
 ): ValidationIssue[] {
 	const issues: ValidationIssue[] = [];
-	const searchableBody = stripCode(document.body);
+	const nodes: Nodes[] = [];
+	function collect(node: Nodes) {
+		nodes.push(node);
+		if ('children' in node) node.children.forEach(collect);
+	}
+	collect(markdownParser.parse(document.body));
+	let searchableBody = document.body;
+	for (const node of nodes) {
+		if (!['code', 'inlineCode', 'html'].includes(node.type)) continue;
+		const start = node.position?.start.offset, end = node.position?.end.offset;
+		if (start === undefined || end === undefined) continue;
+		searchableBody = searchableBody.slice(0, start) + searchableBody.slice(start, end).replace(/[^\n]/g, ' ') + searchableBody.slice(end);
+	}
 
 	if (document.kind === 'post') {
-		const levelOneHeadingPattern = /^ {0,3}#(?!#)[ \t]+(.+?)\s*#*\s*$/gm;
-		const headings = [...searchableBody.matchAll(levelOneHeadingPattern)];
+		const headings = nodes.filter(node => node.type === 'heading' && node.depth === 1);
 
 		if (headings.length > 0) {
 			const firstHeading = headings[0];
-			const headingOffset = firstHeading.index ?? 0;
+			const headingOffset = firstHeading.position?.start.offset ?? 0;
 
 			if (searchableBody.slice(0, headingOffset).trim()) {
 				issues.push(
@@ -408,25 +441,26 @@ export function validateMarkdownBody(
 					'markdown-body-h1-multiple',
 					document.relativePath,
 					'每篇文章只能包含一个一级标题；后续章节请使用二级及以下标题。',
-					getLineNumber(document, heading.index ?? 0),
+					getLineNumber(document, heading.position?.start.offset ?? 0),
 				),
 			);
 		}
 	}
 
-	const imagePattern = /!\[[^\]]*\]\((<[^>]+>|[^)\s]+)(?:\s+["'][^)]*["'])?\)/g;
-
-	for (const match of searchableBody.matchAll(imagePattern)) {
-		const rawReference = match[1];
-		const reference = rawReference.startsWith('<')
-			? rawReference.slice(1, -1)
-			: rawReference;
+	const definitions = new Map<string, string>();
+	for (const node of nodes) {
+		if (node.type === 'definition' && !definitions.has(node.identifier)) definitions.set(node.identifier, node.url);
+	}
+	for (const node of nodes) {
+		const reference = node.type === 'image' ? node.url
+			: node.type === 'imageReference' ? definitions.get(node.identifier) : undefined;
+		if (!reference) continue;
 		const issue = validateLocalPath(
 			reference,
 			document.filePath,
 			rootDir,
 			'Markdown 图片路径',
-			getLineNumber(document, match.index ?? 0),
+			getLineNumber(document, node.position?.start.offset ?? 0),
 		);
 
 		if (issue) {
@@ -531,7 +565,7 @@ export function validateLocalPath(
 		return undefined;
 	}
 
-	const normalizedReference = stripQueryAndHash(safeDecodeUri(reference));
+	const normalizedReference = safeDecodeUri(stripQueryAndHash(reference));
 	let absolutePath: string;
 
 	if (normalizedReference.startsWith('/')) {
@@ -580,7 +614,7 @@ export function validateLocalPath(
 	return undefined;
 }
 
-export function runContentValidation(rootDir: string): ContentValidationResult {
+export function runContentValidation(rootDir: string, options: { featuredImages?: readonly string[] } = {}): ContentValidationResult {
 	const documents = loadContentDocuments(rootDir);
 	const issues = [
 		...validateContentDiscovery(rootDir),
@@ -588,6 +622,7 @@ export function runContentValidation(rootDir: string): ContentValidationResult {
 		...validatePostDocuments(documents, rootDir),
 		...validatePostLinks(documents),
 		...validateResourceDocuments(documents, rootDir),
+		...validateGallerySelection(documents, options.featuredImages ?? []),
 	].sort(compareIssues);
 
 	return {
@@ -596,6 +631,23 @@ export function runContentValidation(rootDir: string): ContentValidationResult {
 		errorCount: issues.filter((issue) => issue.severity === 'error').length,
 		warningCount: issues.filter((issue) => issue.severity === 'warning').length,
 	};
+}
+
+export function validateGallerySelection(documents: ContentDocument[], featuredImages: readonly string[]): ValidationIssue[] {
+	const issues: ValidationIssue[] = [];
+	const seen = new Set<string>();
+	for (const image of featuredImages) {
+		const matches = documents.filter(document => document.kind === 'resource'
+			&& !document.parseIssues.length && document.frontmatter.image === image);
+		if (seen.has(image) || matches.length !== 1 || matches[0]?.frontmatter.type !== 'image'
+			|| matches[0]?.frontmatter.draft === true || matches[0]?.frontmatter.status === 'draft'
+			|| !image.startsWith('asset:') || /^asset:(characters|avatars|blog_imgs)\//i.test(image)) {
+			issues.push(createIssue('error', 'gallery-featured-invalid', 'src/config/content/resourceGallery.ts',
+				`额外收录 ${image} 必须唯一对应一个可公开的 Image 资源条目，且不能重复或属于受保护素材。`));
+		}
+		seen.add(image);
+	}
+	return issues;
 }
 
 export function validatePostLinks(documents: ContentDocument[]): ValidationIssue[] {
@@ -725,33 +777,14 @@ function findUnrecognizedContentFiles(directory: string): string[] {
 			continue;
 		}
 
-		const extension = path.extname(entry.name).toLocaleLowerCase('en-US');
-		if (extension === '' || extension === '.markdown' || extension === '.mdx') {
+		const rawExtension = path.extname(entry.name);
+		const extension = rawExtension.toLocaleLowerCase('en-US');
+		if (extension === '' || extension === '.markdown' || extension === '.mdx' || (extension === '.md' && rawExtension !== '.md')) {
 			files.push(absolutePath);
 		}
 	}
 
 	return files;
-}
-
-function stripCode(body: string): string {
-	let insideFence = false;
-
-	return body
-		.split('\n')
-		.map((line) => {
-			if (/^\s*(```|~~~)/.test(line)) {
-				insideFence = !insideFence;
-				return ' '.repeat(line.length);
-			}
-
-			if (insideFence) {
-				return ' '.repeat(line.length);
-			}
-
-			return line.replace(/`[^`]*`/g, match => ' '.repeat(match.length));
-		})
-		.join('\n');
 }
 
 function inspectLocalPath(rootDir: string, absolutePath: string): LocalPathStatus {
@@ -792,6 +825,7 @@ function inspectLocalPath(rootDir: string, absolutePath: string): LocalPathStatu
 		currentPath = path.join(currentPath, caseInsensitiveEntry);
 	}
 
+	if (!fs.statSync(currentPath).isFile()) return 'missing';
 	return hasCaseMismatch ? 'case-mismatch' : 'exact';
 }
 
@@ -805,7 +839,7 @@ function isMissingPathError(error: unknown): boolean {
 }
 
 function isExternalReference(reference: string): boolean {
-	return /^(https?:|mailto:|data:|#)/i.test(reference);
+	return /^(https?:|mailto:|data:|#|\/\/)/i.test(reference);
 }
 
 function stripQueryAndHash(reference: string): string {
@@ -814,7 +848,7 @@ function stripQueryAndHash(reference: string): string {
 
 function safeDecodeUri(reference: string): string {
 	try {
-		return decodeURI(reference);
+		return decodeURIComponent(reference);
 	} catch {
 		return reference;
 	}
@@ -838,16 +872,7 @@ function readNumber(value: unknown): number | undefined {
 }
 
 function readDate(value: unknown): number | undefined {
-	if (value instanceof Date && Number.isFinite(value.getTime())) {
-		return value.getTime();
-	}
-
-	if (typeof value !== 'string' && typeof value !== 'number') {
-		return undefined;
-	}
-
-	const parsed = new Date(value).getTime();
-	return Number.isFinite(parsed) ? parsed : undefined;
+	return parseContentDate(value)?.getTime();
 }
 
 function isPlaceholderDescription(value: string | undefined): boolean {

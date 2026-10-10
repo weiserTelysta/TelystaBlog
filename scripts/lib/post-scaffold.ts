@@ -1,11 +1,13 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { randomUUID } from 'node:crypto';
 import { stringify } from 'yaml';
 import {
 	BLOG_CATEGORY_IDS,
 	type BlogCategoryId,
 } from '../../src/config/content/blogCategories';
 import {
+	BLOG_SERIES,
 	BLOG_SERIES_IDS,
 	type BlogSeriesId,
 } from '../../src/config/content/blogSeries';
@@ -230,6 +232,10 @@ export function validateCreatePostOptions(options: CreatePostOptions): Validatio
 	if (options.series && !BLOG_SERIES_IDS.includes(options.series)) {
 		errors.push(`未知系列：${options.series}`);
 	}
+	const selectedSeries = BLOG_SERIES.find(series => series.id === options.series);
+	if (selectedSeries && selectedSeries.category !== options.category) {
+		errors.push(`系列 ${options.series} 属于 ${selectedSeries.category}，与文章分类不一致。`);
+	}
 
 	if (Boolean(options.series) !== (options.seriesOrder !== undefined)) {
 		errors.push('series 与 seriesOrder 必须同时提供。');
@@ -318,7 +324,7 @@ export async function createPost(
 	const templatePath = path.join(rootDir, 'scripts', 'templates', 'post.md');
 	const template = await fs.readFile(templatePath, 'utf8');
 	const content = renderPostTemplate(template, options);
-	const temporaryPath = `${destination.markdownPath}.tmp-${process.pid}-${Date.now()}`;
+	const temporaryPath = `${destination.markdownPath}.tmp-${randomUUID()}`;
 	let createdAssetDirectory = false;
 
 	await fs.mkdir(destination.categoryDirectory, { recursive: true });
@@ -344,15 +350,22 @@ export async function createPost(
 		}
 
 		await fs.writeFile(temporaryPath, content, { encoding: 'utf8', flag: 'wx' });
-		await fs.rename(temporaryPath, destination.markdownPath);
+		// Another writer may have created the destination since pathExists().
+		// An exclusive link publishes the complete file without replacing its bytes.
+		await fs.link(temporaryPath, destination.markdownPath).catch(error => {
+			if ((error as NodeJS.ErrnoException).code === 'EEXIST') {
+				throw new Error(`目标文章已存在，未覆盖：${destination.markdownPath}`);
+			}
+			throw error;
+		});
 	} catch (error) {
-		await fs.rm(temporaryPath, { force: true });
-
 		if (createdAssetDirectory) {
 			await fs.rmdir(destination.assetDirectoryPath).catch(() => undefined);
 		}
 
 		throw error;
+	} finally {
+		await fs.rm(temporaryPath, { force: true });
 	}
 
 	return {

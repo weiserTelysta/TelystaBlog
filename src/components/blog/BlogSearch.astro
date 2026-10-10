@@ -37,6 +37,7 @@ const copy = BLOG_PAGE_CONFIG.search;
 		let closing: Animation | undefined;
 		let entering: Animation | undefined;
 		let originalOverflow = '';
+		let scrollLocked = false;
 		let resultAnimation: Animation | undefined;
 		let composing = false;
 		const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -82,31 +83,41 @@ const copy = BLOG_PAGE_CONFIG.search;
 			})();
 			return loading;
 		}
+		function restorePage() {
+			// Native close events are queued: a previous one may arrive after reopening.
+			if (!scrollLocked || dialog.open) return;
+			scrollLocked = false;
+			closing?.cancel(); closing = undefined;
+			entering?.cancel(); entering = undefined;
+			document.body.style.overflow = originalOverflow;
+			document.documentElement.classList.remove('has-modal-open'); unlockPageScroll();
+			trigger.focus({ preventScroll: true });
+		}
+		function finishClose() {
+			dialog.close();
+			restorePage();
+		}
 		function close() {
 			if (!dialog.open || closing) return;
 			const current = getComputedStyle(dialog);
 			const start = { opacity: current.opacity, transform: current.transform };
 			entering?.cancel(); entering = undefined;
-			if (reduced()) { dialog.close(); return; }
+			if (reduced()) { finishClose(); return; }
 			closing = dialog.animate([start, { opacity: 0, transform: 'translateY(4px)' }], { duration: 140, easing: 'ease-in' });
-			closing.onfinish = () => { closing = undefined; dialog.close(); };
+			closing.onfinish = () => { closing = undefined; finishClose(); };
 		}
 		trigger.hidden = false;
 		trigger.addEventListener('click', () => {
 			if (dialog.open) return;
+			restorePage();
 			originalOverflow = document.body.style.overflow;
 			dialog.showModal(); input.focus({ preventScroll: true });
 			document.body.style.overflow = 'hidden';
-			document.documentElement.classList.add('has-modal-open'); lockPageScroll();
+			document.documentElement.classList.add('has-modal-open'); lockPageScroll(); scrollLocked = true;
 			if (!reduced()) entering = dialog.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 180, easing: 'ease-out' });
 			void load();
 		});
-		dialog.addEventListener('close', () => {
-			closing?.cancel(); closing = undefined;
-			document.body.style.overflow = originalOverflow;
-			document.documentElement.classList.remove('has-modal-open'); unlockPageScroll();
-			trigger.focus({ preventScroll: true });
-		});
+		dialog.addEventListener('close', restorePage);
 		dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
 		// Search inputs can consume Escape to clear text before the native dialog cancel event.
 		dialog.addEventListener('keydown', event => {
@@ -121,7 +132,7 @@ const copy = BLOG_PAGE_CONFIG.search;
 			else links[event.key === 'ArrowDown' ? Math.min(current + 1, links.length - 1) : current < 0 ? links.length - 1 : current - 1].focus({ preventScroll: true });
 			(document.activeElement as HTMLElement).scrollIntoView({ block: 'nearest' });
 		});
-		window.addEventListener('pagehide', () => { if (dialog.open) dialog.close(); });
+		window.addEventListener('pagehide', () => { if (dialog.open) finishClose(); });
 		root.querySelector('.blog-search__close')!.addEventListener('click', close);
 		dialog.addEventListener('click', event => {
 			if (event.target !== dialog) return;

@@ -384,6 +384,87 @@ test('发现缺失的 Markdown 图片，并接受存在的相对图片', async (
 	assert.equal(result.issues.some((issue) => issue.code.startsWith('local-path')), false);
 });
 
+test('内容检查拒绝日历溢出、分类与系列错配以及错误的发布状态类型', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	await writePost(rootDir, 'invalid-date.md', { publishedAt: '2026-02-30', updatedAt: '2026-03-01' });
+	await writeResource(rootDir, 'invalid-resource-date.md', 'invalid-date', 'asset:archive/Minecraft_red', { updatedAt: '2026-04-31' });
+	await writePost(rootDir, 'wrong-series.md', { series: 'telysta-notes', seriesOrder: 1, draft: 'false', tags: 'one' });
+	const result = runContentValidation(rootDir);
+	for (const code of ['published-date-invalid', 'updated-date-invalid', 'series-category-mismatch', 'post-draft-invalid', 'post-tags-invalid']) {
+		assert.ok(result.issues.some(issue => issue.code === code), code);
+	}
+});
+
+test('检查引用式图片与括号、空格、编码符号的真实路径，报告引用行号', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	const directory = path.join(rootDir, 'src/content/weiser-posts/manuscript');
+	await fs.writeFile(path.join(directory, 'a(b) #1 &2.png'), 'image');
+	await writePost(rootDir, 'references.md', {}, [
+		'![内联](<./a(b)%20%231%20%262.png>)',
+		'![引用][missing]',
+		'',
+		'[missing]: ./missing.png',
+	].join('\n'));
+	const result = runContentValidation(rootDir);
+	const issues = result.issues.filter(issue => issue.code.startsWith('local-path'));
+	assert.equal(issues.length, 1);
+	assert.match(issues[0].message, /missing\.png/);
+	assert.equal(issues[0].line, result.documents[0].bodyStartLine + 3);
+});
+
+test('忽略真实代码与 HTML 注释中的示例，不能把短围栏当成长围栏的结束', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	await writePost(rootDir, 'examples.md', {}, [
+		'````md', '```', '# 代码标题', '![例](./missing.png)', '20$，代码$2', '~~~', '````',
+		'', '<!-- ![注释](./missing.png) -->', '', '``代码 ` ![例](./missing.png)``',
+	].join('\n'));
+	const result = runContentValidation(rootDir);
+	assert.equal(result.errorCount, 0, JSON.stringify(result.issues));
+});
+
+test('下划线式一级标题与嵌套一级标题同样参与标题检查', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	await writePost(rootDir, 'headings.md', {}, '另一个标题\n===\n\n> # 嵌套标题\n');
+	const result = runContentValidation(rootDir);
+	assert.equal(result.issues.filter(issue => issue.code === 'markdown-body-h1-multiple').length, 2);
+});
+
+test('大写 Markdown 扩展名不能通过检查后被 Linux 构建静默遗漏', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	await fs.writeFile(path.join(rootDir, 'src/content/weiser-posts/manuscript/2026-9-1-missing.MD'), '# 标题\n');
+	assert.ok(runContentValidation(rootDir).issues.some(issue => issue.code === 'content-file-extension'));
+});
+
+test('图片路径必须指向文件，不能把同名文件夹当作图片', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	await fs.mkdir(path.join(rootDir, 'src/content/weiser-posts/manuscript/folder.png'));
+	await writePost(rootDir, 'folder-image.md', {}, '![图](./folder.png)');
+	assert.ok(runContentValidation(rootDir).issues.some(issue => issue.code === 'local-path-missing'));
+});
+
+test('额外画廊收录必须对应真实、唯一且公开的 Image 条目', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	const image = 'asset:archive/Minecraft_red';
+	await writeResource(rootDir, 'public.md', 'public', image, { type: 'image', draft: false, status: 'available' });
+	assert.equal(runContentValidation(rootDir, { featuredImages: [image] }).errorCount, 0);
+	for (const featuredImages of [[image, image], ['asset:archive/missing']]) {
+		assert.ok(runContentValidation(rootDir, { featuredImages }).issues.some(issue => issue.code === 'gallery-featured-invalid'));
+	}
+	await writeResource(rootDir, 'public.md', 'public', image, { type: 'image', draft: true });
+	assert.ok(runContentValidation(rootDir, { featuredImages: [image] }).issues.some(issue => issue.code === 'gallery-featured-invalid'));
+});
+
+test('封面校验与文章页支持范围一致，不能接受保存后被静默隐藏的封面', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	const directory = path.join(rootDir, 'public/images/posts');
+	await fs.mkdir(directory, { recursive: true });
+	await fs.writeFile(path.join(directory, 'cover.png'), 'image');
+	await writePost(rootDir, 'cover.md', { cover: '/images/posts/cover.png' });
+	assert.equal(runContentValidation(rootDir).errorCount, 0);
+	await writePost(rootDir, 'cover.md', { cover: 'https://assets.telysta.com/cover.png' });
+	assert.ok(runContentValidation(rootDir).issues.some(issue => issue.code === 'post-cover-unsupported'));
+});
+
 async function createTemporaryContentRoot(): Promise<string> {
 	const rootDir = await fs.mkdtemp(path.join(os.tmpdir(), 'telysta-content-test-'));
 	temporaryDirectories.push(rootDir);

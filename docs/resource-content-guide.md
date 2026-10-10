@@ -22,7 +22,7 @@ credits:
     href: https://example.com
 publishedAt: 2026-08-14
 updatedAt: 2026-08-14
-formats: [PNG, PSD]
+formats: [PNG, JPG]
 license: Draft license. Replace before publishing.
 actions: []
 draft: true
@@ -38,8 +38,8 @@ draft: true
 - `summary`：保留在内容数据中的简短摘要；当前图片画廊与全屏看图器不重复展示。
 - `type`：必须来自 `src/config/content/resourceTypes.ts`。
 - `image`：主图资源引用。
-- `publishedAt`：发布日期。
-- `updatedAt`：最后更新日期。
+- `publishedAt`：真实的发布日期，建议 `YYYY-MM-DD`，纯日期按 UTC 解释。
+- `updatedAt`：真实的最后更新日期，不能早于发布日期。
 
 ## 状态
 
@@ -96,7 +96,7 @@ Credits 用于说明来源和参与者，不替代许可证。
 
 - `label`：按钮文字。
 - `href`：地址；除禁用项外必须存在。
-- `format`：PNG、PSD、ZIP 等。
+- `format`：格式说明，如 PNG、JPG；数据模型兼容历史动作，当前公开下载只保留允许的图片格式。
 - `provider`：网盘或服务名称。
 - `code`：提取码等附加信息。
 - `primary`：主要动作。

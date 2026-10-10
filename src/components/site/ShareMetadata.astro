@@ -23,7 +23,7 @@ const structuredData = buildStructuredData({
 ---
 
 <link rel="canonical" href={canonical} />
-<script type="application/ld+json" set:html={serializeStructuredData(structuredData)} />
+<script is:inline type="application/ld+json" set:html={serializeStructuredData(structuredData)} />
 <meta property="og:site_name" content={SITE_CONFIG.name} />
 <meta property="og:locale" content="zh_CN" />
 <meta property="og:type" content={article ? 'article' : 'website'} />

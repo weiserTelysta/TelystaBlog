@@ -141,8 +141,8 @@ export function groupPostsByYearMonth(posts: PostListItem[]): BlogYearGroup[] {
 	const yearGroups: BlogYearGroup[] = [];
 
 	for (const post of posts) {
-		const year = post.publishedAt.getFullYear();
-		const month = post.publishedAt.getMonth() + 1;
+		const year = post.publishedAt.getUTCFullYear();
+		const month = post.publishedAt.getUTCMonth() + 1;
 		let yearGroup = yearGroups.find((group) => group.year === year);
 
 		if (!yearGroup) {

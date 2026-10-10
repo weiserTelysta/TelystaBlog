@@ -28,6 +28,7 @@
 | 新增资源下载条目 | [资源维护](docs/resources.md) · [字段说明](docs/resource-content-guide.md) |
 | 转 WebP、上传原图和封面到 R2 | [CDN 操作流程](docs/cdn-assets.md) |
 | 测试、排错和代码维护 | [维护指南](docs/maintenance.md) |
+| 查看架构评估与问题修复 | [2026-10-11 项目排查](docs/project-audit-2026-10-11.md) |
 | 提交、推送和核对线上发布 | [部署指南](docs/deployment.md) |
 | 查询现有功能与边界 | [功能与配置](docs/feature-map.md) |
 | 查看近期变更、待办与历史 | [当前状态](docs/current-status.md) · [阶段日志](docs/stage-log.md) · [文档索引](docs/README.md) |
@@ -58,6 +59,6 @@ npm run test:admin     # 本地后台回归
 | scripts/admin/ | 本地后台；不随静态站点发布 |
 | docs/ | 当前操作指南与开发记录；archive/ 保存历史 |
 
-不要直接编辑 dist/；.tmp/ 是不提交的缓存、日志和临时文件。资源原图与 WebP 由 R2 提供，PSD／AI 只保留本地，不上传。
+不要直接编辑 dist/；.tmp/ 是不提交的缓存、日志和临时文件。资源原图与 WebP 由 R2 提供；PSD／AI 源文件保留本地，后续不上传这两种格式。
 
 网站保留安静、深色、低饱和的阅读氛围。涉及布局、字体或动效时遵循项目内 [Telysta Design Guardian](.agents/skills/telysta-design-guardian/SKILL.md)，普通 Markdown 编辑不需要重新设计界面。

@@ -4,11 +4,14 @@ import { z } from 'astro/zod';
 import { BLOG_CATEGORY_IDS } from './config/content/blogCategories';
 import { BLOG_SERIES_IDS } from './config/content/blogSeries';
 import { postLoader } from './lib/postLoader';
+import { parseContentDate } from './lib/contentDate';
 import {
 	RESOURCE_ACTION_TYPES,
 	RESOURCE_STATUS_IDS,
 	RESOURCE_TYPE_IDS,
 } from './config/content/resourceTypes';
+
+const contentDate = z.preprocess(value => parseContentDate(value) ?? value, z.date());
 
 const posts = defineCollection({
 	loader: postLoader(),
@@ -19,12 +22,12 @@ const posts = defineCollection({
 			titleEn: z.string().min(1),
 			description: z.string().min(1),
 			descriptionEn: z.string().min(1),
-			publishedAt: z.coerce.date(),
-			updatedAt: z.coerce.date(),
+			publishedAt: contentDate,
+			updatedAt: contentDate,
 			category: z.enum(BLOG_CATEGORY_IDS),
 			tags: z.array(z.string()).default([]),
 			draft: z.boolean().default(false),
-			cover: z.string().min(1).optional(),
+			cover: z.string().startsWith('/images/posts/').optional(),
 			series: z.enum(BLOG_SERIES_IDS).optional(),
 			seriesOrder: z.coerce.number().int().positive().optional(),
 		})
@@ -89,8 +92,8 @@ const resources = defineCollection({
 		preview: z.string().min(1).optional(),
 		gallery: z.array(resourceGalleryImageSchema).default([]),
 		credits: z.array(resourceCreditSchema).default([]),
-		publishedAt: z.coerce.date(),
-		updatedAt: z.coerce.date(),
+		publishedAt: contentDate,
+		updatedAt: contentDate,
 		formats: z.array(z.string().min(1)).default([]),
 		variantCount: z.coerce.number().int().nonnegative().optional(),
 		license: z.string().min(1).optional(),

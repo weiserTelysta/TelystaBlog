@@ -383,7 +383,7 @@ export function createAdminServer(root = projectRoot) {
 				if (!relative) throw new AdminError('图片未登记', 404);
 				const file = await safePath(root, relative);
 				const bytes = await fs.readFile(file);
-				res.writeHead(200, { 'Content-Type': mime[path.extname(file)] });
+				res.writeHead(200, { 'Content-Type': mime[path.extname(file).toLowerCase()] });
 				return res.end(bytes);
 			}
 			if (req.headers['x-telysta-token'] !== token)
@@ -441,7 +441,7 @@ export function createAdminServer(root = projectRoot) {
 							);
 							if (
 								!relative.startsWith('src/assets/images/accordion/') ||
-								!mime[path.posix.extname(relative)]
+								!mime[path.posix.extname(relative).toLowerCase()]
 							)
 								continue;
 							previews[statement.importClause.name.text] =

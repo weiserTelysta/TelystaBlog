@@ -2,7 +2,7 @@
 
 修改文案不需要进入组件。按用途选择文件，保存 UTF-8，保留字符串引号、逗号与必要占位符。
 
-常用文案可用 `npm run admin` 在本地表单编辑，见 [后台使用说明](../../docs/local-admin.md)。后台直接保存下列现有配置；高级图片登记、分类／系列增删仍按本说明维护源码，没有第二份数据来源。
+常用文案可用 `npm run admin` 在本地表单编辑，见 [后台使用说明](../../docs/local-admin.md)。后台直接保存下列现有配置，并支持新增头像、分类角色和系列；删除／改名及高级视觉映射仍按本说明维护源码，没有第二份数据来源。
 
 | 想修改什么 | 文件 / 字段 |
 | --- | --- |
@@ -54,7 +54,7 @@
 
 ## 资源和头像
 
-插画继续通过 `src/content/resources` 添加，不在这里维护全部作品。需要额外显示 Image 类型时，将条目 `image` 的完整 `asset:` 键加入 `featuredImages`。名单不能使草稿、Character、头像、文章配图公开，也不放开 PSD 下载。
+插画继续通过 `src/content/resources` 添加，不在这里维护全部作品。需要额外显示 Image 类型时，将条目 `image` 的完整 `asset:` 键加入 `featuredImages`。每个键必须唯一对应一个真实、可公开的 Image 资源，`npm run content:check` 会检查重复、缺失和受保护素材。名单不能使草稿、Character、头像、文章配图公开，也不放开 PSD 下载。
 
 本地后台可用「新增头像身份」一次生成 WebP、32/48px favicon 与配置。手工新增或换头像后运行 `npm run assets:favicons -- --cdn` 并检查生成图标；脚本也识别后台创建的 `/media/` 本地头像。`enabled: false` 可停用头像；至少保留一个启用项。同一标签页的随机结果仍保留在 sessionStorage，改配置不等于每次刷新重抽。
 

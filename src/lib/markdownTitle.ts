@@ -1,37 +1,21 @@
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import type { Nodes } from 'mdast';
+
+const parser = unified().use(remarkParse);
+
 export function extractMarkdownTitle(markdown: string): string | undefined {
-	const lines = markdown.replace(/\r\n?/g, '\n').split('\n');
-	let fence: '`' | '~' | undefined;
-
-	for (const line of lines) {
-		const fenceMatch = /^ {0,3}(`{3,}|~{3,})/.exec(line);
-
-		if (fenceMatch) {
-			const marker = fenceMatch[1][0] as '`' | '~';
-			if (!fence) fence = marker;
-			else if (fence === marker) fence = undefined;
-			continue;
-		}
-
-		if (fence) continue;
-
-		const heading = /^ {0,3}#(?!#)[ \t]+(.+?)\s*#*\s*$/.exec(line);
-		if (heading) return normalizeMarkdownHeading(heading[1] ?? '');
-	}
-
-	return undefined;
+	const heading = parser.parse(markdown).children.find(node => node.type === 'heading' && node.depth === 1);
+	return heading ? readText(heading).normalize('NFKC').replace(/\s+/g, ' ').trim() || undefined : undefined;
 }
 
 export function resolvePostTitle(markdown: string, fallbackTitle: string): string {
 	return extractMarkdownTitle(markdown) || fallbackTitle.trim();
 }
 
-function normalizeMarkdownHeading(value: string): string {
-	return value
-		.normalize('NFKC')
-		.replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1')
-		.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
-		.replace(/[*_`~]/g, '')
-		.replace(/<[^>]+>/g, '')
-		.replace(/\s+/g, ' ')
-		.trim();
+function readText(node: Nodes): string {
+	if (node.type === 'html') return '';
+	if ('value' in node) return node.value;
+	if ('alt' in node) return node.alt ?? '';
+	return 'children' in node ? node.children.map(readText).join('') : '';
 }

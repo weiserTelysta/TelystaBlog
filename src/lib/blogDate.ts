@@ -30,19 +30,19 @@ const ARTICLE_MONTH_NAMES = [
 ] as const;
 
 export function formatPostDate(date: Date): string {
-	return `${ENGLISH_MONTH_NAMES[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+	return `${ENGLISH_MONTH_NAMES[date.getUTCMonth()]} ${date.getUTCDate()}, ${date.getUTCFullYear()}`;
 }
 
 export function formatArticleDate(date: Date): string {
-	return `${ARTICLE_MONTH_NAMES[date.getMonth()]} ${date.getDate()}`;
+	return `${ARTICLE_MONTH_NAMES[date.getUTCMonth()]} ${date.getUTCDate()}`;
 }
 
 export function formatIndexDate(date: Date): string {
-	return `${formatArticleDate(date)}, ${date.getFullYear()}`;
+	return `${formatArticleDate(date)}, ${date.getUTCFullYear()}`;
 }
 
 export function formatFullDate(date: Date): string {
-	return `${date.getFullYear()}-${padNumber(date.getMonth() + 1)}-${padNumber(date.getDate())}`;
+	return `${date.getUTCFullYear()}-${padNumber(date.getUTCMonth() + 1)}-${padNumber(date.getUTCDate())}`;
 }
 
 export function formatPostMonth(month: number): string {

@@ -194,6 +194,17 @@ export function openResourceLightbox(resource: ResourceListItem, trigger: HTMLAn
    if (picker?.isOpen || event.altKey || event.ctrlKey || event.metaKey) return;
    keyboardMode = true;
    showInfo();
+   if (event.key === 'Tab') {
+    const controls = [...root.querySelectorAll<HTMLButtonElement>('button:not([disabled])')]
+     .filter(button => button.getClientRects().length > 0);
+    if (!controls.length) return;
+    const current = controls.indexOf(document.activeElement as HTMLButtonElement);
+    const next = current < 0 ? (event.shiftKey ? controls.length - 1 : 0)
+     : (current + (event.shiftKey ? -1 : 1) + controls.length) % controls.length;
+    event.preventDefault();
+    controls[next].focus({ preventScroll: true });
+    return;
+   }
    if (!['ArrowLeft', 'ArrowRight', 'Escape'].includes(event.key)) return;
    event.preventDefault();
    event.stopImmediatePropagation();
