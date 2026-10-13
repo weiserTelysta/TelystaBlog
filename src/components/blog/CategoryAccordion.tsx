@@ -625,7 +625,10 @@ export default function CategoryAccordion({
 													</span>
 												</span>
 												<span className="category-accordion__card-copy" lang="en">
-													<strong>{categoryTitle}</strong>
+													<strong>
+														<span>{visual.cardInscription.prefix}'s</span>{' '}
+														<span>{visual.cardInscription.name}</span>
+													</strong>
 													<span>{visual.descriptionEn}</span>
 													<em>
 														{postCount} {ACCORDION_COPY.recordLabel}

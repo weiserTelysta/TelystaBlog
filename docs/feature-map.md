@@ -6,7 +6,7 @@
 
 ## 身份、首页与文案
 
-搜索基础已补齐 robots、自动 sitemap 与站点／作者／文章 JSON-LD；`src/pages/about.md` 维护独立 About，入口位于首页 Navigation，显示 Profile / Biography，与 Resource Index 同级；正文仅介绍籍贯、学历与兴趣。实现及搜索平台操作边界见 [专题记录](seo-about-2026-10-02.md)。
+搜索基础已补齐 robots、自动 sitemap 与站点／作者／文章 JSON-LD；`src/pages/about.md` 维护独立 About，入口位于首页 Navigation，显示 Marginalia / A Little More，与 Resource Index 同级；正文仅介绍籍贯、学历与兴趣。实现及搜索平台操作边界见 [专题记录](seo-about-2026-10-02.md)。
 
 | 功能 | 当前行为 | 真实入口 |
 | --- | --- | --- |
@@ -32,7 +32,7 @@ Hero 句子没有语言字段，也没有精确的“几点到几点”开关，
 | --- | --- |
 | 分类 | 正式 ID 为 `manuscript`、`collection`、`letters`、`reading`、`life`、`portraits`、`notes`；当前工作区已取消 `essays`，没有别名或重定向 |
 | 分类入口 | 总览 `Category / All Records`；选中后是 `Weiser's Manuscript`、`Telysta's Collection` 等英文所属名称 |
-| 角色卡片 | 收起时花体角色名＋英文分类小字；展开后显示 Telysta's Collection 等英文所属标题与 descriptionEn，仅显示 records 数量。入口与展开标题从同一题签派生；题签在 `visuals/categoryVisuals.ts`，英文介绍在 `content/blogCategories.ts` |
+| 角色卡片 | 收起时花体角色名＋英文分类小字；展开后以两行显示英文所属名和分类名（如 Telysta's／Collection），配合 descriptionEn，仅显示 records 数量。入口与展开标题从同一题签派生；题签在 `visuals/categoryVisuals.ts`，英文介绍在 `content/blogCategories.ts` |
 | 卡片光泽与图片 | 前后台共用 `src/styles/category-foil.css` 的八种复合反射预设，角色 tone 决定虹彩配色，减少白光曝光，无同心圆；导入的角色图在构建时生成 480／800 WebP，`public/media` 上传图沿用上传处理结果。Cloudflare 缓存与图片变换是不同能力，见 [核查记录](archive/2026-09/category-series-scores-2026-09-20.md) |
 | 卡片比例 | `.category-accordion__card` 当前 CSS 宽:高为 **2:5**，不是 1:2。图片以 cover 裁切，可设置 `imagePosition` 与 `imageScale`；原图比例、卡片框比例、头像 1:1 是不同概念 |
 | 文章创建 | 日期文件名＋正文可自动补标题、日期、摘要和分类；英文空字段回退中文。直接新建 Markdown 默认公开，`post:new` 默认草稿 |

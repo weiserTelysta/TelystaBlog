@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-for (const width of [390, 1440]) {
+for (const width of [320, 390, 768, 1440, 1920]) {
 	test(`角色英文题签与 letters 跳转：${width}px`, async ({ page }, testInfo) => {
 		await page.setViewportSize({ width, height: 1000 });
 		await page.emulateMedia({ reducedMotion: width === 390 ? 'reduce' : 'no-preference' });
@@ -23,6 +23,21 @@ for (const width of [390, 1440]) {
 		expect((await dialog.locator('.category-accordion__card-copy').allTextContents()).join(' ')).not.toMatch(/\p{Script=Han}/u);
 		await expect(dialog).not.toContainText('再次点击进入');
 		await page.evaluate(() => document.fonts.ready);
+		for (const heading of await dialog.locator('.category-accordion__card-copy strong').all()) {
+			const lines = await heading.locator(':scope > span').evaluateAll(elements => elements.map(el => {
+				const bounds = el.getBoundingClientRect();
+				const text = document.createRange();
+				text.selectNodeContents(el);
+				return { x: bounds.x, y: bounds.y, height: bounds.height, lineHeight: parseFloat(getComputedStyle(el).lineHeight), textWidth: text.getBoundingClientRect().width, width: bounds.width };
+			}));
+			expect(lines).toHaveLength(2);
+			for (const line of lines) {
+				expect(line.height).toBeLessThanOrEqual(line.lineHeight + 1);
+				expect(line.textWidth).toBeLessThanOrEqual(line.width + 1);
+			}
+			expect(lines[1].y).toBeGreaterThanOrEqual(lines[0].y + lines[0].height);
+			expect(Math.abs(lines[0].x - lines[1].x)).toBeLessThan(1);
+		}
 		await page.screenshot({ path: testInfo.outputPath('category-collapsed.png'), animations: 'disabled' });
 		const firstCard = dialog.locator('.category-accordion__card').first();
 		await expect(firstCard).toHaveAttribute('data-foil', 'starlight');
@@ -31,6 +46,7 @@ for (const width of [390, 1440]) {
 		expect(starlight).not.toBe(aurora);
 		await firstCard.click();
 		await expect(firstCard).toHaveAttribute('aria-pressed', 'true');
+		if (width === 390) await expect(firstCard).toHaveCSS('animation-name', 'none');
 		await expect(firstCard.locator('.category-accordion__card-copy')).toContainText("Weiser's Manuscript");
 		await expect(firstCard.locator('.category-accordion__card-copy')).toContainText(/\d+ records/);
 		await page.screenshot({ path: testInfo.outputPath('category-expanded.png'), animations: 'disabled' });
