@@ -49,9 +49,5 @@ export const BLOG_PAGE_CONFIG = {
 		dialogTitle: '渺渺星辰，亦有微光。',
 		closeLabel: '关闭类目选择',
 		currentLabel: 'Current',
-		selectHint: '点击预选此栏目。',
-		confirmHint: '再次点击进入此栏目。',
-		cardCountSuffix: '篇文章',
-		cardConfirmText: '再次点击进入',
 	},
 } as const;

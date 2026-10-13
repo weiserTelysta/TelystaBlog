@@ -17,6 +17,10 @@ import './CategoryAccordion.scss';
 import './BlogIndexControl.scss';
 
 const ACCORDION_COPY = BLOG_PAGE_CONFIG.categoryAccordion;
+
+function getCategoryTitle(visual: BlogCategoryVisual) {
+	return `${visual.cardInscription.prefix}'s ${visual.cardInscription.name}`;
+}
 const CATEGORY_DIALOG_TITLE_ID = 'category-accordion-title';
 const CLOSE_ANIMATION_MS = 200;
 const RAIL_REST_DISTANCE = 0.5;
@@ -495,7 +499,7 @@ export default function CategoryAccordion({
 				<span className="category-accordion__entry-label blog-index-control__label">{ACCORDION_COPY.entryLabel}</span>
 				<span className="category-accordion__entry-title blog-index-control__title">
 					{selectedVisual
-						? `${selectedVisual.cardInscription.prefix}'s ${selectedVisual.cardInscription.name}`
+						? getCategoryTitle(selectedVisual)
 						: ACCORDION_COPY.allRecordsTitle}
 				</span>
 			</button>
@@ -569,6 +573,7 @@ export default function CategoryAccordion({
 									const isPreselected = preselectedId === visual.id;
 									const isActive = selectedCategoryId === visual.id;
 									const postCount = postCounts[visual.id];
+									const categoryTitle = getCategoryTitle(visual);
 
 									return (
 										<button
@@ -591,9 +596,7 @@ export default function CategoryAccordion({
 													'--image-active-scale': visual.imageScale + 0.04,
 												} as CSSProperties
 											}
-											aria-label={`${visual.title}，${postCount} ${ACCORDION_COPY.cardCountSuffix}。${
-												isPreselected ? ACCORDION_COPY.confirmHint : ACCORDION_COPY.selectHint
-											}`}
+											aria-label={`${categoryTitle}, ${postCount} ${ACCORDION_COPY.recordLabel}`}
 											aria-current={isActive ? 'page' : undefined}
 											aria-pressed={isPreselected}
 											onClick={() => handleCardClick(visual.id)}
@@ -621,12 +624,11 @@ export default function CategoryAccordion({
 														{visual.cardInscription.name}
 													</span>
 												</span>
-												<span className="category-accordion__card-copy">
-													<strong>{visual.title}</strong>
-													<span>{visual.description}</span>
+												<span className="category-accordion__card-copy" lang="en">
+													<strong>{categoryTitle}</strong>
+													<span>{visual.descriptionEn}</span>
 													<em>
-														{postCount} {ACCORDION_COPY.recordLabel} ·{' '}
-														{ACCORDION_COPY.cardConfirmText}
+														{postCount} {ACCORDION_COPY.recordLabel}
 													</em>
 												</span>
 												{isActive && (

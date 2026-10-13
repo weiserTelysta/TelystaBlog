@@ -38,15 +38,21 @@ test('About 与作者首页文案不依赖 JavaScript，入口与资源同级', 
 		}
 		const links = page.locator('.home-section__links');
 		await expect(links.getByRole('link', { name: /Resource Index/ })).toBeVisible();
-		await links.getByRole('link', { name: /^About/ }).click();
+		const profile = links.getByRole('link', { name: /^Profile/ });
+		await expect(profile.locator('.home-section__link-kind')).toHaveText('biography');
+		await profile.focus();
+		await expect(profile).toBeFocused();
+		await profile.click();
 		await expect(page).toHaveURL(/\/about\/$/);
-		await expect(page.getByRole('heading', { level: 1 })).toHaveText('About');
+		await expect(page.getByRole('heading', { level: 1 })).toHaveText('Profile');
 		await expect(page.locator('.prose')).toContainText('我是 Weiser');
-		await expect(page.locator('.prose')).toContainText('原创角色');
+		await expect(page.locator('.prose')).toContainText('来自中国宁波');
+		await expect(page.locator('.prose')).toContainText('深圳大学');
+		await expect(page.locator('.prose')).toContainText('管理学学士');
+		await expect(page.locator('.prose')).toContainText('拉丁语');
+		await expect(page.locator('.prose h2, .prose ul')).toHaveCount(0);
 		expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-		const contact = page.getByRole('link', { name: 'weiser@telysta.com', exact: true });
-		await contact.focus();
-		await expect(contact).toBeFocused();
+
 		await page.screenshot({ path: '.tmp/seo-2026-10-02/about-mobile.png', fullPage: true });
 		await page.setViewportSize({ width: 1440, height: 1000 });
 		await page.screenshot({ path: '.tmp/seo-2026-10-02/about-desktop.png', fullPage: true });

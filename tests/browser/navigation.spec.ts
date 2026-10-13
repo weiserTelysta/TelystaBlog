@@ -17,6 +17,11 @@ for (const width of [390, 1440]) {
 		await expect(dialog.locator('.category-accordion__card-title-name')).toHaveText([
 			'Manuscript', 'Collection', 'Letters', 'Reading', 'Life', 'Portrait', 'Notes',
 		]);
+		await expect(dialog.locator('.category-accordion__card-copy strong')).toHaveText([
+			"Weiser's Manuscript", "Telysta's Collection", "Rhaelysa's Letters", "Alice's Reading", "Mirelle's Life", "Rhaelysa's Portrait", "Weiser's Notes",
+		]);
+		expect((await dialog.locator('.category-accordion__card-copy').allTextContents()).join(' ')).not.toMatch(/\p{Script=Han}/u);
+		await expect(dialog).not.toContainText('再次点击进入');
 		await page.evaluate(() => document.fonts.ready);
 		await page.screenshot({ path: testInfo.outputPath('category-collapsed.png'), animations: 'disabled' });
 		const firstCard = dialog.locator('.category-accordion__card').first();
@@ -26,21 +31,21 @@ for (const width of [390, 1440]) {
 		expect(starlight).not.toBe(aurora);
 		await firstCard.click();
 		await expect(firstCard).toHaveAttribute('aria-pressed', 'true');
-		await expect(firstCard.locator('.category-accordion__card-copy')).toContainText('Weiser 的手稿');
+		await expect(firstCard.locator('.category-accordion__card-copy')).toContainText("Weiser's Manuscript");
 		await expect(firstCard.locator('.category-accordion__card-copy')).toContainText(/\d+ records/);
 		await page.screenshot({ path: testInfo.outputPath('category-expanded.png'), animations: 'disabled' });
 		await page.keyboard.press('Escape');
 		await expect(dialog).toHaveCount(0);
 		await expect(entry).toBeFocused();
 		await entry.press('Enter');
-		const letters = dialog.getByRole('button', { name: /^静默书简，/ });
+		const letters = dialog.getByRole('button', { name: /^Rhaelysa's Letters,/ });
 		await letters.focus();
 		await letters.press('Enter');
 		await expect(letters).toHaveAttribute('aria-pressed', 'true');
 		await letters.press('Enter');
 		await expect(page).toHaveURL(/\/blog\/category\/letters\/$/);
 		await expect(page.locator('.category-accordion__entry-title')).toHaveText("Rhaelysa's Letters");
-		await expect(page.getByRole('link', { name: 'Lamy2000的使用体验', exact: true })).toBeVisible();
+		await expect(page.getByRole('link', { name: '生日随笔', exact: true })).toBeVisible();
 		await expect(page.locator('article a[href="/blog/category/letters/"]')).toContainText('letters');
 		expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 	});

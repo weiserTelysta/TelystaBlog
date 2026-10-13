@@ -72,10 +72,10 @@ export const HOME_SECTIONS: HomeSectionConfig[] = [
 		description: ['天空不见鸟儿的踪迹，因为他早已飞过。'],
 		items: [
 			{
-				label: 'About',
+				label: 'Profile',
 				href: '/about/',
-				description: '关于我，也关于这个小小的写作空间。',
-				kind: 'index',
+				description: '来自宁波，喜欢编程、阅读与创造。',
+				kind: 'biography',
 			},
 			{
 				label: 'Resource Index',

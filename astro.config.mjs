@@ -13,6 +13,7 @@ import sitemap from '@astrojs/sitemap';
 
 // Historical addresses only redirect; all content and navigation use Mirelle.
 const redirects = {
+  '/blog/letters/2026-9-12-lamy2000的使用体验/': '/blog/collection/2026-9-12-lamy2000的使用体验/',
   '/blog/portraits/serava/2026-9-29-serava的设计理念/': '/blog/portraits/mirelle/2026-9-29-mirelle的设计理念/',
   '/blog/portraits/serava/2026-7-2-神戸新一的skeb委托/': '/blog/portraits/mirelle/2026-7-2-神戸新一的skeb委托/',
   '/series/serava-notes/': '/series/mirelle-notes/',

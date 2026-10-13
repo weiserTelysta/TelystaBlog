@@ -1,8 +1,10 @@
 # 当前状态
 
-核对日期：2026-10-11。滚动性能与文档整理见 [本轮记录](scroll-performance-2026-10-02.md)。2026-09-29 的 R2 清理与三组资源更新见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。正文图片点击放大的范围与验证见 [验收记录](archive/2026-09/article-image-viewer-2026-09-24.md)。此前 WikiLink 与角色虹彩／资源更新分别见 [WikiLink 记录](wikilinks-2026-09-21.md) 和 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
+核对日期：2026-10-14。滚动性能与文档整理见 [本轮记录](scroll-performance-2026-10-02.md)。2026-09-29 的 R2 清理与三组资源更新见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。正文图片点击放大的范围与验证见 [验收记录](archive/2026-09/article-image-viewer-2026-09-24.md)。此前 WikiLink 与角色虹彩／资源更新分别见 [WikiLink 记录](wikilinks-2026-09-21.md) 和 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
 
 ## 已完成
+
+- 分类卡片展开内容统一英文所属标题与英文介绍，删除重复进入提示；首页入口为 Profile / Biography。个人简介仅保留作者籍贯、学历和兴趣，继续由 Markdown 维护。
 
 - 2026-10-11 完成架构、内容链路、后台、交互、依赖及文档排查。统一真实日期与 UTC 归档，补齐 Markdown 图片和额外资源收录校验，修复弹窗焦点／滚动锁、后台大写图片扩展名与并发新建文章覆盖问题；依赖审计归零。范围、验证和后续建议见 [排查报告](project-audit-2026-10-11.md)。
 

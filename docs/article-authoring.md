@@ -38,7 +38,7 @@ draft: true
 
 只保留两条相邻的 `---` 也可以，效果与省略 frontmatter 相同。填写字段时必须使用 `key: value` 格式，不能把整块元数据写成列表或普通文本；系列序号必须为正整数。
 
-文章列表下方的分类链接统一显示英文 ID；栏目入口未选择时使用 `Category / All Records`，选择后使用 `Weiser's Manuscript`、`Telysta's Collection` 等英文所属名称。分类卡片收起时作为角色展示窗口，使用花体角色名及英文题签（例如 `Weiser / Manuscript`），在 `src/config/visuals/categoryVisuals.ts` 维护；选中分类的入口名称也由这两个字段派生。展开后的中文栏目标题在 `src/config/content/blogCategories.ts` 维护。角色题签与中文栏目名称用途不同，不应统一替换。移动文章目录会改变 URL，已有外链的文章尽量保持原路径。
+文章列表下方的分类链接统一显示英文 ID；栏目入口未选择时使用 `Category / All Records`，选择后使用 `Weiser's Manuscript`、`Telysta's Collection` 等英文所属名称。分类卡片收起时作为角色展示窗口，使用花体角色名及英文题签（例如 `Weiser / Manuscript`），在 `src/config/visuals/categoryVisuals.ts` 维护；选中分类的入口名称也由这两个字段派生。展开后的标题也由英文角色名与分类题签派生，介绍使用 `src/config/content/blogCategories.ts` 中的 descriptionEn。中文栏目元数据保留用于写作表单等其他位置，不能拿来替换卡片英文标题。移动文章目录会改变 URL，已有外链的文章尽量保持原路径。
 
 ## 创建草稿
 
