@@ -25,6 +25,8 @@ function parse(body: string) {
 
 test('只登记 alias，改名或移动文件后自动计算新地址', () => {
 	assert.equal(legacyPostId('Notes/Telysta/2026-9-5-设计 理念.md'), 'notes/telysta/2026-9-5-设计-理念');
+	assert.equal(legacyPostId('portrait/Telysta/2026-9-5-旧标题.md'), legacyPostId('portraits/Telysta/2026-9-5-旧标题.md'));
+	assert.equal(legacyPostId('letter/2026-9-12-书简.md'), legacyPostId('letters/2026-9-12-书简.md'));
 	const renamed = createPostLinkIndex([post('portraits/Other/2026-9-5-新标题.md')]);
 	assert.equal(resolveWikiLink(index(), 'Telysta'), '/blog/portraits/telysta/2026-9-5-旧标题/');
 	assert.equal(resolveWikiLink(renamed, 'Ｔｅｌｙｓｔａ'), '/blog/portraits/other/2026-9-5-新标题/');

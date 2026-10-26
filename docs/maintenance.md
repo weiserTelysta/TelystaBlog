@@ -55,15 +55,15 @@ npm run check
 
 使用 `npm run post:new` 创建草稿，不再复制内容集合内的模板。命令会读取 `src/config/content/blogCategories.ts` 和 `src/config/content/blogSeries.ts`，避免栏目与系列 ID 重复维护。
 
-脚本创建的文章默认位于 `src/content/weiser-posts/<category>/<slug>.md`，保持 `draft: true`，直到准备公开。也可以直接新建日期文件名的 Markdown，由加载器补全元数据；这种方式省略 `draft` 时默认公开。完整说明见 [article-authoring.md](article-authoring.md)。
+脚本创建的文章默认位于 `src/content/weiser-posts/<category>/<slug>.md`，其中 `letters`、`portraits` 分类分别使用 `letter`、`portrait` 目录；新文章保持 `draft: true`，直到准备公开。也可以直接新建日期文件名的 Markdown，由加载器补全元数据；这种方式省略 `draft` 时默认公开。完整说明见 [article-authoring.md](article-authoring.md)。
 
 ## 文章图片
 
 文章专属原图建议使用同名目录：
 
 ```txt
-src/content/weiser-posts/portraits/example.md
-src/content/weiser-posts/portraits/example/portrait-01.png
+src/content/weiser-posts/portrait/example.md
+src/content/weiser-posts/portrait/example/portrait-01.png
 ```
 
 文章引用 `./example/portrait-01.png`。Astro 会生成网页显示版本，原图仍作为内容源保存。不要手工创建文章 `.preview.webp`。

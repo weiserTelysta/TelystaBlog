@@ -11,6 +11,7 @@ import {
 	BLOG_SERIES_IDS,
 	type BlogSeriesId,
 } from '../../src/config/content/blogSeries';
+import { postDirectoryForCategory } from '../../src/lib/postPaths.mjs';
 
 export type CreatePostOptions = {
 	title: string;
@@ -263,7 +264,7 @@ export function resolvePostDestination(
 		'src',
 		'content',
 		'weiser-posts',
-		options.category,
+		postDirectoryForCategory(options.category),
 	);
 
 	return {

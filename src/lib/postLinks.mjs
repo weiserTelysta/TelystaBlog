@@ -1,10 +1,13 @@
 import { slug as githubSlug } from 'github-slugger';
+import { postCategoryForDirectory } from './postPaths.mjs';
 
 export const normalizeLinkName = value => value.normalize('NFKC').trim().toLowerCase();
 
 /** Match Astro's historical file-based IDs, independently of frontmatter.slug. */
 export function legacyPostId(file) {
-	return file.replace(/\\/g, '/').replace(/\.md$/i, '').split('/').map(segment => githubSlug(segment)).join('/').replace(/\/index$/, '');
+	const segments = file.replace(/\\/g, '/').replace(/\.md$/i, '').split('/');
+	segments[0] = postCategoryForDirectory(segments[0].toLowerCase());
+	return segments.map(segment => githubSlug(segment)).join('/').replace(/\/index$/, '');
 }
 
 export function postHref(id) {

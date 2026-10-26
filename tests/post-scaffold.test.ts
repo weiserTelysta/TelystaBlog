@@ -11,6 +11,7 @@ import {
 	normalizePostSlug,
 	parseCreatePostArgs,
 	renderPostTemplate,
+	resolvePostDestination,
 	validateCreatePostOptions,
 	type CreatePostOptions,
 } from '../scripts/lib/post-scaffold';
@@ -155,6 +156,15 @@ test('补全非交互输入的默认 slug、日期和标签', () => {
 	assert.equal(completed.slug, '新的文章');
 	assert.match(completed.date, /^\d{4}-\d{2}-\d{2}$/);
 	assert.deepEqual(completed.tags, []);
+});
+
+test('新建文章使用单数目录，保留复数分类字段', () => {
+	for (const [category, folder] of [['letters', 'letter'], ['portraits', 'portrait']] as const) {
+		const options = createOptions({ category });
+		const destination = resolvePostDestination(options, '/repo');
+		assert.equal(destination.categoryDirectory, path.join('/repo', 'src/content/weiser-posts', folder));
+		assert.equal(parse(/^---\n([\s\S]*?)---/.exec(renderPostTemplate('---\n{{frontmatter}}---\n# {{title}}', options))![1]).category, category);
+	}
 });
 
 test('并发创建同名文章只允许一个成功，保留成功方全文且不留下临时文件', async () => {

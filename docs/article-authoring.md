@@ -22,7 +22,7 @@ aliases 是可选字段；只有主动登记名称的文章才能用该名称引
 这里写文章的第一段。构建会从正文提取摘要，不需要再手填中英文摘要。
 ```
 
-标题优先使用正文的一级标题；未写时使用去掉日期的文件名。发布日期从文件名前缀推导（支持 `YYYY-M-D` 和 `YYYY.M.D`），更新日期默认等于发布日期，分类使用 `weiser-posts` 下的第一层目录，支持在其下继续建子目录。已有分类包括 `manuscript`、`collection`、`letters`、`reading`、`life`、`portraits`、`notes`；目录 `Notes` 也能识别。`letters` 是正式分类，`essays` 已移除，不再作为别名接受。
+标题优先使用正文的一级标题；未写时使用去掉日期的文件名。发布日期从文件名前缀推导（支持 `YYYY-M-D` 和 `YYYY.M.D`），更新日期默认等于发布日期，分类使用 `weiser-posts` 下的第一层目录，支持在其下继续建子目录。已有分类包括 `manuscript`、`collection`、`letters`、`reading`、`life`、`portraits`、`notes`；目录 `Notes` 也能识别。磁盘目录 `letter`、`portrait` 分别对应分类 ID `letters`、`portraits`，文章 URL 仍使用复数形式；新建文章使用单数目录。`life` 目录直接对应 `life` 分类。`essays` 已移除，不再作为别名接受。
 
 省略 frontmatter 时文章默认公开；尚未写完请加上：
 
@@ -142,8 +142,8 @@ guihui
 使用 `--with-assets` 时会创建文章旁边的同名目录：
 
 ```txt
-src/content/weiser-posts/portraits/mirelle-note.md
-src/content/weiser-posts/portraits/mirelle-note/reference-01.png
+src/content/weiser-posts/portrait/mirelle-note.md
+src/content/weiser-posts/portrait/mirelle-note/reference-01.png
 ```
 
 Markdown 引用：

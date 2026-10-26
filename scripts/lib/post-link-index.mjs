@@ -3,6 +3,7 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { parse } from 'yaml';
 import { createPostLinkIndex, legacyPostId } from '../../src/lib/postLinks.mjs';
+import { postCategoryForDirectory } from '../../src/lib/postPaths.mjs';
 
 export function readPostLinkIndex(root = process.cwd()) {
 	const base = path.join(root, 'src/content/weiser-posts');
@@ -18,7 +19,9 @@ export function readPostLinkIndex(root = process.cwd()) {
 				const data = match ? parse(match[1] ?? '') ?? {} : {};
 				if (typeof data !== 'object' || Array.isArray(data)) throw new Error(`${file}: frontmatter 必须是对象。`);
 				const relative = path.relative(base, file).replace(/\\/g, '/');
-				data.category = String(data.category || relative.split('/')[0]).trim().toLowerCase();
+				data.category = data.category
+					? String(data.category).trim().toLowerCase()
+					: postCategoryForDirectory(relative.split('/')[0].toLowerCase());
 				posts.push({ id: legacyPostId(relative), file, data, body: match ? source.slice(match[0].length) : source });
 			}
 		}

@@ -2,6 +2,7 @@ import { BLOG_CATEGORY_IDS } from '../config/content/blogCategories';
 import { buildPostExcerpt } from './blogExcerpt';
 import { extractMarkdownTitle } from './markdownTitle';
 import { parseContentDate } from './contentDate';
+import { postCategoryForDirectory } from './postPaths.mjs';
 
 const isBlank = (value: unknown) => value == null || (typeof value === 'string' && !value.trim());
 const categoryIds: ReadonlySet<string> = new Set(BLOG_CATEGORY_IDS);
@@ -39,7 +40,7 @@ export function completePostMetadata(
 		// Only the first directory under weiser-posts determines the category.
 		const rootIndex = segments.lastIndexOf('weiser-posts');
 		const folder = rootIndex >= 0 ? segments[rootIndex + 1] : segments[0];
-		const candidate = (folder ?? '').trim().toLowerCase();
+		const candidate = postCategoryForDirectory((folder ?? '').trim().toLowerCase());
 		if (knownCategories.has(candidate)) data.category = candidate;
 	} else if (typeof data.category === 'string') {
 		data.category = data.category.trim().toLowerCase();

@@ -140,6 +140,18 @@ test('letters 目录自动归类，已移除的 essays 不作为别名接受', a
 	assert.ok(runContentValidation(rootDir).issues.some(issue => issue.code === 'category-unknown'));
 });
 
+test('单数目录自动归入原分类，life 草稿保留新分类', async () => {
+	const rootDir = await createTemporaryContentRoot();
+	for (const folder of ['letter', 'portrait', 'life']) {
+		const directory = path.join(rootDir, 'src/content/weiser-posts', folder);
+		await fs.mkdir(directory, { recursive: true });
+		await fs.writeFile(path.join(directory, '2026-10-26-记录.md'), '---\ndraft: true\n---\n# 记录\n\n一段记录。\n');
+	}
+	const result = runContentValidation(rootDir);
+	assert.equal(result.errorCount, 0);
+	assert.deepEqual(result.documents.map(document => document.frontmatter.category).sort(), ['letters', 'life', 'portraits']);
+});
+
 test('无法推导日期或遇到损坏的 frontmatter 时仍明确报错', async () => {
 	const rootDir = await createTemporaryContentRoot();
 	const directory = path.join(rootDir, 'src/content/weiser-posts/manuscript');
