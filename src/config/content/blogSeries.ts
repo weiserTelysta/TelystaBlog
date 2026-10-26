@@ -27,6 +27,14 @@ export const BLOG_SERIES = [
 		descriptionEn: 'Reading notes and fragments about advertising, commerce, and platform logic.',
 	},
 	{
+		id: 'my-journal',
+		category: 'life',
+		title: '我的日记',
+		titleEn: 'My Journal',
+		description: '记录日常生活、心情与个人思考。',
+		descriptionEn: 'Personal entries on everyday life, feelings, and reflections.',
+	},
+	{
 		id: 'ningbo-catholic-observation-log',
 		category: 'notes',
 		title: '宁波天主教观察日志',
