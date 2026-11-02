@@ -10,12 +10,13 @@ import remarkPostLinks from './scripts/remark-post-links.mjs';
 
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+import { readPostLinkIndex } from './scripts/lib/post-link-index.mjs';
+import { buildPostRedirects } from './src/lib/postLinks.mjs';
+import { fileURLToPath } from 'node:url';
 
-// Historical addresses only redirect; all content and navigation use Mirelle.
+// GitHub Pages serves Astro's static HTML redirects; no server rewrite is needed.
 const redirects = {
-  '/blog/letters/2026-9-12-lamy2000的使用体验/': '/blog/collection/2026-9-12-lamy2000的使用体验/',
-  '/blog/portraits/serava/2026-9-29-serava的设计理念/': '/blog/portraits/mirelle/2026-9-29-mirelle的设计理念/',
-  '/blog/portraits/serava/2026-7-2-神戸新一的skeb委托/': '/blog/portraits/mirelle/2026-7-2-神戸新一的skeb委托/',
+  ...buildPostRedirects(readPostLinkIndex(fileURLToPath(new URL('.', import.meta.url)))),
   '/series/serava-notes/': '/series/mirelle-notes/',
 };
 

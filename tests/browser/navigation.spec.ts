@@ -12,13 +12,13 @@ for (const width of [320, 390, 768, 1440, 1920]) {
 		const dialog = page.getByRole('dialog');
 		await expect(dialog).toBeVisible();
 		await expect(dialog.locator('.category-accordion__card-title-prefix')).toHaveText([
-			'Weiser', 'Telysta', 'Rhaelysa', 'Alice', 'Mirelle', 'Rhaelysa', 'Weiser',
+			'Weiser', 'Weiser', 'Weiser', 'Weiser', 'Weiser', 'Weiser', 'Weiser',
 		]);
 		await expect(dialog.locator('.category-accordion__card-title-name')).toHaveText([
-			'Manuscript', 'Collection', 'Letters', 'Reading', 'Life', 'Portrait', 'Notes',
+			'Manuscript', 'Collection', 'Letters', 'Reading', 'Life', 'Portraits', 'Notes',
 		]);
 		await expect(dialog.locator('.category-accordion__card-copy strong')).toHaveText([
-			"Weiser's Manuscript", "Telysta's Collection", "Rhaelysa's Letters", "Alice's Reading", "Mirelle's Life", "Rhaelysa's Portrait", "Weiser's Notes",
+			"Weiser's Manuscript", "Weiser's Collection", "Weiser's Letters", "Weiser's Reading", "Weiser's Life", "Weiser's Portraits", "Weiser's Notes",
 		]);
 		expect((await dialog.locator('.category-accordion__card-copy').allTextContents()).join(' ')).not.toMatch(/\p{Script=Han}/u);
 		await expect(dialog).not.toContainText('再次点击进入');
@@ -54,13 +54,13 @@ for (const width of [320, 390, 768, 1440, 1920]) {
 		await expect(dialog).toHaveCount(0);
 		await expect(entry).toBeFocused();
 		await entry.press('Enter');
-		const letters = dialog.getByRole('button', { name: /^Rhaelysa's Letters,/ });
+		const letters = dialog.getByRole('button', { name: /^Weiser's Letters,/ });
 		await letters.focus();
 		await letters.press('Enter');
 		await expect(letters).toHaveAttribute('aria-pressed', 'true');
 		await letters.press('Enter');
 		await expect(page).toHaveURL(/\/blog\/category\/letters\/$/);
-		await expect(page.locator('.category-accordion__entry-title')).toHaveText("Rhaelysa's Letters");
+		await expect(page.locator('.category-accordion__entry-title')).toHaveText("Weiser's Letters");
 		await expect(page.getByRole('link', { name: '生日随笔', exact: true })).toBeVisible();
 		await expect(page.locator('article a[href="/blog/category/letters/"]')).toContainText('letters');
 		expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -69,8 +69,8 @@ for (const width of [320, 390, 768, 1440, 1920]) {
 
 test('全部分类页及返回总览的入口使用英文题签', async ({ page }) => {
 	for (const [id, label] of Object.entries({
-		manuscript: "Weiser's Manuscript", collection: "Telysta's Collection", letters: "Rhaelysa's Letters",
-		reading: "Alice's Reading", life: "Mirelle's Life", portraits: "Rhaelysa's Portrait", notes: "Weiser's Notes",
+		manuscript: "Weiser's Manuscript", collection: "Weiser's Collection", letters: "Weiser's Letters",
+		reading: "Weiser's Reading", life: "Weiser's Life", portraits: "Weiser's Portraits", notes: "Weiser's Notes",
 	})) {
 		await page.goto(`/blog/category/${id}/`);
 		await expect(page.locator('.category-accordion__entry-label')).toHaveText('Category');

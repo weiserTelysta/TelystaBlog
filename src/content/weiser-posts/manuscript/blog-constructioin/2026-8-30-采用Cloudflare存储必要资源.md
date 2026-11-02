@@ -1,4 +1,8 @@
 ---
+uuid: a896cdb00f19
+redirectFrom:
+  - /blog/manuscript/blog-constructioin/2026-8-30-采用cloudflare存储必要资源/
+commentId: blog/manuscript/blog-constructioin/2026-8-30-采用cloudflare存储必要资源/
 title: 阶段更新：采用 Cloudflare 对象存储分发必要资源
 titleEn: "Project Update: Using Cloudflare Object Storage for Essential Assets"
 description: 技术更新：博客采用 Cloudflare 分发必要资源，以改善访问体验并支持后续的大型文件下载。

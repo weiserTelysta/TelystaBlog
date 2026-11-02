@@ -13,7 +13,7 @@ test('无 JavaScript 也能获取首页与文章的静态分享信息', async ({
 		await expect(page.locator('meta[name="twitter:image"]')).toHaveCount(1);
 		await expect(page.locator('meta[property="article:published_time"]')).toHaveCount(0);
 		await page.goto('http://127.0.0.1:4322/blog/');
-		const href = await page.locator('a[href^="/blog/manuscript/"]').first().getAttribute('href');
+		const href = await page.locator('a[href^="/blog/WEISER"]').first().getAttribute('href');
 		expect(href).toBeTruthy();
 		await page.goto(new URL(href!, 'http://127.0.0.1:4322').href);
 		await expect(page.locator('meta[property="og:type"]')).toHaveAttribute('content', 'article');

@@ -27,6 +27,14 @@ export const BLOG_SERIES = [
 		descriptionEn: 'Reading notes and fragments about advertising, commerce, and platform logic.',
 	},
 	{
+		id: 'byzantine-civilization',
+		category: 'reading',
+		title: '拜占庭文明史',
+		titleEn: 'History of Byzantine Civilization',
+		description: '从政治、宗教、艺术与知识传播，梳理拜占庭文明及其延续。',
+		descriptionEn: 'Reading notes on Byzantine politics, religion, art, intellectual exchange, and their legacies.',
+	},
+	{
 		id: 'my-journal',
 		category: 'life',
 		title: '我的日记',

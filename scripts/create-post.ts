@@ -25,7 +25,7 @@ const HELP_TEXT = `创建新的 Telysta 博客草稿
   --description     中文文章摘要
   --description-en  英文文章摘要
   --category        栏目 id
-  --slug            可选 URL slug
+  --slug            可选文件名（网址使用自动保存的短 UUID）
   --date            YYYY-MM-DD，默认使用上海日期
   --tags            逗号分隔标签
   --series          可选系列 id

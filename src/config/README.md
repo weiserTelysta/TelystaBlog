@@ -44,7 +44,7 @@
 
 ## 添加系列与分类
 
-只往 `BLOG_SERIES` 或 `BLOG_CATEGORIES` 添加完整对象，ID 列表和 TypeScript 类型自动派生，不再手工修改第二份名单。系列的 `category` 填已有分类 ID。已有 ID 涉及文章引用、URL 与评论映射，改显示标题不等于改 ID。
+只往 `BLOG_SERIES` 或 `BLOG_CATEGORIES` 添加完整对象，ID 列表和 TypeScript 类型自动派生，不再手工修改第二份名单。系列的 `category` 填已有分类 ID。已有分类／系列 ID 涉及归属引用与目录页 URL，改显示标题不等于改 ID。文章永久链接和评论使用独立的固定短编号；改分类不改变文章网址。
 
 博客文章、栏目与系列都将中文和英文资料分开保存：`title` / `description`（以及栏目的 `subtitle`）用于当前中文页面，`titleEn` / `descriptionEn` / `subtitleEn` 保存对应英文。不要在同一个字段里拼接两种语言；新文章脚本也会要求两套标题与摘要。英文资料会参与站内搜索，并为后续独立英文路由保留，但不会在同一个中文 URL 上重复输出第二份 SEO 描述。
 
@@ -70,3 +70,5 @@
 本地开发通常会更新预览；正式网站仍需构建、提交并部署。修改后运行 `npm run check`，涉及 UI 文案长度或新选项时再运行 `npm run test:browser`。文案配置自身与结构测试不固定条数；测试中的文章样本和截图仍可能需要随内容变化维护。
 
 完整维护规范见 [维护指南](../../docs/maintenance.md)。
+
+文章正式网址为 `/blog/WEISER<12位短UUID>/`，编号保存在 Markdown 的 `uuid` 中。全部分类题签所属名统一为 Weiser，原有角色插画继续作为分类视觉。新建工具自动补号，手建文章用 `npm run post:identify`；完整规则见 [永久链接说明](../../docs/post-permalinks-2026-11-03.md)。

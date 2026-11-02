@@ -89,3 +89,7 @@
 ## 开发记录
 
 日常操作以本文为准；实现过程与后续计划见 [UI 与功能补全](admin-ux-plan-2026-09-15.md)，文章编辑细节见 [写作阶段记录](archive/2026-09/admin-writing-2026-09-15.md)。
+
+## 文章固定编号
+
+新建草稿编辑页会生成并保存 `uuid`（12 位短 UUID），正式网址为 `/blog/WEISER<uuid>/`。表单编辑会保留 uuid、redirectFrom、commentId；请勿在源码中修改已发布文章的编号或复用另一篇文章的编号。IDE 手建文章先用 `npm run post:identify` 补号。旧网址和评论关联规则见 [永久链接说明](post-permalinks-2026-11-03.md)。

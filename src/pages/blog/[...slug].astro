@@ -75,7 +75,7 @@ const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 
 				<ArticleSeriesNav series={series} postCount={seriesPostCount} navigation={navigation} />
 
-				<ArticleComments />
+				<ArticleComments commentId={entry.data.commentId ?? entry.id} />
 			</div>
 
 			{hasToc && <ArticleAside headings={tocHeadings} />}

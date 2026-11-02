@@ -1,8 +1,10 @@
 # 当前状态
 
-核对日期：2026-10-14。滚动性能与文档整理见 [本轮记录](scroll-performance-2026-10-02.md)。2026-09-29 的 R2 清理与三组资源更新见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。正文图片点击放大的范围与验证见 [验收记录](archive/2026-09/article-image-viewer-2026-09-24.md)。此前 WikiLink 与角色虹彩／资源更新分别见 [WikiLink 记录](wikilinks-2026-09-21.md) 和 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
+核对日期：2026-11-03。滚动性能与文档整理见 [本轮记录](scroll-performance-2026-10-02.md)。2026-09-29 的 R2 清理与三组资源更新见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。正文图片点击放大的范围与验证见 [验收记录](archive/2026-09/article-image-viewer-2026-09-24.md)。此前 WikiLink 与角色虹彩／资源更新分别见 [WikiLink 记录](wikilinks-2026-09-21.md) 和 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
 
 ## 已完成
+
+- 2026-11-03：20 篇文章保存固定 12 位短 UUID，正式网址统一为 `/blog/WEISER<uuid>/`；旧文件名地址静态跳转，Giscus 保留原讨论键。全部分类归属统一为 Weiser；《拜占庭的赠礼》保留作者正文并补齐发布信息，加入新系列“拜占庭文明史”。写作与迁移规则见 [永久链接说明](post-permalinks-2026-11-03.md)。
 
 - 分类卡片展开内容统一英文所属标题与英文介绍，删除重复进入提示；首页入口为 Marginalia / A Little More，展开的英文分类标题统一分成所属名与分类名两行。个人简介仅保留作者籍贯、学历和兴趣，继续由 Markdown 维护。
 

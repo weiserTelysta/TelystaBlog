@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { parse } from 'yaml';
-import { createPostLinkIndex, legacyPostId } from '../../src/lib/postLinks.mjs';
+import { createPostLinkIndex, legacyPostId, postHref } from '../../src/lib/postLinks.mjs';
 import { postCategoryForDirectory } from '../../src/lib/postPaths.mjs';
 
 export function readPostLinkIndex(root = process.cwd()) {
@@ -22,13 +22,13 @@ export function readPostLinkIndex(root = process.cwd()) {
 				data.category = data.category
 					? String(data.category).trim().toLowerCase()
 					: postCategoryForDirectory(relative.split('/')[0].toLowerCase());
-				posts.push({ id: legacyPostId(relative), file, data, body: match ? source.slice(match[0].length) : source });
+				posts.push({ file, data, legacyHref: postHref(legacyPostId(relative)), body: match ? source.slice(match[0].length) : source });
 			}
 		}
 	}
 	scan(base);
 	const index = createPostLinkIndex(posts);
 	// Aliases, draft state and file moves must invalidate referring posts.
-	const digest = createHash('sha256').update(JSON.stringify(posts.map(({ id, data }) => ({ id, data })))).digest('hex');
+	const digest = createHash('sha256').update(JSON.stringify(posts.map(({ id, data, legacyHref }) => ({ id, data, legacyHref })))).digest('hex');
 	return { ...index, digest };
 }

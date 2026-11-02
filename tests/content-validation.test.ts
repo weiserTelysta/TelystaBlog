@@ -4,6 +4,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { afterEach, test } from 'node:test';
 import { runContentValidation } from '../scripts/lib/content-validation';
+import { assignPostIds, createPostUuid } from '../scripts/lib/post-identity';
 
 const temporaryDirectories: string[] = [];
 
@@ -101,11 +102,14 @@ test('英文标题与摘要留空时自动回退到中文', async () => {
 	assert.equal(result.documents[0].frontmatter.descriptionEn, '有效摘要。');
 });
 
-test('仅日期文件名和 Markdown 正文即可发布，检查不会改写源文件', async () => {
+test('日期文件名和正文在保存短 UUID 后可发布，检查不会改写源文件', async () => {
 	const rootDir = await createTemporaryContentRoot();
 	const filePath = path.join(rootDir, 'src/content/weiser-posts/manuscript/2026-9-13-新文章.md');
 	const source = '  # 新文章\n\n这是一篇直接新建的文章，正文首段足够完整，可以自动作为文章摘要。\n';
 	await fs.writeFile(filePath, source);
+	assert.ok(runContentValidation(rootDir).issues.some(issue => issue.message.includes('uuid')));
+	await assignPostIds(rootDir);
+	const identifiedSource = await fs.readFile(filePath, 'utf8');
 	const result = runContentValidation(rootDir);
 	assert.equal(result.errorCount, 0);
 	assert.equal(result.documents[0].frontmatter.title, '新文章');
@@ -113,7 +117,8 @@ test('仅日期文件名和 Markdown 正文即可发布，检查不会改写源�
 	assert.equal(result.documents[0].frontmatter.publishedAt, '2026-09-13');
 	assert.equal(result.documents[0].frontmatter.updatedAt, '2026-09-13');
 	assert.match(String(result.documents[0].frontmatter.description), /^这是一篇/);
-	assert.equal(await fs.readFile(filePath, 'utf8'), source);
+	assert.ok(identifiedSource.endsWith(source));
+	assert.equal(await fs.readFile(filePath, 'utf8'), identifiedSource);
 });
 
 test('接受 letters、空可选字段，同时保留孤立系列序号的错误', async () => {
@@ -133,6 +138,7 @@ test('letters 目录自动归类，已移除的 essays 不作为别名接受', a
 	const directory = path.join(rootDir, 'src/content/weiser-posts/letters');
 	await fs.mkdir(directory, { recursive: true });
 	await fs.writeFile(path.join(directory, '2026-9-13-书简.md'), '# 书简\n\n记录今天的见闻与感想。\n');
+	await assignPostIds(rootDir);
 	const result = runContentValidation(rootDir);
 	assert.equal(result.errorCount, 0);
 	assert.equal(result.documents[0].frontmatter.category, 'letters');
@@ -147,6 +153,7 @@ test('单数目录自动归入原分类，life 草稿保留新分类', async () 
 		await fs.mkdir(directory, { recursive: true });
 		await fs.writeFile(path.join(directory, '2026-10-26-记录.md'), '---\ndraft: true\n---\n# 记录\n\n一段记录。\n');
 	}
+	await assignPostIds(rootDir);
 	const result = runContentValidation(rootDir);
 	assert.equal(result.errorCount, 0);
 	assert.deepEqual(result.documents.map(document => document.frontmatter.category).sort(), ['letters', 'life', 'portraits']);
@@ -162,12 +169,13 @@ test('无法推导日期或遇到损坏的 frontmatter 时仍明确报错', asyn
 	assert.ok(result.issues.some(issue => issue.code === 'frontmatter-missing'));
 });
 
-test('接受空 frontmatter，并保留正文与正确行号', async () => {
+test('空 frontmatter 保留正文与行号，并提示保存固定编号', async () => {
 	const rootDir = await createTemporaryContentRoot();
 	const filePath = path.join(rootDir, 'src/content/weiser-posts/manuscript/2026-9-13-empty.md');
 	await fs.writeFile(filePath, '\uFEFF---\r\n---\r\n# 空元数据\r\n\r\n正文。\r\n');
 	const result = runContentValidation(rootDir);
-	assert.equal(result.errorCount, 0);
+	assert.equal(result.errorCount, 1);
+	assert.ok(result.issues[0].message.includes('uuid'));
 	assert.equal(result.documents[0].frontmatter.title, '空元数据');
 	assert.equal(result.documents[0].bodyStartLine, 3);
 	assert.equal(result.documents[0].body, '# 空元数据\n\n正文。\n');
@@ -494,6 +502,7 @@ async function writePost(
 	body = '正文。\n',
 ) {
 	const frontmatter = {
+		uuid: createPostUuid(),
 		title: fileName,
 		titleEn: `English title for ${fileName}`,
 		description: '有效摘要。',

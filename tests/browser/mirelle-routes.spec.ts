@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
+import { permalinkFor } from '../helpers/post-routes';
 
 const routes = [
-	['/blog/portraits/serava/2026-9-29-serava的设计理念/', '/blog/portraits/mirelle/2026-9-29-mirelle的设计理念/'],
-	['/blog/portraits/serava/2026-7-2-神戸新一的skeb委托/', '/blog/portraits/mirelle/2026-7-2-神戸新一的skeb委托/'],
+	['/blog/portraits/serava/2026-9-29-serava的设计理念/', permalinkFor('/blog/portraits/mirelle/2026-9-29-mirelle的设计理念/')],
+	['/blog/portraits/serava/2026-7-2-神戸新一的skeb委托/', permalinkFor('/blog/portraits/mirelle/2026-7-2-神戸新一的skeb委托/')],
 	['/series/serava-notes/', '/series/mirelle-notes/'],
 ];
 

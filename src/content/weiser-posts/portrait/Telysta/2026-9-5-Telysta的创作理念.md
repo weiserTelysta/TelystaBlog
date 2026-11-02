@@ -1,4 +1,8 @@
 ---
+uuid: 2445cc9acd2c
+redirectFrom:
+  - /blog/portraits/telysta/2026-9-5-telysta的创作理念/
+commentId: blog/portraits/telysta/2026-9-5-telysta的创作理念/
 aliases:
   - Telysta
 title: Telysta 的设计信息分享

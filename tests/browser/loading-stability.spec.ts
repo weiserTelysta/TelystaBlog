@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
+import { permalinkFor } from '../helpers/post-routes';
 
-const article = '/blog/portraits/telysta/2026-9-5-telysta的创作理念/';
+const article = permalinkFor('/blog/portraits/telysta/2026-9-5-telysta的创作理念/');
 
 test('筛选少量资源不会拉高页首或改变标题、筛选入口的位置', async ({ page }, testInfo) => {
 	await page.goto('/resources/');

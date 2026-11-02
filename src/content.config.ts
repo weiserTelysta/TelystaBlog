@@ -5,6 +5,7 @@ import { BLOG_CATEGORY_IDS } from './config/content/blogCategories';
 import { BLOG_SERIES_IDS } from './config/content/blogSeries';
 import { postLoader } from './lib/postLoader';
 import { parseContentDate } from './lib/contentDate';
+import { POST_UUID_PATTERN } from './lib/postLinks.mjs';
 import {
 	RESOURCE_ACTION_TYPES,
 	RESOURCE_STATUS_IDS,
@@ -17,6 +18,9 @@ const posts = defineCollection({
 	loader: postLoader(),
 	schema: z
 		.object({
+			uuid: z.string().regex(POST_UUID_PATTERN),
+			redirectFrom: z.array(z.string().min(1)).optional(),
+			commentId: z.string().min(1).optional(),
 			aliases: z.array(z.string().trim().min(1)).optional(),
 			title: z.string().min(1),
 			titleEn: z.string().min(1),

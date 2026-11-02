@@ -52,7 +52,7 @@ const VISUAL_COPY: Record<
 	},
 	collection: {
 		cardInscription: {
-			prefix: 'Telysta',
+			prefix: 'Weiser',
 			name: 'Collection',
 		},
 		image: accordionTelystaImage,
@@ -61,7 +61,7 @@ const VISUAL_COPY: Record<
 	},
 	letters: {
 		cardInscription: {
-			prefix: 'Rhaelysa',
+			prefix: 'Weiser',
 			name: 'Letters',
 		},
 		image: accordionRhaelysaImage01,
@@ -70,7 +70,7 @@ const VISUAL_COPY: Record<
 	},
 	reading: {
 		cardInscription: {
-			prefix: 'Alice',
+			prefix: 'Weiser',
 			name: 'Reading',
 		},
 		image: accordionAliceImage,
@@ -79,7 +79,7 @@ const VISUAL_COPY: Record<
 	},
 	life: {
 		cardInscription: {
-			prefix: 'Mirelle',
+			prefix: 'Weiser',
 			name: 'Life',
 		},
 		image: accordionMirelleImage,
@@ -88,8 +88,8 @@ const VISUAL_COPY: Record<
 	},
 	portraits: {
 		cardInscription: {
-			prefix: 'Rhaelysa',
-			name: 'Portrait',
+			prefix: 'Weiser',
+			name: 'Portraits',
 		},
 		image: accordionRhaelysaImage02,
 		description: '观察人物、角色与创作者表达方式的侧影。',

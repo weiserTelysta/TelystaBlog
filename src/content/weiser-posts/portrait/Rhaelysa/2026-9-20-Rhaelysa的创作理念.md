@@ -1,4 +1,8 @@
 ---
+uuid: a257232b8e00
+redirectFrom:
+  - /blog/portraits/rhaelysa/2026-9-20-rhaelysa的创作理念/
+commentId: blog/portraits/rhaelysa/2026-9-20-rhaelysa的创作理念/
 title: Rhaelysa 的设计信息分享
 titleEn: "Notes on Rhaelysa's Design"
 description: "记录 Rhaelysa 的角色设定、对秩序与掌控的执着，以及红龙血脉、服装与花卉意象。"

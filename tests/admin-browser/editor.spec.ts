@@ -99,6 +99,34 @@ test('移动端与减少动态：键盘可用，主要表单不溢出', async ({
 	}
 });
 
+test('后台新建草稿自动保存短编号，修改标题和再次保存后编号保持不变', async ({ page }) => {
+	const fixture = await adminFixture();
+	try {
+		await page.goto(fixture.url);
+		await page.getByRole('button', { name: '系列与文章', exact: true }).click();
+		await page.locator('summary').filter({ hasText: '新建文章' }).click();
+		await page.getByPlaceholder('文章标题', { exact: true }).fill('编号测试');
+		await page.getByRole('combobox', { name: '分类目录', exact: true }).selectOption('letters');
+		await page.getByRole('button', { name: '创建草稿编辑页', exact: true }).click();
+		const source = page.getByRole('textbox', { name: 'Markdown 源码', exact: true });
+		const uuid = /^uuid: ([0-9a-f]{12})$/m.exec(await source.inputValue())?.[1];
+		expect(uuid).toMatch(/^[0-9a-f]{12}$/);
+		await page.getByRole('button', { name: '保存文章', exact: true }).click();
+		await expect(page.getByRole('status')).toContainText('文章已保存');
+		await page.getByRole('textbox', { name: '标题', exact: true }).fill('修改后的标题');
+		await page.getByRole('button', { name: '保存文章', exact: true }).click();
+		await expect(page.getByRole('status')).toContainText('文章已保存');
+		const directory = path.join(fixture.root, 'src/content/weiser-posts/letters');
+		const files = (await fs.readdir(directory)).filter(file => file.includes('编号测试'));
+		expect(files).toHaveLength(1);
+		const saved = await fs.readFile(path.join(directory, files[0]), 'utf8');
+		expect(saved).toContain(`uuid: ${uuid}`);
+		expect(saved).toContain('修改后的标题');
+	} finally {
+		await fixture.close();
+	}
+});
+
 test('文章表单、未保存草稿预览与脚本隔离', async ({ page }) => {
 	const fixture = await adminFixture();
 	const external: string[] = [];

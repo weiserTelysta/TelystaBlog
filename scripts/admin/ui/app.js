@@ -1134,7 +1134,7 @@ async function postsPage(serial) {
 			return editPost({
 				path: `src/content/weiser-posts/${folder.value}/${filename}`,
 				version: null,
-				source: `---\ntitle: ${JSON.stringify(title.value.trim())}\ndraft: true\n---\n\n`,
+				source: `---\nuuid: ${crypto.randomUUID().replaceAll('-', '').slice(0, 12)}\ntitle: ${JSON.stringify(title.value.trim())}\ndraft: true\n---\n\n`,
 			});
 		}),
 	);

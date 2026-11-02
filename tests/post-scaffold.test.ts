@@ -85,6 +85,7 @@ test('模板生成有效 frontmatter 和由作者维护的单一文章 H1', () =
 	const match = /^---\n([\s\S]*?)---\n/.exec(content);
 
 	assert.ok(match);
+	assert.match(parse(match[1]).uuid, /^[0-9a-f]{12}$/);
 	assert.deepEqual(parse(match[1]).tags, ['Astro', '中文']);
 	assert.equal(parse(match[1]).titleEn, 'Test Post');
 	assert.equal(parse(match[1]).descriptionEn, 'Test summary');
@@ -177,7 +178,10 @@ test('并发创建同名文章只允许一个成功，保留成功方全文且�
 	const directory = path.join(rootDir, 'src/content/weiser-posts/manuscript');
 	const content = await fs.readFile(path.join(directory, 'test-post.md'), 'utf8');
 	const template = await fs.readFile(path.join(rootDir, 'scripts/templates/post.md'), 'utf8');
-	assert.equal(content, renderPostTemplate(template, options[winner]));
+	const actual = parse(/^---\n([\s\S]*?)---/.exec(content)![1]);
+	assert.equal(actual.title, options[winner].title);
+	assert.match(actual.uuid, /^[0-9a-f]{12}$/);
+	assert.equal(content.replace(/^uuid: .+\n/m, ''), renderPostTemplate(template, options[winner]).replace(/^uuid: .+\n/m, ''));
 	assert.deepEqual(await fs.readdir(directory), ['test-post.md']);
 });
 

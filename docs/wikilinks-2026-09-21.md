@@ -1,5 +1,7 @@
 # WikiLink：可选别名与自动跳转
 
+2026-11-03 更新：本文保留九月的实现与验收记录。现行文章路由已改为固定 WEISER 短编号，旧地址静态跳转，Giscus 使用固定 specific 映射；以 [永久链接说明](post-permalinks-2026-11-03.md) 与 [写作指南](article-authoring.md) 为准。
+
 日期：2026-09-21。最终需求：作者只登记 aliases，正文写 `[[名称]]`；程序按目标文章当前位置生成链接，不维护 slug、短地址或 redirectFrom。
 
 ## 原因与实施计划

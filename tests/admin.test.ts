@@ -190,12 +190,13 @@ test('Markdown saves raw CRLF, comments and extensions; invalid metadata and dup
 			409,
 		);
 		const newPath = 'src/content/weiser-posts/letters/2026-9-15-新文章.md';
+		const newSource = source.replace('uuid: a3f7c92d8e10', 'uuid: b3f7c92d8e10');
 		assert.equal(
 			(
 				await fixture.request('/api/post', {
 					path: newPath,
 					version: null,
-					source,
+					source: newSource,
 				})
 			).status,
 			200,

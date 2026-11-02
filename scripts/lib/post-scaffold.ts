@@ -12,6 +12,7 @@ import {
 	type BlogSeriesId,
 } from '../../src/config/content/blogSeries';
 import { postDirectoryForCategory } from '../../src/lib/postPaths.mjs';
+import { createPostUuid } from './post-identity';
 
 export type CreatePostOptions = {
 	title: string;
@@ -283,6 +284,7 @@ export function renderPostTemplate(template: string, options: CreatePostOptions)
 	}
 
 	const frontmatter: Record<string, unknown> = {
+		uuid: createPostUuid(),
 		title: options.title,
 		titleEn: options.titleEn,
 		description: options.description,

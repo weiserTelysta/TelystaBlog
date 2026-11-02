@@ -2,19 +2,19 @@
 
 独立介绍页 About 直接编辑 `src/pages/about.md`，保留 frontmatter 的 `layout`、`title`、`description`，正文从段落或二级标题开始；页面标题由布局渲染，不必再写一个 H1。它不属于博客文章，也不出现在文章时间线中。
 
-目录约定：观察笔记统一放在 `src/content/weiser-posts/notes/`，使用小写分类目录。此次 `Notes` → `notes` 仅大小写规范化；路由生成原本就会转小写，因此已发布 URL 和评论映射不变。一般文件改名仍可能改变 URL，站内关联优先使用 aliases／WikiLink。
+目录约定：观察笔记放在 `src/content/weiser-posts/notes/`，分类目录使用小写；阅读笔记可继续放在 `reading/Commerce/`、`reading/History/` 等子目录。文章的正式网址统一为 `/blog/WEISER<12位短UUID>/`，由 frontmatter 中固定保存的 `uuid` 决定，改标题、文件名、目录或分类均不改变该网址。完整迁移规则见 [文章永久链接](post-permalinks-2026-11-03.md)。
 
 英文 `titleEn` / `descriptionEn` 仅用于标题和介绍，留空仍回退中文，不会自动翻译正文。既有文章保留双语元数据；单文件中／英／日展示仍在 [方案调研](multilingual-markdown-assessment-2026-09-21.md) 阶段，示例语言块尚不可用于生产文章。
 
 ## 文章互相引用
 
-现在可以用 `[[Telysta]]` 或 `[[Telysta|她的姐姐]]`。只需在目标文章的 frontmatter 中登记 `aliases: [Telysta]`，构建会查找该文章并自动生成链接；不需要手填 slug、路径或 redirectFrom。改文件名或移动目录时保留 alias，站内 WikiLink 会自动跟随。
+可以用 `[[Telysta]]` 或 `[[Telysta|她的姐姐]]`。只需在目标文章的 frontmatter 中登记 `aliases: [Telysta]`，构建会自动生成指向短 UUID 永久链接的原生链接。改文件名或移动目录时保留 alias 和 uuid。
 
-aliases 是可选字段；只有主动登记名称的文章才能用该名称引用。完整示例、错误提示与外部旧 URL 的边界见 [WikiLink 使用与开发记录](wikilinks-2026-09-21.md)。普通 Markdown 链接仍可使用，但不要把文件目录直接当作页面 URL。
+aliases 是可选字段；只有主动登记名称的文章才能用该名称引用。语法示例见 [WikiLink 记录](wikilinks-2026-09-21.md)，其中九月的文件路由与 pathname 评论方案已由本轮永久链接替代。普通 Markdown 链接推荐使用 `/blog/WEISER.../`，不要把磁盘目录直接当作永久网址。
 
 ## 直接新建 Markdown（最少填写）
 
-在已有分类目录中保存 `2026-9-13-文章标题.md`，直接写正文即可，例如：
+在已有分类目录中保存 `2026-9-13-文章标题.md`，直接写正文，例如：
 
 ```md
 # 文章标题
@@ -22,7 +22,9 @@ aliases 是可选字段；只有主动登记名称的文章才能用该名称引
 这里写文章的第一段。构建会从正文提取摘要，不需要再手填中英文摘要。
 ```
 
-标题优先使用正文的一级标题；未写时使用去掉日期的文件名。发布日期从文件名前缀推导（支持 `YYYY-M-D` 和 `YYYY.M.D`），更新日期默认等于发布日期，分类使用 `weiser-posts` 下的第一层目录，支持在其下继续建子目录。已有分类包括 `manuscript`、`collection`、`letters`、`reading`、`life`、`portraits`、`notes`；目录 `Notes` 也能识别。磁盘目录 `letter`、`portrait` 分别对应分类 ID `letters`、`portraits`，文章 URL 仍使用复数形式；新建文章使用单数目录。`life` 目录直接对应 `life` 分类。`essays` 已移除，不再作为别名接受。
+保存后先运行 `npm run post:identify`，将固定短 UUID 写入源稿；只需补号一次，重复运行不会更换已有编号。此命令还记录当时的文件名地址及评论标识。检查和构建不会代为生成临时随机编号，缺失编号会明确报错。
+
+标题优先使用正文的一级标题；未写时使用去掉日期的文件名。发布日期从文件名前缀推导（支持 `YYYY-M-D` 和 `YYYY.M.D`），更新日期默认等于发布日期，分类使用 `weiser-posts` 下的第一层目录，支持在其下继续建子目录。已有分类包括 `manuscript`、`collection`、`letters`、`reading`、`life`、`portraits`、`notes`；目录 `Notes` 也能识别。磁盘目录 `letter`、`portrait` 分别对应分类 ID `letters`、`portraits`，新建文章使用单数目录。`life` 目录直接对应 `life` 分类。`essays` 已移除，不再作为别名接受。
 
 省略 frontmatter 时文章默认公开；尚未写完请加上：
 
@@ -36,9 +38,9 @@ draft: true
 
 文件须以小写 `.md` 结尾（`.MD` 在 Linux 部署中不会被加载）；填写 frontmatter 时，两条 `---` 必须顶格单独成行。无日期文件名需要填写 `publishedAt`；未知分类、无效 YAML、缺失图片、系列字段不成对仍会报错。普通文章无需填写 `series` / `seriesOrder`，不要留下模板中的孤立序号。
 
-只保留两条相邻的 `---` 也可以，效果与省略 frontmatter 相同。填写字段时必须使用 `key: value` 格式，不能把整块元数据写成列表或普通文本；系列序号必须为正整数。
+空 frontmatter 可以读取并推导元数据，但发布前仍须运行 `npm run post:identify` 保存编号。填写字段时必须使用 `key: value` 格式，不能把整块元数据写成列表或普通文本；系列序号必须为正整数。
 
-文章列表下方的分类链接统一显示英文 ID；栏目入口未选择时使用 `Category / All Records`，选择后使用 `Weiser's Manuscript`、`Telysta's Collection` 等英文所属名称。分类卡片收起时作为角色展示窗口，使用花体角色名及英文题签（例如 `Weiser / Manuscript`），在 `src/config/visuals/categoryVisuals.ts` 维护；选中分类的入口名称也由这两个字段派生。展开后的标题也由英文角色名与分类题签派生，统一按所属名／分类名分成两行，介绍使用 `src/config/content/blogCategories.ts` 中的 descriptionEn。中文栏目元数据保留用于写作表单等其他位置，不能拿来替换卡片英文标题。移动文章目录会改变 URL，已有外链的文章尽量保持原路径。
+文章列表下方的分类链接统一显示英文 ID；栏目入口未选择时使用 `Category / All Records`，选择后统一为 `Weiser's Manuscript`、`Weiser's Collection` 等所属名称。分类图片继续使用原有角色插画，题签所属名统一为 Weiser，在 `src/config/visuals/categoryVisuals.ts` 维护；选中入口也由题签派生。展开标题按所属名／分类名分成两行，介绍使用 `src/config/content/blogCategories.ts` 中的 descriptionEn。中文栏目元数据用于写作表单等其他位置。
 
 ## 创建草稿
 
@@ -48,7 +50,7 @@ draft: true
 npm run post:new
 ```
 
-命令会用中文询问中英文标题与摘要、栏目、slug、日期、标签、系列和文章资源目录。此命令创建的文章始终为 `draft: true`；与直接新建 Markdown 的默认公开行为不同。
+命令会用中文询问中英文标题与摘要、栏目、文件名 slug、日期、标签、系列和文章资源目录，并自动保存 12 位短 UUID。本地后台“新建文章”也会预先生成编号。此命令创建的文章始终为 `draft: true`；与直接新建 Markdown 的默认公开行为不同。
 
 也可以一次提供参数：
 
@@ -77,13 +79,18 @@ src/content/weiser-posts/<category>/<slug>.md
 对应 URL 为：
 
 ```txt
-/blog/<category>/<slug>/
+/blog/WEISERa3f7c92d8e10/
 ```
 
-slug 默认从标题生成，会保留中文，转换空格并删除不适合作为路径的字符。日期只保存在 frontmatter，不自动写进 URL；需要日期前缀时可以通过 `--slug` 明确指定。
+示例对应 `uuid: a3f7c92d8e10`。`WEISER` 大写，后面的编号固定为 12 位小写十六进制。编号由随机 UUID 截取得到，不从标题或文件名计算；站内检查会拒绝重复编号。
+
+slug 仅决定磁盘文件名，默认从标题生成，保留中文。`--slug` 可以指定日期前缀或其他文件名，不影响永久链接。当前文件名地址仍会生成静态跳转；改名之前，应把需要继续兼容的旧文件名地址加入 `redirectFrom`，保留已经记录的所有旧地址。迁移前文章的旧地址已统一登记。
 
 ## Frontmatter
 
+- `uuid`：必填且固定的 12 位短编号；新建工具自动生成，手建文章用 `npm run post:identify` 补齐。复制文章作为新稿时不要复用编号。
+- `redirectFrom`：可选的旧文件名网址列表，格式为 `/blog/.../`；列表中的旧地址直接跳转到永久链接。
+- `commentId`：固定评论标识；迁移文章已保存旧 pathname 对应值，保留原样。新文章未指定时使用 `WEISER<uuid>`。
 - `title`：文章标题。
 - `description`：SEO 和文章元信息使用的摘要；正文没有可用段落时，也作为博客列表的回退摘要。
 - `publishedAt`：首次发布日期，建议 `YYYY-MM-DD`；日期必须真实存在。
@@ -114,6 +121,8 @@ slug 默认从标题生成，会保留中文，转换空格并删除不适合作
 风琴页图片属于站点 UI，应保留本地优化版 WebP；不要直接导入数 MiB 的 PNG 原图。原图放在仓库外素材目录保存。
 
 新增系列只需在 `src/config/content/blogSeries.ts` 添加稳定的英文 slug ID、所属 `category`、标题和说明；`category` 使用已有栏目 ID，决定系列总索引的分组。没有公开文章的系列不会出现在总索引中。文章中的 `series` 必须使用 `id`，不能填写面向读者的系列标题，并同时填写唯一的 `seriesOrder`。例如页面显示“Telysta 札记”，文章应写 `series: telysta-notes`。`npm run content:check` 会直接报告未知分类、未知系列、缺少配对字段或重复顺序。
+
+“拜占庭文明史”使用 `series: byzantine-civilization`，属于 `reading`；《拜占庭的赠礼》为第 1 篇。后续同系列读书笔记递增 `seriesOrder`。
 
 ## 在文章中插入简谱
 
@@ -162,7 +171,7 @@ Markdown 引用：
 
 ## 发布前
 
-1. 完成标题和摘要。
+1. 完成标题和摘要，确认 uuid 已保存；手建文章先运行 `npm run post:identify`。
 2. 检查栏目、标签和系列。
 3. 更新 `updatedAt`。
 4. 确认图片说明和路径。

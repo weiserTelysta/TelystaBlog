@@ -117,7 +117,7 @@ test('分类与角色一起创建，新增系列和文章立即识别新目录�
 		);
 		const relative = 'src/content/weiser-posts/travel/2026-9-15-新的日志.md';
 		const source =
-			'---\ndraft: true\nseries: travel-diary\nseriesOrder: 1\n---\n\n今天看到了新的风景。';
+			'---\nuuid: b3f7c92d8e10\ndraft: true\nseries: travel-diary\nseriesOrder: 1\n---\n\n今天看到了新的风景。';
 		const fields = await json(
 			await f.request('/api/post-fields', { path: relative, source }),
 		);

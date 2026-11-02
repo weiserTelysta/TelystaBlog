@@ -40,6 +40,7 @@
 ```sh
 npm run dev
 npm run post:new
+npm run post:identify
 npm run content:check
 npm run score:check
 npm test
@@ -55,7 +56,7 @@ npm run check
 
 使用 `npm run post:new` 创建草稿，不再复制内容集合内的模板。命令会读取 `src/config/content/blogCategories.ts` 和 `src/config/content/blogSeries.ts`，避免栏目与系列 ID 重复维护。
 
-脚本创建的文章默认位于 `src/content/weiser-posts/<category>/<slug>.md`，其中 `letters`、`portraits` 分类分别使用 `letter`、`portrait` 目录；新文章保持 `draft: true`，直到准备公开。也可以直接新建日期文件名的 Markdown，由加载器补全元数据；这种方式省略 `draft` 时默认公开。完整说明见 [article-authoring.md](article-authoring.md)。
+脚本创建的文章默认位于 `src/content/weiser-posts/<category>/<slug>.md`，其中 `letters`、`portraits` 分类分别使用 `letter`、`portrait` 目录；新文章自动保存短 UUID，保持 `draft: true`，直到准备公开。直接新建日期文件名的 Markdown 后，先运行 `npm run post:identify` 固定编号，再由加载器补全其他元数据；省略 `draft` 时默认公开。复制稿件需要使用新编号，改名保留原编号。完整说明见 [article-authoring.md](article-authoring.md)。
 
 ## 文章图片
 
@@ -109,7 +110,7 @@ R2 素材的增量 WebP、清单和上传流程见 [cdn-assets.md](cdn-assets.md
 
 所有公开文章通过 `src/pages/blog/[...slug].astro` 统一渲染，页面顺序固定为“正文 → 系列入口 → 评论”。Giscus 只在该路由的正文主体内加载；评论配置集中在 `src/components/article/ArticleComments.astro`，首页、文章索引、系列页和资源页不会引入评论脚本。
 
-当前使用 `pathname` 映射和 `preferred_color_scheme` 主题。通常保持文章 URL 稳定；明确更名迁移时应同步文件、内部引用、canonical、sitemap 和旧地址跳转。pathname 变化会改变 discussion 的映射键，旧讨论仍保留在评论仓库，路由跳转不会自动迁移评论。评论仓库必须保持公开、启用 Discussions，并安装 Giscus GitHub App。
+当前使用 `specific` 映射和 `preferred_color_scheme` 主题。迁移文章通过 commentId 保留原 pathname 对应的讨论键；新文章默认使用固定的 `WEISER<uuid>`。文件或标题改名时保留 uuid、commentId 和 redirectFrom，构建统一生成内部链接、canonical、sitemap 与静态旧地址跳转。评论仓库必须保持公开、启用 Discussions，并安装 Giscus GitHub App。格式与边界见 [永久链接说明](post-permalinks-2026-11-03.md)。
 
 父页面只能使用 `.giscus` 和 `.giscus-frame` 调整 iframe 的宽度、间距与外部边界，不能用本站 CSS 穿透跨域 iframe。若以后需要让评论内部完全采用 Telysta 配色，可以在本站公开托管一份 Giscus 自定义主题 CSS，并把 `data-theme` 改成该文件的绝对 HTTPS URL；若再加入站内 Light/Dark 切换，则通过 Giscus `postMessage` 的 `setConfig.theme` 同步，不需要更换评论组件或数据层。
 

@@ -137,7 +137,7 @@ test('摘要与章节建议、快捷保存自动应用字段，并保留作者�
 		await fs.mkdir(folder);
 		await fs.writeFile(
 			path.join(folder, '2026-9-16-chapter.md'),
-			'---\nseries: telysta-notes\nseriesOrder: 3\ndraft: true\n---\n\n# 上一章\n\n这里记录上一章的内容，仍然是作者没有公开的草稿。\n',
+			'---\nuuid: b3f7c92d8e10\nseries: telysta-notes\nseriesOrder: 3\ndraft: true\n---\n\n# 上一章\n\n这里记录上一章的内容，仍然是作者没有公开的草稿。\n',
 		);
 		await page.goto(fixture.url);
 		await page.getByRole('button', { name: '系列与文章', exact: true }).click();

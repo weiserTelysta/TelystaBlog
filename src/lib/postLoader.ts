@@ -5,14 +5,14 @@ import { completePostMetadata, needsPostBody } from './postMetadata';
 import cdnManifest from '../generated/cdn-assets.json';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { legacyPostId } from './postLinks.mjs';
+import { postRouteId } from './postLinks.mjs';
 import { readPostLinkIndex } from '../../scripts/lib/post-link-index.mjs';
 
-const POST_RENDER_VERSION = 5;
+const POST_RENDER_VERSION = 6;
 
 /** Keep Astro's Markdown rendering, relative assets, IDs and dev watcher. */
 export function postLoader(): Loader {
-	const loader = glob({ pattern: '**/*.md', base: './src/content/weiser-posts', generateId: ({ entry }) => legacyPostId(entry) });
+	const loader = glob({ pattern: '**/*.md', base: './src/content/weiser-posts', generateId: ({ data }) => postRouteId(data) });
 	let removeWatcher: (() => void) | undefined;
 	return {
 		name: 'telysta-post-loader',

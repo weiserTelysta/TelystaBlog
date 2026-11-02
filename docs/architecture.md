@@ -1,6 +1,6 @@
 # 架构与目录维护
 
-核对更新：2026-10-11。当前功能对应关系见 [功能核对](feature-map.md)。
+核对更新：2026-11-03。当前功能对应关系见 [功能核对](feature-map.md)。
 
 作者入口见 [配置说明](../src/config/README.md)。`config/pages` 按页面归集可编辑文案，`config/content` 保存分类、系列及额外资源收录；分类/系列 ID 从资料数组派生。配置不依赖组件，组件读取配置并负责安全文本渲染；内部 DOM ID、焦点恢复与滚轮算法不作为作者选项。详情见 [配置整理记录](archive/2026-09/config-entrypoints-2026-09-06.md)。
 
@@ -10,7 +10,7 @@
 
 | 位置 | 职责 |
 | --- | --- |
-| `src/pages` | Astro 路由；文章 URL、pathname 评论映射保持稳定 |
+| `src/pages` | Astro 路由；文章使用固定 WEISER 短编号，旧地址静态跳转 |
 | `src/content/weiser-posts` | 文章原稿，含 Markdown 附件引用 |
 | `src/content/resources` | 作者明确收录的资源分组，不是 R2 全量列表 |
 | `src/content/scores` / `src/generated/scores` | 简谱源稿 / 可复现 SVG 与校验记录 |
@@ -21,6 +21,8 @@
 | `scripts` / `tests` / `tests/browser` | 维护命令 / 单元测试 / 真实浏览器回归 |
 
 文章仅通过 `src/pages/blog/[...slug].astro` 渲染，正文和附件后是系列，再到独立 `ArticleComments`。不复制第二套文章 Layout。系列总索引按 category 分组，空系列不展示。
+
+`uuid` 固定保存在 Markdown，加载器生成 `WEISER<12位编号>` 内容 ID；所有文章入口共用该 ID。`postLinks.mjs` 统一检查编号与历史地址，`astro.config.mjs` 将当前文件名与 `redirectFrom` 生成为静态跳转并排除于 sitemap。Giscus 以 `specific` 映射固定 commentId，旧文保留原 pathname 对应值。源码写入只由新建工具与显式 `post:identify` 执行；构建和校验保持只读。详见 [永久链接方案](post-permalinks-2026-11-03.md)。
 
 文章自动补全、Content Collections Schema 与维护检查共用 `contentDate.ts`；日期必须真实存在，纯日期按 UTC 解释，显示和年月归档也使用 UTC，避免本机与 CI 的时区差异。标题提取与 Markdown 图片／一级标题检查使用 Remark 语法树，避免代码示例和引用式图片被正则误判。自动补全不改写原稿。
 

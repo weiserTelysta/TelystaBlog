@@ -24,6 +24,7 @@
 | 手写 Markdown、草稿、日期、系列、图片 | [文章写作](docs/article-authoring.md) |
 | 用 `[[Mirelle]]` 等别名关联文章 | [WikiLink](docs/wikilinks-2026-09-21.md) |
 | 修改站点文案、Hero、头像、导航与角色卡片 | [配置文件地图](src/config/README.md) |
+| 文章短编号、改名与旧网址 | [永久链接说明](docs/post-permalinks-2026-11-03.md) |
 | 编辑 About | [About Markdown](src/pages/about.md) |
 | 新增资源下载条目 | [资源维护](docs/resources.md) · [字段说明](docs/resource-content-guide.md) |
 | 转 WebP、上传原图和封面到 R2 | [CDN 操作流程](docs/cdn-assets.md) |

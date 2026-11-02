@@ -1,6 +1,6 @@
 # 文档导航
 
-日常操作从下面直接进入具体指南，不必先翻计划或阶段日志。更新：2026-10-11。[回到项目首页](../README.md)
+日常操作从下面直接进入具体指南，不必先翻计划或阶段日志。更新：2026-11-03。[回到项目首页](../README.md)
 
 ## 常用入口
 
@@ -9,6 +9,7 @@
 | 打开管理后台 | `npm run admin` → http://127.0.0.1:4323/；[完整使用说明](local-admin.md) |
 | 打开网站预览 | 另开终端 `npm run dev`；[环境与排错](maintenance.md) |
 | 写文章与插入图片 | [文章写作](article-authoring.md) |
+| 文章编号、改名与旧网址 | [WEISER 永久链接](post-permalinks-2026-11-03.md) |
 | 引用另一篇文章 | [WikiLink](wikilinks-2026-09-21.md) |
 | 修改首页、问候语和配置 | [配置文件地图](../src/config/README.md) |
 | 编辑 About | [Markdown 源文档](../src/pages/about.md) |

@@ -10,7 +10,7 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkMath from 'remark-math';
 import remarkPostLinks from '../remark-post-links.mjs';
-import { createPostLinkIndex, legacyPostId } from '../../src/lib/postLinks.mjs';
+import { createPostLinkIndex, legacyPostId, postHref } from '../../src/lib/postLinks.mjs';
 import { parseContentDate } from '../../src/lib/contentDate';
 import type { Nodes } from 'mdast';
 
@@ -655,7 +655,7 @@ export function validatePostLinks(documents: ContentDocument[]): ValidationIssue
 	let index;
 	try {
 		index = createPostLinkIndex(posts.map(document => ({
-			id: legacyPostId(document.relativePath.split('weiser-posts/').at(-1)),
+			legacyHref: postHref(legacyPostId(document.relativePath.split('weiser-posts/').at(-1))),
 			file: document.relativePath, data: document.frontmatter,
 		})));
 	} catch (error) {

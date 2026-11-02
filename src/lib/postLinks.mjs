@@ -2,6 +2,15 @@ import { slug as githubSlug } from 'github-slugger';
 import { postCategoryForDirectory } from './postPaths.mjs';
 
 export const normalizeLinkName = value => value.normalize('NFKC').trim().toLowerCase();
+export const POST_UUID_PATTERN = /^[0-9a-f]{12}$/;
+
+/** The saved random ID, never a hash of a title or filename. */
+export function postRouteId(data) {
+	if (typeof data.uuid !== 'string' || !POST_UUID_PATTERN.test(data.uuid)) {
+		throw new Error('uuid 必须是固定的 12 位小写十六进制编号；请运行 npm run post:identify。');
+	}
+	return `WEISER${data.uuid}`;
+}
 
 /** Match Astro's historical file-based IDs, independently of frontmatter.slug. */
 export function legacyPostId(file) {
@@ -16,10 +25,21 @@ export function postHref(id) {
 
 export function postLinkErrors(data) {
 	const errors = [];
+	try { postRouteId(data); } catch (error) { errors.push(error.message); }
 	const validAlias = alias => typeof alias === 'string'
 		&& Boolean(alias.trim()) && !/[\[\]|#\r\n]/.test(alias.normalize('NFKC'));
 	if (data.aliases !== undefined && (!Array.isArray(data.aliases) || !data.aliases.every(validAlias))) {
 		errors.push('aliases 必须是非空名称列表，不能包含 []、|、# 或换行。');
+	}
+	const validOldPath = value => typeof value === 'string'
+		&& /^\/blog\/(?!category\/)[^?#\s\\]+\/$/.test(value)
+		&& !value.split('/').some(segment => ['.', '..'].includes(segment))
+		&& !/%|[<>"']/.test(value);
+	if (data.redirectFrom !== undefined && (!Array.isArray(data.redirectFrom) || !data.redirectFrom.every(validOldPath))) {
+		errors.push('redirectFrom 必须是 /blog/.../ 格式的站内旧文章地址列表。');
+	}
+	if (data.commentId !== undefined && (typeof data.commentId !== 'string' || !data.commentId.trim())) {
+		errors.push('commentId 必须是非空的固定评论标识。');
 	}
 	return errors;
 }
@@ -31,6 +51,7 @@ export function createPostLinkIndex(posts) {
 	for (const post of posts) {
 		const errors = postLinkErrors(post.data);
 		if (errors.length) throw new Error(`${post.file}: ${errors.join(' ')}`);
+		post.id = postRouteId(post.data);
 		post.href = postHref(post.id);
 		const previousRoute = routes.get(post.href);
 		if (previousRoute && previousRoute.file !== post.file) throw new Error(`文章地址重复 ${post.href}: ${previousRoute.file} / ${post.file}`);
@@ -43,7 +64,27 @@ export function createPostLinkIndex(posts) {
 			names.set(name, post);
 		}
 	}
-	return { posts, names, routes };
+	const index = { posts, names, routes };
+	buildPostRedirects(index);
+	return index;
+}
+
+/** Flatten saved and current filename URLs directly to each published permalink. */
+export function buildPostRedirects(index) {
+	/** @type {Record<string, string>} */
+	const redirects = {};
+	const owners = new Map();
+	for (const post of index.posts) {
+		const oldPaths = [post.legacyHref, ...(post.data.redirectFrom ?? [])].filter(Boolean);
+		for (const oldPath of oldPaths) {
+			if (oldPath === post.href) continue;
+			const owner = owners.get(oldPath) ?? index.routes.get(oldPath);
+			if (owner && owner.file !== post.file) throw new Error(`文章旧地址冲突 ${oldPath}: ${owner.file} / ${post.file}`);
+			owners.set(oldPath, post);
+			if (post.data.draft !== true) redirects[oldPath] = post.href;
+		}
+	}
+	return redirects;
 }
 
 export function resolveWikiLink(index, target) {

@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
+import { permalinkFor } from '../helpers/post-routes';
 
-const target = '/blog/portraits/telysta/2026-9-5-telysta的创作理念/';
+const target = permalinkFor('/blog/portraits/telysta/2026-9-5-telysta的创作理念/');
 for (const width of [390, 1440]) {
 	test(`WikiLink 自动查找目标，键盘导航与原有评论保持一致：${width}px`, async ({ page }, testInfo) => {
 		await page.setViewportSize({ width, height: 1000 });
@@ -12,7 +13,8 @@ for (const width of [390, 1440]) {
 		await page.keyboard.press('Enter');
 		await expect(page.locator('h1')).toHaveText('Telysta 的设计信息分享');
 		await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new URL(target, 'https://telysta.com').href);
-		await expect(page.locator('script[src="https://giscus.app/client.js"]')).toHaveAttribute('data-mapping', 'pathname');
+		await expect(page.locator('script[src="https://giscus.app/client.js"]')).toHaveAttribute('data-mapping', 'specific');
+		await expect(page.locator('script[src="https://giscus.app/client.js"]')).toHaveAttribute('data-term', encodeURI('blog/portraits/telysta/2026-9-5-telysta的创作理念/'));
 		expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 		await page.screenshot({ path: testInfo.outputPath('wiki-target.png') });
 	});

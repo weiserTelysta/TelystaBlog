@@ -16,6 +16,7 @@
     "assets:manifest": "node scripts/generate-cdn-manifest.mjs",
     "assets:sync": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/sync-r2-assets.ps1",
     "post:new": "tsx scripts/create-post.ts",
+    "post:identify": "tsx scripts/assign-post-ids.ts",
     "content:check": "tsx scripts/validate-content.ts",
     "score:setup": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup-score-tools.ps1",
     "score:render": "node scripts/render-score.mjs",

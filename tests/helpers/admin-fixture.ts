@@ -39,7 +39,7 @@ export async function adminFixture() {
 		);
 	const relative = 'src/content/weiser-posts/letters/2026-9-14-测试文章.md';
 	const source =
-		'---\r\n# 保留作者注释\r\ntitle: 测试文章\r\ndraft: true\r\ncustom: 未知字段保留\r\n---\r\n\r\n$$ x^2 $$\r\n\r\n```jianpu\r\n1 2 3\r\n```\r\n';
+		'---\r\nuuid: a3f7c92d8e10\r\n# 保留作者注释\r\ntitle: 测试文章\r\ndraft: true\r\ncustom: 未知字段保留\r\n---\r\n\r\n$$ x^2 $$\r\n\r\n```jianpu\r\n1 2 3\r\n```\r\n';
 	await fs.writeFile(path.join(root, relative), source);
 	const server = createAdminServer(root);
 	await new Promise<void>((resolve) => server.listen(0, '127.0.0.1', resolve));

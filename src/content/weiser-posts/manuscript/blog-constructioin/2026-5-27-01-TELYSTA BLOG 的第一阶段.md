@@ -1,4 +1,8 @@
 ---
+uuid: 9fa2c8c29e0a
+redirectFrom:
+  - /blog/manuscript/blog-constructioin/2026-5-27-01-telysta-blog-的第一阶段/
+commentId: blog/manuscript/blog-constructioin/2026-5-27-01-telysta-blog-的第一阶段/
 title: TELYSTA BLOG 的第一阶段
 titleEn: The First Stage of TELYSTA BLOG
 description: 记录 TELYSTA BLOG 第一阶段的完成，以及这个个人博客从此开始承载分享与见闻。

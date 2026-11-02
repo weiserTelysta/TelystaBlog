@@ -1,8 +1,10 @@
 # 当前功能与配置核对
 
-核对日期：2026-10-14。滚动与目录规范见 [本轮记录](scroll-performance-2026-10-02.md)。依据配置、组件、内容加载器、维护脚本与部署工作流；2026-09-21 验证和部署状态见 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。本文描述已实现能力；本地后台见 [使用说明](local-admin.md)，阶段进度及后续增强见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
+核对日期：2026-11-03。滚动与目录规范见 [本轮记录](scroll-performance-2026-10-02.md)。依据配置、组件、内容加载器、维护脚本与部署工作流；2026-09-21 验证和部署状态见 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。本文描述已实现能力；本地后台见 [使用说明](local-admin.md)，阶段进度及后续增强见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
 
-现行角色名为 Mirelle，分类卡片、首页身份、系列和资源保持英文显示；中文名仅用于设计理念文章。文章网址、系列和身份 ID 也已迁移到 mirelle；旧页面仅跳转，素材新路径及兼容边界见 [更名记录](mirelle-rename-2026-10-04.md)。
+现行角色名为 Mirelle，分类卡片、首页身份、系列和资源保持英文显示；中文名仅用于设计理念文章。系列和身份 ID 使用 mirelle；文章已统一使用 WEISER 短编号，旧页面仅跳转，素材新路径及兼容边界见 [更名记录](mirelle-rename-2026-10-04.md)。
+
+文章网址固定为 `/blog/WEISER<12位短UUID>/`，与文件名、目录和分类无关。旧文件名地址与已登记历史地址生成静态跳转；Giscus 使用固定 specific 评论键。新建入口自动补号，手建 Markdown 用 `npm run post:identify` 固定编号；构建保持只读。全部分类所属名统一为 Weiser，新系列 `byzantine-civilization` 属于 reading。详见 [永久链接说明](post-permalinks-2026-11-03.md)。
 
 ## 身份、首页与文案
 
@@ -31,11 +33,11 @@ Hero 句子没有语言字段，也没有精确的“几点到几点”开关，
 | 功能 | 当前行为与配置 |
 | --- | --- |
 | 分类 | 正式 ID 为 `manuscript`、`collection`、`letters`、`reading`、`life`、`portraits`、`notes`；当前工作区已取消 `essays`，没有别名或重定向 |
-| 分类入口 | 总览 `Category / All Records`；选中后是 `Weiser's Manuscript`、`Telysta's Collection` 等英文所属名称 |
-| 角色卡片 | 收起时花体角色名＋英文分类小字；展开后以两行显示英文所属名和分类名（如 Telysta's／Collection），配合 descriptionEn，仅显示 records 数量。入口与展开标题从同一题签派生；题签在 `visuals/categoryVisuals.ts`，英文介绍在 `content/blogCategories.ts` |
+| 分类入口 | 总览 `Category / All Records`；选中后是 `Weiser's Manuscript`、`Weiser's Collection` 等英文所属名称 |
+| 角色卡片 | 收起时花体 Weiser＋英文分类小字；展开后以两行显示英文所属名和分类名（如 Weiser's／Collection），配合 descriptionEn，仅显示 records 数量。入口与展开标题从同一题签派生；题签在 `visuals/categoryVisuals.ts`，英文介绍在 `content/blogCategories.ts` |
 | 卡片光泽与图片 | 前后台共用 `src/styles/category-foil.css` 的八种复合反射预设，角色 tone 决定虹彩配色，减少白光曝光，无同心圆；导入的角色图在构建时生成 480／800 WebP，`public/media` 上传图沿用上传处理结果。Cloudflare 缓存与图片变换是不同能力，见 [核查记录](archive/2026-09/category-series-scores-2026-09-20.md) |
 | 卡片比例 | `.category-accordion__card` 当前 CSS 宽:高为 **2:5**，不是 1:2。图片以 cover 裁切，可设置 `imagePosition` 与 `imageScale`；原图比例、卡片框比例、头像 1:1 是不同概念 |
-| 文章创建 | 日期文件名＋正文可自动补标题、日期、摘要和分类；英文空字段回退中文。直接新建 Markdown 默认公开，`post:new` 默认草稿 |
+| 文章创建 | 日期文件名＋正文可自动补标题、日期、摘要和分类；英文空字段回退中文。手建文章先运行 `post:identify` 保存短编号；新建命令与后台自动编号。直接新建 Markdown 默认公开，`post:new` 默认草稿 |
 | 后台写作助手 | 文章列表支持分类／状态筛选与排序；编辑页支持正文摘要提取、系列序号建议、内容问题行号定位、图片插入与行级差异。仅使用本地规则；完整范围见 [后台说明](local-admin.md) |
 | 系列 | 配置系列 ID、所属分类与文案；文章填写配对的 `series` / `seriesOrder`。目录与前后章按公开文章排序自动生成 |
 | 系列展示 | 系列总索引、详情主标题、文章标题与简介使用中文字段；Manuscript 等分类小标题、Series／Records 题签保留英文点缀，沿用留白分组。英文元数据仍保留，不自动翻译正文；见 [显示规范](home-series-language-2026-10-03.md) |
@@ -43,9 +45,9 @@ Hero 句子没有语言字段，也没有精确的“几点到几点”开关，
 | 搜索 | 构建静态索引，页面按需加载，搜全部公开文章；包含正文及元数据，不是语义／拼音搜索 |
 | Markdown | 支持数学公式、代码复制、本地／CDN 图片、简谱引用；简谱排版是主动维护命令，普通构建只检查是否过期 |
 | 正文图片放大 | 普通图片点击／Enter 打开单图 PhotoSwipe；支持滚轮、双指缩放和焦点／阅读位置恢复，已有图片链接保留原用途；按需加载与失败回退，见 [验收记录](archive/2026-09/article-image-viewer-2026-09-24.md) |
-| WikiLink | 可选 `aliases` 登记引用名，`[[Telysta]]`／`[[Telysta\|显示文字]]` 在构建时查找目标当前路径；改名／移动后自动更新站内引用，无需手写 URL。重复别名、缺失目标或公开引用草稿会报错；不改变现有路由及评论，见 [使用说明](wikilinks-2026-09-21.md) |
+| WikiLink | 可选 `aliases` 登记引用名，`[[Telysta]]`／`[[Telysta\|显示文字]]` 在构建时生成目标的固定短链接；改名／移动后仍使用同一地址。重复别名、缺失目标或公开引用草稿会报错，见 [写作指南](article-authoring.md) |
 | 页面滚动 | 全站原生滚轮／触摸；显式导航才平滑，减少动态时立即定位。滚动期间暂停星空 Canvas，桌面进度条拖动立即跟随指针 |
-| 评论 | 仅文章路由加载 Giscus，使用 pathname 映射；移动已有文章路径会影响链接与评论关联 |
+| 评论 | 仅文章路由加载 Giscus，使用固定 specific 评论键；迁移文章保留原 pathname 对应值，改标题或移动目录不改变关联 |
 
 已有独立 `npm run admin` 本地写作和配置后台，默认 `127.0.0.1:4323`；支持原始 Markdown、草稿创建、14 个配置入口、素材选择、源码对照、冲突校验与只读历史。没有站内英文路由切换器、在线写作后台、GitHub 登录管理入口、后台恢复按钮或自动 R2 上传。英文元数据存在并可参与搜索，不代表已有双语站点。
 

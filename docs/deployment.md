@@ -29,6 +29,8 @@ npm run check
 
 文章在类型检查与构建时共用自动补全规则，支持直接新建日期文件名的 Markdown；用法和公开/草稿默认值见 [文章写作指南](article-authoring.md)。内容检查不会自动改写源文档，`npm run build` 还会检查已生成简谱是否与源文件一致。
 
+文章使用固定的 `/blog/WEISER<12位短UUID>/`。手建新文章后，提交前运行 `npm run post:identify` 并提交写入源稿的编号；CI 不生成编号。文章旧地址由 Astro 输出静态 HTML meta refresh 跳转页，可直接在 GitHub Pages 工作，无需服务器 rewrite；只把最终永久链接加入 sitemap。迁移规则见 [文章永久链接](post-permalinks-2026-11-03.md)。
+
 输出目录为 `dist/`，不得提交到 Git。
 
 ## 图片与产物
@@ -65,3 +67,5 @@ Windows 环境若出现 Satteri 原生模块被 Application Control 阻止的错
 3. 若部署成功但页面仍旧，检查响应缓存和产物内容；不要仅凭首页 HTTP 200 判断新版本已经生效。
 
 本地管理入口仍是 `npm run admin` → `http://127.0.0.1:4323/`。`scripts/admin/` 不在 Pages 产物中，没有线上写入接口或 GitHub 登录入口。保存内容只改变本地文件；提交和推送由作者执行。
+
+2026-11-03 核对：本轮 WEISER 短链接迁移已通过部署同款 `npm run check`，41 页静态产物和 25 个文章跳转入口均可访问，`dist/CNAME` 为 `telysta.com`。远端上一次 main 提交 `531083f` 的 [Pages 运行](https://github.com/weiserTelysta/TelystaBlog/actions/runs/41335186590) 已成功；本轮仅完成本地提交，尚未推送或产生新的 Actions 部署结果。
