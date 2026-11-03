@@ -7,7 +7,7 @@
 - 七个栏目统一为 Weiser 所属，保留原有插画、颜色、版式、键盘与减少动态行为。保留 19 篇既有文章全文；《拜占庭的赠礼》保留新写原稿，补齐元数据并把 H1 调整到正文首位，通过既有内容校验，加入新系列 `byzantine-civilization` 第 1 篇。
 - 同步写作、维护、架构、功能、后台、部署与文档索引；九月 WikiLink 记录注明已被本轮路由方案替代。245 个文档本地链接有效，完整规则见 [永久链接说明](post-permalinks-2026-11-03.md)。
 - 验证：Astro／TypeScript 零错误／警告／提示，139 项单元测试通过，96 份内容零错误／警告，3 份简谱检查及 41 页生产构建通过。相关公开页面覆盖 48 项场景；加载稳定性测试改为直接使用正式网址后，4 项单独回归通过。11 项后台浏览器测试通过，含新建文章编号固定性。提供中文字体后另复核 7 项桌面／手机场景，截图确认原有视觉保留。
-- GitHub Pages 工作流沿用 Node 22 与 `npm run check`；已核对上一次 main 提交 `531083f` 的 [Actions 运行](https://github.com/weiserTelysta/TelystaBlog/actions/runs/41335186590) 为成功。本轮完成本地验证与提交，未触发新的远端部署。
+- GitHub Pages 工作流沿用 Node 22 与 `npm run check`。最初仅做本地提交，线上仍为旧版；用户授权推送后，提交 `4cb68c5` 的 [Actions 运行](https://github.com/weiserTelysta/TelystaBlog/actions/runs/41567770273) 中 build、deploy 均成功。已确认线上博客列表、拜占庭文章及 canonical、新系列、搜索索引和《低价螺旋》旧地址跳转正常。
 
 ## 2026-10-14：入口语气与分类标题两行
 

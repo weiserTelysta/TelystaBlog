@@ -68,4 +68,4 @@ Windows 环境若出现 Satteri 原生模块被 Application Control 阻止的错
 
 本地管理入口仍是 `npm run admin` → `http://127.0.0.1:4323/`。`scripts/admin/` 不在 Pages 产物中，没有线上写入接口或 GitHub 登录入口。保存内容只改变本地文件；提交和推送由作者执行。
 
-2026-11-03 核对：本轮 WEISER 短链接迁移已通过部署同款 `npm run check`，41 页静态产物和 25 个文章跳转入口均可访问，`dist/CNAME` 为 `telysta.com`。远端上一次 main 提交 `531083f` 的 [Pages 运行](https://github.com/weiserTelysta/TelystaBlog/actions/runs/41335186590) 已成功；本轮仅完成本地提交，尚未推送或产生新的 Actions 部署结果。
+2026-11-03 核对：本轮 WEISER 短链接迁移已通过部署同款 `npm run check`，41 页静态产物和 25 个文章跳转入口均可访问，`dist/CNAME` 为 `telysta.com`。提交 `4cb68c5` 已推送，匹配该 SHA 的 [Pages 运行](https://github.com/weiserTelysta/TelystaBlog/actions/runs/41567770273) 中 build、deploy 均成功。线上已确认博客列表出现[《拜占庭的赠礼》](https://telysta.com/blog/WEISER1cb3c69c6556/)，[拜占庭文明史系列](https://telysta.com/series/byzantine-civilization/)、搜索索引及《低价螺旋》旧地址跳转正常，文章 canonical 使用新永久链接。发布前未推送时，线上仍显示旧版本；本地构建成功不会自动更新 GitHub Pages。
