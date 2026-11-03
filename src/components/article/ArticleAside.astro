@@ -58,6 +58,12 @@ const panelId = 'article-toc-panel';
 		pointer-events: none;
 	}
 
+	// Keep the native details contents painted until the panel finishes closing.
+	// Browsers without this pseudo-element retain the native disclosure fallback.
+	.article-aside__drawer::details-content {
+		transition: content-visibility var(--motion-medium) allow-discrete;
+	}
+
 	.article-aside__trigger {
 		position: fixed;
 		top: auto;
@@ -186,9 +192,9 @@ const panelId = 'article-toc-panel';
 		pointer-events: none;
 		transform: translate3d(calc(100% + var(--toc-drawer-resting-right)), 0, 0);
 		transition:
-			transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
-			opacity 0.16s ease,
-			visibility 0s linear 0.22s;
+			transform var(--motion-medium) var(--motion-ease-out),
+			opacity var(--motion-fast) ease,
+			visibility 0s linear var(--motion-medium);
 	}
 
 	.article-aside__drawer[open] .article-aside__panel {
@@ -223,8 +229,8 @@ const panelId = 'article-toc-panel';
 		visibility: hidden;
 		pointer-events: none;
 		transition:
-			opacity 0.18s ease,
-			visibility 0s linear 0.22s;
+			opacity var(--motion-fast) ease,
+			visibility 0s linear var(--motion-medium);
 	}
 
 	:global(html.is-article-toc-overlay-open),
@@ -280,6 +286,7 @@ const panelId = 'article-toc-panel';
 	}
 
 	@media (prefers-reduced-motion: reduce) {
+		.article-aside__drawer::details-content,
 		.article-aside__trigger,
 		.article-aside__trigger::before,
 		.article-aside__trigger-mark,

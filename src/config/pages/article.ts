@@ -32,18 +32,15 @@ export const ARTICLE_PAGE_CONFIG = {
 		behavior: {
 			readingLineOffset: 72,
 			bottomThreshold: 96,
-			clickLockMs: 760,
 			scrollSettleMs: 220,
 			userIntentMs: 5000,
 			inspectionLeaveMs: 1800,
-			programmaticScrollMs: 720,
 			revealCooldownMs: 160,
 			revealAnchor: 0.3,
 			revealMargin: 28,
 			comfortTop: 0.24,
 			comfortBottom: 0.68,
 			comfortAnchor: 0.34,
-			maxRevealStep: 96,
 		},
 	},
 	series: {

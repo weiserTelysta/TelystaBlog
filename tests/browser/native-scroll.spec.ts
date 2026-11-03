@@ -104,6 +104,8 @@ test('手机原生触摸滚动', async ({ browser }) => {
 test('桌面进度条拖动直接跟随指针，键盘可定位首尾', async ({ page }) => {
 	await page.goto('/blog/');
 	const slider = page.getByRole('slider', { name: 'Page scroll position' });
+	// client:idle renders the track before its pointer handlers are hydrated.
+	await expect(page.locator('astro-island').filter({ has: slider })).not.toHaveAttribute('ssr');
 	await slider.focus();
 	const box = await slider.boundingBox();
 	expect(box).not.toBeNull();

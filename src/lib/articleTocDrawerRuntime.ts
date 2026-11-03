@@ -97,7 +97,8 @@ const initDrawer = (drawer: HTMLDetailsElement) => {
 			first.focus();
 		}
 	};
-	const handleLinkClick = (event: Event) => {
+	const handleLinkClick = (event: MouseEvent) => {
+		if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 		if (
 			compactViewport.matches &&
 			event.target instanceof Element &&

@@ -30,6 +30,10 @@
 
 `scripts/rehype-cdn-images.mjs` 从已有 CDN 清单为文章外部图片补充尺寸，避免加载时推开正文；不下载或生成图片。全站滚轮与触摸滚动交由浏览器处理，不再加载 Lenis。`scrollRuntime.ts` 只管理显式定点导航与可嵌套的页面滚动锁，减少动态时立即定位。星空绘制上限为 30fps，滚动时暂停、停止后恢复；详情见 [滚动优化记录](scroll-performance-2026-10-02.md)。
 
+文章目录的高亮与局部跟随由 `articleTocRuntime.ts` 管理：打开时立即展示当前章节，阅读跟随使用原生平滑滚动，点击已可见条目不重新居中。选中章节保持到正文停止滚动，正文滚轮／触摸／滚动键可打断导航；查看目录、键盘聚焦或手动滚动期间暂停自动跟随。不要把高亮变化重新当作强制瞬移条件，也不要用固定的导航动画时长推测滚动结束。
+
+`ArticleTocBranch.astro` 复用共享动效变量，以淡底色与细竖线区分选中状态，保留键盘焦点框。`ArticleAside.astro` 为原生 `details` 的 `::details-content` 设置离散过渡，使收起动画绘制完再隐藏；不支持该特性的浏览器仍可原生展开、收起。减少动态时移除侧栏和选中态过渡，正文立即定位。实现依据见 [MDN：content-visibility 过渡](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content-visibility#animating_and_transitioning_content-visibility)，回归入口为 `tests/browser/article-toc.spec.ts`。
+
 Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边距和最小高度。不要再次给某一侧加 `top` 或负 margin 修补基线。
 
 ## 资源实现

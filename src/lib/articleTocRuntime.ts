@@ -12,13 +12,11 @@ type TocState = {
 	items: TocItem[];
 	activeLink: HTMLAnchorElement | null;
 	frame: number;
-	clickLockUntil: number;
 	manualTargetSlug: string | null;
-	manualTargetUntil: number;
 	isInspectingToc: boolean;
 	userIntentUntil: number;
 	inspectionUntil: number;
-	programmaticScrollUntil: number;
+	isRevealing: boolean;
 	scrollSettleTimer: number;
 	revealRetryTimer: number;
 	lastRevealAt: number;
@@ -65,7 +63,8 @@ const isNearContentBottom = (state: TocState) => {
 const canReveal = (state: TocState) => {
 	const now = window.performance.now();
 
-	return !state.isInspectingToc && now > state.userIntentUntil && now > state.inspectionUntil && now > state.clickLockUntil;
+	return !state.isInspectingToc && !state.tocList.querySelector(':focus-visible')
+		&& now > state.userIntentUntil && now > state.inspectionUntil;
 };
 
 const getHashSlug = () => {
@@ -109,12 +108,10 @@ const clampScrollTop = (state: TocState, scrollTop: number) => {
 	return Math.min(Math.max(0, scrollTop), maxScrollTop);
 };
 
-const getTocScrollBehavior = (state: TocState, force: boolean): ScrollBehavior => (
-	force || state.prefersReducedMotion.matches ? 'auto' : 'smooth'
-);
+type RevealMode = 'follow' | 'initial' | 'selection';
 
-const revealLinkIfNeeded = (state: TocState, link: HTMLAnchorElement, force = false) => {
-	if (state.tocList.offsetParent === null) {
+const revealLinkIfNeeded = (state: TocState, link: HTMLAnchorElement, mode: RevealMode = 'follow') => {
+	if (state.tocList.offsetParent === null || !state.tocList.closest('details')?.open) {
 		return;
 	}
 
@@ -122,8 +119,6 @@ const revealLinkIfNeeded = (state: TocState, link: HTMLAnchorElement, force = fa
 		comfortAnchor,
 		comfortBottom,
 		comfortTop,
-		maxRevealStep,
-		programmaticScrollMs,
 		revealAnchor,
 		revealCooldownMs,
 		revealMargin,
@@ -139,36 +134,34 @@ const revealLinkIfNeeded = (state: TocState, link: HTMLAnchorElement, force = fa
 	const isVisible = linkTop >= viewTop + revealMargin && linkBottom <= viewBottom - revealMargin;
 	const shouldStayPut = isComfortable && isVisible;
 
-	if (!force && (shouldStayPut || !canReveal(state) || now - state.lastRevealAt < revealCooldownMs)) {
+	// Selecting an already-visible entry must not move it out from under the pointer.
+	if (mode === 'selection' && isVisible) return;
+	if (mode === 'follow' && (shouldStayPut || !canReveal(state) || now - state.lastRevealAt < revealCooldownMs)) {
 		return;
 	}
 
-	const maxScrollTop = Math.max(0, state.tocList.scrollHeight - state.tocList.clientHeight);
-	const anchor = force ? revealAnchor : comfortAnchor;
-	const anchoredScrollTop = Math.max(0, linkTop - state.tocList.clientHeight * anchor);
-	const shouldUseEndAlignment = force && linkBottom > maxScrollTop + state.tocList.clientHeight - revealMargin;
-	const targetScrollTop = shouldUseEndAlignment ? maxScrollTop : clampScrollTop(state, anchoredScrollTop);
-	const scrollDelta = targetScrollTop - state.tocList.scrollTop;
-	const nextScrollTop = !force && Math.abs(scrollDelta) > maxRevealStep
-		? clampScrollTop(state, state.tocList.scrollTop + Math.sign(scrollDelta) * maxRevealStep)
-		: targetScrollTop;
+	const anchor = mode === 'initial' ? revealAnchor : comfortAnchor;
+	const nextScrollTop = clampScrollTop(state, mode === 'selection'
+		? (linkTop < viewTop + revealMargin ? linkTop - revealMargin : linkBottom + revealMargin - state.tocList.clientHeight)
+		: linkTop - state.tocList.clientHeight * anchor);
 
 	if (Math.abs(state.tocList.scrollTop - nextScrollTop) < 1) {
 		return;
 	}
 
 	state.lastRevealAt = now;
-	state.programmaticScrollUntil = now + programmaticScrollMs;
+	const behavior = mode === 'initial' || state.prefersReducedMotion.matches ? 'instant' : 'smooth';
+	state.isRevealing = behavior === 'smooth';
 	state.tocList.scrollTo({
 		top: nextScrollTop,
-		behavior: getTocScrollBehavior(state, force),
+		behavior,
 	});
 	syncTocScrollState(state.tocList);
 };
 
 const setActiveLink = (state: TocState, nextLink: HTMLAnchorElement) => {
 	if (state.activeLink === nextLink) {
-		return false;
+		return;
 	}
 
 	state.activeLink?.classList.remove('is-active');
@@ -176,8 +169,6 @@ const setActiveLink = (state: TocState, nextLink: HTMLAnchorElement) => {
 	nextLink.classList.add('is-active');
 	nextLink.setAttribute('aria-current', 'location');
 	state.activeLink = nextLink;
-
-	return true;
 };
 
 const findCurrentItem = (state: TocState) => {
@@ -213,26 +204,23 @@ const findCurrentItem = (state: TocState) => {
 	return current;
 };
 
-const updateActiveLink = (state: TocState, forceReveal = false) => {
+const updateActiveLink = (state: TocState, mode: RevealMode = 'follow') => {
 	state.frame = 0;
 
-	const now = window.performance.now();
-
-	if (state.manualTargetSlug && now < state.manualTargetUntil) {
+	if (state.manualTargetSlug) {
 		const manualItem = state.items.find((item) => item.link.dataset.tocLink === state.manualTargetSlug);
 
 		if (manualItem) {
-			const activeLinkChanged = setActiveLink(state, manualItem.link);
-			revealLinkIfNeeded(state, manualItem.link, forceReveal || activeLinkChanged);
+			setActiveLink(state, manualItem.link);
+			if (mode === 'initial') revealLinkIfNeeded(state, manualItem.link, mode);
 		}
 
 		return;
 	}
 
-	state.manualTargetSlug = null;
 	const currentItem = findCurrentItem(state);
-	const activeLinkChanged = setActiveLink(state, currentItem.link);
-	revealLinkIfNeeded(state, currentItem.link, forceReveal || activeLinkChanged);
+	setActiveLink(state, currentItem.link);
+	revealLinkIfNeeded(state, currentItem.link, mode);
 };
 
 const requestActiveLinkUpdate = (state: TocState) => {
@@ -254,9 +242,10 @@ const markInspection = (state: TocState, duration: number = ARTICLE_PAGE_CONFIG.
 const scheduleSettledReveal = (state: TocState) => {
 	window.clearTimeout(state.scrollSettleTimer);
 	state.scrollSettleTimer = window.setTimeout(() => {
-		if (state.activeLink) {
-			revealLinkIfNeeded(state, state.activeLink);
-		}
+		// Native smooth-scroll duration depends on distance. Keep the selected entry
+		// until scrolling actually settles, including after rapid repeated clicks.
+		state.manualTargetSlug = null;
+		requestActiveLinkUpdate(state);
 	}, ARTICLE_PAGE_CONFIG.toc.behavior.scrollSettleMs);
 };
 
@@ -301,13 +290,11 @@ const initTocList = (tocList: HTMLElement) => {
 		items,
 		activeLink: null,
 		frame: 0,
-		clickLockUntil: 0,
 		manualTargetSlug: null,
-		manualTargetUntil: 0,
 		isInspectingToc: false,
 		userIntentUntil: 0,
 		inspectionUntil: 0,
-		programmaticScrollUntil: 0,
+		isRevealing: false,
 		scrollSettleTimer: 0,
 		revealRetryTimer: 0,
 		lastRevealAt: 0,
@@ -321,21 +308,25 @@ const initTocList = (tocList: HTMLElement) => {
 		scheduleSettledReveal(state);
 	};
 	const registerUserIntent = () => {
-		if (window.performance.now() < state.programmaticScrollUntil) {
-			syncTocScrollState(tocList);
-			return;
-		}
-
 		markUserIntent(state);
+		// A wheel/touch gesture takes ownership even during an automatic reveal.
+		if (state.isRevealing) {
+			tocList.scrollTo({ top: tocList.scrollTop, behavior: 'instant' });
+			state.isRevealing = false;
+		}
 		syncTocScrollState(tocList);
 		scheduleRevealRetry(state);
 	};
 	const syncTocOnly = () => {
 		syncTocScrollState(tocList);
 	};
+	const handleTocScrollEnd = () => {
+		state.isRevealing = false;
+	};
 	const disclosure = tocList.closest<HTMLDetailsElement>('details');
 	const handleDisclosureToggle = () => {
 		if (disclosure?.open) {
+			state.manualTargetSlug = null;
 			state.isInspectingToc = false;
 			state.userIntentUntil = 0;
 			state.inspectionUntil = 0;
@@ -349,7 +340,7 @@ const initTocList = (tocList: HTMLElement) => {
 
 			state.frame = window.requestAnimationFrame(() => {
 				syncTocScrollState(tocList);
-				updateActiveLink(state, true);
+				updateActiveLink(state, 'initial');
 			});
 		}
 	};
@@ -364,7 +355,19 @@ const initTocList = (tocList: HTMLElement) => {
 		scheduleRevealRetry(state);
 	};
 
-	const handleClick = (event: Event) => {
+	const interruptNavigation = (event: Event) => {
+		if (!state.manualTargetSlug || (event.target instanceof Node && tocList.contains(event.target))) return;
+		if (event instanceof KeyboardEvent && (
+			!['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)
+			|| (event.target instanceof Element && event.target.closest('input, textarea, select, [contenteditable="true"]'))
+		)) return;
+		state.manualTargetSlug = null;
+		window.scrollTo({ top: window.scrollY, behavior: 'instant' });
+		requestUpdate();
+	};
+
+	const handleClick = (event: MouseEvent) => {
+		if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 		const link = event.currentTarget as HTMLAnchorElement;
 		const slug = link.dataset.tocLink;
 		const heading = slug ? document.getElementById(slug) : null;
@@ -375,13 +378,11 @@ const initTocList = (tocList: HTMLElement) => {
 
 		event.preventDefault();
 		window.history.replaceState(null, '', `#${slug}`);
-		state.clickLockUntil = window.performance.now() + ARTICLE_PAGE_CONFIG.toc.behavior.clickLockMs;
 		state.manualTargetSlug = slug;
-		state.manualTargetUntil = state.clickLockUntil;
 		setActiveLink(state, link);
-		revealLinkIfNeeded(state, link, true);
+		revealLinkIfNeeded(state, link, 'selection');
 		scrollToTarget(heading, { offset: -getHeaderOffset() });
-		window.setTimeout(requestUpdate, ARTICLE_PAGE_CONFIG.toc.behavior.clickLockMs + ARTICLE_PAGE_CONFIG.toc.behavior.scrollSettleMs);
+		scheduleSettledReveal(state);
 	};
 
 	items.forEach(({ link }) => {
@@ -390,12 +391,17 @@ const initTocList = (tocList: HTMLElement) => {
 	tocList.addEventListener('wheel', registerUserIntent, { passive: true });
 	tocList.addEventListener('touchstart', registerUserIntent, { passive: true });
 	tocList.addEventListener('pointerdown', registerUserIntent);
+	tocList.addEventListener('focusin', registerUserIntent);
 	tocList.addEventListener('scroll', syncTocOnly, { passive: true });
+	tocList.addEventListener('scrollend', handleTocScrollEnd);
 	tocList.addEventListener('mouseenter', handleMouseEnter);
 	tocList.addEventListener('mouseleave', handleMouseLeave);
 	disclosure?.addEventListener('toggle', handleDisclosureToggle);
 	window.addEventListener('scroll', requestUpdate, { passive: true });
 	window.addEventListener('resize', requestUpdate);
+	window.addEventListener('wheel', interruptNavigation, { passive: true });
+	window.addEventListener('touchstart', interruptNavigation, { passive: true });
+	window.addEventListener('keydown', interruptNavigation);
 
 	state.cleanup = () => {
 		items.forEach(({ link }) => {
@@ -404,12 +410,17 @@ const initTocList = (tocList: HTMLElement) => {
 		tocList.removeEventListener('wheel', registerUserIntent);
 		tocList.removeEventListener('touchstart', registerUserIntent);
 		tocList.removeEventListener('pointerdown', registerUserIntent);
+		tocList.removeEventListener('focusin', registerUserIntent);
 		tocList.removeEventListener('scroll', syncTocOnly);
+		tocList.removeEventListener('scrollend', handleTocScrollEnd);
 		tocList.removeEventListener('mouseenter', handleMouseEnter);
 		tocList.removeEventListener('mouseleave', handleMouseLeave);
 		disclosure?.removeEventListener('toggle', handleDisclosureToggle);
 		window.removeEventListener('scroll', requestUpdate);
 		window.removeEventListener('resize', requestUpdate);
+		window.removeEventListener('wheel', interruptNavigation);
+		window.removeEventListener('touchstart', interruptNavigation);
+		window.removeEventListener('keydown', interruptNavigation);
 
 		if (state.frame) {
 			window.cancelAnimationFrame(state.frame);
@@ -428,9 +439,9 @@ const initTocList = (tocList: HTMLElement) => {
 
 	if (hashItem) {
 		setActiveLink(state, hashItem.link);
-		revealLinkIfNeeded(state, hashItem.link, true);
+		revealLinkIfNeeded(state, hashItem.link, 'initial');
 	} else {
-		updateActiveLink(state, true);
+		updateActiveLink(state, 'initial');
 	}
 };
 
