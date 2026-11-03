@@ -133,7 +133,7 @@ test('阅读时目录平滑跟随，鼠标查看目录时不抢走滚动位置',
 	expect(await toc.evaluate(el => el.scrollTop)).toBe(0);
 });
 
-test('连续点击以最后一次为准，正文滚轮可打断尚未完成的跳转', async ({ page }) => {
+test('连续点击与键盘导航以最后一次为准，正文滚轮可打断跳转', async ({ page }) => {
 	await openToc(page);
 	await page.locator(entry('伊斯兰崛起')).click();
 	await page.locator(entry('拜占庭的黑暗时代')).click();
@@ -144,6 +144,11 @@ test('连续点击以最后一次为准，正文滚轮可打断尚未完成的�
 	await page.mouse.move(700, 500);
 	await page.mouse.wheel(0, -300);
 	await expect(page.locator(entry('伊斯兰哲学'))).not.toHaveAttribute('aria-current');
+	await page.locator(entry('伊斯兰崛起')).click();
+	const slider = page.getByRole('slider', { name: 'Page scroll position' });
+	await slider.focus();
+	await slider.press('Home');
+	await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
 });
 
 test('手机目录键盘焦点、Escape、局部滚动与选章后的页面滚动正常', async ({ page }) => {

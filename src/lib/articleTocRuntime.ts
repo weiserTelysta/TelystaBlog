@@ -362,7 +362,9 @@ const initTocList = (tocList: HTMLElement) => {
 			|| (event.target instanceof Element && event.target.closest('input, textarea, select, [contenteditable="true"]'))
 		)) return;
 		state.manualTargetSlug = null;
-		window.scrollTo({ top: window.scrollY, behavior: 'instant' });
+		// Another control may already have handled this key and started its own
+		// navigation (for example the page progress slider's Home/End keys).
+		if (!event.defaultPrevented) window.scrollTo({ top: window.scrollY, behavior: 'instant' });
 		requestUpdate();
 	};
 
