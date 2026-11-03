@@ -11,6 +11,9 @@ const entry = (slug: string) => `[data-toc-link="${slug}"]`;
 async function openToc(page: Page) {
 	await page.goto(route);
 	await page.evaluate(() => document.fonts.ready);
+	await page.locator(trigger).hover();
+	await expect(page.locator(drawer)).not.toHaveAttribute('open');
+	await expect(page.locator(panel)).toBeHidden();
 	await page.locator(trigger).click();
 	await expect(page.locator(panel)).toHaveCSS('opacity', '1');
 }
@@ -25,10 +28,14 @@ async function expectAtHeading(page: Page, slug: string) {
 }
 
 for (const width of [390, 1440]) {
-	test(`${width}px 目录展开和收起都有可见的中间帧，连续切换不残留滚动锁`, async ({ page }, testInfo) => {
+	test(`${width}px 目录点击后原位淡入淡出，连续切换不残留滚动锁`, async ({ page }, testInfo) => {
 		await page.setViewportSize({ width, height: 1000 });
 		await openToc(page);
 		const openLeft = await page.locator(panel).evaluate(el => el.getBoundingClientRect().left);
+		if (width >= 1360) {
+			const contentRight = await page.locator('[data-article-content]').evaluate(el => el.getBoundingClientRect().right);
+			expect(openLeft).toBeGreaterThan(contentRight);
+		}
 		await page.screenshot({ path: testInfo.outputPath(`toc-${width}.png`) });
 		await page.locator(trigger).click();
 		// Freeze CSS transitions at their midpoint, including the native details
@@ -44,25 +51,29 @@ for (const width of [390, 1440]) {
 				visibility: getComputedStyle(el, '::details-content').contentVisibility,
 				opacity: Number(getComputedStyle(content).opacity),
 				left: content.getBoundingClientRect().left,
+				transform: getComputedStyle(content).transform,
 			};
 		});
 		expect(closing.visibility).toBe('visible');
 		expect(closing.opacity).toBeGreaterThan(0);
 		expect(closing.opacity).toBeLessThan(1);
-		expect(closing.left).toBeGreaterThan(openLeft);
+		expect(closing.left).toBeCloseTo(openLeft, 5);
+		expect(closing.transform).toBe('none');
 		await page.locator(drawer).evaluate(el => el.getAnimations({ subtree: true }).forEach(a => a.play()));
 		await expect(page.locator(panel)).toBeHidden();
 		await page.locator(trigger).click();
 		const opening = await page.locator(panel).evaluate(el => {
-			const transition = el.getAnimations().find(a => a instanceof CSSTransition && a.transitionProperty === 'transform');
+			const transition = el.getAnimations().find(a => a instanceof CSSTransition && a.transitionProperty === 'opacity');
 			if (!transition) throw new Error('Missing drawer entry transition');
 			transition.pause();
 			transition.currentTime = Number(transition.effect!.getTiming().duration) / 2;
-			const left = el.getBoundingClientRect().left;
+			const frame = { left: el.getBoundingClientRect().left, opacity: Number(getComputedStyle(el).opacity) };
 			transition.play();
-			return left;
+			return frame;
 		});
-		expect(opening).toBeGreaterThan(openLeft);
+		expect(opening.left).toBeCloseTo(openLeft, 5);
+		expect(opening.opacity).toBeGreaterThan(0);
+		expect(opening.opacity).toBeLessThan(1);
 		// Toggle directly to avoid Playwright waiting for the animated trigger to settle.
 		await page.locator(trigger).evaluate(async el => {
 			for (let i = 0; i < 3; i++) {
@@ -77,13 +88,19 @@ for (const width of [390, 1440]) {
 	});
 }
 
-test('长距离点击不挪动目录条目，高亮一直保持到正文抵达目标', async ({ page }) => {
+test('点击底部条目时目录平滑上移并露出后续条目，选中状态保持到正文抵达', async ({ page }, testInfo) => {
+	await page.setViewportSize({ width: 1440, height: 800 });
 	await openToc(page);
 	const slug = '伊斯兰崛起';
 	const link = page.locator(entry(slug));
-	await link.scrollIntoViewIfNeeded();
+	// Click the visible bottom entry directly. Locator auto-scrolling would first
+	// center it and skip the edge-selection behavior that a reader encounters.
+	const bounds = (await link.boundingBox())!;
+	const viewport = (await page.locator(list).boundingBox())!;
+	expect(bounds.y).toBeGreaterThan(viewport.y + viewport.height * 0.8);
+	expect(bounds.y + bounds.height).toBeLessThan(viewport.y + viewport.height);
 	const before = await page.locator(list).evaluate(el => el.scrollTop);
-	await link.click();
+	await page.mouse.click(bounds.x + bounds.width / 2, bounds.y + bounds.height / 2);
 	const during = await page.evaluate(async () => {
 		const samples: { slug: string | undefined; top: number; y: number }[] = [];
 		const start = performance.now();
@@ -98,11 +115,27 @@ test('长距离点击不挪动目录条目，高亮一直保持到正文抵达�
 		return samples;
 	});
 	expect(new Set(during.map(s => s.slug))).toEqual(new Set([slug]));
-	expect(during.every(s => Math.abs(s.top - before) < 2)).toBe(true);
+	expect(new Set(during.map(s => s.top)).size).toBeGreaterThan(5);
+	expect(during.at(-1)!.top).toBeGreaterThan(before + 100);
 	expect(new Set(during.map(s => s.y)).size).toBeGreaterThan(5);
 	await expectAtHeading(page, slug);
-	expect(await link.evaluate(el => getComputedStyle(el, '::before').opacity)).toBe('0.85');
-	await expect(link).not.toHaveCSS('background-color', 'rgba(0, 0, 0, 0)');
+	const position = await link.evaluate(el => {
+		const bounds = el.getBoundingClientRect();
+		const viewport = el.closest('[data-article-toc-list]')!.getBoundingClientRect();
+		return ((bounds.top + bounds.bottom) / 2 - viewport.top) / viewport.height;
+	});
+	expect(position).toBeGreaterThan(0.24);
+	expect(position).toBeLessThan(0.68);
+	await expect(page.locator(entry('智慧宫'))).toBeInViewport();
+	await expect(link).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)');
+	expect(await link.evaluate(el => getComputedStyle(el, '::before').content)).toBe('none');
+	await expect(link).toHaveCSS('font-weight', '550');
+	await page.screenshot({ path: testInfo.outputPath('toc-bottom-selection.png') });
+	// A nearby entry is now comfortably visible and needs no further recentering.
+	const settledTop = await page.locator(list).evaluate(el => el.scrollTop);
+	await page.locator(entry('倭马亚王朝阿巴斯王朝')).click();
+	await expectAtHeading(page, '倭马亚王朝阿巴斯王朝');
+	expect(await page.locator(list).evaluate(el => el.scrollTop)).toBe(settledTop);
 });
 
 test('阅读时目录平滑跟随，鼠标查看目录时不抢走滚动位置', async ({ page }) => {
@@ -184,7 +217,7 @@ for (const width of [390, 1440]) {
 		await expectAtHeading(page, '伊斯兰崛起');
 		await expect(page.locator(panel)).toHaveCSS('transition-duration', '0s');
 		await expect(link).toHaveCSS('transition-duration', '0s');
-		expect(await link.evaluate(el => getComputedStyle(el, '::before').transitionDuration)).toBe('0s');
+		expect(await link.evaluate(el => getComputedStyle(el, '::before').content)).toBe('none');
 		expect(await page.locator(drawer).evaluate(el => el.getAnimations({ subtree: true }).length)).toBe(0);
 		expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 	});
@@ -219,7 +252,7 @@ test('无 JavaScript 时目录仍可展开并通过原生锚点定位', async ({
 		const page = await context.newPage();
 		await page.goto(`http://127.0.0.1:4322${route}`);
 		await page.locator(trigger).click();
-		await expect(page.locator(panel)).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+		await expect(page.locator(panel)).toHaveCSS('opacity', '1');
 		await page.locator(entry('伊斯兰崛起')).click();
 		expect(decodeURIComponent(new URL(page.url()).hash)).toBe('#伊斯兰崛起');
 	} finally {

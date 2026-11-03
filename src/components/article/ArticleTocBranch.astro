@@ -54,7 +54,6 @@ const { nodes, level = 1 } = Astro.props;
 	}
 
 	.article-toc__item > a {
-		position: relative;
 		display: block;
 		min-width: 0;
 		padding: 4px 5px;
@@ -65,19 +64,7 @@ const { nodes, level = 1 } = Astro.props;
 		line-height: 1.5;
 		text-decoration: none;
 		overflow-wrap: break-word;
-		transition: color var(--motion-fast) ease, background-color var(--motion-medium) ease;
-	}
-
-	.article-toc__item > a::before {
-		position: absolute;
-		inset: 6px auto 6px 0;
-		width: 2px;
-		border-radius: 1px;
-		background: var(--color-accent);
-		content: '';
-		opacity: 0;
-		transform: scaleY(0.4);
-		transition: opacity var(--motion-fast) ease, transform var(--motion-medium) var(--motion-ease-out);
+		transition: color var(--motion-fast) ease;
 	}
 
 	.article-toc__item--depth-2 > a {
@@ -93,18 +80,12 @@ const { nodes, level = 1 } = Astro.props;
 
 	.article-toc__item > a:hover {
 		color: rgba(216, 224, 236, 0.86);
-		background-color: rgba(156, 199, 232, 0.035);
 	}
 
 	.article-toc__item > a.is-active,
 	.article-toc__item > a[aria-current='location'] {
 		color: rgba(224, 231, 241, 0.94);
-		background-color: rgba(156, 199, 232, 0.07);
-	}
-
-	.article-toc__item > a[aria-current='location']::before {
-		opacity: 0.85;
-		transform: scaleY(1);
+		font-weight: 550;
 	}
 
 	.article-toc__item > a:focus-visible {
@@ -113,8 +94,7 @@ const { nodes, level = 1 } = Astro.props;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.article-toc__item > a,
-		.article-toc__item > a::before {
+		.article-toc__item > a {
 			transition: none;
 		}
 	}

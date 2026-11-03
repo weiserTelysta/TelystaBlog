@@ -190,10 +190,8 @@ const panelId = 'article-toc-panel';
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
-		transform: translate3d(calc(100% + var(--toc-drawer-resting-right)), 0, 0);
 		transition:
-			transform var(--motion-medium) var(--motion-ease-out),
-			opacity var(--motion-fast) ease,
+			opacity var(--motion-medium) ease,
 			visibility 0s linear var(--motion-medium);
 	}
 
@@ -201,7 +199,6 @@ const panelId = 'article-toc-panel';
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
-		transform: translate3d(0, 0, 0);
 		transition-delay: 0s;
 	}
 
@@ -259,7 +256,6 @@ const panelId = 'article-toc-panel';
 			background: rgba(11, 15, 23, 0.92);
 			-webkit-backdrop-filter: blur(14px);
 			backdrop-filter: blur(14px);
-			transform: translate3d(100%, 0, 0);
 		}
 
 		.article-aside__drawer[open] .article-aside__backdrop {

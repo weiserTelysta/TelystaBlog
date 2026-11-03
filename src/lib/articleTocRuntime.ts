@@ -134,16 +134,15 @@ const revealLinkIfNeeded = (state: TocState, link: HTMLAnchorElement, mode: Reve
 	const isVisible = linkTop >= viewTop + revealMargin && linkBottom <= viewBottom - revealMargin;
 	const shouldStayPut = isComfortable && isVisible;
 
-	// Selecting an already-visible entry must not move it out from under the pointer.
-	if (mode === 'selection' && isVisible) return;
+	// A click near either edge brings the entry into the comfort zone, leaving
+	// room for the surrounding headings. Entries already in that zone stay put.
+	if (mode === 'selection' && shouldStayPut) return;
 	if (mode === 'follow' && (shouldStayPut || !canReveal(state) || now - state.lastRevealAt < revealCooldownMs)) {
 		return;
 	}
 
 	const anchor = mode === 'initial' ? revealAnchor : comfortAnchor;
-	const nextScrollTop = clampScrollTop(state, mode === 'selection'
-		? (linkTop < viewTop + revealMargin ? linkTop - revealMargin : linkBottom + revealMargin - state.tocList.clientHeight)
-		: linkTop - state.tocList.clientHeight * anchor);
+	const nextScrollTop = clampScrollTop(state, linkTop - state.tocList.clientHeight * anchor);
 
 	if (Math.abs(state.tocList.scrollTop - nextScrollTop) < 1) {
 		return;
