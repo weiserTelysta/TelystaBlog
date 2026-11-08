@@ -9,8 +9,8 @@ export function extractMarkdownTitle(markdown: string): string | undefined {
 	return heading ? readText(heading).normalize('NFKC').replace(/\s+/g, ' ').trim() || undefined : undefined;
 }
 
-export function resolvePostTitle(markdown: string, fallbackTitle: string): string {
-	return extractMarkdownTitle(markdown) || fallbackTitle.trim();
+export function resolvePostTitle(markdown: string, authoredTitle: string): string {
+	return authoredTitle.trim() || extractMarkdownTitle(markdown) || '';
 }
 
 function readText(node: Nodes): string {

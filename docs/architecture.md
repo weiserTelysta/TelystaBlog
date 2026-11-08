@@ -1,6 +1,6 @@
 # 架构与目录维护
 
-核对更新：2026-11-03。当前功能对应关系见 [功能核对](feature-map.md)。
+核对更新：2026-11-08。当前功能对应关系见 [功能核对](feature-map.md)。
 
 作者入口见 [配置说明](../src/config/README.md)。`config/pages` 按页面归集可编辑文案，`config/content` 保存分类、系列及额外资源收录；分类/系列 ID 从资料数组派生。配置不依赖组件，组件读取配置并负责安全文本渲染；内部 DOM ID、焦点恢复与滚轮算法不作为作者选项。详情见 [配置整理记录](archive/2026-09/config-entrypoints-2026-09-06.md)。
 
@@ -25,6 +25,10 @@
 `uuid` 固定保存在 Markdown，加载器生成 `WEISER<12位编号>` 内容 ID；所有文章入口共用该 ID。`postLinks.mjs` 统一检查编号与历史地址，`astro.config.mjs` 将当前文件名与 `redirectFrom` 生成为静态跳转并排除于 sitemap。Giscus 以 `specific` 映射固定 commentId，旧文保留原 pathname 对应值。源码写入只由新建工具与显式 `post:identify` 执行；构建和校验保持只读。详见 [永久链接方案](post-permalinks-2026-11-03.md)。
 
 文章自动补全、Content Collections Schema 与维护检查共用 `contentDate.ts`；日期必须真实存在，纯日期按 UTC 解释，显示和年月归档也使用 UTC，避免本机与 CI 的时区差异。标题提取与 Markdown 图片／一级标题检查使用 Remark 语法树，避免代码示例和引用式图片被正则误判。自动补全不改写原稿。
+
+标题统一按显式 `frontmatter.title`、正文 H1、去日期文件名的顺序解析。`completePostMetadata` 补缺省值，`toPostListItem` 输出列表、文章页、系列、搜索与 SEO 使用的标题，后台列表和预览使用同一优先级。Markdown 插件移除正文 H1，避免页头重复；不再用渲染插件的标题覆盖归一化结果。修改 Markdown 规则时递增 `postLoader` 渲染版本，让 CI 的内容缓存失效。
+
+站内导航使用普通静态链接，每次跨页面请求一个 HTML 文档，没有客户端路由器或跳转前的数据接口。目录页面入口统一以 `/` 结尾，避免 GitHub Pages 经 Cloudflare 返回额外的 301。资源图片懒加载、React hydration 和第三方评论不属于 HTML 构建过程；排查加载速度时分别记录 TTFB、首次内容绘制、脚本就绪和图片请求完成，不能把 `load` 或网络空闲等同于页面出现。测量与修复边界见 [2026-11-08 排查](title-navigation-audit-2026-11-08.md)。
 
 当前静态站点、本地编辑服务和离线素材命令的分工继续保留。2026-10-11 的问题、验证和后续拆分建议见 [项目排查](project-audit-2026-10-11.md)。
 

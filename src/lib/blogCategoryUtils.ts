@@ -38,7 +38,7 @@ export function getCategoryPostCount<TPost extends { category: BlogCategoryId }>
 
 export function buildCategoryHref(categoryId?: BlogCategoryId) {
 	if (!categoryId) {
-		return '/blog';
+		return '/blog/';
 	}
 
 	return `/blog/category/${encodeURIComponent(categoryId)}/`;

@@ -17,7 +17,7 @@ test('没有 frontmatter 的博客也只在文章头部展示一次标题', () =
 	assert.equal(tree.children[0].type, 'paragraph');
 });
 
-test('从博客正文提取唯一 H1 并保留后续章节', () => {
+test('显式标题优先，移除正文 H1 并保留后续章节', () => {
 	const tree = {
 		type: 'root',
 		children: [
@@ -26,12 +26,12 @@ test('从博客正文提取唯一 H1 并保留后续章节', () => {
 			{ type: 'heading', depth: 2, children: [{ type: 'text', value: '第一节' }] },
 		],
 	};
-	const frontmatter: Record<string, unknown> = { category: 'notes' };
+	const frontmatter: Record<string, unknown> = { category: 'notes', title: '显式标题' };
 	const file = { data: { astro: { frontmatter } } };
 
 	remarkArticleTitle()(tree, file);
 
-	assert.equal(frontmatter.articleTitle, '草木有时');
+	assert.equal(frontmatter.articleTitle, '显式标题');
 	assert.deepEqual(tree.children.map((node) => node.type), ['paragraph', 'heading']);
 	assert.equal(tree.children[1]?.depth, 2);
 });

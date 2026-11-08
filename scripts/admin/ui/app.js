@@ -1313,7 +1313,7 @@ function editPost(current) {
 			suggestions.append(
 				el(
 					'p',
-					`正文一级标题为「${writing.title}」。页面优先使用正文标题。`,
+					`正文一级标题为「${writing.title}」。页面优先使用表单标题；留空时才使用正文标题。`,
 					'hint',
 				),
 				button(

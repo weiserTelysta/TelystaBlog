@@ -68,7 +68,7 @@ test('plain Markdown accepts new metadata without consuming horizontal rules; co
 test('draft preview renders Markdown and native math, makes HTML inert and strips navigation', async () => {
 	const html = await renderPostPreview(
 		'# 标题\n\n**加粗**\n\n$$x^2$$\n\n<script>parent.injected=true</script>\n\n[危险](javascript:alert(1))\n\n![测试](./safe.png)',
-		'标题',
+		'表单标题',
 		'testNonce',
 		async (src) =>
 			src === './safe.png' ? 'data:image/webp;base64,AA==' : undefined,
@@ -78,6 +78,7 @@ test('draft preview renders Markdown and native math, makes HTML inert and strip
 	assert.match(html, /(?:&lt;|&#x3C;)script>/);
 	assert.doesNotMatch(html, /<script|href="javascript:|__ASTRO_IMAGE_/);
 	assert.equal((html.match(/<h1>/g) ?? []).length, 1);
+	assert.match(html, /<h1>表单标题<\/h1>/);
 	assert.match(html, /data:image\/webp/);
 	assert.match(html, /default-src 'none'/);
 });

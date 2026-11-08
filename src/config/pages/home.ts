@@ -79,7 +79,7 @@ export const HOME_SECTIONS: HomeSectionConfig[] = [
 			},
 			{
 				label: 'Resource Index',
-				href: '/resources',
+				href: '/resources/',
 				description: '好多美妙的宝藏，和你分享~',
 				kind: 'index',
 			},

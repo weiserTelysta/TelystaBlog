@@ -1,7 +1,6 @@
 /**
- * Treat the first Markdown H1 as the authored article title while keeping the
- * site header responsible for its final visual placement beside cover/meta.
- * Posts may omit frontmatter and use their filename/directory for metadata.
+ * Keep one visible article title in the site header. An explicit frontmatter
+ * title takes precedence; a Markdown H1 supplies the title when it is omitted.
  */
 export default function remarkArticleTitle() {
 	return (tree, file) => {
@@ -17,7 +16,9 @@ export default function remarkArticleTitle() {
 		if (headingIndex < 0) return;
 
 		const heading = tree.children[headingIndex];
-		frontmatter.articleTitle = readText(heading).trim();
+		frontmatter.articleTitle = typeof frontmatter.title === 'string' && frontmatter.title.trim()
+			? frontmatter.title.trim()
+			: readText(heading).trim();
 		tree.children.splice(headingIndex, 1);
 	};
 }

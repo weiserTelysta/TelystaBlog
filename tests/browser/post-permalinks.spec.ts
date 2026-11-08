@@ -5,6 +5,7 @@ import { permalinkFor } from '../helpers/post-routes';
 
 const index = readPostLinkIndex();
 const byzantium = permalinkFor('/blog/reading/history/2026-11-3-拜占庭的赠礼/');
+const byzantiumTitle = '《拜占庭的赠礼》阅读笔记';
 
 test('所有公开文章、搜索与 sitemap 使用短编号，全部旧文件名地址直接跳转且保留评论键', async ({ request }) => {
 	const sitemap = await (await request.get('/sitemap-0.xml')).text();
@@ -36,15 +37,24 @@ for (const width of [390, 1440]) {
 		await page.setViewportSize({ width, height: 1000 });
 		await page.emulateMedia({ reducedMotion: 'reduce' });
 		await page.route('https://giscus.app/**', route => route.abort());
+		await page.goto('/blog/');
+		await expect(page.locator(`a[href="${byzantium}"]`)).toHaveText(byzantiumTitle);
+		const search = await (await page.request.get('/blog/search-index.json')).json();
+		expect(search.find((item: { href: string }) => item.href === byzantium).title).toBe(byzantiumTitle);
 		await page.goto('/series/byzantine-civilization/');
 		await expect(page.getByRole('heading', { level: 1 })).toHaveText('拜占庭文明史');
 		const link = page.locator('.article-post-list a');
 		await expect(link).toHaveAttribute('href', byzantium);
+		await expect(link.locator('strong')).toHaveText(byzantiumTitle);
 		await link.focus();
 		await expect(link).toHaveCSS('outline-style', 'solid');
 		await page.keyboard.press('Enter');
 		await expect(page).toHaveURL(new URL(byzantium, page.url()).href);
-		await expect(page.locator('h1')).toHaveText('拜占庭的赠礼');
+		await expect(page.locator('h1')).toHaveText(byzantiumTitle);
+		await expect(page).toHaveTitle(new RegExp(byzantiumTitle));
+		await expect(page.locator('meta[property="og:title"]')).toHaveAttribute('content', await page.title());
+		const structuredData = await page.locator('script[type="application/ld+json"]').allTextContents();
+		expect(structuredData.join('')).toContain(`"headline":"${byzantiumTitle}"`);
 		await expect(page.locator('[data-article-content]')).toContainText('拜占庭与伊斯兰');
 		await expect(page.locator('.article-series__link')).toHaveAttribute('href', '/series/byzantine-civilization/');
 		expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
