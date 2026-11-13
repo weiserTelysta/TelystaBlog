@@ -10,7 +10,7 @@ const groups = [
 for (const width of [390, 1440]) {
 	test(`九月新增三组资源的封面、图库和原图下载：${width}px`, async ({ page }, testInfo) => {
 		await page.setViewportSize({ width, height: 1000 });
-		await page.goto('/resources/', { waitUntil: 'domcontentloaded' });
+		await page.goto('/gallery/', { waitUntil: 'domcontentloaded' });
 		for (const group of groups) {
 			const trigger = page.getByRole('link', { name: `查看资源：${group.title}`, exact: true });
 			await expect(trigger.locator('img')).toHaveAttribute('src', /\/covers\/.+\.[a-f0-9]{64}\.webp$/);

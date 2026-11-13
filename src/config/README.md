@@ -13,7 +13,8 @@
 | 离开标签页时的随机祝福 | `tabGreetings.ts` 的 `TAB_GREETINGS` |
 | Blog 标题、搜索提示、系列总索引文案 | `pages/blog.ts`，尤其 `search` / `seriesIndex` |
 | 文章日期前缀、目录、系列、复制提示 | `pages/article.ts`；复制状态在 `codeCopy` |
-| 资源页介绍、筛选、看图按钮、下载提示 | `pages/resources.ts`；`viewer` / `download` |
+| Gallery 介绍、筛选、看图按钮、下载提示 | `pages/resources.ts`；`viewer` / `download` |
+| Ebooks 标题、空书架与下载文案 | `pages/ebooks.ts` |
 | 分类、系列名称及归属 | `content/blogCategories.ts` / `content/blogSeries.ts` |
 | 非插画 Image 的额外画廊收录 | `content/resourceGallery.ts` 的 `featuredImages` |
 | 分类卡片图片与视觉映射 | `visuals/categoryVisuals.ts`（高级维护） |

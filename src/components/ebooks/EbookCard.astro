@@ -1,0 +1,17 @@
+---
+import type { Ebook } from '../../lib/ebooks/ebooks';
+type Props = { book: Ebook };
+const { book } = Astro.props;
+---
+<article class="ebook-card">
+	<a class="ebook-card__cover" href={book.href} tabindex="-1" aria-hidden="true">
+		<img src={book.cover} alt="" width="160" height="240" loading="lazy" decoding="async" />
+	</a>
+	<div class="ebook-card__copy">
+		<h2><a href={book.href} title={book.title}>{book.title}</a></h2>
+		<p class="ebook-card__authors">{book.authors.join('、')}</p>
+		<ul class="ebook-formats" aria-label={`${book.title}的格式`}>
+			{book.files.map(file => <li><a href={file.href} target="_blank" rel="noopener noreferrer" download aria-label={`下载 ${book.title}（${file.format}）`}>{file.format}</a></li>)}
+		</ul>
+	</div>
+</article>

@@ -66,7 +66,7 @@ export default function ResourceExplorer({ resources }: ResourceExplorerProps) {
 	}
 
 	return (
-		<section className="resource-explorer" aria-label="资源索引">
+		<section className="resource-explorer" aria-label={RESOURCE_PAGE_CONFIG.hero.title}>
 			<header className="resource-hero">
 				<p className="resource-hero__eyebrow">{RESOURCE_PAGE_CONFIG.hero.eyebrow}</p>
 				<h1 id="resource-page-title">{RESOURCE_PAGE_CONFIG.hero.title}</h1>

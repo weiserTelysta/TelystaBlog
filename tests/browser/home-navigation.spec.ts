@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 
-test('Blog 与 Resources 直接访问目录地址，无脚本也能跳转', async ({ browser, baseURL }) => {
+test('Blog、Gallery 与 Ebooks 直接访问目录地址，无脚本也能跳转', async ({ browser, baseURL }) => {
 	const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
 	const page = await context.newPage();
 	try {
-		for (const [name, path] of [['Blog', '/blog/'], ['Resource Index', '/resources/']]) {
+		for (const [name, path] of [['Blog', '/blog/'], ['Gallery', '/gallery/'], ['Ebooks', '/ebooks/']]) {
 			await page.goto('/');
 			const link = page.getByRole('link', { name: new RegExp(`^${name}(?:\\s|$)`) });
 			await expect(link).toHaveAttribute('href', path);

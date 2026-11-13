@@ -78,10 +78,16 @@ export const HOME_SECTIONS: HomeSectionConfig[] = [
 				kind: 'a little more',
 			},
 			{
-				label: 'Resource Index',
-				href: '/resources/',
+				label: 'Gallery',
+				href: '/gallery/',
 				description: '好多美妙的宝藏，和你分享~',
 				kind: 'index',
+			},
+			{
+				label: 'Ebooks',
+				href: '/ebooks/',
+				description: '翻开一本书，走进另一个世界。',
+				kind: 'library',
 			},
 			{
 				label: 'Telysta Annals',

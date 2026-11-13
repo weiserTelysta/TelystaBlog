@@ -42,6 +42,6 @@ export default defineConfig({
   },
   integrations: [webFonts(), react(), sitemap({ filter: (page) => {
     const pathname = decodeURI(new URL(page).pathname);
-    return !pathname.endsWith('.json') && !Object.hasOwn(redirects, pathname);
+    return !pathname.endsWith('.json') && pathname !== '/resources/' && !Object.hasOwn(redirects, pathname);
   } })],
 });

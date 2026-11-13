@@ -13,6 +13,7 @@
 | `src/pages` | Astro 路由；文章使用固定 WEISER 短编号，旧地址静态跳转 |
 | `src/content/weiser-posts` | 文章原稿，含 Markdown 附件引用 |
 | `src/content/resources` | 作者明确收录的资源分组，不是 R2 全量列表 |
+| `src/content/ebooks` | 独立书目元数据，固定 ID、封面与 R2 文件链接 |
 | `src/content/scores` / `src/generated/scores` | 简谱源稿 / 可复现 SVG 与校验记录 |
 | `src/generated/cdn-assets.json` | 全站共享 CDN 键、显示图尺寸与原图地址，需提交 |
 | `src/config` | 栏目、系列、文案和视觉参数 |
@@ -43,6 +44,10 @@ Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边�
 `scripts/web-fonts.mjs` 在 Astro 配置阶段自动生成文楷、Cinzel、MonteCarlo 的 WOFF2 子集，供 `fonts.scss` 引入。文楷收集首页组件与首页配置中的字符，另外两款收集全站文本源码，并补足 ASCII／转义字符；少量源码中的额外字符作为安全余量。开发服务器监听文案变动并更新子集。完整原字体始终保留在 `src/assets/fonts`，生成物仅缓存于 `.astro/web-fonts`，不提交、不写入原字体；字符、源字体或依赖变化会使缓存失效。生成方法、许可证与复现记录见 [字体维护](title-navigation-audit-2026-11-08.md#字体维护)。
 
 ## 资源实现
+
+公开画廊入口为 `/gallery/`；旧 `/resources/` 使用轻量静态兼容页面，脚本保留查询与片段，无脚本回退总览。旧页不进入 sitemap。内部 resources 集合、组件与 R2 素材继续复用，避免仅为改名迁移素材。
+
+电子书独立使用 `ebookSchema.ts`，与内容检查共用发布、格式、URL 和日期约束。`EbookCard.astro` 输出无边框左右图文；四／三／二／一列随视口调整，不加载书籍正文。`/ebooks/<固定id>/` 仅为公开书目生成页面，改标题／文件名不改路由；草稿默认隐藏。书籍文件使用现有 R2 自定义域名的 `ebooks/` 前缀，构建不扫描远端 bucket。维护与测试方式见 [Ebooks](ebooks.md)。
 
 `resourceItems.ts` 在构建时读取内容与 CDN 清单，仅向 React island 发送图片、标题、类型及下载数据。Credits、许可证和作者正文仍保存在源稿中，不为了简化 UI 删除原始信息，也不再发送旧详情面板所需的冗余数据。
 

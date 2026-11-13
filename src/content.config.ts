@@ -6,6 +6,7 @@ import { BLOG_SERIES_IDS } from './config/content/blogSeries';
 import { postLoader } from './lib/postLoader';
 import { parseContentDate } from './lib/contentDate';
 import { POST_UUID_PATTERN } from './lib/postLinks.mjs';
+import { ebookSchema } from './lib/ebooks/ebookSchema';
 import {
 	RESOURCE_ACTION_TYPES,
 	RESOURCE_STATUS_IDS,
@@ -110,4 +111,5 @@ const resources = defineCollection({
 export const collections = {
 	posts,
 	resources,
+	ebooks: defineCollection({ loader: glob({ pattern: '**/*.md', base: './src/content/ebooks' }), schema: ebookSchema }),
 };

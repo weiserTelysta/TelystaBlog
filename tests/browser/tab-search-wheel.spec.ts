@@ -105,7 +105,7 @@ test('随机 favicon 在同一标签页保持一致，首页角色同步，隐�
 });
 
 test('组图两侧箭头与滚轮切换，连续惯性不跳片，下载弹窗隔离', async ({ page }, info) => {
-	await page.goto('/resources/');
+	await page.goto('/gallery/');
 	await page.getByRole('link', { name: '查看资源：波斯少女', exact: true }).click();
 	const frame = page.locator('.resource-viewer-frame');
 	const prev = page.getByRole('button', { name: RESOURCE_PAGE_CONFIG.viewer.previousLabel, exact: true });

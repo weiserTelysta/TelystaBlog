@@ -101,7 +101,7 @@ for (const width of [320, 390, 768, 1440]) {
 test('资源看图器接收真实键盘切换与 Escape', async ({ page }, testInfo) => {
 	const errors: string[] = [];
 	page.on('pageerror', error => errors.push(error.message));
-	await page.goto('/resources/');
+	await page.goto('/gallery/');
 	await page.getByRole('link', { name: '查看资源：Telysta · 克里诺林裙', exact: true }).click();
 	await expect(page.locator('.pswp')).toBeVisible();
 	await page.keyboard.press('ArrowRight');

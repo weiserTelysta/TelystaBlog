@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 for (const width of [390, 1440]) {
 	test(`看图器正反向 Tab 始终留在可用操作中：${width}px`, async ({ page }) => {
 		await page.setViewportSize({ width, height: 900 });
-		await page.goto('/resources/');
+		await page.goto('/gallery/');
 		const trigger = page.getByRole('link', { name: '查看资源：Minecraft · 红色皮肤', exact: true });
 		await trigger.click();
 		await expect(page.locator('.pswp')).toBeVisible();
@@ -24,7 +24,7 @@ for (const width of [390, 1440]) {
 
 	test(`中亚服饰资源显示小封面、高清图与 JPEG 原图下载：${width}px`, async ({ page }, testInfo) => {
 		await page.setViewportSize({ width, height: 1000 });
-		await page.goto('/resources/', { waitUntil: 'domcontentloaded' });
+		await page.goto('/gallery/', { waitUntil: 'domcontentloaded' });
 		const trigger = page.getByRole('link', { name: '查看资源：Telysta · 中亚风格服饰', exact: true });
 		await expect(trigger.locator('img')).toHaveAttribute('src', /\/covers\/Telysta\/Telysta_Central-Asia_clouth_half_body\.[a-f0-9]{64}\.webp$/);
 		await trigger.click();
@@ -49,7 +49,7 @@ test('列表使用独立 cover，高清图仅在看图器打开后请求', async
 	page.on('request', request => {
 		if (request.resourceType() === 'image' && request.url().includes('/telysta-images/') && !/Minecraft_red|minecraft_yellow/.test(request.url())) fullImages.push(request.url());
 	});
-	await page.goto('/resources/');
+	await page.goto('/gallery/');
 	const cover = page.getByRole('link', { name: '查看资源：Telysta · 克里诺林裙', exact: true }).locator('img');
 	await expect(cover).toHaveAttribute('src', /\/covers\/Telysta\/.+\.[a-f0-9]{64}\.webp$/);
 	await cover.evaluate((image: HTMLImageElement) => image.decode());
@@ -65,7 +65,7 @@ test('列表使用独立 cover，高清图仅在看图器打开后请求', async
 });
 
 test('图片内聚操作、移出/闲置隐藏、下载分层关闭与焦点恢复', async ({ page }, testInfo) => {
-	await page.goto('/resources/');
+	await page.goto('/gallery/');
 	const trigger = page.getByRole('link', { name: '查看资源：波斯少女', exact: true });
 	await trigger.click();
 	const image = page.locator('.pswp img[src$="Persian_Lady_illustration.webp"]');
@@ -111,7 +111,7 @@ test('触屏窄屏与减少动态：按钮不溢出，像素皮肤保留 PNG', a
 	const context = await browser.newContext({ viewport: { width: 320, height: 740 }, hasTouch: true, isMobile: true, reducedMotion: 'reduce' });
 	const page = await context.newPage();
 	try {
-		await page.goto('http://127.0.0.1:4322/resources/');
+		await page.goto('http://127.0.0.1:4322/gallery/');
 		await page.getByRole('link', { name: '查看资源：Minecraft · 红色皮肤', exact: true }).tap();
 		await expect(page.locator('.pswp')).toBeVisible();
 		await expect(page.locator('.resource-viewer-toolbar')).toHaveCSS('transition-duration', '0s');
@@ -137,7 +137,7 @@ test('列表轻微放大不触发布局位移，遮罩暂停星空，关闭后�
 			return original.apply(this, args);
 		};
 	});
-	await page.goto('/resources/');
+	await page.goto('/gallery/');
 	const frames = () => page.evaluate(() => (window as unknown as { starfieldFrames: number }).starfieldFrames);
 	await expect.poll(frames).toBeGreaterThan(2);
 	const trigger = page.getByRole('link', { name: '查看资源：花毛茛', exact: true });
@@ -158,7 +158,7 @@ test('列表轻微放大不触发布局位移，遮罩暂停星空，关闭后�
 });
 
 test('生产 HTML 包含指定资源，没有 Character / 头像 / 文章配图或 PSD', async ({ request }) => {
-	const response = await request.get('/resources/');
+	const response = await request.get('/gallery/');
 	expect(response.ok()).toBe(true);
 	const html = await response.text();
 	for (const title of ['Telysta · 克里诺林裙', 'Weiser · 新艺术风格', '波斯少女', '摩尼教 · 人物与旗帜', '花毛茛', 'Minecraft · 红色皮肤', 'Minecraft · 黄色皮肤']) {

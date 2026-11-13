@@ -1,6 +1,6 @@
 # Weiser's Melancholy
 
-[访问网站](https://telysta.com) · Weiser 的个人主页、博客与原创角色资源库。使用 Astro、React、SCSS 和 Markdown，构建后通过 GitHub Pages 发布，图片由 Cloudflare R2 分发。
+[访问网站](https://telysta.com) · Weiser 的个人主页、博客、画廊与电子书架。使用 Astro、React、SCSS 和 Markdown，构建后通过 GitHub Pages 发布，图片与电子书文件通过 Cloudflare R2 分发。
 
 ## 启动网站与本地后台
 
@@ -26,7 +26,8 @@
 | 修改站点文案、Hero、头像、导航与角色卡片 | [配置文件地图](src/config/README.md) |
 | 文章短编号、改名与旧网址 | [永久链接说明](docs/post-permalinks-2026-11-03.md) |
 | 编辑 About | [About Markdown](src/pages/about.md) |
-| 新增资源下载条目 | [资源维护](docs/resources.md) · [字段说明](docs/resource-content-guide.md) |
+| 新增 Gallery 作品 | [画廊维护](docs/resources.md) · [字段说明](docs/resource-content-guide.md) |
+| 添加电子书、R2 文件与封面 | [Ebooks 指南](docs/ebooks.md) |
 | 转 WebP、上传原图和封面到 R2 | [CDN 操作流程](docs/cdn-assets.md) |
 | 测试、排错和代码维护 | [维护指南](docs/maintenance.md) |
 | 查看架构评估与问题修复 | [2026-10-11 项目排查](docs/project-audit-2026-10-11.md) |
@@ -54,6 +55,7 @@ npm run test:admin     # 本地后台回归
 | src/content/weiser-posts/ | 博客 Markdown |
 | src/pages/about.md | About 正文 |
 | src/content/resources/ | 资源条目，原图不放这里 |
+| src/content/ebooks/ | 独立书目 Markdown，封面与书籍文件保存在 R2 |
 | src/content/scores/ | 简谱源文件；改后运行 `npm run score:render -- <id>` |
 | src/generated/ | 提交到 Git 的 CDN 清单和生成乐谱 |
 | src/assets/、public/ | 本地图标、字体、文章图片和后台上传图片 |

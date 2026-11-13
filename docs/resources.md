@@ -1,6 +1,8 @@
-# 资源维护
+# Gallery 作品维护
 
 本文件是新增和整理资源的中文操作入口。完整字段定义见 [resource-content-guide.md](resource-content-guide.md)。
+
+公开入口为 `/gallery/`，原 `/resources/` 为兼容跳转。JavaScript 开启时保留查询参数与片段，禁用脚本时回退到画廊总览。底层 `src/content/resources` 与 R2 图片地址保持兼容；电子书单独维护，见 [Ebooks](ebooks.md)。
 
 ## 文件位置
 

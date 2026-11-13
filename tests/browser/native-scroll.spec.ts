@@ -44,7 +44,7 @@ test('星空恢复首帧延续暂停位置，不追赶暂停期间的时间', as
 	await page.evaluate(() => document.documentElement.classList.remove('has-modal-open'));
 });
 
-for (const route of ['/blog/', '/resources/']) {
+for (const route of ['/blog/', '/gallery/']) {
 	test(`滚轮由浏览器处理，不取消输入或增加距离：${route}`, async ({ page }) => {
 		await page.goto(route);
 		await page.evaluate(() => {

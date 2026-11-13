@@ -4,7 +4,7 @@ import { permalinkFor } from '../helpers/post-routes';
 const article = permalinkFor('/blog/portraits/telysta/2026-9-5-telysta的创作理念/');
 
 test('筛选少量资源不会拉高页首或改变标题、筛选入口的位置', async ({ page }, testInfo) => {
-	await page.goto('/resources/');
+	await page.goto('/gallery/');
 	await page.evaluate(() => document.fonts.ready);
 	const selectors = ['.resource-hero__eyebrow', '.resource-hero h1', '.resource-filters'];
 	const before = await Promise.all(selectors.map(s => page.locator(s).boundingBox()));

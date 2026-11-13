@@ -47,7 +47,7 @@ export const sections = [
 	],
 	[
 		'resources',
-		'资源界面文案',
+		'画廊界面文案',
 		'src/config/pages/resources.ts',
 		'RESOURCE_PAGE_CONFIG',
 	],

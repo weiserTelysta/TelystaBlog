@@ -53,12 +53,14 @@ Hero 句子没有语言字段，也没有精确的“几点到几点”开关，
 
 ## 资源与发布
 
+`/gallery/` 为画廊正式入口，旧 `/resources/` 静态兼容；首页并列提供 Gallery 和 Ebooks。`/ebooks/` 使用独立书目集合，桌面四列无边框左右图文条目，窄屏逐步收列；每本书的固定 ID 生成详情页，草稿默认隐藏，格式链接按需打开 R2 文件。电子书元数据与上传响应头见 [Ebooks 维护](ebooks.md)。
+
 R2 是文件存储与分发层，`src/generated/cdn-assets.json` 是资源地址／尺寸索引，`src/content/resources` 才是作者维护的作品条目。三者不能互相代替：R2 有文件不等于资源页应公开，选择已有图片不等于必须把图片再次上传到仓库。
 
 - 当前画廊展示公开插画及明确收录的两款 Minecraft 皮肤；不自动纳入 Character、头像、文章配图或草稿。
 - 列表优先独立 cover，看图使用高清 display，下载选择仅保留允许的图片格式。Schema 能记录其他动作，不代表当前看图器渲染全部动作、Credits、许可证和正文。
 - 看图箭头在图片两侧中部，下载／关闭在图片底部右侧；旧版“四按钮集中底部”的记录已归档。
-- 2026-09-29 已清理远端 PSD；后续只上传允许的原图与 WebP，不上传 PSD／AI；一个历史 AI 对象保留。详见 [CDN 维护](cdn-assets.md)。
+- 2026-09-29 已清理远端 PSD；图片管线只上传允许的原图与 WebP，不上传 PSD／AI；一个历史 AI 对象保留。电子书文件使用独立 R2 路径与上传步骤。详见 [CDN 维护](cdn-assets.md)。
 - R2 准备、cover、上传与 favicon 生成由维护命令主动运行；`assets:sync` 实际用 `rclone copy`，默认预演，不做远端删除。普通部署不执行 R2 上传。
 - `.github/workflows/deploy.yml` 在 `main` push／手动触发后执行 `npm run check` 再发布 Pages；当前无 PR 检查／预览工作流。浏览器测试是独立命令，不在该部署检查中自动执行。
 

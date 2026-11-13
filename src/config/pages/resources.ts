@@ -2,16 +2,16 @@ import { SITE_CONFIG } from '../site';
 
 export const RESOURCE_PAGE_CONFIG = {
 	meta: {
-		title: `Resources - ${SITE_CONFIG.name}`,
-		description: 'Telysta 的插画作品与原图索引。',
+		title: `Gallery - ${SITE_CONFIG.name}`,
+		description: 'Weiser 的插画作品与图像收藏。',
 	},
 	hero: {
-		eyebrow: 'Resources',
-		title: '资源索引',
+		eyebrow: 'Gallery',
+		title: "Weiser's Gallery",
 		description: '插画与片刻记忆。点击图片展开，浏览同组作品。',
 	},
 	filter: {
-		allLabel: 'All Resources',
+		allLabel: 'All Works',
 		ariaLabel: '资源类型筛选',
 	},
 	viewer: {

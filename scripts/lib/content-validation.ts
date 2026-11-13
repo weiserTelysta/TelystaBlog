@@ -12,11 +12,12 @@ import remarkMath from 'remark-math';
 import remarkPostLinks from '../remark-post-links.mjs';
 import { createPostLinkIndex, legacyPostId, postHref } from '../../src/lib/postLinks.mjs';
 import { parseContentDate } from '../../src/lib/contentDate';
+import { ebookSchema } from '../../src/lib/ebooks/ebookSchema';
 import type { Nodes } from 'mdast';
 
 const markdownParser = unified().use(remarkParse).use(remarkMath);
 
-export type ContentKind = 'post' | 'resource';
+export type ContentKind = 'post' | 'resource' | 'ebook';
 export type ValidationSeverity = 'error' | 'warning';
 type LocalPathStatus = 'exact' | 'case-mismatch' | 'missing';
 
@@ -47,6 +48,7 @@ export type ContentValidationResult = {
 
 export function loadContentDocuments(rootDir: string, categoryIds?: ReadonlySet<string>): ContentDocument[] {
 	const groups: Array<{ kind: ContentKind; directory: string }> = [
+		{ kind: 'ebook', directory: path.join(rootDir, 'src', 'content', 'ebooks') },
 		{
 			kind: 'post',
 			directory: path.join(rootDir, 'src', 'content', 'weiser-posts'),
@@ -622,6 +624,7 @@ export function runContentValidation(rootDir: string, options: { featuredImages?
 		...validatePostDocuments(documents, rootDir),
 		...validatePostLinks(documents),
 		...validateResourceDocuments(documents, rootDir),
+		...validateEbookDocuments(documents),
 		...validateGallerySelection(documents, options.featuredImages ?? []),
 	].sort(compareIssues);
 
@@ -631,6 +634,21 @@ export function runContentValidation(rootDir: string, options: { featuredImages?
 		errorCount: issues.filter((issue) => issue.severity === 'error').length,
 		warningCount: issues.filter((issue) => issue.severity === 'warning').length,
 	};
+}
+
+export function validateEbookDocuments(documents: ContentDocument[]): ValidationIssue[] {
+	const issues: ValidationIssue[] = [];
+	const ids = new Set<string>();
+	for (const document of documents.filter(item => item.kind === 'ebook' && !item.parseIssues.length)) {
+		const result = ebookSchema.safeParse(document.frontmatter);
+		if (!result.success) {
+			for (const error of result.error.issues) issues.push(createIssue('error', 'ebook-invalid', document.relativePath, `${error.path.join('.')}: ${error.message}`));
+			continue;
+		}
+		if (ids.has(result.data.id)) issues.push(createIssue('error', 'ebook-id-duplicate', document.relativePath, `重复书目 id：${result.data.id}`));
+		ids.add(result.data.id);
+	}
+	return issues;
 }
 
 export function validateGallerySelection(documents: ContentDocument[], featuredImages: readonly string[]): ValidationIssue[] {
@@ -679,6 +697,7 @@ export function validateContentDiscovery(rootDir: string): ValidationIssue[] {
 	const contentDirectories = [
 		path.join(rootDir, 'src', 'content', 'weiser-posts'),
 		path.join(rootDir, 'src', 'content', 'resources'),
+		path.join(rootDir, 'src', 'content', 'ebooks'),
 	];
 	const issues: ValidationIssue[] = [];
 

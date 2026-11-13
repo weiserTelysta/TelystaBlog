@@ -13,7 +13,7 @@ export function buildStructuredData(input: {
 	const website = { '@type': 'WebSite', '@id': `${home}#website`, url: home, name: SITE_CONFIG.name, description: SITE_CONFIG.home.description, publisher: { '@id': author['@id'] } };
 	const about = input.pathname.replace(/\/+$/, '') === '/about';
 	const page = {
-		'@type': about ? 'AboutPage' : !article && /^\/(blog|series|resources)(\/|$)/.test(input.pathname) ? 'CollectionPage' : 'WebPage',
+		'@type': about ? 'AboutPage' : !article && (/^\/(blog|series|gallery)(\/|$)/.test(input.pathname) || /^\/ebooks\/?$/.test(input.pathname)) ? 'CollectionPage' : 'WebPage',
 		'@id': `${canonical}#webpage`, url: canonical, name: title, description,
 		isPartOf: { '@id': website['@id'] },
 		...(about ? { mainEntity: { '@id': author['@id'] } } : {}),
