@@ -5,7 +5,7 @@ import { permalinkFor } from '../helpers/post-routes';
 
 const index = readPostLinkIndex();
 const byzantium = permalinkFor('/blog/reading/history/2026-11-3-拜占庭的赠礼/');
-const byzantiumTitle = '《拜占庭的赠礼》阅读笔记';
+const byzantiumTitle = '拜占庭的赠礼阅读笔记';
 
 test('所有公开文章、搜索与 sitemap 使用短编号，全部旧文件名地址直接跳转且保留评论键', async ({ request }) => {
 	const sitemap = await (await request.get('/sitemap-0.xml')).text();

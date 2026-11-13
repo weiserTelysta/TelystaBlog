@@ -13,6 +13,7 @@ import sitemap from '@astrojs/sitemap';
 import { readPostLinkIndex } from './scripts/lib/post-link-index.mjs';
 import { buildPostRedirects } from './src/lib/postLinks.mjs';
 import { fileURLToPath } from 'node:url';
+import webFonts from './scripts/web-fonts.mjs';
 
 // GitHub Pages serves Astro's static HTML redirects; no server rewrite is needed.
 const redirects = {
@@ -39,7 +40,7 @@ export default defineConfig({
       rehypePlugins: [rehypeKatex, rehypeCdnImages],
     }),
   },
-  integrations: [react(), sitemap({ filter: (page) => {
+  integrations: [webFonts(), react(), sitemap({ filter: (page) => {
     const pathname = decodeURI(new URL(page).pathname);
     return !pathname.endsWith('.json') && !Object.hasOwn(redirects, pathname);
   } })],

@@ -1,6 +1,6 @@
 # 架构与目录维护
 
-核对更新：2026-11-08。当前功能对应关系见 [功能核对](feature-map.md)。
+核对更新：2026-11-13。当前功能对应关系见 [功能核对](feature-map.md)。
 
 作者入口见 [配置说明](../src/config/README.md)。`config/pages` 按页面归集可编辑文案，`config/content` 保存分类、系列及额外资源收录；分类/系列 ID 从资料数组派生。配置不依赖组件，组件读取配置并负责安全文本渲染；内部 DOM ID、焦点恢复与滚轮算法不作为作者选项。详情见 [配置整理记录](archive/2026-09/config-entrypoints-2026-09-06.md)。
 
@@ -26,7 +26,7 @@
 
 文章自动补全、Content Collections Schema 与维护检查共用 `contentDate.ts`；日期必须真实存在，纯日期按 UTC 解释，显示和年月归档也使用 UTC，避免本机与 CI 的时区差异。标题提取与 Markdown 图片／一级标题检查使用 Remark 语法树，避免代码示例和引用式图片被正则误判。自动补全不改写原稿。
 
-标题统一按显式 `frontmatter.title`、正文 H1、去日期文件名的顺序解析。`completePostMetadata` 补缺省值，`toPostListItem` 输出列表、文章页、系列、搜索与 SEO 使用的标题，后台列表和预览使用同一优先级。Markdown 插件移除正文 H1，避免页头重复；不再用渲染插件的标题覆盖归一化结果。修改 Markdown 规则时递增 `postLoader` 渲染版本，让 CI 的内容缓存失效。
+标题统一按正文 H1、`frontmatter.title`、去日期文件名的顺序解析。`completePostMetadata` 补缺省值，`toPostListItem` 输出列表、文章页、系列、搜索与 SEO 使用的标题，后台列表和预览使用同一优先级。Markdown 插件移除正文 H1，避免页头重复；不再用渲染插件的标题覆盖归一化结果。修改 Markdown 规则时递增 `postLoader` 渲染版本，让 CI 的内容缓存失效。
 
 站内导航使用普通静态链接，每次跨页面请求一个 HTML 文档，没有客户端路由器或跳转前的数据接口。目录页面入口统一以 `/` 结尾，避免 GitHub Pages 经 Cloudflare 返回额外的 301。资源图片懒加载、React hydration 和第三方评论不属于 HTML 构建过程；排查加载速度时分别记录 TTFB、首次内容绘制、脚本就绪和图片请求完成，不能把 `load` 或网络空闲等同于页面出现。测量与修复边界见 [2026-11-08 排查](title-navigation-audit-2026-11-08.md)。
 
@@ -39,6 +39,8 @@
 `ArticleTocBranch.astro` 只通过文字颜色与适度字重表达选中状态，不使用块状底色或选中竖线，保留键盘焦点框。`ArticleAside.astro` 点击按钮后在原位淡入／淡出，不做横向进出；桌面目录固定在正文右侧留白内。原生 `details` 的 `::details-content` 使用离散过渡，使收起动画绘制完再隐藏；不支持该特性的浏览器仍可原生展开、收起。减少动态时移除侧栏和选中态过渡，正文立即定位。实现依据见 [MDN：content-visibility 过渡](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content-visibility#animating_and_transitioning_content-visibility)，回归入口为 `tests/browser/article-toc.spec.ts`。
 
 Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边距和最小高度。不要再次给某一侧加 `top` 或负 margin 修补基线。
+
+`scripts/web-fonts.mjs` 在 Astro 配置阶段自动生成文楷、Cinzel、MonteCarlo 的 WOFF2 子集，供 `fonts.scss` 引入。文楷收集首页组件与首页配置中的字符，另外两款收集全站文本源码，并补足 ASCII／转义字符；少量源码中的额外字符作为安全余量。开发服务器监听文案变动并更新子集。完整原字体始终保留在 `src/assets/fonts`，生成物仅缓存于 `.astro/web-fonts`，不提交、不写入原字体；字符、源字体或依赖变化会使缓存失效。生成方法、许可证与复现记录见 [字体维护](title-navigation-audit-2026-11-08.md#字体维护)。
 
 ## 资源实现
 

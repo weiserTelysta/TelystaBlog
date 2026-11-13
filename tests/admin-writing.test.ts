@@ -78,7 +78,7 @@ test('draft preview renders Markdown and native math, makes HTML inert and strip
 	assert.match(html, /(?:&lt;|&#x3C;)script>/);
 	assert.doesNotMatch(html, /<script|href="javascript:|__ASTRO_IMAGE_/);
 	assert.equal((html.match(/<h1>/g) ?? []).length, 1);
-	assert.match(html, /<h1>表单标题<\/h1>/);
+	assert.match(html, /<h1>标题<\/h1>/);
 	assert.match(html, /data:image\/webp/);
 	assert.match(html, /default-src 'none'/);
 });

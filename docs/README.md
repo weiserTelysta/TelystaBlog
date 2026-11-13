@@ -1,6 +1,6 @@
 # 文档导航
 
-日常操作从下面直接进入具体指南，不必先翻计划或阶段日志。更新：2026-11-08。[回到项目首页](../README.md)
+日常操作从下面直接进入具体指南，不必先翻计划或阶段日志。更新：2026-11-13。[回到项目首页](../README.md)
 
 ## 常用入口
 
@@ -15,12 +15,14 @@
 | 编辑 About | [Markdown 源文档](../src/pages/about.md) |
 | 新增资源条目 | [资源维护](resources.md) · [完整字段](resource-content-guide.md) |
 | 上传 R2、转 WebP、更新封面 | [CDN 操作流程](cdn-assets.md) |
+| 字体子集与完整原字体 | [字体维护](title-navigation-audit-2026-11-08.md#字体维护) |
 | 检查与部署 | [维护指南](maintenance.md) · [部署指南](deployment.md) |
 | 查功能和工程结构 | [功能与配置](feature-map.md) · [架构](architecture.md) |
 
 ## 当前状态与待办
 
 - [当前状态](current-status.md)：近期完成与尚未实现的能力。
+- [Gallery／Ebooks 分区建议](gallery-ebooks-proposal-2026-11-13.md)：现有资源归入画廊、独立书目集合和旧网址兼容，尚未实施页面改造。
 - [2026-11-08 标题与跳转排查](title-navigation-audit-2026-11-08.md)：标题优先级修复、导航重定向与线上加载分阶段测量。
 - [2026-10-11 项目排查](project-audit-2026-10-11.md)：架构评估、已修复问题、验证范围与后续建议。
 - 后台现有功能、保存和图片处理统一以 [本地后台](local-admin.md) 为准；[后台阶段计划](admin-ux-plan-2026-09-15.md) 保留执行过程与剩余计划，不作为启动指南。

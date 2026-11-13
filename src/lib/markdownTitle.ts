@@ -10,7 +10,7 @@ export function extractMarkdownTitle(markdown: string): string | undefined {
 }
 
 export function resolvePostTitle(markdown: string, authoredTitle: string): string {
-	return authoredTitle.trim() || extractMarkdownTitle(markdown) || '';
+	return extractMarkdownTitle(markdown) || authoredTitle.trim();
 }
 
 function readText(node: Nodes): string {

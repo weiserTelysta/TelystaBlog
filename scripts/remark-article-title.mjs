@@ -1,6 +1,6 @@
 /**
- * Keep one visible article title in the site header. An explicit frontmatter
- * title takes precedence; a Markdown H1 supplies the title when it is omitted.
+ * Keep one visible article title in the site header. The authored Markdown H1
+ * takes precedence; frontmatter supplies a fallback when it is omitted.
  */
 export default function remarkArticleTitle() {
 	return (tree, file) => {
@@ -16,9 +16,7 @@ export default function remarkArticleTitle() {
 		if (headingIndex < 0) return;
 
 		const heading = tree.children[headingIndex];
-		frontmatter.articleTitle = typeof frontmatter.title === 'string' && frontmatter.title.trim()
-			? frontmatter.title.trim()
-			: readText(heading).trim();
+		frontmatter.articleTitle = readText(heading).trim();
 		tree.children.splice(headingIndex, 1);
 	};
 }

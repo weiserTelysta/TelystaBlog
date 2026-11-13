@@ -2,17 +2,17 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { extractMarkdownTitle, resolvePostTitle } from '../src/lib/markdownTitle';
 
-test('显式 frontmatter 标题优先于正文 H1', () => {
+test('正文 H1 优先于 frontmatter 标题', () => {
 	assert.equal(
 		resolvePostTitle('# **草木有时**\n\n正文。', '格式标题'),
-		'格式标题',
+		'草木有时',
 	);
 });
 
-test('省略正文 H1 仍使用 frontmatter；标题留空时才提取 Markdown H1', () => {
+test('没有正文 H1 时使用 frontmatter；更新正文标题即更新显示标题', () => {
 	assert.equal(resolvePostTitle('## 第一节\n\n正文。', '格式标题'), '格式标题');
 	assert.equal(resolvePostTitle('# **草木有时**\n\n正文。', '  '), '草木有时');
-	assert.equal(resolvePostTitle('# 拜占庭的赠礼', '《拜占庭的赠礼》阅读笔记'), '《拜占庭的赠礼》阅读笔记');
+	assert.equal(resolvePostTitle('# 拜占庭的赠礼阅读笔记', '《拜占庭的赠礼》阅读笔记'), '拜占庭的赠礼阅读笔记');
 });
 
 test('忽略代码围栏里的 H1 示例', () => {

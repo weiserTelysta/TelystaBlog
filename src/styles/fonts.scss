@@ -1,23 +1,2 @@
-@font-face {
-	font-family: "Cinzel";
-	font-style: normal;
-	font-weight: 400 900;
-	font-display: swap;
-	src: url("../assets/fonts/Cinzel-VariableFont_wght.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "MonteCarlo";
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url("../assets/fonts/MonteCarlo-Regular.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "LXGW WenKai Lite";
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url("../assets/fonts/LXGWWenKaiLite-Regular.ttf") format("truetype");
-}
+// Generated before Sass runs; the complete originals stay in src/assets/fonts.
+@use "../../.astro/web-fonts/fonts";

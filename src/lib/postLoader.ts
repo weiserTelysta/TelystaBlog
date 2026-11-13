@@ -8,7 +8,7 @@ import path from 'node:path';
 import { postRouteId } from './postLinks.mjs';
 import { readPostLinkIndex } from '../../scripts/lib/post-link-index.mjs';
 
-const POST_RENDER_VERSION = 7;
+const POST_RENDER_VERSION = 8;
 
 /** Keep Astro's Markdown rendering, relative assets, IDs and dev watcher. */
 export function postLoader(): Loader {
