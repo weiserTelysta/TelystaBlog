@@ -135,6 +135,8 @@ def web_record(book, origin, cover):
     }
     if cover:
         record['cover'] = origin + '/covers/' + cover
+    if book.get('categoryOnly'):
+        record['categoryOnly'] = True
     if translator:
         record['translator'] = translator
     for key in ['language', 'publisher']:
@@ -153,10 +155,13 @@ def main():
     parser.add_argument('--source-overrides', type=Path, help='Temporary local copies for paths inaccessible through WSL')
     parser.add_argument('--exclusions', type=Path, default=Path(__file__).resolve().parents[1] / 'data/library/publication-exclusions.json')
     parser.add_argument('--origin', default='https://library-files.telysta.com')
+    parser.add_argument('--presentation-overrides', type=Path, default=Path(__file__).resolve().parents[1] / 'data/library/presentation-overrides.json')
     args = parser.parse_args()
     books = json.loads(args.catalog.read_text())['files']
     policy = json.loads(args.exclusions.read_text())
     books = [book for book in books if is_public_book(book, policy)]
+    presentation = {item['fileId']: item for item in json.loads(args.presentation_overrides.read_text())['records']}
+    books = [{**book, 'categoryOnly': presentation.get(book['fileId'], {}).get('categoryOnly', book.get('categoryOnly', False))} for book in books]
     source_overrides = json.loads(args.source_overrides.read_text()) if args.source_overrides else {}
     args.covers.mkdir(parents=True, exist_ok=True)
     args.content.mkdir(parents=True, exist_ok=True)

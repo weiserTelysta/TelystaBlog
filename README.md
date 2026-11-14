@@ -28,6 +28,7 @@
 | 编辑见我（About） | [About Markdown](src/pages/about.md) |
 | 新增 Gallery 作品 | [画廊维护](docs/resources.md) · [字段说明](docs/resource-content-guide.md) |
 | 添加电子书、R2 文件与封面 | [书室指南](docs/ebooks.md) · [书库盘点与作者补全](docs/library.md) |
+| 让 Agent 处理新书 | [telysta-library-ingest Skill](.agents/skills/telysta-library-ingest/SKILL.md) |
 | 转 WebP、上传原图和封面到 R2 | [CDN 操作流程](docs/cdn-assets.md) |
 | 测试、排错和代码维护 | [维护指南](docs/maintenance.md) |
 | 查看架构评估与问题修复 | [2026-10-11 项目排查](docs/project-audit-2026-10-11.md) |

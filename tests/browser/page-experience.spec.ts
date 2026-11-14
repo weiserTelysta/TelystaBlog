@@ -29,6 +29,10 @@ for (const width of [390, 1440]) {
 			await page.goto(path, { waitUntil: 'domcontentloaded' });
 			const heading = page.getByRole('heading', { level: 1 });
 			await expect(heading).toBeVisible();
+			if (path === '/ebooks/') {
+				await expect(heading).toHaveClass('ebook-sr-only');
+				continue;
+			}
 			sizes.push(await heading.evaluate(el => {
 				const s = getComputedStyle(el);
 				return { font: parseFloat(s.fontSize), line: parseFloat(s.lineHeight) };

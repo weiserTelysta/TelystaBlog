@@ -2,8 +2,9 @@
 import EbookShelf from '../../../components/ebooks/EbookShelf.astro';
 import { EBOOKS_PAGE_SIZE } from '../../../config/library';
 import { getPublishedEbookEntries } from '../../../lib/ebooks/ebooks';
+import { booksInCategory } from '../../../lib/ebooks/shelf';
 export async function getStaticPaths() {
-	const books = await getPublishedEbookEntries();
+	const books = booksInCategory((await getPublishedEbookEntries()).map(book => book.data));
 	return Array.from({ length: Math.max(0, Math.ceil(books.length / EBOOKS_PAGE_SIZE) - 1) }, (_, index) => ({ params: { page: String(index + 2) }, props: { page: index + 2 } }));
 }
 const { page } = Astro.props;

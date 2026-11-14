@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "fileId": "WEISERa2e36237fda8",
+      "sha256": "a2e36237fda8cce22d99d23a28d960273ddad49bfeb1eff0085737f6d563a44f",
+      "title": "南斯拉夫兴亡",
+      "clcCode": "K543",
+      "clcName": "南斯拉夫",
+      "classificationEdition": "中国图书馆分类法（第五版）",
+      "reviewedAt": "2026-11-14",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://gcsm.huuc.edu.cn/museweb/showmarc/table.asp?crc=1745CAFE6196F28658C7AA1432A9FF64&nTmpKzh=603361",
+          "note": "MOBI EXTH作者及目录与图书馆同名书相符；涵盖南斯拉夫形成、王国及人民解放战争。馆藏K543.4采用第四版且年代范围不足以覆盖全文，按第五版保留已核实上级K543。"
+        }
+      ],
+      "objectKey": "books/K 历史、地理/K5 欧洲/K543 南斯拉夫/南斯拉夫兴亡.mobi"
+    },
+    {
+      "fileId": "WEISERbb5e0fd1eb65",
+      "sha256": "bb5e0fd1eb651baf10dfc18ecb11a1d57c4f871e9d42856cab8e4e0a56bc691d",
+      "title": "压缩现代性下的韩国：转型中的家族政治经济学",
+      "clcCode": "F131.26",
+      "clcName": "韩国",
+      "classificationEdition": "中国图书馆分类法（第五版）",
+      "reviewedAt": "2026-11-14",
+      "status": "catalog-verified",
+      "sources": [
+        {
+          "url": "https://jp.tfswufe.edu.cn/opac/book/bc119c95d78edd568e3daf4befe341af",
+          "note": "EPUB内EPUB/xhtml/Copyright.xhtml确认题名、作者、译者、出版社及2024年；正文为中文，纠正OPF语言en。同书馆藏F131.26；另馆F131.2.60作为不同编目写法记录，不混用。"
+        }
+      ],
+      "objectKey": "books/F 经济/F13 亚洲经济/F131.26 韩国/压缩现代性下的韩国:转型中的家族政治经济学.epub"
+    },
+    {
+      "fileId": "WEISERe42b72d1a4e8",
+      "sha256": "e42b72d1a4e8c7992817f506d84345be75bda20e137460e952a5d3f74edef63b",
+      "title": "新下层：日本的社会阶层与贫困遗传",
+      "clcCode": "D731.361",
+      "clcName": "日本阶级、阶层",
+      "classificationEdition": "中国图书馆分类法（第五版）",
+      "reviewedAt": "2026-11-14",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://jp.tfswufe.edu.cn/opac/book/830e22f5e33b9be6d28744fb1e91ca15",
+          "note": "原AZW3解包后OEBPS/Text/part0002.xhtml确认作者、译者及2024年；目录研究阶级结构、贫困代际传递。以同作者同主题《新型日本阶级社会》D731.361为分类参照，属于内容归类而非声称本书CIP已逐字核实。"
+        }
+      ],
+      "objectKey": "books/D 政治、法律/D73 亚洲政治/D731.361 日本阶级、阶层/新下层:日本的社会阶层与贫困遗传.azw3"
+    },
+    {
+      "fileId": "WEISERf6b6556de702",
+      "sha256": "f6b6556de702d1ef290e560f3b442be2cbcb36416823aa05b0a39485218d7e00",
+      "title": "新型日本阶级社会",
+      "clcCode": "D731.361",
+      "clcName": "日本阶级、阶层",
+      "classificationEdition": "中国图书馆分类法（第五版）",
+      "reviewedAt": "2026-11-14",
+      "status": "catalog-verified",
+      "sources": [
+        {
+          "url": "https://jp.tfswufe.edu.cn/opac/book/830e22f5e33b9be6d28744fb1e91ca15",
+          "note": "原AZW3解包后OEBPS/Text/part0000.xhtml确认作者及译者；同书图书馆记录核对D731.361和出版社。发行日期记录有2021/2022差异，不强填出版年。"
+        }
+      ],
+      "objectKey": "books/D 政治、法律/D73 亚洲政治/D731.361 日本阶级、阶层/新型日本阶级社会.azw3"
+    },
+    {
+      "fileId": "WEISERb9b1b130353a",
+      "sha256": "b9b1b130353a011792edee14b7fec18b1efd1b3e9a767581e38ac39956950dc0",
+      "title": "日本の貧困女子",
+      "clcCode": "C913.68",
+      "clcName": "妇女问题",
+      "classificationEdition": "中国图书馆分类法（第五版）",
+      "reviewedAt": "2026-11-14",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://www.sbcr.jp/product/4815601232/",
+          "note": "EPUB OPF、奥付及出版社页面确认日文原书、作者与2019年；正文为关于女性贫困和社会支持的非虚构报道，按内容归入已核实C913.68。日文NDC不冒充中图分类号。"
+        }
+      ],
+      "objectKey": "books/C 社会科学总论/C913 社会生活与社会问题/C913.68 妇女问题/日本の貧困女子.epub"
+    },
+    {
+      "fileId": "WEISER68cbd66a241a",
+      "sha256": "68cbd66a241aa176d9d3d7f4df262e96577a15c0328ed2c9bbb9350cde265cf0",
+      "title": "日本央行的光与影：央行与失去的三十年",
+      "clcCode": "F823.130",
+      "clcName": "日本货币政策",
+      "classificationEdition": "中国图书馆分类法（第五版）",
+      "reviewedAt": "2026-11-14",
+      "status": "catalog-verified",
+      "sources": [
+        {
+          "url": "https://opac.uibe.edu.cn/opac/book/c9b4ec45ed12538a2b6838b1d3f53ef9",
+          "note": "原AZW3解包后OEBPS/Text/part0002.xhtml确认作者、译者、出版社，电子版版权页为2024年8月；同ISBN馆藏F823.130，纸本馆藏2025年不覆盖电子版日期。"
+        }
+      ],
+      "objectKey": "books/F 经济/F82 货币/F823.130 日本货币政策/日本央行的光与影:央行与失去的三十年.azw3"
+    },
+    {
+      "fileId": "WEISERf56ccc436caf",
+      "sha256": "f56ccc436cafd9fff4402ad627dd4537ef5e9b31c70d38b933bb1cdaca1b27d0",
+      "title": "日本新中产阶级",
+      "clcCode": "D731.361",
+      "clcName": "日本阶级、阶层",
+      "classificationEdition": "中国图书馆分类法（第五版）",
+      "reviewedAt": "2026-11-14",
+      "status": "catalog-verified",
+      "sources": [
+        {
+          "url": "https://www.lib.tongji.edu.cn/index.php?classid=12020&newsid=2966&t=show",
+          "note": "原AZW3解包后OEBPS/Text/part0000.xhtml确认作者及三位译者；2017年同济馆藏记录核对D731.361。"
+        }
+      ],
+      "objectKey": "books/D 政治、法律/D73 亚洲政治/D731.361 日本阶级、阶层/日本新中产阶级.azw3"
+    },
+    {
+      "fileId": "WEISER4760f00d86b6",
+      "sha256": "4760f00d86b6bde3ab8be2bb3e99912f30de8f634c8c8a3dfa666240f787a4e4",
+      "title": "日本世相系列（全4册）",
+      "clcCode": "C91",
+      "clcName": "社会学",
+      "classificationEdition": "中国图书馆分类法（第五版）",
+      "reviewedAt": "2026-11-14",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://tsg.hsu.edu.cn/83/42/c1580a164674/page.htm",
+          "note": "原名《饱食穷民》的AZW3实际为四册合集：NCX顶层含《为了生命闪耀之日》《燃烧未尽的晚景》《妻子们的思秋期》《饱食穷民》。后三册版权页分别在part0085/part0179/part0198.xhtml，确认同一作者及高璐璐、王晓夏译；首册陈星竹译由黄山学院馆藏确认。合集按社会学总题C91；子册涉及R-05/C924.313.4，不据单册复制书目或对象。"
+        }
+      ],
+      "objectKey": "books/C 社会科学总论/C91 社会学/日本世相系列（全4册）.azw3"
+    }
+  ]
+}

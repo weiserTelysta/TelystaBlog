@@ -2,6 +2,7 @@ import { z } from 'astro/zod';
 import { getCdnAssetManifest } from '../cdnAssets';
 import { parseContentDate } from '../contentDate';
 import { LIBRARY_FILE_ORIGIN } from '../../config/library';
+import { normalizeEbookTitle } from './metadata';
 
 export const EBOOK_FORMATS = ['PDF', 'EPUB', 'MOBI', 'AZW3'] as const;
 const origin = new URL(getCdnAssetManifest().origin).origin;
@@ -20,11 +21,12 @@ export function isEbookAssetUrl(value: string, format?: string): boolean {
 const date = z.preprocess(value => parseContentDate(value) ?? value, z.date());
 export const ebookSchema = z.object({
 	id: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/, 'id 必须为固定保存的英文、数字、连字符或下划线，最长 64 字符。'),
-	title: z.string().trim().min(1),
+	title: z.string().trim().min(1).transform(normalizeEbookTitle),
 	authors: z.array(z.string().trim().min(1)).default([]),
 	authorStatus: z.enum(['unreviewed', 'verified', 'anonymous', 'partial-collection']).optional(),
 	clcCode: z.string().optional(),
 	clcName: z.string().optional(),
+	categoryOnly: z.boolean().default(false),
 	translator: z.string().trim().optional(),
 	language: z.string().trim().optional(),
 	publisher: z.string().trim().optional(),

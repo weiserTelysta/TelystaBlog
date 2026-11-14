@@ -938,6 +938,28 @@
       ]
     },
     {
+      "fileId": "WEISER82d055db40bc",
+      "sha256": "82d055db40bca7f8de905a81eed9b4f879f23f88cb2e7e8fadbd07ff99e2e7ab",
+      "title": "玛拉兹英灵录 卷二死屋之门 Deadhouse Gates (斯蒂芬·埃里克森 Steven Erikson Jass [译])",
+      "verifiedTitle": "玛拉兹英灵录 卷二：死屋之门",
+      "authors": [
+        "斯蒂芬·埃里克森"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "本文件EPUB OPF题名与dc:creator外层含字面双引号；creator仅署斯蒂芬·埃里克森。文件责任说明另署Jass [译]，不再混入作者。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Jass",
+          "role": "translator"
+        }
+      ]
+    },
+    {
       "fileId": "WEISER857d22fcd1f9",
       "sha256": "857d22fcd1f96345dc59251ea166efbb27bae5b52435368bf5bf5bbd8fcb6b7e",
       "title": "视差之见 (齐泽克，高清黑白)",
@@ -2163,6 +2185,186 @@
         {
           "kind": "web",
           "url": "https://opac.uibe.edu.cn/opac/book/ed86467b43f0232f5ae1cb78ed3dcd72"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERa2e36237fda8",
+      "sha256": "a2e36237fda8cce22d99d23a28d960273ddad49bfeb1eff0085737f6d563a44f",
+      "authors": [
+        "马细谱"
+      ],
+      "status": "verified",
+      "verifiedTitle": "南斯拉夫兴亡",
+      "sources": [
+        {
+          "url": "https://gcsm.huuc.edu.cn/museweb/showmarc/table.asp?crc=1745CAFE6196F28658C7AA1432A9FF64&nTmpKzh=603361",
+          "note": "MOBI EXTH作者及目录与图书馆同名书相符；涵盖南斯拉夫形成、王国及人民解放战争。馆藏K543.4采用第四版且年代范围不足以覆盖全文，按第五版保留已核实上级K543。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERbb5e0fd1eb65",
+      "sha256": "bb5e0fd1eb651baf10dfc18ecb11a1d57c4f871e9d42856cab8e4e0a56bc691d",
+      "authors": [
+        "张庆燮"
+      ],
+      "status": "verified",
+      "verifiedTitle": "压缩现代性下的韩国：转型中的家族政治经济学",
+      "sources": [
+        {
+          "url": "https://jp.tfswufe.edu.cn/opac/book/bc119c95d78edd568e3daf4befe341af",
+          "note": "EPUB内EPUB/xhtml/Copyright.xhtml确认题名、作者、译者、出版社及2024年；正文为中文，纠正OPF语言en。同书馆藏F131.26；另馆F131.2.60作为不同编目写法记录，不混用。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "司炳月",
+          "role": "translator"
+        },
+        {
+          "name": "孙彤彤",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERe42b72d1a4e8",
+      "sha256": "e42b72d1a4e8c7992817f506d84345be75bda20e137460e952a5d3f74edef63b",
+      "authors": [
+        "桥本健二"
+      ],
+      "status": "verified",
+      "verifiedTitle": "新下层：日本的社会阶层与贫困遗传",
+      "sources": [
+        {
+          "url": "https://jp.tfswufe.edu.cn/opac/book/830e22f5e33b9be6d28744fb1e91ca15",
+          "note": "原AZW3解包后OEBPS/Text/part0002.xhtml确认作者、译者及2024年；目录研究阶级结构、贫困代际传递。以同作者同主题《新型日本阶级社会》D731.361为分类参照，属于内容归类而非声称本书CIP已逐字核实。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "毕梦静",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERf6b6556de702",
+      "sha256": "f6b6556de702d1ef290e560f3b442be2cbcb36416823aa05b0a39485218d7e00",
+      "authors": [
+        "桥本健二"
+      ],
+      "status": "verified",
+      "verifiedTitle": "新型日本阶级社会",
+      "sources": [
+        {
+          "url": "https://jp.tfswufe.edu.cn/opac/book/830e22f5e33b9be6d28744fb1e91ca15",
+          "note": "原AZW3解包后OEBPS/Text/part0000.xhtml确认作者及译者；同书图书馆记录核对D731.361和出版社。发行日期记录有2021/2022差异，不强填出版年。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "张启新",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERb9b1b130353a",
+      "sha256": "b9b1b130353a011792edee14b7fec18b1efd1b3e9a767581e38ac39956950dc0",
+      "authors": [
+        "中村淳彦"
+      ],
+      "status": "verified",
+      "verifiedTitle": "日本の貧困女子",
+      "sources": [
+        {
+          "url": "https://www.sbcr.jp/product/4815601232/",
+          "note": "EPUB OPF、奥付及出版社页面确认日文原书、作者与2019年；正文为关于女性贫困和社会支持的非虚构报道，按内容归入已核实C913.68。日文NDC不冒充中图分类号。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER68cbd66a241a",
+      "sha256": "68cbd66a241aa176d9d3d7f4df262e96577a15c0328ed2c9bbb9350cde265cf0",
+      "authors": [
+        "河浪武史"
+      ],
+      "status": "verified",
+      "verifiedTitle": "日本央行的光与影：央行与失去的三十年",
+      "sources": [
+        {
+          "url": "https://opac.uibe.edu.cn/opac/book/c9b4ec45ed12538a2b6838b1d3f53ef9",
+          "note": "原AZW3解包后OEBPS/Text/part0002.xhtml确认作者、译者、出版社，电子版版权页为2024年8月；同ISBN馆藏F823.130，纸本馆藏2025年不覆盖电子版日期。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "宋刚",
+          "role": "translator"
+        },
+        {
+          "name": "吴佳欣",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERf56ccc436caf",
+      "sha256": "f56ccc436cafd9fff4402ad627dd4537ef5e9b31c70d38b933bb1cdaca1b27d0",
+      "authors": [
+        "傅高义"
+      ],
+      "status": "verified",
+      "verifiedTitle": "日本新中产阶级",
+      "sources": [
+        {
+          "url": "https://www.lib.tongji.edu.cn/index.php?classid=12020&newsid=2966&t=show",
+          "note": "原AZW3解包后OEBPS/Text/part0000.xhtml确认作者及三位译者；2017年同济馆藏记录核对D731.361。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "周晓虹",
+          "role": "translator"
+        },
+        {
+          "name": "周海燕",
+          "role": "translator"
+        },
+        {
+          "name": "吕斌",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER4760f00d86b6",
+      "sha256": "4760f00d86b6bde3ab8be2bb3e99912f30de8f634c8c8a3dfa666240f787a4e4",
+      "authors": [
+        "斋藤茂男"
+      ],
+      "status": "verified",
+      "verifiedTitle": "日本世相系列（全4册）",
+      "sources": [
+        {
+          "url": "https://tsg.hsu.edu.cn/83/42/c1580a164674/page.htm",
+          "note": "原名《饱食穷民》的AZW3实际为四册合集：NCX顶层含《为了生命闪耀之日》《燃烧未尽的晚景》《妻子们的思秋期》《饱食穷民》。后三册版权页分别在part0085/part0179/part0198.xhtml，确认同一作者及高璐璐、王晓夏译；首册陈星竹译由黄山学院馆藏确认。合集按社会学总题C91；子册涉及R-05/C924.313.4，不据单册复制书目或对象。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "陈星竹",
+          "role": "translator"
+        },
+        {
+          "name": "高璐璐",
+          "role": "translator"
+        },
+        {
+          "name": "王晓夏",
+          "role": "translator"
         }
       ]
     }

@@ -1,14 +1,14 @@
 ---
 {
   "id": "WEISER82d055db40bc",
-  "title": "\"玛拉兹英灵录 卷二：死屋之门\"",
+  "title": "玛拉兹英灵录 卷二：死屋之门",
   "authors": [
-    "斯蒂芬·埃里克森 Steven Erikson Jass [译]"
+    "斯蒂芬·埃里克森"
   ],
-  "authorStatus": "unreviewed",
+  "authorStatus": "verified",
   "clcCode": "I711",
   "clcName": "加拿大文学",
-  "description": "《\"玛拉兹英灵录 卷二：死屋之门\"》；斯蒂芬·埃里克森 Steven Erikson Jass [译]。加拿大文学，EPUB 格式。",
+  "description": "斯蒂芬·埃里克森《玛拉兹英灵录》第二卷，Jass译。",
   "files": [
     {
       "format": "EPUB",
@@ -18,6 +18,7 @@
   ],
   "draft": false,
   "cover": "https://library-files.telysta.com/covers/9247733581cc39d11a335bdcc60f0ce9d15a09955d0658e03f3b548c86d88fa1.webp",
-  "language": "zh-CN"
+  "language": "zh-CN",
+  "translator": "Jass"
 }
 ---

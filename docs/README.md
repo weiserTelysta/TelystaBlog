@@ -15,6 +15,7 @@
 | 编辑 About | [Markdown 源文档](../src/pages/about.md) |
 | 新增画廊作品 | [Gallery 维护](resources.md) · [完整字段](resource-content-guide.md) |
 | 添加电子书与 R2 文件 | [书室维护](ebooks.md) · [原始书库、作者补全与校验](library.md) |
+| Agent 为新书入库 | [入库 Skill](../.agents/skills/telysta-library-ingest/SKILL.md)：R2、Git、中图法、Booklists与敏感资料处理 |
 | 上传 R2、转 WebP、更新封面 | [CDN 操作流程](cdn-assets.md) |
 | 字体子集与完整原字体 | [字体维护](title-navigation-audit-2026-11-08.md#字体维护) |
 | 检查与部署 | [维护指南](maintenance.md) · [部署指南](deployment.md) |

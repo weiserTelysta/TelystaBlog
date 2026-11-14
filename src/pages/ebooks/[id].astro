@@ -17,13 +17,12 @@ const { Content } = await render(entry);
 	<main class="ebook-page">
 		<a class="ebook-back" href="/ebooks/">← {copy.backLabel}</a>
 		<div class="ebook-detail">
-			{book.cover ? <img class="ebook-detail__cover" src={book.cover} alt={`${book.title}封面`} width="160" height="240" decoding="async" /> : <div class="ebook-cover-placeholder ebook-detail__cover">{book.title}</div>}
+			{book.cover ? <img class="ebook-detail__cover" src={book.cover} alt={`${book.title}封面`} width="240" height="360" decoding="async" /> : <div class="ebook-cover-placeholder ebook-detail__cover">{book.title}</div>}
 			<div>
-				<header class="ebook-header"><p class="ebook-eyebrow">Library</p><h1>{book.title}</h1><p>{book.description}</p></header>
+				<header class="ebook-header"><h1>{book.title}</h1></header>
 				<dl>
 					<dt>作者／编者</dt><dd>{book.authors.join('、')}{book.authorStatus === 'partial-collection' && ' 等'}</dd>
 					{book.translator && <><dt>译者</dt><dd>{book.translator}</dd></>}
-					{book.language && <><dt>语言</dt><dd>{book.language}</dd></>}
 					{book.publisher && <><dt>出版社</dt><dd>{book.publisher}</dd></>}
 					{book.publicationYear && <><dt>出版年份</dt><dd>{book.publicationYear}</dd></>}
 					{book.clcCode && <><dt>分类</dt><dd>{book.clcCode} · {book.clcName}</dd></>}

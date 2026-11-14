@@ -39,7 +39,7 @@
 
 `id` 必须唯一；`dayAffinity` 在 0–1 之间，越接近 1 越偏白天，越接近 0 越偏夜间（是偏好，不是严格时段）。`weight` 可省略，默认 1；不要把全部句子权重设为 0。`mood` 是可选标注。换行用 `\n`。
 
-首页四个入口由 `pages/home.ts` 维护：见我 / Marginalia、画廊 / Gallery、书室 / Library、世界观 / Annals。页面主标题优先中文，英文仅作小题签。主标题字号共用 `styles/global.scss` 的 `--type-page-title-size`，不要再次在某一页面复制独立的字号；首页身份 Hero 保留独立角色。
+首页四个入口由 `pages/home.ts` 维护：见我 / Marginalia、画廊 / Gallery、书室 / Library、世界观 / Annals。入口字重由 `--type-home-link-weight` 控制，当前450。页面主标题优先中文，英文仅作小题签。通常主标题字号共用 `styles/global.scss` 的 `--type-page-title-size`；首页身份Hero保留独立角色。作者要求书架省去可见标题区，书籍详情使用更小的书名标题，这是书室专有的阅读层级，不能覆盖全站主标题。
 
 ## 修改提示文案
 

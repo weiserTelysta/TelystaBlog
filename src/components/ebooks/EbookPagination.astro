@@ -1,0 +1,19 @@
+---
+import { ebookShelfHref, shelfPageNumbers } from '../../lib/ebooks/shelf';
+type Props = { page: number; pageCount: number; total: number; category?: string; booklist?: string };
+const { page, pageCount, total, category, booklist } = Astro.props;
+---
+<nav class="ebook-pagination" aria-label="书架分页" data-shelf-pagination>
+	<div class="ebook-pagination__links">
+		{page > 1 ? <a href={ebookShelfHref(page - 1, category, booklist)} rel="prev">← 上一页</a> : <span aria-disabled="true">← 上一页</span>}
+		<div class="ebook-pagination__numbers">{shelfPageNumbers(page, pageCount).map(number => number === 0 ? <span aria-hidden="true">…</span> : number === page ? <span aria-current="page" aria-label={`第 ${number} 页`}>{number}</span> : <a href={ebookShelfHref(number, category, booklist)} aria-label={`第 ${number} 页`}>{number}</a>)}</div>
+		{page < pageCount ? <a href={ebookShelfHref(page + 1, category, booklist)} rel="next">下一页 →</a> : <span aria-disabled="true">下一页 →</span>}
+	</div>
+	<div class="ebook-pagination__meta">
+		<span>{page} / {pageCount} · 共 {total} 份藏书</span>
+		<form class="ebook-page-jump" data-page-jump hidden>
+			<label>跳转至 <input type="number" name="page" aria-label="跳转页码" min="1" max={pageCount} value={page} required /> 页</label>
+			<button type="submit">前往</button>
+		</form>
+	</div>
+</nav>

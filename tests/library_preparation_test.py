@@ -22,6 +22,8 @@ class PreparationTests(unittest.TestCase):
         self.assertIn('%3A', record['files'][0]['href'])
         self.assertIn('%3F%23.epub', record['files'][0]['href'])
         self.assertNotIn('cover', record)
+        book['categoryOnly'] = True
+        self.assertTrue(preparation.web_record(book, 'https://library-files.telysta.com', None)['categoryOnly'])
         book['catalogTitle'] = '错误旧标题'
         book['embeddedTitle'] = '旧标题'
         self.assertEqual(preparation.web_record(book, 'https://library-files.telysta.com', None)['title'], '书名')
