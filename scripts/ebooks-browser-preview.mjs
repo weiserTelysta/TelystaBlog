@@ -10,6 +10,8 @@ const cleanup = async () => { for (const file of files) await unlink(file).catch
 let server;
 for (const signal of ['SIGINT', 'SIGTERM']) process.once(signal, async () => { await cleanup(); await server?.stop(); process.exit(0); });
 try {
+	// Isolate fixture output from the author's real imported library.
+	process.env.TELYSTA_EBOOK_FIXTURES_ONLY = '1';
 	for (let i = 1; i <= 9; i++) {
 		const id = `test-ebook-${i}`;
 		const file = fileURLToPath(new URL(`../src/content/ebooks/__browser_fixture_${i}.md`, import.meta.url));

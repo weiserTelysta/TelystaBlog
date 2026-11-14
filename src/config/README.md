@@ -13,8 +13,8 @@
 | 离开标签页时的随机祝福 | `tabGreetings.ts` 的 `TAB_GREETINGS` |
 | Blog 标题、搜索提示、系列总索引文案 | `pages/blog.ts`，尤其 `search` / `seriesIndex` |
 | 文章日期前缀、目录、系列、复制提示 | `pages/article.ts`；复制状态在 `codeCopy` |
-| Gallery 介绍、筛选、看图按钮、下载提示 | `pages/resources.ts`；`viewer` / `download` |
-| Ebooks 标题、空书架与下载文案 | `pages/ebooks.ts` |
+| 画廊（Gallery）介绍、筛选、看图按钮、下载提示 | `pages/resources.ts`；`viewer` / `download` |
+| 书室（Library）标题、空书架与下载文案 | `pages/ebooks.ts` |
 | 分类、系列名称及归属 | `content/blogCategories.ts` / `content/blogSeries.ts` |
 | 非插画 Image 的额外画廊收录 | `content/resourceGallery.ts` 的 `featuredImages` |
 | 分类卡片图片与视觉映射 | `visuals/categoryVisuals.ts`（高级维护） |
@@ -38,6 +38,8 @@
 ```
 
 `id` 必须唯一；`dayAffinity` 在 0–1 之间，越接近 1 越偏白天，越接近 0 越偏夜间（是偏好，不是严格时段）。`weight` 可省略，默认 1；不要把全部句子权重设为 0。`mood` 是可选标注。换行用 `\n`。
+
+首页四个入口由 `pages/home.ts` 维护：见我 / Marginalia、画廊 / Gallery、书室 / Library、世界观 / Annals。页面主标题优先中文，英文仅作小题签。主标题字号共用 `styles/global.scss` 的 `--type-page-title-size`，不要再次在某一页面复制独立的字号；首页身份 Hero 保留独立角色。
 
 ## 修改提示文案
 

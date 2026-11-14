@@ -4,12 +4,22 @@ import { ebookSchema, ebookHref } from '../src/lib/ebooks/ebookSchema';
 import { parseContentDocument, validateEbookDocuments } from '../scripts/lib/content-validation';
 
 const book = { id: 'stable-book-01', title: '一本书', authors: ['作者'], description: '书籍简介', cover: 'https://assets.telysta.com/ebooks/stable-book-01/cover.webp', files: [{ format: 'EPUB', href: 'https://assets.telysta.com/ebooks/stable-book-01/v1/book.epub' }], draft: false };
-test('公开书目要求作者、封面与文件；草稿不进入强制发布约束', () => {
+test('公开书目要求作者与文件，缺失封面允许文字占位；草稿不进入强制发布约束', () => {
 	assert.equal(ebookSchema.safeParse(book).success, true);
 	assert.equal(ebookSchema.safeParse({ id: 'draft', title: '草稿' }).success, true);
-	for (const key of ['authors', 'cover', 'description', 'files']) {
+	assert.equal(ebookSchema.safeParse({ ...book, cover: undefined }).success, true);
+	for (const key of ['authors', 'description', 'files']) {
 		const invalid = { ...book, [key]: key === 'files' || key === 'authors' ? [] : '' };
 		assert.equal(ebookSchema.safeParse(invalid).success, false, key);
+	}
+});
+test('独立书库域名接收四种真实格式及 covers，不能混用文件与封面前缀', () => {
+	for (const format of ['PDF', 'EPUB', 'MOBI', 'AZW3']) {
+		const href = `https://library-files.telysta.com/books/B/%E5%93%B2%E5%AD%A6/book.${format.toLowerCase()}`;
+		assert.equal(ebookSchema.safeParse({ ...book, cover: 'https://library-files.telysta.com/covers/hash.webp', files: [{ format, href }] }).success, true);
+	}
+	for (const href of ['https://library-files.telysta.com/covers/book.epub', 'https://library-files.telysta.com.evil.example/books/book.epub', 'https://library-files.telysta.com/books/../catalog/book.epub']) {
+		assert.equal(ebookSchema.safeParse({ ...book, files: [{ format: 'EPUB', href }] }).success, false);
 	}
 });
 test('电子书仅接受独立 R2 前缀与正确格式，拒绝重复格式和无效日期', () => {

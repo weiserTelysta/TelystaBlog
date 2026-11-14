@@ -1,6 +1,6 @@
 # 架构与目录维护
 
-核对更新：2026-11-13。当前功能对应关系见 [功能核对](feature-map.md)。
+核对更新：2026-11-14。当前功能对应关系见 [功能核对](feature-map.md)。
 
 作者入口见 [配置说明](../src/config/README.md)。`config/pages` 按页面归集可编辑文案，`config/content` 保存分类、系列及额外资源收录；分类/系列 ID 从资料数组派生。配置不依赖组件，组件读取配置并负责安全文本渲染；内部 DOM ID、焦点恢复与滚轮算法不作为作者选项。详情见 [配置整理记录](archive/2026-09/config-entrypoints-2026-09-06.md)。
 
@@ -31,6 +31,8 @@
 
 站内导航使用普通静态链接，每次跨页面请求一个 HTML 文档，没有客户端路由器或跳转前的数据接口。目录页面入口统一以 `/` 结尾，避免 GitHub Pages 经 Cloudflare 返回额外的 301。资源图片懒加载、React hydration 和第三方评论不属于 HTML 构建过程；排查加载速度时分别记录 TTFB、首次内容绘制、脚本就绪和图片请求完成，不能把 `load` 或网络空闲等同于页面出现。测量与修复边界见 [2026-11-08 排查](title-navigation-audit-2026-11-08.md)。
 
+共享 Layout 的 `.site-shell` 使用 220ms 原位透明度入场，不拦截链接、不等待脚本，也不改变横向位置或滚动容器；减少动态时立即显示，无脚本仍可阅读。文章、About、Blog、Gallery、Library 与系列页的 H1 共用 `--type-page-title-size`／`--type-page-title-line`，以原文章的最大40px、1.2行高为基准；首页身份 Hero 保留独立排版角色。颜色、字体家族、正文 measure 与目录局部动效继续由原组件负责。
+
 当前静态站点、本地编辑服务和离线素材命令的分工继续保留。2026-10-11 的问题、验证和后续拆分建议见 [项目排查](project-audit-2026-10-11.md)。
 
 `scripts/rehype-cdn-images.mjs` 从已有 CDN 清单为文章外部图片补充尺寸，避免加载时推开正文；不下载或生成图片。全站滚轮与触摸滚动交由浏览器处理，不再加载 Lenis。`scrollRuntime.ts` 只管理显式定点导航与可嵌套的页面滚动锁，减少动态时立即定位。星空绘制上限为 30fps，滚动时暂停、停止后恢复；详情见 [滚动优化记录](scroll-performance-2026-10-02.md)。
@@ -47,7 +49,7 @@ Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边�
 
 公开画廊入口为 `/gallery/`；旧 `/resources/` 使用轻量静态兼容页面，脚本保留查询与片段，无脚本回退总览。旧页不进入 sitemap。内部 resources 集合、组件与 R2 素材继续复用，避免仅为改名迁移素材。
 
-电子书独立使用 `ebookSchema.ts`，与内容检查共用发布、格式、URL 和日期约束。`EbookCard.astro` 输出无边框左右图文；四／三／二／一列随视口调整，不加载书籍正文。`/ebooks/<固定id>/` 仅为公开书目生成页面，改标题／文件名不改路由；草稿默认隐藏。书籍文件使用现有 R2 自定义域名的 `ebooks/` 前缀，构建不扫描远端 bucket。维护与测试方式见 [Ebooks](ebooks.md)。
+电子书独立使用 `ebookSchema.ts`，与内容检查共用发布、格式、URL 和日期约束。`EbookCard.astro` 输出无边框左右图文；四／三／二／一列随视口调整，不加载书籍正文。`/ebooks/<固定id>/` 仅为公开书目生成页面，改标题／文件名不改路由；草稿默认隐藏。原始书库使用独立 bucket `telysta-library` 的 `books/` 前缀，离线生成带来源与校验和的书目，构建不扫描远端 bucket。公开域名为 `library-files.telysta.com`，schema分别约束books文件与covers封面，兼容旧图片域名ebooks前缀。书室每页24项，19个中图法基本大类有静态分类页；632份书目已写入独立Markdown，使用固定ID，缺封面时文字占位。公开选择与原库盘点分离，上传只接受明确名单。维护与测试方式见 [Ebooks](ebooks.md)。
 
 `resourceItems.ts` 在构建时读取内容与 CDN 清单，仅向 React island 发送图片、标题、类型及下载数据。Credits、许可证和作者正文仍保存在源稿中，不为了简化 UI 删除原始信息，也不再发送旧详情面板所需的冗余数据。
 

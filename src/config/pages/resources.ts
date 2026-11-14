@@ -2,13 +2,13 @@ import { SITE_CONFIG } from '../site';
 
 export const RESOURCE_PAGE_CONFIG = {
 	meta: {
-		title: `Gallery - ${SITE_CONFIG.name}`,
+		title: `画廊 - ${SITE_CONFIG.name}`,
 		description: 'Weiser 的插画作品与图像收藏。',
 	},
 	hero: {
 		eyebrow: 'Gallery',
-		title: "Weiser's Gallery",
-		description: '插画与片刻记忆。点击图片展开，浏览同组作品。',
+		title: '画廊',
+		description: '笔已经自己在画了！',
 	},
 	filter: {
 		allLabel: 'All Works',

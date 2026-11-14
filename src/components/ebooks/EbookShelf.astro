@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import EbookCard from './EbookCard.astro';
+import { EBOOK_PAGE_CONFIG as copy } from '../../config/pages/ebooks';
+import { LIBRARY_CLASSES } from '../../config/library';
+import { getPublishedEbookEntries, toEbook } from '../../lib/ebooks/ebooks';
+import { ebookShelfHref, paginateShelf, shelfCategories } from '../../lib/ebooks/shelf';
+import '../../styles/ebooks.scss';
+type Props = { page?: number; category?: string };
+const { page = 1, category } = Astro.props;
+const all = (await getPublishedEbookEntries()).map(entry => toEbook(entry.data));
+const categories = shelfCategories(all);
+const books = category ? all.filter(book => book.clcCode?.startsWith(category)) : all;
+const { items, pageCount, total } = paginateShelf(books, page);
+const label = category ? LIBRARY_CLASSES[category] : '全部藏书';
+const title = category ? `${label} · ${copy.meta.title}` : copy.meta.title;
+---
+<Layout title={page === 1 ? title : `${title} · ${page}`} description={copy.meta.description} starfieldVariant="subtle">
+	<main class="ebook-page">
+		<header class="ebook-header">
+			<p class="ebook-eyebrow">{copy.hero.eyebrow}</p>
+			<h1>{copy.hero.title}</h1>
+			<p>{copy.hero.description}</p>
+		</header>
+		{categories.length > 0 && <details class="ebook-classification">
+			<summary>分类 <span>{label}</span></summary>
+			<nav aria-label="中图分类">
+				<a href="/ebooks/" aria-current={!category ? 'page' : undefined}>全部藏书 <span>{all.length}</span></a>
+				{categories.map(item => <a href={ebookShelfHref(1, item.code)} aria-current={item.code === category ? 'page' : undefined}>{item.code} · {item.label} <span>{item.count}</span></a>)}
+			</nav>
+		</details>}
+		{books.length ? <ul class="ebook-grid">{items.map(book => <li><EbookCard book={book} /></li>)}</ul> : <p class="ebook-empty">{copy.empty}</p>}
+		{pageCount > 1 && <nav class="ebook-pagination" aria-label="书架分页">
+			{page > 1 ? <a href={ebookShelfHref(page - 1, category)} rel="prev">← 上一页</a> : <span aria-disabled="true">← 上一页</span>}
+			<span aria-current="page">{page} / {pageCount}<small>共 {total} 份藏书</small></span>
+			{page < pageCount ? <a href={ebookShelfHref(page + 1, category)} rel="next">下一页 →</a> : <span aria-disabled="true">下一页 →</span>}
+		</nav>}
+	</main>
+</Layout>

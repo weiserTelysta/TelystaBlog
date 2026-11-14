@@ -1,0 +1,2170 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-14",
+  "records": [
+    {
+      "fileId": "WEISER002b951a07fb",
+      "sha256": "002b951a07fba5f9b7a3460ed03035f148317d0925f0bf0f84b82b3671814697",
+      "title": "20,000 years of fashion the history of costume and personal adornment",
+      "authors": [
+        "François Boucher"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://discover.library.unt.edu/catalog/b1121431"
+        },
+        {
+          "kind": "embedded",
+          "note": "书目核对原著作者；未将扉页上藏书人Edith Lindon的签名当作作者。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER0106f3f8fd88",
+      "sha256": "0106f3f8fd882fd4b5b3e4dbb7cafc11abba909af4ff7c863a27592bbabefdf6",
+      "title": "岩石与矿物",
+      "authors": [
+        "克里斯·佩伦特"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第3、6页作者介绍及题名页为Chris Pellant；Helen Pellant为编辑顾问，Harry Taylor为摄影者。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER02d6a01135a1",
+      "sha256": "02d6a01135a1971eb127efae379121d5f102f186bd904f8616b850e8d85ebe9d",
+      "title": "一切从广告开始=MY LIFE IN ADVERTISING SCIENTIFIC ADVERTISING",
+      "authors": [
+        "克劳德·霍普金斯"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://lib.kmu.edu.cn/info/1101/10064.htm"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER089de02c8db4",
+      "sha256": "089de02c8db498e1b6db95d56b1d4ba7af6afae23829b4f892d5c44a2c0569de",
+      "title": "香水之书",
+      "authors": [
+        "让娜·多雷",
+        "法国Nez团队"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1页版权信息为让娜·多雷主编、法国Nez团队编；ISBN9787572610998。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "让娜·多雷",
+          "role": "editor"
+        },
+        {
+          "name": "法国Nez团队",
+          "role": "compiler"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER08efac410a6f",
+      "sha256": "08efac410a6f6611dfe8497f17dd618d01f56e29ecc621dbeab28edf83074d69",
+      "title": "我想吃掉你的胰脏",
+      "authors": [
+        "住野夜"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://book.youth.cn/zx/201707/t20170726_10377890.htm"
+        },
+        {
+          "kind": "embedded",
+          "note": "日文笔名住野よる；不同中文版有住野夜、住野夜留等译法。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER0cffac75bb08",
+      "sha256": "0cffac75bb0814861120f6d66afe36a4a2356eeed8ad9caaa82b0c61e456c58f",
+      "title": "歌集 (Pdg2Pic etc.)",
+      "authors": [
+        "彼特拉克"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—3页封面、题名页及CIP：意大利彼特拉克著，李国庆、王行人译，花城出版社2001年；ISBN7536033540。原CSV的Pdg2Pic等为扫描工具信息。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "李国庆",
+          "role": "translator"
+        },
+        {
+          "name": "王行人",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER11dcf12f44b1",
+      "sha256": "11dcf12f44b1c6e981e3ddca250196484860c746de79b768db6e278024d518a6",
+      "title": "资本的原始积累",
+      "authors": [
+        "周有光"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1、3、4页封面、题名及版权页明确署名；上海人民出版社1954年版。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER1459633c1b5c",
+      "sha256": "1459633c1b5c4e599b9856d32814238596fb966e08a9c0d957b9cc1d581176b3",
+      "title": "燕居香语 中国香文化宝典",
+      "authors": [
+        "陈云君"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—3页封面及CIP，ISBN9787530652534。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER175654516ed5",
+      "sha256": "175654516ed53797f67e3319e5cae9e32c4c88dfe9cc8d791c8a96322ef1939e",
+      "title": "沙恭达罗",
+      "authors": [
+        "迦梨陀娑"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—3页题名及版权页明确署名；季羡林译，人民文学出版社1980年版。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER1cba902d69e5",
+      "sha256": "1cba902d69e54c45929135da348233388090020bb73fdab866b0f98df8230a03",
+      "title": "作家之旅 源自神话的写作要义 第3版",
+      "authors": [
+        "克里斯托弗·沃格勒"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://library.xujc.com/_upload/article/files/5c/6f/4715bf7147b2a373fa69d4f6809e/68e616ba-96d6-4858-ac85-cd0beb8b3816.pdf"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER1d6916b20c89",
+      "sha256": "1d6916b20c894b3a6630fa84096a7dc86b254dfd6df767617753b5781624f184",
+      "title": "BBC艺术经典三部曲套装",
+      "authors": [
+        "西蒙·沙玛",
+        "肯尼斯·克拉克",
+        "罗伯特·休斯"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://read.douban.com/bundle/116203006/"
+        },
+        {
+          "kind": "embedded",
+          "note": "PDF封面及目录包含《艺术的力量》《新艺术的震撼》《文明》，分别对应三位作者。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER1e120e71d3f6",
+      "sha256": "1e120e71d3f64d8bafc79b4d616d6b903449fbc3fa9e1f29aff45deebe99233e",
+      "title": "贵族口味：世界极品香水选择及使用",
+      "authors": [
+        "金夫人"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1、3、4页封面及CIP，京华出版社2000年，ISBN9787806004838。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER23f06758b490",
+      "sha256": "23f06758b490c677bf687b4072a3e857de1c2b3f71da597564561623f0c5eeee",
+      "title": "第二十二条军规 (纪念版)",
+      "authors": [
+        "约瑟夫·海勒"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "本版EPUB OPF列［美国］约瑟夫·海勒，出版社译林；“纪念版”是版本说明。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER25784f75bd03",
+      "sha256": "25784f75bd039f7b776ff3c40543aa73d266da630eca052c36732de73a42fffd",
+      "title": "时装设计元素 结构与工艺 (（英）安妮特·费舍尔著, 费舍尔, 安妮特, author, (英) 费舍尔, 安妮特)",
+      "authors": [
+        "Annette Fischer"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—4页封面及CIP明确只有Annette Fischer，刘莉译，2010年版ISBN9787506462600；未把第二版合著者加入第一版。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER2615acf35af0",
+      "sha256": "2615acf35af0ef51d330637378797859f2008cb00b5366bdb3c1afa12590741e",
+      "title": "正义的尺度 ((美)南茜·弗雷泽)",
+      "authors": [
+        "南茜·弗雷泽"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://book.douban.com/subject/3564054/"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER2671abb14ac8",
+      "sha256": "2671abb14ac84f7141d02d837b5bd7b8e49682142501e52e54be77f32f7c06ff",
+      "title": "Byzantine Cavalryman C.900-1204",
+      "authors": [
+        "Timothy Dawson"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.ospreypublishing.com/uk/byzantine-cavalryman-c9001204-9781846034046/"
+        },
+        {
+          "kind": "embedded",
+          "note": "PDF第3页署名，Giuseppe Rava为插画者。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER287ae2681656",
+      "sha256": "287ae2681656c349d4060728c37466fce7e5e78e574be0205e29e5f5cc1fbff7",
+      "title": "故事写作大师班【风行全美30年，与麦基《故事》齐名的编剧圣经，《加勒比海盗》《星球大战》编剧导师！好莱坞故事写作教学大师约翰·特鲁比风",
+      "authors": [
+        "约翰·特鲁比"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://opac.sta.edu.cn/book/312745?flag=printer&view=simple"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER2ae5df3d15b3",
+      "sha256": "2ae5df3d15b365e8c5ebb7e545ef39ea7136d11fc46f09cca8d02fb82558050f",
+      "title": "中国知识分子十论(修订版)",
+      "authors": [
+        "许纪霖"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "本版EPUB OPF列许纪霖、复旦大学出版社；原CSV误把“修订版”当作者。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER324ff077f71f",
+      "sha256": "324ff077f71fd2ebaf48dc736754c667a9a8350be4f24ab312102a4a55351786",
+      "title": "刑法的道德界限. 第一卷：对他人的损害",
+      "authors": [
+        "乔尔·范伯格"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.cp.com.cn/book/16e2bd3a-c.html"
+        },
+        {
+          "kind": "embedded",
+          "note": "出版社同一书系的简介明确列出四卷。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER34521246cbb5",
+      "sha256": "34521246cbb520bffd1acf35f250cf197ae0488e9a689e1b5bfc1ee0fe85088f",
+      "title": "【卜筮正宗】",
+      "authors": [
+        "王洪绪"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1页明确署名王洪绪辑；王洪绪即王维德。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "王洪绪",
+          "role": "compiler"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER37e27fabbdc0",
+      "sha256": "37e27fabbdc07bf5cd008ab447c94672d375881676417d7e3095b26ba1369076",
+      "title": "下流社会：一个新社会阶层的出现",
+      "authors": [
+        "三浦展"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000007913801"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER382224f808a5",
+      "sha256": "382224f808a5553fee35572f2ced2ed394d5d41c021aa21854b299eba11f3cfc",
+      "title": "调香笔记 花香油和花香精",
+      "authors": [
+        "Danute Pajaujis Anonis"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1、3、4页封面、题名及版权页；中文署名D.P.阿诺尼斯，王建新译；ISBN7501922101。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER39d44993544b",
+      "sha256": "39d44993544b21829fb06eabf6eb61a6c825d4fc9a785ef96375459c0abb5258",
+      "title": "The Golden Dawn",
+      "authors": [
+        "Israel Regardie"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF作者介绍及内嵌书目信息，The Golden Dawn第7版；编者John Michael Greer。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "John Michael Greer",
+          "role": "editor"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER3e1aadf6d984",
+      "sha256": "3e1aadf6d9846ffa5121fbd564e5d85d80748b0d02c6ff9384588a9d277f1fec",
+      "title": "世界奇幻地图：古老又荒诞不经的神话、谎言和谬误（《诡图》简体中文版震撼上市！奇幻巨作，想象瑰丽，堪称世界版《山海经》！ 英国皇家地理学会会士、著名地图专家爱德华重磅作品！首次以122张珍稀的古地图汇集57个行踪诡谲的奇幻之地。英国亚马逊榜单冠军，《时代周刊》《卫报》《泰晤士报》诚",
+      "authors": [
+        "Edward Brooke-Hitching"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.simonandschuster.com/authors/Edward-Brooke-Hitching/506946148"
+        },
+        {
+          "kind": "embedded",
+          "note": "中文名爱德华·布鲁克-海钦，The Phantom Atlas。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER3e99d6484106",
+      "sha256": "3e99d64841061ea42dac24932fb9fe719b0bc3f5ead603782276e9f29dc785e7",
+      "title": "Python_深度学习实战：75个有关神经网络建模、强化学习与迁移 (Python_深度学习实战：75个有关神经网络建模、强化学习与迁移)",
+      "authors": [
+        "英德拉·丹·巴克（Indra den Bakker）"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1、3页封面与第4页CIP署Indra den Bakker著、程国建及周冠武译；ISBN9787111598725。"
+        },
+        {
+          "kind": "web",
+          "url": "https://opac.uibe.edu.cn/opac/book/2c57b4fa3297a18dffaaf5758f9a19bc"
+        }
+      ],
+      "verifiedTitle": "Python深度学习实战：75个有关神经网络建模、强化学习与迁移学习的解决方案",
+      "contributors": [
+        {
+          "name": "程国建",
+          "role": "translator"
+        },
+        {
+          "name": "周冠武",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER3fd2375844c9",
+      "sha256": "3fd2375844c9cdd3e431b89db2cc1f077793f9660baec5e7b645118bc1216e5c",
+      "title": "印度吠檀多不二论哲学",
+      "authors": [
+        "孙晶"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.csspw.com.cn/booksdetail_15923_2052987_0.jhtml"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER40d0161b8b0e",
+      "sha256": "40d0161b8b0e51e89fe38bcfc06a9df13f23197b175ed1c88957e40610d456e1",
+      "title": "界面设计模式 第2版",
+      "authors": [
+        "Jenifer Tidwell"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.oreilly.com/library/view/designing-interfaces-2nd/9781449379711/"
+        },
+        {
+          "kind": "embedded",
+          "note": "核对第2版；未混入第3版新增作者。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER48928f24ff02",
+      "sha256": "48928f24ff024be04beef397f54e20a8a9ab0fa0816939ec0a2b4c21bf159d48",
+      "title": "文章作法——跟大师学语文",
+      "authors": [
+        "夏丏尊",
+        "刘薰宇"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.kaimingpress.com/index.php/bookdetail?id=480"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER496aa6d60f81",
+      "sha256": "496aa6d60f81f95934c76c256364b16856461ccc1c8c9d8680054bb0005973bf",
+      "title": "The Writer's Journey Mythic Structure for Writers, 3e (Michael Wiese Productions; 2007)",
+      "authors": [
+        "Christopher Vogler"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1页题名页署Christopher Vogler，Third Edition；Michael Wiese Productions是出版社。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER4b3db864cac0",
+      "sha256": "4b3db864cac07933ba5edf8b20fe16392b8d4ad6c46f5677138a0dcaca5b3290",
+      "title": "游戏设计艺术 第3版",
+      "authors": [
+        "Jesse Schell"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.phei.com.cn/module/goods/wssd_content.jsp?bookid=58059"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER4e1fce1f3cf1",
+      "sha256": "4e1fce1f3cf1ce514e87aa1773b66c1e411e055964505874fcb14bf0c2b503a6",
+      "title": "François Boucher and the Art of Collecting in Eighteenth-Century France",
+      "authors": [
+        "Jessica Priebe"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://iucat.iu.edu/iub/19422965"
+        },
+        {
+          "kind": "embedded",
+          "note": "PDF第1、4、5页封面、题名及CIP明确署名，2022年。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER4ec6c8aa9b1a",
+      "sha256": "4ec6c8aa9b1aaca1674d0bf3463b784b659d9fe86b0b8218a5713605e49f5537",
+      "title": "周期",
+      "authors": [
+        "霍华德·马克斯"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1页题名页明确署名，刘建位译。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER4f9ae95454bb",
+      "sha256": "4f9ae95454bb268cb989419bf087b3a85fd0cf0ac4495df0c19c33e9c96061b9",
+      "title": "怎样学习文言文 (元鸿仁编著, 古聖先賢, 医古文, 中医学习, 中華傳統文化, 文言文助读 etc.)",
+      "authors": [
+        "元鸿仁"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.gsdfszw.org.cn/zhy/gssjzxynj/gsrmcbsz/201707/P020170705597062964938.pdf"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER510e1ecc12a7",
+      "sha256": "510e1ecc12a70441cb80b5934f3a8853bc4929d961478a7a611419316f3776eb",
+      "title": "奥 义 书",
+      "authors": [
+        "佚名"
+      ],
+      "status": "anonymous",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.cp.com.cn/book/c4e3969f-4.html"
+        },
+        {
+          "kind": "embedded",
+          "note": "本地EPUB书名页及版权页：黄宝生译，商务印书馆2010年，ISBN9787100065023；古印度经典为历史匿名文本，黄宝生不作为原著作者。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "黄宝生",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER51b71872bcfd",
+      "sha256": "51b71872bcfdadcc065f740109e98170cbaac470adab2c6fea32782bdd5c00ce",
+      "title": "北欧神话（茅盾先生写就的神话普及书！豆瓣高分绝版神书，再版问世。奥丁、雷神、洛基，北欧众神那冰与火的世界。）",
+      "authors": [
+        "茅盾"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://opac.uibe.edu.cn/opac/book/659a41f598696ecb4effb630dec3054d"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER55ef39683fc5",
+      "sha256": "55ef39683fc5fd8ea8340c92cbcb54c17b3a19c7313f3a9533d1cb39c2d45988",
+      "title": "Virtual Cities An Atlas & Exploration of Video Game Cities (9781682686102)",
+      "authors": [
+        "Konstantinos Dimopoulos"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "本版EPUB OPF作者与出版社书目一致；9781682686102是电子版ISBN，不是作者。"
+        },
+        {
+          "kind": "web",
+          "url": "https://wwnorton.co.uk/books/9781682686096-virtual-cities"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER569854eaf134",
+      "sha256": "569854eaf13434c1ba5aabf524c256d0d6ebdc405c5cd33daaf0bf5e884c9651",
+      "title": "卜筮正宗（卷六） ((淸) 王維德)",
+      "authors": [
+        "王维德"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "原文件题名署名王維德；其字洪绪，与《卜筮正宗》王洪绪为同一人。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "王维德",
+          "role": "compiler"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER57b9a6f61515",
+      "sha256": "57b9a6f615152cc50723b8c09430c4242659b27d9e32cf0dc9a94dad0edba281",
+      "title": "印度古代文学 (黄宝生著, 黄宝生, 1942-)",
+      "authors": [
+        "黄宝生"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1页题名页及第2页版权页署黄宝生著，知识出版社1983年版；ISBN7501502692。"
+        }
+      ],
+      "verifiedTitle": "印度古代文学"
+    },
+    {
+      "fileId": "WEISER58cda71f4485",
+      "sha256": "58cda71f4485b0e893fe4d525cfd79b1d1a1c5e5e9a2e8252500254f4833701e",
+      "title": "黑暗物质三部曲：10~16岁国际大奖童书（载入史册的世界儿童文学经典！关于魔法、精灵、神话、平行世界的奇幻旅程）",
+      "authors": [
+        "菲利普·普尔曼"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://book.douban.com/series/49747/"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER59ceaa2d1e82",
+      "sha256": "59ceaa2d1e8297c1940b35187b726a83aa22c063351039c0be3301743bff39ae",
+      "title": "刑法的道德界限 .第四卷：无害的不法行为",
+      "authors": [
+        "乔尔·范伯格"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.cp.com.cn/book/16e2bd3a-c.html"
+        },
+        {
+          "kind": "embedded",
+          "note": "出版社同一书系的简介明确列出四卷。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER5a6eed9e5acb",
+      "sha256": "5a6eed9e5acbe0731831341582b4c672aef0a6e342a3ab36f509c5bdd5c1a917",
+      "title": "罗杰·道森优势谈判系列【全球畅销超值谈判套装共6册】 (包含：《优势谈判》《绝对成交》《赢在决策力》《赢在问题解决力》《优势执行力》《优势薪酬谈判》共6册)",
+      "authors": [
+        "罗杰·道森"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://opac.fzu.edu.cn/bookInfo_01h0399773.html"
+        },
+        {
+          "kind": "embedded",
+          "note": "六本均为罗杰·道森优势谈判系列。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER5e1866932b60",
+      "sha256": "5e1866932b60be35bb756701c9d390691405a5dbe8fcd05051648bc773fd493a",
+      "title": "罗伯特·麦基虚构艺术三部曲（《故事》《对白》《人物》）(套装共3册)",
+      "authors": [
+        "罗伯特·麦基"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "EPUB OPF dc:creator为罗伯特·麦基；原CSV误取套装说明。"
+        }
+      ],
+      "verifiedTitle": "罗伯特·麦基虚构艺术三部曲"
+    },
+    {
+      "fileId": "WEISER5e4810beb1c9",
+      "sha256": "5e4810beb1c99c4deb52b5e644c67c57f1c342ef88e69f096453ab690864f314",
+      "title": "六朝文絜：最有代表性的骈文选本（国学网原版点注，刘 石审定）",
+      "authors": [
+        "许梿"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://zh.wikisource.org/zh-hans/六朝文絜"
+        },
+        {
+          "kind": "embedded",
+          "note": "许梿为编选者，刘石为审定者。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "许梿",
+          "role": "compiler"
+        },
+        {
+          "name": "刘石",
+          "role": "reviewer"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER61a57d5ca3e7",
+      "sha256": "61a57d5ca3e7067fb9fd80a2fb2e1c62a49cfba02b29bc6f9dd17fdf13f4eb3c",
+      "title": "最重要的事只有一件",
+      "authors": [
+        "加里·凯勒",
+        "杰伊·帕帕森"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.cqfd.gov.cn/fdtsg/xstj_117046/202303/t20230306_11711586.html"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER63405992251f",
+      "sha256": "63405992251f4061c2602339abb97f7b42bac41dc19ccfbb092c6271a988cd35",
+      "title": "天使图鉴",
+      "authors": [
+        "森瀬繚"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://nclfile.ncl.edu.tw/files/201601/4d9d2e71-8cbf-4902-ba23-357cf18023d2.pdf"
+        },
+        {
+          "kind": "embedded",
+          "note": "PDF第1—2页实际书名为《天使事典》，旧文件名为天使图鉴。"
+        }
+      ],
+      "verifiedTitle": "天使事典"
+    },
+    {
+      "fileId": "WEISER66e033682c90",
+      "sha256": "66e033682c90251a3cdbd0f32127ed5220ed59ddb0a88275a8938f37b390057e",
+      "title": "定位",
+      "authors": [
+        "艾·里斯",
+        "杰克·特劳特"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://opac.gxu.edu.cn/bookInfo_0110070751.html"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER6792e99a8a8e",
+      "sha256": "6792e99a8a8edb6552381ac92a615d44bde8fb3967240e52f595017784c7dfc1",
+      "title": "点石成金",
+      "authors": [
+        "Steve Krug"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://sensible.com/about/"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER6a6fc0c7f4f1",
+      "sha256": "6a6fc0c7f4f1b29a4407c6243c35aa7fa57eaaad1f2bbed93b2453a4bf583454",
+      "title": "理解曝光 拍出精彩照片的关键 第3版 彩印 (（美）布莱恩·彼得森著；钱亚光译, (美)布莱恩·彼得森著 , 钱亚光译, 钱亚光 etc.)",
+      "authors": [
+        "布莱恩·彼得森"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://book.douban.com/subject/19945334/"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER6c74f261d4f6",
+      "sha256": "6c74f261d4f6a4c012823788f822b2bf0d43e5b98ae209006d4abb17fb12548d",
+      "title": "韦洛克拉丁语教程 第7版",
+      "authors": [
+        "Frederic M. Wheelock",
+        "Richard A. LaFleur"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—3页封面、题名及版权页明确两位作者；张卜天为译者，第7版，ISBN9787550296817。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER70edc2e13f57",
+      "sha256": "70edc2e13f57b80c7ec52553348f12f52f22aa665ddeff5e88582e3cadd20745",
+      "title": "重构-改善既有代码的设计[再版.完整书签].(Refactoring.Improving.the.Design.of.Existing.Code).Martin.Fowler",
+      "authors": [
+        "Martin Fowler"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.martinfowler.com/books/refactoring.html"
+        },
+        {
+          "kind": "embedded",
+          "note": "PDF第1—4页明确署名Martin Fowler，熊节译，2010年中文再版，原著1999年版。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER74df4f24879c",
+      "sha256": "74df4f24879c3026aaa50925ec1b8a9cd58f11af7bcf749dbec392c26c782ee0",
+      "title": "富爸爸商学院+富爸爸致富需要做的6件事+富爸爸穷爸爸+富爸爸提高你的财商+富爸爸财务自由之路(修订版)(套装共5册)",
+      "authors": [
+        "罗伯特·清崎",
+        "莎伦·莱希特"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "核对本文件5册CIP：OEBPS/text00002、00020、00043.html共同署清崎、莱希特；00069、00087.html署清崎。未将其他富爸爸系列版本的作者混入。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER752f0381712e",
+      "sha256": "752f0381712eb3aa13ad20f569e35aaed5f7d453beec7e1ee866774f0e716460",
+      "title": "水彩画里的色与光 ((美)克里斯托弗・欣克)",
+      "authors": [
+        "克里斯托弗·欣克"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://ebook.artron.net/book.php?bookid=4539"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER7c363464c865",
+      "sha256": "7c363464c8658b105474390508e9937fb4fc68a811ca900aa27d1c053e6d9100",
+      "title": "思考,快与慢",
+      "authors": [
+        "丹尼尔·卡尼曼"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://book.douban.com/subject/10785583/"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER857d22fcd1f9",
+      "sha256": "857d22fcd1f96345dc59251ea166efbb27bae5b52435368bf5bf5bbd8fcb6b7e",
+      "title": "视差之见 (齐泽克，高清黑白)",
+      "authors": [
+        "斯拉沃热·齐泽克"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第3页题名页及第4页CIP列齐泽克著、季广茂译；ISBN9787308139564。"
+        }
+      ],
+      "verifiedTitle": "视差之见",
+      "contributors": [
+        {
+          "name": "季广茂",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER8b6aa775a750",
+      "sha256": "8b6aa775a7509a50e67b6350cd02940907a06208225a237369a1327119e65b80",
+      "title": "闻香",
+      "authors": [
+        "叶岚"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1、3、4页封面及CIP，山东画报出版社2011年，ISBN9787547401576。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER8b75cf977568",
+      "sha256": "8b75cf977568faa4cd44f50b67301bcdeb118eeb30b800266bdcef640640b76d",
+      "title": "淘宝技术这十年",
+      "authors": [
+        "子柳"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://cbjj.phei.com.cn/module/goods/wssd_content.jsp?bookid=35948"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER8bfc65fc837c",
+      "sha256": "8bfc65fc837c71e839abf4661f810550e2a493b5f8725d61792ddd0383765538",
+      "title": "译文好书榜：什么值得读作品精选集(套装共15册)(包含《莫失莫忘》《永不放弃》《染匠之手》《盲刺客》《十一种孤独》《身份的焦虑》等15部最受",
+      "authors": [
+        "村上春树"
+      ],
+      "status": "partial-collection",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "本文件AZW3 EXTH100署村上春树等(Haruki Murakami)；15册合集其余责任者未逐册核齐，仅记录已确认署名并明确标为部分核验。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER8cf630042445",
+      "sha256": "8cf6300424457b565fc745bdcd580c4b889467f3eb8dd0a42f9d776e38b5db24",
+      "title": "ssreader",
+      "authors": [
+        "乔治·伯里曼"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—3页封面、题名及CIP；《伯里曼人体结构绘画教学（最新版）》ISBN9787549415724。原目录标题ssreader不是书名。"
+        }
+      ],
+      "verifiedTitle": "伯里曼人体结构绘画教学（最新版）"
+    },
+    {
+      "fileId": "WEISER91548a1f089a",
+      "sha256": "91548a1f089a0f70eef0d5082ed2a3a322513addc29bff3f97ccfeb94516723a",
+      "title": "经典人物原型45种——创造独特角色的神话模型（第三版）（创意写作书系）",
+      "authors": [
+        "维多利亚·林恩·施密特"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.aijiaocai.com/textbook/details?textbook_id=701878"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER936c40ab1f00",
+      "sha256": "936c40ab1f00e367705fed58ef60a2554050cc641371e851cf77c9117a294d1c",
+      "title": "实用香精配方",
+      "authors": [
+        "王建新",
+        "王嘉兴",
+        "周耀华"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—3页封面、题名及CIP，ISBN750191849X。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "王建新",
+          "role": "compiler"
+        },
+        {
+          "name": "王嘉兴",
+          "role": "compiler"
+        },
+        {
+          "name": "周耀华",
+          "role": "compiler"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER937a18aec85c",
+      "sha256": "937a18aec85c389034a69b3abf21ede8edc4e8711e8cd0d6743b9a4c8229d21d",
+      "title": "新阶级 密洛凡·德热拉斯",
+      "authors": [
+        "密洛凡·德热拉斯"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF书名及书内署名；不把译者或电子版制作者列为作者。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER948da0e49c01",
+      "sha256": "948da0e49c0128ea7589543fc55fb42cbd3679b1ef8596b457ea571183c70c2d",
+      "title": "Rust 程序设计语言 简体中文版",
+      "authors": [
+        "Steve Klabnik",
+        "Carol Nichols",
+        "Chris Krycho"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://doc.rust-lang.org/book/title-page.html"
+        },
+        {
+          "kind": "embedded",
+          "note": "PDF第5页明确三位作者；本地版本是2026年Rust1.98对应版本，非仅两位作者的旧版。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER975f6db6db1a",
+      "sha256": "975f6db6db1a7c7df3f73e0e33d043f0a3afd5c1d871c1de4b356798854e3a63",
+      "title": "汉译世界学术名著丛书（120册精选大合集） (含分科本.哲学 36册；政法 36册；历史 24册；经济 24册；商务印书馆经典译作！豆瓣高分作品汇集！)",
+      "authors": [
+        "黑格尔",
+        "卢梭",
+        "尼采",
+        "凯恩斯",
+        "熊彼特"
+      ],
+      "status": "partial-collection",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "AZW3 EXTH100明确列出黑格尔、卢梭、尼采、凯恩斯、熊彼特及等；这是120册多作者合集，仅列元数据明确给出的作者，尚未逐册拆分核验全部120册责任者。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "商务印书馆",
+          "role": "publisher"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISER9ee514cbe623",
+      "sha256": "9ee514cbe62385b6eced08cc7ea8c6ce112b608f6334830892ae26f0f5767d90",
+      "title": "历史决定论的贫困",
+      "authors": [
+        "卡尔·波普尔"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://book.douban.com/subject/3803268/"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERa0453cfe66b9",
+      "sha256": "a0453cfe66b93888ad013c26a9700832042b88f74a1cd075b9e91ccf06fb5d3b",
+      "title": "政治学（古希腊哲学集大成者亚里士多德代表作，西方政治学研究的开山之作！）",
+      "authors": [
+        "亚里士多德"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://books.google.com/books?id=qAODzwEACAAJ"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERa04c9f660552",
+      "sha256": "a04c9f6605527ea81d0d0cf7aefd3befeb786ac6f9cd6978cb2eb5d93a71774e",
+      "title": "骈体文钞",
+      "authors": [
+        "李兆洛"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://zh.wikisource.org/zh-hans/駢體文鈔"
+        },
+        {
+          "kind": "embedded",
+          "note": "李兆洛辑。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "李兆洛",
+          "role": "compiler"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERa8834c6f5b84",
+      "sha256": "a8834c6f5b84c21b4ff3a04aecd9988ebbfa52dacfa1f54b8538c3176a45417a",
+      "title": "异类：不一样的成功启示录（全新修订中文版）（天才并非生而如此，成功不是随机事件！9大启示颠覆你对成功的认知 10000小时定律，如何使人从平凡到超凡）",
+      "authors": [
+        "马尔科姆·格拉德威尔"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://opac.uibe.edu.cn/opac/book/9de156a3569607feb1dc5a0e958e85ab"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERa9b88b860f0f",
+      "sha256": "a9b88b860f0f525db37a28c9fbb6de00cc1e19baba678f160584ee1e369f1a73",
+      "title": "第二性",
+      "authors": [
+        "西蒙娜·德·波伏瓦"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://opac.fzu.edu.cn/bookInfo_01h0361610.html"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERab03eef907e7",
+      "sha256": "ab03eef907e76ef092b547078ab2a6c7a349482f712d4ed1b3021f71643f8e0b",
+      "title": "极端的人群——群体行为的心理学",
+      "authors": [
+        "凯斯·R.桑斯坦"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.clcindex.com/book/view/735722B4E650897AD17C068DF1ED368A/"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERabdd03eebe98",
+      "sha256": "abdd03eebe986a4dcd658bdc8661c1746a95eb02b8555a8e73ffa35ebbb4ecb4",
+      "title": "调香术 林翔云 著",
+      "authors": [
+        "林翔云"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://yckj.cbpt.cnki.net/portal/journal/portal/client/paper/c6ba488bea30b67590365852a205d8dd"
+        },
+        {
+          "kind": "embedded",
+          "note": "本地文件名署名林翔云。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERaca4550a3f10",
+      "sha256": "aca4550a3f108a6b29422bb11ebb17b280bd42997f545d7d249f81ba8303d413",
+      "title": "摄影构图学（重排高清收藏版）",
+      "authors": [
+        "本·克来门茨",
+        "大卫·罗森菲尔德"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第4页题名署名；未使用PDF元数据中的Administrator。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERad1547d49e7b",
+      "sha256": "ad1547d49e7b2576c914d794369be08720cf3141ed774c995ce848e743536098",
+      "title": "香典",
+      "authors": [
+        "周嘉胄",
+        "洪刍",
+        "陈敬"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—4页封面及CIP；《香典》合编《香乘》《香谱》《陈氏香谱》。江俊伟、陈云轶为译者。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "江俊伟",
+          "role": "translator"
+        },
+        {
+          "name": "陈云轶",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERae70bff16578",
+      "sha256": "ae70bff16578fe8e444d90d79023c816c4b29410027af0d5ac5e620867e65628",
+      "title": "学会使用唯物辩证法",
+      "authors": [
+        "中央党校工农兵学哲学调查组"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://books.google.com/books?id=1_RwAAAAIAAJ"
+        },
+        {
+          "kind": "embedded",
+          "note": "PDF第2—3页题名及版权页：1971年《活学活用〈矛盾论〉例选》，编者与1969年同名书不同。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "中央党校工农兵学哲学调查组",
+          "role": "editor"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERaf5bc6e679e3",
+      "sha256": "af5bc6e679e3071f9d61b132b4d2c087f8a8e5dd10461c54dc8dba189da5967a",
+      "title": "县乡中国：县域治理现代化【一本展现县乡政治生态的写实白描书，作者累计调研超过1300天。房宁、贺雪峰、颜昌武、吕德文、欧阳静联袂推荐！】",
+      "authors": [
+        "杨华"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://libm.nwupl.edu.cn/bookInfo_01h0226931.html"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERb8a96e9be9ef",
+      "sha256": "b8a96e9be9ef0853a18601202003e87a4ae6dad828146e54977d30cc75ae3ee0",
+      "title": "芳香宝典",
+      "authors": [
+        "Patricia Davis"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—3页封面、题名及版权页署名派翠西亚·戴维斯；ISBN7506018632。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERb8f2871c2447",
+      "sha256": "b8f2871c24470320d7f1d993ad01217c627e08e4cefdaa4363c3951e1e3ee7c0",
+      "title": "遁甲演义",
+      "authors": [
+        "程道生"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://zh.wikisource.org/zh-hant/遁甲演義"
+        },
+        {
+          "kind": "embedded",
+          "note": "本地AZW3 EXTH100作者字段为明•程道生。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERbae7d77920fe",
+      "sha256": "bae7d77920feac9be855d7000703118fb3f96e91f768b228214b5bc24075a47b",
+      "title": "刑法的道德界限 .第二卷：对他人的冒犯",
+      "authors": [
+        "乔尔·范伯格"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.cp.com.cn/book/16e2bd3a-c.html"
+        },
+        {
+          "kind": "embedded",
+          "note": "出版社同一书系的简介明确列出四卷。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERbde5d1149d69",
+      "sha256": "bde5d1149d693b9ce834413759b26ee0c87ccc0a8e3c70cb8a83ffde01301f0c",
+      "title": "左右为难 中国当代思潮访谈录 (萧三匝著, Xiao Sanza zhu, 萧三匝, (1975- ), 萧三匝著 etc.)",
+      "authors": [
+        "萧三匝"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第3页题名页、第4页CIP署萧三匝著；ISBN9787533459444；原CSV误取作者生年残片。"
+        }
+      ],
+      "verifiedTitle": "左右为难：中国当代思潮访谈录"
+    },
+    {
+      "fileId": "WEISERbea32adc9580",
+      "sha256": "bea32adc9580d1f9913bfdf133bb9a20b4d5d4eb1d28be3bac2cb901b6031930",
+      "title": "裸体艺术 (（英）肯尼斯·克拉克（Kenneth Clark）著；吴玫，宁延明译, 克拉克 etc.)",
+      "authors": [
+        "肯尼斯·克拉克"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://book.douban.com/subject/1042836/"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERc5188613a841",
+      "sha256": "c5188613a841e279feffbecc26f16af8b4e80441f8a0dd8cb7d823320a670ce6",
+      "title": "女性与人类发展 能力进路的研究",
+      "authors": [
+        "玛莎·C.努斯鲍姆"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://opac.uibe.edu.cn/opac/book/672040a73addceb244f2e9ecaa247073"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERc55ce1ddc50f",
+      "sha256": "c55ce1ddc50fc1859a2c5f79502fa77337cc952321ec3b0cee54efa531e84370",
+      "title": "Golden Dawn Enochian Magic",
+      "authors": [
+        "Pat Zalewski"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第2—3页作者介绍、题名页署名，1990年Llewellyn版。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERc733a96948a6",
+      "sha256": "c733a96948a66313e88f8e7d9b91aaa6708e6494f9144370780d355df80a908a",
+      "title": "面部表情大全 【美】马克·西门 著",
+      "authors": [
+        "马克·西门"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://libopac.bift.edu.cn/bookInfo_01h0202222.html"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERc8d667ce5596",
+      "sha256": "c8d667ce55960fc772c691ea5bff7855b27fff854cbfc5f60f92d5f40f77ce70",
+      "title": "LLUCH ESSENTIAL OILS CATALOG",
+      "authors": [
+        "LLUCH ESSENCE S.L."
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第2页公司历史及出版机构署名；机构产品目录，不填写创始人为作者。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERcb770cb1022d",
+      "sha256": "cb770cb1022de1ce44f9a69d833b65966dd35367185f39a05bfc8949715f5698",
+      "title": "Moderk Magick (2nd Edition)",
+      "authors": [
+        "Donald Michael Kraig"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第3页题名页列Donald Michael Kraig；Second Edition是版次，不能作为作者。"
+        },
+        {
+          "kind": "web",
+          "url": "https://www.llewellyn.com/blog/2010/02/hello-from-pantheacon-plus-an-announcement/"
+        }
+      ],
+      "verifiedTitle": "Modern Magick (Second Edition)"
+    },
+    {
+      "fileId": "WEISERcb9776630ea1",
+      "sha256": "cb9776630ea1bee4e3f8a6e5319b4417e1a10074728fcb7cebdcf6826120116d",
+      "title": "监察员实用指南",
+      "authors": [
+        "国际劳工局"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.ilo.org/sites/default/files/wcmsp5/groups/public/%40ed_dialogue/%40lab_admin/documents/publication/wcms_360546.pdf"
+        },
+        {
+          "kind": "embedded",
+          "note": "PDF第1—3页为机构责任者，国家安全生产监督管理总局国际交流合作中心编译。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERcdab8975a6a4",
+      "sha256": "cdab8975a6a49f76a5b8a19a0d1fa07076aaa2f893ef3da6e2f94ca010a1c8c0",
+      "title": "银发经济学：老龄时代的商业机会",
+      "authors": [
+        "大前研一"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://opac.lib.uibe.edu.cn/opac/book/d1126bdb62804da46e853cf90add4140"
+        },
+        {
+          "kind": "embedded",
+          "note": "PDF第1页版权信息：机械工业出版社2024年8月，ISBN9787111762188。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERce124b535a06",
+      "sha256": "ce124b535a06d365879ea5db45cfd609cfe9e07fdd062449739aa2c83ef494ab",
+      "title": "双核投放法-亚马逊广告",
+      "authors": [
+        "优麦智投广告团队"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—3页封面及前言明确署名杭州优麦智投管理咨询有限公司、优麦智投广告团队，2025年8月。网络同名方法的讲师不作为本文件作者。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERcf2e7a4c1e1a",
+      "sha256": "cf2e7a4c1e1a35c4a01a69ba36cd93e01c7ab30c9017eac3d3c301b2c00a2531",
+      "title": "你的第一本哲学书",
+      "authors": [
+        "托马斯·内格尔"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://opac.gxu.edu.cn/bookInfo_0110171689.html"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERd073e41fae03",
+      "sha256": "d073e41fae039790a10e2d48468faf60119c7dd06802ea2350779272617939ab",
+      "title": "Thoths book 星宿老师译本",
+      "authors": [
+        "Aleister Crowley"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://redwheelweiser.com/book/the-book-of-thoth-9780877282686/"
+        },
+        {
+          "kind": "embedded",
+          "note": "本地EPUB正文为The Book of Thoth的塔罗释义；文件署名星宿老师译本，译者单列。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "星宿老师",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERd1258b5bc6ee",
+      "sha256": "d1258b5bc6ee15ad858a0d635a6049b89118f80b85c31d713a8ca02d052411b8",
+      "title": "少有人走的路(1-8全套)",
+      "authors": [
+        "M.斯科特·派克"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "逐册核对EPUB内8册CIP：text/part0003、0060、0101、0190、0260、0329、0416、0472.html均署M.斯科特·派克著；不是依据套装OPF推定。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERd5b10906d5bc",
+      "sha256": "d5b10906d5bc609b393f6e14675e6b23ddfbeb806e203a22ebe96b7319ba457b",
+      "title": "动漫人体结构表现技法专项训练",
+      "authors": [
+        "施通",
+        "TC晨"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—2页题名及CIP，人民邮电出版社2022年版。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERd66ba2038d26",
+      "sha256": "d66ba2038d264a2be6525af91fb3b4308d511c83dac5598a0adfa7a5e40fb398",
+      "title": "规训与惩罚 监狱的诞生 修订译本",
+      "authors": [
+        "米歇尔·福柯"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://libm.nwupl.edu.cn/bookInfo_0198020735.html"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERd6a43bd07d41",
+      "sha256": "d6a43bd07d41e4d99494f16aa223009603877e9da25591525882519fc8832588",
+      "title": "香乘",
+      "authors": [
+        "周嘉胄"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://ctext.org/library.pl?if=gb&remap=gb&res=110842"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERd7d011cc8c26",
+      "sha256": "d7d011cc8c26add93b006a10d17c1438e2cfc18d856c0c1967f66a410e4fb8a8",
+      "title": "调香术（第二版）",
+      "authors": [
+        "林翔云"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://zstj.cbpt.cnki.net/portal/journal/portal/client/paper/7b6cc225416d45fcc4cc2ad3575c3edf"
+        },
+        {
+          "kind": "embedded",
+          "note": "文献书目明确为2008年化学工业出版社第二版。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERdb978acf18da",
+      "sha256": "db978acf18dac28f4de1412839ca1f804302c6a29b971b024595369afa69cbea",
+      "title": "动手学深度学习",
+      "authors": [
+        "Aston Zhang",
+        "Zachary C. Lipton",
+        "Mu Li",
+        "Alexander J. Smola"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://zh.d2l.ai/"
+        },
+        {
+          "kind": "embedded",
+          "note": "PDF第1页作者及版本2.0.0，2023-08-18。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERdbb062fa9bd7",
+      "sha256": "dbb062fa9bd785872bcc70185bb96f0565fa54ba0a287e42158ec1dd86bad612",
+      "title": "The Chemistry of Fragrances",
+      "authors": [
+        "David Pybus",
+        "Charles Sell"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第3页明确Compiled by David Pybus and Charles Sell；本文件是初版而非仅Charles Sell编辑的新版。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "David Pybus",
+          "role": "compiler"
+        },
+        {
+          "name": "Charles Sell",
+          "role": "compiler"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERde5c6c0cb5a7",
+      "sha256": "de5c6c0cb5a73c47960a4d6c5eb87337cd677a59b768e15e42cfcb24c932fd68",
+      "title": "增删卜易序",
+      "authors": [
+        "野鹤老人"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1页：野鹤老人著、李我平鉴定、李文辉增删。保留原署名，不推断真实姓名。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "李文辉",
+          "role": "editor"
+        },
+        {
+          "name": "李我平",
+          "role": "reviewer"
+        }
+      ],
+      "verifiedTitle": "增删卜易"
+    },
+    {
+      "fileId": "WEISERe059ec58aa87",
+      "sha256": "e059ec58aa87b272fd7fa282942738bd8ecfd0585191fcbb724c15fb8f455979",
+      "title": "文心雕龙--传世经典 文白对照 (传世经典·文白对照)",
+      "authors": [
+        "刘勰"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "本版EPUB OPF列“王志彬译”，属于译注责任而非原著作者；ISBN9787101085693书目列刘勰著、王志彬译注。"
+        },
+        {
+          "kind": "web",
+          "url": "https://opac.lib.uibe.edu.cn/opac/book/b9acdb6221b70ee8dd70360edb54dab0"
+        }
+      ],
+      "verifiedTitle": "文心雕龙",
+      "contributors": [
+        {
+          "name": "王志彬",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERe66c9de3d455",
+      "sha256": "e66c9de3d4551f3ad99756d8317d5dbbb07fbd1c7f56641856a8b8b08c461310",
+      "title": "程序员修炼之道：从小工到专家",
+      "authors": [
+        "Andrew Hunt",
+        "David Thomas"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://pragprog.com/titles/tpp20/"
+        },
+        {
+          "kind": "embedded",
+          "note": "PDF第1、3、4页封面、题名及CIP确认原版作者，2011年中文印本；在线出版社用于作者交叉核对。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERe68dbeefd0da",
+      "sha256": "e68dbeefd0dacb6266133b293c71bc2a76cb6ca88268288f1634f0a846c892a2",
+      "title": "Sheng ming zhi shu ka ba la xi fang shen mi xue de mo fa gen ben = Paths of wisdom a guide to the magical cabala",
+      "authors": [
+        "John Michael Greer"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1页题名页署名；中文《生命之树卡巴拉》，萧汉婷译。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERe90c521545ed",
+      "sha256": "e90c521545ed575d2e58abff064000ebfb214c24c651e32197b7df9a181b0566",
+      "title": "金融炼金术",
+      "authors": [
+        "乔治·索罗斯"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://opac.uibe.edu.cn/opac/book/27a59d4778d45323324d7a3fcd827317"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERe95e41cac7b6",
+      "sha256": "e95e41cac7b6b2faeb954744928b91ae0aa304f58f453454f80a4d40edad5a64",
+      "title": "因明论集",
+      "authors": [
+        "麦彭仁波切",
+        "萨迦班智达根嘎嘉村",
+        "拉色丹毕嘉村",
+        "蒋阳洛德旺波"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.xuefovip.com/pdf/索达吉堪布-显密宝库-【译作21】因明论集.pdf"
+        },
+        {
+          "kind": "embedded",
+          "note": "本地MOBI正文逐篇署名：《解义慧剑论颂》《因类学》麦彭仁波切、《量理宝藏论颂》萨迦班智达、《解义慧剑论释》拉色丹毕嘉村、《量理宝藏论释》蒋阳洛德旺波；索达吉堪布为全册译者，不将EXTH中的译者当作原著作者。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "索达吉堪布",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERe995f08cd40c",
+      "sha256": "e995f08cd40cb876a4f31a25ceda9d908a7b0c2685cdfc8b6cc56a057909d732",
+      "title": "国际时尚设计丛书 时装设计元素 面料与设计 ((英)杰妮·阿黛尔著朱方龙译, (英)杰妮. 阿黛尔著 , 朱方龙译, 阿黛尔 etc.)",
+      "authors": [
+        "杰妮·阿黛尔"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://ccc.hznu.edu.cn/upload/resources/file/2018/09/10/7471877.pdf"
+        },
+        {
+          "kind": "embedded",
+          "note": "Jane Udale，朱方龙译，本地文件题名与书目对应。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISEReb0a9f502b0d",
+      "sha256": "eb0a9f502b0d15a53effd5e5cca0c596d6ba01d5eecb60832d004533d7d04c1d",
+      "title": "21世纪国际关系学系列教材•西方政治思想史(修订版)",
+      "authors": [
+        "唐士其"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "本版EPUB OPF列唐士其，出版社为北京大学出版社；未混同徐大同的同类著作。"
+        },
+        {
+          "kind": "web",
+          "url": "https://cssrac.nju.edu.cn/xscb/xsts/20200524/i99832.html"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISEReb1374dda8d5",
+      "sha256": "eb1374dda8d5d2961fa4ee397be0d8f5ab5263ec35ef83b21a947264d5b20c48",
+      "title": "代码大全中文第二版_扫描版_20.2M",
+      "authors": [
+        "Steve McConnell"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.microsoftpressstore.com/store/code-complete-9780735636972"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERed97c8aaff4e",
+      "sha256": "ed97c8aaff4e19c9695caae782395cb4293fa23aedc5b1ef09f055ab859db5a1",
+      "title": "《圣经》中英对照豪华版",
+      "authors": [
+        "多位作者（部分佚名）"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "本文件为中英对照圣经文献汇编，OPF“中英对照”是版本说明，不能作为作者；作者栏描述集体成书性质，不声称所有卷篇的个人署名已确定。"
+        },
+        {
+          "kind": "web",
+          "url": "https://www.biblegateway.com/learn/bible-101/about-the-bible/common-questions-about-the-bible/"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERee8cfd170dd7",
+      "sha256": "ee8cfd170dd7d54cae102563c0119b164438f43168c82367fb9c336df40316e1",
+      "title": "国家为什么会失败(中英对照)",
+      "authors": [
+        "德隆·阿西莫格鲁",
+        "詹姆斯·A.罗宾逊"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "EPUB OPF只列第一作者，结合原著题名及大学图书馆书目补齐共同作者James A. Robinson。"
+        },
+        {
+          "kind": "web",
+          "url": "https://opac.lib.uibe.edu.cn/opac/book/fccc3db08be77b34db90fa56bea46e59"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERef0c8323e97b",
+      "sha256": "ef0c8323e97bbffe986a28a70dd3c1e0e0103c2efccfe307ae6eeb1826d37894",
+      "title": "人体结构",
+      "authors": [
+        "Michael Hampton"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1、2、4、5页封面及版权页；Figure Drawing: Design and Invention，2009年，ISBN9780615272818。"
+        }
+      ],
+      "verifiedTitle": "人体绘画：设计与创造"
+    },
+    {
+      "fileId": "WEISERf0cbe00dbf4d",
+      "sha256": "f0cbe00dbf4dc70860eaffdff2c7305f1767f65a239e17c7d7794365efd9a52e",
+      "title": "高频技术-中英文",
+      "authors": [
+        "Matjaž Vidmar"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1页题名为高频技术实验室练习，卢布尔雅那2021年；中文机器翻译版，不依据分类TP3判断其主题。"
+        },
+        {
+          "kind": "embedded",
+          "note": "依PDF题名与实验目录的射频主题，将检索类号由TP3改为TN；这是本次主题校正，不声称原书CIP号。原文件及对象路径仍保留。"
+        }
+      ],
+      "clcCode": "TN",
+      "clcName": "无线电电子学、电信技术"
+    },
+    {
+      "fileId": "WEISERf1204a5011cb",
+      "sha256": "f1204a5011cb5a393b7de885d3f630fdbeb85ba60a5f5ebb8c455c5f7e873950",
+      "title": "硝基化合物炸药化学与工艺学 (孙荣康，魏运洋编著, 孙荣康, 魏运洋编著, 孙荣康, 魏运洋, 孙荣康 etc.)",
+      "authors": [
+        "孙荣康",
+        "魏运洋"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "原文件题名明确署名编著。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERf2e08135bb30",
+      "sha256": "f2e08135bb30b974dc53d3f7c8b804d420fa4fde23106e2fd0dfe6dd7d14192b",
+      "title": "意识形态的崇高客体(修订版)",
+      "authors": [
+        "斯拉沃热·齐泽克"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "本版EPUB OPF dc:creator为斯拉沃热·齐泽克；原CSV误把版本说明“修订版”当作者。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERf396ae2abdc6",
+      "sha256": "f396ae2abdc6209a8347435626906b54b56fa0b13462e3c74980a89bc2c612ff",
+      "title": "大道段永平投资问答录 (赵理亚(选) 芒格书院(编))",
+      "authors": [
+        "赵理亚",
+        "芒格书院"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1、3页署名赵理亚选、芒格书院编；内容为段永平问答，区分内容发言人与本版编选责任者。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "赵理亚",
+          "role": "selector"
+        },
+        {
+          "name": "芒格书院",
+          "role": "editor"
+        },
+        {
+          "name": "段永平",
+          "role": "speaker"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERf3c8d2d86d36",
+      "sha256": "f3c8d2d86d363e6530a3c5826ddf5a7883259c1e3ee873bf99ed481056f59dac",
+      "title": "刑法的道德界限 .第三卷：对自己的损害",
+      "authors": [
+        "乔尔·范伯格"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://www.cp.com.cn/book/16e2bd3a-c.html"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERf67f9a3db604",
+      "sha256": "f67f9a3db60452830928f92b61736bb8eb78a3178c7d04d61d65fe59679a348c",
+      "title": "明日方舟官方设定集",
+      "authors": [
+        "鹰角网络"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第3页封面署名鹰角网络编绘，为《明日方舟官方美术设定集VOL.1 RESET》。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "鹰角网络",
+          "role": "editor-illustrator"
+        }
+      ],
+      "verifiedTitle": "明日方舟官方美术设定集 VOL.1 RESET"
+    },
+    {
+      "fileId": "WEISERf74242c23386",
+      "sha256": "f74242c23386a5ddf8f303ea9f9759022360cc562b1820a12693a2dd9809bfba",
+      "title": "拜占庭服装史（扫描版）",
+      "authors": [
+        "詹妮弗·鲍尔"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—3页封面、题名及CIP；Jennifer Ball著，魏丽译；2025年中文版ISBN9787522923123。"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERfaa5b0f48074",
+      "sha256": "faa5b0f4807422d3afac38a658c47cc8d83e255ba144cd8cb02a7dcb5eb3d53a",
+      "title": "批判性思维套装共6册（如何高效学习+学会提问+专注力 化繁为简的惊人力量+思考的艺术(原书第10版)+批判性思维工具(原书第3版)+逻辑思维简易入门）",
+      "authors": [
+        "M.尼尔·布朗",
+        "斯图尔特·基利",
+        "文森特·赖安·拉吉罗",
+        "加里·西伊",
+        "苏珊娜·努切泰利",
+        "于尔根·沃尔夫",
+        "理查德·保罗",
+        "琳达·埃尔德",
+        "斯科特·扬"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "EPUB内6册题名页text/part0003、0073、0114、0365、0481、0658.html及总版权页part0000列9位作者；Paul,R.与Elder,L.全名由原版出版社书目确认。"
+        },
+        {
+          "kind": "web",
+          "url": "https://www.mypearsonstore.com/bookstore/critical-thinking-tools-for-taking-charge-of-your-learning-013218091X"
+        }
+      ],
+      "verifiedTitle": "批判性思维（套装共6册）"
+    },
+    {
+      "fileId": "WEISERfbedf57b217d",
+      "sha256": "fbedf57b217d34b8848a01ae15dbb6dc9507ce514a7b687e52d879b7e9aa5b01",
+      "title": "园艺百科全书 全彩",
+      "authors": [
+        "克里斯托夫·布里克尔"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1—3页封面及版权页署名主编Christopher Brickell；英国皇家园艺学会园艺百科全书最新版，ISBN9787121232527。"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "克里斯托夫·布里克尔",
+          "role": "editor"
+        }
+      ]
+    },
+    {
+      "fileId": "WEISERfcb36176f624",
+      "sha256": "fcb36176f62438149eb5981f20c9ec31754e3de362ed0b1942479622c287beec",
+      "title": "艺术哲学 (王德峰著, 王德峰, 1956- author, 王德峰著, 王德峰)",
+      "authors": [
+        "王德峰"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "embedded",
+          "note": "PDF第1、3页题名及第4页CIP列王德峰著、复旦大学出版社2015年；ISBN9787309114560。"
+        }
+      ],
+      "verifiedTitle": "艺术哲学"
+    },
+    {
+      "fileId": "WEISERfe1315d1663e",
+      "sha256": "fe1315d1663e92a18da4b92150e2d7fcc86e83a65a4213b253cfa04cf62dd0c6",
+      "title": "克拉拉与太阳",
+      "authors": [
+        "石黑一雄"
+      ],
+      "status": "verified",
+      "sources": [
+        {
+          "kind": "web",
+          "url": "https://opac.uibe.edu.cn/opac/book/ed86467b43f0232f5ae1cb78ed3dcd72"
+        }
+      ]
+    }
+  ]
+}

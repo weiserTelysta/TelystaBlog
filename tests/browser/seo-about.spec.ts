@@ -37,14 +37,14 @@ test('About 与作者首页文案不依赖 JavaScript，入口与资源同级', 
 			await expect(page.getByText(paragraph, { exact: true })).toBeVisible();
 		}
 		const links = page.locator('.home-section__links');
-		await expect(links.getByRole('link', { name: /^Gallery/ })).toBeVisible();
-		const profile = links.getByRole('link', { name: /^Marginalia/ });
-		await expect(profile.locator('.home-section__link-kind')).toHaveText('a little more');
+		await expect(links.getByRole('link', { name: /^画廊/ })).toBeVisible();
+		const profile = links.getByRole('link', { name: /^见我/ });
+		await expect(profile.locator('.home-section__link-kind')).toHaveText('Marginalia');
 		await profile.focus();
 		await expect(profile).toBeFocused();
 		await profile.click();
 		await expect(page).toHaveURL(/\/about\/$/);
-		await expect(page.getByRole('heading', { level: 1 })).toHaveText('一些额外的信息');
+		await expect(page.getByRole('heading', { level: 1 })).toHaveText('见我');
 		await expect(page.locator('.prose')).toContainText('我是 Weiser');
 		await expect(page.locator('.prose')).toContainText('来自中国宁波');
 		await expect(page.locator('.prose')).toContainText('深圳大学');

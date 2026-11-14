@@ -111,5 +111,5 @@ const resources = defineCollection({
 export const collections = {
 	posts,
 	resources,
-	ebooks: defineCollection({ loader: glob({ pattern: '**/*.md', base: './src/content/ebooks' }), schema: ebookSchema }),
+	ebooks: defineCollection({ loader: glob({ pattern: process.env.TELYSTA_EBOOK_FIXTURES_ONLY === '1' ? '__browser_fixture_*.md' : '**/*.md', base: './src/content/ebooks' }), schema: ebookSchema }),
 };

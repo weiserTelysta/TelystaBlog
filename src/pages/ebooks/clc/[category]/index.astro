@@ -1,0 +1,11 @@
+---
+import EbookShelf from '../../../../components/ebooks/EbookShelf.astro';
+import { getPublishedEbookEntries } from '../../../../lib/ebooks/ebooks';
+import { shelfCategories } from '../../../../lib/ebooks/shelf';
+export async function getStaticPaths() {
+	const books = await getPublishedEbookEntries();
+	return shelfCategories(books.map(book => book.data)).map(item => ({ params: { category: item.code } }));
+}
+const { category } = Astro.params;
+---
+<EbookShelf category={category} />

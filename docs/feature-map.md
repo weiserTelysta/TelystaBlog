@@ -1,6 +1,6 @@
 # 当前功能与配置核对
 
-核对日期：2026-11-03。滚动与目录规范见 [本轮记录](scroll-performance-2026-10-02.md)。依据配置、组件、内容加载器、维护脚本与部署工作流；2026-09-21 验证和部署状态见 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。本文描述已实现能力；本地后台见 [使用说明](local-admin.md)，阶段进度及后续增强见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
+核对日期：2026-11-14。滚动与目录规范见 [本轮记录](scroll-performance-2026-10-02.md)。依据配置、组件、内容加载器、维护脚本与部署工作流；2026-09-21 验证和部署状态见 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。本文描述已实现能力；本地后台见 [使用说明](local-admin.md)，阶段进度及后续增强见 [当前实施计划](admin-ux-plan-2026-09-15.md)。
 
 现行角色名为 Mirelle，分类卡片、首页身份、系列和资源保持英文显示；中文名仅用于设计理念文章。系列和身份 ID 使用 mirelle；文章已统一使用 WEISER 短编号，旧页面仅跳转，素材新路径及兼容边界见 [更名记录](mirelle-rename-2026-10-04.md)。
 
@@ -8,7 +8,7 @@
 
 ## 身份、首页与文案
 
-搜索基础已补齐 robots、自动 sitemap 与站点／作者／文章 JSON-LD；`src/pages/about.md` 维护独立 About，入口位于首页 Navigation，显示 Marginalia / A Little More，与 Resource Index 同级；正文仅介绍籍贯、学历与兴趣。实现及搜索平台操作边界见 [专题记录](seo-about-2026-10-02.md)。
+搜索基础已补齐 robots、自动 sitemap 与站点／作者／文章 JSON-LD；`src/pages/about.md` 维护独立 About，入口位于首页 Navigation，显示 见我 / Marginalia，与画廊、书室、世界观同级；正文仅介绍籍贯、学历与兴趣。实现及搜索平台操作边界见 [专题记录](seo-about-2026-10-02.md)。
 
 | 功能 | 当前行为 | 真实入口 |
 | --- | --- | --- |
@@ -53,7 +53,7 @@ Hero 句子没有语言字段，也没有精确的“几点到几点”开关，
 
 ## 资源与发布
 
-`/gallery/` 为画廊正式入口，旧 `/resources/` 静态兼容；首页并列提供 Gallery 和 Ebooks。`/ebooks/` 使用独立书目集合，桌面四列无边框左右图文条目，窄屏逐步收列；每本书的固定 ID 生成详情页，草稿默认隐藏，格式链接按需打开 R2 文件。电子书元数据与上传响应头见 [Ebooks 维护](ebooks.md)。
+`/gallery/` 为画廊正式入口，旧 `/resources/` 静态兼容；首页并列提供见我（Marginalia）、画廊（Gallery）、书室（Library）、世界观（Annals）。`/ebooks/` 使用独立书目集合，桌面四列无边框左右图文条目，窄屏逐步收列；每本书的固定 ID 生成详情页，草稿默认隐藏，格式链接按需打开 R2 文件。电子书元数据与上传响应头见 [Ebooks 维护](ebooks.md)。
 
 R2 是文件存储与分发层，`src/generated/cdn-assets.json` 是资源地址／尺寸索引，`src/content/resources` 才是作者维护的作品条目。三者不能互相代替：R2 有文件不等于资源页应公开，选择已有图片不等于必须把图片再次上传到仓库。
 

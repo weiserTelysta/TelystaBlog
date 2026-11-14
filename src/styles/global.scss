@@ -53,14 +53,16 @@
 	--type-hero-title-size: clamp(3rem, 7vw, 4.7rem);
 	--type-hero-title-weight: 650;
 	--type-hero-title-line: 1;
+	--type-page-title-size: clamp(1.9rem, 3vw, 2.5rem);
+	--type-page-title-line: 1.2;
 	--type-index-title-font: var(--font-page-title);
-	--type-index-title-size: clamp(2.25rem, 5.4vw, 4.45rem);
+	--type-index-title-size: var(--type-page-title-size);
 	--type-index-title-weight: var(--weight-page-title);
-	--type-index-title-line: 1.08;
+	--type-index-title-line: var(--type-page-title-line);
 	--type-article-title-font: var(--font-article-title);
-	--type-article-title-size: clamp(2.05rem, 4.8vw, 3.65rem);
+	--type-article-title-size: var(--type-page-title-size);
 	--type-article-title-weight: var(--weight-article-title);
-	--type-article-title-line: 1.14;
+	--type-article-title-line: var(--type-page-title-line);
 	--type-section-title-font: var(--font-page-title);
 	--type-section-title-size: clamp(1.18rem, 2.4vw, 1.52rem);
 	--type-section-title-weight: 620;
@@ -132,6 +134,16 @@ a {
 	z-index: 1;
 	min-height: 100vh;
 	isolation: isolate;
+	animation: site-page-enter var(--motion-medium) var(--motion-ease-out) backwards;
+}
+
+@keyframes site-page-enter {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.site-shell { animation: none; }
 }
 
 .site-shell::before {

@@ -27,9 +27,9 @@
 	margin: 0;
 	color: var(--resource-text);
 	font-family: var(--type-index-title-font);
-	font-size: clamp(2rem, 3.8vw, 2.8rem);
+	font-size: var(--type-index-title-size);
 	font-weight: var(--type-index-title-weight);
-	line-height: 1.15;
+	line-height: var(--type-index-title-line);
 }
 
 .resource-hero > p:not(.resource-hero__eyebrow) {
