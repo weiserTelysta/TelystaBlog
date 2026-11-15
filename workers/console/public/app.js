@@ -1,73 +1,504 @@
 const $ = selector => document.querySelector(selector);
-const roles = { viewer: '普通用户', member: '正式用户', superuser: '超级用户', admin: '管理员' };
+const roles = { viewer: '普通用户', member: '正式用户', superuser: '管理员', admin: '超级管理员' };
 const names = { post: '文章', ebook: '书室', gallery: '画廊', score: '简谱', config: '站点配置' };
 let user, active = 'dashboard', dirty = false, generation = 0;
-const element = (tag, text = '', className = '') => { const node = document.createElement(tag); node.textContent = text; if (className) node.className = className; return node; };
+const element = (tag, text = '', className = '') => { const node = document.createElement(tag); node.textContent = text; if (className)
+    node.className = className; return node; };
 const button = (text, handler) => { const node = element('button', text); node.type = 'button'; node.addEventListener('click', handler); return node; };
+const adminEntry = location.pathname.startsWith('/telysta-console');
+const navigationNames = { dashboard: 'Overview', sessions: 'Sessions', post: 'Articles', ebook: 'Library', gallery: 'Gallery', score: 'Scores', config: 'Settings', users: 'Users', audit: 'Activity', backup: 'Backups', uploads: 'Uploads' };
+function loginMode() {
+    if (!adminEntry)
+        return;
+    $('#login-title').textContent = '管理员验证';
+    $('#login-description').textContent = '验证专属邮箱，进入你的管理空间。';
+    $('#signup-note').textContent = '此入口仅供超级管理员使用，验证后保留最高管理权限。';
+}
+loginMode();
 const tell = text => { $('#notice').textContent = text; };
 async function api(path, options = {}) {
- const response = await fetch('./api/' + path, { credentials: 'same-origin', cache: 'no-store', ...options, headers: { ...(options.body ? { 'Content-Type': 'application/json' } : {}), ...options.headers } });
- const data = await response.json();
- if (!response.ok) { if (response.status === 401 && user) { user = null; display(); } throw new Error(data.error || '操作暂时不可用。'); }
- return data;
+    const response = await fetch('./api/' + path, { credentials: 'same-origin', cache: 'no-store', ...options, headers: { ...(options.body ? { 'Content-Type': 'application/json' } : {}), ...options.headers } });
+    const data = await response.json();
+    if (!response.ok) {
+        if (response.status === 401 && user) {
+            user = null;
+            display();
+        }
+        throw new Error(data.error || '操作暂时不可用。');
+    }
+    return data;
 }
 function display() {
- if (user?.role === 'admin' && !location.pathname.startsWith('/telysta-console/')) { location.replace('/telysta-console/'); return; }
- $('#loading').hidden = true; $('#login').hidden = !!user; $('#account').hidden = !user;
- if (!user) { $('#workspace').replaceChildren(); $('#navigation').replaceChildren(); return; }
- $('#identity').textContent = `${user.email} · ${roles[user.role]}`;
- const navigation = $('#navigation'); navigation.replaceChildren();
- const links = [['dashboard','概览'],['sessions','登录会话']];
- if (user.role === 'admin') links.push(...Object.entries(names),['users','用户'],['audit','操作记录'],['backup','备份']);
- if (['member','superuser','admin'].includes(user.role)) links.push(['uploads',user.role === 'member' ? '我的上传' : '上传与审核']);
- for (const [key,label] of links) { const node = button(label, () => navigate(key)); if (key === active) node.setAttribute('aria-current','page'); navigation.append(node); }
+    if (user?.role === 'admin' && !location.pathname.startsWith('/telysta-console/')) {
+        location.replace('/telysta-console/');
+        return;
+    }
+    if (user && user.role !== 'admin' && adminEntry) {
+        location.replace('/console/');
+        return;
+    }
+    $('#loading').hidden = true;
+    $('#login').hidden = !!user;
+    $('#account').hidden = !user;
+    if (!user) {
+        $('#workspace').replaceChildren();
+        $('#navigation').replaceChildren();
+        return;
+    }
+    $('#identity').textContent = `${user.email} · ${roles[user.role]}`;
+    const navigation = $('#navigation');
+    navigation.replaceChildren();
+    const links = [['dashboard', '概览'], ['sessions', '登录会话']];
+    if (user.role === 'admin')
+        links.push(...Object.entries(names), ['users', '用户'], ['audit', '操作记录'], ['backup', '备份']);
+    if (['member', 'superuser', 'admin'].includes(user.role))
+        links.push(['uploads', user.role === 'member' ? '我的上传' : '上传与审核']);
+    for (const [key, label] of links) {
+        const node = button(navigationNames[key] || label, () => navigate(key));
+        node.lang = 'en';
+        node.title = label;
+        if (key === active)
+            node.setAttribute('aria-current', 'page');
+        navigation.append(node);
+    }
 }
 async function navigate(key) {
- if (dirty && !confirm('当前内容尚未保存，确定离开吗？')) return;
- dirty = false; active = key; const version = ++generation; display(); tell(''); const workspace = $('#workspace'); workspace.replaceChildren(element('p','正在读取…','muted'));
- try {
-  if (key === 'dashboard') {
-   const data = await api('dashboard'); if (version !== generation) return; workspace.replaceChildren();
-   if (user.role === 'viewer') { workspace.append(element('h2','欢迎来到 Telysta'), element('p','你可以浏览公开的文章、画廊与藏书。','muted')); const a=element('a','前往网站');a.href='/';workspace.append(a); }
-   else { workspace.append(element('h2','工作台')); const grid=element('div','','summary-grid');for(const item of data.content || []){const cell=element('div',names[item.kind]);cell.append(element('strong',String(item.count)));grid.append(cell)}workspace.append(grid);workspace.append(element('p',user.role==='admin'?'云端保存保留版本历史。导入的文章和配置可在这里编辑；网站发布需经过校验和 GitHub 构建。':'你可以查看受保护藏书、上传自己的电子书或图片。','muted')); const a=element('a','打开书室');a.href='/ebooks/';workspace.append(a); }
-  } else if (names[key]) await documents(key,version);
-  else if (key === 'users') await users(version);
-  else if (key === 'uploads') await uploads(version);
-  else if (key === 'sessions') await sessions(version);
-  else if (key === 'audit') { const records=await api('audit');if(version!==generation)return;const list=element('ul','','records');for(const record of records){const li=element('li',`${new Date(record.created_at*1000).toLocaleString()} · ${record.email || '系统'} · ${record.action} · ${record.target_id || ''}`);list.append(li)}workspace.replaceChildren(element('h2','操作记录'),list); }
-  else if(key==='backup'){
-   workspace.replaceChildren(element('h2','按类型备份'),element('p','每项一次下载该类型完整数据。内容含原文和版本信息；文件清单保留R2对象key，电子书与图片二进制仍需从R2另行备份。请保存到私人位置。','muted'));
-   const list=element('ul','','records');
-   for(const [type,label]of [['all','全部内容与管理数据'],...Object.entries(names),['users','用户与权限'],['uploads','上传资料与文件清单'],['audit','操作记录']]){const item=element('li'),link=element('a','下载 JSON');link.href='./api/export?type='+type;item.append(element('span',label),link);list.append(item)}workspace.append(list);
-  }
- } catch(error){if(version===generation){workspace.replaceChildren(element('p',error.message,'muted'));tell(error.message)}}
+    if (dirty && !confirm('当前内容尚未保存，确定离开吗？'))
+        return;
+    dirty = false;
+    active = key;
+    const version = ++generation;
+    display();
+    tell('');
+    const workspace = $('#workspace');
+    workspace.replaceChildren(element('p', '正在读取…', 'muted'));
+    try {
+        if (key === 'dashboard') {
+            const data = await api('dashboard');
+            if (version !== generation)
+                return;
+            workspace.replaceChildren();
+            if (user.role === 'viewer') {
+                workspace.append(element('h2', '欢迎来到 Telysta'), element('p', '你可以浏览公开的文章、画廊与藏书。', 'muted'));
+                const a = element('a', '前往网站');
+                a.href = '/';
+                workspace.append(a);
+            }
+            else {
+                workspace.append(element('h2', '工作台'));
+                const grid = element('div', '', 'summary-grid');
+                for (const item of data.content || []) {
+                    const cell = element('div', names[item.kind]);
+                    cell.append(element('strong', String(item.count)));
+                    grid.append(cell);
+                }
+                workspace.append(grid);
+                workspace.append(element('p', user.role === 'admin' ? '云端保存保留版本历史。导入的文章和配置可在这里编辑；网站发布需经过校验和 GitHub 构建。' : '你可以查看受保护藏书、上传自己的电子书或图片。', 'muted'));
+                const a = element('a', '打开书室');
+                a.href = '/ebooks/';
+                workspace.append(a);
+            }
+        }
+        else if (names[key])
+            await documents(key, version);
+        else if (key === 'users')
+            await users(version);
+        else if (key === 'uploads')
+            await uploads(version);
+        else if (key === 'sessions')
+            await sessions(version);
+        else if (key === 'audit') {
+            const records = await api('audit');
+            if (version !== generation)
+                return;
+            const list = element('ul', '', 'records');
+            for (const record of records) {
+                const li = element('li', `${new Date(record.created_at * 1000).toLocaleString()} · ${record.email || '系统'} · ${record.action} · ${record.target_id || ''}`);
+                list.append(li);
+            }
+            workspace.replaceChildren(element('h2', '操作记录'), list);
+        }
+        else if (key === 'backup') {
+            workspace.replaceChildren(element('h2', '按类型备份'), element('p', '每项一次下载该类型完整数据。内容含原文和版本信息；文件清单保留R2对象key，电子书与图片二进制仍需从R2另行备份。请保存到私人位置。', 'muted'));
+            const list = element('ul', '', 'records');
+            for (const [type, label] of [['all', '全部内容与管理数据'], ...Object.entries(names), ['users', '用户与权限'], ['uploads', '上传资料与文件清单'], ['audit', '操作记录']]) {
+                const item = element('li'), link = element('a', '下载 JSON');
+                link.href = './api/export?type=' + type;
+                item.append(element('span', label), link);
+                list.append(item);
+            }
+            workspace.append(list);
+        }
+    }
+    catch (error) {
+        if (version === generation) {
+            workspace.replaceChildren(element('p', error.message, 'muted'));
+            tell(error.message);
+        }
+    }
 }
 async function documents(kind, version) {
- let offset=0; const workspace=$('#workspace'), title=element('h2',names[kind]), toolbar=element('div','','toolbar'), query=element('input');query.type='search';query.placeholder='搜索标题';query.setAttribute('aria-label','搜索内容');const list=element('ul','','records'), pages=element('div','','toolbar');
- toolbar.append(query,button('搜索',()=>{offset=0;void load()}));if(kind==='post')toolbar.append(button('新建文章',async()=>{const title=prompt('文章标题');if(!title?.trim())return;try{const created=await api('documents',{method:'POST',body:JSON.stringify({kind:'post',title})});await edit(created.id,'post')}catch(error){tell(error.message)}}));workspace.replaceChildren(title,toolbar,list,pages);
- async function load(){try{const data=await api(`documents?kind=${kind}&offset=${offset}&q=${encodeURIComponent(query.value)}`);if(version!==generation)return;list.replaceChildren();for(const record of data.records){const li=element('li'),copy=element('div');copy.append(element('span',record.title,'record-title'),element('span',`${record.source_path || record.id} · 云端版本 ${record.revision}${record.state==='draft'?' · 草稿':''}`,'record-meta'));li.append(copy,button('编辑',()=>edit(record.id,kind)));list.append(li)}if(!data.records.length)list.append(element('p','暂无内容。','empty'));pages.replaceChildren();const prev=button('上一页',()=>{offset-=100;void load()}),next=button('下一页',()=>{offset+=100;void load()});prev.disabled=offset===0;next.disabled=offset+data.records.length>=data.total.count;pages.append(prev,element('span',`${data.total.count} 项`,'muted'),next)}catch(error){tell(error.message)}}
- query.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();offset=0;void load()}});await load();
+    let offset = 0;
+    const workspace = $('#workspace'), title = element('h2', names[kind]), toolbar = element('div', '', 'toolbar'), query = element('input');
+    query.type = 'search';
+    query.placeholder = '搜索标题';
+    query.setAttribute('aria-label', '搜索内容');
+    const list = element('ul', '', 'records'), pages = element('div', '', 'toolbar');
+    toolbar.append(query, button('搜索', () => { offset = 0; void load(); }));
+    if (kind === 'post')
+        toolbar.append(button('新建文章', async () => { const title = prompt('文章标题'); if (!title?.trim())
+            return; try {
+            const created = await api('documents', { method: 'POST', body: JSON.stringify({ kind: 'post', title }) });
+            await edit(created.id, 'post');
+        }
+        catch (error) {
+            tell(error.message);
+        } }));
+    workspace.replaceChildren(title, toolbar, list, pages);
+    async function load() { try {
+        const data = await api(`documents?kind=${kind}&offset=${offset}&q=${encodeURIComponent(query.value)}`);
+        if (version !== generation)
+            return;
+        list.replaceChildren();
+        for (const record of data.records) {
+            const li = element('li'), copy = element('div');
+            copy.append(element('span', record.title, 'record-title'), element('span', `${record.source_path || record.id} · 云端版本 ${record.revision}${record.state === 'draft' ? ' · 草稿' : ''}`, 'record-meta'));
+            li.append(copy, button('编辑', () => edit(record.id, kind)));
+            list.append(li);
+        }
+        if (!data.records.length)
+            list.append(element('p', '暂无内容。', 'empty'));
+        pages.replaceChildren();
+        const prev = button('上一页', () => { offset -= 100; void load(); }), next = button('下一页', () => { offset += 100; void load(); });
+        prev.disabled = offset === 0;
+        next.disabled = offset + data.records.length >= data.total.count;
+        pages.append(prev, element('span', `${data.total.count} 项`, 'muted'), next);
+    }
+    catch (error) {
+        tell(error.message);
+    } }
+    query.addEventListener('keydown', event => { if (event.key === 'Enter') {
+        event.preventDefault();
+        offset = 0;
+        void load();
+    } });
+    await load();
 }
-async function edit(id,kind){try{const record=await api('documents/'+encodeURIComponent(id));const workspace=$('#workspace');workspace.replaceChildren();const title=element('input'),source=element('textarea'),access=element('select');title.value=record.title;title.setAttribute('aria-label','内容标题');source.value=record.source;source.spellcheck=false;source.setAttribute('aria-label','内容原文');for(const [value,label] of [['public','公开'],['protected','受保护']]){const option=element('option',label);option.value=value;access.append(option)}access.value=record.access;for(const node of [title,source,access])node.addEventListener('input',()=>{dirty=true});const actions=element('div','','editor-actions'),save=button('保存云端草稿',async()=>{save.disabled=true;try{const data=await api('documents/'+encodeURIComponent(id),{method:'PUT',body:JSON.stringify({title:title.value,source:source.value,access:access.value,revision:record.revision})});record.revision=data.revision;dirty=false;tell('已保存云端草稿，网站尚未发布。')}catch(error){tell(error.message)}finally{save.disabled=false}});actions.append(save,button('返回列表',()=>navigate(kind)),access);workspace.append(element('h2',record.title),element('p',record.source_path || record.id,'muted'),title,element('p','编辑原文；保存会检查版本冲突，保留上一版。','small muted'),source,actions);source.focus()}catch(error){tell(error.message)}}
-async function users(version){const records=await api('users');if(version!==generation)return;const list=element('ul','','records');for(const record of records){const li=element('li'),copy=element('div');copy.append(element('span',record.email,'record-title'),element('span',roles[record.role]+' · '+(record.status==='active'?'正常':'已停用'),'record-meta'));li.append(copy);if(record.role!=='admin'){const controls=element('div','','record-actions'),role=element('select'),status=element('select');role.setAttribute('aria-label',record.email+'角色');status.setAttribute('aria-label',record.email+'状态');for(const key of ['viewer','member','superuser']){const option=element('option',roles[key]);option.value=key;role.append(option)}for(const [key,label]of [['active','正常'],['suspended','停用']]){const option=element('option',label);option.value=key;status.append(option)}role.value=record.role;status.value=record.status;controls.append(role,status,button('会话',()=>sessions(version,record.id,record.email)),button('保存',async()=>{try{await api('users/'+record.id,{method:'PATCH',body:JSON.stringify({role:role.value,status:status.value})});tell('用户权限已更新，旧会话已撤销。');await users(version)}catch(error){tell(error.message)}}));li.append(controls)}list.append(li)}$('#workspace').replaceChildren(element('h2','用户与权限'),list)}
-async function uploads(version){const records=await api('uploads');if(version!==generation)return;const workspace=$('#workspace'),toolbar=element('div','','toolbar'),file=element('input');file.type='file';file.accept='.epub,.pdf,.mobi,.azw3,.png,.jpg,.jpeg,.webp';file.setAttribute('aria-label','上传电子书或图片');const send=button('上传',async()=>{const selected=file.files?.[0];if(!selected)return;send.disabled=true;try{const response=await fetch('./api/uploads?filename='+encodeURIComponent(selected.name),{method:'PUT',credentials:'same-origin',headers:{'Content-Type':selected.type||'application/octet-stream'},body:selected});const data=await response.json();if(!response.ok)throw new Error(data.error);tell('上传完成，已进入私人待审核区。');await uploads(version)}catch(error){tell(error.message||'上传失败。')}finally{send.disabled=false}});toolbar.append(file,send);const list=element('ul','','records');for(const record of records){const li=element('li'),copy=element('div');copy.append(element('span',record.filename,'record-title'),element('span',`${(record.bytes/1048576).toFixed(1)} MB · ${record.review_state==='pending'?'待审核':record.review_state==='approved'?'已审核':'未通过'}`,'record-meta'));li.append(copy);const controls=element('div','','record-actions'),download=element('a','下载');download.href='./api/uploads/'+record.id+'/content';controls.append(download);if(record.owner_id===user.id||user.role==='admin')controls.append(button('编辑资料',()=>editUpload(record,version)));if(user.role==='admin'||(user.role==='superuser'&&record.owner_id!==user.id)){for(const [state,label]of [['approved','通过'],['rejected','退回']])controls.append(button(label,async()=>{try{const selfReview=record.owner_id===user.id;if(selfReview&&!confirm('确认以管理员身份审核自己的上传？本次操作会单独记入记录。'))return;await api('uploads/'+record.id,{method:'PATCH',body:JSON.stringify({review:state,overrideSelfReview:selfReview})});tell('审核状态已保存。');await uploads(version)}catch(error){tell(error.message)}}))}li.append(controls);list.append(li)}workspace.replaceChildren(element('h2',user.role==='member'?'我的上传':'上传与审核'),element('p','电子书最大90 MB，图片最大16 MB。文件先进入私人待审核区；审核本身不会自动公开或发布。','small muted'),toolbar,list)}
-$('#send-code').addEventListener('click',async()=>{const send=$('#send-code'),email=$('#email');if(!email.reportValidity())return;send.disabled=true;$('#login-status').textContent='正在发送…';try{await api('auth/code',{method:'POST',body:JSON.stringify({email:email.value})});$('#login-status').textContent='验证码已发送，五分钟内有效。';let remaining=60;send.textContent=`${remaining} 秒后重发`;const timer=setInterval(()=>{remaining--;send.textContent=remaining?`${remaining} 秒后重发`:'获取验证码';if(!remaining){clearInterval(timer);send.disabled=false}},1000);$('#code').focus()}catch(error){$('#login-status').textContent=error.message;send.disabled=false}});
-$('#login-form').addEventListener('submit',async event=>{event.preventDefault();const submit=event.submitter;submit.disabled=true;try{const data=await api('auth/verify',{method:'POST',body:JSON.stringify({email:$('#email').value,code:$('#code').value})});user=data.user;localStorage.setItem('telysta.account.event',String(Date.now()));$('#code').value='';display();await navigate('dashboard')}catch(error){$('#login-status').textContent=error.message}finally{submit.disabled=false}});
-$('#logout').addEventListener('click',async()=>{if(dirty&&!confirm('内容尚未保存，仍要退出吗？'))return;try{await api('auth/logout',{method:'POST',body:'{}'});dirty=false;user=null;localStorage.setItem('telysta.account.event',String(Date.now()));location.assign('/console/')}catch(error){tell(error.message)}});
-window.addEventListener('beforeunload',event=>{if(dirty){event.preventDefault();event.returnValue=''}});
-try{const data=await api('auth/session');user=data.user;display();if(user)await navigate('dashboard')}catch(error){$('#loading').textContent='暂时无法读取账户，请刷新重试。'}
-
-function editUpload(record,version){
- const metadata=JSON.parse(record.metadata || '{}'),workspace=$('#workspace');workspace.replaceChildren(element('h2','编辑上传资料'));
- const title=element('input'),authors=element('input'),description=element('textarea');title.value=metadata.title||record.filename;authors.value=(metadata.authors||[]).join('、');description.value=metadata.description||'';
- for(const [label,node]of [['标题',title],['作者（用顿号分隔）',authors],['简短介绍',description]]){const id='upload-'+crypto.randomUUID();node.id=id;const caption=element('label',label);caption.htmlFor=id;node.addEventListener('input',()=>dirty=true);workspace.append(caption,node)}
- const controls=element('div','','editor-actions');controls.append(button('保存资料',async()=>{try{await api('uploads/'+record.id,{method:'PATCH',body:JSON.stringify({metadata:{title:title.value,authors:authors.value.split('、').map(x=>x.trim()).filter(Boolean),description:description.value}})});dirty=false;await uploads(version);tell('资料已保存，重新进入待审核状态。')}catch(error){tell(error.message)}}),button('返回',()=>navigate('uploads')));workspace.append(controls);
+async function edit(id, kind) { try {
+    const record = await api('documents/' + encodeURIComponent(id));
+    const workspace = $('#workspace');
+    workspace.replaceChildren();
+    const title = element('input'), source = element('textarea'), access = element('select');
+    title.value = record.title;
+    title.setAttribute('aria-label', '内容标题');
+    source.value = record.source;
+    source.spellcheck = false;
+    source.setAttribute('aria-label', '内容原文');
+    for (const [value, label] of [['public', '公开'], ['protected', '受保护']]) {
+        const option = element('option', label);
+        option.value = value;
+        access.append(option);
+    }
+    access.value = record.access;
+    for (const node of [title, source, access])
+        node.addEventListener('input', () => { dirty = true; });
+    const actions = element('div', '', 'editor-actions'), save = button('保存云端草稿', async () => { save.disabled = true; try {
+        const data = await api('documents/' + encodeURIComponent(id), { method: 'PUT', body: JSON.stringify({ title: title.value, source: source.value, access: access.value, revision: record.revision }) });
+        record.revision = data.revision;
+        dirty = false;
+        tell('已保存云端草稿，网站尚未发布。');
+    }
+    catch (error) {
+        tell(error.message);
+    }
+    finally {
+        save.disabled = false;
+    } });
+    const panel = element('section', '', 'history-panel');
+    panel.hidden = true;
+    actions.append(save, button('版本记录', () => { panel.hidden = !panel.hidden; if (!panel.hidden)
+        void versionHistory(id, source, panel, generation); }), button('返回列表', () => navigate(kind)), access);
+    workspace.append(element('h2', record.title), element('p', record.source_path || record.id, 'muted'), title, element('p', '编辑原文；保存会检查版本冲突，保留上一版。', 'small muted'), source, actions, panel);
+    source.focus();
 }
-
-async function sessions(version,target,email){
- try{const records=await api(target?'users/'+target+'/sessions':'sessions');if(version!==generation)return;const workspace=$('#workspace'),list=element('ul','','records');workspace.replaceChildren(element('h2',email?email+' 的登录会话':'登录会话'));
- if(target&&records.length)workspace.append(button('退出该用户全部会话',async()=>{if(!confirm('确定退出该用户的全部会话吗？'))return;try{await api('users/'+target+'/sessions',{method:'DELETE'});tell('全部会话已退出。');await sessions(version,target,email)}catch(error){tell(error.message)}}));
- for(const record of records){const row=element('li'),copy=element('div');copy.append(element('span',(record.current?'当前会话 · ':'')+(record.ip_hint||'设备'),'record-title'),element('span',new Date(record.created_at*1000).toLocaleString()+' · '+(record.user_agent||'浏览器'),'record-meta'));row.append(copy,button('退出此会话',async()=>{try{await api('sessions/'+record.id,{method:'DELETE'});if(record.current){user=null;display();return;}tell('会话已退出。');await sessions(version,target,email)}catch(error){tell(error.message)}}));list.append(row)}if(!records.length)list.append(element('p','没有活动会话。','empty'));workspace.append(list);
- }catch(error){tell(error.message)}
+catch (error) {
+    tell(error.message);
+} }
+async function users(version) { const records = await api('users'); if (version !== generation)
+    return; const list = element('ul', '', 'records'); for (const record of records) {
+    const li = element('li'), copy = element('div');
+    copy.append(element('span', record.email, 'record-title'), element('span', roles[record.role] + ' · ' + (record.status === 'active' ? '正常' : '已停用'), 'record-meta'));
+    li.append(copy);
+    if (record.role !== 'admin') {
+        const controls = element('div', '', 'record-actions'), role = element('select'), status = element('select');
+        role.setAttribute('aria-label', record.email + '角色');
+        status.setAttribute('aria-label', record.email + '状态');
+        for (const key of ['viewer', 'member', 'superuser']) {
+            const option = element('option', roles[key]);
+            option.value = key;
+            role.append(option);
+        }
+        for (const [key, label] of [['active', '正常'], ['suspended', '停用']]) {
+            const option = element('option', label);
+            option.value = key;
+            status.append(option);
+        }
+        role.value = record.role;
+        status.value = record.status;
+        controls.append(role, status, button('会话', () => sessions(version, record.id, record.email)), button('保存', async () => { try {
+            await api('users/' + record.id, { method: 'PATCH', body: JSON.stringify({ role: role.value, status: status.value }) });
+            tell('用户权限已更新，旧会话已撤销。');
+            await users(version);
+        }
+        catch (error) {
+            tell(error.message);
+        } }));
+        li.append(controls);
+    }
+    list.append(li);
+} $('#workspace').replaceChildren(element('h2', '用户与权限'), list); }
+async function uploads(version) { const records = await api('uploads'); if (version !== generation)
+    return; const workspace = $('#workspace'), toolbar = element('div', '', 'toolbar'), file = element('input'); file.type = 'file'; file.accept = '.epub,.pdf,.mobi,.azw3,.png,.jpg,.jpeg,.webp'; file.setAttribute('aria-label', '上传电子书或图片'); const send = button('上传', async () => { const selected = file.files?.[0]; if (!selected)
+    return; send.disabled = true; try {
+    const response = await fetch('./api/uploads?filename=' + encodeURIComponent(selected.name), { method: 'PUT', credentials: 'same-origin', headers: { 'Content-Type': selected.type || 'application/octet-stream' }, body: selected });
+    const data = await response.json();
+    if (!response.ok)
+        throw new Error(data.error);
+    tell('上传完成，已进入私人待审核区。');
+    await uploads(version);
 }
-setInterval(async()=>{if(!user||document.hidden)return;try{const data=await api('auth/session');if(!data.user){user=null;dirty=false;display();$('#login-status').textContent='会话已结束，请重新登录。';}else if(data.user.role!==user.role){user=data.user;dirty=false;await navigate('dashboard')}}catch{}},30000);
+catch (error) {
+    tell(error.message || '上传失败。');
+}
+finally {
+    send.disabled = false;
+} }); toolbar.append(file, send); const list = element('ul', '', 'records'); for (const record of records) {
+    const li = element('li'), copy = element('div');
+    copy.append(element('span', record.filename, 'record-title'), element('span', `${(record.bytes / 1048576).toFixed(1)} MB · ${record.review_state === 'pending' ? '待审核' : record.review_state === 'approved' ? '已审核' : '未通过'}`, 'record-meta'));
+    li.append(copy);
+    const controls = element('div', '', 'record-actions'), download = element('a', '下载');
+    download.href = './api/uploads/' + record.id + '/content';
+    controls.append(download);
+    if (record.owner_id === user.id || user.role === 'admin')
+        controls.append(button('编辑资料', () => editUpload(record, version)));
+    if (user.role === 'admin' || (user.role === 'superuser' && record.owner_id !== user.id)) {
+        for (const [state, label] of [['approved', '通过'], ['rejected', '退回']])
+            controls.append(button(label, async () => { try {
+                const selfReview = record.owner_id === user.id;
+                if (selfReview && !confirm('确认以管理员身份审核自己的上传？本次操作会单独记入记录。'))
+                    return;
+                await api('uploads/' + record.id, { method: 'PATCH', body: JSON.stringify({ review: state, overrideSelfReview: selfReview }) });
+                tell('审核状态已保存。');
+                await uploads(version);
+            }
+            catch (error) {
+                tell(error.message);
+            } }));
+    }
+    li.append(controls);
+    list.append(li);
+} workspace.replaceChildren(element('h2', user.role === 'member' ? '我的上传' : '上传与审核'), element('p', '电子书最大90 MB，图片最大16 MB。文件先进入私人待审核区；审核本身不会自动公开或发布。', 'small muted'), toolbar, list); }
+$('#send-code').addEventListener('click', async () => { const send = $('#send-code'), email = $('#email'); if (!email.reportValidity())
+    return; send.disabled = true; $('#login-status').textContent = '正在发送…'; try {
+    await api('auth/code', { method: 'POST', body: JSON.stringify({ email: email.value }) });
+    $('#login-status').textContent = '验证码已发送，五分钟内有效。';
+    let remaining = 60;
+    send.textContent = `${remaining} 秒后重发`;
+    const timer = setInterval(() => { remaining--; send.textContent = remaining ? `${remaining} 秒后重发` : '获取验证码'; if (!remaining) {
+        clearInterval(timer);
+        send.disabled = false;
+    } }, 1000);
+    $('#code').focus();
+}
+catch (error) {
+    $('#login-status').textContent = error.message;
+    send.disabled = false;
+} });
+$('#login-form').addEventListener('submit', async (event) => { event.preventDefault(); const submit = event.submitter; submit.disabled = true; submit.setAttribute('aria-busy', 'true'); try {
+    const data = await api('auth/verify', { method: 'POST', body: JSON.stringify({ email: $('#email').value, code: $('#code').value }) });
+    user = data.user;
+    localStorage.setItem('telysta.account.event', String(Date.now()));
+    $('#code').value = '';
+    display();
+    await navigate('dashboard');
+}
+catch (error) {
+    $('#login-status').textContent = error.message;
+}
+finally {
+    submit.disabled = false;
+    submit.removeAttribute('aria-busy');
+} });
+$('#logout').addEventListener('click', async () => { if (dirty && !confirm('内容尚未保存，仍要退出吗？'))
+    return; try {
+    await api('auth/logout', { method: 'POST', body: '{}' });
+    dirty = false;
+    user = null;
+    localStorage.setItem('telysta.account.event', String(Date.now()));
+    location.assign('/console/');
+}
+catch (error) {
+    tell(error.message);
+} });
+window.addEventListener('beforeunload', event => { if (dirty) {
+    event.preventDefault();
+    event.returnValue = '';
+} });
+try {
+    const data = await api('auth/session');
+    if (data.entry?.admin) {
+        $('#email').value = data.entry.email;
+        $('#email').readOnly = true;
+    }
+    user = data.user;
+    display();
+    if (user)
+        await navigate('dashboard');
+}
+catch (error) {
+    $('#loading').textContent = '暂时无法读取账户，请刷新重试。';
+}
+function editUpload(record, version) {
+    const metadata = JSON.parse(record.metadata || '{}'), workspace = $('#workspace');
+    workspace.replaceChildren(element('h2', '编辑上传资料'));
+    const title = element('input'), authors = element('input'), description = element('textarea');
+    title.value = metadata.title || record.filename;
+    authors.value = (metadata.authors || []).join('、');
+    description.value = metadata.description || '';
+    for (const [label, node] of [['标题', title], ['作者（用顿号分隔）', authors], ['简短介绍', description]]) {
+        const id = 'upload-' + crypto.randomUUID();
+        node.id = id;
+        const caption = element('label', label);
+        caption.htmlFor = id;
+        node.addEventListener('input', () => dirty = true);
+        workspace.append(caption, node);
+    }
+    const controls = element('div', '', 'editor-actions');
+    controls.append(button('保存资料', async () => { try {
+        await api('uploads/' + record.id, { method: 'PATCH', body: JSON.stringify({ metadata: { title: title.value, authors: authors.value.split('、').map(x => x.trim()).filter(Boolean), description: description.value } }) });
+        dirty = false;
+        await uploads(version);
+        tell('资料已保存，重新进入待审核状态。');
+    }
+    catch (error) {
+        tell(error.message);
+    } }), button('返回', () => navigate('uploads')));
+    workspace.append(controls);
+}
+async function sessions(version, target, email) {
+    try {
+        const records = await api(target ? 'users/' + target + '/sessions' : 'sessions');
+        if (version !== generation)
+            return;
+        const workspace = $('#workspace'), list = element('ul', '', 'records');
+        workspace.replaceChildren(element('h2', email ? email + ' 的登录会话' : '登录会话'));
+        if (target && records.length)
+            workspace.append(button('退出该用户全部会话', async () => { if (!confirm('确定退出该用户的全部会话吗？'))
+                return; try {
+                await api('users/' + target + '/sessions', { method: 'DELETE' });
+                tell('全部会话已退出。');
+                await sessions(version, target, email);
+            }
+            catch (error) {
+                tell(error.message);
+            } }));
+        for (const record of records) {
+            const row = element('li'), copy = element('div');
+            copy.append(element('span', (record.current ? '当前会话 · ' : '') + (record.ip_hint || '设备'), 'record-title'), element('span', new Date(record.created_at * 1000).toLocaleString() + ' · ' + (record.user_agent || '浏览器'), 'record-meta'));
+            row.append(copy, button('退出此会话', async () => { try {
+                await api('sessions/' + record.id, { method: 'DELETE' });
+                if (record.current) {
+                    user = null;
+                    display();
+                    return;
+                }
+                tell('会话已退出。');
+                await sessions(version, target, email);
+            }
+            catch (error) {
+                tell(error.message);
+            } }));
+            list.append(row);
+        }
+        if (!records.length)
+            list.append(element('p', '没有活动会话。', 'empty'));
+        workspace.append(list);
+    }
+    catch (error) {
+        tell(error.message);
+    }
+}
+setInterval(async () => { if (!user || document.hidden)
+    return; try {
+    const data = await api('auth/session');
+    if (!data.user) {
+        user = null;
+        dirty = false;
+        display();
+        $('#login-status').textContent = '会话已结束，请重新登录。';
+    }
+    else if (data.user.role !== user.role) {
+        user = data.user;
+        dirty = false;
+        await navigate('dashboard');
+    }
+}
+catch { } }, 30000);
+async function versionHistory(id, source, panel, version) {
+    try {
+        const data = await api('documents/' + encodeURIComponent(id) + '/revisions');
+        if (version !== generation)
+            return;
+        panel.replaceChildren(element('h3', '版本记录'), element('p', '选择旧版本查看；载入后仍需保存，才会形成新的云端草稿。', 'small muted'));
+        if (!data.records.length) {
+            panel.append(element('p', '还没有历史版本。', 'empty'));
+            return;
+        }
+        const list = element('ul', '', 'records'), preview = element('pre');
+        preview.hidden = true;
+        const render = records => { for (const record of records) {
+            const row = element('li'), copy = element('div');
+            copy.append(element('span', '版本 ' + record.revision, 'record-title'), element('span', new Date(record.created_at * 1000).toLocaleString() + ' · ' + record.editor, 'record-meta'));
+            row.append(copy, button('查看', async () => { try {
+                const old = await api('documents/' + encodeURIComponent(id) + '/revisions/' + record.revision);
+                if (version !== generation)
+                    return;
+                preview.textContent = old.source;
+                preview.hidden = false;
+                const load = button('载入此版本', () => { if (dirty && !confirm('用这个版本替换编辑区内尚未保存的原文吗？'))
+                    return; source.value = old.source; dirty = true; tell('旧版本已载入编辑区，尚未保存。'); source.focus(); });
+                preview.replaceChildren(document.createTextNode(old.source));
+                controls.replaceChildren(load);
+            }
+            catch (error) {
+                tell(error.message);
+            } }));
+            list.append(row);
+        } };
+        const controls = element('div', '', 'editor-actions');
+        render(data.records);
+        panel.append(list, preview, controls);
+        if (data.records.length === 25) {
+            let before = data.records.at(-1).revision;
+            const more = button('更早的版本', async () => { try {
+                more.disabled = true;
+                const next = await api('documents/' + encodeURIComponent(id) + '/revisions?before=' + before);
+                if (version !== generation)
+                    return;
+                render(next.records);
+                before = next.records.at(-1)?.revision || before;
+                more.hidden = next.records.length < 25;
+            }
+            catch (error) {
+                tell(error.message);
+            }
+            finally {
+                more.disabled = false;
+            } });
+            panel.append(more);
+        }
+    }
+    catch (error) {
+        tell(error.message);
+    }
+}

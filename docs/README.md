@@ -1,6 +1,6 @@
 # 文档导航
 
-日常操作从下面直接进入具体指南，不必先翻计划或阶段日志。更新：2026-11-14。[回到项目首页](../README.md)
+日常操作从下面直接进入具体指南，不必先翻计划或阶段日志。更新：2026-11-15。[回到项目首页](../README.md)
 
 ## 常用入口
 
@@ -18,6 +18,7 @@
 | Agent 为新书入库 | [入库 Skill](../.agents/skills/telysta-library-ingest/SKILL.md)：R2、Git、中图法、Booklists与敏感资料处理 |
 | 上传 R2、转 WebP、更新封面 | [CDN 操作流程](cdn-assets.md) |
 | 字体子集与完整原字体 | [字体维护](title-navigation-audit-2026-11-08.md#字体维护) |
+| 页面精修、统一字号与交互 | [设计规范](../DESIGN.md) · [风格 Skill](../.agents/skills/telysta-design-guardian/SKILL.md)；Impeccable 与界面审查遵循现有风格 |
 | 检查与部署 | [维护指南](maintenance.md) · [部署指南](deployment.md) |
 | 线上账户、Session、角色与备份 | [线上管理](console.md) |
 | Cloudflare构建与搜索收录 | [原生构建](cloudflare-builds.md) · [搜索发现](search-discovery.md) |
@@ -30,7 +31,7 @@
 - [2026-11-08 标题与跳转排查](title-navigation-audit-2026-11-08.md)：标题优先级修复、导航重定向与线上加载分阶段测量。
 - [2026-10-11 项目排查](project-audit-2026-10-11.md)：架构评估、已修复问题、验证范围与后续建议。
 - 后台现有功能、保存和图片处理统一以 [本地后台](local-admin.md) 为准；[后台阶段计划](admin-ux-plan-2026-09-15.md) 保留执行过程与剩余计划，不作为启动指南。
-- [云端后台研判](local-admin-assessment-2026-09-13.md)：线上认证与 R2 上传仍未实施。
+- [云端后台研判](local-admin-assessment-2026-09-13.md)：历史方案；现行认证、上传与发布边界以[线上管理](console.md)为准。
 - [多语言 Markdown 研判](multilingual-markdown-assessment-2026-09-21.md)：方案研究，尚未实施正文语言切换。
 
 ## 变更记录

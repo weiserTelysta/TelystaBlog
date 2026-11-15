@@ -1,15 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import '../../styles/ebooks.scss';
+import '../../styles/reader.scss';
 ---
-<Layout title="在线阅览 · 书室" description="在书室中阅读电子书。" starfieldVariant="subtle" noIndex>
-	<main class="ebook-page library-reader" data-library-reader>
-		<a class="ebook-back" href="/ebooks/" data-reader-back>← 返回书架</a>
-		<header class="reader-header"><h1 data-reader-title>在线阅览</h1><div class="ebook-reading-links" data-reader-formats></div></header>
-		<p role="status" aria-live="polite" data-reader-state>正在读取书目…</p>
-		<a class="library-inline-button" href="/" data-library-access-help hidden>返回首页</a>
-		<div class="reader-toolbar" data-reader-tools hidden><button type="button" data-reader-prev>← 上一页</button><button type="button" data-reader-next>下一页 →</button><button type="button" data-reader-smaller aria-label="缩小阅读字号">A−</button><button type="button" data-reader-larger aria-label="放大阅读字号">A+</button><details><summary>目录</summary><nav aria-label="书籍目录" data-reader-chapters data-scroll-native></nav></details></div>
-		<div class="reader-surface" data-reader-surface hidden></div>
+<Layout title="在线阅览 · 书室" description="在书室中阅读电子书。" starfield={false} readingMode noIndex>
+	<main class="library-reader" data-library-reader>
+		<header class="reader-bar">
+			<a href="/ebooks/" class="reader-back" data-reader-back>Library</a>
+			<h1 data-reader-title>在线阅览</h1>
+			<div class="ebook-reading-links" data-reader-formats aria-label="阅读格式"></div>
+			<div class="reader-toolbar" data-reader-tools hidden>
+				<button type="button" data-reader-toc aria-label="Contents · 书籍目录">Contents</button>
+				<button type="button" data-reader-prev aria-label="Prev · 上一页">Prev</button>
+				<button type="button" data-reader-next aria-label="Next · 下一页">Next</button>
+				<button type="button" data-reader-smaller aria-label="A− · 缩小阅读字号">A−</button>
+				<button type="button" data-reader-larger aria-label="A+ · 放大阅读字号">A+</button>
+			</div>
+			<button type="button" data-reader-fullscreen aria-label="Fullscreen · 切换全屏阅读" aria-pressed="false">Fullscreen</button>
+		</header>
+		<div class="reader-message" data-reader-message>
+			<p role="status" aria-live="polite" data-reader-state>正在读取书目…</p>
+			<a class="library-inline-button" href="/" data-library-access-help hidden>Back to site</a>
+		</div>
+		<div class="reader-surface" data-reader-surface data-scroll-native hidden></div>
+		<dialog class="reader-contents" data-reader-dialog aria-labelledby="reader-contents-title" data-scroll-native>
+			<div class="reader-contents__head"><h2 id="reader-contents-title">Contents</h2><button type="button" data-reader-close>Close</button></div>
+			<nav aria-label="书籍目录" data-reader-chapters></nav>
+		</dialog>
 	</main>
 </Layout>
 <script>

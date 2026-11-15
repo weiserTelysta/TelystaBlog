@@ -5,7 +5,7 @@ import { BLOG_CATEGORY_IDS } from '../../../src/config/content/blogCategories';
 import { validatedSource } from './validation';
 import { exportBackup } from './backup';
 const KINDS = ['post','ebook','gallery','score','config'];
-function requireAdmin(user: User) { if (!can(user, 'site:manage')) throw new HttpError(403, '需要管理员权限。'); }
+function requireOwner(user: User) { if (!can(user, 'site:manage')) throw new HttpError(403, '需要超级管理员权限。'); }
 export async function handleManagement(request: Request, env: ConsoleEnv, user: User, url: URL) {
  const path = url.pathname;
  if (path === '/api/dashboard' && request.method === 'GET') {
@@ -15,12 +15,12 @@ export async function handleManagement(request: Request, env: ConsoleEnv, user: 
   return json({ content: content.results, users: users.results });
  }
  if (path === '/api/users' && request.method === 'GET') {
-  requireAdmin(user); const query = (url.searchParams.get('q') || '').slice(0,100);
+  requireOwner(user); const query = (url.searchParams.get('q') || '').slice(0,100);
   return json((await env.DB.prepare('SELECT id,email,role,status,created_at,last_login_at FROM users WHERE instr(email,?1)>0 ORDER BY created_at DESC LIMIT 100').bind(query).all()).results);
  }
  const userId = /^\/api\/users\/([a-f0-9-]{36})$/.exec(path)?.[1];
  if (userId && request.method === 'PATCH') {
-  requireAdmin(user); const input = await body(request);
+  requireOwner(user); const input = await body(request);
   const target = await env.DB.prepare('SELECT id,email FROM users WHERE id=?1').bind(userId).first<{ id: string; email: string }>();
   if (!target) throw new HttpError(404, '用户不存在。');
   if (target.email === ADMIN_EMAIL) throw new HttpError(403, '管理员身份固定，不能降权或停用。');
@@ -32,7 +32,7 @@ export async function handleManagement(request: Request, env: ConsoleEnv, user: 
   await audit(env, user.id, 'users.update', userId); return json({ ok: true });
  }
  if (path === '/api/documents' && request.method === 'GET') {
-  requireAdmin(user); const kind = url.searchParams.get('kind') || 'post';
+  requireOwner(user); const kind = url.searchParams.get('kind') || 'post';
   if (!KINDS.includes(kind)) throw new HttpError(400, '内容类型无效。');
   const query = (url.searchParams.get('q') || '').slice(0,100), offset = Math.min(100000, Math.max(0, Number(url.searchParams.get('offset')) || 0));
   const records = await env.DB.prepare('SELECT id,kind,title,source_path,access,state,revision,updated_at FROM documents WHERE kind=?1 AND instr(title,?2)>0 ORDER BY updated_at DESC,id LIMIT 100 OFFSET ?3').bind(kind,query,offset).all();
@@ -40,7 +40,7 @@ export async function handleManagement(request: Request, env: ConsoleEnv, user: 
   return json({ records: records.results, total });
  }
  if (path === '/api/documents' && request.method === 'POST') {
-  requireAdmin(user); const input = await body(request);
+  requireOwner(user); const input = await body(request);
   if (input.kind !== 'post' || typeof input.title !== 'string' || !input.title.trim() || input.title.length > 300) throw new HttpError(400, '请填写文章标题。');
   const category = typeof input.category === 'string' ? input.category : 'notes';
   if (!(BLOG_CATEGORY_IDS as readonly string[]).includes(category)) throw new HttpError(400, '分类不存在。');
@@ -53,12 +53,12 @@ export async function handleManagement(request: Request, env: ConsoleEnv, user: 
  }
  const documentId = /^\/api\/documents\/([A-Za-z0-9_-]{1,100})$/.exec(path)?.[1];
  if (documentId && request.method === 'GET') {
-  requireAdmin(user);
+  requireOwner(user);
   const record = await env.DB.prepare('SELECT * FROM documents WHERE id=?1').bind(documentId).first();
   if (!record) throw new HttpError(404, '内容不存在。'); return json(record);
  }
  if (documentId && request.method === 'PUT') {
-  requireAdmin(user); const input = await body(request, 1_200_000);
+  requireOwner(user); const input = await body(request, 1_200_000);
   if (typeof input.source !== 'string' || input.source.length > 1_000_000 || typeof input.title !== 'string' || !input.title.trim() || input.title.length > 300 || !Number.isSafeInteger(input.revision)) throw new HttpError(400, '内容、标题或版本无效。');
   const access = input.access === 'protected' ? 'protected' : input.access === 'public' ? 'public' : null;
   if (!access) throw new HttpError(400, '可见范围无效。');
@@ -75,13 +75,13 @@ export async function handleManagement(request: Request, env: ConsoleEnv, user: 
   await audit(env, user.id, 'documents.save', documentId); return json({ ok: true, revision: (changed[1].results[0] as { revision: number }).revision });
  }
  if (path === '/api/export' && request.method === 'GET') {
-  requireAdmin(user);
+  requireOwner(user);
   const type = url.searchParams.get('type') || 'all';
   if (![...KINDS,'users','uploads','audit','all'].includes(type)) throw new HttpError(400, '备份类型无效。');
   return exportBackup(env,user.id,type,KINDS);
  }
  if (path === '/api/audit' && request.method === 'GET') {
-  requireAdmin(user); return json((await env.DB.prepare('SELECT a.action,a.target_id,a.created_at,u.email FROM audit_events a LEFT JOIN users u ON u.id=a.actor_id ORDER BY a.created_at DESC LIMIT 100').all()).results);
+  requireOwner(user); return json((await env.DB.prepare('SELECT a.action,a.target_id,a.created_at,u.email FROM audit_events a LEFT JOIN users u ON u.id=a.actor_id ORDER BY a.created_at DESC LIMIT 100').all()).results);
  }
  throw new HttpError(404, '未找到接口。');
 }

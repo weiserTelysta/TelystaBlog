@@ -4,7 +4,7 @@ import { createPlatformFixture } from '../helpers/platform-fixture.mjs';
 const require = createRequire(import.meta.url);
 const JSZip = require('jszip');
 const host = 'https://telysta.com';
-test('账户权限接通书架和受保护EPUB，沙箱清除脚本，退出会停止阅览', async ({ page }) => {
+test('账户权限接通书架和受保护EPUB，沙箱清除脚本，退出会停止阅览', async ({ page }, testInfo) => {
  test.setTimeout(60_000);
  const fixture = await createPlatformFixture();
  try {
@@ -39,12 +39,22 @@ test('账户权限接通书架和受保护EPUB，沙箱清除脚本，退出会�
   await expect(page.locator('[data-reader-surface] iframe').first()).toHaveAttribute('sandbox','allow-same-origin');
   await expect(first.locator('script')).toHaveCount(0);
   expect(await page.evaluate(() => (window as unknown as Record<string,unknown>).readerScriptExecuted)).toBeUndefined();
-  await page.getByText('目录',{exact:true}).click();
+  for(const width of [1440,390]){
+   await page.setViewportSize({width,height:1000});
+   await expect.poll(async()=>page.locator('[data-reader-surface]').evaluate(node=>{const r=node.getBoundingClientRect();return Math.abs(r.bottom-innerHeight)<3&&r.width>=innerWidth-1&&r.height>innerHeight*.8})).toBe(true);
+   expect(await page.locator('.site-header').count()).toBe(0);
+   await expect.poll(async()=>page.locator('[data-reader-surface]').evaluate(node=>{const frame=node.querySelector('iframe');return !!frame&&Math.abs(frame.getBoundingClientRect().height-node.getBoundingClientRect().height)<3})).toBe(true);
+   await page.screenshot({path:testInfo.outputPath('reader-'+width+'.png')});
+  }
+  await page.getByRole('button',{name:'Contents · 书籍目录',exact:true}).click();
+  await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Contents · 书籍目录',exact:true})).toBeFocused();
+  await page.getByRole('button',{name:'Contents · 书籍目录',exact:true}).click();
   await page.getByRole('button',{name:'Second chapter',exact:true}).click();
   await expect(page.frameLocator('[data-reader-surface] iframe').last().locator('body')).toContainText('Second chapter content');
-  await page.getByRole('button',{name:'放大阅读字号'}).click();
+  await page.getByRole('button',{name:'A+ · 放大阅读字号'}).click();
   const account=await page.context().newPage();await account.goto(host+'/console/');await account.getByRole('button',{name:'退出登录'}).click();
   await expect(page.locator('[data-reader-surface] iframe')).toHaveCount(0);
-  await expect(page.getByRole('link',{name:'返回首页',exact:true})).toBeVisible();
+  await expect(page.locator('[data-reader-title]')).not.toHaveAttribute('title',/Protected fixture/);
+  await expect(page.getByRole('link',{name:'Back to site',exact:true})).toBeVisible();
  } finally { await fixture.mf.dispose(); }
 });

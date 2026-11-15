@@ -5,6 +5,7 @@ import { handleManagement } from './content';
 import { HttpError, json } from './http';
 import { handleUploads } from './uploads';
 import { handleSessions } from './sessions';
+import { handleHistory } from './history';
 export class AuthService extends WorkerEntrypoint<ConsoleEnv> {
  async session(cookies: string) { return sessionView(await sessionUser(this.env, cookies)); }
 }
@@ -23,18 +24,18 @@ export default {
    else if (url.pathname.startsWith('/api/')) {
     if (!['GET','HEAD'].includes(request.method) && !origin) throw new HttpError(403, '请求缺少来源。');
     if (url.pathname.startsWith('/api/auth/')) {
-     response = await handleAuth(request, env, url.pathname);
+     response = await handleAuth(request, env, url.pathname, base === env.ADMIN_PATH);
      if (url.pathname === '/api/auth/code' && response.ok) ctx.waitUntil(cleanupAuth(env));
     }
     else {
      const user = await sessionUser(env, request.headers.get('Cookie'));
      if (!user) throw new HttpError(401, '请先登录。');
-     response = url.pathname.startsWith('/api/sessions') || /^\/api\/users\/[a-f0-9-]+\/sessions$/.test(url.pathname) ? await handleSessions(request, env, user, url) : url.pathname.startsWith('/api/uploads') ? await handleUploads(request, env, user, url) : await handleManagement(request, env, user, url);
+     response = url.pathname.startsWith('/api/sessions') || /^\/api\/users\/[a-f0-9-]+\/sessions$/.test(url.pathname) ? await handleSessions(request, env, user, url) : url.pathname.startsWith('/api/uploads') ? await handleUploads(request, env, user, url) : /^\/api\/documents\/[^/]+\/revisions(?:\/|$)/.test(url.pathname) ? await handleHistory(request, env, user, url) : await handleManagement(request, env, user, url);
     }
    } else if (['GET','HEAD'].includes(request.method)) {
     if (base === env.ADMIN_PATH && url.pathname === '/') {
      const user = await sessionUser(env, request.headers.get('Cookie'));
-     if (user?.role !== 'admin') return Response.redirect(env.CONSOLE_ORIGIN + env.BASE_PATH + '/', 302);
+     if (user && user.role !== 'admin') return Response.redirect(env.CONSOLE_ORIGIN + env.BASE_PATH + '/', 302);
     }
     response = await env.ASSETS.fetch(new Request(url, request));
    }

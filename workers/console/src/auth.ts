@@ -45,8 +45,8 @@ export async function audit(env: ConsoleEnv, actor: string | null, action: strin
  await env.DB.prepare('INSERT INTO audit_events(id,actor_id,action,target_id,created_at) VALUES(?1,?2,?3,?4,?5)').bind(crypto.randomUUID(), actor, action, target, nowSeconds()).run();
 }
 function otp() { let number; do { number = crypto.getRandomValues(new Uint32Array(1))[0]; } while (number >= 4_294_000_000); return String(number % 1_000_000).padStart(6, '0'); }
-export async function handleAuth(request: Request, env: ConsoleEnv, path: string) {
- if (path === '/api/auth/session' && request.method === 'GET') return json(sessionView(await sessionUser(env, request.headers.get('Cookie'))));
+export async function handleAuth(request: Request, env: ConsoleEnv, path: string, adminEntry = false) {
+ if (path === '/api/auth/session' && request.method === 'GET') return json({ ...sessionView(await sessionUser(env, request.headers.get('Cookie'))), entry: { admin: adminEntry, email: adminEntry ? ADMIN_EMAIL : null } });
  if (request.method !== 'POST') throw new HttpError(405, '方法不支持。');
  if (path === '/api/auth/logout') {
   const token = sessionToken(request.headers.get('Cookie'));
@@ -58,6 +58,7 @@ export async function handleAuth(request: Request, env: ConsoleEnv, path: string
  if (!limited.success) throw new HttpError(429, '尝试较多，请稍后重试。');
  const input = await body(request), email = normalizeEmail(input.email);
  if (!email) throw new HttpError(400, '请输入有效邮箱。');
+ if (adminEntry && email !== ADMIN_EMAIL) throw new HttpError(403, '此入口仅供超级管理员验证，请从账户入口登录。');
  const now = nowSeconds();
  if (path === '/api/auth/code') {
   if (!env.SMTP_PASSWORD) throw new HttpError(503, '邮件服务暂未就绪。');

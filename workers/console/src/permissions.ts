@@ -1,4 +1,5 @@
 export const ADMIN_EMAIL = 'weiser@telysta.com';
+// Stored role names remain stable: admin is the sole owner; superuser is a delegated review administrator.
 export const ROLES = ['viewer', 'member', 'superuser', 'admin'] as const;
 export type Role = typeof ROLES[number];
 export type User = { id: string; email: string; role: Role; status: 'active' | 'suspended' };

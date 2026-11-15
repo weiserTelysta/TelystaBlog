@@ -52,6 +52,8 @@ description: 为 Telysta 书室添加或修订电子书，核对书目与中图�
 - 访问控制与阅览：`workers/library-gateway/`、`src/lib/ebooks/libraryAccess.ts`、`src/pages/ebooks/read.astro`；PDF由浏览器内嵌，EPUB按需加载并禁用书内脚本。
 - Worker书目准备：`npm run library:gateway:prepare -- --scope <已核验全量ID数组JSON>`，读取公开JSON和本地私有JSON，生成忽略于Git的服务端catalog；名单包含继续服务的旧书与获准新增书，部署前必须运行，缺少名单或完整私有书目时停止部署。
 - `categoryOnly` 仅为发现方式，不是访问锁；解锁后的受保护条目可进入全部藏书、分类及搜索。原有 `data/library/presentation-overrides.json` 只用于离线准备旧书目，日常以分类JSON为准。
+
+书室UI沿用根目录 `DESIGN.md`：上一页、页码、下一页紧邻居中，保留可直接点击的原生链接与焦点；不能分散至两侧或仅以输入框替代。阅读器占满视口，保留紧凑工具栏和脚本隔离，不将书籍正文预加载进书架。
 - Windows EPUB 元数据：`scripts/inspect-library-epub.ps1`。
 - 明确名单复制：`scripts/sync-r2-library.ps1`，默认 dry-run；`-Apply` 才上传。
 - 正式发布范围以分类JSON的 `draft`、`access` 和Worker书目为准，不能把旧盘点脚本的全库输出当成自动发布授权。

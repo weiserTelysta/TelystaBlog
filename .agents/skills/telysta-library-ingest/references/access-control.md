@@ -22,7 +22,7 @@ npm run library:access -- --id WEISERxxxxxxxxxxxx --access public
 
 工具先保留完整书目，再写公开占位；缺少私有资料时明确失败。不要手工把完整受保护资料留在公开JSON后直接提交。新书仍需核对作者、文件与公开范围，不按关键词自动发布整批。
 
-首页Hero头像进入 `/console/`。普通用户只浏览公开内容；正式用户、超级用户与管理员可访问受保护内容。管理员工作台 `/telysta-console/`；固定管理员邮箱为 `weiser@telysta.com`。账户会话由Console Worker和D1管理，书库通过Service Binding核对权限，原公共密码锁已经由账户权限替代。前端不保存密码或会话令牌。退出后清除私有书目并停止阅览，文件接口仍逐次鉴权。
+首页Hero头像进入 `/console/`。普通用户只浏览公开内容；正式用户、审核管理员（superuser）与超级管理员（admin）可访问受保护内容。只有固定超级管理员能提升角色，其他注册用户保持普通身份。专属管理工作台 `/telysta-console/`；固定超级管理员邮箱为 `weiser@telysta.com`。账户会话由Console Worker和D1管理，书库通过Service Binding核对权限，原公共密码锁已经由账户权限替代。前端不保存密码或会话令牌。退出后清除私有书目并停止阅览，文件接口仍逐次鉴权。
 
 账户部署与邮件Secret见 [docs/console.md](../../../../docs/console.md)。不得把SMTP密码、验证码、会话令牌写入书目、Skill或日志。受保护元信息依然不能进入公开Git、静态HTML或匿名索引。
 

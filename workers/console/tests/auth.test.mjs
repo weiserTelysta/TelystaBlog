@@ -147,3 +147,46 @@ test('按类型流式备份跨页完整导出并带完成标记，不混入其�
  const response=await request('/api/export?type=post','GET',undefined,admin.cookie),backup=await response.json();
  assert.equal(backup.documents.length,27);assert.equal(new Set(backup.documents.map(row=>row.id)).size,27);assert.equal(backup.completed,true);assert.equal(backup.binaryFilesIncluded,false);assert.ok(backup.documents.every(row=>row._cursor===undefined));
 });
+
+test('匿名直接访问专属管理入口可验证邮箱，预填身份不授权其他邮箱',async t=>{
+ const{mf,db,login}=await fixture(t),adminBase=origin+'/telysta-console';
+ assert.equal((await mf.dispatchFetch(adminBase+'/')).status,200);
+ const context=await(await mf.dispatchFetch(adminBase+'/api/auth/session')).json();
+ assert.equal(context.user,null);assert.equal(context.entry.email,'weiser@telysta.com');assert.equal(context.entry.admin,true);
+ const send=async email=>mf.dispatchFetch(adminBase+'/api/auth/code',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({email})});
+ assert.equal((await send('other@example.com')).status,403);
+ assert.equal((await send('weiser@telysta.com')).status,200);
+ const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1').bind('weiser@telysta.com').first();
+ const response=await mf.dispatchFetch(adminBase+'/api/auth/verify',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({email:'weiser@telysta.com',code})});
+ assert.equal(response.status,200);assert.equal((await response.json()).user.role,'admin');
+ const ordinary=await login('reader@example.com');
+ assert.equal((await mf.dispatchFetch(adminBase+'/',{headers:{Cookie:ordinary.cookie},redirect:'manual'})).status,302);
+});
+
+test('注册参数不能提升权限，只有固定超级管理员能授予正式或审核管理员身份',async t=>{
+ const{db,request,login}=await fixture(t),owner=await login('weiser@telysta.com'),reviewer=await login('moderator@example.com'),target=await login('new@example.com');
+ await request('/api/auth/code','POST',{email:'forged@example.com',role:'admin'});
+ const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1').bind('forged@example.com').first();
+ const forged=await(await request('/api/auth/verify','POST',{email:'forged@example.com',code,role:'admin',status:'active'})).json();assert.equal(forged.user.role,'viewer');
+ await db.prepare("UPDATE users SET role='superuser' WHERE id=?1").bind(reviewer.body.user.id).run();
+ for(const role of ['member','superuser','admin']){
+  assert.equal((await request('/api/users/'+target.body.user.id,'PATCH',{role,status:'active'},target.cookie)).status,403);
+  assert.equal((await request('/api/users/'+target.body.user.id,'PATCH',{role,status:'active'},reviewer.cookie)).status,403);
+ }
+ assert.equal((await request('/api/users/'+target.body.user.id,'PATCH',{role:'superuser',status:'active'},owner.cookie)).status,200);
+ assert.equal((await db.prepare('SELECT role FROM users WHERE id=?1').bind(target.body.user.id).first()).role,'superuser');
+});
+
+test('版本记录只向超级管理员开放，读取旧文不会覆盖当前草稿',async t=>{
+ const{db,request,login}=await fixture(t),admin=await login('weiser@telysta.com'),viewer=await login('reader@example.com'),id='post_WEISER012345abcdef';
+ const source='---\nuuid: 012345abcdef\n---\nOriginal';
+ await db.prepare("INSERT INTO documents(id,kind,title,source,updated_at,imported_at) VALUES(?1,'post','Title',?2,0,0)").bind(id,source).run();
+ await request('/api/documents/'+id,'PUT',{title:'Edited',source:source+'\nNew',access:'public',revision:1},admin.cookie);
+ const endpoint='/api/documents/'+id+'/revisions';
+ assert.equal((await request(endpoint,'GET',undefined,viewer.cookie)).status,403);
+ const list=await(await request(endpoint,'GET',undefined,admin.cookie)).json();assert.equal(list.currentRevision,2);assert.equal(list.records.length,1);assert.equal(list.records[0].source,undefined);
+ const old=await(await request(endpoint+'/1','GET',undefined,admin.cookie)).json();assert.equal(old.source,source);
+ assert.equal((await request(endpoint+'/99','GET',undefined,admin.cookie)).status,404);
+ assert.equal((await request(endpoint+'?before=not-a-number','GET',undefined,admin.cookie)).status,400);
+ assert.equal((await db.prepare('SELECT revision FROM documents WHERE id=?1').bind(id).first()).revision,2);
+});

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-15T00:00:00+08:00",
+  "title": "Telysta Design System",
+  "extensions": {
+    "motion": [
+      {
+        "name": "fast",
+        "value": "140ms",
+        "purpose": "颜色与焦点状态"
+      },
+      {
+        "name": "medium",
+        "value": "220ms",
+        "purpose": "原位淡入与展开"
+      },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "已有缓动"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "640px"
+      },
+      {
+        "name": "reader-compact",
+        "value": "760px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "description": "从当前实现提取",
+      "html": "<button>登录</button>",
+      "css": "button{background:rgba(156,199,232,.055);color:#d8dee9;border:1px solid rgba(156,199,232,.38);border-radius:4px;padding:11px 16px;min-height:44px}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "description": "从当前实现提取",
+      "html": "<button>返回列表</button>",
+      "css": "button{background:transparent;color:#d8dee9;border:1px solid rgba(156,199,232,.16);border-radius:4px;padding:9px 16px;min-height:44px}"
+    },
+    {
+      "name": "Email field",
+      "kind": "input",
+      "description": "从当前实现提取",
+      "html": "<label>邮箱 <input type=\"email\" placeholder=\"you@example.com\"></label>",
+      "css": "input{background:#0b0f17;color:#d8dee9;border:1px solid rgba(156,199,232,.5);border-radius:4px;padding:11px 13px}"
+    },
+    {
+      "name": "Site navigation",
+      "kind": "nav",
+      "description": "从当前实现提取",
+      "html": "<a href=\"/\">Back to site</a>",
+      "css": "a{color:#9cc7e8;font:520 .84rem Cinzel,serif;letter-spacing:.055em;text-decoration:none}"
+    },
+    {
+      "name": "Pagination",
+      "kind": "nav",
+      "description": "从当前实现提取",
+      "html": "<nav><a href=\"?page=1\">上一页</a><a href=\"?page=1\">1</a><span aria-current=\"page\">2</span><a href=\"?page=3\">3</a><a href=\"?page=3\">下一页</a></nav>",
+      "css": "nav{display:flex;gap:4px;justify-content:center;align-items:center}nav>*{display:grid;place-items:center;min-width:44px;min-height:44px;color:#9cc7e8}"
+    }
+  ],
+  "narrative": {
+    "northStar": "安静、成熟、私人的写作与档案空间",
+    "overview": "保留现有视觉语言，阅读与操作优先。",
+    "rules": [
+      {
+        "name": "紧凑分页",
+        "body": "上一页、数字页码、下一页紧邻居中，保持直接点击与可见焦点。",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "使用共享排版变量",
+      "支持移动端和键盘"
+    ],
+    "donts": [
+      "未经授权重新设计",
+      "开启高权限Live或自动修改"
+    ]
+  }
+}

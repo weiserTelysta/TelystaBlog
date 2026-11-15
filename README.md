@@ -22,6 +22,7 @@
 | --- | --- |
 | 用后台编辑网站 | [后台使用说明](docs/local-admin.md) |
 | 线上账户、角色、Session与备份 | [线上管理](docs/console.md) |
+| 统一字体、页面与交互风格 | [设计规范](DESIGN.md) · [设计守护 Skill](.agents/skills/telysta-design-guardian/SKILL.md) |
 | Cloudflare原生构建与搜索收录 | [Cloudflare构建](docs/cloudflare-builds.md) · [搜索发现](docs/search-discovery.md) |
 | 手写 Markdown、草稿、日期、系列、图片 | [文章写作](docs/article-authoring.md) |
 | 用 `[[Mirelle]]` 等别名关联文章 | [WikiLink](docs/wikilinks-2026-09-21.md) |

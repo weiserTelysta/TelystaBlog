@@ -19,6 +19,7 @@ type Props = {
 	starfield?: boolean;
 	starfieldVariant?: 'immersive' | 'subtle';
 	noIndex?: boolean;
+	readingMode?: boolean;
 };
 
 const {
@@ -30,6 +31,7 @@ const {
 	starfield = true,
 	starfieldVariant = 'immersive',
 	noIndex = false,
+	readingMode = false,
 } = Astro.props;
 ---
 
@@ -51,15 +53,15 @@ const {
 		<ShareMetadata title={title} description={description} image={shareImage} imageAlt={shareImageAlt} article={article} />
 		<TabIdentity />
 	</head>
-	<body>
+	<body class:list={{ 'is-reading': readingMode }}>
 		{starfield && <StarfieldBackground client:idle variant={starfieldVariant} />}
-		<SiteHeader />
-		<div class="site-shell">
-			<slot />
-		</div>
-		<SiteFooter />
-		<PageScrollIndicator client:idle />
-		<BackToTop client:idle />
+		{readingMode ? <slot /> : <>
+			<SiteHeader />
+			<div class="site-shell"><slot /></div>
+			<SiteFooter />
+			<PageScrollIndicator client:idle />
+			<BackToTop client:idle />
+		</>}
 		<script>
 			import { initLibraryAccess } from '../lib/ebooks/libraryAccess';
 			initLibraryAccess();

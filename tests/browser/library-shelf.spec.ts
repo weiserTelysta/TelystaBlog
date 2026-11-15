@@ -139,3 +139,16 @@ for (const width of [390, 1440]) {
 		await page.screenshot({ path: testInfo.outputPath(`detail-refined-${width}.png`) });
 	});
 }
+
+for(const width of [320,1440])test('分页操作紧邻居中，可直接点数字切页：'+width+'px',async({page})=>{
+ await page.setViewportSize({width,height:1000});await page.goto('/ebooks/');
+ const pager=page.locator('.ebook-pagination__links');await pager.scrollIntoViewIfNeeded();
+ const rect=await pager.evaluate(node=>{const prev=node.children[0].getBoundingClientRect(),numbers=node.children[1].getBoundingClientRect(),next=node.children[2].getBoundingClientRect();return{prevGap:numbers.left-prev.right,nextGap:next.left-numbers.right,sameRow:Math.abs(prev.top-next.top)<4,width:document.documentElement.scrollWidth,viewport:innerWidth}});
+ expect(rect.prevGap).toBeGreaterThanOrEqual(0);expect(rect.prevGap).toBeLessThan(12);expect(rect.nextGap).toBeLessThan(12);expect(rect.sameRow).toBe(true);expect(rect.width).toBeLessThanOrEqual(rect.viewport);
+ await page.getByRole('link',{name:'第 2 页',exact:true}).click();await expect(page).toHaveURL(/\/ebooks\/page\/2\//);await expect(page.locator('[aria-current="page"][aria-label="第 2 页"]')).toBeVisible();
+ await page.goto('/ebooks/page/13/');
+ const middle=await page.locator('.ebook-pagination__links').evaluate(node=>{const first=node.children[0].getBoundingClientRect(),last=node.children[2].getBoundingClientRect();return{row:Math.abs(first.top-last.top)<4,overflow:document.documentElement.scrollWidth>innerWidth}});
+ expect(middle.row).toBe(true);expect(middle.overflow).toBe(false);
+ await page.getByRole('link',{name:'第 12 页',exact:true}).click();await expect(page).toHaveURL(/\/ebooks\/page\/12\//);
+
+});

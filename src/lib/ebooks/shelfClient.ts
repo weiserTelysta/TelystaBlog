@@ -69,6 +69,12 @@ export function initEbookShelf() {
 		return link;
 	}
 	function renderPager(page: number, pageCount: number, total: number) {
+		function control(node: HTMLElement, label: string, previous: boolean) {
+			node.setAttribute('aria-label', label);
+			const arrow = element('span', '', previous ? '←' : '→'); arrow.setAttribute('aria-hidden', 'true');
+			const text = element('span', 'ebook-page-control-label', previous ? '上一页' : '下一页');
+			node.replaceChildren(...(previous ? [arrow, text] : [text, arrow])); return node;
+		}
 		currentPage = page; currentPageCount = pageCount;
 		const links = element('div', 'ebook-pagination__links'), numbers = element('div', 'ebook-pagination__numbers');
 		const previous = page > 1 ? pageLink(page - 1, '← 上一页') : element('span', '', '← 上一页');
@@ -80,7 +86,7 @@ export function initEbookShelf() {
 		}
 		const next = page < pageCount ? pageLink(page + 1, '下一页 →') : element('span', '', '下一页 →');
 		if (page === pageCount) next.setAttribute('aria-disabled', 'true'); else next.setAttribute('rel', 'next');
-		links.append(previous, numbers, next);
+		links.append(control(previous, '← 上一页', true), numbers, control(next, '下一页 →', false));
 		const meta = element('div', 'ebook-pagination__meta'); meta.append(element('span', '', `${page} / ${pageCount} · 共 ${total} 份藏书`));
 		const jump = element('form', 'ebook-page-jump'); jump.dataset.pageJump = '';
 		const label = element('label', '', '跳转至 '), input = element('input'); input.type = 'number'; input.name = 'page'; input.min = '1'; input.max = String(pageCount); input.value = String(page); input.required = true; input.setAttribute('aria-label', '跳转页码');
