@@ -8,22 +8,22 @@
  <title>账户空间 · Telysta</title>
  <link rel="preload" href="./cinzel.woff2" as="font" type="font/woff2" crossorigin>
  <link rel="stylesheet" href="./style.css">
+ <link rel="stylesheet" href="./app.css">
  <script src="./app.js" type="module"></script>
 </head>
 <body>
- <a class="skip-link" href="#main">Skip to content</a>
+ <div id="account-starfield" class="starfield" aria-hidden="true"><canvas class="starfield__canvas"></canvas></div>
+ <a class="skip-link" href="#main">跳至主要内容</a>
  <header class="site-header">
   <a class="site-header__brand" href="/" translate="no">Weiser’s Melancholy</a>
-  <a class="site-header__nav" href="/">Back to site <span aria-hidden="true">↗</span></a>
+  <a class="site-header__nav" href="/" lang="en">Back to site <span aria-hidden="true">↗</span></a>
  </header>
  <main id="main">
   <section id="login" class="login-panel" aria-labelledby="login-title" hidden>
    <div class="login-heading">
-    <p class="eyebrow" translate="no">TELYSTA · PRIVATE SPACE</p>
-    <h1 id="login-title">欢迎回来。</h1>
-    <p id="login-description" class="muted">用一封邮件，回到你的书桌。</p>
+    <h1 id="login-title">登录</h1>
    </div>
-   <form id="login-form">
+   <form id="login-form" method="post" action="./api/auth/verify">
     <div class="field">
      <label for="email">邮箱</label>
      <div class="email-field">
@@ -32,17 +32,17 @@
      </div>
     </div>
     <div class="field">
-     <div class="field-caption"><label for="code">六位验证码</label><span>5 分钟内有效</span></div>
-     <input id="code" name="code" class="code-input" inputmode="numeric" autocomplete="one-time-code" spellcheck="false" pattern="[0-9]{6}" maxlength="6" placeholder="000000" aria-describedby="login-status" required>
+     <div class="field-caption"><label for="code">六位验证码</label><span id="code-expiry">5 分钟内有效</span></div>
+     <input id="code" name="code" class="code-input" inputmode="numeric" autocomplete="one-time-code" spellcheck="false" pattern="[0-9]{6}" maxlength="6" placeholder="000000" aria-describedby="code-expiry login-status" required>
     </div>
     <button id="sign-in" type="submit" class="primary login-submit"><span>登录</span><span aria-hidden="true">→</span></button>
    </form>
    <p role="status" id="login-status" aria-live="polite"></p>
    <p id="signup-note" class="login-footnote">第一次来？验证邮箱后，即可建立普通账户。</p>
   </section>
-  <section id="account" hidden>
-   <div class="account-head">
-    <div><p class="eyebrow" translate="no">TELYSTA CONSOLE</p><h1>账户空间</h1><p id="identity" class="muted"></p></div>
+  <section id="account" aria-label="账户管理" hidden>
+   <div class="account-tools">
+    <p id="identity" class="muted"></p>
     <button id="logout" class="quiet-button" type="button">退出登录</button>
    </div>
    <nav id="navigation" aria-label="账户功能"></nav>
@@ -50,6 +50,7 @@
    <section id="workspace" aria-label="当前管理功能"></section>
   </section>
   <p id="loading" class="loading-state" role="status">正在读取账户…</p>
+  <noscript><p class="loading-state">账户登录需要 JavaScript。请启用后刷新，或<a href="/">返回网站</a>。</p></noscript>
  </main>
 </body>
 </html>

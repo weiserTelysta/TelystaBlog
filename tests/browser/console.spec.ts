@@ -32,6 +32,14 @@ for(const width of [320,768,1440])test('专属管理入口预填邮箱、保持�
   await page.goto('https://telysta.com/telysta-console/');
   await expect(page).toHaveURL('https://telysta.com/telysta-console/');
   await expect(page.locator('#login-title')).toHaveText('管理员验证');await expect(page.locator('#email')).toHaveValue('weiser@telysta.com');await expect(page.locator('#email')).toHaveAttribute('readonly','');
+  await expect(page.locator('#login .eyebrow')).toHaveCount(0);
+  await expect(page.locator('#login-description')).toHaveCount(0);
+  expect(await page.locator('#login-title').evaluate(node=>parseFloat(getComputedStyle(node).fontSize))).toBeLessThanOrEqual(24);
+  await expect(page.locator('#account-starfield')).toHaveAttribute('aria-hidden','true');
+  expect(await page.locator('#account-starfield canvas').evaluate((canvas:HTMLCanvasElement)=>{
+   const context=canvas.getContext('2d')!;
+   return canvas.width>0 && context.getImageData(0,0,canvas.width,canvas.height).data.some((byte,index)=>index%4===3&&byte>0);
+  })).toBe(true);
   await expect(page.getByRole('link',{name:/Back to site/})).toHaveAttribute('href','/');
   await expect(page.getByText('返回书室',{exact:true})).toHaveCount(0);
   const geometry=await page.evaluate(async()=>{await document.fonts.ready;const email=document.querySelector('#email')!.getBoundingClientRect(),send=document.querySelector('#send-code')!.getBoundingClientRect();return{overflow:document.documentElement.scrollWidth>innerWidth,sameRow:Math.abs(email.top-send.top)<3,sendHeight:send.height,fontLoaded:document.fonts.check('14px Cinzel')}});

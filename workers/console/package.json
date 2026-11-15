@@ -13,7 +13,8 @@
   "devDependencies": {
     "subset-font": "2.9.0",
     "typescript": "6.0.3",
-    "wrangler": "4.162.0"
+    "wrangler": "4.162.0",
+    "esbuild": "0.28.2"
   },
   "dependencies": {
     "yaml": "2.9.0"

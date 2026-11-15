@@ -1,8 +1,10 @@
 import fs from 'node:fs/promises';
 import subsetFont from 'subset-font';
+import { build } from 'esbuild';
 const directory=new URL('../.assets/',import.meta.url);
 await fs.mkdir(directory,{recursive:true});
-for(const name of ['index.html','style.css','app.js'])await fs.copyFile(new URL('../public/'+name,import.meta.url),new URL(name,directory));
+for(const name of ['index.html','style.css'])await fs.copyFile(new URL('../public/'+name,import.meta.url),new URL(name,directory));
+await build({entryPoints:[new URL('../client/app.js',import.meta.url).pathname],outfile:new URL('app.js',directory).pathname,bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true});
 await fs.copyFile(new URL('../../../src/styles/tokens.css',import.meta.url),new URL('tokens.css',directory));
 const text=Array.from({length:95},(_,i)=>String.fromCodePoint(32+i)).join('')+'’“”–—';
 const source=await fs.readFile(new URL('../../../src/assets/fonts/Cinzel-VariableFont_wght.ttf',import.meta.url));

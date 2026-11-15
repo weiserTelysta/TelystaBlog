@@ -59,12 +59,12 @@
         },
         {
           "id": "WEISER476adb6b0809",
-          "title": "中华经典藏书",
+          "title": "中华经典藏书（下册）",
           "authors": [
             "中华书局"
           ],
           "authorStatus": "unreviewed",
-          "description": "《中华经典藏书》；中华书局。中国丛书，EPUB 格式。",
+          "description": "中华书局《中华经典藏书》升级版下册，收录40册，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",
@@ -79,12 +79,12 @@
         },
         {
           "id": "WEISERdf233556fd7d",
-          "title": "中华经典藏书",
+          "title": "中华经典藏书（上册）",
           "authors": [
             "中华书局"
           ],
           "authorStatus": "unreviewed",
-          "description": "《中华经典藏书》；中华书局。中国丛书，EPUB 格式。",
+          "description": "中华书局《中华经典藏书》升级版上册，收录32册，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",

@@ -21,6 +21,7 @@ Protect Telysta as a quiet personal writing archive. Make the smallest change th
 ## Guardrails
 
 - Keep writing and navigation more prominent than decoration.
+- Do not default to an English eyebrow, large heading, and Chinese tagline. Login needs a compact task heading and form. The console is an operation surface; apply its full-viewport layout rules rather than the public archive hero. Reuse the shared starfield runtime on the account page.
 - Keep the dark blue-black canvas, low saturation, thin glass, soft borders, and generous empty space.
 - Use moon blue and dusty pink as limited identity or state accents, not large filled surfaces.
 - Keep ACG imagery as a quiet identity signal. Do not turn the site into a game menu, neon interface, marketplace, or heavy gallery.

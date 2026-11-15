@@ -68,9 +68,7 @@ export default function ResourceExplorer({ resources }: ResourceExplorerProps) {
 	return (
 		<section className="resource-explorer" aria-label={RESOURCE_PAGE_CONFIG.hero.title}>
 			<header className="resource-hero">
-				<p className="resource-hero__eyebrow">{RESOURCE_PAGE_CONFIG.hero.eyebrow}</p>
-				<h1 id="resource-page-title">{RESOURCE_PAGE_CONFIG.hero.title}</h1>
-				<p>{RESOURCE_PAGE_CONFIG.hero.description}</p>
+				<h1 id="resource-page-title" className="resource-page-name">{RESOURCE_PAGE_CONFIG.hero.title}</h1>
 				{visibleTypes.length > 1 && <nav className="resource-filters" aria-label={RESOURCE_PAGE_CONFIG.filter.ariaLabel}>
 					<FilterButton active={activeFilter === 'all'} label={RESOURCE_PAGE_CONFIG.filter.allLabel} onClick={() => selectFilter('all')} />
 					{visibleTypes.map((type) => (

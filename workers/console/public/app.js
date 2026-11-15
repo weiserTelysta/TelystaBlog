@@ -11,8 +11,7 @@ function loginMode() {
     if (!adminEntry)
         return;
     $('#login-title').textContent = '管理员验证';
-    $('#login-description').textContent = '验证专属邮箱，进入你的管理空间。';
-    $('#signup-note').textContent = '此入口仅供超级管理员使用，验证后保留最高管理权限。';
+    $('#signup-note').textContent = '请使用站主邮箱接收验证码。';
 }
 loginMode();
 const tell = text => { $('#notice').textContent = text; };
