@@ -1,0 +1,14 @@
+---
+type Props = { id: string };
+const { id } = Astro.props;
+---
+<section data-library-book={id}>
+	<h1 class="ebook-locked-title" data-book-lock-title>受保护书籍</h1>
+	<p data-book-state>这份书目暂未向访客开放。</p>
+	<a class="library-inline-button" href="/" data-library-access-help>返回首页</a>
+	<div data-book-content hidden></div>
+</section>
+<script>
+	import { initProtectedBookView } from '../../lib/ebooks/protectedBookClient';
+	initProtectedBookView();
+</script>

@@ -1,0 +1,1444 @@
+{
+  "category": "T",
+  "booklists": [
+    {
+      "clcCode": "TN",
+      "clcName": "无线电电子学、电信技术",
+      "books": [
+        {
+          "id": "WEISERf0cbe00dbf4d",
+          "title": "高频技术-中英文",
+          "authors": [
+            "Matjaž Vidmar"
+          ],
+          "authorStatus": "verified",
+          "description": "《高频技术-中英文》；Matjaž Vidmar。无线电电子学、电信技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E9%AB%98%E9%A2%91%E6%8A%80%E6%9C%AF-%E4%B8%AD%E8%8B%B1%E6%96%87.pdf",
+              "bytes": 64217991
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c7dd0e060abc77ff1e227d80d5c1fc77c790ccfb97f5466dc6b4612214c196a5.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "TP3",
+      "clcName": "计算机技术",
+      "books": [
+        {
+          "id": "WEISERe66c9de3d455",
+          "title": "程序员修炼之道：从小工到专家",
+          "authors": [
+            "Andrew Hunt",
+            "David Thomas"
+          ],
+          "authorStatus": "verified",
+          "description": "《程序员修炼之道：从小工到专家》；Andrew Hunt、David Thomas。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93%3A%E4%BB%8E%E5%B0%8F%E5%B7%A5%E5%88%B0%E4%B8%93%E5%AE%B6.pdf",
+              "bytes": 26251735
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/50defb05d1c5cc556570d7a992e3caf303c21e2b971f24cfdb65ff0cd78405d1.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISEReb1374dda8d5",
+          "title": "代码大全中文第二版_扫描版_20.2M",
+          "authors": [
+            "Steve McConnell"
+          ],
+          "authorStatus": "verified",
+          "description": "《代码大全中文第二版_扫描版_20.2M》；Steve McConnell。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A8%E4%B8%AD%E6%96%87%E7%AC%AC%E4%BA%8C%E7%89%88_%E6%89%AB%E6%8F%8F%E7%89%88_20.2M.pdf",
+              "bytes": 21238131
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2fc19551fd17d1476909416bf8934aa692c7847dcad2e9ddfce36b2e2a9556f7.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER6792e99a8a8e",
+          "title": "点石成金",
+          "authors": [
+            "Steve Krug"
+          ],
+          "authorStatus": "verified",
+          "description": "《点石成金》；Steve Krug。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%82%B9%E7%9F%B3%E6%88%90%E9%87%91.pdf",
+              "bytes": 29395755
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/41d3d9eb1564faf7e5499eef11562fd61ef8e01c3527deb54f31aacd26f3723e.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERdb978acf18da",
+          "title": "动手学深度学习",
+          "authors": [
+            "Aston Zhang",
+            "Zachary C. Lipton",
+            "Mu Li",
+            "Alexander J. Smola"
+          ],
+          "authorStatus": "verified",
+          "description": "《动手学深度学习》；Aston Zhang、Zachary C. Lipton、Mu Li、Alexander J. Smola。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.pdf",
+              "bytes": 30878156
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c8ccb55eccdbc93fd1b5f9d0b1f8b2334dfd82e378f721b612f3dfdd52734076.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER40d0161b8b0e",
+          "title": "界面设计模式 第2版",
+          "authors": [
+            "Jenifer Tidwell"
+          ],
+          "authorStatus": "verified",
+          "description": "《界面设计模式 第2版》；Jenifer Tidwell。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%20%E7%AC%AC2%E7%89%88.pdf",
+              "bytes": 144932491
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d3ec95ddeaabc4a57c6e0710b685e2cd8ed720db7dfed49da2e107ed448f13bb.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER460dc2a00402",
+          "title": "浪潮之巅第4版",
+          "authors": [
+            "吴军"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《浪潮之巅第4版》；吴军。计算机技术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E6%B5%AA%E6%BD%AE%E4%B9%8B%E5%B7%85%E7%AC%AC4%E7%89%88.epub",
+              "bytes": 5102190
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6d2234d10280da370a93eb2953f38ad453aa7ca09ffc6ef6ab013e8239ade54c.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER2279d9c51f37",
+          "title": "妙趣横生的游戏制作之旅",
+          "authors": [
+            "【美】理查德·雷马卡德 著；腾讯游戏；刘子健；单晖；江希明 审校"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《妙趣横生的游戏制作之旅》；【美】理查德·雷马卡德 著；腾讯游戏；刘子健；单晖；江希明 审校。计算机技术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E5%A6%99%E8%B6%A3%E6%A8%AA%E7%94%9F%E7%9A%84%E6%B8%B8%E6%88%8F%E5%88%B6%E4%BD%9C%E4%B9%8B%E6%97%85.epub",
+              "bytes": 18201282
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/61dc3e65695cac143f69be1efce6a1d1847be68d1f4f9c732ea201a36999578c.webp",
+          "language": "zh",
+          "publisher": "电子工业出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERc6c60950f413",
+          "title": "人工智能：一种现代的方法",
+          "authors": [
+            "Stuart J.Russell , Peter Norvig"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《人工智能：一种现代的方法》；Stuart J.Russell , Peter Norvig。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%3A%E4%B8%80%E7%A7%8D%E7%8E%B0%E4%BB%A3%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88Artificial%20Intelligence%20a%20Modern%20Approach%EF%BC%89%E7%AC%AC3%E7%89%88%20%28Stuart%20J.Russell%20%2C%20Peter%20Norvig%29.pdf",
+              "bytes": 172832590
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4a4a6c25a3d8c710927697e6267915d8a1aa3310edfd890e141dc3da11d3b3aa.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER1c9e042cc3bc",
+          "title": "人月神话 (Frederick P. Brooks)",
+          "authors": [
+            "Frederick P. Brooks"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《人月神话 (Frederick P. Brooks)》；Frederick P. Brooks。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E4%BA%BA%E6%9C%88%E7%A5%9E%E8%AF%9D%20%28Frederick%20P.%20Brooks%29.pdf",
+              "bytes": 2664053
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/69e36c4917f5d04e1e46c22b6ccafbf9d5805612b7328a1935bfd3c83e91795f.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER104e11dfa1e9",
+          "title": "数据密集型应用系统设计",
+          "authors": [
+            "Martin Kleppmann"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《数据密集型应用系统设计》；Martin Kleppmann。计算机技术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%AF%86%E9%9B%86%E5%9E%8B%E5%BA%94%E7%94%A8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1.epub",
+              "bytes": 8042644
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a24e906eddc83a43fd0e3c8e2ac9e67ff4ce0fbdef3d66c643d3463f0fe52bee.webp",
+          "language": "zh",
+          "publisher": "GitBook",
+          "access": "public"
+        },
+        {
+          "id": "WEISER8b75cf977568",
+          "title": "淘宝技术这十年",
+          "authors": [
+            "子柳"
+          ],
+          "authorStatus": "verified",
+          "description": "《淘宝技术这十年》；子柳。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E6%B7%98%E5%AE%9D%E6%8A%80%E6%9C%AF%E8%BF%99%E5%8D%81%E5%B9%B4.pdf",
+              "bytes": 15346788
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/3ce5fcf5706d948976268cf6b72f7670217f182d887908b5371ec34145ebf58f.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER8a2286c602b7",
+          "title": "体验引擎：游戏设计全景探秘",
+          "authors": [
+            "秦彬"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《体验引擎：游戏设计全景探秘》；秦彬。计算机技术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E4%BD%93%E9%AA%8C%E5%BC%95%E6%93%8E%3A%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E5%85%A8%E6%99%AF%E6%8E%A2%E7%A7%98.epub",
+              "bytes": 1870926
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d3caa0d6918c3fa4fd0089e3a453990febcd469dc73d99727cb06568cf3c6d7d.webp",
+          "language": "zh",
+          "publisher": "电子工业出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERad7a10879dd1",
+          "title": "统计学习方法",
+          "authors": [
+            "李航"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《统计学习方法》；李航。计算机技术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95.epub",
+              "bytes": 5279022
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/97323b55167b32477b0a80df12a1d765fd5cf9b8bb5ed13c38a4aa48a6a42720.webp",
+          "language": "zh",
+          "publisher": "清华大学出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER3dfd1ad58941",
+          "title": "屠龙记 创造游戏世界的艺术 (Robert Denton Bryant（罗伯特·丹顿·布莱恩特）)",
+          "authors": [
+            "Robert Denton Bryant（罗伯特·丹顿·布莱恩特）"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《屠龙记 创造游戏世界的艺术 (Robert Denton Bryant（罗伯特·丹顿·布莱恩特）)》；Robert Denton Bryant（罗伯特·丹顿·布莱恩特）。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E5%B1%A0%E9%BE%99%E8%AE%B0%20%E5%88%9B%E9%80%A0%E6%B8%B8%E6%88%8F%E4%B8%96%E7%95%8C%E7%9A%84%E8%89%BA%E6%9C%AF%20%28Robert%20Denton%20Bryant%EF%BC%88%E7%BD%97%E4%BC%AF%E7%89%B9%C2%B7%E4%B8%B9%E9%A1%BF%C2%B7%E5%B8%83%E8%8E%B1%E6%81%A9%E7%89%B9%EF%BC%89%29.pdf",
+              "bytes": 24976918
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/7d29a23615ef0db3dfd2314311adfd320d98e223cae0bd4ab057e0bd79751c22.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER09a0ca525a89",
+          "title": "游戏情感设计 如何触动玩家的心灵 (Ketherine Isbister)",
+          "authors": [
+            "Ketherine Isbister"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《游戏情感设计 如何触动玩家的心灵 (Ketherine Isbister)》；Ketherine Isbister。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E6%B8%B8%E6%88%8F%E6%83%85%E6%84%9F%E8%AE%BE%E8%AE%A1%20%E5%A6%82%E4%BD%95%E8%A7%A6%E5%8A%A8%E7%8E%A9%E5%AE%B6%E7%9A%84%E5%BF%83%E7%81%B5%20%28Ketherine%20Isbister%29.pdf",
+              "bytes": 22099882
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/7ba86721971206b60a7e5843bb222ca81634a48fac3c8b5e49a22e8c4f9b21ad.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER45fbdfd933cd",
+          "title": "游戏设计的236个技巧 游戏机制 关卡设计和镜头窍门 (图灵程序设计丛书)",
+          "authors": [
+            "图灵程序设计丛书"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《游戏设计的236个技巧 游戏机制 关卡设计和镜头窍门 (图灵程序设计丛书)》；图灵程序设计丛书。计算机技术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E7%9A%84236%E4%B8%AA%E6%8A%80%E5%B7%A7%20%E6%B8%B8%E6%88%8F%E6%9C%BA%E5%88%B6%20%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E5%92%8C%E9%95%9C%E5%A4%B4%E7%AA%8D%E9%97%A8%20%28%E5%9B%BE%E7%81%B5%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%9B%E4%B9%A6%29.epub",
+              "bytes": 23392040
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4f3a9c09dc250dcde07591b5e3d072a5a851d02e4d86109055701036766c6142.webp",
+          "language": "zh",
+          "publisher": "人民邮电出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER4b3db864cac0",
+          "title": "游戏设计艺术 第3版",
+          "authors": [
+            "Jesse Schell"
+          ],
+          "authorStatus": "verified",
+          "description": "《游戏设计艺术 第3版》；Jesse Schell。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E8%89%BA%E6%9C%AF%20%E7%AC%AC3%E7%89%88.pdf",
+              "bytes": 114337016
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/aa5bcead9e8d54419e65b572bf4daa5ec2bcb12d521ad7d1fcda9b3790ddf002.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER70edc2e13f57",
+          "title": "重构-改善既有代码的设计[再版.完整书签].(Refactoring.Improving.the.Design.of.Existing.Code).Martin.Fowler",
+          "authors": [
+            "Martin Fowler"
+          ],
+          "authorStatus": "verified",
+          "description": "《重构-改善既有代码的设计[再版.完整书签].(Refactoring.Improving.the.Design.of.Existing.Code).Martin.Fowler》；Martin Fowler。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E9%87%8D%E6%9E%84-%E6%94%B9%E5%96%84%E6%97%A2%E6%9C%89%E4%BB%A3%E7%A0%81%E7%9A%84%E8%AE%BE%E8%AE%A1%5B%E5%86%8D%E7%89%88.%E5%AE%8C%E6%95%B4%E4%B9%A6%E7%AD%BE%5D.%28Refactoring.Improving.the.Design.of.Existing.Code%29.Martin.Fowler.pdf",
+              "bytes": 32886489
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c5a33707b3a3f0071e02e0f955bb38ec45f856c741a2e19d268b55e1f5e7b401.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa14497e4d60c",
+          "title": "DOOM启示录",
+          "authors": [
+            "David Kushner"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《DOOM启示录》；David Kushner。计算机技术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/DOOM%E5%90%AF%E7%A4%BA%E5%BD%95.epub",
+              "bytes": 403659
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/9d2195c1ed97981127a69a6e2e8b5e79d4bb2adceb39674b13efae2f375cd00f.webp",
+          "language": "zh-CN",
+          "publisher": "电子工业出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER8beb8b01dcab",
+          "title": "Lost in a Good Game",
+          "authors": [
+            "Pete Etchells"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Lost in a Good Game》；Pete Etchells。计算机技术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/Lost%20in%20a%20Good%20Game.epub",
+              "bytes": 536086
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1ac95cd0bbf742fe8518c8edb4b22f06e39199afe20255bb387d0ee12334b26b.webp",
+          "language": "en",
+          "publisher": "Icon Books Ltd",
+          "access": "public"
+        },
+        {
+          "id": "WEISER3e99d6484106",
+          "title": "Python深度学习实战：75个有关神经网络建模、强化学习与迁移学习的解决方案",
+          "authors": [
+            "英德拉·丹·巴克（Indra den Bakker）"
+          ],
+          "authorStatus": "verified",
+          "description": "《Python深度学习实战：75个有关神经网络建模、强化学习与迁移学习的解决方案》；英德拉·丹·巴克（Indra den Bakker）。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/Python_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98%3A75%E4%B8%AA%E6%9C%89%E5%85%B3%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%BB%BA%E6%A8%A1%E3%80%81%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%81%E7%A7%BB%20%28Python_%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AE%9E%E6%88%98%3A75%E4%B8%AA%E6%9C%89%E5%85%B3%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%BB%BA%E6%A8%A1%E3%80%81%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%81%E7%A7%BB%29.pdf",
+              "bytes": 45391019
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ea2f4541d4cc299ccde2fd534adab6a5873d373f4b4a197151c5566b39d57b8c.webp",
+          "translator": "程国建、周冠武",
+          "access": "public"
+        },
+        {
+          "id": "WEISER60c8de6a6b5d",
+          "title": "Python网络爬虫权威指南（第 2 版） (米切尔)",
+          "authors": [
+            "米切尔"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Python网络爬虫权威指南（第 2 版） (米切尔)》；米切尔。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/Python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%AC%202%20%E7%89%88%EF%BC%89%20%28%E7%B1%B3%E5%88%87%E5%B0%94%29.pdf",
+              "bytes": 10120355
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f3ee6bfc862814f8ae6cb7e8d80e8a7c05566ad1785940f4deda1c12892f685f.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERc6df5ef9c14f",
+          "title": "Refactoring UI (Adam Wathan, Steve Schoger)",
+          "authors": [
+            "Adam Wathan, Steve Schoger"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Refactoring UI (Adam Wathan, Steve Schoger)》；Adam Wathan, Steve Schoger。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/Refactoring%20UI%20%28Adam%20Wathan%2C%20Steve%20Schoger%29.pdf",
+              "bytes": 55665277
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b5a1c35f587fe0b22a00fbf613e5dac7a052d30c98a82f0be7912f699908215c.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER71787114f0aa",
+          "title": "Rust 程序设计（第2版）",
+          "authors": [
+            "[美] 吉姆•布兰迪（Jim Blandy） 贾森•奥伦多夫（Jason Orendorff） 莉奥诺拉• F. S. 廷德尔（Leonora F. S. Tindall）"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Rust 程序设计（第2版）》；[美] 吉姆•布兰迪（Jim Blandy） 贾森•奥伦多夫（Jason Orendorff） 莉奥诺拉• F. S. 廷德尔（Leonora F. S. Tindall）。计算机技术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/Rust%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89.epub",
+              "bytes": 4536045
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/75b889d96c0fb7f94aacf3653250f96cf6cf6321ee849929b5a89ce492e9f659.webp",
+          "language": "zh",
+          "publisher": "人民邮电出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER948da0e49c01",
+          "title": "Rust 程序设计语言 简体中文版",
+          "authors": [
+            "Steve Klabnik",
+            "Carol Nichols",
+            "Chris Krycho"
+          ],
+          "authorStatus": "verified",
+          "description": "《Rust 程序设计语言 简体中文版》；Steve Klabnik、Carol Nichols、Chris Krycho。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/Rust%20%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%20%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88.pdf",
+              "bytes": 9522183
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/26f422e00cbfa0daf15855410dda2c858f36bae0629a7279a1a4a8baf7ea1cc6.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa2022ed7db45",
+          "title": "The Art of Multiprocessor Programming (Maurice Herlihy, Nir Shavit etc.)",
+          "authors": [
+            "Maurice Herlihy, Nir Shavit etc."
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《The Art of Multiprocessor Programming (Maurice Herlihy, Nir Shavit etc.)》；Maurice Herlihy, Nir Shavit etc.。计算机技术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/The%20Art%20of%20Multiprocessor%20Programming%20%28Maurice%20Herlihy%2C%20Nir%20Shavit%20etc.%29.pdf",
+              "bytes": 11738741
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f9f490c7a312eeda119bdbdf84382a307c556042c9e5a7b26180dc0e0815ebfc.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER55ef39683fc5",
+          "title": "Virtual Cities An Atlas & Exploration of Video Game Cities (9781682686102)",
+          "authors": [
+            "Konstantinos Dimopoulos"
+          ],
+          "authorStatus": "verified",
+          "description": "《Virtual Cities An Atlas & Exploration of Video Game Cities (9781682686102)》；Konstantinos Dimopoulos。计算机技术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TP%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/TP3%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/Virtual%20Cities%20An%20Atlas%20%26%20Exploration%20of%20Video%20Game%20Cities%20%289781682686102%29.epub",
+              "bytes": 73934334
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c87e5fad495f4302ca1b61d99e421cef81fa1aa214d528b5e288446de0662612.webp",
+          "language": "en",
+          "publisher": "W W Norton & Co Inc",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "TQ56",
+      "clcName": "爆炸物工业",
+      "books": [
+        {
+          "id": "WEISERd68c2d14ef30",
+          "title": "火炸药的化学与工艺学 (乌尔班斯基)",
+          "authors": [
+            "乌尔班斯基"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《火炸药的化学与工艺学 (乌尔班斯基)》；乌尔班斯基。爆炸物工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ56%20%E7%88%86%E7%82%B8%E7%89%A9%E5%B7%A5%E4%B8%9A/%E7%81%AB%E7%82%B8%E8%8D%AF%E7%9A%84%E5%8C%96%E5%AD%A6%E4%B8%8E%E5%B7%A5%E8%89%BA%E5%AD%A6%20%28%E4%B9%8C%E5%B0%94%E7%8F%AD%E6%96%AF%E5%9F%BA%29.pdf",
+              "bytes": 21070931
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/9b424780121b3c6ed8aeeb4170d16b042c31482afd30e4e922be2b7eea71c2b7.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERda5f2a2afe34",
+          "title": "火炸药的化学与工艺学 第二卷 (乌尔班斯基)",
+          "authors": [
+            "乌尔班斯基"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《火炸药的化学与工艺学 第二卷 (乌尔班斯基)》；乌尔班斯基。爆炸物工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ56%20%E7%88%86%E7%82%B8%E7%89%A9%E5%B7%A5%E4%B8%9A/%E7%81%AB%E7%82%B8%E8%8D%AF%E7%9A%84%E5%8C%96%E5%AD%A6%E4%B8%8E%E5%B7%A5%E8%89%BA%E5%AD%A6%20%E7%AC%AC%E4%BA%8C%E5%8D%B7%20%28%E4%B9%8C%E5%B0%94%E7%8F%AD%E6%96%AF%E5%9F%BA%29.pdf",
+              "bytes": 15292334
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4f80eaed6f92ed65c5e977076c90b9f1480c49acb1f332fc3af5d760fc89bd3d.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER42c17b038424",
+          "title": "火炸药的化学与工艺学 第三卷 (乌尔班斯基)",
+          "authors": [
+            "乌尔班斯基"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《火炸药的化学与工艺学 第三卷 (乌尔班斯基)》；乌尔班斯基。爆炸物工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ56%20%E7%88%86%E7%82%B8%E7%89%A9%E5%B7%A5%E4%B8%9A/%E7%81%AB%E7%82%B8%E8%8D%AF%E7%9A%84%E5%8C%96%E5%AD%A6%E4%B8%8E%E5%B7%A5%E8%89%BA%E5%AD%A6%20%E7%AC%AC%E4%B8%89%E5%8D%B7%20%28%E4%B9%8C%E5%B0%94%E7%8F%AD%E6%96%AF%E5%9F%BA%29.pdf",
+              "bytes": 31279535
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/96adef5d86f40494855dd08803180bbd302a403803ce3efd4c175f4447cdba42.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERbc607bd40aa3",
+          "title": "猛炸药爆轰学 (（美）C.H.约翰逊，P.A.珀森编；《猛炸药爆轰学》译校组译)",
+          "authors": [
+            "（美）C.H.约翰逊，P.A.珀森编；《猛炸药爆轰学》译校组译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《猛炸药爆轰学 (（美）C.H.约翰逊，P.A.珀森编；《猛炸药爆轰学》译校组译)》；（美）C.H.约翰逊，P.A.珀森编；《猛炸药爆轰学》译校组译。爆炸物工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ56%20%E7%88%86%E7%82%B8%E7%89%A9%E5%B7%A5%E4%B8%9A/%E7%8C%9B%E7%82%B8%E8%8D%AF%E7%88%86%E8%BD%B0%E5%AD%A6%20%28%EF%BC%88%E7%BE%8E%EF%BC%89C.H.%E7%BA%A6%E7%BF%B0%E9%80%8A%EF%BC%8CP.A.%E7%8F%80%E6%A3%AE%E7%BC%96%EF%BC%9B%E3%80%8A%E7%8C%9B%E7%82%B8%E8%8D%AF%E7%88%86%E8%BD%B0%E5%AD%A6%E3%80%8B%E8%AF%91%E6%A0%A1%E7%BB%84%E8%AF%91%29.pdf",
+              "bytes": 12646113
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4273dca7f5c34c84c2df63f60ab5cafaff00cd2bd3e66168b355eb8593169c99.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER969291907d05",
+          "title": "浓硝酸制造 (（苏）福季尼奇（И.Д.Хотинич）著；张坚，张祖禹译)",
+          "authors": [
+            "（苏）福季尼奇（И.Д.Хотинич）著；张坚，张祖禹译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《浓硝酸制造 (（苏）福季尼奇（И.Д.Хотинич）著；张坚，张祖禹译)》；（苏）福季尼奇（И.Д.Хотинич）著；张坚，张祖禹译。爆炸物工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ56%20%E7%88%86%E7%82%B8%E7%89%A9%E5%B7%A5%E4%B8%9A/%E6%B5%93%E7%A1%9D%E9%85%B8%E5%88%B6%E9%80%A0%20%28%EF%BC%88%E8%8B%8F%EF%BC%89%E7%A6%8F%E5%AD%A3%E5%B0%BC%E5%A5%87%EF%BC%88%D0%98.%D0%94.%D0%A5%D0%BE%D1%82%D0%B8%D0%BD%D0%B8%D1%87%EF%BC%89%E8%91%97%EF%BC%9B%E5%BC%A0%E5%9D%9A%EF%BC%8C%E5%BC%A0%E7%A5%96%E7%A6%B9%E8%AF%91%29.pdf",
+              "bytes": 10280680
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4f360f9759d4b2147262bf21d34024913ed5c6b69be0f3c61846df5b2e5bb63e.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERf1204a5011cb",
+          "title": "硝基化合物炸药化学与工艺学 (孙荣康，魏运洋编著, 孙荣康, 魏运洋编著, 孙荣康, 魏运洋, 孙荣康 etc.)",
+          "authors": [
+            "孙荣康",
+            "魏运洋"
+          ],
+          "authorStatus": "verified",
+          "description": "《硝基化合物炸药化学与工艺学 (孙荣康，魏运洋编著, 孙荣康, 魏运洋编著, 孙荣康, 魏运洋, 孙荣康 etc.)》；孙荣康、魏运洋。爆炸物工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ56%20%E7%88%86%E7%82%B8%E7%89%A9%E5%B7%A5%E4%B8%9A/%E7%A1%9D%E5%9F%BA%E5%8C%96%E5%90%88%E7%89%A9%E7%82%B8%E8%8D%AF%E5%8C%96%E5%AD%A6%E4%B8%8E%E5%B7%A5%E8%89%BA%E5%AD%A6%20%28%E5%AD%99%E8%8D%A3%E5%BA%B7%EF%BC%8C%E9%AD%8F%E8%BF%90%E6%B4%8B%E7%BC%96%E8%91%97%2C%20%E5%AD%99%E8%8D%A3%E5%BA%B7%2C%20%E9%AD%8F%E8%BF%90%E6%B4%8B%E7%BC%96%E8%91%97%2C%20%E5%AD%99%E8%8D%A3%E5%BA%B7%2C%20%E9%AD%8F%E8%BF%90%E6%B4%8B%2C%20%E5%AD%99%E8%8D%A3%E5%BA%B7%20etc.%29.pdf",
+              "bytes": 6412418
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/76d62825cf6fd051761fbf1e7cbe7f0355ec5b145e06b3fc15d10837e67bc34f.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe7740d430679",
+          "title": "炸药与火药 (（苏）布德尼柯夫（М.А.Будников）等著；夏禹昌等译)",
+          "authors": [
+            "（苏）布德尼柯夫（М.А.Будников）等著；夏禹昌等译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《炸药与火药 (（苏）布德尼柯夫（М.А.Будников）等著；夏禹昌等译)》；（苏）布德尼柯夫（М.А.Будников）等著；夏禹昌等译。爆炸物工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ56%20%E7%88%86%E7%82%B8%E7%89%A9%E5%B7%A5%E4%B8%9A/%E7%82%B8%E8%8D%AF%E4%B8%8E%E7%81%AB%E8%8D%AF%20%28%EF%BC%88%E8%8B%8F%EF%BC%89%E5%B8%83%E5%BE%B7%E5%B0%BC%E6%9F%AF%E5%A4%AB%EF%BC%88%D0%9C.%D0%90.%D0%91%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%EF%BC%89%E7%AD%89%E8%91%97%EF%BC%9B%E5%A4%8F%E7%A6%B9%E6%98%8C%E7%AD%89%E8%AF%91%29.pdf",
+              "bytes": 15249469
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f59969494582d4f7363eb75b3bea29888bf446a3225b39c05c022e2c0c50b325.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "TQ65",
+      "clcName": "香料、香精工业",
+      "books": [
+        {
+          "id": "WEISERe592aca1bde9",
+          "title": "陈氏香谱",
+          "authors": [
+            "陈敬",
+            "北京国之学文化有限公司"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《陈氏香谱》；陈敬、北京国之学文化有限公司。香料、香精工业，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/%E9%99%88%E6%B0%8F%E9%A6%99%E8%B0%B1.epub",
+              "bytes": 253137
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/778a3f3777450fd20c905f354da6d4ab101d1eca21ab88b82d6c7b1d33a3ecc1.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER382224f808a5",
+          "title": "调香笔记 花香油和花香精",
+          "authors": [
+            "Danute Pajaujis Anonis"
+          ],
+          "authorStatus": "verified",
+          "description": "《调香笔记 花香油和花香精》；Danute Pajaujis Anonis。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/%E8%B0%83%E9%A6%99%E7%AC%94%E8%AE%B0%20%E8%8A%B1%E9%A6%99%E6%B2%B9%E5%92%8C%E8%8A%B1%E9%A6%99%E7%B2%BE.pdf",
+              "bytes": 30998843
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c3e9a7bb80f0e8407255ac4a4f84ec7729669785878a46a791fe191fb8b35159.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERabdd03eebe98",
+          "title": "调香术 林翔云 著",
+          "authors": [
+            "林翔云"
+          ],
+          "authorStatus": "verified",
+          "description": "《调香术 林翔云 著》；林翔云。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/%E8%B0%83%E9%A6%99%E6%9C%AF%20%E6%9E%97%E7%BF%94%E4%BA%91%20%E8%91%97.pdf",
+              "bytes": 26977025
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/5199af7b7a0680cf7ff4b2cb1c2f20da959db41d548a6ca41ff92a9a685d6e08.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd7d011cc8c26",
+          "title": "调香术（第二版）",
+          "authors": [
+            "林翔云"
+          ],
+          "authorStatus": "verified",
+          "description": "《调香术（第二版）》；林翔云。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/%E8%B0%83%E9%A6%99%E6%9C%AF%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89.pdf",
+              "bytes": 40580931
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1c54bdef7f787cdea142b9baa6269994ad275ca704fcc123c058d2f69cc13d5e.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERb8a96e9be9ef",
+          "title": "芳香宝典",
+          "authors": [
+            "Patricia Davis"
+          ],
+          "authorStatus": "verified",
+          "description": "《芳香宝典》；Patricia Davis。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/%E8%8A%B3%E9%A6%99%E5%AE%9D%E5%85%B8.pdf",
+              "bytes": 27716254
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b5ca4fa99506a3c14c5f19ce5f13aa22d7f5b5e86ecf1cbce7082a86bee06126.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER936c40ab1f00",
+          "title": "实用香精配方",
+          "authors": [
+            "王建新",
+            "王嘉兴",
+            "周耀华"
+          ],
+          "authorStatus": "verified",
+          "description": "《实用香精配方》；王建新、王嘉兴、周耀华。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/%E5%AE%9E%E7%94%A8%E9%A6%99%E7%B2%BE%E9%85%8D%E6%96%B9.pdf",
+              "bytes": 19091272
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a8c1a7c44e10a818939706752c4edd63dcc2e44738fd5094417d3f43d95fa063.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd6a43bd07d41",
+          "title": "香乘",
+          "authors": [
+            "周嘉胄"
+          ],
+          "authorStatus": "verified",
+          "description": "《香乘》；周嘉胄。香料、香精工业，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/%E9%A6%99%E4%B9%98.mobi",
+              "bytes": 3822976
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1201a1a81212702f2d9b0b6eff097b8098dd262ce05b55d8946bf2f9352c4ca0.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERad1547d49e7b",
+          "title": "香典",
+          "authors": [
+            "周嘉胄",
+            "洪刍",
+            "陈敬"
+          ],
+          "authorStatus": "verified",
+          "description": "《香典》；周嘉胄、洪刍、陈敬。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/%E9%A6%99%E5%85%B8.pdf",
+              "bytes": 122482748
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ac37fda60a15894843b07f5d4ae3a07d1dff1ab03d1f6f5f747e6c62f7dd792b.webp",
+          "translator": "江俊伟、陈云轶",
+          "access": "public"
+        },
+        {
+          "id": "WEISER45a088b64557",
+          "title": "香典 (周嘉胄)",
+          "authors": [
+            "周嘉胄"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《香典 (周嘉胄)》；周嘉胄。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/%E9%A6%99%E5%85%B8%20%28%E5%91%A8%E5%98%89%E8%83%84%29.pdf",
+              "bytes": 122422413
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ac37fda60a15894843b07f5d4ae3a07d1dff1ab03d1f6f5f747e6c62f7dd792b.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER7f33f2a6deff",
+          "title": "香氛时光 专业调香师的天然+经典配方 (Aroma著)",
+          "authors": [
+            "Aroma著"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《香氛时光 专业调香师的天然+经典配方 (Aroma著)》；Aroma著。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/%E9%A6%99%E6%B0%9B%E6%97%B6%E5%85%89%20%E4%B8%93%E4%B8%9A%E8%B0%83%E9%A6%99%E5%B8%88%E7%9A%84%E5%A4%A9%E7%84%B6%2B%E7%BB%8F%E5%85%B8%E9%85%8D%E6%96%B9%20%28Aroma%E8%91%97%29.pdf",
+              "bytes": 20906114
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2510a77a0d4a700f3ad103fbee59f3136791333f8333d5b2bbb43d121d57235a.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER0c654075ae00",
+          "title": "香料香精应用基础 (李明，王培义，田怀香编著)",
+          "authors": [
+            "李明，王培义，田怀香编著"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《香料香精应用基础 (李明，王培义，田怀香编著)》；李明，王培义，田怀香编著。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/%E9%A6%99%E6%96%99%E9%A6%99%E7%B2%BE%E5%BA%94%E7%94%A8%E5%9F%BA%E7%A1%80%20%28%E6%9D%8E%E6%98%8E%EF%BC%8C%E7%8E%8B%E5%9F%B9%E4%B9%89%EF%BC%8C%E7%94%B0%E6%80%80%E9%A6%99%E7%BC%96%E8%91%97%29.pdf",
+              "bytes": 28711541
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/257945aac23e28a85cefd2ef99109da9e2fd6fdc0b346d65b7dd5418c7a085ec.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER6a5aea1544a4",
+          "title": "香料之书 (（英）约翰·奥康奈尔著；黄瑶译；龙茂松，张雨婷绘)",
+          "authors": [
+            "（英）约翰·奥康奈尔著；黄瑶译；龙茂松，张雨婷绘"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《香料之书 (（英）约翰·奥康奈尔著；黄瑶译；龙茂松，张雨婷绘)》；（英）约翰·奥康奈尔著；黄瑶译；龙茂松，张雨婷绘。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/%E9%A6%99%E6%96%99%E4%B9%8B%E4%B9%A6%20%28%EF%BC%88%E8%8B%B1%EF%BC%89%E7%BA%A6%E7%BF%B0%C2%B7%E5%A5%A5%E5%BA%B7%E5%A5%88%E5%B0%94%E8%91%97%EF%BC%9B%E9%BB%84%E7%91%B6%E8%AF%91%EF%BC%9B%E9%BE%99%E8%8C%82%E6%9D%BE%EF%BC%8C%E5%BC%A0%E9%9B%A8%E5%A9%B7%E7%BB%98%29.pdf",
+              "bytes": 85952520
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d0353d557b80aeb043a281e30e1828f6c59e096416796a3c8d72a2f2600c1a5a.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER4fe18f8c7850",
+          "title": "Essence and Alchemy",
+          "authors": [
+            "Mandy Aftel"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Essence and Alchemy》；Mandy Aftel。香料、香精工业，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/Essence%20and%20Alchemy.epub",
+              "bytes": 3614303
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/7ccc02a5f6ce3b10adef36cbdb38f1724365454dfc9fecbd12a4f4afde5017cc.webp",
+          "language": "en",
+          "publisher": "Farrar, Straus and Giroux",
+          "access": "public"
+        },
+        {
+          "id": "WEISERc8d667ce5596",
+          "title": "LLUCH ESSENTIAL OILS CATALOG",
+          "authors": [
+            "LLUCH ESSENCE S.L."
+          ],
+          "authorStatus": "verified",
+          "description": "《LLUCH ESSENTIAL OILS CATALOG》；LLUCH ESSENCE S.L.。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/LLUCH%20ESSENTIAL%20OILS%20CATALOG.pdf",
+              "bytes": 575015
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/93afa3e303270be455f04d68ae03c09ec906b84e76b0c28e0a1bc4db1be530c5.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER1a59120cb3f5",
+          "title": "Perfume and Flavor Materials of Natural Origin (Steffen Arctander)",
+          "authors": [
+            "Steffen Arctander"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Perfume and Flavor Materials of Natural Origin (Steffen Arctander)》；Steffen Arctander。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/Perfume%20and%20Flavor%20Materials%20of%20Natural%20Origin%20%28Steffen%20Arctander%29.pdf",
+              "bytes": 42807079
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e4c2aabaa0f05488415003de9c97d69b4ee48c375ba90f168eb95f50ba1aee76.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERdbb062fa9bd7",
+          "title": "The Chemistry of Fragrances",
+          "authors": [
+            "David Pybus",
+            "Charles Sell"
+          ],
+          "authorStatus": "verified",
+          "description": "《The Chemistry of Fragrances》；David Pybus、Charles Sell。香料、香精工业，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE%E5%B7%A5%E4%B8%9A/The%20Chemistry%20of%20Fragrances.pdf",
+              "bytes": 17767147
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/637db63c39dfeaa503c50c028d72e26236eb3e1ec1e5fbaa916329e729e68d29.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "TQ658",
+      "clcName": "化妆品",
+      "books": [
+        {
+          "id": "WEISER7fe18d3136f9",
+          "title": "调香师日记",
+          "authors": [
+            "[法]让-克罗德·艾列纳"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《调香师日记》；[法]让-克罗德·艾列纳。化妆品，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE/TQ658%20%E5%8C%96%E5%A6%86%E5%93%81/%E8%B0%83%E9%A6%99%E5%B8%88%E6%97%A5%E8%AE%B0.epub",
+              "bytes": 310008
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/623741384a04e8cc74e244581639d08417e67a8e7da1880acb641748009f019d.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER1e120e71d3f6",
+          "title": "贵族口味：世界极品香水选择及使用",
+          "authors": [
+            "金夫人"
+          ],
+          "authorStatus": "verified",
+          "description": "《贵族口味：世界极品香水选择及使用》；金夫人。化妆品，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE/TQ658%20%E5%8C%96%E5%A6%86%E5%93%81/%E8%B4%B5%E6%97%8F%E5%8F%A3%E5%91%B3%3A%E4%B8%96%E7%95%8C%E6%9E%81%E5%93%81%E9%A6%99%E6%B0%B4%E9%80%89%E6%8B%A9%E5%8F%8A%E4%BD%BF%E7%94%A8.pdf",
+              "bytes": 45747954
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4608914846ba5bdbe4c9bd6f4d1a4b82fb59615dd97a08011665e26e8250a122.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERafdaa6ea01c4",
+          "title": "精油圣经",
+          "authors": [
+            "屈娴"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《精油圣经》；屈娴。化妆品，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE/TQ658%20%E5%8C%96%E5%A6%86%E5%93%81/%E7%B2%BE%E6%B2%B9%E5%9C%A3%E7%BB%8F.epub",
+              "bytes": 43928712
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2bcf091bbad9f1b9655eb1efb80e8f9c4cb7e3104897e9ffacbd1f83f0d44948.webp",
+          "language": "ENG",
+          "publisher": "CNPeReading",
+          "access": "public"
+        },
+        {
+          "id": "WEISER8b6aa775a750",
+          "title": "闻香",
+          "authors": [
+            "叶岚"
+          ],
+          "authorStatus": "verified",
+          "description": "《闻香》；叶岚。化妆品，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE/TQ658%20%E5%8C%96%E5%A6%86%E5%93%81/%E9%97%BB%E9%A6%99.pdf",
+              "bytes": 36353246
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/7579ddbc1f8b14cb54e612e3f5e3d72d22c66074424b2ad42cffcf94332a8e8f.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER089de02c8db4",
+          "title": "香水之书",
+          "authors": [
+            "让娜·多雷",
+            "法国Nez团队"
+          ],
+          "authorStatus": "verified",
+          "description": "《香水之书》；让娜·多雷、法国Nez团队。化妆品，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE/TQ658%20%E5%8C%96%E5%A6%86%E5%93%81/%E9%A6%99%E6%B0%B4%E4%B9%8B%E4%B9%A6.pdf",
+              "bytes": 49878590
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/300bdf33ccd75aeb68356a53c0aab58dc220bbba4c4eb45b3487bb232433cd80.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER1459633c1b5c",
+          "title": "燕居香语 中国香文化宝典",
+          "authors": [
+            "陈云君"
+          ],
+          "authorStatus": "verified",
+          "description": "《燕居香语 中国香文化宝典》；陈云君。化妆品，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE/TQ658%20%E5%8C%96%E5%A6%86%E5%93%81/%E7%87%95%E5%B1%85%E9%A6%99%E8%AF%AD%20%E4%B8%AD%E5%9B%BD%E9%A6%99%E6%96%87%E5%8C%96%E5%AE%9D%E5%85%B8.pdf",
+              "bytes": 21213491
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ca608f8c2cc39b76c5f70130a5a42d13c1cc46189e93628b735adddbf7b87ca6.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER2ed015fbf966",
+          "title": "Perfume",
+          "authors": [
+            "Jean-Claude Ellena"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Perfume》；Jean-Claude Ellena。化妆品，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE/TQ658%20%E5%8C%96%E5%A6%86%E5%93%81/Perfume.epub",
+              "bytes": 1087357
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/0fb6ec4f4c9334a64fab49dc46996a04f2c054e2854439af78474aa5cd016fb7.webp",
+          "language": "en",
+          "publisher": "Skyhorse Publishing, Inc.",
+          "access": "public"
+        },
+        {
+          "id": "WEISER6d04b6232b33",
+          "title": "The Big Book of Perfume For an Olfactory Culture (Le collectif nez)",
+          "authors": [
+            "Le collectif nez"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《The Big Book of Perfume For an Olfactory Culture (Le collectif nez)》；Le collectif nez。化妆品，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TQ%20%E5%8C%96%E5%AD%A6%E5%B7%A5%E4%B8%9A/TQ65%20%E9%A6%99%E6%96%99%E3%80%81%E9%A6%99%E7%B2%BE/TQ658%20%E5%8C%96%E5%A6%86%E5%93%81/The%20Big%20Book%20of%20Perfume%20For%20an%20Olfactory%20Culture%20%28Le%20collectif%20nez%29.pdf",
+              "bytes": 127574758
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1116284f560baf89af0484a28b35a038fe779a4b55690f5b1fe1bfcb06d53a55.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "TS941",
+      "clcName": "服装",
+      "books": [
+        {
+          "id": "WEISER002b951a07fb",
+          "title": "20,000 years of fashion the history of costume and personal adornment",
+          "authors": [
+            "François Boucher"
+          ],
+          "authorStatus": "verified",
+          "description": "《20,000 years of fashion the history of costume and personal adornment》；François Boucher。服装，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TS%20%E8%BD%BB%E5%B7%A5%E4%B8%9A%E3%80%81%E6%89%8B%E5%B7%A5%E4%B8%9A/TS94%20%E6%9C%8D%E8%A3%85%E5%B7%A5%E4%B8%9A/TS941%20%E6%9C%8D%E8%A3%85/20%2C000%20years%20of%20fashion%20the%20history%20of%20costume%20and%20personal%20adornment.pdf",
+              "bytes": 94087624
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f65efbf01a2a0a42dc027ae36a91b7f0c553bf661e6fdf00e82056e1e4504337.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERf74242c23386",
+          "title": "拜占庭服装史（扫描版）",
+          "authors": [
+            "詹妮弗·鲍尔"
+          ],
+          "authorStatus": "verified",
+          "description": "《拜占庭服装史（扫描版）》；詹妮弗·鲍尔。服装，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TS%20%E8%BD%BB%E5%B7%A5%E4%B8%9A%E3%80%81%E6%89%8B%E5%B7%A5%E4%B8%9A/TS94%20%E6%9C%8D%E8%A3%85%E5%B7%A5%E4%B8%9A/TS941%20%E6%9C%8D%E8%A3%85/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E6%9C%8D%E8%A3%85%E5%8F%B2%EF%BC%88%E6%89%AB%E6%8F%8F%E7%89%88%EF%BC%89.pdf",
+              "bytes": 40193189
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1e52fc04ef7e5586d1b53b1b636ff19f16f6f4a5ca4734264bdaecf691d24480.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe995f08cd40c",
+          "title": "国际时尚设计丛书 时装设计元素 面料与设计 ((英)杰妮·阿黛尔著朱方龙译, (英)杰妮. 阿黛尔著 , 朱方龙译, 阿黛尔 etc.)",
+          "authors": [
+            "杰妮·阿黛尔"
+          ],
+          "authorStatus": "verified",
+          "description": "《国际时尚设计丛书 时装设计元素 面料与设计 ((英)杰妮·阿黛尔著朱方龙译, (英)杰妮. 阿黛尔著 , 朱方龙译, 阿黛尔 etc.)》；杰妮·阿黛尔。服装，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TS%20%E8%BD%BB%E5%B7%A5%E4%B8%9A%E3%80%81%E6%89%8B%E5%B7%A5%E4%B8%9A/TS94%20%E6%9C%8D%E8%A3%85%E5%B7%A5%E4%B8%9A/TS941%20%E6%9C%8D%E8%A3%85/%E5%9B%BD%E9%99%85%E6%97%B6%E5%B0%9A%E8%AE%BE%E8%AE%A1%E4%B8%9B%E4%B9%A6%20%E6%97%B6%E8%A3%85%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0%20%E9%9D%A2%E6%96%99%E4%B8%8E%E8%AE%BE%E8%AE%A1%20%28%28%E8%8B%B1%29%E6%9D%B0%E5%A6%AE%C2%B7%E9%98%BF%E9%BB%9B%E5%B0%94%E8%91%97%E6%9C%B1%E6%96%B9%E9%BE%99%E8%AF%91%2C%20%28%E8%8B%B1%29%E6%9D%B0%E5%A6%AE.%20%E9%98%BF%E9%BB%9B%E5%B0%94%E8%91%97%20%2C%20%E6%9C%B1%E6%96%B9%E9%BE%99%E8%AF%91%2C%20%E9%98%BF%E9%BB%9B%E5%B0%94%20etc.%29.pdf",
+              "bytes": 35641721
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f3477c294f585b4bdccadccac8f4a537a738bda2478f3e29b6ee60fa6a1801da.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERfba7f61c86a2",
+          "title": "基本穿搭：适用一生的穿衣法则",
+          "authors": [
+            "大山旬"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《基本穿搭：适用一生的穿衣法则》；大山旬。服装，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TS%20%E8%BD%BB%E5%B7%A5%E4%B8%9A%E3%80%81%E6%89%8B%E5%B7%A5%E4%B8%9A/TS94%20%E6%9C%8D%E8%A3%85%E5%B7%A5%E4%B8%9A/TS941%20%E6%9C%8D%E8%A3%85/%E5%9F%BA%E6%9C%AC%E7%A9%BF%E6%90%AD%3A%E9%80%82%E7%94%A8%E4%B8%80%E7%94%9F%E7%9A%84%E7%A9%BF%E8%A1%A3%E6%B3%95%E5%88%99.epub",
+              "bytes": 7367626
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e5f2b157daee712b590e9cda13ade21633c846b4c04f713a0dd1aa056dd4f05e.webp",
+          "language": "zh",
+          "publisher": "成都：四川人民出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER7b6b1bf4852c",
+          "title": "时装设计元素 (（英）索格，（英）阿黛尔著；袁燕，刘驰译 etc.)",
+          "authors": [
+            "（英）索格，（英）阿黛尔著；袁燕，刘驰译 etc."
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《时装设计元素 (（英）索格，（英）阿黛尔著；袁燕，刘驰译 etc.)》；（英）索格，（英）阿黛尔著；袁燕，刘驰译 etc.。服装，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TS%20%E8%BD%BB%E5%B7%A5%E4%B8%9A%E3%80%81%E6%89%8B%E5%B7%A5%E4%B8%9A/TS94%20%E6%9C%8D%E8%A3%85%E5%B7%A5%E4%B8%9A/TS941%20%E6%9C%8D%E8%A3%85/%E6%97%B6%E8%A3%85%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0%20%28%EF%BC%88%E8%8B%B1%EF%BC%89%E7%B4%A2%E6%A0%BC%EF%BC%8C%EF%BC%88%E8%8B%B1%EF%BC%89%E9%98%BF%E9%BB%9B%E5%B0%94%E8%91%97%EF%BC%9B%E8%A2%81%E7%87%95%EF%BC%8C%E5%88%98%E9%A9%B0%E8%AF%91%20etc.%29.pdf",
+              "bytes": 65421741
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ebbbfdb4d2a30dde00de8909af2c72b8789bdd5fa76319893260d54e92bd8574.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER25784f75bd03",
+          "title": "时装设计元素 结构与工艺 (（英）安妮特·费舍尔著, 费舍尔, 安妮特, author, (英) 费舍尔, 安妮特)",
+          "authors": [
+            "Annette Fischer"
+          ],
+          "authorStatus": "verified",
+          "description": "《时装设计元素 结构与工艺 (（英）安妮特·费舍尔著, 费舍尔, 安妮特, author, (英) 费舍尔, 安妮特)》；Annette Fischer。服装，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TS%20%E8%BD%BB%E5%B7%A5%E4%B8%9A%E3%80%81%E6%89%8B%E5%B7%A5%E4%B8%9A/TS94%20%E6%9C%8D%E8%A3%85%E5%B7%A5%E4%B8%9A/TS941%20%E6%9C%8D%E8%A3%85/%E6%97%B6%E8%A3%85%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0%20%E7%BB%93%E6%9E%84%E4%B8%8E%E5%B7%A5%E8%89%BA%20%28%EF%BC%88%E8%8B%B1%EF%BC%89%E5%AE%89%E5%A6%AE%E7%89%B9%C2%B7%E8%B4%B9%E8%88%8D%E5%B0%94%E8%91%97%2C%20%E8%B4%B9%E8%88%8D%E5%B0%94%2C%20%E5%AE%89%E5%A6%AE%E7%89%B9%2C%20author%2C%20%28%E8%8B%B1%29%20%E8%B4%B9%E8%88%8D%E5%B0%94%2C%20%E5%AE%89%E5%A6%AE%E7%89%B9%29.pdf",
+              "bytes": 44987544
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ae0b519b5d61fe55ed162fe94f437c8fe0fa6749fc5adbe7b69f0c800229d24f.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER72485cc08bbf",
+          "title": "时装设计元素 配饰设计 (（英）刘国峰（John Lau）著, (英) 刘国峰, (Lau, John))",
+          "authors": [
+            "Lau, John"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《时装设计元素 配饰设计 (（英）刘国峰（John Lau）著, (英) 刘国峰, (Lau, John))》；Lau, John。服装，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TS%20%E8%BD%BB%E5%B7%A5%E4%B8%9A%E3%80%81%E6%89%8B%E5%B7%A5%E4%B8%9A/TS94%20%E6%9C%8D%E8%A3%85%E5%B7%A5%E4%B8%9A/TS941%20%E6%9C%8D%E8%A3%85/%E6%97%B6%E8%A3%85%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0%20%E9%85%8D%E9%A5%B0%E8%AE%BE%E8%AE%A1%20%28%EF%BC%88%E8%8B%B1%EF%BC%89%E5%88%98%E5%9B%BD%E5%B3%B0%EF%BC%88John%20Lau%EF%BC%89%E8%91%97%2C%20%28%E8%8B%B1%29%20%E5%88%98%E5%9B%BD%E5%B3%B0%2C%20%28Lau%2C%20John%29%29.pdf",
+              "bytes": 110721843
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/9aaec0d033f7f99c091359da0ba150e4f1714de74ff67acf821f08e898a1fd42.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERb84deb651abd",
+          "title": "时装设计元素：款式与造型 (（英）卓沃斯-斯宾塞，（英）瑟蒙著；董雪丹译 etc.)",
+          "authors": [
+            "（英）卓沃斯-斯宾塞，（英）瑟蒙著；董雪丹译 etc."
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《时装设计元素：款式与造型 (（英）卓沃斯-斯宾塞，（英）瑟蒙著；董雪丹译 etc.)》；（英）卓沃斯-斯宾塞，（英）瑟蒙著；董雪丹译 etc.。服装，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TS%20%E8%BD%BB%E5%B7%A5%E4%B8%9A%E3%80%81%E6%89%8B%E5%B7%A5%E4%B8%9A/TS94%20%E6%9C%8D%E8%A3%85%E5%B7%A5%E4%B8%9A/TS941%20%E6%9C%8D%E8%A3%85/%E6%97%B6%E8%A3%85%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0%3A%E6%AC%BE%E5%BC%8F%E4%B8%8E%E9%80%A0%E5%9E%8B%20%28%EF%BC%88%E8%8B%B1%EF%BC%89%E5%8D%93%E6%B2%83%E6%96%AF-%E6%96%AF%E5%AE%BE%E5%A1%9E%EF%BC%8C%EF%BC%88%E8%8B%B1%EF%BC%89%E7%91%9F%E8%92%99%E8%91%97%EF%BC%9B%E8%91%A3%E9%9B%AA%E4%B8%B9%E8%AF%91%20etc.%29.pdf",
+              "bytes": 42748220
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/974cdfd6b5abacfbeb13a517fa1888ba83786cfca438c9fc83537827c4bda22f.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9c98eb5d5cfe",
+          "title": "Fashion Design Course Principles, Practice, and Techniques A Practical Guide for Aspiring Fashion Designers (Steven Faerm)",
+          "authors": [
+            "Steven Faerm"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Fashion Design Course Principles, Practice, and Techniques A Practical Guide for Aspiring Fashion Designers (Steven Faerm)》；Steven Faerm。服装，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TS%20%E8%BD%BB%E5%B7%A5%E4%B8%9A%E3%80%81%E6%89%8B%E5%B7%A5%E4%B8%9A/TS94%20%E6%9C%8D%E8%A3%85%E5%B7%A5%E4%B8%9A/TS941%20%E6%9C%8D%E8%A3%85/Fashion%20Design%20Course%20Principles%2C%20Practice%2C%20and%20Techniques%20A%20Practical%20Guide%20for%20Aspiring%20Fashion%20Designers%20%28Steven%20Faerm%29.pdf",
+              "bytes": 52669156
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/dd6746e9e786b240354df6902271d6f6d5212bcc96558e93f52e8b90f352661c.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER53cc3aa432cc",
+          "title": "Fashion Design Drawing Course Principles, Practice and Techniques (Caroline Tatham Julian Seaman)",
+          "authors": [
+            "Caroline Tatham Julian Seaman"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Fashion Design Drawing Course Principles, Practice and Techniques (Caroline Tatham Julian Seaman)》；Caroline Tatham Julian Seaman。服装，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TS%20%E8%BD%BB%E5%B7%A5%E4%B8%9A%E3%80%81%E6%89%8B%E5%B7%A5%E4%B8%9A/TS94%20%E6%9C%8D%E8%A3%85%E5%B7%A5%E4%B8%9A/TS941%20%E6%9C%8D%E8%A3%85/Fashion%20Design%20Drawing%20Course%20Principles%2C%20Practice%20and%20Techniques%20%28Caroline%20Tatham%20Julian%20Seaman%29.pdf",
+              "bytes": 91291383
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/430744a1ec5b920f67a19b14fdce5330d2390a5cec09a6216226a4436dff9c5d.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa9069f8777e5",
+          "title": "Fashionpedia - The Visual Dictionary Of Fashion Design (Fashionary)",
+          "authors": [
+            "Fashionary"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Fashionpedia - The Visual Dictionary Of Fashion Design (Fashionary)》；Fashionary。服装，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TS%20%E8%BD%BB%E5%B7%A5%E4%B8%9A%E3%80%81%E6%89%8B%E5%B7%A5%E4%B8%9A/TS94%20%E6%9C%8D%E8%A3%85%E5%B7%A5%E4%B8%9A/TS941%20%E6%9C%8D%E8%A3%85/Fashionpedia%20-%20The%20Visual%20Dictionary%20Of%20Fashion%20Design%20%28Fashionary%29.pdf",
+              "bytes": 62815946
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/636b8f0a5ff61fd6a76c40ed3c761473527668216b6fad83c82bdb4d795da899.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "TS976",
+      "clcName": "家庭生活",
+      "books": [
+        {
+          "id": "WEISER7089f5d1ee0e",
+          "title": "要钱还是要生活：没有财务自由，也能提前退休",
+          "authors": [
+            "[美]维姬·罗宾,[美]乔·多明格斯"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《要钱还是要生活：没有财务自由，也能提前退休》；[美]维姬·罗宾,[美]乔·多明格斯。家庭生活，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T%20%E5%B7%A5%E4%B8%9A%E6%8A%80%E6%9C%AF/TS%20%E8%BD%BB%E5%B7%A5%E4%B8%9A%E3%80%81%E6%89%8B%E5%B7%A5%E4%B8%9A/TS97%20%E7%94%9F%E6%B4%BB%E6%9C%8D%E5%8A%A1/TS976%20%E5%AE%B6%E5%BA%AD%E7%94%9F%E6%B4%BB/%E8%A6%81%E9%92%B1%E8%BF%98%E6%98%AF%E8%A6%81%E7%94%9F%E6%B4%BB%3A%E6%B2%A1%E6%9C%89%E8%B4%A2%E5%8A%A1%E8%87%AA%E7%94%B1%EF%BC%8C%E4%B9%9F%E8%83%BD%E6%8F%90%E5%89%8D%E9%80%80%E4%BC%91.epub",
+              "bytes": 2527080
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/8a5ec402c73e659d46a4dedd2e0371b133072461c144a555949efdb6bb092467.webp",
+          "language": "zh",
+          "publisher": "中信出版集团",
+          "access": "public"
+        }
+      ]
+    }
+  ]
+}

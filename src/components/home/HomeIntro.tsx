@@ -183,7 +183,7 @@ export default function HomeIntro() {
 			data-phase={phase}
 		>
 			<div className={['home-identity', isIdentityReady ? 'is-ready' : ''].filter(Boolean).join(' ')}>
-				<span className="home-identity__avatar-shell" aria-hidden="true">
+				<a className="home-identity__avatar-shell" href="/console/" aria-label="打开个人空间">
 					<img
 						className="home-identity__avatar"
 						src={intro.profile.avatar.src}
@@ -197,7 +197,7 @@ export default function HomeIntro() {
 							event.currentTarget.src = '/favicon-192x192.png';
 						}}
 					/>
-				</span>
+				</a>
 				<h1 className="home-identity__name" id="hero-title" aria-live="polite">
 					{intro.profile.name}
 				</h1>

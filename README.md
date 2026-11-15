@@ -1,6 +1,6 @@
 # Weiser's Melancholy
 
-[访问网站](https://telysta.com) · Weiser 的个人主页、博客、画廊与电子书架。使用 Astro、React、SCSS 和 Markdown，构建后通过 GitHub Pages 发布，图片与电子书文件通过 Cloudflare R2 分发。
+[访问网站](https://telysta.com) · Weiser 的个人主页、博客、画廊与电子书架。使用 Astro、React、SCSS、Markdown和书目JSON；Cloudflare Pages构建主站，GitHub Pages保留回退来源，图片与电子书由R2及鉴权Worker分发。
 
 ## 启动网站与本地后台
 
@@ -12,7 +12,7 @@
 | 查看网站效果 | `npm run dev` | http://localhost:4321/（以终端输出为准） |
 | 查看正式构建 | `npm run check`，再 `npm run preview` | 以终端输出为准 |
 
-后台和网站预览使用两个终端分别启动，按 Ctrl+C 停止。后台地址必须使用 **127.0.0.1**，不要改为 localhost；它只在本机运行，没有 telysta.com 上的在线管理入口。后台保存只写本地文件，不会自动 push 或上传 R2。
+后台和网站预览使用两个终端分别启动，按 Ctrl+C 停止。本地后台地址必须使用 **127.0.0.1**，不要改为 localhost；保存只写本地文件，不会自动 push 或上传 R2。另有独立的[线上账户与管理系统](docs/console.md)，入口通过首页头像进入；云端草稿不会自动覆盖Git发布源码。
 
 **[本地后台完整使用说明](docs/local-admin.md)**：新增文章／身份／系列、图片上传、保存冲突、端口设置和功能限制。
 
@@ -21,6 +21,8 @@
 | 任务 | 直接入口 |
 | --- | --- |
 | 用后台编辑网站 | [后台使用说明](docs/local-admin.md) |
+| 线上账户、角色、Session与备份 | [线上管理](docs/console.md) |
+| Cloudflare原生构建与搜索收录 | [Cloudflare构建](docs/cloudflare-builds.md) · [搜索发现](docs/search-discovery.md) |
 | 手写 Markdown、草稿、日期、系列、图片 | [文章写作](docs/article-authoring.md) |
 | 用 `[[Mirelle]]` 等别名关联文章 | [WikiLink](docs/wikilinks-2026-09-21.md) |
 | 修改站点文案、Hero、头像、导航与角色卡片 | [配置文件地图](src/config/README.md) |
@@ -56,7 +58,7 @@ npm run test:admin     # 本地后台回归
 | src/content/weiser-posts/ | 博客 Markdown |
 | src/pages/about.md | About 正文 |
 | src/content/resources/ | 资源条目，原图不放这里 |
-| src/content/ebooks/ | 独立书目 Markdown，封面与书籍文件保存在 R2 |
+| src/content/ebooks/catalog/ | 按中图大类分JSON，细类Booklist分组；封面与书籍文件保存在R2 |
 | src/content/scores/ | 简谱源文件；改后运行 `npm run score:render -- <id>` |
 | src/generated/ | 提交到 Git 的 CDN 清单和生成乐谱 |
 | src/assets/、public/ | 本地图标、字体、文章图片和后台上传图片 |

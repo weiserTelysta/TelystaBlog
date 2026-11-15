@@ -13,6 +13,7 @@ import remarkPostLinks from '../remark-post-links.mjs';
 import { createPostLinkIndex, legacyPostId, postHref } from '../../src/lib/postLinks.mjs';
 import { parseContentDate } from '../../src/lib/contentDate';
 import { ebookSchema } from '../../src/lib/ebooks/ebookSchema';
+import { readEbookCatalogFiles } from '../../src/lib/ebooks/catalogFiles';
 import type { Nodes } from 'mdast';
 
 const markdownParser = unified().use(remarkParse).use(remarkMath);
@@ -48,7 +49,6 @@ export type ContentValidationResult = {
 
 export function loadContentDocuments(rootDir: string, categoryIds?: ReadonlySet<string>): ContentDocument[] {
 	const groups: Array<{ kind: ContentKind; directory: string }> = [
-		{ kind: 'ebook', directory: path.join(rootDir, 'src', 'content', 'ebooks') },
 		{
 			kind: 'post',
 			directory: path.join(rootDir, 'src', 'content', 'weiser-posts'),
@@ -69,6 +69,11 @@ export function loadContentDocuments(rootDir: string, categoryIds?: ReadonlySet<
 			const source = fs.readFileSync(filePath, 'utf8');
 			documents.push(parseContentDocument(filePath, source, group.kind, rootDir, categoryIds));
 		}
+	}
+	for (const catalog of readEbookCatalogFiles(rootDir)) {
+		for (const book of catalog.books) documents.push({ kind: 'ebook', filePath: catalog.filePath,
+			relativePath: `${toRelativePath(rootDir, catalog.filePath)}#${book.id}`,
+			frontmatter: book, body: '', bodyStartLine: 1, parseIssues: [] });
 	}
 
 	return documents.sort((current, next) =>

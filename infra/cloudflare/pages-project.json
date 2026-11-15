@@ -1,0 +1,48 @@
+{
+  "name": "telystablog",
+  "production_branch": "main",
+  "build_config": {
+    "build_command": "npm run check",
+    "destination_dir": "dist",
+    "root_dir": "",
+    "build_caching": true
+  },
+  "source": {
+    "type": "github",
+    "config": {
+      "owner": "weiserTelysta",
+      "owner_id": "183466787",
+      "repo_name": "TelystaBlog",
+      "repo_id": "1249343201",
+      "production_branch": "main",
+      "deployments_enabled": true,
+      "production_deployments_enabled": true,
+      "preview_deployment_setting": "all",
+      "pr_comments_enabled": false,
+      "path_includes": [
+        "*"
+      ],
+      "path_excludes": [],
+      "preview_branch_includes": [],
+      "preview_branch_excludes": []
+    }
+  },
+  "deployment_configs": {
+    "production": {
+      "env_vars": {
+        "NODE_VERSION": {
+          "type": "plain_text",
+          "value": "22"
+        }
+      }
+    },
+    "preview": {
+      "env_vars": {
+        "NODE_VERSION": {
+          "type": "plain_text",
+          "value": "22"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1088 @@
+{
+  "category": "K",
+  "booklists": [
+    {
+      "clcCode": "K0",
+      "clcName": "史学理论",
+      "books": [
+        {
+          "id": "WEISER950121422bed",
+          "title": "西方的没落",
+          "authors": [
+            "奥斯瓦尔德·斯宾格勒"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《西方的没落》；奥斯瓦尔德·斯宾格勒。史学理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K0%20%E5%8F%B2%E5%AD%A6%E7%90%86%E8%AE%BA/%E8%A5%BF%E6%96%B9%E7%9A%84%E6%B2%A1%E8%90%BD%EF%BC%88%E6%96%B0%E7%89%88%E5%85%A8%E8%AF%91%E6%9C%AC%EF%BC%89%28%E5%BE%B7%E5%9B%BD%E8%91%97%E5%90%8D%E5%93%B2%E5%AD%A6%E5%AE%B6%E5%A5%A5%E6%96%AF%E7%93%A6%E5%B0%94%E5%BE%B7%C2%B7%E6%96%AF%E5%AE%BE%E6%A0%BC%E5%8B%92%E4%BB%A3%E8%A1%A8%E4%BD%9C%EF%BC%81DOUBAN%E8%AF%84%E5%88%869%E5%88%86%EF%BC%81%E2%80%9C%E8%A5%BF%E6%96%B9%E7%9A%84%E6%B2%A1%E8%90%BD%E2%80%9D%E4%B8%8D%E6%98%AF%E5%8E%86%E5%8F%B2%E7%9A%84%E9%A2%84%E8%A8%80%EF%BC%8C%E8%80%8C%E6%98%AF%E5%8E%86%E5%8F%B2%E7%9A%84%E6%89%B9%E5%88%A4%EF%BC%8C%E6%98%AF%E5%AF%B9%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E6%96%87%E6%98%8E%E5%8F%8A%E5%85%B6%E8%B5%96%E4%BB%A5%E7%A1%AE%E7%AB%8B%E7%9A%84%E5%8E%86%E5%8F%B2%E7%90%86%E6%80%A7%E7%9A%84%E6%89%B9%E5%88%A4%29.epub",
+              "bytes": 2267404
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6976ff63d6abf2c2ca957630c7bb1004b93210f99d4a5a84d78f646080b87bdc.webp",
+          "language": "zh",
+          "publisher": "四川人民出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K1",
+      "clcName": "世界史",
+      "books": [
+        {
+          "id": "WEISERcc0df4ac4623",
+          "title": "港口城市与解锁世界：一部新的蒸汽时代全球史（方尖碑）",
+          "authors": [
+            "[英]约翰·达尔文 [[英]约翰·达尔文]"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《港口城市与解锁世界：一部新的蒸汽时代全球史（方尖碑）》；[英]约翰·达尔文 [[英]约翰·达尔文]。世界史，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/%E6%B8%AF%E5%8F%A3%E5%9F%8E%E5%B8%82%E4%B8%8E%E8%A7%A3%E9%94%81%E4%B8%96%E7%95%8C%3A%E4%B8%80%E9%83%A8%E6%96%B0%E7%9A%84%E8%92%B8%E6%B1%BD%E6%97%B6%E4%BB%A3%E5%85%A8%E7%90%83%E5%8F%B2%EF%BC%88%E6%96%B9%E5%B0%96%E7%A2%91%EF%BC%89%20%28%5B%E8%8B%B1%5D%E7%BA%A6%E7%BF%B0%C2%B7%E8%BE%BE%E5%B0%94%E6%96%87%20%5B%5B%E8%8B%B1%5D%E7%BA%A6%E7%BF%B0%C2%B7%E8%BE%BE%E5%B0%94%E6%96%87%5D%29.epub",
+              "bytes": 11968372
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/5e9bc5177b1bb6dc3a18539297f138acb872b0634269fed49a118204e6b8a87d.webp",
+          "language": "zh",
+          "publisher": "译林出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K02",
+      "clcName": "社会发展史",
+      "books": [
+        {
+          "id": "WEISER286aa1648302",
+          "title": "人类简史：从动物到上帝（图文精编版） (开放历史系列)",
+          "authors": [
+            "开放历史系列"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《人类简史：从动物到上帝（图文精编版） (开放历史系列)》；开放历史系列。社会发展史，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K0%20%E5%8F%B2%E5%AD%A6%E7%90%86%E8%AE%BA/K02%20%E7%A4%BE%E4%BC%9A%E5%8F%91%E5%B1%95%E5%8F%B2/%E4%BA%BA%E7%B1%BB%E7%AE%80%E5%8F%B2%3A%E4%BB%8E%E5%8A%A8%E7%89%A9%E5%88%B0%E4%B8%8A%E5%B8%9D%EF%BC%88%E5%9B%BE%E6%96%87%E7%B2%BE%E7%BC%96%E7%89%88%EF%BC%89%20%28%E5%BC%80%E6%94%BE%E5%8E%86%E5%8F%B2%E7%B3%BB%E5%88%97%29.epub",
+              "bytes": 2224209
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/de50415c978a63ad147f168b71e522ce349366c0fbe5e23ccffe1b47088637b4.webp",
+          "language": "zh",
+          "publisher": "中信出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K12",
+      "clcName": "古代史",
+      "books": [
+        {
+          "id": "WEISER30c622433817",
+          "title": "私人生活史",
+          "authors": [
+            "菲利浦•阿利埃斯, Philippe Ariès, 乔治•杜比"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《私人生活史》；菲利浦•阿利埃斯, Philippe Ariès, 乔治•杜比。古代史，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K12%20%E5%8F%A4%E4%BB%A3%E5%8F%B2/%E7%A7%81%E4%BA%BA%E7%94%9F%E6%B4%BB%E5%8F%B2%EF%BC%88%E2%85%A0%EF%BC%89%E5%8F%A4%E4%BB%A3%E4%BA%BA%E7%9A%84%E7%A7%81%E7%94%9F%E6%B4%BB%3A%E4%BB%8E%E5%8F%A4%E7%BD%97%E9%A9%AC%E5%88%B0%E6%8B%9C%E5%8D%A0%E5%BA%AD%20Histoire%20de%20la%20vie%20priv%C3%A9e%20De%20l%E2%80%99Empire%20romain%20%C3%A0%20l%E2%80%99an%20mil%20%28%E8%8F%B2%E5%88%A9%E6%B5%A6%E2%80%A2%E9%98%BF%E5%88%A9%E5%9F%83%E6%96%AF%2C%20Philippe%20Ari%C3%A8s%2C%20%E4%B9%94%E6%B2%BB%E2%80%A2%E6%9D%9C%E6%AF%94%29.pdf",
+              "bytes": 188948881
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/0202f9a81758bd8204a186cda6cd2f70efe9bd2456f269098cd95e01811e892b.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K27",
+      "clcName": "中华人民共和国史",
+      "books": [
+        {
+          "id": "WEISER7317ff023ba5",
+          "title": "林彪事件完整調查(上下冊) (舒雲)",
+          "authors": [
+            "舒雲"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《林彪事件完整調查(上下冊) (舒雲)》；舒雲。中华人民共和国史，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K2%20%E4%B8%AD%E5%9B%BD%E5%8F%B2/K27%20%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%8F%B2/%E6%9E%97%E5%BD%AA%E4%BA%8B%E4%BB%B6%E5%AE%8C%E6%95%B4%E8%AA%BF%E6%9F%A5%28%E4%B8%8A%E4%B8%8B%E5%86%8A%29%20%28%E8%88%92%E9%9B%B2%29.pdf",
+              "bytes": 153077704
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/5a91ed81bf951441f80d95be53c414d2c2823db9b1a9cca384f618c96851e074.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER94f87086f630",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        }
+      ]
+    },
+    {
+      "clcCode": "K124",
+      "clcName": "美索不达米亚",
+      "books": [
+        {
+          "id": "WEISERb1bf4b28a121",
+          "title": "苏美尔文明",
+          "authors": [
+            "拱玉书"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《苏美尔文明》；拱玉书。美索不达米亚，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K12%20%E5%8F%A4%E4%BB%A3%E5%8F%B2/K124%20%E7%BE%8E%E7%B4%A2%E4%B8%8D%E8%BE%BE%E7%B1%B3%E4%BA%9A/%E8%8B%8F%E7%BE%8E%E5%B0%94%E6%96%87%E6%98%8E%20%28%E6%8B%B1%E7%8E%89%E4%B9%A6%29.epub",
+              "bytes": 42161416
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/17b3bd41901a91f6ac734c7e40ae950a164c2e1d629e9bdb0c912c1ff3093d22.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K126",
+      "clcName": "古罗马",
+      "books": [
+        {
+          "id": "WEISER93f5b4d1e45b",
+          "title": "甲骨文·古罗马史【深入探索古罗马文明史】（全7册） (甲骨文系列)",
+          "authors": [
+            "甲骨文系列"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《甲骨文·古罗马史【深入探索古罗马文明史】（全7册） (甲骨文系列)》；甲骨文系列。古罗马，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K12%20%E5%8F%A4%E4%BB%A3%E5%8F%B2/K126%20%E5%8F%A4%E7%BD%97%E9%A9%AC/%E7%94%B2%E9%AA%A8%E6%96%87%C2%B7%E5%8F%A4%E7%BD%97%E9%A9%AC%E5%8F%B2%E3%80%90%E6%B7%B1%E5%85%A5%E6%8E%A2%E7%B4%A2%E5%8F%A4%E7%BD%97%E9%A9%AC%E6%96%87%E6%98%8E%E5%8F%B2%E3%80%91%EF%BC%88%E5%85%A87%E5%86%8C%EF%BC%89%20%28%E7%94%B2%E9%AA%A8%E6%96%87%E7%B3%BB%E5%88%97%29.epub",
+              "bytes": 27620030
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/bcb197d949317575550c78ad30d70b6abd459c672ec7a4af30d9a6cc0fdce87b.webp",
+          "language": "zh",
+          "publisher": "社会科学文献出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER97b0fa78e059",
+          "title": "凯撒战曲：高卢战记+内战记（套装共2册）",
+          "authors": [
+            "盖乌斯·尤利乌斯·恺撒"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《凯撒战曲：高卢战记+内战记（套装共2册）》；盖乌斯·尤利乌斯·恺撒。古罗马，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K12%20%E5%8F%A4%E4%BB%A3%E5%8F%B2/K126%20%E5%8F%A4%E7%BD%97%E9%A9%AC/%E5%87%AF%E6%92%92%E6%88%98%E6%9B%B2%3A%E9%AB%98%E5%8D%A2%E6%88%98%E8%AE%B0%2B%E5%86%85%E6%88%98%E8%AE%B0%EF%BC%88%E5%A5%97%E8%A3%85%E5%85%B12%E5%86%8C%EF%BC%89.epub",
+              "bytes": 2227474
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a247a773199649b4965da2d08aa94f4e005475862222e0c820a4e0cef541cdf6.webp",
+          "language": "zh",
+          "publisher": "中信出版集团",
+          "access": "public"
+        },
+        {
+          "id": "WEISER09161b7eec92",
+          "title": "全译罗马帝国衰亡史",
+          "authors": [
+            "爱德华·吉本"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《全译罗马帝国衰亡史》；爱德华·吉本。古罗马，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K12%20%E5%8F%A4%E4%BB%A3%E5%8F%B2/K126%20%E5%8F%A4%E7%BD%97%E9%A9%AC/%E5%85%A8%E8%AF%91%E7%BD%97%E9%A9%AC%E5%B8%9D%E5%9B%BD%E8%A1%B0%E4%BA%A1%E5%8F%B2%EF%BC%88%E5%85%A812%E5%86%8C%EF%BC%89%28%E5%B8%AD%E4%BB%A3%E5%B2%B3%E7%8B%AC%E5%AE%B6%E6%8E%88%E6%9D%83%EF%BC%8C%E4%B8%AD%E6%96%87%E5%85%A8%E8%AF%91%E6%9C%AC%E5%85%A8%E6%96%B0%E4%B8%8A%E5%B8%82%EF%BC%81%E4%BA%AB%E8%AA%89%E4%B8%96%E7%95%8C200%E5%A4%9A%E5%B9%B4%EF%BC%8C%E4%BA%86%E8%A7%A3%E7%BD%97%E9%A9%AC%E5%B8%9D%E5%9B%BD%E4%B8%8D%E5%8F%AF%E4%B8%8D%E8%AF%BB%E7%9A%84%E8%87%B3%E9%AB%98%E7%BB%8F%E5%85%B8%E3%80%82%E5%93%B2%E5%AD%A6%E6%B3%B0%E6%96%97%E4%BC%91%E8%B0%9F%E3%80%81%E7%BB%8F%E6%B5%8E%E5%AD%A6%E4%B9%8B%E7%88%B6%E4%BA%9A%E5%BD%93%C2%B7%E6%96%AF%E5%AF%86%E3%80%81%E8%8B%B1%E5%9B%BD%E9%A6%96%E7%9B%B8%E4%B8%98%E5%90%89%E5%B0%94%E6%9E%81%E5%8A%9B%E6%8E%A8%E5%B4%87%EF%BC%8C%E7%BF%BB%E5%BC%80%E6%9C%AC%E4%B9%A6%EF%BC%8C%E9%A2%86%E7%95%A5%E7%BD%97%E9%A9%AC%E5%B8%9D%E5%9B%BD1300%E5%B9%B4%E7%9B%9B%E6%9E%81%E8%80%8C%E8%A1%B0%E7%9A%84%E6%81%A2%E5%BC%98%E5%8F%B2%E8%AF%97%E3%80%82%E8%AF%BB%E5%AE%A2%E5%87%BA%E5%93%81%E3%80%82%29.epub",
+              "bytes": 7137426
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/41e889b269156fda63f3c1d19cb9c74103dac80f896907cdafb966fc4a25dd14.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER8e936817da5e",
+          "title": "自建城以来 (李维, 王焕生)",
+          "authors": [
+            "李维, 王焕生"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《自建城以来 (李维, 王焕生)》；李维, 王焕生。古罗马，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K12%20%E5%8F%A4%E4%BB%A3%E5%8F%B2/K126%20%E5%8F%A4%E7%BD%97%E9%A9%AC/%E8%87%AA%E5%BB%BA%E5%9F%8E%E4%BB%A5%E6%9D%A5%20%28%E6%9D%8E%E7%BB%B4%2C%20%E7%8E%8B%E7%84%95%E7%94%9F%29.pdf",
+              "bytes": 52772522
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/bd2f44bb2c2f0b7cc4e675d96633074d3f3e502d6e7fa479c05731684d6b4b9f.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K134",
+      "clcName": "拜占庭帝国",
+      "books": [
+        {
+          "id": "WEISER1168abbd2f99",
+          "title": "11世纪拜占庭帝国女皇现象研究 (陈悦)",
+          "authors": [
+            "陈悦"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《11世纪拜占庭帝国女皇现象研究 (陈悦)》；陈悦。拜占庭帝国，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K13%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K134%20%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD/11%E4%B8%96%E7%BA%AA%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD%E5%A5%B3%E7%9A%87%E7%8E%B0%E8%B1%A1%E7%A0%94%E7%A9%B6%20%28%E9%99%88%E6%82%A6%29.pdf",
+              "bytes": 34278905
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c3fe83c9abd78be371fd812e2d2b56b01b2303809253c62b5129fd18deadbbf8.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERdae3d3fae56c",
+          "title": "阿莱克修斯传 ((拜占庭帝国)安娜·科穆宁娜(AnnaKomnene))",
+          "authors": [
+            "AnnaKomnene"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《阿莱克修斯传 ((拜占庭帝国)安娜·科穆宁娜(AnnaKomnene))》；AnnaKomnene。拜占庭帝国，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K13%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K134%20%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD/%E9%98%BF%E8%8E%B1%E5%85%8B%E4%BF%AE%E6%96%AF%E4%BC%A0%20%28%28%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD%29%E5%AE%89%E5%A8%9C%C2%B7%E7%A7%91%E7%A9%86%E5%AE%81%E5%A8%9C%28AnnaKomnene%29%29.pdf",
+              "bytes": 69575812
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/308b8d602fc322924aac1186d4e3f5acf3843d4e38a648a6a8682697c96ec98f.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERaeeb0b5e6630",
+          "title": "拜占庭帝国大通史（1057-1453）",
+          "authors": [
+            "陈志强"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《拜占庭帝国大通史（1057-1453）》；陈志强。拜占庭帝国，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K13%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K134%20%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD%E5%A4%A7%E9%80%9A%E5%8F%B2%20%E7%AC%AC03%E5%8D%B7%EF%BC%881057-1453%EF%BC%89%20%28%E9%99%88%E5%BF%97%E5%BC%BA%29.epub",
+              "bytes": 3882481
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/9906c67c80d530a5e90ba1ec48cd0c9bd4a13ca6091fc3cbca6bff6e555f75bf.webp",
+          "language": "zh-hans",
+          "publisher": "江苏人民出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER6d6ab607e4fb",
+          "title": "拜占庭帝国大通史（330-610）",
+          "authors": [
+            "陈志强, 徐家玲, 林英"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《拜占庭帝国大通史（330-610）》；陈志强, 徐家玲, 林英。拜占庭帝国，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K13%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K134%20%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD%E5%A4%A7%E9%80%9A%E5%8F%B2%20%E7%AC%AC01%E5%8D%B7%EF%BC%88330-610%EF%BC%89%20%28%E9%99%88%E5%BF%97%E5%BC%BA%2C%20%E5%BE%90%E5%AE%B6%E7%8E%B2%2C%20%E6%9E%97%E8%8B%B1%29.epub",
+              "bytes": 3533194
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/32c52dd355a1453e1e0e60d469bfc49109b109423caf4a3deb627bc097eab0dd.webp",
+          "language": "zh-hans",
+          "publisher": "江苏人民出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERbd2e34f1111f",
+          "title": "拜占庭帝国大通史（610-1057）",
+          "authors": [
+            "陈志强, 张绪山, 田明"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《拜占庭帝国大通史（610-1057）》；陈志强, 张绪山, 田明。拜占庭帝国，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K13%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K134%20%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD%E5%A4%A7%E9%80%9A%E5%8F%B2%20%E7%AC%AC02%E5%8D%B7%EF%BC%88610-1057%EF%BC%89%20%28%E9%99%88%E5%BF%97%E5%BC%BA%2C%20%E5%BC%A0%E7%BB%AA%E5%B1%B1%2C%20%E7%94%B0%E6%98%8E%29.epub",
+              "bytes": 3845878
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ad84b6287f7b4fa06728c6a30a01c143f6ba154abf69623ced4b24e6878b526c.webp",
+          "language": "zh-hans",
+          "publisher": "江苏人民出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER2ccbd8d4becc",
+          "title": "拜占庭帝国史",
+          "authors": [
+            "A.A.Vasiliev(瓦西列夫)"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《拜占庭帝国史》；A.A.Vasiliev(瓦西列夫)。拜占庭帝国，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K13%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K134%20%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD%E5%8F%B2.epub",
+              "bytes": 9947951
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b5178b0ae1a5df391ed61271b802026a70d87becafc5eb2e1c47a654638751f5.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER265d68104cf7",
+          "title": "拜占庭帝国政治史论(南开大学世界古史论丛) (陈志强)",
+          "authors": [
+            "陈志强"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《拜占庭帝国政治史论(南开大学世界古史论丛) (陈志强)》；陈志强。拜占庭帝国，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K13%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K134%20%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD%E6%94%BF%E6%B2%BB%E5%8F%B2%E8%AE%BA%28%E5%8D%97%E5%BC%80%E5%A4%A7%E5%AD%A6%E4%B8%96%E7%95%8C%E5%8F%A4%E5%8F%B2%E8%AE%BA%E4%B8%9B%29%20%28%E9%99%88%E5%BF%97%E5%BC%BA%29.pdf",
+              "bytes": 44335274
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6becc422399f7ca02209e36bd50a15e7ad0b12a8baaed33fed68728abda3eaa9.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER39b7da4e3cbb",
+          "title": "拜占庭三部曲【迄今为止最好读、最引人入胜的拜占庭通史，《观察家》《星期日泰晤士报》年度图书】 (甲骨文系列)",
+          "authors": [
+            "甲骨文系列"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《拜占庭三部曲【迄今为止最好读、最引人入胜的拜占庭通史，《观察家》《星期日泰晤士报》年度图书】 (甲骨文系列)》；甲骨文系列。拜占庭帝国，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K13%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K134%20%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E4%B8%89%E9%83%A8%E6%9B%B2%E3%80%90%E8%BF%84%E4%BB%8A%E4%B8%BA%E6%AD%A2%E6%9C%80%E5%A5%BD%E8%AF%BB%E3%80%81%E6%9C%80%E5%BC%95%E4%BA%BA%E5%85%A5%E8%83%9C%E7%9A%84%E6%8B%9C%E5%8D%A0%E5%BA%AD%E9%80%9A%E5%8F%B2%EF%BC%8C%E3%80%8A%E8%A7%82%E5%AF%9F%E5%AE%B6%E3%80%8B%E3%80%8A%E6%98%9F%E6%9C%9F%E6%97%A5%E6%B3%B0%E6%99%A4%E5%A3%AB%E6%8A%A5%E3%80%8B%E5%B9%B4%E5%BA%A6%E5%9B%BE%E4%B9%A6%E3%80%91%20%28%E7%94%B2%E9%AA%A8%E6%96%87%E7%B3%BB%E5%88%97%29.epub",
+              "bytes": 12784044
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/89ea0b22345291b5b9ad6c3d30f9917a990181505f8620f9075d5aa4022eff0e.webp",
+          "language": "zh",
+          "publisher": "社会科学文献出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa574c540696b",
+          "title": "秘史 ((东罗马)普罗柯比著, (东罗马)普罗柯比著, 吴舒屏, 吕丽蓉译, 普罗科匹厄斯 etc.)",
+          "authors": [
+            "东罗马"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《秘史 ((东罗马)普罗柯比著, (东罗马)普罗柯比著, 吴舒屏, 吕丽蓉译, 普罗科匹厄斯 etc.)》；东罗马。拜占庭帝国，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K13%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K134%20%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD/%E7%A7%98%E5%8F%B2%20%28%28%E4%B8%9C%E7%BD%97%E9%A9%AC%29%E6%99%AE%E7%BD%97%E6%9F%AF%E6%AF%94%E8%91%97%2C%20%28%E4%B8%9C%E7%BD%97%E9%A9%AC%29%E6%99%AE%E7%BD%97%E6%9F%AF%E6%AF%94%E8%91%97%2C%20%E5%90%B4%E8%88%92%E5%B1%8F%2C%20%E5%90%95%E4%B8%BD%E8%93%89%E8%AF%91%2C%20%E6%99%AE%E7%BD%97%E7%A7%91%E5%8C%B9%E5%8E%84%E6%96%AF%20etc.%29.pdf",
+              "bytes": 57886481
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/26e240858e1c983ff3a21bb2c6384925d69a95c4c0169662b29097752ad03e20.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER0f22892e76e4",
+          "title": "By the Emperor's Hand Military Dress and Court Regalia in the later Romano- Byzantine Empire",
+          "authors": [
+            "Timothy Dawson",
+            "Graham Sumner"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《By the Emperor's Hand Military Dress and Court Regalia in the later Romano- Byzantine Empire》；Timothy Dawson、Graham Sumner。拜占庭帝国，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K13%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K134%20%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD/By%20the%20Emperor%27s%20Hand%20Military%20Dress%20and%20Court%20Regalia%20in%20the%20later%20Romano-%20Byzantine%20Empire.epub",
+              "bytes": 9184405
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/fd896636587813f9f84669b5793f36e10de85b34116176cf7cb2f527f623d220.webp",
+          "language": "en",
+          "publisher": "Frontline Books",
+          "access": "public"
+        },
+        {
+          "id": "WEISER2671abb14ac8",
+          "title": "Byzantine Cavalryman C.900-1204",
+          "authors": [
+            "Timothy Dawson"
+          ],
+          "authorStatus": "verified",
+          "description": "《Byzantine Cavalryman C.900-1204》；Timothy Dawson。拜占庭帝国，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K13%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K134%20%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD/Byzantine%20Cavalryman%20C.900-1204.pdf",
+              "bytes": 14424711
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e823664903244c8051066ea0432caf73594bffbb0b2b25645e73f616edf1e34e.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER0749ad2f1a65",
+          "title": "Reconstructing the Reality of Images - Byzantine Material Culture and Religious Iconography (11th-15th Centuries) (Maria G. Parani)",
+          "authors": [
+            "Maria G. Parani"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Reconstructing the Reality of Images - Byzantine Material Culture and Religious Iconography (11th-15th Centuries) (Maria G. Parani)》；Maria G. Parani。拜占庭帝国，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K1%20%E4%B8%96%E7%95%8C%E5%8F%B2/K13%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K134%20%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9B%BD/Reconstructing%20the%20Reality%20of%20Images%20-%20Byzantine%20Material%20Culture%20and%20Religious%20Iconography%20%2811th-15th%20Centuries%29%20%28Maria%20G.%20Parani%29.pdf",
+              "bytes": 37102090
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/0885ccbceba293d3d0e94b90ed1c3f997a4126eac236e9499d099337a1fd4292.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K204",
+      "clcName": "古代史籍",
+      "books": [
+        {
+          "id": "WEISER6689bbcecedd",
+          "title": "史记",
+          "authors": [
+            "司马迁"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《史记》；司马迁。古代史籍，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K2%20%E4%B8%AD%E5%9B%BD%E5%8F%B2/K204%20%E5%8F%A4%E4%BB%A3%E5%8F%B2%E7%B1%8D/%E5%8F%B2%E8%AE%B0.epub",
+              "bytes": 1033877
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a51e97afc3e8e5a4336959038b43a725455614cfda7dc1042ee2f67377afe55d.webp",
+          "language": "UND",
+          "publisher": "epub掌上书苑",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa2cc7449fc92",
+          "title": "资治通鉴",
+          "authors": [
+            "司马光"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《资治通鉴》；司马光。古代史籍，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K2%20%E4%B8%AD%E5%9B%BD%E5%8F%B2/K204%20%E5%8F%A4%E4%BB%A3%E5%8F%B2%E7%B1%8D/%E8%B5%84%E6%B2%BB%E9%80%9A%E9%89%B4.epub",
+              "bytes": 10622465
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d766469281d51632817f39010df0461a7a3918c812a1958521321041968b898a.webp",
+          "language": "UND",
+          "publisher": "中华书局",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K207",
+      "clcName": "研究、考订",
+      "books": [
+        {
+          "id": "WEISER21910dfc6a0c",
+          "title": "海外中国研究套书合集（50册）历经33年沉淀的镇社之宝，享誉全球的海外学者聚焦中国问题，海外中国研究丛书合集50册首次独家发售。",
+          "authors": [
+            "杜赞奇",
+            "易劳逸",
+            "拉铁摩尔",
+            "贺萧",
+            "韩敏中",
+            "张鹂",
+            "孔飞力",
+            "张勉冶",
+            "刘子健",
+            "魏斐德",
+            "林满红",
+            "尤金·N·安德森",
+            "高彦颐",
+            "王宪明",
+            "王国斌",
+            "贾志扬",
+            "福原启郎",
+            "冯珠娣",
+            "张灏",
+            "罗素恩",
+            "康儒博",
+            "魏丕信",
+            "包弼德",
+            "胡司德",
+            "佐藤慎一",
+            "格里德",
+            "杨联陞",
+            "武雅士",
+            "卢苇菁",
+            "杨晓山",
+            "胡缨",
+            "韩书瑞",
+            "罗友枝",
+            "科大卫",
+            "李惠仪",
+            "浦嘉珉",
+            "巴菲尔德",
+            "萧公权",
+            "薛凤",
+            "城山智子",
+            "阮玛霞",
+            "韩瑞",
+            "罗伯特•福琼",
+            "黄卫总",
+            "柏理安",
+            "T.克里斯托弗.杰斯普森",
+            "沃尔特·施德尔",
+            "浅野裕一",
+            "大岛正二",
+            "苏源熙"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《海外中国研究套书合集（50册）历经33年沉淀的镇社之宝，享誉全球的海外学者聚焦中国问题，海外中国研究丛书合集50册首次独家发售。》；杜赞奇、易劳逸、拉铁摩尔、贺萧、韩敏中、张鹂、孔飞力、张勉冶、刘子健、魏斐德、林满红、尤金·N·安德森、高彦颐、王宪明、王国斌、贾志扬、福原启郎、冯珠娣、张灏、罗素恩、康儒博、魏丕信、包弼德、胡司德、佐藤慎一、格里德、杨联陞、武雅士、卢苇菁、杨晓山、胡缨、韩书瑞、罗友枝、科大卫、李惠仪、浦嘉珉、巴菲尔德、萧公权、薛凤、城山智子、阮玛霞、韩瑞、罗伯特•福琼、黄卫总、柏理安、T.克里斯托弗.杰斯普森、沃尔特·施德尔、浅野裕一、大岛正二、苏源熙。研究、考订，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K2%20%E4%B8%AD%E5%9B%BD%E5%8F%B2/K207%20%E7%A0%94%E7%A9%B6%E3%80%81%E8%80%83%E8%AE%A2/%E6%B5%B7%E5%A4%96%E4%B8%AD%E5%9B%BD%E7%A0%94%E7%A9%B6%E5%A5%97%E4%B9%A6%E5%90%88%E9%9B%86%EF%BC%8850%E5%86%8C%EF%BC%89%E5%8E%86%E7%BB%8F33%E5%B9%B4%E6%B2%89%E6%B7%80%E7%9A%84%E9%95%87%E7%A4%BE%E4%B9%8B%E5%AE%9D%EF%BC%8C%E4%BA%AB%E8%AA%89%E5%85%A8%E7%90%83%E7%9A%84%E6%B5%B7%E5%A4%96%E5%AD%A6%E8%80%85%E8%81%9A%E7%84%A6%E4%B8%AD%E5%9B%BD%E9%97%AE%E9%A2%98%EF%BC%8C%E6%B5%B7%E5%A4%96%E4%B8%AD%E5%9B%BD%E7%A0%94%E7%A9%B6%E4%B8%9B%E4%B9%A6%E5%90%88%E9%9B%8650%E5%86%8C%E9%A6%96%E6%AC%A1%E7%8B%AC%E5%AE%B6%E5%8F%91%E5%94%AE%E3%80%82.epub",
+              "bytes": 69787874
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2fbdbb20cf6af299634d815fe4bf182f02ccbca85ac7d5061a27dcd2caefcfb6.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9b5cd4509e9a",
+          "title": "吴思历史经典三部曲（潜规则、血酬定律、我想重新解释历史）",
+          "authors": [
+            "吴思"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《吴思历史经典三部曲（潜规则、血酬定律、我想重新解释历史）》；吴思。研究、考订，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K2%20%E4%B8%AD%E5%9B%BD%E5%8F%B2/K207%20%E7%A0%94%E7%A9%B6%E3%80%81%E8%80%83%E8%AE%A2/%E5%90%B4%E6%80%9D%E5%8E%86%E5%8F%B2%E7%BB%8F%E5%85%B8%E4%B8%89%E9%83%A8%E6%9B%B2%EF%BC%88%E6%BD%9C%E8%A7%84%E5%88%99%E3%80%81%E8%A1%80%E9%85%AC%E5%AE%9A%E5%BE%8B%E3%80%81%E6%88%91%E6%83%B3%E9%87%8D%E6%96%B0%E8%A7%A3%E9%87%8A%E5%8E%86%E5%8F%B2%EF%BC%89.epub",
+              "bytes": 2837138
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1d815e64cea18c79336f9b214aedb2bee3a7deff7b60aa15eaab7ab1049c8caf.webp",
+          "language": "zh",
+          "publisher": "复旦大学出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER51554c4627b5",
+          "title": "血酬定律：中国历史中的生存游戏(官场商场职场必读之书)",
+          "authors": [
+            "官场商场职场必读之书"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《血酬定律：中国历史中的生存游戏(官场商场职场必读之书)》；官场商场职场必读之书。研究、考订，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K2%20%E4%B8%AD%E5%9B%BD%E5%8F%B2/K207%20%E7%A0%94%E7%A9%B6%E3%80%81%E8%80%83%E8%AE%A2/%E8%A1%80%E9%85%AC%E5%AE%9A%E5%BE%8B%3A%E4%B8%AD%E5%9B%BD%E5%8E%86%E5%8F%B2%E4%B8%AD%E7%9A%84%E7%94%9F%E5%AD%98%E6%B8%B8%E6%88%8F%28%E5%AE%98%E5%9C%BA%E5%95%86%E5%9C%BA%E8%81%8C%E5%9C%BA%E5%BF%85%E8%AF%BB%E4%B9%8B%E4%B9%A6%29.mobi",
+              "bytes": 2613082
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/575c927e9df02993a57aa19b7c2910f45c28d4e1a385877757b53b1be1ae44a3.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERddfae17e75e1",
+          "title": "张宏杰：历史的正面与侧面（全7册）（知名历史学者张宏杰集结数年思考之精华！）",
+          "authors": [
+            "张宏杰"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《张宏杰：历史的正面与侧面（全7册）（知名历史学者张宏杰集结数年思考之精华！）》；张宏杰。研究、考订，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K2%20%E4%B8%AD%E5%9B%BD%E5%8F%B2/K207%20%E7%A0%94%E7%A9%B6%E3%80%81%E8%80%83%E8%AE%A2/%E5%BC%A0%E5%AE%8F%E6%9D%B0%3A%E5%8E%86%E5%8F%B2%E7%9A%84%E6%AD%A3%E9%9D%A2%E4%B8%8E%E4%BE%A7%E9%9D%A2%EF%BC%88%E5%85%A87%E5%86%8C%EF%BC%89%EF%BC%88%E7%9F%A5%E5%90%8D%E5%8E%86%E5%8F%B2%E5%AD%A6%E8%80%85%E5%BC%A0%E5%AE%8F%E6%9D%B0%E9%9B%86%E7%BB%93%E6%95%B0%E5%B9%B4%E6%80%9D%E8%80%83%E4%B9%8B%E7%B2%BE%E5%8D%8E%EF%BC%81%EF%BC%89.epub",
+              "bytes": 14628223
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/3c4a5e81b65db68b37602d380e64fc3c5931dd64327b81dbd7a36e37d2cd703f.webp",
+          "language": "zh",
+          "publisher": "岳麓书社 广东人民出版社 等",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K225",
+      "clcName": "春秋",
+      "books": [
+        {
+          "id": "WEISER4f83bc14f244",
+          "title": "左传",
+          "authors": [
+            "（战国）左丘明 撰 （西晋）杜预 集解"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《左传》；（战国）左丘明 撰 （西晋）杜预 集解。春秋，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K2%20%E4%B8%AD%E5%9B%BD%E5%8F%B2/K22%20%E5%A5%B4%E9%9A%B6%E7%A4%BE%E4%BC%9A/K225%20%E6%98%A5%E7%A7%8B/%E5%B7%A6%E4%BC%A0%20%28%EF%BC%88%E6%88%98%E5%9B%BD%EF%BC%89%E5%B7%A6%E4%B8%98%E6%98%8E%20%E6%92%B0%20%EF%BC%88%E8%A5%BF%E6%99%8B%EF%BC%89%E6%9D%9C%E9%A2%84%20%E9%9B%86%E8%A7%A3%29.epub",
+              "bytes": 1270503
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2aeed5e0e15b2e857f9cd710170b4ae97d57c8ad9bd08c2ca27dafee9a12e5e5.webp",
+          "language": "zh",
+          "publisher": "上海世纪出版股份有限公司",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K232",
+      "clcName": "秦汉",
+      "books": [
+        {
+          "id": "WEISER99d41978a2f3",
+          "title": "秦汉史讲义",
+          "authors": [
+            "秦晖"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《秦汉史讲义》；秦晖。秦汉，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K2%20%E4%B8%AD%E5%9B%BD%E5%8F%B2/K23%20%E5%B0%81%E5%BB%BA%E7%A4%BE%E4%BC%9A/K232%20%E7%A7%A6%E6%B1%89/%E7%A7%A6%E6%B1%89%E5%8F%B2%E8%AE%B2%E4%B9%89%20%28%E7%A7%A6%E6%99%96%E5%9C%A8%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6%20%E2%80%9C%E7%A7%A6%E6%B1%89%E5%8F%B2%E2%80%9D%20%E8%AF%BE%E7%A8%8B%E4%B8%BA%E8%93%9D%E6%9C%AC%2C%E5%A2%9E%E5%8A%A0%E8%80%83%E5%8F%A4%E8%B5%84%E6%96%99%2C%E6%95%B4%E7%90%86%E4%BF%AE%E6%94%B9%29%20%28%E7%A7%A6%E6%99%96%29.epub",
+              "bytes": 7885513
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/aa806e3c3df2db06bdb159cbe7220e3754a5aaba251737fa37965ce518884fc9.webp",
+          "language": "zh-CN",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K237",
+      "clcName": "晋、南北朝",
+      "books": [
+        {
+          "id": "WEISER7735cf1ad67f",
+          "title": "东晋门阀政治",
+          "authors": [
+            "田余庆"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《东晋门阀政治》；田余庆。晋、南北朝，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K2%20%E4%B8%AD%E5%9B%BD%E5%8F%B2/K23%20%E5%B0%81%E5%BB%BA%E7%A4%BE%E4%BC%9A/K237%20%E6%99%8B%E3%80%81%E5%8D%97%E5%8C%97%E6%9C%9D/%E4%B8%9C%E6%99%8B%E9%97%A8%E9%98%80%E6%94%BF%E6%B2%BB.epub",
+              "bytes": 579778
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6f8fbbac021366e1278b86666261164306d4b236f6e579bdc7f0e2b825228195.webp",
+          "language": "zh",
+          "publisher": "北京大学出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K244",
+      "clcName": "宋",
+      "books": [
+        {
+          "id": "WEISER95441b851284",
+          "title": "经略幽燕",
+          "authors": [
+            "曾瑞龙"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《经略幽燕》；曾瑞龙。宋，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K2%20%E4%B8%AD%E5%9B%BD%E5%8F%B2/K24%20%E5%B0%81%E5%BB%BA%E7%A4%BE%E4%BC%9A/K244%20%E5%AE%8B/%E7%BB%8F%E7%95%A5%E5%B9%BD%E7%87%95.epub",
+              "bytes": 950060
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e5f57f933943ba2190dc9b39f0f1dc8b438657d1f5bf82c74765a2a451e74ca1.webp",
+          "language": "zh",
+          "publisher": "Info Rainbow LTD",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K265",
+      "clcName": "抗日战争",
+      "books": [
+        {
+          "id": "WEISER6c9d31c6da5c",
+          "title": "红太阳是怎样升起的：延安整风运动的来龙去脉",
+          "authors": [
+            "高华"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《红太阳是怎样升起的：延安整风运动的来龙去脉》；高华。抗日战争，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K2%20%E4%B8%AD%E5%9B%BD%E5%8F%B2/K26%20%E8%BF%91%E4%BB%A3%E5%8F%B2/K265%20%E6%8A%97%E6%97%A5%E6%88%98%E4%BA%89/%E7%BA%A2%E5%A4%AA%E9%98%B3%E6%98%AF%E6%80%8E%E6%A0%B7%E5%8D%87%E8%B5%B7%E7%9A%84%3A%E5%BB%B6%E5%AE%89%E6%95%B4%E9%A3%8E%E8%BF%90%E5%8A%A8%E7%9A%84%E6%9D%A5%E9%BE%99%E5%8E%BB%E8%84%89.epub",
+              "bytes": 6703749
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/effac4ac8f7b193c6084f864b02c838e35b8f82216e4414f2e352cabfff6ca91.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K351",
+      "clcName": "印度",
+      "books": [
+        {
+          "id": "WEISER4f25120b5e99",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        }
+      ]
+    },
+    {
+      "clcCode": "K373",
+      "clcName": "伊朗",
+      "books": [
+        {
+          "id": "WEISER69dd42ff7032",
+          "title": "伊朗四千年",
+          "authors": [
+            "霍昌·纳哈万迪",
+            "伊夫·博马提"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《伊朗四千年》；霍昌·纳哈万迪、伊夫·博马提。伊朗，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K3%20%E4%BA%9A%E6%B4%B2%E5%8F%B2/K373%20%E4%BC%8A%E6%9C%97/%E4%BC%8A%E6%9C%97%E5%9B%9B%E5%8D%83%E5%B9%B4.epub",
+              "bytes": 571157
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f9fee4da45bfaab48985cb44be7a95068397439964d83fbf02a0d9a4c4b795c9.webp",
+          "language": "zh",
+          "publisher": "湖南文艺出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K500",
+      "clcName": "欧洲通史",
+      "books": [
+        {
+          "id": "WEISER699642bfb9e8",
+          "title": "牛津欧洲史",
+          "authors": [
+            "肯尼思·O. 摩根",
+            "威廉·多伊尔",
+            "休·斯特罗恩",
+            "罗伯特·格拉特利",
+            "西里尔·曼戈",
+            "乔治·霍尔姆斯",
+            "彼得·索耶",
+            "约翰·博德曼"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《牛津欧洲史》；肯尼思·O. 摩根、威廉·多伊尔、休·斯特罗恩、罗伯特·格拉特利、西里尔·曼戈、乔治·霍尔姆斯、彼得·索耶、约翰·博德曼。欧洲通史，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K5%20%E6%AC%A7%E6%B4%B2%E5%8F%B2/K500%20%E6%AC%A7%E6%B4%B2%E9%80%9A%E5%8F%B2/%E7%89%9B%E6%B4%A5%E6%AC%A7%E6%B4%B2%E5%8F%B2%EF%BC%88100%E5%A4%9A%E4%BD%8D%E5%9B%BD%E5%AE%9D%E7%BA%A7%E9%99%A2%E5%A3%AB%EF%BC%8C40%E4%BD%99%E5%B9%B4%E6%89%93%E9%80%A0%E7%89%9B%E6%B4%A5%E7%BB%8F%E5%85%B8%EF%BC%81%E8%8B%B1%E5%9B%BD%E5%8F%B2%E3%80%81%E6%B3%95%E5%9B%BD%E5%A4%A7%E9%9D%A9%E5%91%BD%E5%8F%B2%E3%80%81%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%B8%96%E7%95%8C%E5%A4%A7%E6%88%98%E5%8F%B2%E3%80%81%E7%AC%AC%E4%B8%89%E5%B8%9D%E5%9B%BD%E5%8F%B2%E3%80%81%E4%B8%AD%E4%B8%96%E7%BA%AA%E6%AC%A7%E6%B4%B2%E5%8F%B2%E3%80%81%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%8F%B2%E3%80%81%E7%BB%B4%E4%BA%AC%E6%B5%B7%E7%9B%97%E5%8F%B2%E3%80%81%E5%8F%A4%E5%B8%8C%E8%85%8A%E5%8F%B2%E3%80%81%E5%8F%A4%E7%BD%97%E9%A9%AC%E5%8F%B2%EF%BC%89.epub",
+              "bytes": 21051990
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/89d51a56d287246adf9f7f23d5a1f1630e1fd032c6d68a160057172818b49afb.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K503",
+      "clcName": "中世纪",
+      "books": [
+        {
+          "id": "WEISER61e771b39d0f",
+          "title": "中世纪城堡生活 ([美]弗朗西斯·吉斯约瑟夫·吉斯著,周艺玮译)",
+          "authors": [
+            "[美]弗朗西斯·吉斯约瑟夫·吉斯著,周艺玮译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《中世纪城堡生活 ([美]弗朗西斯·吉斯约瑟夫·吉斯著,周艺玮译)》；[美]弗朗西斯·吉斯约瑟夫·吉斯著,周艺玮译。中世纪，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K5%20%E6%AC%A7%E6%B4%B2%E5%8F%B2/K50%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K503%20%E4%B8%AD%E4%B8%96%E7%BA%AA/%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%9F%8E%E5%A0%A1%E7%94%9F%E6%B4%BB%20%28%5B%E7%BE%8E%5D%E5%BC%97%E6%9C%97%E8%A5%BF%E6%96%AF%C2%B7%E5%90%89%E6%96%AF%E7%BA%A6%E7%91%9F%E5%A4%AB%C2%B7%E5%90%89%E6%96%AF%E8%91%97%2C%E5%91%A8%E8%89%BA%E7%8E%AE%E8%AF%91%29.pdf",
+              "bytes": 192463960
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e94877b49c9cb7a973ed07ac5319b3cd3e9ed0b230776deced871d1c93220f63.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER6c2eff83a861",
+          "title": "中世纪城市生活 ([美]弗朗西斯·吉斯约瑟夫·吉斯 刘程译)",
+          "authors": [
+            "[美]弗朗西斯·吉斯约瑟夫·吉斯 刘程译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《中世纪城市生活 ([美]弗朗西斯·吉斯约瑟夫·吉斯 刘程译)》；[美]弗朗西斯·吉斯约瑟夫·吉斯 刘程译。中世纪，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K5%20%E6%AC%A7%E6%B4%B2%E5%8F%B2/K50%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K503%20%E4%B8%AD%E4%B8%96%E7%BA%AA/%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%9F%8E%E5%B8%82%E7%94%9F%E6%B4%BB%20%28%5B%E7%BE%8E%5D%E5%BC%97%E6%9C%97%E8%A5%BF%E6%96%AF%C2%B7%E5%90%89%E6%96%AF%E7%BA%A6%E7%91%9F%E5%A4%AB%C2%B7%E5%90%89%E6%96%AF%20%E5%88%98%E7%A8%8B%E8%AF%91%29.pdf",
+              "bytes": 317019369
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/731d293779f2be66f01243ff5f19b171cddc56e0a97283f2aa2e32149ff7084e.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER523af6ca1163",
+          "title": "中世纪乡村生活 (弗朗西斯 吉斯 约瑟夫 吉斯)",
+          "authors": [
+            "弗朗西斯 吉斯 约瑟夫 吉斯"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《中世纪乡村生活 (弗朗西斯 吉斯 约瑟夫 吉斯)》；弗朗西斯 吉斯 约瑟夫 吉斯。中世纪，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K5%20%E6%AC%A7%E6%B4%B2%E5%8F%B2/K50%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%8F%B2/K503%20%E4%B8%AD%E4%B8%96%E7%BA%AA/%E4%B8%AD%E4%B8%96%E7%BA%AA%E4%B9%A1%E6%9D%91%E7%94%9F%E6%B4%BB%20%28%E5%BC%97%E6%9C%97%E8%A5%BF%E6%96%AF%20%E5%90%89%E6%96%AF%20%E7%BA%A6%E7%91%9F%E5%A4%AB%20%E5%90%89%E6%96%AF%29.pdf",
+              "bytes": 123453942
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/475fb30ba2b9e4dfa2d3cd127956f27a6391ea56658527d340ade56c6ea382e1.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K512",
+      "clcName": "俄国",
+      "books": [
+        {
+          "id": "WEISERb45cb51e2488",
+          "title": "娜塔莎之舞：俄罗斯文化史（通过俄国的文学和艺术，探索俄罗斯民族的建构及其内心世界） (理想国译丛)",
+          "authors": [
+            "理想国译丛"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《娜塔莎之舞：俄罗斯文化史（通过俄国的文学和艺术，探索俄罗斯民族的建构及其内心世界） (理想国译丛)》；理想国译丛。俄国，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K5%20%E6%AC%A7%E6%B4%B2%E5%8F%B2/K512%20%E4%BF%84%E5%9B%BD/%E5%A8%9C%E5%A1%94%E8%8E%8E%E4%B9%8B%E8%88%9E%3A%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%87%E5%8C%96%E5%8F%B2%EF%BC%88%E9%80%9A%E8%BF%87%E4%BF%84%E5%9B%BD%E7%9A%84%E6%96%87%E5%AD%A6%E5%92%8C%E8%89%BA%E6%9C%AF%EF%BC%8C%E6%8E%A2%E7%B4%A2%E4%BF%84%E7%BD%97%E6%96%AF%E6%B0%91%E6%97%8F%E7%9A%84%E5%BB%BA%E6%9E%84%E5%8F%8A%E5%85%B6%E5%86%85%E5%BF%83%E4%B8%96%E7%95%8C%EF%BC%89%20%28%E7%90%86%E6%83%B3%E5%9B%BD%E8%AF%91%E4%B8%9B%29.epub",
+              "bytes": 6828709
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d2074911ccc60687c531a08599d1b3da462afcaad11d12221f2b9109d9db33d3.webp",
+          "language": "zh",
+          "publisher": "四川人民出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K565",
+      "clcName": "法国",
+      "books": [
+        {
+          "id": "WEISER874678b3ecda",
+          "title": "法国通史",
+          "authors": [
+            "吕一民"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《法国通史》；吕一民。法国，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K5%20%E6%AC%A7%E6%B4%B2%E5%8F%B2/K565%20%E6%B3%95%E5%9B%BD/%E6%B3%95%E5%9B%BD%E9%80%9A%E5%8F%B2.epub",
+              "bytes": 2345595
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/feed13c4eac20e11e536bcf6e75191817981fd9518a861fbdc666e14265037c3.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa82bce170f68",
+          "title": "旧制度与大革命",
+          "authors": [
+            "[法]托克维尔 钟书峰译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《旧制度与大革命》；[法]托克维尔 钟书峰译。法国，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K5%20%E6%AC%A7%E6%B4%B2%E5%8F%B2/K565%20%E6%B3%95%E5%9B%BD/%E6%97%A7%E5%88%B6%E5%BA%A6%E4%B8%8E%E5%A4%A7%E9%9D%A9%E5%91%BD.epub",
+              "bytes": 5632031
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/dd3798ff3bb6c463064b20f2865915a62e3fa7cd1e02307fe0d1a738998f9cf4.webp",
+          "language": "zh",
+          "publisher": "中国长安出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K827",
+      "clcName": "中国人物传记",
+      "books": [
+        {
+          "id": "WEISERe90e0cbd118f",
+          "title": "沈醉回忆录：一个军统特务的忏悔录 战犯改造所见闻 (沈醉)",
+          "authors": [
+            "沈醉"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《沈醉回忆录：一个军统特务的忏悔录 战犯改造所见闻 (沈醉)》；沈醉。中国人物传记，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K81%20%E4%BC%A0%E8%AE%B0/K827%20%E4%B8%AD%E5%9B%BD%E4%BA%BA%E7%89%A9%E4%BC%A0%E8%AE%B0/%E6%B2%88%E9%86%89%E5%9B%9E%E5%BF%86%E5%BD%95%3A%E4%B8%80%E4%B8%AA%E5%86%9B%E7%BB%9F%E7%89%B9%E5%8A%A1%E7%9A%84%E5%BF%8F%E6%82%94%E5%BD%95%20%E6%88%98%E7%8A%AF%E6%94%B9%E9%80%A0%E6%89%80%E8%A7%81%E9%97%BB%20%28%E6%B2%88%E9%86%89%29.epub",
+              "bytes": 3592972
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b478187bbf9aabee8583a7e7f53b732661ce13b4713f47786ce3588bbacbee79.webp",
+          "language": "zh",
+          "publisher": "中国文史出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K991",
+      "clcName": "世界地图",
+      "books": [
+        {
+          "id": "WEISER3e1aadf6d984",
+          "title": "世界奇幻地图：古老又荒诞不经的神话、谎言和谬误",
+          "authors": [
+            "Edward Brooke-Hitching"
+          ],
+          "authorStatus": "verified",
+          "description": "《世界奇幻地图：古老又荒诞不经的神话、谎言和谬误》；Edward Brooke-Hitching。世界地图，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K9%20%E5%9C%B0%E7%90%86/K99%20%E5%9C%B0%E5%9B%BE/K991%20%E4%B8%96%E7%95%8C%E5%9C%B0%E5%9B%BE/%E4%B8%96%E7%95%8C%E5%A5%87%E5%B9%BB%E5%9C%B0%E5%9B%BE%3A%E5%8F%A4%E8%80%81%E5%8F%88%E8%8D%92%E8%AF%9E%E4%B8%8D%E7%BB%8F%E7%9A%84%E7%A5%9E%E8%AF%9D%E3%80%81%E8%B0%8E%E8%A8%80%E5%92%8C%E8%B0%AC%E8%AF%AF%EF%BC%88%E3%80%8A%E8%AF%A1%E5%9B%BE%E3%80%8B%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E7%89%88%E9%9C%87%E6%92%BC%E4%B8%8A%E5%B8%82%EF%BC%81%E5%A5%87%E5%B9%BB%E5%B7%A8%E4%BD%9C%EF%BC%8C%E6%83%B3%E8%B1%A1%E7%91%B0%E4%B8%BD%EF%BC%8C%E5%A0%AA%E7%A7%B0%E4%B8%96%E7%95%8C%E7%89%88%E3%80%8A%E5%B1%B1%E6%B5%B7%E7%BB%8F%E3%80%8B%EF%BC%81%20%E8%8B%B1%E5%9B%BD%E7%9A%87%E5%AE%B6%E5%9C%B0%E7%90%86%E5%AD%A6%E4%BC%9A%E4%BC%9A%E5%A3%AB%E3%80%81%E8%91%97%E5%90%8D%E5%9C%B0%E5%9B%BE%E4%B8%93%E5%AE%B6%E7%88%B1%E5%BE%B7%E5%8D%8E%E9%87%8D%E7%A3%85%E4%BD%9C%E5%93%81%EF%BC%81%E9%A6%96%E6%AC%A1%E4%BB%A5122%E5%BC%A0%E7%8F%8D%E7%A8%80%E7%9A%84%E5%8F%A4%E5%9C%B0%E5%9B%BE%E6%B1%87%E9%9B%8657%E4%B8%AA%E8%A1%8C%E8%B8%AA%E8%AF%A1%E8%B0%B2%E7%9A%84%E5%A5%87%E5%B9%BB%E4%B9%8B%E5%9C%B0%E3%80%82%E8%8B%B1%E5%9B%BD%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%A6%9C%E5%8D%95%E5%86%A0%E5%86%9B%EF%BC%8C%E3%80%8A%E6%97%B6%E4%BB%A3%E5%91%A8%E5%88%8A%E3%80%8B%E3%80%8A%E5%8D%AB%E6%8A%A5%E3%80%8B%E3%80%8A%E6%B3%B0%E6%99%A4%E5%A3%AB%E6%8A%A5%E3%80%8B%E8%AF%9A.mobi",
+              "bytes": 17625002
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/32b52ff4cfc4ac5725a41e06b07a81663fbbe107ff0b6841cc3f9eb69ff0904c.webp",
+          "access": "public"
+        }
+      ]
+    }
+  ]
+}

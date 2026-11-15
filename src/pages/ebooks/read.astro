@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/ebooks.scss';
+---
+<Layout title="在线阅览 · 书室" description="在书室中阅读电子书。" starfieldVariant="subtle" noIndex>
+	<main class="ebook-page library-reader" data-library-reader>
+		<a class="ebook-back" href="/ebooks/" data-reader-back>← 返回书架</a>
+		<header class="reader-header"><h1 data-reader-title>在线阅览</h1><div class="ebook-reading-links" data-reader-formats></div></header>
+		<p role="status" aria-live="polite" data-reader-state>正在读取书目…</p>
+		<a class="library-inline-button" href="/" data-library-access-help hidden>返回首页</a>
+		<div class="reader-toolbar" data-reader-tools hidden><button type="button" data-reader-prev>← 上一页</button><button type="button" data-reader-next>下一页 →</button><button type="button" data-reader-smaller aria-label="缩小阅读字号">A−</button><button type="button" data-reader-larger aria-label="放大阅读字号">A+</button><details><summary>目录</summary><nav aria-label="书籍目录" data-reader-chapters data-scroll-native></nav></details></div>
+		<div class="reader-surface" data-reader-surface hidden></div>
+	</main>
+</Layout>
+<script>
+	import { initLibraryReader } from '../../lib/ebooks/readerClient';
+	initLibraryReader();
+</script>

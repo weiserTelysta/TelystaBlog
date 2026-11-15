@@ -18,6 +18,7 @@ yarn-error.log*
 pnpm-debug.log*
 .tmp/
 __pycache__/
+.library-private/
 
 # environment variables
 .env

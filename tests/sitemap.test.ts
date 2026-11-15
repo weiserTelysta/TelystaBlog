@@ -1,0 +1,10 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { sitemapXml } from '../scripts/sitemap.mjs';
+test('单一站点地图去重、转义URL，不包含被过滤的后台与受保护地址', () => {
+ const output = sitemapXml('https://telysta.com', ['','blog/','blog/','console/','ebooks/private/','about/?q=a&b=c'], path => !['/console/','/ebooks/private/'].includes(path));
+ assert.equal((output.match(/<url>/g)||[]).length,3);
+ assert.ok(output.includes('https://telysta.com/blog/'));
+ assert.ok(output.includes('&amp;b=c'));
+ assert.ok(!output.includes('/console/') && !output.includes('/ebooks/private/'));
+});

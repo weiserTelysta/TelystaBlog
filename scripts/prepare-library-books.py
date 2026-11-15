@@ -132,6 +132,7 @@ def web_record(book, origin, cover):
         'description': f"《{title}》；{'、'.join(authors)}。{book['clcName']}，{book['format']} 格式。",
         'files': [{'format': book['format'], 'href': origin + '/' + urllib.parse.quote(book['objectKey'], safe='/'), 'bytes': book['bytes']}],
         'draft': False,
+        'access': book.get('access', 'public'),
     }
     if cover:
         record['cover'] = origin + '/covers/' + cover
@@ -143,6 +144,21 @@ def web_record(book, origin, cover):
         if book.get(key):
             record[key] = book[key]
     return record
+
+
+def grouped_catalog(category, records):
+    """Keep fine CLC codes on their Booklist, with books inheriting that class."""
+    groups = {}
+    for record in records:
+        code, name = record['clcCode'], record['clcName']
+        if not code.startswith(category):
+            raise ValueError('Booklist code does not belong to its category')
+        group = groups.setdefault(code, {'clcCode': code, 'clcName': name, 'books': []})
+        item = {key: value for key, value in record.items() if key != 'clcCode'}
+        if item.get('clcName') == group['clcName']:
+            item.pop('clcName', None)
+        group['books'].append(item)
+    return {'category': category, 'booklists': [groups[code] for code in sorted(groups)]}
 
 
 def main():
@@ -158,7 +174,7 @@ def main():
     parser.add_argument('--presentation-overrides', type=Path, default=Path(__file__).resolve().parents[1] / 'data/library/presentation-overrides.json')
     args = parser.parse_args()
     books = json.loads(args.catalog.read_text())['files']
-    policy = json.loads(args.exclusions.read_text())
+    policy = json.loads(args.exclusions.read_text()) if args.exclusions and args.exclusions.exists() else {}
     books = [book for book in books if is_public_book(book, policy)]
     presentation = {item['fileId']: item for item in json.loads(args.presentation_overrides.read_text())['records']}
     books = [{**book, 'categoryOnly': presentation.get(book['fileId'], {}).get('categoryOnly', book.get('categoryOnly', False))} for book in books]
@@ -179,9 +195,19 @@ def main():
             if error:
                 errors.append({'id': book['fileId'], 'error': error})
             record = web_record(book, args.origin.rstrip('/'), cover)
-            target = args.content / (record['id'] + '.md')
-            target.write_text('---\n' + json.dumps(record, ensure_ascii=False, indent=2) + '\n---\n', encoding='utf-8')
             records.append(record)
+    # This is a reviewed staging batch, never overwrite the live class catalogs.
+    live = Path(__file__).resolve().parents[1] / 'src/content/ebooks/catalog'
+    if args.content.resolve() == live.resolve():
+        raise ValueError('Prepare into a temporary batch directory, then merge reviewed entries into the live JSON catalogs')
+    categories = {}
+    for record in records:
+        categories.setdefault(record['clcCode'][0], []).append(record)
+    for category, entries in categories.items():
+        target = args.content / (category + '.json')
+        target.write_text(json.dumps(grouped_catalog(category, entries), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        if any(record['access'] == 'protected' for record in entries):
+            target.chmod(0o600)
     args.report.write_text(json.dumps({'files': len(records), 'withCover': len(records) - len(missing), 'withoutCover': missing, 'coverErrors': errors}, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({'files':len(records),'covers':len(records)-len(missing),'coverErrors':len(errors)},ensure_ascii=False))
 

@@ -25,7 +25,7 @@ for (const width of [390, 1440]) {
 			await page.goto('/ebooks/WEISER8cf630042445/', { waitUntil: 'domcontentloaded' });
 			await expect(page.locator('h1')).toHaveText('伯里曼人体结构绘画教学（最新版）');
 			await expect(page.locator('dl')).toContainText('乔治·伯里曼');
-			await expect(page.getByRole('link', { name: /下载.*（PDF）/ })).toHaveAttribute('href', /^https:\/\/library-files\.telysta\.com\/books\/.+\.pdf$/);
+			await expect(page.getByRole('link', { name: /下载.*（PDF）/ })).toHaveAttribute('href', /^https:\/\/library-files\.telysta\.com\/books\/.+\.pdf\?download=1$/);
 			await page.goto('/ebooks/WEISERd073e41fae03/', { waitUntil: 'domcontentloaded' });
 			await expect(page.locator('.ebook-detail__cover.ebook-cover-placeholder')).toBeVisible();
 			expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -92,17 +92,18 @@ test('搜索按全库和书单范围筛选、格式可组合、编号页可直�
 	await page.goto('/ebooks/clc/K/?q=Private+Pleasures', { waitUntil: 'domcontentloaded' });
 	await expect(page.locator('[data-search-status]')).toContainText('找到 0');
 	await expect(page.locator('.ebook-card')).toHaveCount(0);
-	await page.getByRole('link', { name: /印度 K351/ }).click();
+	await expect(page.getByRole('link', { name: /印度 K351/ })).toHaveCount(0);
+	await page.goto('/ebooks/booklists/K351/', { waitUntil: 'domcontentloaded' });
 	await expect(page).toHaveURL(/\/ebooks\/booklists\/K351\/$/);
 	await page.getByRole('searchbox').fill('Private Pleasures');
-	await expect(page.locator('.ebook-card')).toHaveCount(1);
+	await expect(page.locator('.ebook-card')).toHaveCount(0);
 	await page.goto('/ebooks/', { waitUntil: 'domcontentloaded' });
 	await page.getByLabel('跳转页码').fill('3');
 	await page.getByRole('button', { name: '前往' }).click();
 	await expect(page).toHaveURL(/\/ebooks\/page\/3\/$/);
 	await page.getByRole('link', { name: '第 27 页', exact: true }).click();
 	await expect(page).toHaveURL(/\/ebooks\/page\/27\/$/);
-	await expect(page.locator('.ebook-card')).toHaveCount(15);
+	await expect(page.locator('.ebook-card')).toHaveCount(6);
 });
 
 for (const width of [390, 1440]) {

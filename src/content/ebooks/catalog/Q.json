@@ -1,0 +1,57 @@
+{
+  "category": "Q",
+  "booklists": [
+    {
+      "clcCode": "Q94",
+      "clcName": "植物学",
+      "books": [
+        {
+          "id": "WEISER7ee3925ea867",
+          "title": "危险花园 颠倒众生的植物 (David Stuart)",
+          "authors": [
+            "David Stuart"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《危险花园 颠倒众生的植物 (David Stuart)》；David Stuart。植物学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/Q%20%E7%94%9F%E7%89%A9%E7%A7%91%E5%AD%A6/Q94%20%E6%A4%8D%E7%89%A9%E5%AD%A6/%E5%8D%B1%E9%99%A9%E8%8A%B1%E5%9B%AD%20%E9%A2%A0%E5%80%92%E4%BC%97%E7%94%9F%E7%9A%84%E6%A4%8D%E7%89%A9%20%28David%20Stuart%29.pdf",
+              "bytes": 59527424
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/cb068b754df2dfe825b1469d4bba89728109399e10ad153ace85e0d780e9cc98.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "Q98",
+      "clcName": "人类学",
+      "books": [
+        {
+          "id": "WEISER695feddc46da",
+          "title": "第三种黑猩猩 人类的身世与未来",
+          "authors": [
+            "贾雷德·戴蒙德(Jared Diamond)"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《第三种黑猩猩 人类的身世与未来》；贾雷德·戴蒙德(Jared Diamond)。人类学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/Q%20%E7%94%9F%E7%89%A9%E7%A7%91%E5%AD%A6/Q98%20%E4%BA%BA%E7%B1%BB%E5%AD%A6/%E7%AC%AC%E4%B8%89%E7%A7%8D%E9%BB%91%E7%8C%A9%E7%8C%A9%20%E4%BA%BA%E7%B1%BB%E7%9A%84%E8%BA%AB%E4%B8%96%E4%B8%8E%E6%9C%AA%E6%9D%A5.epub",
+              "bytes": 1011831
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4ec0d2cd9074bfde14f3e806c83837392d392925d782b4a23ea58122325cb2fd.webp",
+          "language": "zh",
+          "publisher": "上海世纪出版股份有限公司,上海译文出版社",
+          "access": "public"
+        }
+      ]
+    }
+  ]
+}

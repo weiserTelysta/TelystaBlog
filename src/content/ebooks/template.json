@@ -1,0 +1,20 @@
+{
+  "category": "B",
+  "booklists": [
+    {
+      "clcCode": "B0",
+      "clcName": "哲学理论",
+      "books": [
+        {
+          "id": "WEISER012345abcdef",
+          "title": "书名",
+          "authors": ["作者"],
+          "access": "public",
+          "description": "简短书籍介绍。",
+          "files": [],
+          "draft": true
+        }
+      ]
+    }
+  ]
+}

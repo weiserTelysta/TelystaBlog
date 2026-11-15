@@ -1,0 +1,74 @@
+{
+  "category": "S",
+  "booklists": [
+    {
+      "clcCode": "S",
+      "clcName": "农业科学",
+      "books": [
+        {
+          "id": "WEISER56f79c8a6014",
+          "title": "乡镇致富实用技术手册 (丁湖广编)",
+          "authors": [
+            "丁湖广编"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《乡镇致富实用技术手册 (丁湖广编)》；丁湖广编。农业科学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/S%20%E5%86%9C%E4%B8%9A%E7%A7%91%E5%AD%A6/%E4%B9%A1%E9%95%87%E8%87%B4%E5%AF%8C%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C%20%28%E4%B8%81%E6%B9%96%E5%B9%BF%E7%BC%96%29.pdf",
+              "bytes": 33342430
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/bd132445a3947229dd44ac50301d831903a228969a548685a15220f97cd0f345.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "S6",
+      "clcName": "园艺",
+      "books": [
+        {
+          "id": "WEISERa765a8edfc12",
+          "title": "世界园林植物与花卉百科全书 ([英]克里斯托弗·布里克尔英国皇家园艺学会杨秋生李振宇)",
+          "authors": [
+            "[英]克里斯托弗·布里克尔英国皇家园艺学会杨秋生李振宇"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《世界园林植物与花卉百科全书 ([英]克里斯托弗·布里克尔英国皇家园艺学会杨秋生李振宇)》；[英]克里斯托弗·布里克尔英国皇家园艺学会杨秋生李振宇。园艺，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/S%20%E5%86%9C%E4%B8%9A%E7%A7%91%E5%AD%A6/S6%20%E5%9B%AD%E8%89%BA/%E4%B8%96%E7%95%8C%E5%9B%AD%E6%9E%97%E6%A4%8D%E7%89%A9%E4%B8%8E%E8%8A%B1%E5%8D%89%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6%20%28%5B%E8%8B%B1%5D%E5%85%8B%E9%87%8C%E6%96%AF%E6%89%98%E5%BC%97%C2%B7%E5%B8%83%E9%87%8C%E5%85%8B%E5%B0%94%E8%8B%B1%E5%9B%BD%E7%9A%87%E5%AE%B6%E5%9B%AD%E8%89%BA%E5%AD%A6%E4%BC%9A%E6%9D%A8%E7%A7%8B%E7%94%9F%E6%9D%8E%E6%8C%AF%E5%AE%87%29.pdf",
+              "bytes": 530439084
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4e41a27fad7a2374946c0d83625ac11c00b79ed6c7a8d2899b82b89aa91566ba.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERfbedf57b217d",
+          "title": "园艺百科全书 全彩",
+          "authors": [
+            "克里斯托夫·布里克尔"
+          ],
+          "authorStatus": "verified",
+          "description": "《园艺百科全书 全彩》；克里斯托夫·布里克尔。园艺，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/S%20%E5%86%9C%E4%B8%9A%E7%A7%91%E5%AD%A6/S6%20%E5%9B%AD%E8%89%BA/%E5%9B%AD%E8%89%BA%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6%20%E5%85%A8%E5%BD%A9.pdf",
+              "bytes": 335849882
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d0078bacebe73106059783ecfa01a63272a6d75a992098e1d3093d4cbb8987ef.webp",
+          "access": "public"
+        }
+      ]
+    }
+  ]
+}

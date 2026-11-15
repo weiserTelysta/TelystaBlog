@@ -49,7 +49,11 @@ Category 与 Series 共用 `BlogIndexControl.scss` 的字体、行高、内边�
 
 公开画廊入口为 `/gallery/`；旧 `/resources/` 使用轻量静态兼容页面，脚本保留查询与片段，无脚本回退总览。旧页不进入 sitemap。内部 resources 集合、组件与 R2 素材继续复用，避免仅为改名迁移素材。
 
-电子书独立使用 `ebookSchema.ts`，与内容检查共用发布、格式、URL 和日期约束。`EbookCard.astro` 输出无边框左右图文；四／三／二／一列随视口调整，书名和作者固定行高，不加载书籍正文。`/ebooks/<固定id>/` 仅为公开书目生成页面，改标题／文件名不改路由；草稿默认隐藏。原始书库使用独立 bucket `telysta-library` 的 `books/` 前缀，离线生成带来源与校验和的书目，构建不扫描远端 bucket。公开域名为 `library-files.telysta.com`，schema分别约束books文件与covers封面，兼容旧图片域名ebooks前缀。书室每页24项，19个中图法基本大类有静态分类页，再按细类号生成Booklists及其分页。640份书目已写入独立Markdown，1份仅在对应Booklist展示，总览639份。搜索索引仅在操作筛选后加载，不请求书籍正文；原生分类、书单和数字分页不依赖脚本。公开选择、发现位置与原库盘点分别维护，上传只接受明确名单。维护与测试方式见 [Ebooks](ebooks.md)。
+电子书使用 `ebookSchema.ts` 与JSON自定义Loader。`src/content/ebooks/catalog/<大类>.json` 按中图细类分 `booklists`，固定ID与目录／标题解耦；`imported/` 已完成本地迁移。草稿不发布。受保护完整书目保存在忽略于Git的 `.library-private/`，公开源码只留无标题、作者、封面和下载链接的占位。每页24项，分类、Booklist和分页有静态入口；搜索索引按需加载，登录后的受保护目录从网关获取。
+
+`EbookCard.astro` 使用四／三／二／一列响应布局、固定两行标题与作者及独立格式行。详情和在线阅览分别按需载入数据与EPUB阅读器，公开索引不携带正文。`workers/library-gateway/` 通过R2绑定流式返回获准文件，保护GET／HEAD／Range与封面；未知对象返回404，R2公开域与r2.dev直连关闭。域名保持 `library-files.telysta.com`，现有对象键不随分类修改。
+
+`workers/console/` 独立提供邮箱验证码、D1 Session、四级权限、私人上传、云端草稿和分类型备份；网关通过Service Binding验证会话。首页头像是唯一公开账户入口。D1保存云端编辑工作区，Git仍是静态发布输入；后台保存不会自动发布。原始书籍位于独立R2桶 `telysta-library`，图片位于素材桶，构建不扫描远端桶。新书上传、Git发布与Worker名单更新分开核验，参见[书室维护](ebooks.md)、[线上管理](console.md)与[Cloudflare构建](cloudflare-builds.md)。
 
 `resourceItems.ts` 在构建时读取内容与 CDN 清单，仅向 React island 发送图片、标题、类型及下载数据。Credits、许可证和作者正文仍保存在源稿中，不为了简化 UI 删除原始信息，也不再发送旧详情面板所需的冗余数据。
 

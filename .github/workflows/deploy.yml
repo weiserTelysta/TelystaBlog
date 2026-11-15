@@ -15,7 +15,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  workers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            workers/console/package-lock.json
+            workers/library-gateway/package-lock.json
+
+      - name: Check account console
+        run: |
+          npm ci --prefix workers/console
+          npm run check --prefix workers/console
+          npm test --prefix workers/console
+
+      - name: Check library gateway
+        run: |
+          npm ci --prefix workers/library-gateway
+          npm run check --prefix workers/library-gateway
+          npm test --prefix workers/library-gateway
+
   build:
+    needs: workers
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

@@ -7,6 +7,7 @@ import { postLoader } from './lib/postLoader';
 import { parseContentDate } from './lib/contentDate';
 import { POST_UUID_PATTERN } from './lib/postLinks.mjs';
 import { ebookSchema } from './lib/ebooks/ebookSchema';
+import { ebookCatalogLoader } from './lib/ebooks/catalogLoader';
 import {
 	RESOURCE_ACTION_TYPES,
 	RESOURCE_STATUS_IDS,
@@ -111,5 +112,5 @@ const resources = defineCollection({
 export const collections = {
 	posts,
 	resources,
-	ebooks: defineCollection({ loader: glob({ pattern: process.env.TELYSTA_EBOOK_FIXTURES_ONLY === '1' ? '__browser_fixture_*.md' : '**/*.md', base: './src/content/ebooks' }), schema: ebookSchema }),
+	ebooks: defineCollection({ loader: ebookCatalogLoader(), schema: ebookSchema }),
 };

@@ -1,0 +1,11 @@
+# 公开站点发现与收录
+
+网站只维护一份公开 `https://telysta.com/sitemap.xml`，由构建产物路由生成、去重，排除后台、受保护书籍、阅读器、JSON索引、旧跳转页和404。robots.txt声明该地址；后台另外发送noindex响应头，受保护资料仍靠服务端鉴权。
+
+`/rss.xml`只包含公开文章，沿用永久链接和正文H1优先的标题。它用于读者订阅和博客目录核验，不包含电子书正文、云端草稿或用户资料。
+
+Bing支持IndexNow。公开验证文件与设置在 `data/seo/indexnow.json` 和 `public/<校验key>.txt`，它们是网站所有权校验资料；邮箱Secret完全独立。运行 `npm run seo:submit`先看预演名单，确认网站验证文件已部署，再用 `npm run seo:submit -- --submit`提交。默认选择少量首页／栏目及公开文章，单次上限50条；脚本不在构建时自动推送。成功HTTP状态仅代表接收，不保证收录，依据[官方协议](https://www.indexnow.org/documentation)。结果记录在忽略于Git的 `.tmp/seo/`。
+
+Google已停用匿名sitemap ping，不能把404当提交成功。通过robots发现，或在已验证的Search Console中提交sitemap；见[官方说明](https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping)。百度普通收录需要站点所有者的资源平台验证和提交token，缺少授权时不声称已推送。对应令牌应走受保护环境，不写入公开Git。
+
+博客目录提交限于站点的公开名称、作者、URL、简介和RSS。先检查该目录的规则、是否已收录、项目是否接受申请，再提交一次并记录链接。不要发布后台地址、私人邮箱凭据或受保护书目，也不自动添加与站点无关的营销内容。

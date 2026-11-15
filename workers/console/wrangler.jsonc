@@ -1,0 +1,80 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "telysta-console",
+  "main": "src/index.ts",
+  "account_id": "c3a43d4042720d333a0dbb0afdf986fb",
+  "compatibility_date": "2026-11-14",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "telysta.com/console*",
+      "zone_name": "telysta.com"
+    },
+    {
+      "pattern": "telysta.com/telysta-console*",
+      "zone_name": "telysta.com"
+    }
+  ],
+  "assets": {
+    "directory": "public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "telysta-console",
+      "database_id": "c1e358b5-d39c-4d5f-9bd6-3bcfe3edd8b9",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    "CONSOLE_ORIGIN": "https://telysta.com",
+    "SITE_ORIGIN": "https://telysta.com",
+    "COOKIE_DOMAIN": "telysta.com",
+    "SMTP_HOST": "smtp.exmail.qq.com",
+    "SMTP_USER": "weiser@telysta.com",
+    "BASE_PATH": "/console",
+    "ADMIN_PATH": "/telysta-console"
+  },
+  "secrets": {
+    "required": [
+      "SMTP_PASSWORD",
+      "AUTH_PEPPER"
+    ]
+  },
+  "ratelimits": [
+    {
+      "name": "AUTH_LIMITER",
+      "namespace_id": "831415120",
+      "simple": {
+        "limit": 10,
+        "period": 60
+      }
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 0.1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.01
+    }
+  },
+  "r2_buckets": [
+    {
+      "binding": "LIBRARY_BUCKET",
+      "bucket_name": "telysta-library"
+    },
+    {
+      "binding": "MEDIA_BUCKET",
+      "bucket_name": "telysta-blog-assets"
+    }
+  ]
+}

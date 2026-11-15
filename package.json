@@ -6,6 +6,8 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "library:access": "tsx scripts/set-ebook-access.ts",
+    "library:gateway:prepare": "tsx scripts/prepare-library-gateway.ts",
     "admin": "tsx scripts/admin/server.ts",
     "dev": "npm run content:check && npm run score:check && astro dev",
     "build": "astro build",
@@ -27,13 +29,17 @@
     "typecheck": "astro check && tsc --noEmit",
     "check": "npm run typecheck && npm test && npm run build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "library:stats": "tsx scripts/library-stats.ts",
+    "console:prepare": "tsx scripts/prepare-console-content.ts",
+    "seo:submit": "tsx scripts/submit-indexnow.ts"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.2.2",
     "@astrojs/react": "^6.0.2",
-    "@astrojs/sitemap": "^3.7.4",
     "astro": "^7.2.2",
+    "dompurify": "^3.4.18",
+    "epubjs": "^0.3.93",
     "github-slugger": "^2.0.0",
     "katex": "^0.18.2",
     "motion": "^12.42.2",
@@ -48,6 +54,7 @@
     "unified": "^11.0.5"
   },
   "overrides": {
+    "@xmldom/xmldom": "0.9.12",
     "katex": "$katex"
   },
   "devDependencies": {

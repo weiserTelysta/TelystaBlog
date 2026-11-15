@@ -1,14 +1,13 @@
 import { EBOOKS_PAGE_SIZE, LIBRARY_CLASSES } from '../../config/library';
 
-type ShelfBook = { clcCode?: string; clcName?: string; categoryOnly?: boolean };
-export function booksInCategory<T extends ShelfBook>(books: T[], category?: string, booklist?: string): T[] {
-	if (booklist) return books.filter(book => book.clcCode === booklist);
-	return books.filter(book => !book.categoryOnly && (!category || book.clcCode?.startsWith(category)));
+type ShelfBook = { clcCode?: string; clcName?: string; categoryOnly?: boolean; access?: string };
+export function booksInCategory<T extends ShelfBook>(books: T[], category?: string, booklist?: string, unlocked = false): T[] {
+	return books.filter(book => (unlocked || book.access !== 'protected') && (booklist ? book.clcCode === booklist : (unlocked || !book.categoryOnly) && (!category || book.clcCode?.startsWith(category))));
 }
 
-export function filterShelf<T extends ShelfBook & { title: string; authors: string[]; files: { format: string }[] }>(books: T[], category: string | undefined, query = '', format = '', booklist?: string): T[] {
+export function filterShelf<T extends ShelfBook & { title: string; authors: string[]; files: { format: string }[] }>(books: T[], category: string | undefined, query = '', format = '', booklist?: string, unlocked = false): T[] {
 	const words = query.normalize('NFKC').toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
-	return booksInCategory(books, category, booklist).filter(book => {
+	return booksInCategory(books, category, booklist, unlocked).filter(book => {
 		const haystack = `${book.title} ${book.authors.join(' ')}`.normalize('NFKC').toLocaleLowerCase();
 		return words.every(word => haystack.includes(word)) && (!format || book.files.some(file => file.format === format));
 	});

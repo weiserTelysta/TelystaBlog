@@ -12,19 +12,21 @@ description: 为 Telysta 书室添加或修订电子书，核对书目与中图�
 - 从会话确认本次指定哪些书，以及是否授权上传 R2、提交 Git、推送部署。已有授权继续有效；“只写 Skill／先整理／暂不提交这些书”不授权上传或发布新书。
 - 不扫描后把整个 Books 目录自动上传。新书可能暂存在根目录、未收进旧 CSV；原有清单不是新书齐全与否的唯一依据。
 - 不移动、删除或改名本地原书。要分类整理，优先在临时入库批次中保留分类路径；修改原目录须有相应任务授权。
-- 不因待核对、成人向标签或不在首页展示而删除本地书籍或已有 R2 对象。分类／首页可见性属于元数据操作；远端删除是另一项操作。内容不能公开处理时，说明哪些部分未执行，保留原件，不以批量删除代替审查。
+- 不因待核对或不在首页展示而删除本地书籍或已有 R2 对象。分类／首页可见性属于元数据操作；远端删除是另一项操作，需单独授权。
 
 ## 存储位置
 
 | 内容 | 位置与用途 |
 | --- | --- |
 | 作者的原书 | Windows `C:\Users\weise\Desktop\Books`；WSL `/mnt/c/Users/weise/Desktop/Books` |
-| 漫画原目录 | `Books/J 艺术/J2 绘画/J238 各国漫画/`；2026-11-14核实此前撤下的65份原文件仍全部存在，不据此授权重新公开任何内容 |
-| 网站书目 | `src/content/ebooks/imported/<固定ID>.md`；也可独立维护普通书目文件，须满足当前 schema |
+| 公开网站书目 | `src/content/ebooks/catalog/A.json` 至 `Z.json`，按大类分文件，再按细类分 `booklists[].books`；固定ID不随文件变化 |
+| 大类名称 | `src/content/ebooks/catalog/_classes.json`；Booklist按分组的 `clcCode`／`clcName` 自动生成，书籍继承分类 |
+| 受保护完整书目 | `.library-private/catalog/<大类>.json`，忽略于Git；公开JSON只留 `privateStub` 占位 |
+| 新条目模板 | `src/content/ebooks/template.json`，不是网站集合的一部分 |
 | R2 bucket | `telysta-library`，不是画廊图片 bucket |
 | 电子书对象 | `books/<中图分类相对路径>/<文件名>.<格式>` |
 | 衍生封面 | `covers/<封面内容完整SHA-256>.webp` |
-| 访问域名 | `https://library-files.telysta.com` |
+| 访问域名 | `https://library-files.telysta.com`，必须由鉴权Worker提供资源，不能保留可绕过它的R2公开入口 |
 | S3 API | `https://c3a43d4042720d333a0dbb0afdf986fb.r2.cloudflarestorage.com`；只用于认证上传，不写入网页下载链接 |
 | 公开审计清单 | `catalog/<批次日期或批次ID>/`，只含本次可公开记录；`catalog/latest.json` 指向最新完整公开清单时，不能用单批新增清单冒充全库 |
 
@@ -38,17 +40,23 @@ description: 为 Telysta 书室添加或修订电子书，核对书目与中图�
 
 ## 实现入口
 
+普通编辑只修改对应大类JSON，不再逐书创建Markdown。每个文件使用 `{ "category": "K", "booklists": [{ "clcCode": "K27", "clcName": "中华人民共和国史", "books": [...] }] }`，书目顺序不影响固定ID。分组使用实际核实的最细类号，层级深度可以不同；“二级Booklist”是网站导航层级，不表示所有书都要退回相同两位类号。字段及完整例子见 [references/catalog-json.md](references/catalog-json.md)。`imported/` 已清空迁移，后续直接维护JSON；暂不发布的新书保留草稿，不顺带上传或部署。
+
+`access` 为 `public` 或 `protected`，与 `draft` 分开。改变访问状态使用 `npm run library:access -- --id WEISER... --access protected`（或 `public`），工具保留完整元信息并生成／撤销公开占位；不能只藏卡片。邮箱Secret、会话令牌和完整受保护书目不提交公开Git。
+
 - schema 与下载域约束：`src/lib/ebooks/ebookSchema.ts`。
 - R2 公开域、页大小与分类：`src/config/library.ts`。
 - 书架与详情：`src/components/ebooks/`、`src/pages/ebooks/`；常规加书修改数据，不逐书修改组件或路由。
 - 本地盘点、证据与完整性：`scripts/library-catalog.py`、`data/library/author-overrides.json`。
 - 封面与初始网页记录：`scripts/prepare-library-books.py`；生成到 `.tmp/` 后审查，再加入正式书目。
-- 仅书单展示：`data/library/presentation-overrides.json` 与书目 `categoryOnly`；初次准备会应用前者，总览和大类页不会展示这些条目。
+- 访问控制与阅览：`workers/library-gateway/`、`src/lib/ebooks/libraryAccess.ts`、`src/pages/ebooks/read.astro`；PDF由浏览器内嵌，EPUB按需加载并禁用书内脚本。
+- Worker书目准备：`npm run library:gateway:prepare`，读取公开JSON和本地私有JSON，生成忽略于Git的服务端catalog；部署前必须运行，缺少完整私有书目时停止部署。
+- `categoryOnly` 仅为发现方式，不是访问锁；解锁后的受保护条目可进入全部藏书、分类及搜索。原有 `data/library/presentation-overrides.json` 只用于离线准备旧书目，日常以分类JSON为准。
 - Windows EPUB 元数据：`scripts/inspect-library-epub.ps1`。
 - 明确名单复制：`scripts/sync-r2-library.ps1`，默认 dry-run；`-Apply` 才上传。
-- 既有公开选择规则：`scripts/library_publication.py` 与 `data/library/publication-exclusions.json`。不把全部 J238 都当作不可公开，也不绕过当前排除记录自动重发；逐项核对可公开范围。`categoryOnly` 等发现方式字段以当前 schema 和文档为准，不等于访问权限或公开授权。
+- 正式发布范围以分类JSON的 `draft`、`access` 和Worker书目为准，不能把旧盘点脚本的全库输出当成自动发布授权。
 
-新增批次、R2 验证与提交细节见 [references/workflow.md](references/workflow.md)。处理成人题材、隐私、待核对或其他敏感资料前，读取 [references/content-handling.md](references/content-handling.md)；其中区分题材、公开授权、仅书单展示与不能执行的公开分发，禁止用删原件代替处理。
+新增批次、R2 验证与提交细节见 [references/workflow.md](references/workflow.md)。账户权限、服务端部署和受保护元信息维护见 [references/access-control.md](references/access-control.md)。
 
 中图法的大类与当前细分类映射见 [references/clc.md](references/clc.md)，新增书籍归类与 Booklist 建立时读取。现行结构、字段样例及历史盘点见仓库 [docs/ebooks.md](../../../docs/ebooks.md) 与 [docs/library.md](../../../docs/library.md)。
 
@@ -91,3 +99,7 @@ description: 为 Telysta 书室添加或修订电子书，核对书目与中图�
 入库前验证分类号与类名一致、分类号存在于已核实映射、上下级关系合理、来源信息可追溯。
 
 无法核实的分类不得标记为已确认。仅改变分类元数据时，不执行文件上传或远端对象删除。
+
+## 线上提交资源
+
+正式用户的上传先进入R2私人 `incoming/<用户ID>/<上传ID>.<格式>`，D1保存所有者、资料及审核状态。审核通过不自动发布。入库Agent仍需按本Skill核对标题、作者、文件哈希、中图分类和访问范围，再更新正式书目、网关与网站。不要把incoming对象自动透传为公开下载，也不要改动他人的上传资料。Console中的文章／配置编辑属于云端草稿，当前网站发布源仍是Git，保存数据库不等于已部署。

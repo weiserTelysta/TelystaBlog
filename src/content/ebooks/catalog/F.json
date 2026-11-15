@@ -1,0 +1,1245 @@
+{
+  "category": "F",
+  "booklists": [
+    {
+      "clcCode": "F0",
+      "clcName": "经济学",
+      "books": [
+        {
+          "id": "WEISERcdab8975a6a4",
+          "title": "银发经济学：老龄时代的商业机会",
+          "authors": [
+            "大前研一"
+          ],
+          "authorStatus": "verified",
+          "description": "《银发经济学：老龄时代的商业机会》；大前研一。经济学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F0%20%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E9%93%B6%E5%8F%91%E7%BB%8F%E6%B5%8E%E5%AD%A6%3A%E8%80%81%E9%BE%84%E6%97%B6%E4%BB%A3%E7%9A%84%E5%95%86%E4%B8%9A%E6%9C%BA%E4%BC%9A.pdf",
+              "bytes": 19677421
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/05de86cd3438e3216366a88e752ec91838ec3142906fa42171b02731cf3384e7.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER11dcf12f44b1",
+          "title": "资本的原始积累",
+          "authors": [
+            "周有光"
+          ],
+          "authorStatus": "verified",
+          "description": "《资本的原始积累》；周有光。经济学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F0%20%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E8%B5%84%E6%9C%AC%E7%9A%84%E5%8E%9F%E5%A7%8B%E7%A7%AF%E7%B4%AF.pdf",
+              "bytes": 1128209
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2eda662657ac3d1faa1bef13938ad294336ebdf0d7ae847304a71fc7b3668325.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F12",
+      "clcName": "中国经济",
+      "books": [
+        {
+          "id": "WEISER0896cf886b3a",
+          "title": "分析与思考：黄奇帆的复旦经济课",
+          "authors": [
+            "黄奇帆"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《分析与思考：黄奇帆的复旦经济课》；黄奇帆。中国经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F12%20%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E/%E5%88%86%E6%9E%90%E4%B8%8E%E6%80%9D%E8%80%83%3A%E9%BB%84%E5%A5%87%E5%B8%86%E7%9A%84%E5%A4%8D%E6%97%A6%E7%BB%8F%E6%B5%8E%E8%AF%BE.epub",
+              "bytes": 780488
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d603cb0ab8d4ff4625c80887502e5125de08a70cdb9c17a483477c0242c7a764.webp",
+          "language": "zh",
+          "publisher": "上海人民出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER20b854d3fcc0",
+          "title": "置身事内 中国政府与经济发展【复旦经院“毕业课”解读经济生活背后的政府角色。罗永浩、刘格菘、张军、周黎安、王烁联袂推荐】",
+          "authors": [
+            "兰小欢"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《置身事内 中国政府与经济发展【复旦经院“毕业课”解读经济生活背后的政府角色。罗永浩、刘格菘、张军、周黎安、王烁联袂推荐】》；兰小欢。中国经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F12%20%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E/%E7%BD%AE%E8%BA%AB%E4%BA%8B%E5%86%85%20%E4%B8%AD%E5%9B%BD%E6%94%BF%E5%BA%9C%E4%B8%8E%E7%BB%8F%E6%B5%8E%E5%8F%91%E5%B1%95%E3%80%90%E5%A4%8D%E6%97%A6%E7%BB%8F%E9%99%A2%E2%80%9C%E6%AF%95%E4%B8%9A%E8%AF%BE%E2%80%9D%E8%A7%A3%E8%AF%BB%E7%BB%8F%E6%B5%8E%E7%94%9F%E6%B4%BB%E8%83%8C%E5%90%8E%E7%9A%84%E6%94%BF%E5%BA%9C%E8%A7%92%E8%89%B2%E3%80%82%E7%BD%97%E6%B0%B8%E6%B5%A9%E3%80%81%E5%88%98%E6%A0%BC%E8%8F%98%E3%80%81%E5%BC%A0%E5%86%9B%E3%80%81%E5%91%A8%E9%BB%8E%E5%AE%89%E3%80%81%E7%8E%8B%E7%83%81%E8%81%94%E8%A2%82%E6%8E%A8%E8%8D%90%E3%80%91.epub",
+              "bytes": 2191400
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/9ac37d443b65e22c78a4b16bd21f902cfa6b4238938f9d68e8dbfb9bbcfc0d2a.webp",
+          "language": "zh",
+          "publisher": "上海人民出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F015",
+      "clcName": "宏观经济学",
+      "books": [
+        {
+          "id": "WEISERa621bdc78d75",
+          "title": "大衰退:宏观经济学的圣杯",
+          "authors": [
+            "辜朝明"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《大衰退:宏观经济学的圣杯》；辜朝明。宏观经济学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F0%20%E7%BB%8F%E6%B5%8E%E5%AD%A6/F015%20%E5%AE%8F%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E5%A4%A7%E8%A1%B0%E9%80%80%20%E5%AE%8F%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%9A%84%E5%9C%A3%E6%9D%AF.epub",
+              "bytes": 8631691
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/470f5708f13827a57eff3794d19d619bf84c7be9c4aa398774f3a0df3d9d9b25.webp",
+          "language": "zh",
+          "publisher": "东方出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F061",
+      "clcName": "经济学分支",
+      "books": [
+        {
+          "id": "WEISERee8cfd170dd7",
+          "title": "国家为什么会失败(中英对照)",
+          "authors": [
+            "德隆·阿西莫格鲁",
+            "詹姆斯·A.罗宾逊"
+          ],
+          "authorStatus": "verified",
+          "description": "《国家为什么会失败(中英对照)》；德隆·阿西莫格鲁、詹姆斯·A.罗宾逊。经济学分支，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F0%20%E7%BB%8F%E6%B5%8E%E5%AD%A6/F061%20%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%88%86%E6%94%AF/%E5%9B%BD%E5%AE%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%A4%B1%E8%B4%A5%28%E4%B8%AD%E8%8B%B1%E5%AF%B9%E7%85%A7%29.epub",
+              "bytes": 9839972
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/816e79286f2ebda6354369c499e4fa86b1deeebda1684f7eb6aa337147101c60.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F091",
+      "clcName": "经济思想史",
+      "books": [
+        {
+          "id": "WEISERf35438855e40",
+          "title": "就业、利息和货币通论",
+          "authors": [
+            "约翰·梅纳德·凯恩斯(John Maynard Keynes)"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《就业、利息和货币通论》；约翰·梅纳德·凯恩斯(John Maynard Keynes)。经济思想史，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F0%20%E7%BB%8F%E6%B5%8E%E5%AD%A6/F091%20%E7%BB%8F%E6%B5%8E%E6%80%9D%E6%83%B3%E5%8F%B2/%E5%B0%B1%E4%B8%9A%E3%80%81%E5%88%A9%E6%81%AF%E5%92%8C%E8%B4%A7%E5%B8%81%E9%80%9A%E8%AE%BA.epub",
+              "bytes": 2108490
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b6de0e7b69ed47dfecdc7b375c01884dad81360b3cd4f4d96cf2370ad5f52b99.webp",
+          "language": "zh",
+          "publisher": "陕西出版集团，陕西人民出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F113",
+      "clcName": "世界经济问题",
+      "books": [
+        {
+          "id": "WEISER4bc77bcc7173",
+          "title": "贫穷的本质：我们为什么摆脱不了贫穷",
+          "authors": [
+            "( 印度) 班纳吉",
+            "（法）迪弗洛"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《贫穷的本质：我们为什么摆脱不了贫穷》；( 印度) 班纳吉、（法）迪弗洛。世界经济问题，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F113%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E%E9%97%AE%E9%A2%98/%E8%B4%AB%E7%A9%B7%E7%9A%84%E6%9C%AC%E8%B4%A8%3A%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E6%91%86%E8%84%B1%E4%B8%8D%E4%BA%86%E8%B4%AB%E7%A9%B7.epub",
+              "bytes": 3745318
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/28110b953abe75fcd641d5edf933cd7cda2da104dd1138f3705c85784f46d501.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F131",
+      "clcName": "日本经济",
+      "books": [
+        {
+          "id": "WEISERbd03d1c8ff33",
+          "title": "以日为鉴：衰退时代生存指南",
+          "authors": [
+            "分析师Boden"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《以日为鉴：衰退时代生存指南》；分析师Boden。日本经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F13/17%20%E5%90%84%E5%9B%BD%E7%BB%8F%E6%B5%8E/F131%20%E6%97%A5%E6%9C%AC%E7%BB%8F%E6%B5%8E/%E4%BB%A5%E6%97%A5%E4%B8%BA%E9%89%B4%3A%E8%A1%B0%E9%80%80%E6%97%B6%E4%BB%A3%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97.epub",
+              "bytes": 2955622
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/8d396e8ebfe7b086fd0aff3747ef453e08ffa00a8753e01d10732a95384083d7.webp",
+          "language": "zh",
+          "publisher": "开明出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F231",
+      "clcName": "会计",
+      "books": [
+        {
+          "id": "WEISER8f284196e0b2",
+          "title": "手把手教你读财报:财报是用来排除企业的",
+          "authors": [
+            "唐朝"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《手把手教你读财报:财报是用来排除企业的》；唐朝。会计，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F231%20%E4%BC%9A%E8%AE%A1/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E8%AF%BB%E8%B4%A2%E6%8A%A5%20%E8%B4%A2%E6%8A%A5%E6%98%AF%E7%94%A8%E6%9D%A5%E6%8E%92%E9%99%A4%E4%BC%81%E4%B8%9A%E7%9A%84.epub",
+              "bytes": 4453720
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/7670d1a35b4b8b560c3d6fbf23907052a3941c91a15c773fa71074fbf4877ef0.webp",
+          "language": "zh-CN",
+          "publisher": "中国经济出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F272",
+      "clcName": "企业管理",
+      "books": [
+        {
+          "id": "WEISER81c9d6c35799",
+          "title": "创新者的窘境（全新修订版）",
+          "authors": [
+            "[美]克莱顿·克里斯坦森"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《创新者的窘境（全新修订版）》；[美]克莱顿·克里斯坦森。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E5%88%9B%E6%96%B0%E8%80%85%E7%9A%84%E7%AA%98%E5%A2%83%EF%BC%88%E5%85%A8%E6%96%B0%E4%BF%AE%E8%AE%A2%E7%89%88%EF%BC%89.epub",
+              "bytes": 4552833
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ffebd8bfdf1a06b665b045a6d0c24b2a645b3c67ee241d5d873f23b16adce944.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版集团",
+          "access": "public"
+        },
+        {
+          "id": "WEISER0cfee84c240d",
+          "title": "创业维艰 (奇点系列)",
+          "authors": [
+            "奇点系列"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《创业维艰 (奇点系列)》；奇点系列。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E5%88%9B%E4%B8%9A%E7%BB%B4%E8%89%B0%20%28%E5%A5%87%E7%82%B9%E7%B3%BB%E5%88%97%29.epub",
+              "bytes": 283169
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/98c448a5543a994e62fe1a08c6d89f2f24223301621fea354a9b5afb30013db1.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER64d67b03fb79",
+          "title": "第一性原理",
+          "authors": [
+            "李善友"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《第一性原理》；李善友。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E7%AC%AC%E4%B8%80%E6%80%A7%E5%8E%9F%E7%90%86.epub",
+              "bytes": 1447064
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/8fc14f1097891618a1e136033b07d680f37c4a08d1af3bee29a3c611deab7b9a.webp",
+          "language": "zh",
+          "publisher": "人民邮电出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER32d7dfe2178a",
+          "title": "复盘+：把经验转化为能力（第3版）",
+          "authors": [
+            "邱昭良"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《复盘+：把经验转化为能力（第3版）》；邱昭良。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E5%A4%8D%E7%9B%98%2B%3A%E6%8A%8A%E7%BB%8F%E9%AA%8C%E8%BD%AC%E5%8C%96%E4%B8%BA%E8%83%BD%E5%8A%9B%EF%BC%88%E7%AC%AC3%E7%89%88%EF%BC%89.epub",
+              "bytes": 1986844
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2009e635a5781f7d87e1d8aca37209be303148b78ff98630cf7701898ae82ff9.webp",
+          "language": "zh",
+          "publisher": "机械工业出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER323c451e7284",
+          "title": "好战略，坏战略（畅销版）",
+          "authors": [
+            "[美]理查德·鲁梅尔特"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《好战略，坏战略（畅销版）》；[美]理查德·鲁梅尔特。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E5%A5%BD%E6%88%98%E7%95%A5%EF%BC%8C%E5%9D%8F%E6%88%98%E7%95%A5%EF%BC%88%E7%95%85%E9%94%80%E7%89%88%EF%BC%89.epub",
+              "bytes": 1523137
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/5be6e2c3bbb66d65843096c6fd8dc104ee01df5a1219637564069d6aa548b0c2.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa8f03c60d2ed",
+          "title": "价值主张设计：如何构建商业模式最重要的环节",
+          "authors": [
+            "（瑞士）亚历山大·奥斯特瓦德（Alexander Osterwalder）（比利时）伊夫·皮尼厄（Yves Pigneur） （瑞士）格雷格·贝尔纳达（Greg Bernarda）"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《价值主张设计：如何构建商业模式最重要的环节》；（瑞士）亚历山大·奥斯特瓦德（Alexander Osterwalder）（比利时）伊夫·皮尼厄（Yves Pigneur） （瑞士）格雷格·贝尔纳达（Greg Bernarda）。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E4%BB%B7%E5%80%BC%E4%B8%BB%E5%BC%A0%E8%AE%BE%E8%AE%A1%3A%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E7%8E%AF%E8%8A%82.epub",
+              "bytes": 4789513
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/0d6d9d2a3d40e521e78753a810bfcea452f9d2d59134b728c1dba4be93eaa532.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd04961a20ef6",
+          "title": "金字塔原理",
+          "authors": [
+            "芭芭拉·明托 (Barbara Minto)"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《金字塔原理》；芭芭拉·明托 (Barbara Minto)。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86.epub",
+              "bytes": 3974748
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/53e40af17800fc9e7957be27a31155f73d975edc8561880516d210cae78923c2.webp",
+          "language": "zh",
+          "publisher": "Kindle伴侶",
+          "access": "public"
+        },
+        {
+          "id": "WEISER7cee91526583",
+          "title": "金字塔原理（麦肯锡40年经典培训教材）",
+          "authors": [
+            "芭芭拉·明托"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《金字塔原理（麦肯锡40年经典培训教材）》；芭芭拉·明托。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%EF%BC%88%E9%BA%A6%E8%82%AF%E9%94%A140%E5%B9%B4%E7%BB%8F%E5%85%B8%E5%9F%B9%E8%AE%AD%E6%95%99%E6%9D%90%EF%BC%89.epub",
+              "bytes": 11916514
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e132327fe6586c055e319133ef4ac19d5a39b15b2735c759fdb077e582ebdd56.webp",
+          "language": "zh-CN",
+          "publisher": "南海出版公司",
+          "access": "public"
+        },
+        {
+          "id": "WEISER1680d380db27",
+          "title": "精益创业2.0",
+          "authors": [
+            "埃里克·莱斯"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《精益创业2.0》；埃里克·莱斯。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E7%B2%BE%E7%9B%8A%E5%88%9B%E4%B8%9A2.0%EF%BC%88%E3%80%8A%E7%B2%BE%E7%9B%8A%E5%88%9B%E4%B8%9A%E3%80%8B%E4%BD%9C%E8%80%85%E6%96%B0%E4%BD%9C%EF%BC%9B%E5%BD%B1%E5%93%8D%E4%B8%80%E4%BB%A3%E5%88%9B%E4%B8%9A%E8%80%85%E7%9A%84%E5%88%9B%E4%B8%9A%E6%80%9D%E7%BB%B4%EF%BC%9B%E4%BB%8E%E7%B2%BE%E7%9B%8A%E5%88%9B%E4%B8%9A%E5%88%B0%E5%88%9B%E4%B8%9A%E7%AE%A1%E7%90%86%E7%9A%84%E5%8D%87%E7%BA%A7%E4%B9%8B%E4%BD%9C%EF%BC%9B%E4%B8%B0%E7%94%B0%E3%80%81GE%E3%80%81%E7%88%B1%E5%BD%BC%E8%BF%8E%E3%80%81%E4%BA%9A%E9%A9%AC%E9%80%8A%E9%83%BD%E5%9C%A8%E7%94%A8%E7%9A%84%E5%88%9B%E4%B8%9A%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%EF%BC%89.epub",
+              "bytes": 1209022
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/79b89fa71579c11e546a3764d993c0111bb5c343aebdc2ea798846c5b9ce2916.webp",
+          "language": "zh",
+          "publisher": "中信出版集团",
+          "access": "public"
+        },
+        {
+          "id": "WEISER505abb450d48",
+          "title": "竞争战略",
+          "authors": [
+            "（美）波特"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《竞争战略》；（美）波特。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E7%AB%9E%E4%BA%89%E6%88%98%E7%95%A5.epub",
+              "bytes": 1514940
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e9a94e88ca9b27ca16ad98c29a356b85a73191aea5043c539adc7b7ec5d48384.webp",
+          "language": "zh",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER355911fbd6e9",
+          "title": "商业模式新生代（个人篇）： 一张画布重塑你的职业生涯 (新经济必读丛书)",
+          "authors": [
+            "新经济必读丛书"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《商业模式新生代（个人篇）： 一张画布重塑你的职业生涯 (新经济必读丛书)》；新经济必读丛书。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E6%96%B0%E7%94%9F%E4%BB%A3%EF%BC%88%E4%B8%AA%E4%BA%BA%E7%AF%87%EF%BC%89%3A%20%E4%B8%80%E5%BC%A0%E7%94%BB%E5%B8%83%E9%87%8D%E5%A1%91%E4%BD%A0%E7%9A%84%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF%20%28%E6%96%B0%E7%BB%8F%E6%B5%8E%E5%BF%85%E8%AF%BB%E4%B8%9B%E4%B9%A6%29.epub",
+              "bytes": 13863933
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/79229b4451065cb7e353635fd98674a074bff98c6c016dd38dee5c5135fdcb45.webp",
+          "language": "ZH-CN",
+          "publisher": "机械工业出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER3af6cb0dca97",
+          "title": "团队协作的五大障碍",
+          "authors": [
+            "（美）帕特里克·兰西奥尼,刘向东;栾羽琳"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《团队协作的五大障碍》；（美）帕特里克·兰西奥尼,刘向东;栾羽琳。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C%E7%9A%84%E4%BA%94%E5%A4%A7%E9%9A%9C%E7%A2%8D.epub",
+              "bytes": 743242
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d75cc4a78fc374a73f3c68d12a9a5036b0be7ced3e00055fc59628acc60b748a.webp",
+          "language": "zh",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER061de3ccfe51",
+          "title": "选择卓越（中信管理经典）",
+          "authors": [
+            "Jim Collins & Morten T. Hansen"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《选择卓越（中信管理经典）》；Jim Collins & Morten T. Hansen。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E9%80%89%E6%8B%A9%E5%8D%93%E8%B6%8A%EF%BC%88%E4%B8%AD%E4%BF%A1%E7%AE%A1%E7%90%86%E7%BB%8F%E5%85%B8%EF%BC%89.epub",
+              "bytes": 1840923
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/20ac094576b4d6cd894c79943db0d24747840c2f342bb5e9ea29e59f9b368d42.webp",
+          "language": "zh",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9c4e5718d52b",
+          "title": "原则",
+          "authors": [
+            "[美]瑞·达利欧"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《原则》；[美]瑞·达利欧。企业管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F272%20%E4%BC%81%E4%B8%9A%E7%AE%A1%E7%90%86/%E5%8E%9F%E5%88%99.epub",
+              "bytes": 2410365
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d54f5d7e097348d5999d0ecf47cc756a3e0798d0d2d0a656169a8ff3376c755a.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F713",
+      "clcName": "商品流通与市场",
+      "books": [
+        {
+          "id": "WEISER86cb1d7d49cb",
+          "title": "从零开始做运营(百度、阿里、腾讯、知乎……的员工都在看的互联网运营干货)",
+          "authors": [
+            "百度、阿里、腾讯、知乎……的员工都在看的互联网运营干货"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《从零开始做运营(百度、阿里、腾讯、知乎……的员工都在看的互联网运营干货)》；百度、阿里、腾讯、知乎……的员工都在看的互联网运营干货。商品流通与市场，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F7%20%E8%B4%B8%E6%98%93%E7%BB%8F%E6%B5%8E/F713%20%E5%95%86%E5%93%81%E6%B5%81%E9%80%9A%E4%B8%8E%E5%B8%82%E5%9C%BA/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%81%9A%E8%BF%90%E8%90%A5%28%E7%99%BE%E5%BA%A6%E3%80%81%E9%98%BF%E9%87%8C%E3%80%81%E8%85%BE%E8%AE%AF%E3%80%81%E7%9F%A5%E4%B9%8E%E2%80%A6%E2%80%A6%E7%9A%84%E5%91%98%E5%B7%A5%E9%83%BD%E5%9C%A8%E7%9C%8B%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E8%BF%90%E8%90%A5%E5%B9%B2%E8%B4%A7%29.epub",
+              "bytes": 4952918
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1f6252ebf4a3633f2afe9cfcbe2853a98eaa2f0d1859981a00ca0f23182bb552.webp",
+          "language": "zh",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER4e182a9551e4",
+          "title": "从零开始做运营2",
+          "authors": [
+            "张亮"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《从零开始做运营2》；张亮。商品流通与市场，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F7%20%E8%B4%B8%E6%98%93%E7%BB%8F%E6%B5%8E/F713%20%E5%95%86%E5%93%81%E6%B5%81%E9%80%9A%E4%B8%8E%E5%B8%82%E5%9C%BA/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%81%9A%E8%BF%90%E8%90%A52.epub",
+              "bytes": 4635613
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/baf4618047911adeb9d8f75ca2887200b51b91247d67d029e5ea975c7ad6ad55.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版集团",
+          "access": "public"
+        },
+        {
+          "id": "WEISER66e033682c90",
+          "title": "定位",
+          "authors": [
+            "艾·里斯",
+            "杰克·特劳特"
+          ],
+          "authorStatus": "verified",
+          "description": "《定位》；艾·里斯、杰克·特劳特。商品流通与市场，AZW3 格式。",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F7%20%E8%B4%B8%E6%98%93%E7%BB%8F%E6%B5%8E/F713%20%E5%95%86%E5%93%81%E6%B5%81%E9%80%9A%E4%B8%8E%E5%B8%82%E5%9C%BA/%E5%AE%9A%E4%BD%8D.azw3",
+              "bytes": 3356185
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/544aeecbae58c38513499f8293e4f6b3e2a0e455d5260f8f3d20f3867026d18b.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER698f632094e0",
+          "title": "感染力——互联网+时代病毒营销策划的55个实操秘诀 (转型时代丛书)",
+          "authors": [
+            "转型时代丛书"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《感染力——互联网+时代病毒营销策划的55个实操秘诀 (转型时代丛书)》；转型时代丛书。商品流通与市场，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F7%20%E8%B4%B8%E6%98%93%E7%BB%8F%E6%B5%8E/F713%20%E5%95%86%E5%93%81%E6%B5%81%E9%80%9A%E4%B8%8E%E5%B8%82%E5%9C%BA/%E6%84%9F%E6%9F%93%E5%8A%9B%E2%80%94%E2%80%94%E4%BA%92%E8%81%94%E7%BD%91%2B%E6%97%B6%E4%BB%A3%E7%97%85%E6%AF%92%E8%90%A5%E9%94%80%E7%AD%96%E5%88%92%E7%9A%8455%E4%B8%AA%E5%AE%9E%E6%93%8D%E7%A7%98%E8%AF%80%20%28%E8%BD%AC%E5%9E%8B%E6%97%B6%E4%BB%A3%E4%B8%9B%E4%B9%A6%29.epub",
+              "bytes": 4053569
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/09e77489b84a21b7900c67a7e1de65aa0b33f6ca2d882628fe5a83ca80994960.webp",
+          "language": "zh",
+          "publisher": "电子工业出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER608e704a39bc",
+          "title": "互联网运营之道（套装全8册）",
+          "authors": [
+            "吴声",
+            "韩叙",
+            "徐志斌",
+            "施玛泽",
+            "张亮",
+            "埃里克·施密特",
+            "乔纳森·罗森伯格",
+            "万达集团企业文化中心"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《互联网运营之道（套装全8册）》；吴声、韩叙、徐志斌、施玛泽、张亮、埃里克·施密特、乔纳森·罗森伯格、万达集团企业文化中心。商品流通与市场，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F7%20%E8%B4%B8%E6%98%93%E7%BB%8F%E6%B5%8E/F713%20%E5%95%86%E5%93%81%E6%B5%81%E9%80%9A%E4%B8%8E%E5%B8%82%E5%9C%BA/%E4%BA%92%E8%81%94%E7%BD%91%E8%BF%90%E8%90%A5%E4%B9%8B%E9%81%93%EF%BC%88%E5%A5%97%E8%A3%85%E5%85%A88%E5%86%8C%EF%BC%89.epub",
+              "bytes": 45509337
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/626f81fa6d1b8d5b620a42c3c2962e9cf45135e72cfff6d58702333b44fdf412.webp",
+          "language": "zh",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERce124b535a06",
+          "title": "双核投放法-亚马逊广告",
+          "authors": [
+            "优麦智投广告团队"
+          ],
+          "authorStatus": "verified",
+          "description": "《双核投放法-亚马逊广告》；优麦智投广告团队。商品流通与市场，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F7%20%E8%B4%B8%E6%98%93%E7%BB%8F%E6%B5%8E/F713%20%E5%95%86%E5%93%81%E6%B5%81%E9%80%9A%E4%B8%8E%E5%B8%82%E5%9C%BA/%E5%8F%8C%E6%A0%B8%E6%8A%95%E6%94%BE%E6%B3%95-%E4%BA%9A%E9%A9%AC%E9%80%8A%E5%B9%BF%E5%91%8A.pdf",
+              "bytes": 63249717
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/df887004b682d9cd9b24814cf0417520cb89f7cb10ce3459225daf7d577b0db6.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER02d6a01135a1",
+          "title": "一切从广告开始=MY LIFE IN ADVERTISING SCIENTIFIC ADVERTISING",
+          "authors": [
+            "克劳德·霍普金斯"
+          ],
+          "authorStatus": "verified",
+          "description": "《一切从广告开始=MY LIFE IN ADVERTISING SCIENTIFIC ADVERTISING》；克劳德·霍普金斯。商品流通与市场，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F7%20%E8%B4%B8%E6%98%93%E7%BB%8F%E6%B5%8E/F713%20%E5%95%86%E5%93%81%E6%B5%81%E9%80%9A%E4%B8%8E%E5%B8%82%E5%9C%BA/%E4%B8%80%E5%88%87%E4%BB%8E%E5%B9%BF%E5%91%8A%E5%BC%80%E5%A7%8B%3DMY%20LIFE%20IN%20ADVERTISING%20SCIENTIFIC%20ADVERTISING.pdf",
+              "bytes": 39010438
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/71ec111d7aac94ada6ccb7edf28be3530e6b401d878bd465b8fc9f9855d480af.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERab3f8d2be349",
+          "title": "增长黑客",
+          "authors": [
+            "[美]肖恩·埃利斯,[美]摩根·布朗"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《增长黑客》；[美]肖恩·埃利斯,[美]摩根·布朗。商品流通与市场，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F7%20%E8%B4%B8%E6%98%93%E7%BB%8F%E6%B5%8E/F713%20%E5%95%86%E5%93%81%E6%B5%81%E9%80%9A%E4%B8%8E%E5%B8%82%E5%9C%BA/%E5%A2%9E%E9%95%BF%E9%BB%91%E5%AE%A2.epub",
+              "bytes": 1941613
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d4de3c31f9cf2f15f8e812015577576aaf882bb018246ee582d13628a66368f7.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F715",
+      "clcName": "商业谈判",
+      "books": [
+        {
+          "id": "WEISER5a6eed9e5acb",
+          "title": "罗杰·道森优势谈判系列【全球畅销超值谈判套装共6册】 (包含：《优势谈判》《绝对成交》《赢在决策力》《赢在问题解决力》《优势执行力》《优势薪酬谈判》共6册)",
+          "authors": [
+            "罗杰·道森"
+          ],
+          "authorStatus": "verified",
+          "description": "《罗杰·道森优势谈判系列【全球畅销超值谈判套装共6册】 (包含：《优势谈判》《绝对成交》《赢在决策力》《赢在问题解决力》《优势执行力》《优势薪酬谈判》共6册)》；罗杰·道森。商业谈判，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F7%20%E8%B4%B8%E6%98%93%E7%BB%8F%E6%B5%8E/F715%20%E5%95%86%E4%B8%9A%E8%B0%88%E5%88%A4/%E7%BD%97%E6%9D%B0%C2%B7%E9%81%93%E6%A3%AE%E4%BC%98%E5%8A%BF%E8%B0%88%E5%88%A4%E7%B3%BB%E5%88%97%E3%80%90%E5%85%A8%E7%90%83%E7%95%85%E9%94%80%E8%B6%85%E5%80%BC%E8%B0%88%E5%88%A4%E5%A5%97%E8%A3%85%E5%85%B16%E5%86%8C%E3%80%91%20%28%E5%8C%85%E5%90%AB%3A%E3%80%8A%E4%BC%98%E5%8A%BF%E8%B0%88%E5%88%A4%E3%80%8B%E3%80%8A%E7%BB%9D%E5%AF%B9%E6%88%90%E4%BA%A4%E3%80%8B%E3%80%8A%E8%B5%A2%E5%9C%A8%E5%86%B3%E7%AD%96%E5%8A%9B%E3%80%8B%E3%80%8A%E8%B5%A2%E5%9C%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%8A%9B%E3%80%8B%E3%80%8A%E4%BC%98%E5%8A%BF%E6%89%A7%E8%A1%8C%E5%8A%9B%E3%80%8B%E3%80%8A%E4%BC%98%E5%8A%BF%E8%96%AA%E9%85%AC%E8%B0%88%E5%88%A4%E3%80%8B%E5%85%B16%E5%86%8C%29.epub",
+              "bytes": 20515385
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/cfef7f39d8445252611d7111292d984ddcfdcd5cd90b47f69c00c3db03d4f170.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F812",
+      "clcName": "中国财政",
+      "books": [
+        {
+          "id": "WEISERd98b80be2373",
+          "title": "以利为利：财政关系与地方政府行为",
+          "authors": [
+            "周飞舟"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《以利为利：财政关系与地方政府行为》；周飞舟。中国财政，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F812%20%E4%B8%AD%E5%9B%BD%E8%B4%A2%E6%94%BF/%E4%BB%A5%E5%88%A9%E4%B8%BA%E5%88%A9%3A%E8%B4%A2%E6%94%BF%E5%85%B3%E7%B3%BB%E4%B8%8E%E5%9C%B0%E6%96%B9%E6%94%BF%E5%BA%9C%E8%A1%8C%E4%B8%BA.epub",
+              "bytes": 5606400
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/319d87d82ab003dbf167f7e7341ec8c7be1a09c91206676898b5fb79858a047f.webp",
+          "publisher": "上海三联书店",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F830",
+      "clcName": "金融、银行",
+      "books": [
+        {
+          "id": "WEISER360ee4c482e1",
+          "title": "巴菲特致股东的信：投资者和公司高管教程（原书第4版） (华章经典·金融投资)",
+          "authors": [
+            "华章经典·金融投资"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《巴菲特致股东的信：投资者和公司高管教程（原书第4版） (华章经典·金融投资)》；华章经典·金融投资。金融、银行，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%87%B4%E8%82%A1%E4%B8%9C%E7%9A%84%E4%BF%A1%3A%E6%8A%95%E8%B5%84%E8%80%85%E5%92%8C%E5%85%AC%E5%8F%B8%E9%AB%98%E7%AE%A1%E6%95%99%E7%A8%8B%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC4%E7%89%88%EF%BC%89%20%28%E5%8D%8E%E7%AB%A0%E7%BB%8F%E5%85%B8%C2%B7%E9%87%91%E8%9E%8D%E6%8A%95%E8%B5%84%29.mobi",
+              "bytes": 2121468
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c9f24cafea3162e73ec7fd4bc5932cb38cd5e4c5392fe12decf6e925e2b87522.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER11e1b9ac60fc",
+          "title": "百万富翁快车道",
+          "authors": [
+            "【美】MJ·德马科"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《百万富翁快车道》；【美】MJ·德马科。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E7%99%BE%E4%B8%87%E5%AF%8C%E7%BF%81%E5%BF%AB%E8%BD%A6%E9%81%93.epub",
+              "bytes": 1688528
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/525735f5c384d09fdc9519081be28677a7cd8b271996cda067a407fb2434f0df.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版集团",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9ec086ff1f3a",
+          "title": "彼得·林奇的成功投资",
+          "authors": [
+            "彼得.林奇, 约翰.罗瑟查尔德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《彼得·林奇的成功投资》；彼得.林奇, 约翰.罗瑟查尔德。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%BD%BC%E5%BE%97%C2%B7%E6%9E%97%E5%A5%87%E7%9A%84%E6%88%90%E5%8A%9F%E6%8A%95%E8%B5%84%20%28%E5%BD%BC%E5%BE%97.%E6%9E%97%E5%A5%87%2C%20%E7%BA%A6%E7%BF%B0.%E7%BD%97%E7%91%9F%E6%9F%A5%E5%B0%94%E5%BE%B7%29.epub",
+              "bytes": 9376825
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6f8d4a8465bb8c2a6ee0070a99516001e4cd60108f6066a0aee2cc1b3ff34c77.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERdde76b026fcd",
+          "title": "聪明的投资者",
+          "authors": [
+            "本杰明·格雷厄姆"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《聪明的投资者》；本杰明·格雷厄姆。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E8%81%AA%E6%98%8E%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%8C%E6%B3%A8%E7%96%8F%E7%82%B9%E8%AF%84%E7%89%88%EF%BC%89%EF%BC%88%E8%AF%81%E5%88%B8%E6%8A%95%E8%B5%84%E5%AE%9E%E5%8A%A1%E9%A2%86%E5%9F%9F%E7%9A%84%E4%B8%96%E7%95%8C%E7%BA%A7%E3%80%81%E4%B8%96%E7%BA%AA%E7%BA%A7%E7%BB%8F%E5%85%B8%E8%91%97%E4%BD%9C%EF%BC%8C1949%E5%B9%B4%E9%A6%96%E6%AC%A1%E5%87%BA%E7%89%88%E4%B8%80%E6%9D%A5%E5%9C%A8%E8%82%A1%E5%B8%82%E4%B8%8A%E4%B8%80%E7%9B%B4%E8%A2%AB%E5%A5%89%E4%B8%BA%E2%80%9C%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E5%9C%A3%E7%BB%8F%E2%80%9D%E3%80%82%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%A7%B0%E4%B9%8B%E4%B8%BA%E2%80%9C%E6%9C%89%E5%8F%B2%E4%BB%A5%E6%9D%A5%E6%9C%80%E4%BD%B3%E6%8A%95%E8%B5%84%E8%91%97%E4%BD%9C%E2%80%9D%E3%80%82%EF%BC%89.epub",
+              "bytes": 12352775
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/54cedca02fdaed81cb9758e521e0eafa7d619940b4701b04841d8f7fb1e93c62.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERf396ae2abdc6",
+          "title": "大道段永平投资问答录 (赵理亚(选) 芒格书院(编))",
+          "authors": [
+            "赵理亚",
+            "芒格书院"
+          ],
+          "authorStatus": "verified",
+          "description": "《大道段永平投资问答录 (赵理亚(选) 芒格书院(编))》；赵理亚、芒格书院。金融、银行，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%A4%A7%E9%81%93%E6%AE%B5%E6%B0%B8%E5%B9%B3%E6%8A%95%E8%B5%84%E9%97%AE%E7%AD%94%E5%BD%95%20%28%E8%B5%B5%E7%90%86%E4%BA%9A%28%E9%80%89%29%20%E8%8A%92%E6%A0%BC%E4%B9%A6%E9%99%A2%28%E7%BC%96%29%29.pdf",
+              "bytes": 28948207
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/49ad3fa945d9f1b0660f39578c782d08a56a64a7e7fda052c4515c9a13bbe0ae.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER1cc5a8b62cbc",
+          "title": "反脆弱:从不确定性中获益",
+          "authors": [
+            "纳西姆•尼古拉斯•塔勒布"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《反脆弱:从不确定性中获益》；纳西姆•尼古拉斯•塔勒布。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%8F%8D%E8%84%86%E5%BC%B1%20%E4%BB%8E%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%B8%AD%E8%8E%B7%E7%9B%8A.epub",
+              "bytes": 830016
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/3934116a8eb83623aefa6e0d82f76207478676567d8a8eb265efb7a51fe2da5c.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER74df4f24879c",
+          "title": "富爸爸商学院+富爸爸致富需要做的6件事+富爸爸穷爸爸+富爸爸提高你的财商+富爸爸财务自由之路(修订版)(套装共5册)",
+          "authors": [
+            "罗伯特·清崎",
+            "莎伦·莱希特"
+          ],
+          "authorStatus": "verified",
+          "description": "《富爸爸商学院+富爸爸致富需要做的6件事+富爸爸穷爸爸+富爸爸提高你的财商+富爸爸财务自由之路(修订版)(套装共5册)》；罗伯特·清崎、莎伦·莱希特。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%AF%8C%E7%88%B8%E7%88%B8%E5%95%86%E5%AD%A6%E9%99%A2%2B%E5%AF%8C%E7%88%B8%E7%88%B8%E8%87%B4%E5%AF%8C%E9%9C%80%E8%A6%81%E5%81%9A%E7%9A%846%E4%BB%B6%E4%BA%8B%2B%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8%2B%E5%AF%8C%E7%88%B8%E7%88%B8%E6%8F%90%E9%AB%98%E4%BD%A0%E7%9A%84%E8%B4%A2%E5%95%86%2B%E5%AF%8C%E7%88%B8%E7%88%B8%E8%B4%A2%E5%8A%A1%E8%87%AA%E7%94%B1%E4%B9%8B%E8%B7%AF%28%E4%BF%AE%E8%AE%A2%E7%89%88%29%28%E5%A5%97%E8%A3%85%E5%85%B15%E5%86%8C%29.epub",
+              "bytes": 11249770
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1bd213b3864da7b42cafc9ddcf852911c64ae11d9e90c4e246d7949574d5ffe4.webp",
+          "language": "ZH-CN",
+          "access": "public"
+        },
+        {
+          "id": "WEISERb061652f048c",
+          "title": "股市趋势技术分析（原书第10版）",
+          "authors": [
+            "罗伯特D.爱德华兹(Robert D. Edwards)",
+            "约翰·迈吉(John Magee)",
+            "W. H. C.巴塞蒂(W. H. C. Bassetti)"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《股市趋势技术分析（原书第10版）》；罗伯特D.爱德华兹(Robert D. Edwards)、约翰·迈吉(John Magee)、W. H. C.巴塞蒂(W. H. C. Bassetti)。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E8%82%A1%E5%B8%82%E8%B6%8B%E5%8A%BF%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC10%E7%89%88%EF%BC%89.epub",
+              "bytes": 43747123
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/506fb9b364224d13de7e563efb7921df86bdfc9c1e5f671a7a0b0b2ad5c14d91.webp",
+          "language": "zh",
+          "publisher": "北京华章图文信息有限公司",
+          "access": "public"
+        },
+        {
+          "id": "WEISER0d5962643b8c",
+          "title": "货币金融学（原书第2版） (华章教材经典译丛)",
+          "authors": [
+            "华章教材经典译丛"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《货币金融学（原书第2版） (华章教材经典译丛)》；华章教材经典译丛。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E8%B4%A7%E5%B8%81%E9%87%91%E8%9E%8D%E5%AD%A6%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC2%E7%89%88%EF%BC%89%20%28%E5%8D%8E%E7%AB%A0%E6%95%99%E6%9D%90%E7%BB%8F%E5%85%B8%E8%AF%91%E4%B8%9B%29.epub",
+              "bytes": 9417303
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b6f59ab6a968b84d37ee192e3df3c793258651acf90c9afcc35203742601c678.webp",
+          "language": "zh",
+          "publisher": "机械工业出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe90c521545ed",
+          "title": "金融炼金术",
+          "authors": [
+            "乔治·索罗斯"
+          ],
+          "authorStatus": "verified",
+          "description": "《金融炼金术》；乔治·索罗斯。金融、银行，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E9%87%91%E8%9E%8D%E7%82%BC%E9%87%91%E6%9C%AF.mobi",
+              "bytes": 16277844
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/58cb933be2505c0c6c1134dd2803d924cb4c3f03ef7f3e66336da9ce9dd01738.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER8be1d250574c",
+          "title": "纳瓦尔宝典",
+          "authors": [
+            "（美）埃里克·乔根森"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《纳瓦尔宝典》；（美）埃里克·乔根森。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E7%BA%B3%E7%93%A6%E5%B0%94%E5%AE%9D%E5%85%B8.epub",
+              "bytes": 724835
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/73ab4cd25e59214bd6e0c800a41b09ece279545d6e440ebac99ae7e463c420f7.webp",
+          "language": "zh",
+          "publisher": "中信出版集团",
+          "access": "public"
+        },
+        {
+          "id": "WEISER14248f425d12",
+          "title": "穷查理宝典（珍藏版）（1+2册）",
+          "authors": [
+            "[美]查理·芒格"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《穷查理宝典（珍藏版）（1+2册）》；[美]查理·芒格。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8%EF%BC%88%E7%8F%8D%E8%97%8F%E7%89%88%EF%BC%89%EF%BC%881%2B2%E5%86%8C%EF%BC%89.epub",
+              "bytes": 3928878
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/0fcfc85ad0b7f22924b7bf178c0e69e1bdc1042556a900871e8b8e716edcdc04.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER6c5a49c9ced3",
+          "title": "日本蜡烛图技术新解（典藏版）",
+          "authors": [
+            "【美】史蒂夫·尼森（Steve Nison）"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《日本蜡烛图技术新解（典藏版）》；【美】史蒂夫·尼森（Steve Nison）。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E6%97%A5%E6%9C%AC%E8%9C%A1%E7%83%9B%E5%9B%BE%E6%8A%80%E6%9C%AF%E6%96%B0%E8%A7%A3%EF%BC%88%E5%85%B8%E8%97%8F%E7%89%88%EF%BC%89.epub",
+              "bytes": 19838235
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/52b4affdb3e30a1c4dcea3af057c5f43245a1d14838b8156b767dc4480feed65.webp",
+          "language": "zh",
+          "publisher": "北京华章图文信息有限公司",
+          "access": "public"
+        },
+        {
+          "id": "WEISER73ca38f0fe0f",
+          "title": "随机漫步的傻瓜",
+          "authors": [
+            "[ 美] 纳西姆· 尼古拉斯· 塔勒布"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《随机漫步的傻瓜》；[ 美] 纳西姆· 尼古拉斯· 塔勒布。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5%E7%9A%84%E5%82%BB%E7%93%9C.epub",
+              "bytes": 616122
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/79b9dd66c9a4cf48f0403634e5765186b7b14e221308020af0f152079e63304e.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER584270037468",
+          "title": "涛动周期录——周期波动尽平生(上、下册)",
+          "authors": [
+            "上、下册"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《涛动周期录——周期波动尽平生(上、下册)》；上、下册。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E6%B6%9B%E5%8A%A8%E5%91%A8%E6%9C%9F%E5%BD%95%E2%80%94%E2%80%94%E5%91%A8%E6%9C%9F%E6%B3%A2%E5%8A%A8%E5%B0%BD%E5%B9%B3%E7%94%9F%28%E4%B8%8A%E3%80%81%E4%B8%8B%E5%86%8C%29.epub",
+              "bytes": 124423890
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/0836074ece07078c907911007c6f71d12ca1ae5819f05cbf2bade4056ef712f4.webp",
+          "language": "zh",
+          "publisher": "机械工业出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER54bb1bffd85d",
+          "title": "涛动周期论:经济周期决定人生财富命运(中国康德拉季耶夫周期理论研究的开拓者,“周期天王”周金涛先生一生神准预测的理论体系）",
+          "authors": [
+            "周金涛",
+            "等"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《涛动周期论:经济周期决定人生财富命运(中国康德拉季耶夫周期理论研究的开拓者,“周期天王”周金涛先生一生神准预测的理论体系）》；周金涛、等。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E6%B6%9B%E5%8A%A8%E5%91%A8%E6%9C%9F%E8%AE%BA%20%E7%BB%8F%E6%B5%8E%E5%91%A8%E6%9C%9F%E5%86%B3%E5%AE%9A%E4%BA%BA%E7%94%9F%E8%B4%A2%E5%AF%8C%E5%91%BD%E8%BF%90%28%E4%B8%AD%E5%9B%BD%E5%BA%B7%E5%BE%B7%E6%8B%89%E5%AD%A3%E8%80%B6%E5%A4%AB%E5%91%A8%E6%9C%9F%E7%90%86%E8%AE%BA%E7%A0%94%E7%A9%B6%E7%9A%84%E5%BC%80%E6%8B%93%E8%80%85%2C%E2%80%9C%E5%91%A8%E6%9C%9F%E5%A4%A9%E7%8E%8B%E2%80%9D%E5%91%A8%E9%87%91%E6%B6%9B%E5%85%88%E7%94%9F%E4%B8%80%E7%94%9F%E7%A5%9E%E5%87%86%E9%A2%84%E6%B5%8B%E7%9A%84%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%EF%BC%89.epub",
+              "bytes": 42574955
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/7cdd0bc5519b2f8d6a420a701d23ba9303d2a82de1f2084d74bae8202418e8d8.webp",
+          "language": "zh",
+          "publisher": "机械工业出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe1131bf2573d",
+          "title": "逃不开的经济周期：历史，理论与投资现实",
+          "authors": [
+            "拉斯•特维德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《逃不开的经济周期：历史，理论与投资现实》；拉斯•特维德。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E9%80%83%E4%B8%8D%E5%BC%80%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%91%A8%E6%9C%9F%3A%E5%8E%86%E5%8F%B2%EF%BC%8C%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%95%E8%B5%84%E7%8E%B0%E5%AE%9E.epub",
+              "bytes": 4805852
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/75066cfa89027ac37450ecc63c13ee0feb3980df1c53fc933e886b5dbf356fe8.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERfc476ffaaf4d",
+          "title": "逃不开的经济周期2（理解金融动荡时期的真实情况）",
+          "authors": [
+            "拉斯·特维德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《逃不开的经济周期2（理解金融动荡时期的真实情况）》；拉斯·特维德。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E9%80%83%E4%B8%8D%E5%BC%80%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%91%A8%E6%9C%9F2%EF%BC%88%E7%90%86%E8%A7%A3%E9%87%91%E8%9E%8D%E5%8A%A8%E8%8D%A1%E6%97%B6%E6%9C%9F%E7%9A%84%E7%9C%9F%E5%AE%9E%E6%83%85%E5%86%B5%EF%BC%89.epub",
+              "bytes": 4271142
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/8176d14436412e8c0bb00bb31aa01d7587150a851b946dd4337f8bb7a874c97b.webp",
+          "language": "zh",
+          "publisher": "中信出版集团",
+          "access": "public"
+        },
+        {
+          "id": "WEISERed367ea56648",
+          "title": "投资最重要的事（\"这是一本难得一见的有用的书。\"——沃伦巴菲特）",
+          "authors": [
+            "霍华德·马克斯"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《投资最重要的事（\"这是一本难得一见的有用的书。\"——沃伦巴菲特）》；霍华德·马克斯。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E6%8A%95%E8%B5%84%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B%EF%BC%88%20%E8%BF%99%E6%98%AF%E4%B8%80%E6%9C%AC%E9%9A%BE%E5%BE%97%E4%B8%80%E8%A7%81%E7%9A%84%E6%9C%89%E7%94%A8%E7%9A%84%E4%B9%A6%E3%80%82%20%E2%80%94%E2%80%94%E6%B2%83%E4%BC%A6%E5%B7%B4%E8%8F%B2%E7%89%B9%EF%BC%89.epub",
+              "bytes": 1164473
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2e9644607cfb2ff20f122023333aadb1fa84da793a1f30d7a8ef588f9bae686c.webp",
+          "language": "zh",
+          "publisher": "中信出版集团",
+          "access": "public"
+        },
+        {
+          "id": "WEISER05790cc9b521",
+          "title": "债务危机（《原则》作者、桥水创始人瑞·达利欧新作！破解金融危机规律，创建债务大周末模型，桥水44年危机应对经验公开！）",
+          "authors": [
+            "瑞·达利欧"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《债务危机（《原则》作者、桥水创始人瑞·达利欧新作！破解金融危机规律，创建债务大周末模型，桥水44年危机应对经验公开！）》；瑞·达利欧。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%80%BA%E5%8A%A1%E5%8D%B1%E6%9C%BA%EF%BC%88%E3%80%8A%E5%8E%9F%E5%88%99%E3%80%8B%E4%BD%9C%E8%80%85%E3%80%81%E6%A1%A5%E6%B0%B4%E5%88%9B%E5%A7%8B%E4%BA%BA%E7%91%9E%C2%B7%E8%BE%BE%E5%88%A9%E6%AC%A7%E6%96%B0%E4%BD%9C%EF%BC%81%E7%A0%B4%E8%A7%A3%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA%E8%A7%84%E5%BE%8B%EF%BC%8C%E5%88%9B%E5%BB%BA%E5%80%BA%E5%8A%A1%E5%A4%A7%E5%91%A8%E6%9C%AB%E6%A8%A1%E5%9E%8B%EF%BC%8C%E6%A1%A5%E6%B0%B444%E5%B9%B4%E5%8D%B1%E6%9C%BA%E5%BA%94%E5%AF%B9%E7%BB%8F%E9%AA%8C%E5%85%AC%E5%BC%80%EF%BC%81%EF%BC%89.epub",
+              "bytes": 25557004
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ea10b26e6e475c7cae1da1b54daec331173f08ab6a7e66b2f9ed72ec0985069e.webp",
+          "language": "zh",
+          "publisher": "中信出版集团",
+          "access": "public"
+        },
+        {
+          "id": "WEISER7145b541c0fd",
+          "title": "证券分析：原书第6版(经典畅销版全两册)(投资者的圣经！巴菲特灵魂导师、“华尔街教父”！本杰明·格雷厄姆 不朽著作！巴曙松领衔专业人士全新翻译！)",
+          "authors": [
+            "经典畅销版全两册"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《证券分析：原书第6版(经典畅销版全两册)(投资者的圣经！巴菲特灵魂导师、“华尔街教父”！本杰明·格雷厄姆 不朽著作！巴曙松领衔专业人士全新翻译！)》；经典畅销版全两册。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E8%AF%81%E5%88%B8%E5%88%86%E6%9E%90%3A%E5%8E%9F%E4%B9%A6%E7%AC%AC6%E7%89%88%28%E7%BB%8F%E5%85%B8%E7%95%85%E9%94%80%E7%89%88%E5%85%A8%E4%B8%A4%E5%86%8C%29%28%E6%8A%95%E8%B5%84%E8%80%85%E7%9A%84%E5%9C%A3%E7%BB%8F%EF%BC%81%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%81%B5%E9%AD%82%E5%AF%BC%E5%B8%88%E3%80%81%E2%80%9C%E5%8D%8E%E5%B0%94%E8%A1%97%E6%95%99%E7%88%B6%E2%80%9D%EF%BC%81%E6%9C%AC%E6%9D%B0%E6%98%8E%C2%B7%E6%A0%BC%E9%9B%B7%E5%8E%84%E5%A7%86%20%E4%B8%8D%E6%9C%BD%E8%91%97%E4%BD%9C%EF%BC%81%E5%B7%B4%E6%9B%99%E6%9D%BE%E9%A2%86%E8%A1%94%E4%B8%93%E4%B8%9A%E4%BA%BA%E5%A3%AB%E5%85%A8%E6%96%B0%E7%BF%BB%E8%AF%91%EF%BC%81%29.epub",
+              "bytes": 97723752
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/546bc675698caf267126f7be71dee5a29f02058b39dc03d38cc3277d84697e96.webp",
+          "language": "zh",
+          "publisher": "四川人民出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER4ec6c8aa9b1a",
+          "title": "周期",
+          "authors": [
+            "霍华德·马克斯"
+          ],
+          "authorStatus": "verified",
+          "description": "《周期》；霍华德·马克斯。金融、银行，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%91%A8%E6%9C%9F.pdf",
+              "bytes": 3750340
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a014e189dd73170953c9d7cf5850679d11c3fe688275c61f1ba0622528f11053.webp",
+          "access": "public"
+        }
+      ]
+    }
+  ]
+}

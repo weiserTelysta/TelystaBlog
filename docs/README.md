@@ -19,6 +19,8 @@
 | 上传 R2、转 WebP、更新封面 | [CDN 操作流程](cdn-assets.md) |
 | 字体子集与完整原字体 | [字体维护](title-navigation-audit-2026-11-08.md#字体维护) |
 | 检查与部署 | [维护指南](maintenance.md) · [部署指南](deployment.md) |
+| 线上账户、Session、角色与备份 | [线上管理](console.md) |
+| Cloudflare构建与搜索收录 | [原生构建](cloudflare-builds.md) · [搜索发现](search-discovery.md) |
 | 查功能和工程结构 | [功能与配置](feature-map.md) · [架构](architecture.md) |
 
 ## 当前状态与待办

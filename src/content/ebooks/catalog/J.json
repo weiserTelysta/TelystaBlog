@@ -1,0 +1,963 @@
+{
+  "category": "J",
+  "booklists": [
+    {
+      "clcCode": "J0",
+      "clcName": "艺术理论",
+      "books": [
+        {
+          "id": "WEISERfcb36176f624",
+          "title": "艺术哲学",
+          "authors": [
+            "王德峰"
+          ],
+          "authorStatus": "verified",
+          "description": "《艺术哲学》；王德峰。艺术理论，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J0%20%E8%89%BA%E6%9C%AF%E7%90%86%E8%AE%BA/%E8%89%BA%E6%9C%AF%E5%93%B2%E5%AD%A6%20%28%E7%8E%8B%E5%BE%B7%E5%B3%B0%E8%91%97%2C%20%E7%8E%8B%E5%BE%B7%E5%B3%B0%2C%201956-%20author%2C%20%E7%8E%8B%E5%BE%B7%E5%B3%B0%E8%91%97%2C%20%E7%8E%8B%E5%BE%B7%E5%B3%B0%29.pdf",
+              "bytes": 55857305
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/22e7faee3da1ed235680843fd44adde88388b53e675629073da5b775219dcbd8.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER1d6916b20c89",
+          "title": "BBC艺术经典三部曲套装",
+          "authors": [
+            "西蒙·沙玛",
+            "肯尼斯·克拉克",
+            "罗伯特·休斯"
+          ],
+          "authorStatus": "verified",
+          "description": "《BBC艺术经典三部曲套装》；西蒙·沙玛、肯尼斯·克拉克、罗伯特·休斯。艺术理论，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J0%20%E8%89%BA%E6%9C%AF%E7%90%86%E8%AE%BA/BBC%E8%89%BA%E6%9C%AF%E7%BB%8F%E5%85%B8%E4%B8%89%E9%83%A8%E6%9B%B2%E5%A5%97%E8%A3%85.pdf",
+              "bytes": 176923619
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e21306183914099a3c03ed0902ed1b486584559b99ed1f618ee763b09fad7035.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "J1",
+      "clcName": "世界各国艺术概况",
+      "books": [
+        {
+          "id": "WEISER0dbaf0150b5f",
+          "title": "Art of India (the Mughal empire) (Smith, Vincent Arthur)",
+          "authors": [
+            "Smith, Vincent Arthur"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Art of India (the Mughal empire) (Smith, Vincent Arthur)》；Smith, Vincent Arthur。世界各国艺术概况，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J1%20%E4%B8%96%E7%95%8C%E5%90%84%E5%9B%BD%E8%89%BA%E6%9C%AF%E6%A6%82%E5%86%B5/Art%20of%20India%20%28the%20Mughal%20empire%29%20%28Smith%2C%20Vincent%20Arthur%29.pdf",
+              "bytes": 20915837
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4aa4fc6d77f693d3d03500259a9624ff780668a85429385df0fffd9adb523c9a.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER4e1fce1f3cf1",
+          "title": "François Boucher and the Art of Collecting in Eighteenth-Century France",
+          "authors": [
+            "Jessica Priebe"
+          ],
+          "authorStatus": "verified",
+          "description": "《François Boucher and the Art of Collecting in Eighteenth-Century France》；Jessica Priebe。世界各国艺术概况，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J1%20%E4%B8%96%E7%95%8C%E5%90%84%E5%9B%BD%E8%89%BA%E6%9C%AF%E6%A6%82%E5%86%B5/Fran%C3%A7ois%20Boucher%20and%20the%20Art%20of%20Collecting%20in%20Eighteenth-Century%20France.pdf",
+              "bytes": 41926337
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/562b811949b245f13c9c276bd8bf4c6d4dd86498e016984e6c9829aa39f3f449.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "J2",
+      "clcName": "绘画",
+      "books": [
+        {
+          "id": "WEISER8cf630042445",
+          "title": "伯里曼人体结构绘画教学（最新版）",
+          "authors": [
+            "乔治·伯里曼"
+          ],
+          "authorStatus": "verified",
+          "description": "《伯里曼人体结构绘画教学（最新版）》；乔治·伯里曼。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/ssreader.pdf",
+              "bytes": 65352034
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/54a67e1d0a4644a5734306ec5604c1bf8698d1dafee0bd51512b6c3e0332bc27.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd5b10906d5bc",
+          "title": "动漫人体结构表现技法专项训练",
+          "authors": [
+            "施通",
+            "TC晨"
+          ],
+          "authorStatus": "verified",
+          "description": "《动漫人体结构表现技法专项训练》；施通、TC晨。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E5%8A%A8%E6%BC%AB%E4%BA%BA%E4%BD%93%E7%BB%93%E6%9E%84%E8%A1%A8%E7%8E%B0%E6%8A%80%E6%B3%95%E4%B8%93%E9%A1%B9%E8%AE%AD%E7%BB%83.pdf",
+              "bytes": 126438642
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/634ff87b52401137c85837746ea8ee06c618f62e30fbee578a1b26a505eb3ef9.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9dae2a40d643",
+          "title": "卡通角色设计 (塚本博义著；张静秋等译)",
+          "authors": [
+            "塚本博义著；张静秋等译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《卡通角色设计 (塚本博义著；张静秋等译)》；塚本博义著；张静秋等译。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E5%8D%A1%E9%80%9A%E8%A7%92%E8%89%B2%E8%AE%BE%E8%AE%A1%20%28%E5%A1%9A%E6%9C%AC%E5%8D%9A%E4%B9%89%E8%91%97%EF%BC%9B%E5%BC%A0%E9%9D%99%E7%A7%8B%E7%AD%89%E8%AF%91%29.pdf",
+              "bytes": 79646806
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/cabe75ca333de7b03bb887dee16bc928f4eeb08ca702f5857981d05cd5686b95.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERc733a96948a6",
+          "title": "面部表情大全 【美】马克·西门 著",
+          "authors": [
+            "马克·西门"
+          ],
+          "authorStatus": "verified",
+          "description": "《面部表情大全 【美】马克·西门 著》；马克·西门。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E5%A4%A7%E5%85%A8%20%E3%80%90%E7%BE%8E%E3%80%91%E9%A9%AC%E5%85%8B%C2%B7%E8%A5%BF%E9%97%A8%20%E8%91%97.pdf",
+              "bytes": 193742650
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/07e6accbfbba4838360e46eeb12ca2c75541f6764d6cda02bd43f5d18b4c3244.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERef0c8323e97b",
+          "title": "人体绘画：设计与创造",
+          "authors": [
+            "Michael Hampton"
+          ],
+          "authorStatus": "verified",
+          "description": "《人体绘画：设计与创造》；Michael Hampton。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E4%BA%BA%E4%BD%93%E7%BB%93%E6%9E%84.pdf",
+              "bytes": 35608149
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/245615c503bf5f4a9f0e1606dab4a7b0ad922394373a4e20f80a92b5c816ad19.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd3c0d3913a92",
+          "title": "人体结构原理与绘画教学 (肖玮春)",
+          "authors": [
+            "肖玮春"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《人体结构原理与绘画教学 (肖玮春)》；肖玮春。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E4%BA%BA%E4%BD%93%E7%BB%93%E6%9E%84%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BB%98%E7%94%BB%E6%95%99%E5%AD%A6%20%28%E8%82%96%E7%8E%AE%E6%98%A5%29.pdf",
+              "bytes": 328704421
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/dd709e2e951201f05574ab2cc7ef43910c6c66c7def96e1f66b9bfad9f2a5a1c.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa0f6664d3665",
+          "title": "色彩与光线写实主义绘画指南 (詹姆斯·格尔尼,James Gurney)",
+          "authors": [
+            "詹姆斯·格尔尼,James Gurney"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《色彩与光线写实主义绘画指南 (詹姆斯·格尔尼,James Gurney)》；詹姆斯·格尔尼,James Gurney。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E8%89%B2%E5%BD%A9%E4%B8%8E%E5%85%89%E7%BA%BF%E5%86%99%E5%AE%9E%E4%B8%BB%E4%B9%89%E7%BB%98%E7%94%BB%E6%8C%87%E5%8D%97%20%28%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E6%A0%BC%E5%B0%94%E5%B0%BC%2CJames%20Gurney%29.pdf",
+              "bytes": 73270147
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b46a5a6f6f80a2db36a218174a4dda4237e1c04e399f0702ec67d667d12351ee.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER626dd01c457d",
+          "title": "世界绘画经典教程 铅笔素描的乐趣 第2版 (安德鲁·路米斯,黄朝贵 译)",
+          "authors": [
+            "安德鲁·路米斯,黄朝贵 译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《世界绘画经典教程 铅笔素描的乐趣 第2版 (安德鲁·路米斯,黄朝贵 译)》；安德鲁·路米斯,黄朝贵 译。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E4%B8%96%E7%95%8C%E7%BB%98%E7%94%BB%E7%BB%8F%E5%85%B8%E6%95%99%E7%A8%8B%20%E9%93%85%E7%AC%94%E7%B4%A0%E6%8F%8F%E7%9A%84%E4%B9%90%E8%B6%A3%20%E7%AC%AC2%E7%89%88%20%28%E5%AE%89%E5%BE%B7%E9%B2%81%C2%B7%E8%B7%AF%E7%B1%B3%E6%96%AF%2C%E9%BB%84%E6%9C%9D%E8%B4%B5%20%E8%AF%91%29.pdf",
+              "bytes": 42544477
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f23b80c324dd707310400c498281f07d04d477a434e2581668e8f15c9c3df62c.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERac8119c509a5",
+          "title": "视觉艺术用光在艺术与设计中理解与运用光线 (理查德·约特,Richard Yot)",
+          "authors": [
+            "理查德·约特,Richard Yot"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《视觉艺术用光在艺术与设计中理解与运用光线 (理查德·约特,Richard Yot)》；理查德·约特,Richard Yot。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E8%A7%86%E8%A7%89%E8%89%BA%E6%9C%AF%E7%94%A8%E5%85%89%E5%9C%A8%E8%89%BA%E6%9C%AF%E4%B8%8E%E8%AE%BE%E8%AE%A1%E4%B8%AD%E7%90%86%E8%A7%A3%E4%B8%8E%E8%BF%90%E7%94%A8%E5%85%89%E7%BA%BF%20%28%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E7%BA%A6%E7%89%B9%2CRichard%20Yot%29.pdf",
+              "bytes": 57841544
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/3bde9cbade10d30d5ea05a56cf4788d185f370b95fbaa986c3e9aa321f745f2c.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER752f0381712e",
+          "title": "水彩画里的色与光 ((美)克里斯托弗・欣克)",
+          "authors": [
+            "克里斯托弗·欣克"
+          ],
+          "authorStatus": "verified",
+          "description": "《水彩画里的色与光 ((美)克里斯托弗・欣克)》；克里斯托弗·欣克。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E6%B0%B4%E5%BD%A9%E7%94%BB%E9%87%8C%E7%9A%84%E8%89%B2%E4%B8%8E%E5%85%89%20%28%28%E7%BE%8E%29%E5%85%8B%E9%87%8C%E6%96%AF%E6%89%98%E5%BC%97%E3%83%BB%E6%AC%A3%E5%85%8B%29.pdf",
+              "bytes": 34723618
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/afa8cdc2641e1e1344e40a75a830bbd448a7893352d7eb9a8835a7075e8a334e.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd84c12a7baf4",
+          "title": "想象力 构图与创作思维 (黄朝贵)",
+          "authors": [
+            "黄朝贵"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《想象力 构图与创作思维 (黄朝贵)》；黄朝贵。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E6%83%B3%E8%B1%A1%E5%8A%9B%20%E6%9E%84%E5%9B%BE%E4%B8%8E%E5%88%9B%E4%BD%9C%E6%80%9D%E7%BB%B4%20%28%E9%BB%84%E6%9C%9D%E8%B4%B5%29.pdf",
+              "bytes": 63241687
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/987ff450fea684acbb9cc93177fe70b283f4a31524bceba7e2fe4289ffe05192.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9fcde8a0a178",
+          "title": "艺术·设计的平面构成 (朝仓直巳)",
+          "authors": [
+            "朝仓直巳"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《艺术·设计的平面构成 (朝仓直巳)》；朝仓直巳。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E8%89%BA%E6%9C%AF%C2%B7%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%B9%B3%E9%9D%A2%E6%9E%84%E6%88%90%20%28%E6%9C%9D%E4%BB%93%E7%9B%B4%E5%B7%B3%29.pdf",
+              "bytes": 52943219
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/83fa39ac3174439788c470bb86dae025ed5ff3f6870cea2b8ea1ad216598712e.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER917a47042bb8",
+          "title": "艺用人体解剖完全指南（手绘版） (J.夏帕德)",
+          "authors": [
+            "J.夏帕德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《艺用人体解剖完全指南（手绘版） (J.夏帕德)》；J.夏帕德。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E8%89%BA%E7%94%A8%E4%BA%BA%E4%BD%93%E8%A7%A3%E5%89%96%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97%EF%BC%88%E6%89%8B%E7%BB%98%E7%89%88%EF%BC%89%20%28J.%E5%A4%8F%E5%B8%95%E5%BE%B7%29.pdf",
+              "bytes": 104750544
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d9577fa8c7014a7e82b48670d1c0914235280f422c9e498edd158327828730d0.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERad092e56ad65",
+          "title": "油画的光与色Fill your oil paintings with light and color (凯文·D·麦克弗森, Kevin D. Macpherson)",
+          "authors": [
+            "凯文·D·麦克弗森, Kevin D. Macpherson"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《油画的光与色Fill your oil paintings with light and color (凯文·D·麦克弗森, Kevin D. Macpherson)》；凯文·D·麦克弗森, Kevin D. Macpherson。绘画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/%E6%B2%B9%E7%94%BB%E7%9A%84%E5%85%89%E4%B8%8E%E8%89%B2Fill%20your%20oil%20paintings%20with%20light%20and%20color%20%28%E5%87%AF%E6%96%87%C2%B7D%C2%B7%E9%BA%A6%E5%85%8B%E5%BC%97%E6%A3%AE%2C%20Kevin%20D.%20Macpherson%29.pdf",
+              "bytes": 40707988
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2aa0d90f0ab3ff33d94b26a159a7763b3312eb29915cfd1e68cd1313ea184a62.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "J4",
+      "clcName": "摄影艺术",
+      "books": [
+        {
+          "id": "WEISER0c07c3f3c20c",
+          "title": "高品质摄影全流程解析",
+          "authors": [
+            "斯科特·凯尔比(Scott Kelby)"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《高品质摄影全流程解析》；斯科特·凯尔比(Scott Kelby)。摄影艺术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J4%20%E6%91%84%E5%BD%B1%E8%89%BA%E6%9C%AF/%E9%AB%98%E5%93%81%E8%B4%A8%E6%91%84%E5%BD%B1%E5%85%A8%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90%EF%BC%88%E5%A5%97%E8%A3%85%E5%85%A89%E5%86%8C%EF%BC%89%E3%80%90%E4%B8%80%E5%A5%97%E5%9B%8A%E6%8B%AC%E6%9E%84%E5%9B%BE%E3%80%81%E6%9B%9D%E5%85%89%E3%80%81%E8%A7%86%E8%A7%89%E8%AE%BE%E8%AE%A1%E3%80%81%E5%90%8E%E6%9C%9F%E7%9A%84%E5%AE%9E%E6%88%98%E5%AE%9D%E5%85%B8%EF%BC%81%E6%9B%B4%E6%9C%89%E4%B8%96%E7%95%8C%E4%B8%80%E6%B5%81%E6%91%84%E5%BD%B1%E5%AE%B6%E6%96%AF%E7%A7%91%E7%89%B9%C2%B7%E5%87%AF%E5%B0%94%E6%AF%94%E6%91%84%E5%BD%B1%E6%89%8B%E5%86%8C%E7%B3%BB%E5%88%97%EF%BC%81%E4%BB%8E%E6%83%B3%E6%B3%95%E5%88%B0%E6%8A%80%E6%B3%95%EF%BC%8C%E5%85%A8%E9%9D%A2%E6%8F%90%E5%8D%87%E4%BD%A0%E7%9A%84%E6%91%84%E5%BD%B1%E6%96%B9%E6%B3%95%E8%AE%BA%EF%BC%81%E3%80%91.epub",
+              "bytes": 142716227
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2bf89a77e034cff48a4d88a26547c3f30e2d01c89a58b55d1805157f397b5e0d.webp",
+          "language": "zh",
+          "publisher": "人民邮电出版社有限公司",
+          "access": "public"
+        },
+        {
+          "id": "WEISER6a6fc0c7f4f1",
+          "title": "理解曝光 拍出精彩照片的关键 第3版 彩印 (（美）布莱恩·彼得森著；钱亚光译, (美)布莱恩·彼得森著 , 钱亚光译, 钱亚光 etc.)",
+          "authors": [
+            "布莱恩·彼得森"
+          ],
+          "authorStatus": "verified",
+          "description": "《理解曝光 拍出精彩照片的关键 第3版 彩印 (（美）布莱恩·彼得森著；钱亚光译, (美)布莱恩·彼得森著 , 钱亚光译, 钱亚光 etc.)》；布莱恩·彼得森。摄影艺术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J4%20%E6%91%84%E5%BD%B1%E8%89%BA%E6%9C%AF/%E7%90%86%E8%A7%A3%E6%9B%9D%E5%85%89%20%E6%8B%8D%E5%87%BA%E7%B2%BE%E5%BD%A9%E7%85%A7%E7%89%87%E7%9A%84%E5%85%B3%E9%94%AE%20%E7%AC%AC3%E7%89%88%20%E5%BD%A9%E5%8D%B0%20%28%EF%BC%88%E7%BE%8E%EF%BC%89%E5%B8%83%E8%8E%B1%E6%81%A9%C2%B7%E5%BD%BC%E5%BE%97%E6%A3%AE%E8%91%97%EF%BC%9B%E9%92%B1%E4%BA%9A%E5%85%89%E8%AF%91%2C%20%28%E7%BE%8E%29%E5%B8%83%E8%8E%B1%E6%81%A9%C2%B7%E5%BD%BC%E5%BE%97%E6%A3%AE%E8%91%97%20%2C%20%E9%92%B1%E4%BA%9A%E5%85%89%E8%AF%91%2C%20%E9%92%B1%E4%BA%9A%E5%85%89%20etc.%29.pdf",
+              "bytes": 68599816
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/8dec64a909522feef8282a075605e33e4c8f34322028d6905beadeecf96e569a.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa7ab7fd6c497",
+          "title": "美国纽约摄影学院摄影教材（上） (美国纽约摄影学院)",
+          "authors": [
+            "美国纽约摄影学院"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《美国纽约摄影学院摄影教材（上） (美国纽约摄影学院)》；美国纽约摄影学院。摄影艺术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J4%20%E6%91%84%E5%BD%B1%E8%89%BA%E6%9C%AF/%E7%BE%8E%E5%9B%BD%E7%BA%BD%E7%BA%A6%E6%91%84%E5%BD%B1%E5%AD%A6%E9%99%A2%E6%91%84%E5%BD%B1%E6%95%99%E6%9D%90%EF%BC%88%E4%B8%8A%EF%BC%89%20%28%E7%BE%8E%E5%9B%BD%E7%BA%BD%E7%BA%A6%E6%91%84%E5%BD%B1%E5%AD%A6%E9%99%A2%29.pdf",
+              "bytes": 126638863
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/5ac1549f3f2e25881bc3cbe6c90186f9a32a43e8d3c74b905e51e88f4e322520.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER50dc499128aa",
+          "title": "美国纽约摄影学院摄影教材（下） (美国纽约摄影学院)",
+          "authors": [
+            "美国纽约摄影学院"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《美国纽约摄影学院摄影教材（下） (美国纽约摄影学院)》；美国纽约摄影学院。摄影艺术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J4%20%E6%91%84%E5%BD%B1%E8%89%BA%E6%9C%AF/%E7%BE%8E%E5%9B%BD%E7%BA%BD%E7%BA%A6%E6%91%84%E5%BD%B1%E5%AD%A6%E9%99%A2%E6%91%84%E5%BD%B1%E6%95%99%E6%9D%90%EF%BC%88%E4%B8%8B%EF%BC%89%20%28%E7%BE%8E%E5%9B%BD%E7%BA%BD%E7%BA%A6%E6%91%84%E5%BD%B1%E5%AD%A6%E9%99%A2%29.pdf",
+              "bytes": 143904794
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/0c286a18b51d8c3adfc204d4cbc4967a15e1f1c43f6584f44af0d119bc021022.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER2dd461c2f47e",
+          "title": "摄影笔记",
+          "authors": [
+            "宁思潇潇"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《摄影笔记》；宁思潇潇。摄影艺术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J4%20%E6%91%84%E5%BD%B1%E8%89%BA%E6%9C%AF/%E6%91%84%E5%BD%B1%E7%AC%94%E8%AE%B0.epub",
+              "bytes": 18168151
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/7398697439393618037ed25c8287a6557affcb7f2711df72cc1d561a9da50702.webp",
+          "language": "zh",
+          "publisher": "人民邮电出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERaca4550a3f10",
+          "title": "摄影构图学（重排高清收藏版）",
+          "authors": [
+            "本·克来门茨",
+            "大卫·罗森菲尔德"
+          ],
+          "authorStatus": "verified",
+          "description": "《摄影构图学（重排高清收藏版）》；本·克来门茨、大卫·罗森菲尔德。摄影艺术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J4%20%E6%91%84%E5%BD%B1%E8%89%BA%E6%9C%AF/%E6%91%84%E5%BD%B1%E6%9E%84%E5%9B%BE%E5%AD%A6%EF%BC%88%E9%87%8D%E6%8E%92%E9%AB%98%E6%B8%85%E6%94%B6%E8%97%8F%E7%89%88%EF%BC%89.pdf",
+              "bytes": 72769751
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1fd576cecafcc8e9224b9149a0772fa87259e923c05a1f6c54d753ad0a34f57c.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER6b9183cb933c",
+          "title": "摄影构图艺术 (（英）威廉斯著)",
+          "authors": [
+            "（英）威廉斯著"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《摄影构图艺术 (（英）威廉斯著)》；（英）威廉斯著。摄影艺术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J4%20%E6%91%84%E5%BD%B1%E8%89%BA%E6%9C%AF/%E6%91%84%E5%BD%B1%E6%9E%84%E5%9B%BE%E8%89%BA%E6%9C%AF%20%28%EF%BC%88%E8%8B%B1%EF%BC%89%E5%A8%81%E5%BB%89%E6%96%AF%E8%91%97%29.pdf",
+              "bytes": 38284484
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c0c358a1adc58f5c253ca4377c32d59ec0161bf5ff0d3db69d9112cfd5948c33.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER451cdb075da0",
+          "title": "Photoshop+Lightroom摄影师必备后期处理技法 第2版 (（美）斯科特·凯尔比（Scott Kelby）著)",
+          "authors": [
+            "（美）斯科特·凯尔比（Scott Kelby）著"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Photoshop+Lightroom摄影师必备后期处理技法 第2版 (（美）斯科特·凯尔比（Scott Kelby）著)》；（美）斯科特·凯尔比（Scott Kelby）著。摄影艺术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J4%20%E6%91%84%E5%BD%B1%E8%89%BA%E6%9C%AF/Photoshop%2BLightroom%E6%91%84%E5%BD%B1%E5%B8%88%E5%BF%85%E5%A4%87%E5%90%8E%E6%9C%9F%E5%A4%84%E7%90%86%E6%8A%80%E6%B3%95%20%E7%AC%AC2%E7%89%88%20%28%EF%BC%88%E7%BE%8E%EF%BC%89%E6%96%AF%E7%A7%91%E7%89%B9%C2%B7%E5%87%AF%E5%B0%94%E6%AF%94%EF%BC%88Scott%20Kelby%EF%BC%89%E8%91%97%29.pdf",
+              "bytes": 215542557
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/22f6b166cb03f48bd61d71ed5195e8fb1579b240e90179f45a78ec9b527d6af7.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "J05",
+      "clcName": "艺术评论",
+      "books": [
+        {
+          "id": "WEISERbea32adc9580",
+          "title": "裸体艺术 (（英）肯尼斯·克拉克（Kenneth Clark）著；吴玫，宁延明译, 克拉克 etc.)",
+          "authors": [
+            "肯尼斯·克拉克"
+          ],
+          "authorStatus": "verified",
+          "description": "《裸体艺术 (（英）肯尼斯·克拉克（Kenneth Clark）著；吴玫，宁延明译, 克拉克 etc.)》；肯尼斯·克拉克。艺术评论，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J0%20%E8%89%BA%E6%9C%AF%E7%90%86%E8%AE%BA/J05%20%E8%89%BA%E6%9C%AF%E8%AF%84%E8%AE%BA/%E8%A3%B8%E4%BD%93%E8%89%BA%E6%9C%AF%20%28%EF%BC%88%E8%8B%B1%EF%BC%89%E8%82%AF%E5%B0%BC%E6%96%AF%C2%B7%E5%85%8B%E6%8B%89%E5%85%8B%EF%BC%88Kenneth%20Clark%EF%BC%89%E8%91%97%EF%BC%9B%E5%90%B4%E7%8E%AB%EF%BC%8C%E5%AE%81%E5%BB%B6%E6%98%8E%E8%AF%91%2C%20%E5%85%8B%E6%8B%89%E5%85%8B%20etc.%29.pdf",
+              "bytes": 119687716
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2fe82650a9d6abcebfe70a044b1398a78d3604a5577be3b965a642ff66fc3e9a.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "J5",
+      "clcName": "工艺美术",
+      "books": [
+        {
+          "id": "WEISER8e9be1fdd3c5",
+          "title": "设计中的设计",
+          "authors": [
+            "[日] 原研哉"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《设计中的设计》；[日] 原研哉。工艺美术，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J5%20%E5%B7%A5%E8%89%BA%E7%BE%8E%E6%9C%AF/%E8%AE%BE%E8%AE%A1%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1.epub",
+              "bytes": 6012556
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/45a1eaeb0c5954708a8469b71fd604eff49f2dc259888a02fa20f7d10acab0d4.webp",
+          "language": "zh",
+          "publisher": "山东人民出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "J6",
+      "clcName": "音乐",
+      "books": [
+        {
+          "id": "WEISERe9536f85ce35",
+          "title": "电影配乐完全指南 (戴维斯)",
+          "authors": [
+            "戴维斯"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《电影配乐完全指南 (戴维斯)》；戴维斯。音乐，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J6%20%E9%9F%B3%E4%B9%90/%E7%94%B5%E5%BD%B1%E9%85%8D%E4%B9%90%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97%20%28%E6%88%B4%E7%BB%B4%E6%96%AF%29.pdf",
+              "bytes": 81390782
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6b77fe312380a7e67c180bdde715933f7d285a91bdbbcff19a94a244c0270678.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER4835049096b5",
+          "title": "基本乐理通用教材 (李重光)",
+          "authors": [
+            "李重光"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《基本乐理通用教材 (李重光)》；李重光。音乐，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J6%20%E9%9F%B3%E4%B9%90/%E5%9F%BA%E6%9C%AC%E4%B9%90%E7%90%86%E9%80%9A%E7%94%A8%E6%95%99%E6%9D%90%20%28%E6%9D%8E%E9%87%8D%E5%85%89%29.pdf",
+              "bytes": 2217516
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f1ce3b833e869b754fd12bb0ebec46ef7ed504f5825eb3eebac7000bb247612d.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER3f959cb7d0e8",
+          "title": "流行音乐和声技法 (蔡松琦)",
+          "authors": [
+            "蔡松琦"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《流行音乐和声技法 (蔡松琦)》；蔡松琦。音乐，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J6%20%E9%9F%B3%E4%B9%90/%E6%B5%81%E8%A1%8C%E9%9F%B3%E4%B9%90%E5%92%8C%E5%A3%B0%E6%8A%80%E6%B3%95%20%28%E8%94%A1%E6%9D%BE%E7%90%A6%29.pdf",
+              "bytes": 4508067
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/27fd33172cfc3073f7d3eb3f756467fdf5e3d24a7ff3a63496ea7ff7610c913d.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERab0fd4877b1d",
+          "title": "配器法原理-1 (里姆斯基 - 科萨阔夫 (瞿希贤))",
+          "authors": [
+            "瞿希贤"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《配器法原理-1 (里姆斯基 - 科萨阔夫 (瞿希贤))》；瞿希贤。音乐，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J6%20%E9%9F%B3%E4%B9%90/%E9%85%8D%E5%99%A8%E6%B3%95%E5%8E%9F%E7%90%86-1%20%28%E9%87%8C%E5%A7%86%E6%96%AF%E5%9F%BA%20-%20%E7%A7%91%E8%90%A8%E9%98%94%E5%A4%AB%20%28%E7%9E%BF%E5%B8%8C%E8%B4%A4%29%29.pdf",
+              "bytes": 58973850
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/69c85c0e283eb570aed8759f17ce94a1895be50c231e558bdcaf63744efdefc8.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER7e16f0dc10ea",
+          "title": "现代对位及其和声 (罗伯特·米德尔顿,Robert Middleton,郑英烈,孟文涛)",
+          "authors": [
+            "罗伯特·米德尔顿,Robert Middleton,郑英烈,孟文涛"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《现代对位及其和声 (罗伯特·米德尔顿,Robert Middleton,郑英烈,孟文涛)》；罗伯特·米德尔顿,Robert Middleton,郑英烈,孟文涛。音乐，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J6%20%E9%9F%B3%E4%B9%90/%E7%8E%B0%E4%BB%A3%E5%AF%B9%E4%BD%8D%E5%8F%8A%E5%85%B6%E5%92%8C%E5%A3%B0%20%28%E7%BD%97%E4%BC%AF%E7%89%B9%C2%B7%E7%B1%B3%E5%BE%B7%E5%B0%94%E9%A1%BF%2CRobert%20Middleton%2C%E9%83%91%E8%8B%B1%E7%83%88%2C%E5%AD%9F%E6%96%87%E6%B6%9B%29.pdf",
+              "bytes": 4508447
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/673180ca9148a6b7a78a9bcb51c40a4f28e3dde1ba5fd031e5db8dfe96e54ca2.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER71eeed6dabb5",
+          "title": "现代音乐人编曲手册 传统管弦乐配器和MIDI音序制作必备指南 (（美）AndreaPejrolo，RichardDeRosa著 etc.)",
+          "authors": [
+            "（美）AndreaPejrolo，RichardDeRosa著 etc."
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《现代音乐人编曲手册 传统管弦乐配器和MIDI音序制作必备指南 (（美）AndreaPejrolo，RichardDeRosa著 etc.)》；（美）AndreaPejrolo，RichardDeRosa著 etc.。音乐，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J6%20%E9%9F%B3%E4%B9%90/%E7%8E%B0%E4%BB%A3%E9%9F%B3%E4%B9%90%E4%BA%BA%E7%BC%96%E6%9B%B2%E6%89%8B%E5%86%8C%20%E4%BC%A0%E7%BB%9F%E7%AE%A1%E5%BC%A6%E4%B9%90%E9%85%8D%E5%99%A8%E5%92%8CMIDI%E9%9F%B3%E5%BA%8F%E5%88%B6%E4%BD%9C%E5%BF%85%E5%A4%87%E6%8C%87%E5%8D%97%20%28%EF%BC%88%E7%BE%8E%EF%BC%89AndreaPejrolo%EF%BC%8CRichardDeRosa%E8%91%97%20etc.%29.pdf",
+              "bytes": 59587377
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ab2190b4f11655d602f3bd2464fb8e8bbe060310d78cc03786d7dc51841eb267.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER8e3edef72cfc",
+          "title": "在音轨上 现代电影配乐指南 第2版 (（美）Fred Karlin, 卡林 (Karlin, Fred) etc.)",
+          "authors": [
+            "Karlin, Fred"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《在音轨上 现代电影配乐指南 第2版 (（美）Fred Karlin, 卡林 (Karlin, Fred) etc.)》；Karlin, Fred。音乐，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J6%20%E9%9F%B3%E4%B9%90/%E5%9C%A8%E9%9F%B3%E8%BD%A8%E4%B8%8A%20%E7%8E%B0%E4%BB%A3%E7%94%B5%E5%BD%B1%E9%85%8D%E4%B9%90%E6%8C%87%E5%8D%97%20%E7%AC%AC2%E7%89%88%20%28%EF%BC%88%E7%BE%8E%EF%BC%89Fred%20Karlin%2C%20%E5%8D%A1%E6%9E%97%20%28Karlin%2C%20Fred%29%20etc.%29.pdf",
+              "bytes": 158205013
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/929882d670f39076c5fb3f86383773784353583bd441cab1217a5ad644e43de4.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER2c42b60ac9c8",
+          "title": "Mixing Secrets for the Small Studio",
+          "authors": [
+            "Mike Senior"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Mixing Secrets for the Small Studio》；Mike Senior。音乐，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J6%20%E9%9F%B3%E4%B9%90/Mixing%20Secrets%20for%20the%20Small%20Studio.epub",
+              "bytes": 9917205
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/01772b799c74ccec325d0f944e695e95a2592c4aeb7717df53f3ff4c65598c7d.webp",
+          "language": "en-US",
+          "publisher": "Elsevier Science",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9d264c75c38e",
+          "title": "On the Track",
+          "authors": [
+            "Fred Karlin"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《On the Track》；Fred Karlin。音乐，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J6%20%E9%9F%B3%E4%B9%90/On%20the%20Track.epub",
+              "bytes": 42270072
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a3eba5e33e71ab086fb7f4f8799e79c73bd92e66554b3f3baf2f7540bcd24ba0.webp",
+          "language": "en",
+          "publisher": "Taylor and Francis",
+          "access": "public"
+        },
+        {
+          "id": "WEISER71d5cbb187cf",
+          "title": "Principles of Orchestration (Dover Books on Music)",
+          "authors": [
+            "Dover Books on Music"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Principles of Orchestration (Dover Books on Music)》；Dover Books on Music。音乐，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J6%20%E9%9F%B3%E4%B9%90/Principles%20of%20Orchestration%20%28Dover%20Books%20on%20Music%29.epub",
+              "bytes": 29880821
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/aefd014d90b969d912357c4f614db1ba51f766b98c4248897094ee760e8cdeab.webp",
+          "language": "en",
+          "publisher": "Dover Publications",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9b1d05656948",
+          "title": "Principles of Orchestration with Musical Examples Drawn from His Own Works",
+          "authors": [
+            "Nikolay Rimsky-Korsakov"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Principles of Orchestration with Musical Examples Drawn from His Own Works》；Nikolay Rimsky-Korsakov。音乐，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J6%20%E9%9F%B3%E4%B9%90/Principles%20of%20Orchestration%20with%20Musical%20Examples%20Drawn%20from%20His%20Own%20Works.epub",
+              "bytes": 63485696
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e6e463d075edf6e71b1a71da9a8ef035d5bfb2a51a76d5e1d4dfb196da9b91c8.webp",
+          "language": "en",
+          "publisher": "Dover Publications, Inc.",
+          "access": "public"
+        },
+        {
+          "id": "WEISER3964df3cd51b",
+          "title": "The Study of Orchestration (Samuel Adler)",
+          "authors": [
+            "Samuel Adler"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《The Study of Orchestration (Samuel Adler)》；Samuel Adler。音乐，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J6%20%E9%9F%B3%E4%B9%90/The%20Study%20of%20Orchestration%20%28Samuel%20Adler%29.pdf",
+              "bytes": 59639376
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d663016aa7b295e5398da59ffe06d6c35e74abc4244ed10d19155bd6504f7077.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "J9",
+      "clcName": "电影、电视艺术",
+      "books": [
+        {
+          "id": "WEISER727dbeb32023",
+          "title": "调色师手册 电影和视频调色专业技法 第2版 (（美）阿列克谢·凡·赫克曼（Alexis Van Hurkman） etc.)",
+          "authors": [
+            "（美）阿列克谢·凡·赫克曼（Alexis Van Hurkman） etc."
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《调色师手册 电影和视频调色专业技法 第2版 (（美）阿列克谢·凡·赫克曼（Alexis Van Hurkman） etc.)》；（美）阿列克谢·凡·赫克曼（Alexis Van Hurkman） etc.。电影、电视艺术，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J9%20%E7%94%B5%E5%BD%B1%E3%80%81%E7%94%B5%E8%A7%86%E8%89%BA%E6%9C%AF/%E8%B0%83%E8%89%B2%E5%B8%88%E6%89%8B%E5%86%8C%20%E7%94%B5%E5%BD%B1%E5%92%8C%E8%A7%86%E9%A2%91%E8%B0%83%E8%89%B2%E4%B8%93%E4%B8%9A%E6%8A%80%E6%B3%95%20%E7%AC%AC2%E7%89%88%20%28%EF%BC%88%E7%BE%8E%EF%BC%89%E9%98%BF%E5%88%97%E5%85%8B%E8%B0%A2%C2%B7%E5%87%A1%C2%B7%E8%B5%AB%E5%85%8B%E6%9B%BC%EF%BC%88Alexis%20Van%20Hurkman%EF%BC%89%20etc.%29.pdf",
+              "bytes": 78380614
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/82ee8e693a2266be5018854c634c4808b299beaee44b6bd3c056f58351501fd8.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "J110",
+      "clcName": "艺术史",
+      "books": [
+        {
+          "id": "WEISER1daf47ddde09",
+          "title": "怪物考 中世纪幻想艺术图文志 (王慧萍)",
+          "authors": [
+            "王慧萍"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《怪物考 中世纪幻想艺术图文志 (王慧萍)》；王慧萍。艺术史，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J1%20%E4%B8%96%E7%95%8C%E5%90%84%E5%9B%BD%E8%89%BA%E6%9C%AF/J110%20%E8%89%BA%E6%9C%AF%E5%8F%B2/%E6%80%AA%E7%89%A9%E8%80%83%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%B9%BB%E6%83%B3%E8%89%BA%E6%9C%AF%E5%9B%BE%E6%96%87%E5%BF%97%20%28%E7%8E%8B%E6%85%A7%E8%90%8D%29.pdf",
+              "bytes": 29664991
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4d95ecb549a92130af36bd1ef5910d7bd9a7d163c177b79dac7b0345190a4c5f.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "J228",
+      "clcName": "中国漫画",
+      "books": [
+        {
+          "id": "WEISERf67f9a3db604",
+          "title": "明日方舟官方美术设定集 VOL.1 RESET",
+          "authors": [
+            "鹰角网络"
+          ],
+          "authorStatus": "verified",
+          "description": "《明日方舟官方美术设定集 VOL.1 RESET》；鹰角网络。中国漫画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/J228%20%E4%B8%AD%E5%9B%BD%E6%BC%AB%E7%94%BB/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F%E5%AE%98%E6%96%B9%E8%AE%BE%E5%AE%9A%E9%9B%86.pdf",
+              "bytes": 280251088
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d8d9ae2fd5f29e11a887b3572b0358d8c3be82f5a383266986438111f5bf013e.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "J238",
+      "clcName": "各国漫画",
+      "books": [
+        {
+          "id": "WEISERa82515c78298",
+          "title": "幻兽·事典 (草野巧著)",
+          "authors": [
+            "草野巧著"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《幻兽·事典 (草野巧著)》；草野巧著。各国漫画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/J238%20%E5%90%84%E5%9B%BD%E6%BC%AB%E7%94%BB/%E5%B9%BB%E5%85%BD%C2%B7%E4%BA%8B%E5%85%B8%20%28%E8%8D%89%E9%87%8E%E5%B7%A7%E8%91%97%29.pdf",
+              "bytes": 111115136
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/dcc0f2e24d54fd6c90cee10b2fda1a33698139410be9ff0871c25f07a2ae3c9b.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER419a2a251c49",
+          "title": "幻兽龙事典 (苑崎透)",
+          "authors": [
+            "苑崎透"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《幻兽龙事典 (苑崎透)》；苑崎透。各国漫画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/J238%20%E5%90%84%E5%9B%BD%E6%BC%AB%E7%94%BB/%E5%B9%BB%E5%85%BD%E9%BE%99%E4%BA%8B%E5%85%B8%20%28%E8%8B%91%E5%B4%8E%E9%80%8F%29.pdf",
+              "bytes": 48111253
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/970c4a144503bff1e5fc97a47097c45eb6ed351f3a33f81eacb08d701b533bb3.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER63405992251f",
+          "title": "天使事典",
+          "authors": [
+            "森瀬繚"
+          ],
+          "authorStatus": "verified",
+          "description": "《天使事典》；森瀬繚。各国漫画，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J%20%E8%89%BA%E6%9C%AF/J2%20%E7%BB%98%E7%94%BB/J238%20%E5%90%84%E5%9B%BD%E6%BC%AB%E7%94%BB/%E5%A4%A9%E4%BD%BF%E5%9B%BE%E9%89%B4.pdf",
+              "bytes": 20952449
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/9b5c7129d52a90e9404bd4c0d63632dd60ee42ed08548fc652e9fae488935a33.webp",
+          "access": "public"
+        }
+      ]
+    }
+  ]
+}

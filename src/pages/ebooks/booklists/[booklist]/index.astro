@@ -3,7 +3,7 @@ import EbookShelf from '../../../../components/ebooks/EbookShelf.astro';
 import { getPublishedEbookEntries } from '../../../../lib/ebooks/ebooks';
 import { shelfBooklists } from '../../../../lib/ebooks/shelf';
 export async function getStaticPaths() {
-	const books = (await getPublishedEbookEntries()).map(book => book.data);
+	const books = (await getPublishedEbookEntries({ includeProtected: true })).map(book => book.data);
 	return shelfBooklists(books).map(item => ({ params: { booklist: item.slug }, props: { booklist: item.code } }));
 }
 const { booklist } = Astro.props;

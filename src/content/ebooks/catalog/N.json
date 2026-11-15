@@ -1,0 +1,124 @@
+{
+  "category": "N",
+  "booklists": [
+    {
+      "clcCode": "N02",
+      "clcName": "科学哲学",
+      "books": [
+        {
+          "id": "WEISER0ea3f6820447",
+          "title": "世界观：现代人必须要懂的科学哲学和科学史（原书第2版）",
+          "authors": [
+            "理查德·德威特（Richard DeWitt）"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《世界观：现代人必须要懂的科学哲学和科学史（原书第2版）》；理查德·德威特（Richard DeWitt）。科学哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/N%20%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6%E6%80%BB%E8%AE%BA/N0%20%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6%E7%90%86%E8%AE%BA%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA/N02%20%E7%A7%91%E5%AD%A6%E5%93%B2%E5%AD%A6/%E4%B8%96%E7%95%8C%E8%A7%82%3A%E7%8E%B0%E4%BB%A3%E4%BA%BA%E5%BF%85%E9%A1%BB%E8%A6%81%E6%87%82%E7%9A%84%E7%A7%91%E5%AD%A6%E5%93%B2%E5%AD%A6%E5%92%8C%E7%A7%91%E5%AD%A6%E5%8F%B2%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC2%E7%89%88%EF%BC%89.epub",
+              "bytes": 2250198
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/7397ea8528c3f8d53e242dc1f1dd03eeacc3206e924a56063c31336418ece813.webp",
+          "language": "zh",
+          "publisher": "北京华章图文信息有限公司",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "N49",
+      "clcName": "科普读物",
+      "books": [
+        {
+          "id": "WEISERee15b0088ec8",
+          "title": "DK自然发现大百科 (彼得·邦德 等)",
+          "authors": [
+            "彼得·邦德 等"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《DK自然发现大百科 (彼得·邦德 等)》；彼得·邦德 等。科普读物，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/N%20%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6%E6%80%BB%E8%AE%BA/N4%20%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6%E6%95%99%E8%82%B2%E4%B8%8E%E6%99%AE%E5%8F%8A/N49%20%E7%A7%91%E6%99%AE%E8%AF%BB%E7%89%A9/DK%E8%87%AA%E7%84%B6%E5%8F%91%E7%8E%B0%E5%A4%A7%E7%99%BE%E7%A7%91%20%28%E5%BD%BC%E5%BE%97%C2%B7%E9%82%A6%E5%BE%B7%20%E7%AD%89%29.pdf",
+              "bytes": 163147041
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6906e3ee86bc8c005827b8e774962c66ff95c5b80caf597d2b4515048a1d79d5.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "N94",
+      "clcName": "系统科学",
+      "books": [
+        {
+          "id": "WEISERb05aa063e5a0",
+          "title": "哥德尔、艾舍尔、巴赫——集异璧之大成",
+          "authors": [
+            "〔美〕侯世达"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《哥德尔、艾舍尔、巴赫——集异璧之大成》；〔美〕侯世达。系统科学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/N%20%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6%E6%80%BB%E8%AE%BA/N94%20%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/%E5%93%A5%E5%BE%B7%E5%B0%94%E3%80%81%E8%89%BE%E8%88%8D%E5%B0%94%E3%80%81%E5%B7%B4%E8%B5%AB%E2%80%94%E2%80%94%E9%9B%86%E5%BC%82%E7%92%A7%E4%B9%8B%E5%A4%A7%E6%88%90.epub",
+              "bytes": 14644439
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ec8c856540649c08019e956cce06112570c4bf9b81cb9d9fcfd3684b6fb025f0.webp",
+          "language": "zh",
+          "publisher": "商务印书馆",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe90b1f4bd985",
+          "title": "控制论与科学方法论",
+          "authors": [
+            "金观涛、华国凡"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《控制论与科学方法论》；金观涛、华国凡。系统科学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/N%20%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6%E6%80%BB%E8%AE%BA/N94%20%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/%E6%8E%A7%E5%88%B6%E8%AE%BA%E4%B8%8E%E7%A7%91%E5%AD%A6%E6%96%B9%E6%B3%95%E8%AE%BA.epub",
+              "bytes": 2018355
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e4e90e056d89367d796a4adab58b1d50724553d8bca991b952fd691a17e92310.webp",
+          "language": "zh-cn",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd14390ae4001",
+          "title": "系统之美——决策者的系统思考",
+          "authors": [
+            "德内拉•梅多斯"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《系统之美——决策者的系统思考》；德内拉•梅多斯。系统科学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/N%20%E8%87%AA%E7%84%B6%E7%A7%91%E5%AD%A6%E6%80%BB%E8%AE%BA/N94%20%E7%B3%BB%E7%BB%9F%E7%A7%91%E5%AD%A6/%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%BE%8E%E2%80%94%E2%80%94%E5%86%B3%E7%AD%96%E8%80%85%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%80%9D%E8%80%83.epub",
+              "bytes": 1203598
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/12b347d3df1fb7a607a9608b9ee3d2506c4de38a57cdcef4b7e3d94ba3ee4eeb.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    }
+  ]
+}

@@ -1,22 +1,23 @@
 ---
-import { render, type CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { EBOOK_PAGE_CONFIG as copy } from '../../config/pages/ebooks';
 import { SITE_CONFIG } from '../../config/site';
 import { getPublishedEbookEntries } from '../../lib/ebooks/ebooks';
 import '../../styles/ebooks.scss';
+import ProtectedBookView from '../../components/ebooks/ProtectedBookView.astro';
+import { readerHref } from '../../lib/ebooks/protectedBookClient';
 export async function getStaticPaths() {
-	return (await getPublishedEbookEntries()).map(entry => ({ params: { id: entry.data.id }, props: { entry } }));
+	return (await getPublishedEbookEntries({ includeProtected: true })).map(entry => ({ params: { id: entry.data.id }, props: { entry } }));
 }
 type Props = { entry: CollectionEntry<'ebooks'> };
 const { entry } = Astro.props;
 const book = entry.data;
-const { Content } = await render(entry);
 ---
-<Layout title={`${book.title} - ${SITE_CONFIG.name}`} description={book.description} shareImage={book.cover} shareImageAlt={book.title} starfieldVariant="subtle">
+<Layout title={`${book.title} - ${SITE_CONFIG.name}`} description={book.description} shareImage={book.cover} shareImageAlt={book.title} starfieldVariant="subtle" noIndex={book.access === 'protected'}>
 	<main class="ebook-page">
 		<a class="ebook-back" href="/ebooks/">← {copy.backLabel}</a>
-		<div class="ebook-detail">
+		{book.access === 'protected' ? <ProtectedBookView id={book.id} /> : <div class="ebook-detail">
 			{book.cover ? <img class="ebook-detail__cover" src={book.cover} alt={`${book.title}封面`} width="240" height="360" decoding="async" /> : <div class="ebook-cover-placeholder ebook-detail__cover">{book.title}</div>}
 			<div>
 				<header class="ebook-header"><h1>{book.title}</h1></header>
@@ -28,10 +29,11 @@ const { Content } = await render(entry);
 					{book.clcCode && <><dt>分类</dt><dd>{book.clcCode} · {book.clcName}</dd></>}
 				</dl>
 				{book.authorStatus === 'partial-collection' && <p class="ebook-card__authors">合集含多位作者，此处列出已核实的署名。</p>}
+				<div class="ebook-reading-links">{book.files.filter(file => ['EPUB', 'PDF'].includes(file.format)).map(file => <a href={readerHref(book.id, file.format)}>在线阅读 {file.format}</a>)}</div>
 				<h2>{copy.downloadLabel}</h2>
-				<ul class="ebook-formats">{book.files.map(file => <li><a href={file.href} target="_blank" rel="noopener noreferrer" download aria-label={`下载 ${book.title}（${file.format}）`}>{file.format}{file.bytes ? ` · ${(file.bytes / 1024 / 1024).toFixed(1)} MB` : ''}</a></li>)}</ul>
+				<ul class="ebook-formats">{book.files.map(file => <li><a href={`${file.href}?download=1`} target="_blank" rel="noopener noreferrer" download aria-label={`下载 ${book.title}（${file.format}）`}>{file.format}{file.bytes ? ` · ${(file.bytes / 1024 / 1024).toFixed(1)} MB` : ''}</a></li>)}</ul>
 			</div>
-		</div>
-		<div class="prose ebook-body"><Content /></div>
+		</div>}
+		{book.notes && <section class="prose ebook-body"><h2>书籍介绍</h2><p>{book.notes}</p></section>}
 	</main>
 </Layout>

@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import EbookCard from './EbookCard.astro';
 import EbookPagination from './EbookPagination.astro';
 import { EBOOK_PAGE_CONFIG as copy } from '../../config/pages/ebooks';
-import { LIBRARY_CLASSES } from '../../config/library';
+import { EBOOKS_PAGE_SIZE, LIBRARY_CLASSES } from '../../config/library';
 import { getPublishedEbookEntries, toEbook } from '../../lib/ebooks/ebooks';
 import { booksInCategory, ebookShelfHref, paginateShelf, shelfBooklists, shelfCategories } from '../../lib/ebooks/shelf';
 import '../../styles/ebooks.scss';
@@ -13,7 +13,8 @@ const all = (await getPublishedEbookEntries()).map(entry => toEbook(entry.data))
 const categories = shelfCategories(all);
 const books = booksInCategory(all, category, booklist);
 const booklists = category && !booklist ? shelfBooklists(all, category) : [];
-const { items, pageCount, total } = paginateShelf(books, page);
+const visiblePage = Math.min(page, Math.max(1, Math.ceil(books.length / EBOOKS_PAGE_SIZE)));
+const { items, pageCount, total } = paginateShelf(books, visiblePage);
 const label = booklist ? `${booklist} · ${books[0]?.clcName || booklist}` : category ? LIBRARY_CLASSES[category] : '全部藏书';
 const title = booklist || category ? `${label} · ${copy.meta.title}` : copy.meta.title;
 ---
@@ -39,7 +40,7 @@ const title = booklist || category ? `${label} · ${copy.meta.title}` : copy.met
 		</details>}
 		</div>
 		{booklist && <nav class="ebook-breadcrumb" aria-label="书单路径"><a href="/ebooks/">全部藏书</a><span> / </span><a href={ebookShelfHref(1, booklist[0])}>{LIBRARY_CLASSES[booklist[0]]}</a><span> / {label}</span></nav>}
-		{booklists.length > 0 && <section class="ebook-booklists" aria-labelledby="ebook-booklists-title">
+		{category && !booklist && <section class="ebook-booklists" aria-labelledby="ebook-booklists-title">
 			<h2 id="ebook-booklists-title">书单 <span>Booklists</span></h2>
 			<nav aria-label="中图细分类书单">{booklists.map(list => {
 				const covers = all.filter(book => book.clcCode === list.code && !book.categoryOnly && book.cover).slice(0, 2);
@@ -52,7 +53,7 @@ const title = booklist || category ? `${label} · ${copy.meta.title}` : copy.met
 		<p class="ebook-sr-only" role="status" aria-live="polite" data-search-status></p>
 		<ul class="ebook-grid" aria-label="藏书" data-shelf-grid>{items.map(book => <li><EbookCard book={book} /></li>)}</ul>
 		<p class="ebook-empty" data-shelf-empty hidden={books.length > 0}>{books.length ? '没有找到匹配的藏书。' : booklists.length ? '请从上方书单进入浏览。' : copy.empty}</p>
-		<EbookPagination page={page} pageCount={pageCount} total={total} category={category} booklist={booklist} />
+		<EbookPagination page={visiblePage} pageCount={pageCount} total={total} category={category} booklist={booklist} />
 	</main>
 </Layout>
 <script>

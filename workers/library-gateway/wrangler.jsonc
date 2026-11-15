@@ -1,0 +1,49 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "telysta-library-gateway",
+  "main": "src/index.ts",
+  "account_id": "c3a43d4042720d333a0dbb0afdf986fb",
+  "compatibility_date": "2026-11-14",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": false,
+  "vars": {
+    "CATALOG_KEY": "gateway/catalog-4a8ed0492cfbfb7d6bf26ffe59ad3c3ffef403e184a3f6e51faf55c89266738f.json",
+    "ALLOWED_ORIGINS": "https://telysta.com"
+  },
+  "r2_buckets": [
+    {
+      "binding": "LIBRARY_BUCKET",
+      "bucket_name": "telysta-library"
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 0.1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.01
+    }
+  },
+  "routes": [
+    {
+      "pattern": "library-files.telysta.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "library-gateway.telysta.com",
+      "custom_domain": true
+    }
+  ],
+  "services": [
+    {
+      "binding": "AUTH_SERVICE",
+      "service": "telysta-console",
+      "entrypoint": "AuthService"
+    }
+  ]
+}

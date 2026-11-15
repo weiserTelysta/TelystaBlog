@@ -1,0 +1,881 @@
+{
+  "category": "D",
+  "booklists": [
+    {
+      "clcCode": "D0",
+      "clcName": "政治学、政治理论",
+      "books": [
+        {
+          "id": "WEISER7fd0c85681d9",
+          "title": "技术共和国",
+          "authors": [
+            "Alexander C. Karp; Nicholas W. Zamiska"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《技术共和国》；Alexander C. Karp; Nicholas W. Zamiska。政治学、政治理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/%E6%8A%80%E6%9C%AF%E5%85%B1%E5%92%8C%E5%9B%BD.epub",
+              "bytes": 4140701
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f68c49a62b0ed401db91918ac035b0dca3a9f60f2ae8413456727fd35c9b19a0.webp",
+          "language": "zh-CN",
+          "access": "public"
+        },
+        {
+          "id": "WEISER8c523d7b22aa",
+          "title": "人的境况（第二版）",
+          "authors": [
+            "汉娜·阿伦特"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《人的境况（第二版）》；汉娜·阿伦特。政治学、政治理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/%E4%BA%BA%E7%9A%84%E5%A2%83%E5%86%B5%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89.epub",
+              "bytes": 451723
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/5d1463760da09835a0ca233f80e71a0fdafe1e6a767b6c32f817a17b4cc98bf5.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER20bc77c5bd28",
+          "title": "新阶级 对共产主义制度的分析 (米洛万·吉拉斯Milovan Djilas外部参考译)",
+          "authors": [
+            "米洛万·吉拉斯Milovan Djilas外部参考译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《新阶级 对共产主义制度的分析 (米洛万·吉拉斯Milovan Djilas外部参考译)》；米洛万·吉拉斯Milovan Djilas外部参考译。政治学、政治理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/%E6%96%B0%E9%98%B6%E7%BA%A7%20%E5%AF%B9%E5%85%B1%E4%BA%A7%E4%B8%BB%E4%B9%89%E5%88%B6%E5%BA%A6%E7%9A%84%E5%88%86%E6%9E%90%20%28%E7%B1%B3%E6%B4%9B%E4%B8%87%C2%B7%E5%90%89%E6%8B%89%E6%96%AFMilovan%20Djilas%E5%A4%96%E9%83%A8%E5%8F%82%E8%80%83%E8%AF%91%29.epub",
+              "bytes": 3485633
+            }
+          ],
+          "draft": false,
+          "language": "en-US",
+          "access": "public"
+        },
+        {
+          "id": "WEISER937a18aec85c",
+          "title": "新阶级 密洛凡·德热拉斯",
+          "authors": [
+            "密洛凡·德热拉斯"
+          ],
+          "authorStatus": "verified",
+          "description": "《新阶级 密洛凡·德热拉斯》；密洛凡·德热拉斯。政治学、政治理论，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/%E6%96%B0%E9%98%B6%E7%BA%A7%20%E5%AF%86%E6%B4%9B%E5%87%A1%C2%B7%E5%BE%B7%E7%83%AD%E6%8B%89%E6%96%AF.pdf",
+              "bytes": 4383298
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d70f9e13413c410a3f47c8ddde1c8c1e2ca2a13899a540b373abcc7ddfc297c7.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe1c117ef67d7",
+          "title": "新阶级：对共产主义制度的分析-密洛凡·德热拉斯",
+          "authors": [
+            "密洛凡·德热拉斯"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《新阶级：对共产主义制度的分析-密洛凡·德热拉斯》；密洛凡·德热拉斯。政治学、政治理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/%E6%96%B0%E9%98%B6%E7%BA%A7%3A%E5%AF%B9%E5%85%B1%E4%BA%A7%E4%B8%BB%E4%B9%89%E5%88%B6%E5%BA%A6%E7%9A%84%E5%88%86%E6%9E%90-%E5%AF%86%E6%B4%9B%E5%87%A1%C2%B7%E5%BE%B7%E7%83%AD%E6%8B%89%E6%96%AF.epub",
+              "bytes": 198767
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/0f92059d437905b8f74864241307e147f4a7a2a35c8ddda9398abe02e32d267d.webp",
+          "language": "zh",
+          "publisher": "世界知识出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERbfbd79347ed1",
+          "title": "政治的概念（增订本）",
+          "authors": [
+            "[德]卡尔·施米特"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《政治的概念（增订本）》；[德]卡尔·施米特。政治学、政治理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/%E6%94%BF%E6%B2%BB%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%88%E5%A2%9E%E8%AE%A2%E6%9C%AC%EF%BC%89.epub",
+              "bytes": 5156931
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/44bae587979accd1dd0c9dfc3fcb9ee0ddb2f88cef3c629d443e22aa384dbe9f.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd28ac8f42884",
+          "title": "政治的浪漫派",
+          "authors": [
+            "德]卡尔·施米特"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《政治的浪漫派》；德]卡尔·施米特。政治学、政治理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/%E6%94%BF%E6%B2%BB%E7%9A%84%E6%B5%AA%E6%BC%AB%E6%B4%BE.epub",
+              "bytes": 373289
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/10b2aa8dc4a19228c086f4e1b7d947d2d8abcbd83141f909b624b91315df454e.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER1bd37e81ee5c",
+          "title": "政治的逻辑；马克思主义政治学原理",
+          "authors": [
+            "王沪宁"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《政治的逻辑；马克思主义政治学原理》；王沪宁。政治学、政治理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/%E6%94%BF%E6%B2%BB%E7%9A%84%E9%80%BB%E8%BE%91%EF%BC%9B%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E6%94%BF%E6%B2%BB%E5%AD%A6%E5%8E%9F%E7%90%86.epub",
+              "bytes": 532295
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/274d64cb2d0a0235b93f281ae5ef530e050d5c06c7d8e4b5fd6b3cd3571b251f.webp",
+          "language": "zh",
+          "publisher": "人民出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER89fed28c450d",
+          "title": "政治权力操作要论 - 杨志荣 -(高清带页码) (杨志荣)",
+          "authors": [
+            "杨志荣"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《政治权力操作要论 - 杨志荣 -(高清带页码) (杨志荣)》；杨志荣。政治学、政治理论，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/%E6%94%BF%E6%B2%BB%E6%9D%83%E5%8A%9B%E6%93%8D%E4%BD%9C%E8%A6%81%E8%AE%BA%20-%20%E6%9D%A8%E5%BF%97%E8%8D%A3%20-%28%E9%AB%98%E6%B8%85%E5%B8%A6%E9%A1%B5%E7%A0%81%29%20%28%E6%9D%A8%E5%BF%97%E8%8D%A3%29.pdf",
+              "bytes": 42737276
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/43a4483aff337bae384cfe24127bd7a5f3579dbd6fe9aa8d16c07c546e64ed60.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa0453cfe66b9",
+          "title": "政治学（古希腊哲学集大成者亚里士多德代表作，西方政治学研究的开山之作！）",
+          "authors": [
+            "亚里士多德"
+          ],
+          "authorStatus": "verified",
+          "description": "《政治学（古希腊哲学集大成者亚里士多德代表作，西方政治学研究的开山之作！）》；亚里士多德。政治学、政治理论，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/%E6%94%BF%E6%B2%BB%E5%AD%A6%EF%BC%88%E5%8F%A4%E5%B8%8C%E8%85%8A%E5%93%B2%E5%AD%A6%E9%9B%86%E5%A4%A7%E6%88%90%E8%80%85%E4%BA%9A%E9%87%8C%E5%A3%AB%E5%A4%9A%E5%BE%B7%E4%BB%A3%E8%A1%A8%E4%BD%9C%EF%BC%8C%E8%A5%BF%E6%96%B9%E6%94%BF%E6%B2%BB%E5%AD%A6%E7%A0%94%E7%A9%B6%E7%9A%84%E5%BC%80%E5%B1%B1%E4%B9%8B%E4%BD%9C%EF%BC%81%EF%BC%89.mobi",
+              "bytes": 449026
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a03fcef77f02c74c20156529e4621dddd2707586cec6bafb0676a39a487ccb5d.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER5e07f696c11d",
+          "title": "The Technological Republic",
+          "authors": [
+            "Alexander C. Karp",
+            "Nicholas W. Zamiska"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《The Technological Republic》；Alexander C. Karp、Nicholas W. Zamiska。政治学、政治理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/The%20Technological%20Republic.epub",
+              "bytes": 3055676
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f68c49a62b0ed401db91918ac035b0dca3a9f60f2ae8413456727fd35c9b19a0.webp",
+          "language": "en-US",
+          "publisher": "Crown",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D033",
+      "clcName": "国家政治制度",
+      "books": [
+        {
+          "id": "WEISERb289f42a0ed7",
+          "title": "君主论：拿破仑批注版",
+          "authors": [
+            "马基雅维利"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《君主论：拿破仑批注版》；马基雅维利。国家政治制度，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/D033%20%E5%9B%BD%E5%AE%B6%E6%94%BF%E6%B2%BB%E5%88%B6%E5%BA%A6/%E5%90%9B%E4%B8%BB%E8%AE%BA%3A%E6%8B%BF%E7%A0%B4%E4%BB%91%E6%89%B9%E6%B3%A8%E7%89%88.epub",
+              "bytes": 720056
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/96524a6ebfc0d2ef708908be87b0af59252fe4236157a3dfecf757832ce0e829.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D035",
+      "clcName": "国家行政管理",
+      "books": [
+        {
+          "id": "WEISER3df7a0846f86",
+          "title": "中国国家治理的制度逻辑：一个组织学研究",
+          "authors": [
+            "周雪光"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《中国国家治理的制度逻辑：一个组织学研究》；周雪光。国家行政管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/D035%20%E5%9B%BD%E5%AE%B6%E8%A1%8C%E6%94%BF%E7%AE%A1%E7%90%86/%E4%B8%AD%E5%9B%BD%E5%9B%BD%E5%AE%B6%E6%B2%BB%E7%90%86%E7%9A%84%E5%88%B6%E5%BA%A6%E9%80%BB%E8%BE%91%3A%E4%B8%80%E4%B8%AA%E7%BB%84%E7%BB%87%E5%AD%A6%E7%A0%94%E7%A9%B6.epub",
+              "bytes": 2469819
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ffb87e9ea46153e025fc3313089e1b90f184537f2dc6c1a38bb2e5ecca69dae6.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D69",
+      "clcName": "中国政治制度史",
+      "books": [
+        {
+          "id": "WEISER8df66acb381f",
+          "title": "中国历代政治得失",
+          "authors": [
+            "钱穆"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《中国历代政治得失》；钱穆。中国政治制度史，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D6%20%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B2%BB/D69%20%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B2%BB%E5%88%B6%E5%BA%A6%E5%8F%B2/%E4%B8%AD%E5%9B%BD%E5%8E%86%E4%BB%A3%E6%94%BF%E6%B2%BB%E5%BE%97%E5%A4%B1.epub",
+              "bytes": 592394
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d6603aed1f50bfbe5adc1b00e66274a7f98aed3240f2449fb98f8bae5ecb82a6.webp",
+          "language": "zh",
+          "publisher": "epub掌上书苑",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D081",
+      "clcName": "自由、平等、民主",
+      "books": [
+        {
+          "id": "WEISER247cd012480b",
+          "title": "论自由",
+          "authors": [
+            "约翰·穆勒"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《论自由》；约翰·穆勒。自由、平等、民主，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/D081%20%E8%87%AA%E7%94%B1%E3%80%81%E5%B9%B3%E7%AD%89%E3%80%81%E6%B0%91%E4%B8%BB/%E8%AE%BA%E8%87%AA%E7%94%B1.epub",
+              "bytes": 246967
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/df9e9de22e4754fad0a48a06196274856c4cd832798a3b2ef16da9f3437740ed.webp",
+          "language": "zh",
+          "publisher": "上海三联书店",
+          "access": "public"
+        },
+        {
+          "id": "WEISER2615acf35af0",
+          "title": "正义的尺度 ((美)南茜·弗雷泽)",
+          "authors": [
+            "南茜·弗雷泽"
+          ],
+          "authorStatus": "verified",
+          "description": "《正义的尺度 ((美)南茜·弗雷泽)》；南茜·弗雷泽。自由、平等、民主，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/D081%20%E8%87%AA%E7%94%B1%E3%80%81%E5%B9%B3%E7%AD%89%E3%80%81%E6%B0%91%E4%B8%BB/%E6%AD%A3%E4%B9%89%E7%9A%84%E5%B0%BA%E5%BA%A6%20%28%28%E7%BE%8E%29%E5%8D%97%E8%8C%9C%C2%B7%E5%BC%97%E9%9B%B7%E6%B3%BD%29.pdf",
+              "bytes": 53209307
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6939927b005b437423da425753ff36226f5fd4d63763739715dc9f88bc7c632e.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER49c7c42dac81",
+          "title": "正义论",
+          "authors": [
+            "（美）罗尔斯（Rawls，J.）著；何怀宏，何包钢，廖申白译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《正义论》；（美）罗尔斯（Rawls，J.）著；何怀宏，何包钢，廖申白译。自由、平等、民主，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/D081%20%E8%87%AA%E7%94%B1%E3%80%81%E5%B9%B3%E7%AD%89%E3%80%81%E6%B0%91%E4%B8%BB/%E6%AD%A3%E4%B9%89%E8%AE%BA.epub",
+              "bytes": 1438469
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a65aa09b232e373fc383debef30dbf4655db61d29c10154c8cba2364b949de8b.webp",
+          "language": "zh-CN",
+          "publisher": "中国社会科学出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D90",
+      "clcName": "法的理论",
+      "books": [
+        {
+          "id": "WEISER2ea2d103fb6d",
+          "title": "法律、自由与道德 ([英] H.L.A.哈特)",
+          "authors": [
+            "[英] H.L.A.哈特"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《法律、自由与道德 ([英] H.L.A.哈特)》；[英] H.L.A.哈特。法的理论，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D9%20%E6%B3%95%E5%BE%8B/D90%20%E6%B3%95%E7%9A%84%E7%90%86%E8%AE%BA/%E6%B3%95%E5%BE%8B%E3%80%81%E8%87%AA%E7%94%B1%E4%B8%8E%E9%81%93%E5%BE%B7%20%28%5B%E8%8B%B1%5D%20H.L.A.%E5%93%88%E7%89%B9%29.pdf",
+              "bytes": 54671914
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/19bfbb16c94c852886fde4431149346bebc7308e4d3a9d2f53330ffb01ea511f.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERc7609e25a327",
+          "title": "法律、自由与道德 (H.L.A. Hart)",
+          "authors": [
+            "H.L.A. Hart"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《法律、自由与道德 (H.L.A. Hart)》；H.L.A. Hart。法的理论，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D9%20%E6%B3%95%E5%BE%8B/D90%20%E6%B3%95%E7%9A%84%E7%90%86%E8%AE%BA/%E6%B3%95%E5%BE%8B%E3%80%81%E8%87%AA%E7%94%B1%E4%B8%8E%E9%81%93%E5%BE%B7%20%28H.L.A.%20Hart%29.pdf",
+              "bytes": 8929752
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/5c1974e3c965557b058ba1d6b6c53abecb1a2b4230636d6b168eed5f5c489ef0.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D091",
+      "clcName": "政治思想史",
+      "books": [
+        {
+          "id": "WEISEReb0a9f502b0d",
+          "title": "21世纪国际关系学系列教材•西方政治思想史(修订版)",
+          "authors": [
+            "唐士其"
+          ],
+          "authorStatus": "verified",
+          "description": "《21世纪国际关系学系列教材•西方政治思想史(修订版)》；唐士其。政治思想史，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/D091%20%E6%94%BF%E6%B2%BB%E6%80%9D%E6%83%B3%E5%8F%B2/21%E4%B8%96%E7%BA%AA%E5%9B%BD%E9%99%85%E5%85%B3%E7%B3%BB%E5%AD%A6%E7%B3%BB%E5%88%97%E6%95%99%E6%9D%90%E2%80%A2%E8%A5%BF%E6%96%B9%E6%94%BF%E6%B2%BB%E6%80%9D%E6%83%B3%E5%8F%B2%28%E4%BF%AE%E8%AE%A2%E7%89%88%29.epub",
+              "bytes": 999884
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2bd12c1bffd97ea672f117e1d5a6eb8db53a9d3e60bec82662578f0626555d50.webp",
+          "language": "zh",
+          "publisher": "北京大学出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D92",
+      "clcName": "中国法律",
+      "books": [
+        {
+          "id": "WEISERb54f1570c7a4",
+          "title": "法治及其本土资源（第四版）",
+          "authors": [
+            "苏力"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《法治及其本土资源（第四版）》；苏力。中国法律，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D9%20%E6%B3%95%E5%BE%8B/D92%20%E4%B8%AD%E5%9B%BD%E6%B3%95%E5%BE%8B/%E6%B3%95%E6%B2%BB%E5%8F%8A%E5%85%B6%E6%9C%AC%E5%9C%9F%E8%B5%84%E6%BA%90%EF%BC%88%E7%AC%AC%E5%9B%9B%E7%89%88%EF%BC%89.epub",
+              "bytes": 513699
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1ca7bada6f93c92e70ce52b16456e7ac47bc27734612a60c590b6b29019681e7.webp",
+          "language": "zh",
+          "publisher": "北京大学出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERcb9776630ea1",
+          "title": "监察员实用指南",
+          "authors": [
+            "国际劳工局"
+          ],
+          "authorStatus": "verified",
+          "description": "《监察员实用指南》；国际劳工局。中国法律，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D9%20%E6%B3%95%E5%BE%8B/D92%20%E4%B8%AD%E5%9B%BD%E6%B3%95%E5%BE%8B/%E7%9B%91%E5%AF%9F%E5%91%98%E5%AE%9E%E7%94%A8%E6%8C%87%E5%8D%97.pdf",
+              "bytes": 9059149
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c028a286525a40043d43a19bd5b91b7345c81fbd9828e0767e72286accf8fb53.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D095",
+      "clcName": "各国政治思想史",
+      "books": [
+        {
+          "id": "WEISERb3069b6806f1",
+          "title": "论李维",
+          "authors": [
+            "【意大利】尼科洛·马基雅维利"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《论李维》；【意大利】尼科洛·马基雅维利。各国政治思想史，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/D095%20%E5%90%84%E5%9B%BD%E6%94%BF%E6%B2%BB%E6%80%9D%E6%83%B3%E5%8F%B2/%E8%AE%BA%E6%9D%8E%E7%BB%B4.epub",
+              "bytes": 2225916
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c7c73ebdf183d69012afecc986dd8af960c3a158d8f59514fca9f50148432713.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER192a505a8037",
+          "title": "通向奴役之路 (海耶克) (香港商务印书馆)",
+          "authors": [
+            "Friedrich A. Hayek"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《通向奴役之路 (海耶克) (香港商务印书馆)》；Friedrich A. Hayek。各国政治思想史，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/D095%20%E5%90%84%E5%9B%BD%E6%94%BF%E6%B2%BB%E6%80%9D%E6%83%B3%E5%8F%B2/%E9%80%9A%E5%90%91%E5%A5%B4%E5%BD%B9%E4%B9%8B%E8%B7%AF%20%28%E6%B5%B7%E8%80%B6%E5%85%8B%20%28Friedrich%20A.%20Hayek%29%29.epub",
+              "bytes": 876677
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/051161563d27044fdf5cad835caef9de1ac287bfc8d2e3749ed6697541b06836.webp",
+          "language": "zh",
+          "publisher": "香港商务印书馆",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D097",
+      "clcName": "各国政治思想史",
+      "books": [
+        {
+          "id": "WEISER6987a1b0ec13",
+          "title": "常识",
+          "authors": [
+            "（美）托马斯·潘恩"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《常识》；（美）托马斯·潘恩。各国政治思想史，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/D097%20%E5%90%84%E5%9B%BD%E6%94%BF%E6%B2%BB%E6%80%9D%E6%83%B3%E5%8F%B2/%E5%B8%B8%E8%AF%86.epub",
+              "bytes": 1863822
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/24f9436d08dc5dd7d67967639cc9939d3f1da91d148e1e623274fbb1e7742c25.webp",
+          "language": "zh-CN",
+          "publisher": "上海译文出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe40a87dd3433",
+          "title": "常识 (译文经典) (托马斯·潘恩（Thomas Paine）)",
+          "authors": [
+            "托马斯·潘恩（Thomas Paine）"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《常识 (译文经典) (托马斯·潘恩（Thomas Paine）)》；托马斯·潘恩（Thomas Paine）。各国政治思想史，AZW3 格式。",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D0%20%E6%94%BF%E6%B2%BB%E5%AD%A6%E3%80%81%E6%94%BF%E6%B2%BB%E7%90%86%E8%AE%BA/D097%20%E5%90%84%E5%9B%BD%E6%94%BF%E6%B2%BB%E6%80%9D%E6%83%B3%E5%8F%B2/%E5%B8%B8%E8%AF%86%20%28%E8%AF%91%E6%96%87%E7%BB%8F%E5%85%B8%29%20%28%E6%89%98%E9%A9%AC%E6%96%AF%C2%B7%E6%BD%98%E6%81%A9%EF%BC%88Thomas%20Paine%EF%BC%89%29.azw3",
+              "bytes": 443830
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d21487eb36f7bd0e13dc6fdce28109521e0d2c9f8d91ca39a1d96cc66fd27c76.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D231",
+      "clcName": "党史",
+      "books": [
+        {
+          "id": "WEISERbd7556ddbf88",
+          "title": "“中间地带”的革命 国际大背景下看中共成功之道 (杨奎松)",
+          "authors": [
+            "杨奎松"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《“中间地带”的革命 国际大背景下看中共成功之道 (杨奎松)》；杨奎松。党史，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D2%20%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A/D231%20%E5%85%9A%E5%8F%B2/%E2%80%9C%E4%B8%AD%E9%97%B4%E5%9C%B0%E5%B8%A6%E2%80%9D%E7%9A%84%E9%9D%A9%E5%91%BD%20%E5%9B%BD%E9%99%85%E5%A4%A7%E8%83%8C%E6%99%AF%E4%B8%8B%E7%9C%8B%E4%B8%AD%E5%85%B1%E6%88%90%E5%8A%9F%E4%B9%8B%E9%81%93%20%28%E6%9D%A8%E5%A5%8E%E6%9D%BE%29.pdf",
+              "bytes": 16018394
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d3ed1c0b32ba5d44cec629e3976fc2b1e46d1cc6b2a1c73386f5c34bf4421fde.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D625",
+      "clcName": "地方行政管理",
+      "books": [
+        {
+          "id": "WEISERcb04df07de95",
+          "title": "基层中国的运行逻辑 (聂辉华)",
+          "authors": [
+            "聂辉华"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《基层中国的运行逻辑 (聂辉华)》；聂辉华。地方行政管理，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D6%20%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B2%BB/D625%20%E5%9C%B0%E6%96%B9%E8%A1%8C%E6%94%BF%E7%AE%A1%E7%90%86/%E5%9F%BA%E5%B1%82%E4%B8%AD%E5%9B%BD%E7%9A%84%E8%BF%90%E8%A1%8C%E9%80%BB%E8%BE%91%20%28%E8%81%82%E8%BE%89%E5%8D%8E%29.pdf",
+              "bytes": 82812244
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b852f8e7ca00a25a8742960d91b5c6c56c10f016680c05899286539a293d89b9.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERaf5bc6e679e3",
+          "title": "县乡中国：县域治理现代化【一本展现县乡政治生态的写实白描书，作者累计调研超过1300天。房宁、贺雪峰、颜昌武、吕德文、欧阳静联袂推荐！】",
+          "authors": [
+            "杨华"
+          ],
+          "authorStatus": "verified",
+          "description": "《县乡中国：县域治理现代化【一本展现县乡政治生态的写实白描书，作者累计调研超过1300天。房宁、贺雪峰、颜昌武、吕德文、欧阳静联袂推荐！】》；杨华。地方行政管理，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D6%20%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B2%BB/D625%20%E5%9C%B0%E6%96%B9%E8%A1%8C%E6%94%BF%E7%AE%A1%E7%90%86/%E5%8E%BF%E4%B9%A1%E4%B8%AD%E5%9B%BD%3A%E5%8E%BF%E5%9F%9F%E6%B2%BB%E7%90%86%E7%8E%B0%E4%BB%A3%E5%8C%96%E3%80%90%E4%B8%80%E6%9C%AC%E5%B1%95%E7%8E%B0%E5%8E%BF%E4%B9%A1%E6%94%BF%E6%B2%BB%E7%94%9F%E6%80%81%E7%9A%84%E5%86%99%E5%AE%9E%E7%99%BD%E6%8F%8F%E4%B9%A6%EF%BC%8C%E4%BD%9C%E8%80%85%E7%B4%AF%E8%AE%A1%E8%B0%83%E7%A0%94%E8%B6%85%E8%BF%871300%E5%A4%A9%E3%80%82%E6%88%BF%E5%AE%81%E3%80%81%E8%B4%BA%E9%9B%AA%E5%B3%B0%E3%80%81%E9%A2%9C%E6%98%8C%E6%AD%A6%E3%80%81%E5%90%95%E5%BE%B7%E6%96%87%E3%80%81%E6%AC%A7%E9%98%B3%E9%9D%99%E8%81%94%E8%A2%82%E6%8E%A8%E8%8D%90%EF%BC%81%E3%80%91.mobi",
+              "bytes": 1017648
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/75844c775f2a97eeee5d588a1bb230806a1070e63cf62424148d0689fe1527a3.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER258b6dfe95d0",
+          "title": "中县干部",
+          "authors": [
+            "冯军旗"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《中县干部》；冯军旗。地方行政管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D6%20%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B2%BB/D625%20%E5%9C%B0%E6%96%B9%E8%A1%8C%E6%94%BF%E7%AE%A1%E7%90%86/%E4%B8%AD%E5%8E%BF%E5%B9%B2%E9%83%A8.epub",
+              "bytes": 419829
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/8c9ffa766f73d3a643516bc4311a4552951ebed81667b9acf0fb8cf7d0d5156e.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER2029df366431",
+          "title": "转型中的地方政府：官员激励与治理(第二版) (当代经济学系列丛书 当代经济学文库)",
+          "authors": [
+            "当代经济学系列丛书 当代经济学文库"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《转型中的地方政府：官员激励与治理(第二版) (当代经济学系列丛书 当代经济学文库)》；当代经济学系列丛书 当代经济学文库。地方行政管理，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D6%20%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B2%BB/D625%20%E5%9C%B0%E6%96%B9%E8%A1%8C%E6%94%BF%E7%AE%A1%E7%90%86/%E8%BD%AC%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%9C%B0%E6%96%B9%E6%94%BF%E5%BA%9C%3A%E5%AE%98%E5%91%98%E6%BF%80%E5%8A%B1%E4%B8%8E%E6%B2%BB%E7%90%86%28%E7%AC%AC%E4%BA%8C%E7%89%88%29%20%28%E5%BD%93%E4%BB%A3%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%B3%BB%E5%88%97%E4%B8%9B%E4%B9%A6%20%E5%BD%93%E4%BB%A3%E7%BB%8F%E6%B5%8E%E5%AD%A6%E6%96%87%E5%BA%93%29.epub",
+              "bytes": 1506739
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/978907f7a11b539d830a464c7988a7e3c3c4f017b54651c68fdce0a68b30dc32.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D663",
+      "clcName": "阶级、阶层",
+      "books": [
+        {
+          "id": "WEISER2ae5df3d15b3",
+          "title": "中国知识分子十论(修订版)",
+          "authors": [
+            "许纪霖"
+          ],
+          "authorStatus": "verified",
+          "description": "《中国知识分子十论(修订版)》；许纪霖。阶级、阶层，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D6%20%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B2%BB/D663%20%E9%98%B6%E7%BA%A7%E3%80%81%E9%98%B6%E5%B1%82/%E4%B8%AD%E5%9B%BD%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E5%8D%81%E8%AE%BA%28%E4%BF%AE%E8%AE%A2%E7%89%88%29.epub",
+              "bytes": 331044
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/41f967c4a3b4195b19c983c3c2c7daefde16253901816cd1d018244c7dd31906.webp",
+          "language": "zh",
+          "publisher": "复旦大学出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D771",
+      "clcName": "美国政治",
+      "books": [
+        {
+          "id": "WEISER5f184404d94b",
+          "title": "美国反对美国 （America against America） (王沪宁)",
+          "authors": [
+            "王沪宁"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《美国反对美国 （America against America） (王沪宁)》；王沪宁。美国政治，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D73/77%20%E5%90%84%E5%9B%BD%E6%94%BF%E6%B2%BB/D771%20%E7%BE%8E%E5%9B%BD%E6%94%BF%E6%B2%BB/%E7%BE%8E%E5%9B%BD%E5%8F%8D%E5%AF%B9%E7%BE%8E%E5%9B%BD%20%EF%BC%88America%20against%20America%EF%BC%89%20%28%E7%8E%8B%E6%B2%AA%E5%AE%81%29.epub",
+              "bytes": 311779
+            }
+          ],
+          "draft": false,
+          "language": "en-US",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D909",
+      "clcName": "法学史、法律思想史",
+      "books": [
+        {
+          "id": "WEISERddc1f49c93f8",
+          "title": "论法的精神",
+          "authors": [
+            "孟德斯鸠"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《论法的精神》；孟德斯鸠。法学史、法律思想史，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D9%20%E6%B3%95%E5%BE%8B/D909%20%E6%B3%95%E5%AD%A6%E5%8F%B2%E3%80%81%E6%B3%95%E5%BE%8B%E6%80%9D%E6%83%B3%E5%8F%B2/%E8%AE%BA%E6%B3%95%E7%9A%84%E7%B2%BE%E7%A5%9E.epub",
+              "bytes": 4379059
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/fac760bee437a472a47086eda25fc1cdf47ecb0464cbe42b857f6b277c262e46.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D914",
+      "clcName": "刑法",
+      "books": [
+        {
+          "id": "WEISERbae7d77920fe",
+          "title": "刑法的道德界限 .第二卷：对他人的冒犯",
+          "authors": [
+            "乔尔·范伯格"
+          ],
+          "authorStatus": "verified",
+          "description": "《刑法的道德界限 .第二卷：对他人的冒犯》；乔尔·范伯格。刑法，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D9%20%E6%B3%95%E5%BE%8B/D914%20%E5%88%91%E6%B3%95/%E5%88%91%E6%B3%95%E7%9A%84%E9%81%93%E5%BE%B7%E7%95%8C%E9%99%90%20.%E7%AC%AC%E4%BA%8C%E5%8D%B7%3A%E5%AF%B9%E4%BB%96%E4%BA%BA%E7%9A%84%E5%86%92%E7%8A%AF.pdf",
+              "bytes": 96045046
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/73b1987c1948a8cbe3956a11f4d393cfe3843110c71b0353117fe680d1a4a1e0.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERf3c8d2d86d36",
+          "title": "刑法的道德界限 .第三卷：对自己的损害",
+          "authors": [
+            "乔尔·范伯格"
+          ],
+          "authorStatus": "verified",
+          "description": "《刑法的道德界限 .第三卷：对自己的损害》；乔尔·范伯格。刑法，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D9%20%E6%B3%95%E5%BE%8B/D914%20%E5%88%91%E6%B3%95/%E5%88%91%E6%B3%95%E7%9A%84%E9%81%93%E5%BE%B7%E7%95%8C%E9%99%90%20.%E7%AC%AC%E4%B8%89%E5%8D%B7%3A%E5%AF%B9%E8%87%AA%E5%B7%B1%E7%9A%84%E6%8D%9F%E5%AE%B3.pdf",
+              "bytes": 91299079
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b1075e791374961cc30f69f0100cf8a3952339447874106ee92f3a24fe405cb9.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER59ceaa2d1e82",
+          "title": "刑法的道德界限 .第四卷：无害的不法行为",
+          "authors": [
+            "乔尔·范伯格"
+          ],
+          "authorStatus": "verified",
+          "description": "《刑法的道德界限 .第四卷：无害的不法行为》；乔尔·范伯格。刑法，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D9%20%E6%B3%95%E5%BE%8B/D914%20%E5%88%91%E6%B3%95/%E5%88%91%E6%B3%95%E7%9A%84%E9%81%93%E5%BE%B7%E7%95%8C%E9%99%90%20.%E7%AC%AC%E5%9B%9B%E5%8D%B7%3A%E6%97%A0%E5%AE%B3%E7%9A%84%E4%B8%8D%E6%B3%95%E8%A1%8C%E4%B8%BA.pdf",
+              "bytes": 92845675
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c42644d7932157bb18dee44c5cc31704d15940f42a183e151ccd73a68573e2ed.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER324ff077f71f",
+          "title": "刑法的道德界限. 第一卷：对他人的损害",
+          "authors": [
+            "乔尔·范伯格"
+          ],
+          "authorStatus": "verified",
+          "description": "《刑法的道德界限. 第一卷：对他人的损害》；乔尔·范伯格。刑法，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D9%20%E6%B3%95%E5%BE%8B/D914%20%E5%88%91%E6%B3%95/%E5%88%91%E6%B3%95%E7%9A%84%E9%81%93%E5%BE%B7%E7%95%8C%E9%99%90.%20%E7%AC%AC%E4%B8%80%E5%8D%B7%3A%E5%AF%B9%E4%BB%96%E4%BA%BA%E7%9A%84%E6%8D%9F%E5%AE%B3.pdf",
+              "bytes": 124818657
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d3ff350e04475f553a8e5fa39f158631fa4bfd4cc97a5fd4ef5fcda6b9d0e1af.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D923",
+      "clcName": "民法",
+      "books": [
+        {
+          "id": "WEISERbe3ba5a75f98",
+          "title": "知识产权法教程（第七版） (王迁)",
+          "authors": [
+            "王迁"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《知识产权法教程（第七版） (王迁)》；王迁。民法，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D9%20%E6%B3%95%E5%BE%8B/D92%20%E4%B8%AD%E5%9B%BD%E6%B3%95%E5%BE%8B/D923%20%E6%B0%91%E6%B3%95/%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E6%B3%95%E6%95%99%E7%A8%8B%EF%BC%88%E7%AC%AC%E4%B8%83%E7%89%88%EF%BC%89%20%28%E7%8E%8B%E8%BF%81%29.pdf",
+              "bytes": 53228594
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ef9138c2d65327b804ad7727ec0923288c736395f34d21d96df4ebbd49e50ebd.webp",
+          "access": "public"
+        }
+      ]
+    }
+  ]
+}

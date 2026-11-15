@@ -1,0 +1,19 @@
+{
+  "name": "telysta-console",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "types": "wrangler types --env-interface ConsoleEnv",
+    "check": "npm run types && tsc --noEmit",
+    "test": "node scripts/build-tests.mjs && node --test tests/*.test.mjs",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "wrangler": "4.162.0"
+  },
+  "dependencies": {
+    "yaml": "2.9.0"
+  }
+}

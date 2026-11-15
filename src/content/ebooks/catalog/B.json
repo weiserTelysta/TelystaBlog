@@ -1,0 +1,2958 @@
+{
+  "category": "B",
+  "booklists": [
+    {
+      "clcCode": "B0",
+      "clcName": "哲学理论",
+      "books": [
+        {
+          "id": "WEISERbcd19df14df3",
+          "title": "读《资本论》（通过对《资本论》的阅读，可以读到马克思真正的哲学 ）（豆瓣评分9.1）",
+          "authors": [
+            "路易·阿尔都塞",
+            "艾蒂安·巴里巴尔"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《读《资本论》（通过对《资本论》的阅读，可以读到马克思真正的哲学 ）（豆瓣评分9.1）》；路易·阿尔都塞、艾蒂安·巴里巴尔。哲学理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B0%20%E5%93%B2%E5%AD%A6%E7%90%86%E8%AE%BA/%E8%AF%BB%E3%80%8A%E8%B5%84%E6%9C%AC%E8%AE%BA%E3%80%8B%EF%BC%88%E9%80%9A%E8%BF%87%E5%AF%B9%E3%80%8A%E8%B5%84%E6%9C%AC%E8%AE%BA%E3%80%8B%E7%9A%84%E9%98%85%E8%AF%BB%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%AF%BB%E5%88%B0%E9%A9%AC%E5%85%8B%E6%80%9D%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%93%B2%E5%AD%A6%20%EF%BC%89%EF%BC%88%E8%B1%86%E7%93%A3%E8%AF%84%E5%88%869.1%EF%BC%89.epub",
+              "bytes": 557488
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ea8e065e1901092e4ea7fa9918da42fe19186af01f71cdd1ea5ffa08c0017e21.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERf720ca577fe5",
+          "title": "论个人在历史上的作用问题 (汉译世界学术名著丛书)",
+          "authors": [
+            "汉译世界学术名著丛书"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《论个人在历史上的作用问题 (汉译世界学术名著丛书)》；汉译世界学术名著丛书。哲学理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B0%20%E5%93%B2%E5%AD%A6%E7%90%86%E8%AE%BA/%E8%AE%BA%E4%B8%AA%E4%BA%BA%E5%9C%A8%E5%8E%86%E5%8F%B2%E4%B8%8A%E7%9A%84%E4%BD%9C%E7%94%A8%E9%97%AE%E9%A2%98%20%28%E6%B1%89%E8%AF%91%E4%B8%96%E7%95%8C%E5%AD%A6%E6%9C%AF%E5%90%8D%E8%91%97%E4%B8%9B%E4%B9%A6%29.epub",
+              "bytes": 299643
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/3b73be242ad9547d3495982c81f74786fced8cdfdb094cf5fd67f8755c1d1fb5.webp",
+          "language": "zh-CN",
+          "publisher": "商务印书馆",
+          "access": "public"
+        },
+        {
+          "id": "WEISERcf2e7a4c1e1a",
+          "title": "你的第一本哲学书",
+          "authors": [
+            "托马斯·内格尔"
+          ],
+          "authorStatus": "verified",
+          "description": "《你的第一本哲学书》；托马斯·内格尔。哲学理论，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B0%20%E5%93%B2%E5%AD%A6%E7%90%86%E8%AE%BA/%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9C%AC%E5%93%B2%E5%AD%A6%E4%B9%A6.mobi",
+              "bytes": 249426
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/8ca54beeee23c8e50db086fa5c9c12cf4b72d6c5d3d099aefae8e3509af1a890.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER62a4d75cdfe8",
+          "title": "苏菲的世界 (贾德名作系列)",
+          "authors": [
+            "贾德名作系列"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《苏菲的世界 (贾德名作系列)》；贾德名作系列。哲学理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B0%20%E5%93%B2%E5%AD%A6%E7%90%86%E8%AE%BA/%E8%8B%8F%E8%8F%B2%E7%9A%84%E4%B8%96%E7%95%8C%20%28%E8%B4%BE%E5%BE%B7%E5%90%8D%E4%BD%9C%E7%B3%BB%E5%88%97%29.epub",
+              "bytes": 489866
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/394083beb30b89b76a94a8feac321a418f70810e74b358143df9adedff447c57.webp",
+          "language": "zh",
+          "publisher": "作家出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER2fd1153d26ff",
+          "title": "西方哲学史",
+          "authors": [
+            "罗素",
+            "何兆武",
+            "李约瑟",
+            "马元德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《西方哲学史》；罗素、何兆武、李约瑟、马元德。哲学理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B0%20%E5%93%B2%E5%AD%A6%E7%90%86%E8%AE%BA/%E8%A5%BF%E6%96%B9%E5%93%B2%E5%AD%A6%E5%8F%B2%EF%BC%88%E5%A5%97%E8%A3%85%E5%85%B12%E5%86%8C%EF%BC%89%E8%AF%BA%E8%B4%9D%E5%B0%94%E6%96%87%E5%AD%A6%E5%A5%96%E5%BE%97%E4%B8%BB%E7%BD%97%E7%B4%A0%E9%87%8D%E8%A6%81%E4%BB%A3%E8%A1%A8%E4%BD%9C%E4%B9%8B%E4%B8%80%2020%E4%B8%96%E7%BA%AA%E4%BC%9F%E5%A4%A7%E7%9A%84%E6%80%9D%E6%83%B3%E5%AE%B6%E5%BC%95%E9%A2%86%E4%BD%A0%E8%BF%9B%E5%85%A5%E8%A5%BF%E6%96%B9%E5%93%B2%E5%AD%A6%E6%AE%BF%E5%A0%82%20%E4%B8%80%E9%83%A8%E8%B6%85%E8%B6%8A%E6%B4%BE%E5%88%AB%E5%92%8C%E6%84%8F%E8%A7%81%E5%86%B2%E7%AA%81%E3%80%81%E6%9C%80%E9%80%82%E5%AE%9C%E4%BA%8E%E6%95%99%E5%AD%A6%E7%9A%84%E4%B9%A6%20%E6%97%B6%E5%B0%9A%E7%BB%8F%E5%85%B8%20%E5%80%BC%E5%BE%97%E6%94%B6%E8%97%8F%EF%BC%81%EF%BC%81%EF%BC%81.epub",
+              "bytes": 1063359
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/94ec81f0b19c6fa4b5e8c8b0d2aba3ac3d096cc83c036b12a453d39820173247.webp",
+          "language": "zh",
+          "publisher": "商务印书馆",
+          "access": "public"
+        },
+        {
+          "id": "WEISERaa01eb72822e",
+          "title": "西方哲学史",
+          "authors": [
+            "罗素"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《西方哲学史》；罗素。哲学理论，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B0%20%E5%93%B2%E5%AD%A6%E7%90%86%E8%AE%BA/%E8%A5%BF%E6%96%B9%E5%93%B2%E5%AD%A6%E5%8F%B2.epub",
+              "bytes": 934143
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/04216433a6399bb0168246179bfb714d8ea44da1bb7c34fbc60c740952244e76.webp",
+          "language": "zh-CN",
+          "access": "public"
+        },
+        {
+          "id": "WEISERae70bff16578",
+          "title": "学会使用唯物辩证法",
+          "authors": [
+            "中央党校工农兵学哲学调查组"
+          ],
+          "authorStatus": "verified",
+          "description": "《学会使用唯物辩证法》；中央党校工农兵学哲学调查组。哲学理论，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B0%20%E5%93%B2%E5%AD%A6%E7%90%86%E8%AE%BA/%E5%AD%A6%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95.pdf",
+              "bytes": 8310187
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/739eae28cfd404ef71893e44d5ac7822cb2df2ab3352c0d914e4d58d5675432b.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B1",
+      "clcName": "世界哲学",
+      "books": [
+        {
+          "id": "WEISER1ede2889296e",
+          "title": "浪漫主义的根源",
+          "authors": [
+            "[英国]以赛亚·伯林"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《浪漫主义的根源》；[英国]以赛亚·伯林。世界哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B1%20%E4%B8%96%E7%95%8C%E5%93%B2%E5%AD%A6/%E6%B5%AA%E6%BC%AB%E4%B8%BB%E4%B9%89%E7%9A%84%E6%A0%B9%E6%BA%90.epub",
+              "bytes": 481193
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/531cf90ae6fe02da3682264f0ba04eb851cb5ac40bc4352626715e6fc86cf635.webp",
+          "language": "zh-cn",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9a06088a780c",
+          "title": "刘擎",
+          "authors": [
+            "Administrator"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《刘擎》；Administrator。世界哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B1%20%E4%B8%96%E7%95%8C%E5%93%B2%E5%AD%A6/%E5%88%98%E6%93%8E.epub",
+              "bytes": 527645
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/500749ea375446cd163a40ed78605dd27fd3c48e1887fd1c42fa2f54994dea16.webp",
+          "language": "en",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd893a328bd6d",
+          "title": "牛津西方哲学史（中文修订版）",
+          "authors": [
+            "【英】安东尼·肯尼"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《牛津西方哲学史（中文修订版）》；【英】安东尼·肯尼。世界哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B1%20%E4%B8%96%E7%95%8C%E5%93%B2%E5%AD%A6/%E7%89%9B%E6%B4%A5%E8%A5%BF%E6%96%B9%E5%93%B2%E5%AD%A6%E5%8F%B2%EF%BC%88%E4%B8%AD%E6%96%87%E4%BF%AE%E8%AE%A2%E7%89%88%EF%BC%89.epub",
+              "bytes": 5811063
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/3ed8b76dba80e5759a0486a15001bd1734d04e278799089eed86673a41c9bfc3.webp",
+          "language": "zh",
+          "publisher": "中国人民大学出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B22",
+      "clcName": "先秦哲学",
+      "books": [
+        {
+          "id": "WEISER43e5e32cc7ad",
+          "title": "论语",
+          "authors": [
+            "孔子"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《论语》；孔子。先秦哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B2%20%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6/B22%20%E5%85%88%E7%A7%A6%E5%93%B2%E5%AD%A6/%E8%AE%BA%E8%AF%AD.epub",
+              "bytes": 316318
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/7e9c59efd46331f57521b932d7f0fed06105e96dc569cbc20f4482c9358bde78.webp",
+          "language": "zh",
+          "publisher": "【公众号：电子书资料站】",
+          "access": "public"
+        },
+        {
+          "id": "WEISER93b93ec24455",
+          "title": "论语别裁（上、下册）(《论语》精义,说透人生大智慧)【复旦版南怀瑾著作,南师生前多次亲加审定，大众国学经典】",
+          "authors": [
+            "南怀瑾"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《论语别裁（上、下册）(《论语》精义,说透人生大智慧)【复旦版南怀瑾著作,南师生前多次亲加审定，大众国学经典】》；南怀瑾。先秦哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B2%20%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6/B22%20%E5%85%88%E7%A7%A6%E5%93%B2%E5%AD%A6/%E8%AE%BA%E8%AF%AD%E5%88%AB%E8%A3%81%EF%BC%88%E4%B8%8A%E3%80%81%E4%B8%8B%E5%86%8C%EF%BC%89%28%E3%80%8A%E8%AE%BA%E8%AF%AD%E3%80%8B%E7%B2%BE%E4%B9%89%2C%E8%AF%B4%E9%80%8F%E4%BA%BA%E7%94%9F%E5%A4%A7%E6%99%BA%E6%85%A7%29%E3%80%90%E5%A4%8D%E6%97%A6%E7%89%88%E5%8D%97%E6%80%80%E7%91%BE%E8%91%97%E4%BD%9C%2C%E5%8D%97%E5%B8%88%E7%94%9F%E5%89%8D%E5%A4%9A%E6%AC%A1%E4%BA%B2%E5%8A%A0%E5%AE%A1%E5%AE%9A%EF%BC%8C%E5%A4%A7%E4%BC%97%E5%9B%BD%E5%AD%A6%E7%BB%8F%E5%85%B8%E3%80%91%20%28%E5%8D%97%E6%80%80%E7%91%BE%29.epub",
+              "bytes": 1373657
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/70152423ad70824afd46b090da7f00a732dc2305d1bfd605b98130bc4dfd6793.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER1367b0f1aeab",
+          "title": "孟子",
+          "authors": [
+            "孟子/朱熹 注"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《孟子》；孟子/朱熹 注。先秦哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B2%20%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6/B22%20%E5%85%88%E7%A7%A6%E5%93%B2%E5%AD%A6/%E5%AD%9F%E5%AD%90.epub",
+              "bytes": 111961
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/0cbb07a6a496e4eee1f77e2fc314e4b48846d1341346a40253aa32630b3c0141.webp",
+          "language": "zh-cn",
+          "access": "public"
+        },
+        {
+          "id": "WEISER843d5ccba4a2",
+          "title": "荀子",
+          "authors": [
+            "荀子",
+            "方勇"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《荀子》；荀子、方勇。先秦哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B2%20%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6/B22%20%E5%85%88%E7%A7%A6%E5%93%B2%E5%AD%A6/%E8%8D%80%E5%AD%90.epub",
+              "bytes": 733674
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/3efc69b70204bf7d5d3523fbc73b89765bacaaf19e7b13fda1c1fbcbbe942135.webp",
+          "language": "zho",
+          "access": "public"
+        },
+        {
+          "id": "WEISER05fc87178932",
+          "title": "荀子新注 (北京大学《荀子》注释组)",
+          "authors": [
+            "北京大学《荀子》注释组"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《荀子新注 (北京大学《荀子》注释组)》；北京大学《荀子》注释组。先秦哲学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B2%20%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6/B22%20%E5%85%88%E7%A7%A6%E5%93%B2%E5%AD%A6/%E8%8D%80%E5%AD%90%E6%96%B0%E6%B3%A8%20%28%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E3%80%8A%E8%8D%80%E5%AD%90%E3%80%8B%E6%B3%A8%E9%87%8A%E7%BB%84%29.pdf",
+              "bytes": 21097453
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1b9b01672bc0201ed07fcd5106d69daadc868c2dfcf8240313b5c3b3b81989f7.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER2e3bc11b4e05",
+          "title": "诸子百家系列套装【套装全二十册】(孟子、荀子、老子、列子、庄子、墨子、公孙龙子、韩非子、淮南子、鬼谷子、管子、孙子兵法、吴子 司马法、六韬、论语大学中庸、抱朴子内篇、孔子家语、黄帝四经 关尹子 尸子） (中华书局)",
+          "authors": [
+            "中华书局"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《诸子百家系列套装【套装全二十册】(孟子、荀子、老子、列子、庄子、墨子、公孙龙子、韩非子、淮南子、鬼谷子、管子、孙子兵法、吴子 司马法、六韬、论语大学中庸、抱朴子内篇、孔子家语、黄帝四经 关尹子 尸子） (中华书局)》；中华书局。先秦哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B2%20%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6/B22%20%E5%85%88%E7%A7%A6%E5%93%B2%E5%AD%A6/%E8%AF%B8%E5%AD%90%E7%99%BE%E5%AE%B6%E7%B3%BB%E5%88%97%E5%A5%97%E8%A3%85%E3%80%90%E5%A5%97%E8%A3%85%E5%85%A8%E4%BA%8C%E5%8D%81%E5%86%8C%E3%80%91%28%E5%AD%9F%E5%AD%90%E3%80%81%E8%8D%80%E5%AD%90%E3%80%81%E8%80%81%E5%AD%90%E3%80%81%E5%88%97%E5%AD%90%E3%80%81%E5%BA%84%E5%AD%90%E3%80%81%E5%A2%A8%E5%AD%90%E3%80%81%E5%85%AC%E5%AD%99%E9%BE%99%E5%AD%90%E3%80%81%E9%9F%A9%E9%9D%9E%E5%AD%90%E3%80%81%E6%B7%AE%E5%8D%97%E5%AD%90%E3%80%81%E9%AC%BC%E8%B0%B7%E5%AD%90%E3%80%81%E7%AE%A1%E5%AD%90%E3%80%81%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95%E3%80%81%E5%90%B4%E5%AD%90%20%E5%8F%B8%E9%A9%AC%E6%B3%95%E3%80%81%E5%85%AD%E9%9F%AC%E3%80%81%E8%AE%BA%E8%AF%AD%E5%A4%A7%E5%AD%A6%E4%B8%AD%E5%BA%B8%E3%80%81%E6%8A%B1%E6%9C%B4%E5%AD%90%E5%86%85%E7%AF%87%E3%80%81%E5%AD%94%E5%AD%90%E5%AE%B6%E8%AF%AD%E3%80%81%E9%BB%84%E5%B8%9D%E5%9B%9B%E7%BB%8F%20%E5%85%B3%E5%B0%B9%E5%AD%90%20%E5%B0%B8%E5%AD%90%EF%BC%89%20%28%E4%B8%AD%E5%8D%8E%E4%B9%A6%E5%B1%80%29.epub",
+              "bytes": 17900905
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/0e93f407760e7a6c6e71ce0350c448562f1a5382cdefb44e45417f3b76012b61.webp",
+          "language": "zh",
+          "publisher": "中华书局有限公司",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B81",
+      "clcName": "逻辑学",
+      "books": [
+        {
+          "id": "WEISER431b8538e6ff",
+          "title": "逻辑学十五讲 (名家通识讲座书系)",
+          "authors": [
+            "名家通识讲座书系"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《逻辑学十五讲 (名家通识讲座书系)》；名家通识讲座书系。逻辑学，AZW3 格式。",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B81%20%E9%80%BB%E8%BE%91%E5%AD%A6/%E9%80%BB%E8%BE%91%E5%AD%A6%E5%8D%81%E4%BA%94%E8%AE%B2%20%28%E5%90%8D%E5%AE%B6%E9%80%9A%E8%AF%86%E8%AE%B2%E5%BA%A7%E4%B9%A6%E7%B3%BB%29.azw3",
+              "bytes": 1238926
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/7531fdbd75eed43af5e6349e86b295a7253b124763d0a9d3bdb774e4e130f8c5.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe171c9fc0157",
+          "title": "逻辑研究",
+          "authors": [
+            "胡塞尔"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《逻辑研究》；胡塞尔。逻辑学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B81%20%E9%80%BB%E8%BE%91%E5%AD%A6/%E9%80%BB%E8%BE%91%E7%A0%94%E7%A9%B6.epub",
+              "bytes": 1108825
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d78b7d125c430c44e19d889caa1e55aaa4cbada054327ef46fdc182ca98e64e8.webp",
+          "language": "zh",
+          "publisher": "商务印书馆",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe890fe32d6aa",
+          "title": "逻辑哲学论",
+          "authors": [
+            "[奥地利] 路德维希·维特根斯坦"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《逻辑哲学论》；[奥地利] 路德维希·维特根斯坦。逻辑学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B81%20%E9%80%BB%E8%BE%91%E5%AD%A6/%E9%80%BB%E8%BE%91%E5%93%B2%E5%AD%A6%E8%AE%BA.epub",
+              "bytes": 463994
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/7b3de956f48493965d7ba5839d35c9fd501df4566e67361d47b21f9e9d194377.webp",
+          "language": "zh-CN",
+          "publisher": "商务印书馆",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B82",
+      "clcName": "伦理学",
+      "books": [
+        {
+          "id": "WEISER5738ece8e514",
+          "title": "道德情操论",
+          "authors": [
+            "斯密"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《道德情操论》；斯密。伦理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B82%20%E4%BC%A6%E7%90%86%E5%AD%A6/%E9%81%93%E5%BE%B7%E6%83%85%E6%93%8D%E8%AE%BA.epub",
+              "bytes": 751978
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a11f1a200c82967ee8011223ad12036a9298844b515686e7bd6d001c02067692.webp",
+          "language": "zh",
+          "publisher": "中央编译出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER25944affdffe",
+          "title": "功利主义（全新译本）",
+          "authors": [
+            "[英]约翰·斯图亚特·穆勒"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《功利主义（全新译本）》；[英]约翰·斯图亚特·穆勒。伦理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B82%20%E4%BC%A6%E7%90%86%E5%AD%A6/%E5%8A%9F%E5%88%A9%E4%B8%BB%E4%B9%89%EF%BC%88%E5%85%A8%E6%96%B0%E8%AF%91%E6%9C%AC%EF%BC%89.epub",
+              "bytes": 254636
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ac29e8f2a2c341701fa7b18ae81a9c352cfa561a50a6681235c7cec869f3c3ce.webp",
+          "language": "zh",
+          "publisher": "中国社会科学出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B84",
+      "clcName": "心理学",
+      "books": [
+        {
+          "id": "WEISERf3b152304905",
+          "title": "《起床后的黄金1小时》（想过什么样的人生，就过什么样的早晨！风靡日本的1小时习惯改造法，有效提升专注力、决策力、工作效率）",
+          "authors": [
+            "池田千惠"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《《起床后的黄金1小时》（想过什么样的人生，就过什么样的早晨！风靡日本的1小时习惯改造法，有效提升专注力、决策力、工作效率）》；池田千惠。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E3%80%8A%E8%B5%B7%E5%BA%8A%E5%90%8E%E7%9A%84%E9%BB%84%E9%87%911%E5%B0%8F%E6%97%B6%E3%80%8B%EF%BC%88%E6%83%B3%E8%BF%87%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E4%BA%BA%E7%94%9F%EF%BC%8C%E5%B0%B1%E8%BF%87%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%97%A9%E6%99%A8%EF%BC%81%E9%A3%8E%E9%9D%A1%E6%97%A5%E6%9C%AC%E7%9A%841%E5%B0%8F%E6%97%B6%E4%B9%A0%E6%83%AF%E6%94%B9%E9%80%A0%E6%B3%95%EF%BC%8C%E6%9C%89%E6%95%88%E6%8F%90%E5%8D%87%E4%B8%93%E6%B3%A8%E5%8A%9B%E3%80%81%E5%86%B3%E7%AD%96%E5%8A%9B%E3%80%81%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87%EF%BC%89.epub",
+              "bytes": 2709830
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f6b8c67a6ac7b036b31be9f6d643ddcfc3c463f238420471a21ee9c049e1798e.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa13f0ba9ac66",
+          "title": "《人性的弱点：增订全译版》",
+          "authors": [
+            "[美]戴尔.卡耐基"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《《人性的弱点：增订全译版》》；[美]戴尔.卡耐基。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E3%80%8A%E4%BA%BA%E6%80%A7%E7%9A%84%E5%BC%B1%E7%82%B9%3A%E5%A2%9E%E8%AE%A2%E5%85%A8%E8%AF%91%E7%89%88%E3%80%8B.epub",
+              "bytes": 391110
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/af730e1f31e059f2e7714fbb7f3168f6eb3ee65b88f919b0b2e250f74684b596.webp",
+          "language": "zh",
+          "publisher": "湖南文艺出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER4c46b4024655",
+          "title": "超越感觉:批判性思考指南(第8版) (博学译丛)",
+          "authors": [
+            "博学译丛"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《超越感觉:批判性思考指南(第8版) (博学译丛)》；博学译丛。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E8%B6%85%E8%B6%8A%E6%84%9F%E8%A7%89%20%E6%89%B9%E5%88%A4%E6%80%A7%E6%80%9D%E8%80%83%E6%8C%87%E5%8D%97%28%E7%AC%AC8%E7%89%88%29%20%28%E5%8D%9A%E5%AD%A6%E8%AF%91%E4%B8%9B%29.epub",
+              "bytes": 498353
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/9d948e590231d3850d62df0ef805e6cad8a95fed465ddead12fc44bca29988fd.webp",
+          "language": "ZH-CN",
+          "publisher": "复旦大学出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER8a1b7405569d",
+          "title": "高效能人士的七个习惯（30周年纪念版）:打造一套全新的思维方式和原则体系（经典著作，附赠个人效能PEQ在线测评）",
+          "authors": [
+            "史蒂芬·柯维, SoBooKs.cc"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《高效能人士的七个习惯（30周年纪念版）:打造一套全新的思维方式和原则体系（经典著作，附赠个人效能PEQ在线测评）》；史蒂芬·柯维, SoBooKs.cc。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E9%AB%98%E6%95%88%E8%83%BD%E4%BA%BA%E5%A3%AB%E7%9A%84%E4%B8%83%E4%B8%AA%E4%B9%A0%E6%83%AF%EF%BC%8830%E5%91%A8%E5%B9%B4%E7%BA%AA%E5%BF%B5%E7%89%88%EF%BC%89%20%E6%89%93%E9%80%A0%E4%B8%80%E5%A5%97%E5%85%A8%E6%96%B0%E7%9A%84%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8E%9F%E5%88%99%E4%BD%93%E7%B3%BB%EF%BC%88%E7%BB%8F%E5%85%B8%E8%91%97%E4%BD%9C%EF%BC%8C%E9%99%84%E8%B5%A0%E4%B8%AA%E4%BA%BA%E6%95%88%E8%83%BDPEQ%E5%9C%A8%E7%BA%BF%E6%B5%8B%E8%AF%84%EF%BC%89.epub",
+              "bytes": 6052041
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2073811ecbad54fa6e5156fda126ca9bd20fec17e8ceec56f38f4f174c8df732.webp",
+          "language": "zh",
+          "publisher": "：北京中青文文化传媒有限公司",
+          "access": "public"
+        },
+        {
+          "id": "WEISER8111387f2c85",
+          "title": "活出意义来",
+          "authors": [
+            "维克多·弗兰克"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《活出意义来》；维克多·弗兰克。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E6%B4%BB%E5%87%BA%E6%84%8F%E4%B9%89%E6%9D%A5.epub",
+              "bytes": 307879
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/68355caa39d2ae557375ea22e6c3dbfc6159e550fcd3612ee41e8d3a99f34c3e.webp",
+          "language": "zh-CN",
+          "publisher": "epub掌上书苑",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe2a9cd1d68dd",
+          "title": "津巴多普通心理学（第8版）",
+          "authors": [
+            "菲利普·津巴多",
+            "罗伯特·约翰逊",
+            "薇薇安·麦卡恩"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《津巴多普通心理学（第8版）》；菲利普·津巴多、罗伯特·约翰逊、薇薇安·麦卡恩。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E6%B4%A5%E5%B7%B4%E5%A4%9A%E6%99%AE%E9%80%9A%E5%BF%83%E7%90%86%E5%AD%A6%EF%BC%88%E7%AC%AC8%E7%89%88%EF%BC%89.epub",
+              "bytes": 32636592
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b78546f69e5e84ac0aad75ab0674d618bc9d86f79912dfae53c4831c26fbce7c.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER4c08d4eea9c2",
+          "title": "精准努力",
+          "authors": [
+            "野口真人"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《精准努力》；野口真人。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E7%B2%BE%E5%87%86%E5%8A%AA%E5%8A%9B.epub",
+              "bytes": 231471
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6bbb60b75929b02d778c4dc08fd2a3543ae3be8ed427f820601a3e795164833d.webp",
+          "language": "zh",
+          "publisher": "北京：文化发展出版",
+          "access": "public"
+        },
+        {
+          "id": "WEISER7c84b435127c",
+          "title": "决策与判断",
+          "authors": [
+            "[美]斯科特·普劳斯"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《决策与判断》；[美]斯科特·普劳斯。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E5%86%B3%E7%AD%96%E4%B8%8E%E5%88%A4%E6%96%AD.epub",
+              "bytes": 2044321
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ace73d79137c6cbe7c0b73ea3ad3415d47bcb189a94dafbb05585c5977310e54.webp",
+          "language": "zh",
+          "publisher": "人民邮电出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER3985810186db",
+          "title": "刻意练习：如何从新手到大师",
+          "authors": [
+            "安德斯·艾利克森（Anders Ericsson）",
+            "罗伯特·普尔（Robert Pool）"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《刻意练习：如何从新手到大师》；安德斯·艾利克森（Anders Ericsson）、罗伯特·普尔（Robert Pool）。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%3A%E5%A6%82%E4%BD%95%E4%BB%8E%E6%96%B0%E6%89%8B%E5%88%B0%E5%A4%A7%E5%B8%88.epub",
+              "bytes": 6676100
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/83a7b4d2a72e2c12e958f310d30795f44e74229388cf48206323ff40d338eb47.webp",
+          "language": "zh",
+          "publisher": "北京华章图文信息有限公司",
+          "access": "public"
+        },
+        {
+          "id": "WEISERfaa5b0f48074",
+          "title": "批判性思维（套装共6册）",
+          "authors": [
+            "M.尼尔·布朗",
+            "斯图尔特·基利",
+            "文森特·赖安·拉吉罗",
+            "加里·西伊",
+            "苏珊娜·努切泰利",
+            "于尔根·沃尔夫",
+            "理查德·保罗",
+            "琳达·埃尔德",
+            "斯科特·扬"
+          ],
+          "authorStatus": "verified",
+          "description": "《批判性思维（套装共6册）》；M.尼尔·布朗、斯图尔特·基利、文森特·赖安·拉吉罗、加里·西伊、苏珊娜·努切泰利、于尔根·沃尔夫、理查德·保罗、琳达·埃尔德、斯科特·扬。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E6%89%B9%E5%88%A4%E6%80%A7%E6%80%9D%E7%BB%B4%E5%A5%97%E8%A3%85%E5%85%B16%E5%86%8C%EF%BC%88%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E5%AD%A6%E4%B9%A0%2B%E5%AD%A6%E4%BC%9A%E6%8F%90%E9%97%AE%2B%E4%B8%93%E6%B3%A8%E5%8A%9B%20%E5%8C%96%E7%B9%81%E4%B8%BA%E7%AE%80%E7%9A%84%E6%83%8A%E4%BA%BA%E5%8A%9B%E9%87%8F%2B%E6%80%9D%E8%80%83%E7%9A%84%E8%89%BA%E6%9C%AF%28%E5%8E%9F%E4%B9%A6%E7%AC%AC10%E7%89%88%29%2B%E6%89%B9%E5%88%A4%E6%80%A7%E6%80%9D%E7%BB%B4%E5%B7%A5%E5%85%B7%28%E5%8E%9F%E4%B9%A6%E7%AC%AC3%E7%89%88%29%2B%E9%80%BB%E8%BE%91%E6%80%9D%E7%BB%B4%E7%AE%80%E6%98%93%E5%85%A5%E9%97%A8%EF%BC%89.epub",
+              "bytes": 15790795
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c945700a748c7d9097071ea6b295aab10a0cb7657971c5d5aaa4bb5475c5c14a.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9ef51eca3404",
+          "title": "清醒思考的艺术：你最好让别人去犯的52种思维错误",
+          "authors": [
+            "罗尔夫·多贝里"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《清醒思考的艺术：你最好让别人去犯的52种思维错误》；罗尔夫·多贝里。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E6%B8%85%E9%86%92%E6%80%9D%E8%80%83%E7%9A%84%E8%89%BA%E6%9C%AF%3A%E4%BD%A0%E6%9C%80%E5%A5%BD%E8%AE%A9%E5%88%AB%E4%BA%BA%E5%8E%BB%E7%8A%AF%E7%9A%8452%E7%A7%8D%E6%80%9D%E7%BB%B4%E9%94%99%E8%AF%AF.epub",
+              "bytes": 13093004
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c31fb3f3592ba5fabb248d5b4bec35d66a7e92e3b67d257d048a190700dfbea7.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa22e2a15dec4",
+          "title": "认知觉醒：开启自我改变的原动力（当你认知觉醒，何惧焦虑迷茫！畅销书《反本能》作者卫蓝激赏力荐！）",
+          "authors": [
+            "周岭"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《认知觉醒：开启自我改变的原动力（当你认知觉醒，何惧焦虑迷茫！畅销书《反本能》作者卫蓝激赏力荐！）》；周岭。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E8%AE%A4%E7%9F%A5%E8%A7%89%E9%86%92%3A%E5%BC%80%E5%90%AF%E8%87%AA%E6%88%91%E6%94%B9%E5%8F%98%E7%9A%84%E5%8E%9F%E5%8A%A8%E5%8A%9B%EF%BC%88%E5%BD%93%E4%BD%A0%E8%AE%A4%E7%9F%A5%E8%A7%89%E9%86%92%EF%BC%8C%E4%BD%95%E6%83%A7%E7%84%A6%E8%99%91%E8%BF%B7%E8%8C%AB%EF%BC%81%E7%95%85%E9%94%80%E4%B9%A6%E3%80%8A%E5%8F%8D%E6%9C%AC%E8%83%BD%E3%80%8B%E4%BD%9C%E8%80%85%E5%8D%AB%E8%93%9D%E6%BF%80%E8%B5%8F%E5%8A%9B%E8%8D%90%EF%BC%81%EF%BC%89.epub",
+              "bytes": 1244016
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1fb9388beb1f7555b5f3d594fbbcd716ff2346f69bc441b85971c82dbc853418.webp",
+          "language": "zh",
+          "publisher": "人民邮电出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa1844f4e5931",
+          "title": "如何找到想做的事",
+          "authors": [
+            "[日]八木仁平"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《如何找到想做的事》；[日]八木仁平。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E6%83%B3%E5%81%9A%E7%9A%84%E4%BA%8B.epub",
+              "bytes": 31767509
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/db6b823ee41df64208164a3edd96913834517a9bd9d19b1bea5d5308333c9dc4.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd1258b5bc6ee",
+          "title": "少有人走的路(1-8全套)",
+          "authors": [
+            "M.斯科特·派克"
+          ],
+          "authorStatus": "verified",
+          "description": "《少有人走的路(1-8全套)》；M.斯科特·派克。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E5%B0%91%E6%9C%89%E4%BA%BA%E8%B5%B0%E7%9A%84%E8%B7%AF%281-8%E5%85%A8%E5%A5%97%29.epub",
+              "bytes": 2588940
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/3a1a1cbc1b71265f9b1b231be1a90de2583d7adc203f1b7040116f334d9e5091.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER7ac5c84d5315",
+          "title": "社会性动物(第9版) (当代心理科学名著译丛)",
+          "authors": [
+            "当代心理科学名著译丛"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《社会性动物(第9版) (当代心理科学名著译丛)》；当代心理科学名著译丛。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E7%A4%BE%E4%BC%9A%E6%80%A7%E5%8A%A8%E7%89%A9%28%E7%AC%AC9%E7%89%88%29%20%28%E5%BD%93%E4%BB%A3%E5%BF%83%E7%90%86%E7%A7%91%E5%AD%A6%E5%90%8D%E8%91%97%E8%AF%91%E4%B8%9B%29.epub",
+              "bytes": 677273
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/374074ad6dc9bd40b3eaf9f0e879481217b82546aed6449c619d6b430a4f1864.webp",
+          "language": "zh",
+          "publisher": "华东师范大学出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER7c363464c865",
+          "title": "思考,快与慢",
+          "authors": [
+            "丹尼尔·卡尼曼"
+          ],
+          "authorStatus": "verified",
+          "description": "《思考,快与慢》；丹尼尔·卡尼曼。心理学，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E6%80%9D%E8%80%83%2C%E5%BF%AB%E4%B8%8E%E6%85%A2.mobi",
+              "bytes": 2717560
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/99020f139bdff74baf10d99e782e22ee51dd0656f2d2c417b55dc11b42c9b651.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERccd2e43c423e",
+          "title": "心流+发现心流（套装全2册）",
+          "authors": [
+            "米哈里·契克森米哈赖"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《心流+发现心流（套装全2册）》；米哈里·契克森米哈赖。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E5%BF%83%E6%B5%81%2B%E5%8F%91%E7%8E%B0%E5%BF%83%E6%B5%81%EF%BC%88%E5%A5%97%E8%A3%85%E5%85%A82%E5%86%8C%EF%BC%89.epub",
+              "bytes": 1217075
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f148e4914940307a73a090171f524a4ecfc90271f759acd3f5cdf17af171bfd9.webp",
+          "language": "zh",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERad4adcefd993",
+          "title": "学会提问（原书第11版）",
+          "authors": [
+            "【美】尼尔·布朗, 【美】斯图尔特·基利, 吴礼敬"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《学会提问（原书第11版）》；【美】尼尔·布朗, 【美】斯图尔特·基利, 吴礼敬。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E5%AD%A6%E4%BC%9A%E6%8F%90%E9%97%AE%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC11%E7%89%88%EF%BC%89.epub",
+              "bytes": 867045
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/50485aea564f3ba602cf8e179838eaeeccfcf57641b06700b7ac577ae15838ee.webp",
+          "language": "zh",
+          "publisher": "机械工业出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER2cf7323fcb8c",
+          "title": "医治受伤的自信【三联·生活书店知心书系列｜豆瓣8.2分，精神科医生弗雷德里克•方热详述信心的机制，用鲜活案例传授自爱与表达自己的要诀】",
+          "authors": [
+            "[法]弗雷德里克•方热"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《医治受伤的自信【三联·生活书店知心书系列｜豆瓣8.2分，精神科医生弗雷德里克•方热详述信心的机制，用鲜活案例传授自爱与表达自己的要诀】》；[法]弗雷德里克•方热。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E5%8C%BB%E6%B2%BB%E5%8F%97%E4%BC%A4%E7%9A%84%E8%87%AA%E4%BF%A1%E3%80%90%E4%B8%89%E8%81%94%C2%B7%E7%94%9F%E6%B4%BB%E4%B9%A6%E5%BA%97%E7%9F%A5%E5%BF%83%E4%B9%A6%E7%B3%BB%E5%88%97%7C%E8%B1%86%E7%93%A38.2%E5%88%86%EF%BC%8C%E7%B2%BE%E7%A5%9E%E7%A7%91%E5%8C%BB%E7%94%9F%E5%BC%97%E9%9B%B7%E5%BE%B7%E9%87%8C%E5%85%8B%E2%80%A2%E6%96%B9%E7%83%AD%E8%AF%A6%E8%BF%B0%E4%BF%A1%E5%BF%83%E7%9A%84%E6%9C%BA%E5%88%B6%EF%BC%8C%E7%94%A8%E9%B2%9C%E6%B4%BB%E6%A1%88%E4%BE%8B%E4%BC%A0%E6%8E%88%E8%87%AA%E7%88%B1%E4%B8%8E%E8%A1%A8%E8%BE%BE%E8%87%AA%E5%B7%B1%E7%9A%84%E8%A6%81%E8%AF%80%E3%80%91.epub",
+              "bytes": 1410121
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/dff243b05dd6625893a46a95b3d361dacecea52614cf7c03ef6addeb4bbd27a8.webp",
+          "language": "zh",
+          "publisher": "生活书店出版有限公司",
+          "access": "public"
+        },
+        {
+          "id": "WEISER4a0ea68fd096",
+          "title": "占有还是存在【上海译文出品！弗洛姆封笔之作：对生存方式的全面审视！人本主义精神分析学家、哲学家弗洛姆的集大成之作！】 (弗洛姆作品系列)",
+          "authors": [
+            "弗洛姆作品系列"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《占有还是存在【上海译文出品！弗洛姆封笔之作：对生存方式的全面审视！人本主义精神分析学家、哲学家弗洛姆的集大成之作！】 (弗洛姆作品系列)》；弗洛姆作品系列。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E5%8D%A0%E6%9C%89%E8%BF%98%E6%98%AF%E5%AD%98%E5%9C%A8%E3%80%90%E4%B8%8A%E6%B5%B7%E8%AF%91%E6%96%87%E5%87%BA%E5%93%81%EF%BC%81%E5%BC%97%E6%B4%9B%E5%A7%86%E5%B0%81%E7%AC%94%E4%B9%8B%E4%BD%9C%3A%E5%AF%B9%E7%94%9F%E5%AD%98%E6%96%B9%E5%BC%8F%E7%9A%84%E5%85%A8%E9%9D%A2%E5%AE%A1%E8%A7%86%EF%BC%81%E4%BA%BA%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%B2%BE%E7%A5%9E%E5%88%86%E6%9E%90%E5%AD%A6%E5%AE%B6%E3%80%81%E5%93%B2%E5%AD%A6%E5%AE%B6%E5%BC%97%E6%B4%9B%E5%A7%86%E7%9A%84%E9%9B%86%E5%A4%A7%E6%88%90%E4%B9%8B%E4%BD%9C%EF%BC%81%E3%80%91%20%28%E5%BC%97%E6%B4%9B%E5%A7%86%E4%BD%9C%E5%93%81%E7%B3%BB%E5%88%97%29.epub",
+              "bytes": 461149
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a2d11b2e898511d0ac8ecd21c40e5f6ed77390980e7a833063c4865f716ced96.webp",
+          "language": "zh",
+          "publisher": "上海译文出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERae860134dc2b",
+          "title": "正义之心：为什么人们总是坚持“我对你错”",
+          "authors": [
+            "（美）海特著"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《正义之心：为什么人们总是坚持“我对你错”》；（美）海特著。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E6%AD%A3%E4%B9%89%E4%B9%8B%E5%BF%83%3A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%E4%BB%AC%E6%80%BB%E6%98%AF%E5%9D%9A%E6%8C%81%E2%80%9C%E6%88%91%E5%AF%B9%E4%BD%A0%E9%94%99%E2%80%9D.epub",
+              "bytes": 15170636
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f1c05aa5c2bddee6c71802dff055c3d02a7b3e8f66e09cc1402df7f9da6d73ea.webp",
+          "language": "zh-CN",
+          "access": "public"
+        },
+        {
+          "id": "WEISERc16c4260687e",
+          "title": "终身成长（重新定义成功的思维模式，美国亚马逊心理畅销书在榜10年，被无数次引用的成功学观点！）",
+          "authors": [
+            "[美] 卡罗尔·德韦克"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《终身成长（重新定义成功的思维模式，美国亚马逊心理畅销书在榜10年，被无数次引用的成功学观点！）》；[美] 卡罗尔·德韦克。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E7%BB%88%E8%BA%AB%E6%88%90%E9%95%BF%EF%BC%88%E9%87%8D%E6%96%B0%E5%AE%9A%E4%B9%89%E6%88%90%E5%8A%9F%E7%9A%84%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%BC%8F%EF%BC%8C%E7%BE%8E%E5%9B%BD%E4%BA%9A%E9%A9%AC%E9%80%8A%E5%BF%83%E7%90%86%E7%95%85%E9%94%80%E4%B9%A6%E5%9C%A8%E6%A6%9C10%E5%B9%B4%EF%BC%8C%E8%A2%AB%E6%97%A0%E6%95%B0%E6%AC%A1%E5%BC%95%E7%94%A8%E7%9A%84%E6%88%90%E5%8A%9F%E5%AD%A6%E8%A7%82%E7%82%B9%EF%BC%81%EF%BC%89.epub",
+              "bytes": 499839
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/30201d7f7d66063694078ec79ca0a8f49e12e7f7ebc91877ad2f1c5bdd1c6058.webp",
+          "language": "zh",
+          "publisher": "南昌：江西人民出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER6b4af6c1bff5",
+          "title": "自卑与超越",
+          "authors": [
+            "阿尔弗雷德.阿德勒"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《自卑与超越》；阿尔弗雷德.阿德勒。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E5%8D%91%E4%B8%8E%E8%B6%85%E8%B6%8A.epub",
+              "bytes": 352169
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/75a6013f423e07869835595321d74adc1b11e73b0bd74d8f6abf88c23e06b081.webp",
+          "language": "zh",
+          "publisher": "北京时代华文书局",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd16a607acfb6",
+          "title": "自控力经典套装三册",
+          "authors": [
+            "凯利·麦格尼格尔"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《自控力经典套装三册》；凯利·麦格尼格尔。心理学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E8%87%AA%E6%8E%A7%E5%8A%9B%E7%BB%8F%E5%85%B8%E5%A5%97%E8%A3%85%E4%B8%89%E5%86%8C.epub",
+              "bytes": 1730821
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/95cdf59b0438618d6663c648302e15f20e1895fefce3675169d80d5340b5911c.webp",
+          "language": "zh",
+          "publisher": "磨铁",
+          "access": "public"
+        },
+        {
+          "id": "WEISER61a57d5ca3e7",
+          "title": "最重要的事只有一件",
+          "authors": [
+            "加里·凯勒",
+            "杰伊·帕帕森"
+          ],
+          "authorStatus": "verified",
+          "description": "《最重要的事只有一件》；加里·凯勒、杰伊·帕帕森。心理学，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B84%20%E5%BF%83%E7%90%86%E5%AD%A6/%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B%E5%8F%AA%E6%9C%89%E4%B8%80%E4%BB%B6.mobi",
+              "bytes": 2057291
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/9f84f14ea4161591454bcb7d2229c4ed6178d30486df6242e0017c45f973a6a7.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B94",
+      "clcName": "佛教",
+      "books": [
+        {
+          "id": "WEISERd37ce37e664f",
+          "title": "成唯识论直解（2022精校版） (林国良 撰)",
+          "authors": [
+            "林国良 撰"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《成唯识论直解（2022精校版） (林国良 撰)》；林国良 撰。佛教，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B94%20%E4%BD%9B%E6%95%99/%E6%88%90%E5%94%AF%E8%AF%86%E8%AE%BA%E7%9B%B4%E8%A7%A3%EF%BC%882022%E7%B2%BE%E6%A0%A1%E7%89%88%EF%BC%89%20%28%E6%9E%97%E5%9B%BD%E8%89%AF%20%E6%92%B0%29.pdf",
+              "bytes": 22952104
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f9e8e62744951d8f76bba04be8fa9d5474bf5bbd4075afd61882b64cb8129d29.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER1531dce53f99",
+          "title": "六祖坛经",
+          "authors": [
+            "惠能"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《六祖坛经》；惠能。佛教，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B94%20%E4%BD%9B%E6%95%99/%E5%85%AD%E7%A5%96%E5%9D%9B%E7%BB%8F.epub",
+              "bytes": 279534
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e9b30aecf4962b16c773daa192cadae3775677ad2273c0c34c9dc36c9dd8da0a.webp",
+          "language": "zh-CN",
+          "access": "public"
+        },
+        {
+          "id": "WEISERbe45741a7e4b",
+          "title": "唯识通论：瑜伽行学义诠（上、下册） (中国社会科学院文库.哲学宗教研究系列)",
+          "authors": [
+            "中国社会科学院文库.哲学宗教研究系列"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《唯识通论：瑜伽行学义诠（上、下册） (中国社会科学院文库.哲学宗教研究系列)》；中国社会科学院文库.哲学宗教研究系列。佛教，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B94%20%E4%BD%9B%E6%95%99/%E5%94%AF%E8%AF%86%E9%80%9A%E8%AE%BA%3A%E7%91%9C%E4%BC%BD%E8%A1%8C%E5%AD%A6%E4%B9%89%E8%AF%A0%EF%BC%88%E4%B8%8A%E3%80%81%E4%B8%8B%E5%86%8C%EF%BC%89%20%28%E4%B8%AD%E5%9B%BD%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6%E9%99%A2%E6%96%87%E5%BA%93.%E5%93%B2%E5%AD%A6%E5%AE%97%E6%95%99%E7%A0%94%E7%A9%B6%E7%B3%BB%E5%88%97%29.epub",
+              "bytes": 4086241
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c0c616c834a5e97d9508cb14df9d44f06e09b88b98822ac397e7a08d43cd4375.webp",
+          "language": "zh",
+          "publisher": "中国社会科学出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9ffb4f1bed19",
+          "title": "唯识学概论",
+          "authors": [
+            "弘学"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《唯识学概论》；弘学。佛教，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B94%20%E4%BD%9B%E6%95%99/%E5%94%AF%E8%AF%86%E5%AD%A6%E6%A6%82%E8%AE%BA.epub",
+              "bytes": 459060
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/57d7ce695ffccda2bddf3ab6399e522f7518ddb18563a52b608dda4d4dab38f9.webp",
+          "language": "zh",
+          "publisher": "四川出版集团，巴蜀书社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER89519af336a8",
+          "title": "五灯会元",
+          "authors": [
+            "普济[宋]"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《五灯会元》；普济[宋]。佛教，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B94%20%E4%BD%9B%E6%95%99/%E4%BA%94%E7%81%AF%E4%BC%9A%E5%85%83.epub",
+              "bytes": 2025550
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c3af0c34180df6dee1597d25488b808232602d4a5e5b4a63353e0453572e70ff.webp",
+          "language": "zh-CN",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe95e41cac7b6",
+          "title": "因明论集",
+          "authors": [
+            "麦彭仁波切",
+            "萨迦班智达根嘎嘉村",
+            "拉色丹毕嘉村",
+            "蒋阳洛德旺波"
+          ],
+          "authorStatus": "verified",
+          "description": "《因明论集》；麦彭仁波切、萨迦班智达根嘎嘉村、拉色丹毕嘉村、蒋阳洛德旺波。佛教，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B94%20%E4%BD%9B%E6%95%99/%E5%9B%A0%E6%98%8E%E8%AE%BA%E9%9B%86.mobi",
+              "bytes": 833610
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d4376320f5f64b1a9f1df5490a270c9dbe2ca425298c3c35dfc2f5f3a5e875fb.webp",
+          "translator": "索达吉堪布",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd94be0195aa7",
+          "title": "B0057 密宗道次第論",
+          "authors": [
+            "克主著 法尊譯"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《B0057 密宗道次第論》；克主著 法尊譯。佛教，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B94%20%E4%BD%9B%E6%95%99/B0057%20%E5%AF%86%E5%AE%97%E9%81%93%E6%AC%A1%E7%AC%AC%E8%AB%96.epub",
+              "bytes": 119300
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4948abfbc26095a1166efe9a70890e149d2a9466bb9793ad39aa4f2ac6fc8761.webp",
+          "language": "zh-TW",
+          "publisher": "CBETA",
+          "access": "public"
+        },
+        {
+          "id": "WEISERbfaab57fa495",
+          "title": "B0065 菩提道次第略论",
+          "authors": [
+            "宗喀巴着　邢肃芝译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《B0065 菩提道次第略论》；宗喀巴着　邢肃芝译。佛教，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B94%20%E4%BD%9B%E6%95%99/B0065%20%E8%8F%A9%E6%8F%90%E9%81%93%E6%AC%A1%E7%AC%AC%E7%95%A5%E8%AE%BA.epub",
+              "bytes": 207056
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2198f01537231c87647ed1e7dd60c207d9a016e8012663c9e4d5db57fa04dc25.webp",
+          "language": "zh-TW",
+          "publisher": "CBETA",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B96",
+      "clcName": "伊斯兰教",
+      "books": [
+        {
+          "id": "WEISER5cdf70b6fd8e",
+          "title": "古兰经",
+          "authors": [
+            "译：马坚　导读：谢赫穆罕默德．安萨里"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《古兰经》；译：马坚　导读：谢赫穆罕默德．安萨里。伊斯兰教，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B96%20%E4%BC%8A%E6%96%AF%E5%85%B0%E6%95%99/%E5%8F%A4%E5%85%B0%E7%BB%8F.epub",
+              "bytes": 1213351
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/cd5c745cc497e10c81c5d3a4af13b64f628708fc64529f1cb19d835a8a634c48.webp",
+          "language": "zh_CN",
+          "publisher": "epub掌上书苑",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B99",
+      "clcName": "迷信术数",
+      "books": [
+        {
+          "id": "WEISER67b5fd196a22",
+          "title": "黑魔法之书 中文版西方魔法 魅力魔法 (黑魔法之书 中文版西方魔法 魅力魔法.pdf)",
+          "authors": [
+            "黑魔法之书 中文版西方魔法 魅力魔法.pdf"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《黑魔法之书 中文版西方魔法 魅力魔法 (黑魔法之书 中文版西方魔法 魅力魔法.pdf)》；黑魔法之书 中文版西方魔法 魅力魔法.pdf。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/%E9%BB%91%E9%AD%94%E6%B3%95%E4%B9%8B%E4%B9%A6%20%E4%B8%AD%E6%96%87%E7%89%88%E8%A5%BF%E6%96%B9%E9%AD%94%E6%B3%95%20%E9%AD%85%E5%8A%9B%E9%AD%94%E6%B3%95%20%28%E9%BB%91%E9%AD%94%E6%B3%95%E4%B9%8B%E4%B9%A6%20%E4%B8%AD%E6%96%87%E7%89%88%E8%A5%BF%E6%96%B9%E9%AD%94%E6%B3%95%20%E9%AD%85%E5%8A%9B%E9%AD%94%E6%B3%95.pdf%29.pdf",
+              "bytes": 4250425
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2f84e42077b27f4e6cf2dba0d860dc0efdc389fe0682468a66655d049bb95994.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERbd01ab2456fa",
+          "title": "炼金术的秘密 (（美）普林西比)",
+          "authors": [
+            "（美）普林西比"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《炼金术的秘密 (（美）普林西比)》；（美）普林西比。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/%E7%82%BC%E9%87%91%E6%9C%AF%E7%9A%84%E7%A7%98%E5%AF%86%20%28%EF%BC%88%E7%BE%8E%EF%BC%89%E6%99%AE%E6%9E%97%E8%A5%BF%E6%AF%94%29.pdf",
+              "bytes": 17100534
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/716e3ec37133e25ec8620c13c299a4315053c260f53ff6973eb09a005b6536e4.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER878f036764bd",
+          "title": "秘苑玫瑰 (周宇)",
+          "authors": [
+            "周宇"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《秘苑玫瑰 (周宇)》；周宇。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/%E7%A7%98%E8%8B%91%E7%8E%AB%E7%91%B0%20%28%E5%91%A8%E5%AE%87%29.pdf",
+              "bytes": 30676288
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/299aed87328c779d464b1e9559069964c0feea3a963494306dc6347066d37e53.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER85e20a6d02d5",
+          "title": "魔法教科書：運用600種日常事物的「魔力」實現願望 (鏡龍司)",
+          "authors": [
+            "鏡龍司"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《魔法教科書：運用600種日常事物的「魔力」實現願望 (鏡龍司)》；鏡龍司。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/%E9%AD%94%E6%B3%95%E6%95%99%E7%A7%91%E6%9B%B8%3A%E9%81%8B%E7%94%A8600%E7%A8%AE%E6%97%A5%E5%B8%B8%E4%BA%8B%E7%89%A9%E7%9A%84%E3%80%8C%E9%AD%94%E5%8A%9B%E3%80%8D%E5%AF%A6%E7%8F%BE%E9%A1%98%E6%9C%9B%20%28%E9%8F%A1%E9%BE%8D%E5%8F%B8%29.pdf",
+              "bytes": 62009995
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/228347f5cf742c8c90867845b39fb67de1055e903ce869fef783f55d97de46f8.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERc2fa3c1c61e3",
+          "title": "生命之樹卡巴拉：西方神祕學的魔法根本 (John Michael Greer)",
+          "authors": [
+            "John Michael Greer"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《生命之樹卡巴拉：西方神祕學的魔法根本 (John Michael Greer)》；John Michael Greer。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/%E7%94%9F%E5%91%BD%E4%B9%8B%E6%A8%B9%E5%8D%A1%E5%B7%B4%E6%8B%89%3A%E8%A5%BF%E6%96%B9%E7%A5%9E%E7%A5%95%E5%AD%B8%E7%9A%84%E9%AD%94%E6%B3%95%E6%A0%B9%E6%9C%AC%20%28John%20Michael%20Greer%29.pdf",
+              "bytes": 25738805
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c43090adac38a1f1e0777332b1a49499bd502eab70e82312b156f3e9e5e2fc96.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER4dd526701fbc",
+          "title": "西方神秘学指津 (哈内赫拉夫)",
+          "authors": [
+            "哈内赫拉夫"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《西方神秘学指津 (哈内赫拉夫)》；哈内赫拉夫。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/%E8%A5%BF%E6%96%B9%E7%A5%9E%E7%A7%98%E5%AD%A6%E6%8C%87%E6%B4%A5%20%28%E5%93%88%E5%86%85%E8%B5%AB%E6%8B%89%E5%A4%AB%29.pdf",
+              "bytes": 10236575
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e6b09af70f59cbb86ba9ef2b783aa68fd0d2903658f081919274c6a3232357a7.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERc007edf33dc4",
+          "title": "药草与魔法：女巫、符咒、飞行软膏与西方古老传说",
+          "authors": [
+            "西村佑子"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《药草与魔法：女巫、符咒、飞行软膏与西方古老传说》；西村佑子。迷信术数，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/%E8%8D%AF%E8%8D%89%E4%B8%8E%E9%AD%94%E6%B3%95%3A%E5%A5%B3%E5%B7%AB%E3%80%81%E7%AC%A6%E5%92%92%E3%80%81%E9%A3%9E%E8%A1%8C%E8%BD%AF%E8%86%8F%E4%B8%8E%E8%A5%BF%E6%96%B9%E5%8F%A4%E8%80%81%E4%BC%A0%E8%AF%B4.epub",
+              "bytes": 9920247
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/343bc778eab67e845efba382ff5dceb0ac807fc19e6c0eef4f1227406d188dd9.webp",
+          "language": "zh",
+          "publisher": "大雁出版基地",
+          "access": "public"
+        },
+        {
+          "id": "WEISER83b166bf3957",
+          "title": "仪式魔法全书（上）儀式魔法全書（上冊）：西方祕法傳統完整指南 (編者： 隆．麥羅．杜奎特（Lon Milo DuQuette） etc.)",
+          "authors": [
+            "編者： 隆．麥羅．杜奎特（Lon Milo DuQuette） etc."
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《仪式魔法全书（上）儀式魔法全書（上冊）：西方祕法傳統完整指南 (編者： 隆．麥羅．杜奎特（Lon Milo DuQuette） etc.)》；編者： 隆．麥羅．杜奎特（Lon Milo DuQuette） etc.。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/%E4%BB%AA%E5%BC%8F%E9%AD%94%E6%B3%95%E5%85%A8%E4%B9%A6%EF%BC%88%E4%B8%8A%EF%BC%89%E5%84%80%E5%BC%8F%E9%AD%94%E6%B3%95%E5%85%A8%E6%9B%B8%EF%BC%88%E4%B8%8A%E5%86%8A%EF%BC%89%3A%E8%A5%BF%E6%96%B9%E7%A5%95%E6%B3%95%E5%82%B3%E7%B5%B1%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97%20%28%E7%B7%A8%E8%80%85%3A%20%E9%9A%86%EF%BC%8E%E9%BA%A5%E7%BE%85%EF%BC%8E%E6%9D%9C%E5%A5%8E%E7%89%B9%EF%BC%88Lon%20Milo%20DuQuette%EF%BC%89%20etc.%29.pdf",
+              "bytes": 44218933
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/c6f408a28ce1f72de5002d57076f4fcd54808888eed507d733c3c76762c49e8d.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER3ae2ae048eb1",
+          "title": "仪式魔法全书（下）儀式魔法全書（下冊）：西方祕法傳統完整指南 (編者： 隆．麥羅．杜奎特（Lon Milo DuQuette） etc.)",
+          "authors": [
+            "編者： 隆．麥羅．杜奎特（Lon Milo DuQuette） etc."
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《仪式魔法全书（下）儀式魔法全書（下冊）：西方祕法傳統完整指南 (編者： 隆．麥羅．杜奎特（Lon Milo DuQuette） etc.)》；編者： 隆．麥羅．杜奎特（Lon Milo DuQuette） etc.。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/%E4%BB%AA%E5%BC%8F%E9%AD%94%E6%B3%95%E5%85%A8%E4%B9%A6%EF%BC%88%E4%B8%8B%EF%BC%89%E5%84%80%E5%BC%8F%E9%AD%94%E6%B3%95%E5%85%A8%E6%9B%B8%EF%BC%88%E4%B8%8B%E5%86%8A%EF%BC%89%3A%E8%A5%BF%E6%96%B9%E7%A5%95%E6%B3%95%E5%82%B3%E7%B5%B1%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97%20%28%E7%B7%A8%E8%80%85%3A%20%E9%9A%86%EF%BC%8E%E9%BA%A5%E7%BE%85%EF%BC%8E%E6%9D%9C%E5%A5%8E%E7%89%B9%EF%BC%88Lon%20Milo%20DuQuette%EF%BC%89%20etc.%29.pdf",
+              "bytes": 50851195
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2134c22c0eece14687cb644301a163d7b4e36ccb5cf0ea46ddd146d283a9ab99.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERc55ce1ddc50f",
+          "title": "Golden Dawn Enochian Magic",
+          "authors": [
+            "Pat Zalewski"
+          ],
+          "authorStatus": "verified",
+          "description": "《Golden Dawn Enochian Magic》；Pat Zalewski。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/Golden%20Dawn%20Enochian%20Magic.pdf",
+              "bytes": 8365703
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6d701ecf865214865be4b9ecd6875940440c0a28d93448c6ceb15674f3e074ee.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERcb770cb1022d",
+          "title": "Modern Magick (Second Edition)",
+          "authors": [
+            "Donald Michael Kraig"
+          ],
+          "authorStatus": "verified",
+          "description": "《Modern Magick (Second Edition)》；Donald Michael Kraig。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/Moderk%20Magick%20%282nd%20Edition%29.pdf",
+              "bytes": 30404819
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/eb20efcc767980f16f318888a10cd57e99c9ffb0fcef3b26395f94b14f040b89.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER841fba102306",
+          "title": "Mystical Qabalah",
+          "authors": [
+            "Dion Fortune"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Mystical Qabalah》；Dion Fortune。迷信术数，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/Mystical%20Qabalah.epub",
+              "bytes": 298307
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/8dab42dd211e05a5de8a806c4a32b005b32e4e5fde66b825996c4123acc25633.webp",
+          "language": "en",
+          "publisher": "Weiser Books",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe68dbeefd0da",
+          "title": "Sheng ming zhi shu ka ba la xi fang shen mi xue de mo fa gen ben = Paths of wisdom a guide to the magical cabala",
+          "authors": [
+            "John Michael Greer"
+          ],
+          "authorStatus": "verified",
+          "description": "《Sheng ming zhi shu ka ba la xi fang shen mi xue de mo fa gen ben = Paths of wisdom a guide to the magical cabala》；John Michael Greer。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/Sheng%20ming%20zhi%20shu%20ka%20ba%20la%20xi%20fang%20shen%20mi%20xue%20de%20mo%20fa%20gen%20ben%20%3D%20Paths%20of%20wisdom%20a%20guide%20to%20the%20magical%20cabala.pdf",
+              "bytes": 39414294
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a1e7383d037b69669f2abb7666d102b1f86248083c87ee2c9ccf10ae30fda4ec.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER2d9632f941d8",
+          "title": "Tarot for Beginners",
+          "authors": [
+            "Barbara Moore"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Tarot for Beginners》；Barbara Moore。迷信术数，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/Tarot%20for%20Beginners.epub",
+              "bytes": 4390102
+            }
+          ],
+          "draft": false,
+          "language": "en",
+          "publisher": "Llewellyn Worldwide, LTD.",
+          "access": "public"
+        },
+        {
+          "id": "WEISERbbeb48f1f2d0",
+          "title": "The Book of Thoth",
+          "authors": [
+            "Aleister Crowley"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《The Book of Thoth》；Aleister Crowley。迷信术数，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/The%20Book%20of%20Thoth.epub",
+              "bytes": 6137330
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b2780fcd94fcc3581bdc1121a96a03f81114f4f77dd81df60a45657fc63c9bb7.webp",
+          "language": "en-US",
+          "publisher": "Libre Dionysia",
+          "access": "public"
+        },
+        {
+          "id": "WEISERfb9419dc3d4f",
+          "title": "The Complete Golden Dawn System of Magic (eBook)",
+          "authors": [
+            "eBook"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《The Complete Golden Dawn System of Magic (eBook)》；eBook。迷信术数，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/The%20Complete%20Golden%20Dawn%20System%20of%20Magic%20%28eBook%29.epub",
+              "bytes": 7037922
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/822574e9bca60016cc6da7a3f089e6902ca53c77a33e1e84f4db150ec979e387.webp",
+          "language": "en",
+          "publisher": "The Original Falcon Press",
+          "access": "public"
+        },
+        {
+          "id": "WEISER39d44993544b",
+          "title": "The Golden Dawn",
+          "authors": [
+            "Israel Regardie"
+          ],
+          "authorStatus": "verified",
+          "description": "《The Golden Dawn》；Israel Regardie。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/The%20Golden%20Dawn.pdf",
+              "bytes": 20985206
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/92ab7f73e25ed707168c87d9990cfa9b61ed273dba53b915509676332d4dc185.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9ca2dc47b118",
+          "title": "The Middle Pillar The Balance Between Mind and Magic (Israel Regardie, Chic Cicero etc.)",
+          "authors": [
+            "Israel Regardie, Chic Cicero etc."
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《The Middle Pillar The Balance Between Mind and Magic (Israel Regardie, Chic Cicero etc.)》；Israel Regardie, Chic Cicero etc.。迷信术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/The%20Middle%20Pillar%20The%20Balance%20Between%20Mind%20and%20Magic%20%28Israel%20Regardie%2C%20Chic%20Cicero%20etc.%29.pdf",
+              "bytes": 12560914
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/384839f4026f9c299c06097c2f0663f5fc8f2932d3992f25308a4fef32de2f44.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd073e41fae03",
+          "title": "Thoths book 星宿老师译本",
+          "authors": [
+            "Aleister Crowley"
+          ],
+          "authorStatus": "verified",
+          "description": "《Thoths book 星宿老师译本》；Aleister Crowley。迷信术数，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/Thoths%20book%20%E6%98%9F%E5%AE%BF%E8%80%81%E5%B8%88%E8%AF%91%E6%9C%AC.epub",
+              "bytes": 104930
+            }
+          ],
+          "draft": false,
+          "translator": "星宿老师",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B223",
+      "clcName": "道家",
+      "books": [
+        {
+          "id": "WEISERf5cc4b24e396",
+          "title": "帛书老子注读【闻道而解经！知乎“道家大师兄”奠基之作，知友收藏超15万！破解《道德经》被掩藏的真相，还原真实的帛书版本！】",
+          "authors": [
+            "秦波"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《帛书老子注读【闻道而解经！知乎“道家大师兄”奠基之作，知友收藏超15万！破解《道德经》被掩藏的真相，还原真实的帛书版本！】》；秦波。道家，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B2%20%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6/B22%20%E5%85%88%E7%A7%A6%E5%93%B2%E5%AD%A6/B223%20%E9%81%93%E5%AE%B6/%E5%B8%9B%E4%B9%A6%E8%80%81%E5%AD%90%E6%B3%A8%E8%AF%BB%E3%80%90%E9%97%BB%E9%81%93%E8%80%8C%E8%A7%A3%E7%BB%8F%EF%BC%81%E7%9F%A5%E4%B9%8E%E2%80%9C%E9%81%93%E5%AE%B6%E5%A4%A7%E5%B8%88%E5%85%84%E2%80%9D%E5%A5%A0%E5%9F%BA%E4%B9%8B%E4%BD%9C%EF%BC%8C%E7%9F%A5%E5%8F%8B%E6%94%B6%E8%97%8F%E8%B6%8515%E4%B8%87%EF%BC%81%E7%A0%B4%E8%A7%A3%E3%80%8A%E9%81%93%E5%BE%B7%E7%BB%8F%E3%80%8B%E8%A2%AB%E6%8E%A9%E8%97%8F%E7%9A%84%E7%9C%9F%E7%9B%B8%EF%BC%8C%E8%BF%98%E5%8E%9F%E7%9C%9F%E5%AE%9E%E7%9A%84%E5%B8%9B%E4%B9%A6%E7%89%88%E6%9C%AC%EF%BC%81%E3%80%91.epub",
+              "bytes": 396749
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/086a88d0719297719710246e618f8705de6ef596bf2efacb8f2dd99a444099b4.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B234",
+      "clcName": "汉代哲学",
+      "books": [
+        {
+          "id": "WEISER140359157d00",
+          "title": "盐铁论--中华经典名著全本全注全译丛书",
+          "authors": [
+            "陈桐生"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《盐铁论--中华经典名著全本全注全译丛书》；陈桐生。汉代哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B2%20%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6/B234%20%E6%B1%89%E4%BB%A3%E5%93%B2%E5%AD%A6/%E7%9B%90%E9%93%81%E8%AE%BA--%E4%B8%AD%E5%8D%8E%E7%BB%8F%E5%85%B8%E5%90%8D%E8%91%97%E5%85%A8%E6%9C%AC%E5%85%A8%E6%B3%A8%E5%85%A8%E8%AF%91%E4%B8%9B%E4%B9%A6.epub",
+              "bytes": 997116
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ea49d1ce76a01ecb4edcc6902b6b3e2d4c2e3f1a9e77b00f3e4843e72d64e6b1.webp",
+          "language": "zh",
+          "publisher": "中华书局",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B244",
+      "clcName": "宋元哲学",
+      "books": [
+        {
+          "id": "WEISERff70ec0d7973",
+          "title": "近思录--中华经典名全本全注全 (中华书局)",
+          "authors": [
+            "中华书局"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《近思录--中华经典名全本全注全 (中华书局)》；中华书局。宋元哲学，AZW3 格式。",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B2%20%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6/B244%20%E5%AE%8B%E5%85%83%E5%93%B2%E5%AD%A6/%E8%BF%91%E6%80%9D%E5%BD%95--%E4%B8%AD%E5%8D%8E%E7%BB%8F%E5%85%B8%E5%90%8D%E5%85%A8%E6%9C%AC%E5%85%A8%E6%B3%A8%E5%85%A8%20%28%E4%B8%AD%E5%8D%8E%E4%B9%A6%E5%B1%80%29.azw3",
+              "bytes": 890851
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/026d52742750026b1ea3046d765fa305958201c4feb7a08d9eb29915c64f4115.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER27e3b9b795d1",
+          "title": "宋明理学十五讲",
+          "authors": [
+            "杨立华"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《宋明理学十五讲》；杨立华。宋元哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B2%20%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6/B244%20%E5%AE%8B%E5%85%83%E5%93%B2%E5%AD%A6/%E5%AE%8B%E6%98%8E%E7%90%86%E5%AD%A6%E5%8D%81%E4%BA%94%E8%AE%B2.epub",
+              "bytes": 643143
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/96dc3780189970e038bc0e8e39e92c24118b40d120e0b3f84a7bd51b144c868d.webp",
+          "language": "zh",
+          "publisher": "北京大学出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B248",
+      "clcName": "明代哲学",
+      "books": [
+        {
+          "id": "WEISER902b6141b901",
+          "title": "传习录（全本全注全译）【了解王阳明的行动哲学，参透知行合一之教，从这本《传习录》译注开始，点校细致，注释妥帖，翻译精确。】（上海古籍）",
+          "authors": [
+            "王阳明"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《传习录（全本全注全译）【了解王阳明的行动哲学，参透知行合一之教，从这本《传习录》译注开始，点校细致，注释妥帖，翻译精确。】（上海古籍）》；王阳明。明代哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B2%20%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6/B248%20%E6%98%8E%E4%BB%A3%E5%93%B2%E5%AD%A6/%E4%BC%A0%E4%B9%A0%E5%BD%95%EF%BC%88%E5%85%A8%E6%9C%AC%E5%85%A8%E6%B3%A8%E5%85%A8%E8%AF%91%EF%BC%89%E3%80%90%E4%BA%86%E8%A7%A3%E7%8E%8B%E9%98%B3%E6%98%8E%E7%9A%84%E8%A1%8C%E5%8A%A8%E5%93%B2%E5%AD%A6%EF%BC%8C%E5%8F%82%E9%80%8F%E7%9F%A5%E8%A1%8C%E5%90%88%E4%B8%80%E4%B9%8B%E6%95%99%EF%BC%8C%E4%BB%8E%E8%BF%99%E6%9C%AC%E3%80%8A%E4%BC%A0%E4%B9%A0%E5%BD%95%E3%80%8B%E8%AF%91%E6%B3%A8%E5%BC%80%E5%A7%8B%EF%BC%8C%E7%82%B9%E6%A0%A1%E7%BB%86%E8%87%B4%EF%BC%8C%E6%B3%A8%E9%87%8A%E5%A6%A5%E5%B8%96%EF%BC%8C%E7%BF%BB%E8%AF%91%E7%B2%BE%E7%A1%AE%E3%80%82%E3%80%91%EF%BC%88%E4%B8%8A%E6%B5%B7%E5%8F%A4%E7%B1%8D%EF%BC%89.epub",
+              "bytes": 627281
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/aa443c4ddfaada8feeb6583296f1e5a1bdabdeee46997c086ecc290b457db7f6.webp",
+          "language": "zh",
+          "publisher": "上海古籍",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B351",
+      "clcName": "印度哲学",
+      "books": [
+        {
+          "id": "WEISER3fd2375844c9",
+          "title": "印度吠檀多不二论哲学",
+          "authors": [
+            "孙晶"
+          ],
+          "authorStatus": "verified",
+          "description": "《印度吠檀多不二论哲学》；孙晶。印度哲学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B3%20%E4%BA%9A%E6%B4%B2%E5%93%B2%E5%AD%A6/B351%20%E5%8D%B0%E5%BA%A6%E5%93%B2%E5%AD%A6/%E5%8D%B0%E5%BA%A6%E5%90%A0%E6%AA%80%E5%A4%9A%E4%B8%8D%E4%BA%8C%E8%AE%BA%E5%93%B2%E5%AD%A6.pdf",
+              "bytes": 20470479
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6fa666d6ad84c2514a6e27ddf9e7164946e44a6268c77d42aa508a108585bffa.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B502",
+      "clcName": "古希腊罗马哲学",
+      "books": [
+        {
+          "id": "WEISER54c8c14f2ab5",
+          "title": "爱比克泰德论说集",
+          "authors": [
+            "爱比克泰德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《爱比克泰德论说集》；爱比克泰德。古希腊罗马哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B502%20%E5%8F%A4%E5%B8%8C%E8%85%8A%E7%BD%97%E9%A9%AC%E5%93%B2%E5%AD%A6/%E7%88%B1%E6%AF%94%E5%85%8B%E6%B3%B0%E5%BE%B7%E8%AE%BA%E8%AF%B4%E9%9B%86.epub",
+              "bytes": 4038866
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a9f1842b654a01d4c7e101f9f01537fa43bd1067f173cd14e6378374db753c72.webp",
+          "language": "zh",
+          "publisher": "商务印书馆",
+          "access": "public"
+        },
+        {
+          "id": "WEISERc42b1bf43786",
+          "title": "哈佛百年经典·柏拉图对话录（22卷）：申辩篇、克利同篇、斐多篇、爱比克泰德金言录马库思·奥勒留沉思录",
+          "authors": [
+            "（古希腊）柏拉图等著"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《哈佛百年经典·柏拉图对话录（22卷）：申辩篇、克利同篇、斐多篇、爱比克泰德金言录马库思·奥勒留沉思录》；（古希腊）柏拉图等著。古希腊罗马哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B502%20%E5%8F%A4%E5%B8%8C%E8%85%8A%E7%BD%97%E9%A9%AC%E5%93%B2%E5%AD%A6/%E5%93%88%E4%BD%9B%E7%99%BE%E5%B9%B4%E7%BB%8F%E5%85%B8%C2%B7%E6%9F%8F%E6%8B%89%E5%9B%BE%E5%AF%B9%E8%AF%9D%E5%BD%95%EF%BC%8822%E5%8D%B7%EF%BC%89%3A%E7%94%B3%E8%BE%A9%E7%AF%87%E3%80%81%E5%85%8B%E5%88%A9%E5%90%8C%E7%AF%87%E3%80%81%E6%96%90%E5%A4%9A%E7%AF%87%E3%80%81%E7%88%B1%E6%AF%94%E5%85%8B%E6%B3%B0%E5%BE%B7%E9%87%91%E8%A8%80%E5%BD%95%E9%A9%AC%E5%BA%93%E6%80%9D%C2%B7%E5%A5%A5%E5%8B%92%E7%95%99%E6%B2%89%E6%80%9D%E5%BD%95.epub",
+              "bytes": 357650
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/82e3f56b17e7ee8d06db9b6fac2827d1d35713b25bc2ecc9ef95b8c5da06bc33.webp",
+          "language": "zh",
+          "publisher": "北京理工大学出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd98ad37569c9",
+          "title": "尼各马可伦理学",
+          "authors": [
+            "Aristotle 亚里士多德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《尼各马可伦理学》；Aristotle 亚里士多德。古希腊罗马哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B502%20%E5%8F%A4%E5%B8%8C%E8%85%8A%E7%BD%97%E9%A9%AC%E5%93%B2%E5%AD%A6/%E5%B0%BC%E5%90%84%E9%A9%AC%E5%8F%AF%E4%BC%A6%E7%90%86%E5%AD%A6.epub",
+              "bytes": 394144
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b80754a81bd8bf2a01c71043c5366a4fb3aa5ea5edc26aba7c19314793c3d284.webp",
+          "language": "zh",
+          "publisher": "商务印书馆",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B503",
+      "clcName": "中世纪哲学",
+      "books": [
+        {
+          "id": "WEISER2be5a575b2d7",
+          "title": "愚人颂",
+          "authors": [
+            "【荷兰】伊拉斯谟"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《愚人颂》；【荷兰】伊拉斯谟。中世纪哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B503%20%E4%B8%AD%E4%B8%96%E7%BA%AA%E5%93%B2%E5%AD%A6/%E6%84%9A%E4%BA%BA%E9%A2%82.epub",
+              "bytes": 5152932
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/b448cc4e33d6e837e4fdc0b57051a430b588077dfbbd25434fb63fb15b08c39f.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B516",
+      "clcName": "德国哲学",
+      "books": [
+        {
+          "id": "WEISER3e4798712f7d",
+          "title": "《黑格尔法哲学批判》导读",
+          "authors": [
+            "何历宇"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《《黑格尔法哲学批判》导读》；何历宇。德国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B516%20%E5%BE%B7%E5%9B%BD%E5%93%B2%E5%AD%A6/%E3%80%8A%E9%BB%91%E6%A0%BC%E5%B0%94%E6%B3%95%E5%93%B2%E5%AD%A6%E6%89%B9%E5%88%A4%E3%80%8B%E5%AF%BC%E8%AF%BB.epub",
+              "bytes": 344138
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d3999029cd6675534249cc3312bccf909fea5f736e003f73b696729ab18a482d.webp",
+          "language": "zh",
+          "publisher": "中国民主法制出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERd4cd2b20c4ae",
+          "title": "存在与时间",
+          "authors": [
+            "[德] 马丁·海德格尔"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《存在与时间》；[德] 马丁·海德格尔。德国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B516%20%E5%BE%B7%E5%9B%BD%E5%93%B2%E5%AD%A6/%E5%AD%98%E5%9C%A8%E4%B8%8E%E6%97%B6%E9%97%B4.epub",
+              "bytes": 536343
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f3129c4eb870a53ce0ae088275ed0417289816ec435a4cfe5478c0029d8655d3.webp",
+          "language": "zh-cn",
+          "access": "public"
+        },
+        {
+          "id": "WEISER778b33ff66bb",
+          "title": "海德格尔文集 第28卷 哲学论稿(从本有而来) ([德]海德格尔 孙周兴译)",
+          "authors": [
+            "[德]海德格尔 孙周兴译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《海德格尔文集 第28卷 哲学论稿(从本有而来) ([德]海德格尔 孙周兴译)》；[德]海德格尔 孙周兴译。德国哲学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B516%20%E5%BE%B7%E5%9B%BD%E5%93%B2%E5%AD%A6/%E6%B5%B7%E5%BE%B7%E6%A0%BC%E5%B0%94%E6%96%87%E9%9B%86%20%E7%AC%AC28%E5%8D%B7%20%E5%93%B2%E5%AD%A6%E8%AE%BA%E7%A8%BF%28%E4%BB%8E%E6%9C%AC%E6%9C%89%E8%80%8C%E6%9D%A5%29%20%28%5B%E5%BE%B7%5D%E6%B5%B7%E5%BE%B7%E6%A0%BC%E5%B0%94%20%E5%AD%99%E5%91%A8%E5%85%B4%E8%AF%91%29.pdf",
+              "bytes": 94502376
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f1ca4e0f17fe866047ab64d1ad795439051030d4615af91bd7b1a4ec32d8bd52.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER41e6f8340c04",
+          "title": "黑格尔著作集 第8卷 - 哲学科学百科全书：逻辑学 (黑格尔 著；先刚 译)",
+          "authors": [
+            "黑格尔 著；先刚 译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《黑格尔著作集 第8卷 - 哲学科学百科全书：逻辑学 (黑格尔 著；先刚 译)》；黑格尔 著；先刚 译。德国哲学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B516%20%E5%BE%B7%E5%9B%BD%E5%93%B2%E5%AD%A6/%E9%BB%91%E6%A0%BC%E5%B0%94%E8%91%97%E4%BD%9C%E9%9B%86%20%E7%AC%AC8%E5%8D%B7%20-%20%E5%93%B2%E5%AD%A6%E7%A7%91%E5%AD%A6%E7%99%BE%E7%A7%91%E5%85%A8%E4%B9%A6%3A%E9%80%BB%E8%BE%91%E5%AD%A6%20%28%E9%BB%91%E6%A0%BC%E5%B0%94%20%E8%91%97%EF%BC%9B%E5%85%88%E5%88%9A%20%E8%AF%91%29.pdf",
+              "bytes": 149294436
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e9ac59dbd5eb6df42b7add2456a79bdd9aaaec6fbf01b66947441e0fd0f07cd1.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa76f66162547",
+          "title": "黑格尔著作集（第12卷）历史哲学讲演录 ([德]黑格尔)",
+          "authors": [
+            "[德]黑格尔"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《黑格尔著作集（第12卷）历史哲学讲演录 ([德]黑格尔)》；[德]黑格尔。德国哲学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B516%20%E5%BE%B7%E5%9B%BD%E5%93%B2%E5%AD%A6/%E9%BB%91%E6%A0%BC%E5%B0%94%E8%91%97%E4%BD%9C%E9%9B%86%EF%BC%88%E7%AC%AC12%E5%8D%B7%EF%BC%89%E5%8E%86%E5%8F%B2%E5%93%B2%E5%AD%A6%E8%AE%B2%E6%BC%94%E5%BD%95%20%28%5B%E5%BE%B7%5D%E9%BB%91%E6%A0%BC%E5%B0%94%29.pdf",
+              "bytes": 81255081
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/0fcf3ba3755f6b207868274296d1dc9b46faa5f4e71aca219f0db445344eb378.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER233089f51e33",
+          "title": "精神现象学：句读本 ([德]黑格尔 著；邓晓芒 译)",
+          "authors": [
+            "[德]黑格尔 著；邓晓芒 译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《精神现象学：句读本 ([德]黑格尔 著；邓晓芒 译)》；[德]黑格尔 著；邓晓芒 译。德国哲学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B516%20%E5%BE%B7%E5%9B%BD%E5%93%B2%E5%AD%A6/%E7%B2%BE%E7%A5%9E%E7%8E%B0%E8%B1%A1%E5%AD%A6%3A%E5%8F%A5%E8%AF%BB%E6%9C%AC%20%28%5B%E5%BE%B7%5D%E9%BB%91%E6%A0%BC%E5%B0%94%20%E8%91%97%EF%BC%9B%E9%82%93%E6%99%93%E8%8A%92%20%E8%AF%91%29.pdf",
+              "bytes": 23314370
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/362eaeb664f8b06c971825a4e10e6d23a7807ed16952e9d71645339e588a98e2.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER83367488be3f",
+          "title": "康德著作集（套装10册）（汉译世界学术名著丛书）",
+          "authors": [
+            "康德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《康德著作集（套装10册）（汉译世界学术名著丛书）》；康德。德国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B516%20%E5%BE%B7%E5%9B%BD%E5%93%B2%E5%AD%A6/%E5%BA%B7%E5%BE%B7%E8%91%97%E4%BD%9C%E9%9B%86%EF%BC%88%E5%A5%97%E8%A3%8510%E5%86%8C%EF%BC%89%EF%BC%88%E6%B1%89%E8%AF%91%E4%B8%96%E7%95%8C%E5%AD%A6%E6%9C%AF%E5%90%8D%E8%91%97%E4%B8%9B%E4%B9%A6%EF%BC%89.epub",
+              "bytes": 3278214
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/abd66844a7bfa7d4ac566bbbd143478e3513b272631f5caa52504ae934343f84.webp",
+          "language": "zh",
+          "publisher": "商务印书馆有限公司",
+          "access": "public"
+        },
+        {
+          "id": "WEISER0835d6f3353c",
+          "title": "林中路",
+          "authors": [
+            "[德] 马丁·海德格尔"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《林中路》；[德] 马丁·海德格尔。德国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B516%20%E5%BE%B7%E5%9B%BD%E5%93%B2%E5%AD%A6/%E6%9E%97%E4%B8%AD%E8%B7%AF.epub",
+              "bytes": 383575
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/3e7eb0b4bc0eac2438145fd86dcb40cb8d2cbb4a7b211a4f009fb1b321105982.webp",
+          "language": "zh",
+          "publisher": "上海译文出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER95500c5f7063",
+          "title": "人性的，太人性的：一本献给自由精灵的书",
+          "authors": [
+            "[德] 弗里德里希·尼采 杨恒达译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《人性的，太人性的：一本献给自由精灵的书》；[德] 弗里德里希·尼采 杨恒达译。德国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B516%20%E5%BE%B7%E5%9B%BD%E5%93%B2%E5%AD%A6/%E4%BA%BA%E6%80%A7%E7%9A%84%EF%BC%8C%E5%A4%AA%E4%BA%BA%E6%80%A7%E7%9A%84%3A%E4%B8%80%E6%9C%AC%E7%8C%AE%E7%BB%99%E8%87%AA%E7%94%B1%E7%B2%BE%E7%81%B5%E7%9A%84%E4%B9%A6.epub",
+              "bytes": 623902
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/094b18b0584641e434e0a86f4da7ef3365e787cbb3198082d2dd44c36c2f4b97.webp",
+          "language": "zh",
+          "publisher": "中国人民大学出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERc1d5034e9452",
+          "title": "未来形而上学导论 (康德)",
+          "authors": [
+            "康德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《未来形而上学导论 (康德)》；康德。德国哲学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B516%20%E5%BE%B7%E5%9B%BD%E5%93%B2%E5%AD%A6/%E6%9C%AA%E6%9D%A5%E5%BD%A2%E8%80%8C%E4%B8%8A%E5%AD%A6%E5%AF%BC%E8%AE%BA%20%28%E5%BA%B7%E5%BE%B7%29.pdf",
+              "bytes": 35535030
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6dd5e91d40dfc8ced178a1645c661f12ed4add0f019878c58b2034ec89b67d45.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER163e0f8cee45",
+          "title": "先验唯心论-谢林-（梁志学，石泉译）（ocred+校验）",
+          "authors": [
+            "谢林"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《先验唯心论-谢林-（梁志学，石泉译）（ocred+校验）》；谢林。德国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B516%20%E5%BE%B7%E5%9B%BD%E5%93%B2%E5%AD%A6/%E5%85%88%E9%AA%8C%E5%94%AF%E5%BF%83%E8%AE%BA-%E8%B0%A2%E6%9E%97-%EF%BC%88%E6%A2%81%E5%BF%97%E5%AD%A6%EF%BC%8C%E7%9F%B3%E6%B3%89%E8%AF%91%EF%BC%89%EF%BC%88ocred%2B%E6%A0%A1%E9%AA%8C%EF%BC%89.epub",
+              "bytes": 379969
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/9d2881ab1b4c5e9a49d43772145aed320883a72b3179dee453362c50bb5764e1.webp",
+          "language": "zh",
+          "publisher": "商务印书馆出版",
+          "access": "public"
+        },
+        {
+          "id": "WEISER12dec719d88e",
+          "title": "形而上学导论",
+          "authors": [
+            "海德格尔"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《形而上学导论》；海德格尔。德国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B516%20%E5%BE%B7%E5%9B%BD%E5%93%B2%E5%AD%A6/%E5%BD%A2%E8%80%8C%E4%B8%8A%E5%AD%A6%E5%AF%BC%E8%AE%BA.epub",
+              "bytes": 3528390
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6593100fdcfc4fa2888719f05ff0d293cf1ba2470bf8defd4478e2d7e527aab3.webp",
+          "language": "zh",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B555",
+      "clcName": "东欧哲学",
+      "books": [
+        {
+          "id": "WEISER857d22fcd1f9",
+          "title": "视差之见",
+          "authors": [
+            "斯拉沃热·齐泽克"
+          ],
+          "authorStatus": "verified",
+          "description": "《视差之见》；斯拉沃热·齐泽克。东欧哲学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B555%20%E4%B8%9C%E6%AC%A7%E5%93%B2%E5%AD%A6/%E8%A7%86%E5%B7%AE%E4%B9%8B%E8%A7%81%20%28%E9%BD%90%E6%B3%BD%E5%85%8B%EF%BC%8C%E9%AB%98%E6%B8%85%E9%BB%91%E7%99%BD%29.pdf",
+              "bytes": 25509648
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/afb8959713007f6e9f219dea245dfd84b1b867f0ea6804567cb228ef90559be0.webp",
+          "translator": "季广茂",
+          "access": "public"
+        },
+        {
+          "id": "WEISERf2e08135bb30",
+          "title": "意识形态的崇高客体(修订版)",
+          "authors": [
+            "斯拉沃热·齐泽克"
+          ],
+          "authorStatus": "verified",
+          "description": "《意识形态的崇高客体(修订版)》；斯拉沃热·齐泽克。东欧哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B555%20%E4%B8%9C%E6%AC%A7%E5%93%B2%E5%AD%A6/%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81%E7%9A%84%E5%B4%87%E9%AB%98%E5%AE%A2%E4%BD%93%28%E4%BF%AE%E8%AE%A2%E7%89%88%29.epub",
+              "bytes": 548272
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2e69424b12437a31e1e85527da2967577c2acf42eaf42d6c7ef48327d7ea4fc1.webp",
+          "language": "zh",
+          "publisher": "中央编译出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B561",
+      "clcName": "英国哲学",
+      "books": [
+        {
+          "id": "WEISER9ee514cbe623",
+          "title": "历史决定论的贫困",
+          "authors": [
+            "卡尔·波普尔"
+          ],
+          "authorStatus": "verified",
+          "description": "《历史决定论的贫困》；卡尔·波普尔。英国哲学，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B561%20%E8%8B%B1%E5%9B%BD%E5%93%B2%E5%AD%A6/%E5%8E%86%E5%8F%B2%E5%86%B3%E5%AE%9A%E8%AE%BA%E7%9A%84%E8%B4%AB%E5%9B%B0.mobi",
+              "bytes": 306943
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/86699237978a3ee0a94a665945915c064f729f0d56f46090e2b7ee45316dd1c1.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER9deab390b97e",
+          "title": "论宗教宽容",
+          "authors": [
+            "洛克"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《论宗教宽容》；洛克。英国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B561%20%E8%8B%B1%E5%9B%BD%E5%93%B2%E5%AD%A6/%E8%AE%BA%E5%AE%97%E6%95%99%E5%AE%BD%E5%AE%B9.epub",
+              "bytes": 112457
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ed8287c084a9d2d24f8dda093362b69f6445ee87c2cbbba4eb14531a0b4f8be7.webp",
+          "language": "zh-CN",
+          "access": "public"
+        },
+        {
+          "id": "WEISER1840b8043a4c",
+          "title": "人类理解研究",
+          "authors": [
+            "休谟"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《人类理解研究》；休谟。英国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B561%20%E8%8B%B1%E5%9B%BD%E5%93%B2%E5%AD%A6/%E4%BA%BA%E7%B1%BB%E7%90%86%E8%A7%A3%E7%A0%94%E7%A9%B6.epub",
+              "bytes": 217407
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/86c44eafe1966fe378eb00668d0859a77498239548bc6199f1c1fa4b8ade9176.webp",
+          "language": "zh-CN",
+          "access": "public"
+        },
+        {
+          "id": "WEISERfb2a5d1fbc94",
+          "title": "人性论（套装上下册）",
+          "authors": [
+            "休谟"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《人性论（套装上下册）》；休谟。英国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B561%20%E8%8B%B1%E5%9B%BD%E5%93%B2%E5%AD%A6/%E4%BA%BA%E6%80%A7%E8%AE%BA%EF%BC%88%E5%A5%97%E8%A3%85%E4%B8%8A%E4%B8%8B%E5%86%8C%EF%BC%89.epub",
+              "bytes": 4964019
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/87354dd3ba90f80f2d6d60af022cb095f024d5b9f2500f02f9a9d8063fd5df78.webp",
+          "language": "zh",
+          "publisher": "商务印书馆",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B563",
+      "clcName": "荷兰哲学",
+      "books": [
+        {
+          "id": "WEISER787f9ba6c991",
+          "title": "神学政治论",
+          "authors": [
+            "斯宾诺莎"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《神学政治论》；斯宾诺莎。荷兰哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B563%20%E8%8D%B7%E5%85%B0%E5%93%B2%E5%AD%A6/%E7%A5%9E%E5%AD%A6%E6%94%BF%E6%B2%BB%E8%AE%BA.epub",
+              "bytes": 332754
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/566c3c34ceb64962cdf4dff0310bc9172f96b2607200e190a6a6aa814a33ad01.webp",
+          "language": "zh-CN",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B565",
+      "clcName": "法国哲学",
+      "books": [
+        {
+          "id": "WEISER60670aa571cf",
+          "title": "创造的进化论",
+          "authors": [
+            "（法）亨利•柏格森 著；陈圣生 译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《创造的进化论》；（法）亨利•柏格森 著；陈圣生 译。法国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B565%20%E6%B3%95%E5%9B%BD%E5%93%B2%E5%AD%A6/%E5%88%9B%E9%80%A0%E7%9A%84%E8%BF%9B%E5%8C%96%E8%AE%BA.epub",
+              "bytes": 755260
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/08d2b498d7cdb0acae0b1275712407e2baed8b81c5995a7ce8e4b7f52dbe7b91.webp",
+          "language": "zh",
+          "publisher": "漓江出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER08ce714941f9",
+          "title": "存在与虚无 (〔法〕萨特著；陈宣良等译)",
+          "authors": [
+            "〔法〕萨特著；陈宣良等译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《存在与虚无 (〔法〕萨特著；陈宣良等译)》；〔法〕萨特著；陈宣良等译。法国哲学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B565%20%E6%B3%95%E5%9B%BD%E5%93%B2%E5%AD%A6/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0%20%28%E3%80%94%E6%B3%95%E3%80%95%E8%90%A8%E7%89%B9%E8%91%97%EF%BC%9B%E9%99%88%E5%AE%A3%E8%89%AF%E7%AD%89%E8%AF%91%29.pdf",
+              "bytes": 11168967
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/6374eead4c88d87fc114de62257f7bb17680df613a299467310e972c99d4054e.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERf9a8d136ea21",
+          "title": "存在主义是一种人道主义 (译文经典)",
+          "authors": [
+            "译文经典"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《存在主义是一种人道主义 (译文经典)》；译文经典。法国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B565%20%E6%B3%95%E5%9B%BD%E5%93%B2%E5%AD%A6/%E5%AD%98%E5%9C%A8%E4%B8%BB%E4%B9%89%E6%98%AF%E4%B8%80%E7%A7%8D%E4%BA%BA%E9%81%93%E4%B8%BB%E4%B9%89%20%28%E8%AF%91%E6%96%87%E7%BB%8F%E5%85%B8%29.epub",
+              "bytes": 199012
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/88e3be1c0a7a2235c6dd4d7aa6061953d15ed1dc749edcceb9a99bb25d3d94ef.webp",
+          "language": "zh",
+          "publisher": "上海译文出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERdbcf4da1b9a6",
+          "title": "第一哲学沉思集",
+          "authors": [
+            "笛卡尔"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《第一哲学沉思集》；笛卡尔。法国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B565%20%E6%B3%95%E5%9B%BD%E5%93%B2%E5%AD%A6/%E7%AC%AC%E4%B8%80%E5%93%B2%E5%AD%A6%E6%B2%89%E6%80%9D%E9%9B%86.epub",
+              "bytes": 410036
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4da4be6b459d5c1eb5d8c0cc28a1cbaf03c6a56c296eb2a43cfc9daa6a8d490e.webp",
+          "language": "zh-CN",
+          "access": "public"
+        },
+        {
+          "id": "WEISER27ce252ff35a",
+          "title": "时间与自由意志",
+          "authors": [
+            "柏格森"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《时间与自由意志》；柏格森。法国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B565%20%E6%B3%95%E5%9B%BD%E5%93%B2%E5%AD%A6/%E6%97%B6%E9%97%B4%E4%B8%8E%E8%87%AA%E7%94%B1%E6%84%8F%E5%BF%97.epub",
+              "bytes": 344227
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/534c88c9e49bc9263806ccc8148d3b31a2f6c0b546a527912342d95f7fb0315c.webp",
+          "language": "zh",
+          "publisher": "商务印书馆",
+          "access": "public"
+        },
+        {
+          "id": "WEISER280445126d81",
+          "title": "谈谈方法 (René Descartes (勒内·笛卡尔))",
+          "authors": [
+            "勒内·笛卡尔"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《谈谈方法 (René Descartes (勒内·笛卡尔))》；勒内·笛卡尔。法国哲学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B565%20%E6%B3%95%E5%9B%BD%E5%93%B2%E5%AD%A6/%E8%B0%88%E8%B0%88%E6%96%B9%E6%B3%95%20%28Ren%C3%A9%20Descartes%20%28%E5%8B%92%E5%86%85%C2%B7%E7%AC%9B%E5%8D%A1%E5%B0%94%29%29.pdf",
+              "bytes": 5392988
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/13c91c52e2512551f025209394c4a2c6f91a1d50c1a3120e101177d2d6a16749.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER5d367fb7d859",
+          "title": "物质与记忆 (（法）亨利·柏格森著；姚晶晶译 etc.)",
+          "authors": [
+            "（法）亨利·柏格森著；姚晶晶译 etc."
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《物质与记忆 (（法）亨利·柏格森著；姚晶晶译 etc.)》；（法）亨利·柏格森著；姚晶晶译 etc.。法国哲学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B565%20%E6%B3%95%E5%9B%BD%E5%93%B2%E5%AD%A6/%E7%89%A9%E8%B4%A8%E4%B8%8E%E8%AE%B0%E5%BF%86%20%28%EF%BC%88%E6%B3%95%EF%BC%89%E4%BA%A8%E5%88%A9%C2%B7%E6%9F%8F%E6%A0%BC%E6%A3%AE%E8%91%97%EF%BC%9B%E5%A7%9A%E6%99%B6%E6%99%B6%E8%AF%91%20etc.%29.pdf",
+              "bytes": 81549848
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/3c48910da0a91c13b3a2ae6cec6224a00b2833f45d6ea47bf99c40b50edcddc4.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERfcbd6b6e0079",
+          "title": "西西弗神话",
+          "authors": [
+            "阿尔贝·加缪"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《西西弗神话》；阿尔贝·加缪。法国哲学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B565%20%E6%B3%95%E5%9B%BD%E5%93%B2%E5%AD%A6/%E8%A5%BF%E8%A5%BF%E5%BC%97%E7%A5%9E%E8%AF%9D.epub",
+              "bytes": 2238837
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/900fa631b732f65699ff93c903b9ce3801858ecb15620b043433266a8517fac7.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERef92d857253b",
+          "title": "哲学书简 (伏尔泰 ePUBw.COM)",
+          "authors": [
+            "伏尔泰 ePUBw.COM"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《哲学书简 (伏尔泰 ePUBw.COM)》；伏尔泰 ePUBw.COM。法国哲学，AZW3 格式。",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B5%20%E6%AC%A7%E6%B4%B2%E5%93%B2%E5%AD%A6/B565%20%E6%B3%95%E5%9B%BD%E5%93%B2%E5%AD%A6/%E5%93%B2%E5%AD%A6%E4%B9%A6%E7%AE%80%20%28%E4%BC%8F%E5%B0%94%E6%B3%B0%20ePUBw.COM%29.azw3",
+              "bytes": 319637
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/15df55cb1457033a175fcec5fcbc3956dd61ffbb58ee93f0ab4d3f68e77bb847.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B712",
+      "clcName": "美国哲学",
+      "books": [
+        {
+          "id": "WEISER2c23fe5f4ccb",
+          "title": "爱欲与文明：对弗洛伊德思想的哲学探讨 (译文经典)",
+          "authors": [
+            "译文经典"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《爱欲与文明：对弗洛伊德思想的哲学探讨 (译文经典)》；译文经典。美国哲学，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B7%20%E7%BE%8E%E6%B4%B2%E5%93%B2%E5%AD%A6/B712%20%E7%BE%8E%E5%9B%BD%E5%93%B2%E5%AD%A6/%E7%88%B1%E6%AC%B2%E4%B8%8E%E6%96%87%E6%98%8E%3A%E5%AF%B9%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E6%80%9D%E6%83%B3%E7%9A%84%E5%93%B2%E5%AD%A6%E6%8E%A2%E8%AE%A8%20%28%E8%AF%91%E6%96%87%E7%BB%8F%E5%85%B8%29.mobi",
+              "bytes": 1304618
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/98c487d50b19e03872384011b9bd14298865b9ad5b205804e4a8846eb0fc6e59.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERa228fa688371",
+          "title": "汉译世界名著 万有文库 第1集一千种 哲学之改造 (王云五主编；杜威著；许崇清译)",
+          "authors": [
+            "王云五主编；杜威著；许崇清译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《汉译世界名著 万有文库 第1集一千种 哲学之改造 (王云五主编；杜威著；许崇清译)》；王云五主编；杜威著；许崇清译。美国哲学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B7%20%E7%BE%8E%E6%B4%B2%E5%93%B2%E5%AD%A6/B712%20%E7%BE%8E%E5%9B%BD%E5%93%B2%E5%AD%A6/%E6%B1%89%E8%AF%91%E4%B8%96%E7%95%8C%E5%90%8D%E8%91%97%20%E4%B8%87%E6%9C%89%E6%96%87%E5%BA%93%20%E7%AC%AC1%E9%9B%86%E4%B8%80%E5%8D%83%E7%A7%8D%20%E5%93%B2%E5%AD%A6%E4%B9%8B%E6%94%B9%E9%80%A0%20%28%E7%8E%8B%E4%BA%91%E4%BA%94%E4%B8%BB%E7%BC%96%EF%BC%9B%E6%9D%9C%E5%A8%81%E8%91%97%EF%BC%9B%E8%AE%B8%E5%B4%87%E6%B8%85%E8%AF%91%29.pdf",
+              "bytes": 7377619
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/803722e00cde0ee3f068a02b2d18b73207a2601f65c60449a79867a579b79628.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B932",
+      "clcName": "神话研究",
+      "books": [
+        {
+          "id": "WEISER1d879d190ba3",
+          "title": "巴比伦创世神话",
+          "authors": [
+            "[英]沃利斯·巴奇"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《巴比伦创世神话》；[英]沃利斯·巴奇。神话研究，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B93%20%E7%A5%9E%E8%AF%9D/B932%20%E7%A5%9E%E8%AF%9D%E7%A0%94%E7%A9%B6/%E5%B7%B4%E6%AF%94%E4%BC%A6%E5%88%9B%E4%B8%96%E7%A5%9E%E8%AF%9D.epub",
+              "bytes": 2007910
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/9e6d2aeea69b66dfc341248e026f07310596c61ea09bb364c5edfaec73255a8a.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER51b71872bcfd",
+          "title": "北欧神话（茅盾先生写就的神话普及书！豆瓣高分绝版神书，再版问世。奥丁、雷神、洛基，北欧众神那冰与火的世界。）",
+          "authors": [
+            "茅盾"
+          ],
+          "authorStatus": "verified",
+          "description": "《北欧神话（茅盾先生写就的神话普及书！豆瓣高分绝版神书，再版问世。奥丁、雷神、洛基，北欧众神那冰与火的世界。）》；茅盾。神话研究，AZW3 格式。",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B93%20%E7%A5%9E%E8%AF%9D/B932%20%E7%A5%9E%E8%AF%9D%E7%A0%94%E7%A9%B6/%E5%8C%97%E6%AC%A7%E7%A5%9E%E8%AF%9D%EF%BC%88%E8%8C%85%E7%9B%BE%E5%85%88%E7%94%9F%E5%86%99%E5%B0%B1%E7%9A%84%E7%A5%9E%E8%AF%9D%E6%99%AE%E5%8F%8A%E4%B9%A6%EF%BC%81%E8%B1%86%E7%93%A3%E9%AB%98%E5%88%86%E7%BB%9D%E7%89%88%E7%A5%9E%E4%B9%A6%EF%BC%8C%E5%86%8D%E7%89%88%E9%97%AE%E4%B8%96%E3%80%82%E5%A5%A5%E4%B8%81%E3%80%81%E9%9B%B7%E7%A5%9E%E3%80%81%E6%B4%9B%E5%9F%BA%EF%BC%8C%E5%8C%97%E6%AC%A7%E4%BC%97%E7%A5%9E%E9%82%A3%E5%86%B0%E4%B8%8E%E7%81%AB%E7%9A%84%E4%B8%96%E7%95%8C%E3%80%82%EF%BC%89.azw3",
+              "bytes": 3285183
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ea09c04c076a8af04c52890834a5bf9c0daf771b312f8e1e67bffce3ad5a544d.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe797e928f67c",
+          "title": "古埃及《亡灵书》 金寿福 译注 商务印书馆2016",
+          "authors": [
+            "金寿福 译注"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《古埃及《亡灵书》 金寿福 译注 商务印书馆2016》；金寿福 译注。神话研究，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B93%20%E7%A5%9E%E8%AF%9D/B932%20%E7%A5%9E%E8%AF%9D%E7%A0%94%E7%A9%B6/%E5%8F%A4%E5%9F%83%E5%8F%8A%E3%80%8A%E4%BA%A1%E7%81%B5%E4%B9%A6%E3%80%8B%20%E9%87%91%E5%AF%BF%E7%A6%8F%20%E8%AF%91%E6%B3%A8%20%E5%95%86%E5%8A%A1%E5%8D%B0%E4%B9%A6%E9%A6%862016.epub",
+              "bytes": 1558528
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/ec41d0f7aa9e24bd85df4fcb0f0a6fd95a9d54302e22302206c6c59e5418a512.webp",
+          "language": "en",
+          "publisher": "商务印书馆2016",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B971",
+      "clcName": "圣经",
+      "books": [
+        {
+          "id": "WEISERed97c8aaff4e",
+          "title": "《圣经》中英对照豪华版",
+          "authors": [
+            "多位作者（部分佚名）"
+          ],
+          "authorStatus": "verified",
+          "description": "《《圣经》中英对照豪华版》；多位作者（部分佚名）。圣经，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B97%20%E5%9F%BA%E7%9D%A3%E6%95%99/B971%20%E5%9C%A3%E7%BB%8F/%E3%80%8A%E5%9C%A3%E7%BB%8F%E3%80%8B%E4%B8%AD%E8%8B%B1%E5%AF%B9%E7%85%A7%E8%B1%AA%E5%8D%8E%E7%89%88.epub",
+              "bytes": 4337698
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/fdb7215248e5ef216a8d4069d5031deb3a6964656791ca2c83ebf3b1018b6166.webp",
+          "language": "zh",
+          "publisher": "epub掌上书苑",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B972",
+      "clcName": "神学",
+      "books": [
+        {
+          "id": "WEISER0b6dbc15aa82",
+          "title": "论三位一体",
+          "authors": [
+            "奥古斯丁"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《论三位一体》；奥古斯丁。神学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B97%20%E5%9F%BA%E7%9D%A3%E6%95%99/B972%20%E7%A5%9E%E5%AD%A6/%E8%AE%BA%E4%B8%89%E4%BD%8D%E4%B8%80%E4%BD%93.epub",
+              "bytes": 264074
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/08dd3efe259c1a833eb3410377a95daaeacc20500cd9182b2a90a337fa328245.webp",
+          "language": "zh",
+          "publisher": "上海人民出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERf2b4cd20ba5c",
+          "title": "神学大全 (00) 导读手册 (Saint Thomas Aquinas 聖多瑪斯‧阿奎那)",
+          "authors": [
+            "Saint Thomas Aquinas 聖多瑪斯‧阿奎那"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《神学大全 (00) 导读手册 (Saint Thomas Aquinas 聖多瑪斯‧阿奎那)》；Saint Thomas Aquinas 聖多瑪斯‧阿奎那。神学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B97%20%E5%9F%BA%E7%9D%A3%E6%95%99/B972%20%E7%A5%9E%E5%AD%A6/%E7%A5%9E%E5%AD%A6%E5%A4%A7%E5%85%A8%20%2800%29%20%E5%AF%BC%E8%AF%BB%E6%89%8B%E5%86%8C%20%28Saint%20Thomas%20Aquinas%20%E8%81%96%E5%A4%9A%E7%91%AA%E6%96%AF%E2%80%A7%E9%98%BF%E5%A5%8E%E9%82%A3%29.pdf",
+              "bytes": 6380044
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/cdc2f44fb89d1b7885701168cc5595b1cbed6a95154d6c5dcb756498fd87123e.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B978",
+      "clcName": "基督教史",
+      "books": [
+        {
+          "id": "WEISERc558cc059146",
+          "title": "基督教的本质",
+          "authors": [
+            "费尔巴哈"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《基督教的本质》；费尔巴哈。基督教史，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B97%20%E5%9F%BA%E7%9D%A3%E6%95%99/B978%20%E5%9F%BA%E7%9D%A3%E6%95%99%E5%8F%B2/%E5%9F%BA%E7%9D%A3%E6%95%99%E7%9A%84%E6%9C%AC%E8%B4%A8.epub",
+              "bytes": 565376
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/75fa126cfa353e1cccacfc47735166220e4393204bccc01b156129a62e84250c.webp",
+          "language": "zh",
+          "publisher": "商务印书馆",
+          "access": "public"
+        },
+        {
+          "id": "WEISER87fe368709c6",
+          "title": "神秘神学",
+          "authors": [
+            "(叙利亚) 伪狄奥尼修斯"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《神秘神学》；(叙利亚) 伪狄奥尼修斯。基督教史，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B97%20%E5%9F%BA%E7%9D%A3%E6%95%99/B978%20%E5%9F%BA%E7%9D%A3%E6%95%99%E5%8F%B2/%E7%A5%9E%E7%A7%98%E7%A5%9E%E5%AD%A6.epub",
+              "bytes": 318721
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/5bd63e20a759cf765005682c93ca95f7af06ae8f8f24609b7d63479e6f8b83a9.webp",
+          "language": "zh",
+          "publisher": "商务印书馆",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B982",
+      "clcName": "婆罗门教、印度教",
+      "books": [
+        {
+          "id": "WEISER510e1ecc12a7",
+          "title": "奥 义 书",
+          "authors": [
+            "佚名"
+          ],
+          "authorStatus": "anonymous",
+          "description": "《奥 义 书》；佚名。婆罗门教、印度教，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B98%20%E5%85%B6%E4%BB%96%E5%AE%97%E6%95%99/B982%20%E5%A9%86%E7%BD%97%E9%97%A8%E6%95%99%E3%80%81%E5%8D%B0%E5%BA%A6%E6%95%99/%E5%A5%A5%20%E4%B9%89%20%E4%B9%A6.epub",
+              "bytes": 294190
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e8fb2914b64fb116d3e462498ea33aba42f5eb4ae1c86d6801167d22531efccc.webp",
+          "translator": "黄宝生",
+          "language": "zh-cn",
+          "publisher": "商务印书馆",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B983",
+      "clcName": "琐罗亚斯德教",
+      "books": [
+        {
+          "id": "WEISERe3277a09374e",
+          "title": "阿维斯塔:琐罗亚斯德教圣书 (宗教文化丛书)",
+          "authors": [
+            "贾利尔·杜斯特哈赫"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《阿维斯塔:琐罗亚斯德教圣书 (宗教文化丛书)》；贾利尔·杜斯特哈赫。琐罗亚斯德教，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B98%20%E5%85%B6%E4%BB%96%E5%AE%97%E6%95%99/B983%20%E7%90%90%E7%BD%97%E4%BA%9A%E6%96%AF%E5%BE%B7%E6%95%99/%E9%98%BF%E7%BB%B4%E6%96%AF%E5%A1%94%E7%90%90%E7%BD%97%E4%BA%9A%E6%96%AF%E5%BE%B7%E6%95%99%E5%9C%A3%E4%B9%A6%20%28%E5%AE%97%E6%95%99%E6%96%87%E5%8C%96%E4%B8%9B%E4%B9%A6%29%20%28%E8%B4%BE%E5%88%A9%E5%B0%94%C2%B7%E6%9D%9C%E6%96%AF%E7%89%B9%E5%93%88%E8%B5%AB%29.epub",
+              "bytes": 2395313
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f7cc236842d448d1098aad17954f95e87136fd47cda9cab3c16078524746e883.webp",
+          "language": "zh",
+          "publisher": "商务印书馆有限公司",
+          "access": "public"
+        },
+        {
+          "id": "WEISER3e049a1b7773",
+          "title": "二元神论：古波斯宗教神话研究 (元文琪)",
+          "authors": [
+            "元文琪"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《二元神论：古波斯宗教神话研究 (元文琪)》；元文琪。琐罗亚斯德教，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B98%20%E5%85%B6%E4%BB%96%E5%AE%97%E6%95%99/B983%20%E7%90%90%E7%BD%97%E4%BA%9A%E6%96%AF%E5%BE%B7%E6%95%99/%E4%BA%8C%E5%85%83%E7%A5%9E%E8%AE%BA%3A%E5%8F%A4%E6%B3%A2%E6%96%AF%E5%AE%97%E6%95%99%E7%A5%9E%E8%AF%9D%E7%A0%94%E7%A9%B6%20%28%E5%85%83%E6%96%87%E7%90%AA%29.pdf",
+              "bytes": 10490982
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/8e6cc8b44dc33933cdeee2af58baf23ab5ca9822e2aef1a33d4e89d4c2343bf4.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B985",
+      "clcName": "犹太教",
+      "books": [
+        {
+          "id": "WEISER9285af3e5521",
+          "title": "ZOHAR (ZOHAR)",
+          "authors": [
+            "ZOHAR"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《ZOHAR (ZOHAR)》；ZOHAR。犹太教，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B98%20%E5%85%B6%E4%BB%96%E5%AE%97%E6%95%99/B985%20%E7%8A%B9%E5%A4%AA%E6%95%99/ZOHAR%20%28ZOHAR%29.pdf",
+              "bytes": 7951598
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/39166c4f3002ce529ee112154e7ff8584b0d4eb2049dfe70e5fdb3e1f7f3ebe9.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER68b310ca0c99",
+          "title": "Zohar Aramaic-English.Bilingual.Sefer.Ha-Zohar (Zohar)",
+          "authors": [
+            "Zohar"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《Zohar Aramaic-English.Bilingual.Sefer.Ha-Zohar (Zohar)》；Zohar。犹太教，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B98%20%E5%85%B6%E4%BB%96%E5%AE%97%E6%95%99/B985%20%E7%8A%B9%E5%A4%AA%E6%95%99/Zohar%20Aramaic-English.Bilingual.Sefer.Ha-Zohar%20%28Zohar%29.pdf",
+              "bytes": 135884465
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a4c17739f079f5bc25599e69a76d4b40f8975d2298d45f27496f917443d0de79.webp",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B992",
+      "clcName": "中国旧时术数",
+      "books": [
+        {
+          "id": "WEISER34521246cbb5",
+          "title": "【卜筮正宗】",
+          "authors": [
+            "王洪绪"
+          ],
+          "authorStatus": "verified",
+          "description": "《【卜筮正宗】》；王洪绪。中国旧时术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/B992%20%E4%B8%AD%E5%9B%BD%E6%97%A7%E6%97%B6%E6%9C%AF%E6%95%B0/%E3%80%90%E5%8D%9C%E7%AD%AE%E6%AD%A3%E5%AE%97%E3%80%91.pdf",
+              "bytes": 6445558
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/297c5503778984b811deff7a545e49ee12abd4c0d282d5422f1120c8ccdae743.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER569854eaf134",
+          "title": "卜筮正宗（卷六） ((淸) 王維德)",
+          "authors": [
+            "王维德"
+          ],
+          "authorStatus": "verified",
+          "description": "《卜筮正宗（卷六） ((淸) 王維德)》；王维德。中国旧时术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/B992%20%E4%B8%AD%E5%9B%BD%E6%97%A7%E6%97%B6%E6%9C%AF%E6%95%B0/%E5%8D%9C%E7%AD%AE%E6%AD%A3%E5%AE%97%EF%BC%88%E5%8D%B7%E5%85%AD%EF%BC%89%20%28%28%E6%B7%B8%29%20%E7%8E%8B%E7%B6%AD%E5%BE%B7%29.pdf",
+              "bytes": 81710297
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/870ed3bf7e45f4ae411179031434d1346967e4f8608692d525ac50d461a1c155.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERb8f2871c2447",
+          "title": "遁甲演义",
+          "authors": [
+            "程道生"
+          ],
+          "authorStatus": "verified",
+          "description": "《遁甲演义》；程道生。中国旧时术数，AZW3 格式。",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/B992%20%E4%B8%AD%E5%9B%BD%E6%97%A7%E6%97%B6%E6%9C%AF%E6%95%B0/%E9%81%81%E7%94%B2%E6%BC%94%E4%B9%89.azw3",
+              "bytes": 315896
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/1d18b158354a91dd0f4b0391adf6ae122dddf0d85c1658fbc4184ce3571933e4.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER46440464034a",
+          "title": "四库全书术数二集 第2册 遁甲演义 卜法详考 (谢路军主编, 谢路军主编 , 郑同点校, 谢路军, 郑同)",
+          "authors": [
+            "谢路军主编, 谢路军主编 , 郑同点校, 谢路军, 郑同"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《四库全书术数二集 第2册 遁甲演义 卜法详考 (谢路军主编, 谢路军主编 , 郑同点校, 谢路军, 郑同)》；谢路军主编, 谢路军主编 , 郑同点校, 谢路军, 郑同。中国旧时术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/B992%20%E4%B8%AD%E5%9B%BD%E6%97%A7%E6%97%B6%E6%9C%AF%E6%95%B0/%E5%9B%9B%E5%BA%93%E5%85%A8%E4%B9%A6%E6%9C%AF%E6%95%B0%E4%BA%8C%E9%9B%86%20%E7%AC%AC2%E5%86%8C%20%E9%81%81%E7%94%B2%E6%BC%94%E4%B9%89%20%E5%8D%9C%E6%B3%95%E8%AF%A6%E8%80%83%20%28%E8%B0%A2%E8%B7%AF%E5%86%9B%E4%B8%BB%E7%BC%96%2C%20%E8%B0%A2%E8%B7%AF%E5%86%9B%E4%B8%BB%E7%BC%96%20%2C%20%E9%83%91%E5%90%8C%E7%82%B9%E6%A0%A1%2C%20%E8%B0%A2%E8%B7%AF%E5%86%9B%2C%20%E9%83%91%E5%90%8C%29.pdf",
+              "bytes": 132982626
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/afc9527a48619532bbcc666897c9a8bbb1003ea1646ca09bba6aa45e8acfdd9f.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERbe84f120d7ec",
+          "title": "太乙金镜式经 钦定四库全书 (（唐）王希明撰)",
+          "authors": [
+            "（唐）王希明撰"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《太乙金镜式经 钦定四库全书 (（唐）王希明撰)》；（唐）王希明撰。中国旧时术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/B992%20%E4%B8%AD%E5%9B%BD%E6%97%A7%E6%97%B6%E6%9C%AF%E6%95%B0/%E5%A4%AA%E4%B9%99%E9%87%91%E9%95%9C%E5%BC%8F%E7%BB%8F%20%E9%92%A6%E5%AE%9A%E5%9B%9B%E5%BA%93%E5%85%A8%E4%B9%A6%20%28%EF%BC%88%E5%94%90%EF%BC%89%E7%8E%8B%E5%B8%8C%E6%98%8E%E6%92%B0%29.pdf",
+              "bytes": 16474081
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/eb9cacb49aa568212c6881a8f57f3e6cc75fe800d43a2c8d26ac287a22e2aac6.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERcd5219f51c7c",
+          "title": "杨景磐 太乙通解",
+          "authors": [
+            "杨景磐"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《杨景磐 太乙通解》；杨景磐。中国旧时术数，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/B992%20%E4%B8%AD%E5%9B%BD%E6%97%A7%E6%97%B6%E6%9C%AF%E6%95%B0/%E6%9D%A8%E6%99%AF%E7%A3%90%20%E5%A4%AA%E4%B9%99%E9%80%9A%E8%A7%A3.epub",
+              "bytes": 81556
+            }
+          ],
+          "draft": false,
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERde5c6c0cb5a7",
+          "title": "增删卜易",
+          "authors": [
+            "野鹤老人"
+          ],
+          "authorStatus": "verified",
+          "description": "《增删卜易》；野鹤老人。中国旧时术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/B992%20%E4%B8%AD%E5%9B%BD%E6%97%A7%E6%97%B6%E6%9C%AF%E6%95%B0/%E5%A2%9E%E5%88%A0%E5%8D%9C%E6%98%93%E5%BA%8F.pdf",
+              "bytes": 1191032
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2b568ebda1b768459ad6b337e0c73507cbeb8af85a87068adf7f6b688566606b.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER6cfae66abb1c",
+          "title": "中国神秘文化通鉴-筮学指要 (中国神秘文化通鉴-筮学指要.pdf)",
+          "authors": [
+            "中国神秘文化通鉴-筮学指要.pdf"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《中国神秘文化通鉴-筮学指要 (中国神秘文化通鉴-筮学指要.pdf)》；中国神秘文化通鉴-筮学指要.pdf。中国旧时术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/B992%20%E4%B8%AD%E5%9B%BD%E6%97%A7%E6%97%B6%E6%9C%AF%E6%95%B0/%E4%B8%AD%E5%9B%BD%E7%A5%9E%E7%A7%98%E6%96%87%E5%8C%96%E9%80%9A%E9%89%B4-%E7%AD%AE%E5%AD%A6%E6%8C%87%E8%A6%81%20%28%E4%B8%AD%E5%9B%BD%E7%A5%9E%E7%A7%98%E6%96%87%E5%8C%96%E9%80%9A%E9%89%B4-%E7%AD%AE%E5%AD%A6%E6%8C%87%E8%A6%81.pdf%29.pdf",
+              "bytes": 9781359
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/4471ab1dde0151237e85964561d8d5c2b27732f7493472b149fb1cfaedff0426.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER326e0d3f8f49",
+          "title": "紫微斗数讲义:星曜性质",
+          "authors": [
+            "陆斌兆"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《紫微斗数讲义:星曜性质》；陆斌兆。中国旧时术数，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/B992%20%E4%B8%AD%E5%9B%BD%E6%97%A7%E6%97%B6%E6%9C%AF%E6%95%B0/%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B0%E8%AE%B2%E4%B9%89%20%E6%98%9F%E6%9B%9C%E6%80%A7%E8%B4%A8.epub",
+              "bytes": 379539
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/73c51048caab59dac6647e80b11d262b19dee975b2777854e509ffde3090bd46.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER505db408ce62",
+          "title": "祖传年家太乙神数 (高俊波)",
+          "authors": [
+            "高俊波"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《祖传年家太乙神数 (高俊波)》；高俊波。中国旧时术数，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B%20%E5%93%B2%E5%AD%A6%E3%80%81%E5%AE%97%E6%95%99/B9%20%E5%AE%97%E6%95%99/B99%20%E8%BF%B7%E4%BF%A1%E6%9C%AF%E6%95%B0/B992%20%E4%B8%AD%E5%9B%BD%E6%97%A7%E6%97%B6%E6%9C%AF%E6%95%B0/%E7%A5%96%E4%BC%A0%E5%B9%B4%E5%AE%B6%E5%A4%AA%E4%B9%99%E7%A5%9E%E6%95%B0%20%28%E9%AB%98%E4%BF%8A%E6%B3%A2%29.pdf",
+              "bytes": 2808843
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/5d407d4c04567191788c54d8a490df089e7ddebe4bcdd2917d90d309660de5f9.webp",
+          "access": "public"
+        }
+      ]
+    }
+  ]
+}

@@ -27,6 +27,9 @@ export const ebookSchema = z.object({
 	clcCode: z.string().optional(),
 	clcName: z.string().optional(),
 	categoryOnly: z.boolean().default(false),
+	access: z.enum(['public', 'protected']).default('public'),
+	privateStub: z.boolean().default(false),
+	notes: z.string().optional(),
 	translator: z.string().trim().optional(),
 	language: z.string().trim().optional(),
 	publisher: z.string().trim().optional(),
@@ -44,11 +47,12 @@ export const ebookSchema = z.object({
 	publishedAt: date.optional(),
 	updatedAt: date.optional(),
 }).superRefine((book, context) => {
-	if (!book.draft) {
+	if (!book.draft && !book.privateStub) {
 		for (const [field, valid] of [['authors', book.authors.length], ['description', book.description], ['files', book.files.length]] as const) {
 			if (!valid) context.addIssue({ code: 'custom', path: [field], message: `公开书目必须填写 ${field}。` });
 		}
 	}
+	if (book.privateStub && (book.access !== 'protected' || book.title !== '受保护书籍' || book.authors.length || book.files.length || book.cover || book.notes || book.description || book.translator || book.language || book.publisher || book.publicationYear)) context.addIssue({ code: 'custom', message: '公开目录中的受保护占位只能保存固定ID、分类和保护状态，完整资料放入 .library-private/catalog/。' });
 	const formats = book.files.map(file => file.format);
 	if (new Set(formats).size !== formats.length) context.addIssue({ code: 'custom', path: ['files'], message: '同一本书的文件格式不能重复。' });
 });

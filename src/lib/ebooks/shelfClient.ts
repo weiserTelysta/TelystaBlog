@@ -1,8 +1,8 @@
-import type { Ebook } from './ebooks';
+import { checkLibrarySession, getLibraryCatalog, isLibraryUnlocked, type LibraryBook } from './libraryAccess';
 import { EBOOKS_PAGE_SIZE } from '../../config/library';
-import { ebookShelfHref, filterShelf, paginateShelf, shelfPageNumbers } from './shelf';
+import { booksInCategory, ebookShelfHref, filterShelf, paginateShelf, shelfBooklists, shelfCategories, shelfPageNumbers } from './shelf';
 
-type SearchBook = Pick<Ebook, 'id' | 'title' | 'authors' | 'authorStatus' | 'clcCode' | 'categoryOnly' | 'cover' | 'files' | 'href'>;
+type SearchBook = LibraryBook;
 
 function element<K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = '') {
 	const node = document.createElement(tag);
@@ -93,24 +93,36 @@ export function initEbookShelf() {
 		status.classList.add('ebook-sr-only'); status.textContent = '正在查找藏书…';
 		grid.setAttribute('aria-busy', 'true');
 		try {
-			index ||= fetch('/ebooks/search-index.json').then(async response => {
-				if (!response.ok) throw new Error('Search index unavailable');
-				return await response.json() as SearchBook[];
-			}).catch(error => { index = undefined; throw error; });
+			index ||= getLibraryCatalog().catch(error => { index = undefined; throw error; });
 			const books = await index;
 			if (request !== revision) return;
-			const matches = filterShelf(books, category, value, selectedFormat, booklist);
+			const matches = filterShelf(books, category, value, selectedFormat, booklist, isLibraryUnlocked());
 			const count = Math.max(1, Math.ceil(matches.length / EBOOKS_PAGE_SIZE));
 			const result = paginateShelf(matches, Math.min(Math.max(1, page), count));
 			grid.replaceChildren(...result.items.map(bookCard)); empty.textContent = '没有找到匹配的藏书。'; empty.hidden = matches.length > 0;
 			renderPager(Math.min(Math.max(1, page), count), count, matches.length);
 			status.textContent = `找到 ${matches.length} 份藏书，第 ${currentPage} 页。`;
+			renderNavigation(books);
 			if (historyMode !== 'none') history[historyMode === 'push' ? 'pushState' : 'replaceState'](null, '', filteredHref(currentPage));
 			if (scroll) grid.scrollIntoView({ block: 'start', behavior: 'instant' });
 		} catch {
 			if (request !== revision) return;
 			status.classList.remove('ebook-sr-only'); status.textContent = '搜索暂时无法加载，请重试；仍可通过分类和页码浏览。';
 		} finally { if (request === revision) grid.removeAttribute('aria-busy'); }
+	}
+	function renderNavigation(books: SearchBook[]) {
+		const nav = root!.querySelector<HTMLElement>('.ebook-classification nav');
+		if (nav) {
+			const all = element('a', '', `全部藏书 ${booksInCategory(books, undefined, undefined, isLibraryUnlocked()).length}`); all.href = '/ebooks/'; if (!category && !booklist) all.setAttribute('aria-current', 'page');
+			nav.replaceChildren(all, ...shelfCategories(books).map(item => { const a = element('a', '', `${item.code} · ${item.label} ${item.count}`); a.href = ebookShelfHref(1, item.code); if (!booklist && item.code === category) a.setAttribute('aria-current', 'page'); return a; }));
+		}
+		const lists = root!.querySelector<HTMLElement>('.ebook-booklists nav');
+		if (lists && category) lists.replaceChildren(...shelfBooklists(books, category).map(list => {
+			const a = element('a', 'ebook-booklist'); a.href = ebookShelfHref(1, undefined, list.code);
+			const folder = element('span', 'ebook-booklist__folder'); folder.setAttribute('aria-hidden', 'true');
+			for (const book of books.filter(book => book.clcCode === list.code && book.cover && (isLibraryUnlocked() || !book.categoryOnly)).slice(0, 2)) { const image = element('img'); image.src = book.cover!; image.alt = ''; image.width = 60; image.height = 90; image.loading = 'lazy'; folder.append(image); }
+			folder.append(element('span', '', list.code)); const label = element('span', '', list.label); label.append(element('small', '', `${list.code} · ${list.count} 份`)); a.append(folder, label); return a;
+		}));
 	}
 	form.addEventListener('submit', event => { event.preventDefault(); clearTimeout(timer); void apply(); });
 	query.addEventListener('input', () => { clearTimeout(timer); ++revision; timer = setTimeout(() => { void apply(); }, 180); });
@@ -161,5 +173,7 @@ export function initEbookShelf() {
 		if (isFiltering() || index) void apply(page, 'none');
 	}
 	window.addEventListener('popstate', restoreFromUrl);
+	window.addEventListener('library-access-change', () => { index = undefined; void apply(currentPage, 'none'); });
+	void checkLibrarySession();
 	restoreFromUrl();
 }

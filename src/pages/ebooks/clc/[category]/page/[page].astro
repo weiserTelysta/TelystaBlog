@@ -4,8 +4,8 @@ import { EBOOKS_PAGE_SIZE } from '../../../../../config/library';
 import { getPublishedEbookEntries } from '../../../../../lib/ebooks/ebooks';
 import { booksInCategory, shelfCategories } from '../../../../../lib/ebooks/shelf';
 export async function getStaticPaths() {
-	const books = (await getPublishedEbookEntries()).map(book => book.data);
-	return shelfCategories(books).flatMap(item => Array.from({ length: Math.max(0, Math.ceil(booksInCategory(books, item.code).length / EBOOKS_PAGE_SIZE) - 1) }, (_, index) => ({ params: { category: item.code, page: String(index + 2) }, props: { page: index + 2, category: item.code } })));
+	const books = (await getPublishedEbookEntries({ includeProtected: true })).map(book => book.data);
+	return shelfCategories(books).flatMap(item => Array.from({ length: Math.max(0, Math.ceil(booksInCategory(books, item.code, undefined, true).length / EBOOKS_PAGE_SIZE) - 1) }, (_, index) => ({ params: { category: item.code, page: String(index + 2) }, props: { page: index + 2, category: item.code } })));
 }
 const { page, category } = Astro.props;
 ---

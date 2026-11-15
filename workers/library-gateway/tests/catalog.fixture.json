@@ -1,0 +1,10 @@
+[
+  {
+    "id": "WEISER82d055db40bc", "title": "Public fixture book", "authors": ["Fixture author"], "access": "public", "clcCode": "B0", "clcName": "哲学理论", "categoryOnly": false,
+    "href": "/ebooks/WEISER82d055db40bc/", "files": [{ "format": "EPUB", "href": "https://library-files.telysta.com/books/fixture/public.epub" }]
+  },
+  {
+    "id": "WEISER94f87086f630", "title": "Protected fixture book", "authors": ["Fixture author"], "access": "protected", "clcCode": "K27", "clcName": "中华人民共和国史", "categoryOnly": false,
+    "href": "/ebooks/WEISER94f87086f630/", "files": [{ "format": "EPUB", "href": "https://library-files.telysta.com/books/fixture/protected.epub" }]
+  }
+]

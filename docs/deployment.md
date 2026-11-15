@@ -1,6 +1,6 @@
 # 部署指南
 
-Telysta Blog 使用 GitHub Actions 构建，并发布到 GitHub Pages。
+2026-11-15起，主域 `telysta.com` 已指向Cloudflare Pages项目 `telystablog`，连接本仓库main，Node22、`npm run check`、输出dist。参见[Cloudflare构建](cloudflare-builds.md)。GitHub Actions构建与GitHub Pages暂时保留作为验证和回退来源；下面的GitHub设置不代表需要再次修改当前DNS。账户与书库Worker独立部署，主站push不会自动部署Worker。
 
 ## GitHub Pages 设置
 

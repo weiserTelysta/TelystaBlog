@@ -1,5 +1,7 @@
 # 书室资料与书目维护
 
+> 2026-11-15维护入口已更新：当前书目按中图大类保存在 `src/content/ebooks/catalog/*.json`，细类使用 `booklists` 分组，`imported/` 已完成本地迁移。运行方式与访问控制以[书室维护](ebooks.md)、[线上管理](console.md)及[入库Skill](../.agents/skills/telysta-library-ingest/SKILL.md)为准。下文记录盘点批次与历史对象，不能代替本次Git发布名单；暂不发布的新书保留草稿。R2文件域现由鉴权Worker接管，桶公开直连已关闭。
+
 书室入口为 `/ebooks/`，文件使用独立 R2 bucket `telysta-library`，公开域名为 `https://library-files.telysta.com`。域名根路径没有目录索引；访客从书室进入具体书籍和文件。S3 endpoint 只用于认证工具，凭据不进入网页或仓库。
 
 ## 本轮复核与新增（2026-11-14）
