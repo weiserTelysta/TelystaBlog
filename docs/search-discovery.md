@@ -15,3 +15,9 @@ Google已停用匿名sitemap ping，不能把404当提交成功。通过robots�
 主域上的验证文件、RSS和单一sitemap均已上线。IndexNow已提交20个公开URL，返回202（已接收、校验待完成），不代表已经收录；本地回执在 `.tmp/seo/indexnow-last.json`。BlogHub已按其模板提交[申请#277](https://github.com/shidenggui/bloghub/issues/277)，等待维护者处理，没有重复提交。
 
 本轮未连接Google Search Console或百度搜索资源平台账号，未执行这两个平台的账号内提交；不使用已经停用的匿名ping接口冒充成功。若后续提供相应账号授权／本地安全配置，再提交同一个公开sitemap，无需创建第二份站点地图。
+
+## 爬虫规则
+
+线上核验发现Cloudflare自动追加的训练爬虫限制同时禁止了Baiduspider。为满足百度收录要求，robots改由仓库维护：`data/seo/crawler-policy.json` 保留其余既有训练爬虫限制及 `search=yes,ai-train=no,use=reference`，仅将Baiduspider移出禁止名单；后台和阅读器路径仍禁止抓取。
+
+Cloudflare对应zone的 `is_robots_txt_managed` 与 `bot_preference_sync_enabled` 需关闭，否则自动拼接会重新禁止百度。其他Bot Management设置保持原值。先部署并检查仓库生成的robots，再关闭这两个自动拼接开关，最后从主域复查。此维护方式遵循[Cloudflare针对个别爬虫例外的说明](https://blog.cloudflare.com/bot-preference-sync/)，之后新增训练爬虫须审阅JSON名单，不再依赖自动追加。
