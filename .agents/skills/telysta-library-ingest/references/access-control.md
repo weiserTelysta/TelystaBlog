@@ -30,13 +30,13 @@ npm run library:access -- --id WEISERxxxxxxxxxxxx --access public
 
 目标：Worker `telysta-library-gateway`，账户与 `telysta-library` R2 binding 以 `workers/library-gateway/wrangler.jsonc` 为准。文件仍在原桶的 `books/`／`covers/`，不靠移动或删除书籍实现保护。
 
-1. 运行 `npm run library:gateway:prepare`。它核对公开占位与本地私有完整书目，生成 `.library-private/gateway/catalog.json`、Worker本地忽略的 `src/catalog.generated.json` 与 `.tmp/library-gateway/manifest.json`。
-   多人同时编辑或仅发布已审查批次时，用 `-- --scope /path/to/release-ids.json` 固定部署范围（JSON字符串ID数组）；核对manifest的数量和哈希，不能把其他待处理条目顺带部署。
+1. 运行 `npm run library:gateway:prepare -- --scope /path/to/release-ids.json`，显式传入已核验的全量发布ID数组。它核对公开占位与本地私有完整书目，生成 `.library-private/gateway/catalog.json`、Worker本地忽略的 `src/catalog.generated.json` 与 `.tmp/library-gateway/manifest.json`。
+   名单须覆盖仍需提供访问的既有书和此次获准新增的书，不能只传新增批次而撤掉旧书。缺少名单、重复ID或无效ID时工具停止；核对manifest的数量和哈希，不能把其他待处理条目顺带部署。
 2. `npm ci --prefix workers/library-gateway` 后执行该项目的 `check` 与 `test`。测试使用中性fixture，不需要真实密码或完整私有书目；生产打包缺少真实生成catalog时必须失败。
 3. 先部署Console认证服务和D1迁移，再部署声明 `AuthService` Service Binding的网关。认证服务不可用时保持受保护，不回退到公共密码。SMTP与验证码Secret只属于Console项目，不放在书库JSON。
 4. 在已有发布授权内部署Worker并验证实际运行。首次接管域名时先测Worker，再解除R2的同名直连域绑定，关闭其他R2公开访问方式，交由Worker自定义域提供资源。不能只保护网页、保留可匿名直取同一对象的 `r2.dev` 或其他域。
 5. 匿名目录不能包含受保护记录；匿名GET／HEAD／Range不能读取它们的书籍或封面。正式用户登录后检验文件字节、PDF的206／Content-Range、EPUB读取，普通用户、伪造会话与退出登录均要验证。邮箱验证码限频与PDF分段请求分开处理。
-6. Worker就绪后再推送网站元信息并验证GitHub Pages，避免页面已上线但后台未更新。Git push不会自动部署这个独立Worker。
+6. Worker就绪后再推送网站元信息并验证Cloudflare Pages及保留的GitHub Pages流水线，避免页面已上线但后台未更新。Git push不会自动部署这个独立Worker。
 
 Worker运行时只流式读取R2文件，未列入部署catalog的对象不会自动透传。私有catalog可以在R2所有直连入口关闭后备份到manifest指定的 `gateway/` key；HTTP网关不公开这个前缀，恢复通过认证的R2工具读取。换机器前备份私有JSON，保留原书与既有对象。
 

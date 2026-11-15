@@ -25,7 +25,7 @@ Windows rclone remote 目前名为 `r2`，配置在 `%APPDATA%\rclone\rclone.con
 - R2 key：`covers/<生成物完整SHA-256>.webp`。
 - Content-Type：`image/webp`；内容寻址文件可设 `Cache-Control: public,max-age=31536000,immutable`。
 - PDF：`application/pdf`；EPUB：`application/epub+zip`；其他格式按文件真实类型设置。不要因为没有网页阅读器而把全部书籍预加载到列表。
-- 站内阅读支持PDF内嵌和EPUB沙箱阅览；MOBI／AZW3供下载。密码尝试有独立限频，目前没有每日下载本数配额。
+- 站内阅读支持PDF内嵌和EPUB沙箱阅览；MOBI／AZW3供下载。邮箱验证码有独立限频，文件请求另行鉴权，目前没有每日下载本数配额。
 
 ## 验证与恢复
 

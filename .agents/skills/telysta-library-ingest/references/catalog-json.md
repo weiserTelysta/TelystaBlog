@@ -29,6 +29,6 @@
 
 同一类号只维护一个Booklist，新书并入现有 `books`。首次出现的细类需先核对分类依据，再增加分组和更新 `clc.md`；没有对应书籍的大类无需创建空文件。不要为每本书创建一个JSON文件或逐书import。所有分类JSON自动加载，重复ID会阻止构建。
 
-`access: public` 是匿名可见，`protected` 是需密码验证。受保护完整资料放 `.library-private/catalog/<大类>.json`，沿用相同分组结构；公开JSON仅保留工具生成的通用占位。状态变更使用 `library:access`，详见 [access-control.md](access-control.md)。`draft`、分类和访问状态是三个独立维度。
+`access: public` 是匿名可见，`protected` 需要已登录且拥有受保护资料权限的账户，不再使用公共密码。受保护完整资料放 `.library-private/catalog/<大类>.json`，沿用相同分组结构；公开JSON仅保留工具生成的通用占位。状态变更使用 `library:access`，详见 [access-control.md](access-control.md)。`draft`、分类和访问状态是三个独立维度。
 
 改动后运行 `npm run content:check` 和适用检查。JSON更新进入Git；新文件与封面进入R2；完整受保护书目和Secret不进入公开Git。更新Worker catalog并独立部署后，文件访问名单才会变化。

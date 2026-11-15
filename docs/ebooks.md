@@ -45,7 +45,7 @@ npm run library:access -- --id WEISERxxxxxxxxxxxx --access protected
 
 文件仍存 `telysta-library`：`books/<已核验实际key>`、`covers/<完整封面SHA256>.webp`。域名 `library-files.telysta.com`需由Worker网关接管，R2直连公开域和r2.dev不能绕过权限。S3 API端点只用于认证运维，不能作网页链接。分类修订不移动原文件或对象。
 
-运行 `npm run library:stats`查看当前源数据统计；本地待处理草稿、Git已发布源和网关部署范围可能不同，不能用混合目录总数宣称线上数量。多人编辑或发布部分核验范围时，使用 `library:gateway:prepare -- --scope <ID数组JSON>`固定名单；随后分别部署网关和网站，不能把未经审查的本地新增条目顺带上线。
+运行 `npm run library:stats`查看当前源数据统计；本地待处理草稿、Git已发布源和网关部署范围可能不同，不能用混合目录总数宣称线上数量。网关准备必须使用 `npm run library:gateway:prepare -- --scope <ID数组JSON>`固定全量已核验名单，包含继续提供访问的既有书和获准新增的书；随后分别部署网关和网站，不能把未经审查的本地新增条目顺带上线，也不能用新增批次名单替换整个库。
 
 普通加书只改JSON；文件与封面上传R2，不提交Git。操作步骤、作者证据、Windows路径和校验方法见[入库Skill](../.agents/skills/telysta-library-ingest/SKILL.md)与[书库指南](library.md)。离线准备脚本输出临时分组JSON，合并前审查，不能覆盖正式整类书单。
 

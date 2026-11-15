@@ -28,7 +28,7 @@ description: 为 Telysta 书室添加或修订电子书，核对书目与中图�
 | 衍生封面 | `covers/<封面内容完整SHA-256>.webp` |
 | 访问域名 | `https://library-files.telysta.com`，必须由鉴权Worker提供资源，不能保留可绕过它的R2公开入口 |
 | S3 API | `https://c3a43d4042720d333a0dbb0afdf986fb.r2.cloudflarestorage.com`；只用于认证上传，不写入网页下载链接 |
-| 公开审计清单 | `catalog/<批次日期或批次ID>/`，只含本次可公开记录；`catalog/latest.json` 指向最新完整公开清单时，不能用单批新增清单冒充全库 |
+| 批次审计清单 | `catalog/<批次日期或批次ID>/`，只含本次获准记录；网关不自动公开此类运维前缀。完整清单不能被单批新增清单替代 |
 
 ## 入库需要的信息
 
@@ -50,7 +50,7 @@ description: 为 Telysta 书室添加或修订电子书，核对书目与中图�
 - 本地盘点、证据与完整性：`scripts/library-catalog.py`、`data/library/author-overrides.json`。
 - 封面与初始网页记录：`scripts/prepare-library-books.py`；生成到 `.tmp/` 后审查，再加入正式书目。
 - 访问控制与阅览：`workers/library-gateway/`、`src/lib/ebooks/libraryAccess.ts`、`src/pages/ebooks/read.astro`；PDF由浏览器内嵌，EPUB按需加载并禁用书内脚本。
-- Worker书目准备：`npm run library:gateway:prepare`，读取公开JSON和本地私有JSON，生成忽略于Git的服务端catalog；部署前必须运行，缺少完整私有书目时停止部署。
+- Worker书目准备：`npm run library:gateway:prepare -- --scope <已核验全量ID数组JSON>`，读取公开JSON和本地私有JSON，生成忽略于Git的服务端catalog；名单包含继续服务的旧书与获准新增书，部署前必须运行，缺少名单或完整私有书目时停止部署。
 - `categoryOnly` 仅为发现方式，不是访问锁；解锁后的受保护条目可进入全部藏书、分类及搜索。原有 `data/library/presentation-overrides.json` 只用于离线准备旧书目，日常以分类JSON为准。
 - Windows EPUB 元数据：`scripts/inspect-library-epub.ps1`。
 - 明确名单复制：`scripts/sync-r2-library.ps1`，默认 dry-run；`-Apply` 才上传。

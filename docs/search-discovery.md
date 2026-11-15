@@ -9,3 +9,9 @@ Bing支持IndexNow。公开验证文件与设置在 `data/seo/indexnow.json` 和
 Google已停用匿名sitemap ping，不能把404当提交成功。通过robots发现，或在已验证的Search Console中提交sitemap；见[官方说明](https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping)。百度普通收录需要站点所有者的资源平台验证和提交token，缺少授权时不声称已推送。对应令牌应走受保护环境，不写入公开Git。
 
 博客目录提交限于站点的公开名称、作者、URL、简介和RSS。先检查该目录的规则、是否已收录、项目是否接受申请，再提交一次并记录链接。不要发布后台地址、私人邮箱凭据或受保护书目，也不自动添加与站点无关的营销内容。
+
+## 2026-11-15执行结果
+
+主域上的验证文件、RSS和单一sitemap均已上线。IndexNow已提交20个公开URL，返回202（已接收、校验待完成），不代表已经收录；本地回执在 `.tmp/seo/indexnow-last.json`。BlogHub已按其模板提交[申请#277](https://github.com/shidenggui/bloghub/issues/277)，等待维护者处理，没有重复提交。
+
+本轮未连接Google Search Console或百度搜索资源平台账号，未执行这两个平台的账号内提交；不使用已经停用的匿名ping接口冒充成功。若后续提供相应账号授权／本地安全配置，再提交同一个公开sitemap，无需创建第二份站点地图。

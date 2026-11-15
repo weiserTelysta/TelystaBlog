@@ -6,7 +6,10 @@ import { ebookHref, ebookSchema } from '../src/lib/ebooks/ebookSchema';
 
 const root = process.cwd();
 const scopeArgument = process.argv.indexOf('--scope');
-const scope: Set<string> | undefined = scopeArgument >= 0 ? new Set(JSON.parse(fs.readFileSync(process.argv[scopeArgument + 1], 'utf8')) as string[]) : undefined;
+if (scopeArgument < 0 || !process.argv[scopeArgument + 1]) throw new Error('请用 --scope <已核验的全量发布ID数组JSON> 明确网关发布范围。');
+const ids: unknown = JSON.parse(fs.readFileSync(process.argv[scopeArgument + 1], 'utf8'));
+if (!Array.isArray(ids) || !ids.length || ids.some(id => typeof id !== 'string' || !/^WEISER[a-f0-9]{12}$/.test(id)) || new Set(ids).size !== ids.length) throw new Error('发布范围必须是不为空、无重复的有效书籍ID数组。');
+const scope = new Set<string>(ids);
 const books = readEbookCatalogFiles(root).flatMap(file => file.books.filter(record => !scope || scope.has(record.id)).map(record => {
 	let full = record;
 	if (record.privateStub) {
