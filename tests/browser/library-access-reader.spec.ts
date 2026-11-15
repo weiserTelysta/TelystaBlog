@@ -6,6 +6,8 @@ const JSZip = require('jszip');
 const host = 'https://telysta.com';
 test('账户权限接通书架和受保护EPUB，沙箱清除脚本，退出会停止阅览', async ({ page }, testInfo) => {
  test.setTimeout(60_000);
+ const remoteRequests: string[] = [];
+ page.on('request', request => { if (request.url().startsWith('https://invalid.example/')) remoteRequests.push(request.url()); });
  const fixture = await createPlatformFixture();
  try {
   await fixture.attach(page.context());
@@ -13,9 +15,13 @@ test('账户权限接通书架和受保护EPUB，沙箱清除脚本，退出会�
 		const zip = new JSZip();
 		zip.file('mimetype', 'application/epub+zip');
 		zip.file('META-INF/container.xml', '<?xml version="1.0"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="book.opf" media-type="application/oebps-package+xml"/></rootfiles></container>');
-		zip.file('book.opf', '<?xml version="1.0"?><package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="id"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="id">fixture</dc:identifier><dc:title>Fixture</dc:title><dc:language>en</dc:language></metadata><manifest><item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/><item id="one" href="one.xhtml" media-type="application/xhtml+xml"/><item id="two" href="two.xhtml" media-type="application/xhtml+xml"/></manifest><spine toc="ncx"><itemref idref="one"/><itemref idref="two"/></spine></package>');
+		zip.file('book.opf', '<?xml version="1.0"?><package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="id"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="id">fixture</dc:identifier><dc:title>Fixture</dc:title><dc:language>en</dc:language></metadata><manifest><item id="svg-page" href="svg-cover.xhtml" media-type="application/xhtml+xml"/><item id="cover-page" href="cover.xhtml" media-type="application/xhtml+xml"/><item id="cover" href="cover.png" media-type="image/png"/><item id="css" href="book.css" media-type="text/css"/><item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/><item id="one" href="one.xhtml" media-type="application/xhtml+xml"/><item id="two" href="two.xhtml" media-type="application/xhtml+xml"/></manifest><spine toc="ncx"><itemref idref="cover-page"/><itemref idref="svg-page"/><itemref idref="one"/><itemref idref="two"/></spine></package>');
 		zip.file('toc.ncx', '<?xml version="1.0"?><ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1"><head/><docTitle><text>Fixture</text></docTitle><navMap><navPoint id="one" playOrder="1"><navLabel><text>First chapter</text></navLabel><content src="one.xhtml"/></navPoint><navPoint id="two" playOrder="2"><navLabel><text>Second chapter</text></navLabel><content src="two.xhtml"/></navPoint></navMap></ncx>');
-		for (const [file, text] of [['one', 'First chapter content'], ['two', 'Second chapter content']]) zip.file(file + '.xhtml', `<?xml version="1.0"?><html xmlns="http://www.w3.org/1999/xhtml"><head><title>${file}</title></head><body><h1>${text}</h1><p>Readable fixture text.</p><script>parent.readerScriptExecuted=true</script></body></html>`);
+		zip.file('cover.png', Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a6N8AAAAASUVORK5CYII=', 'base64'));
+		zip.file('book.css', '.fixture-text { font-style: italic; }.chapter {margin-top:66px} .image-page {break-inside:avoid}');
+        zip.file('cover.xhtml', '<html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" href="book.css"/></head><body><div class="chapter"><div class="image-page"><p><img src="cover.png" width="900" height="1200" style="height:100%"/></p></div></div></body></html>');
+        zip.file('svg-cover.xhtml', '<html xmlns="http://www.w3.org/1999/xhtml"><head/><body><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200"><image href="cover.png" width="900" height="1200"/></svg></body></html>');
+		for (const [file, text] of [['one', 'First chapter content'], ['two', 'Second chapter content']]) zip.file(file + '.xhtml', `<?xml version="1.0"?><html xmlns="http://www.w3.org/1999/xhtml"><head><title>${file}</title><link rel="stylesheet" href="book.css"/></head><body><h1>${text}</h1><p class="fixture-text">Readable fixture text.</p><img id="archive-cover" src="cover.png"/><img id="remote-tracker" src="https://invalid.example/tracker.png"/><img id="foreign-blob" src="blob:https://telysta.com/not-from-book"/><a id="unsafe-link" href="javascript:parent.readerScriptExecuted=true">Unsafe link</a><script>parent.readerScriptExecuted=true</script></body></html>`);
 
   const bucket = await fixture.mf.getR2Bucket('LIBRARY_BUCKET','library-fixture');
   await bucket.put('books/fixture/protected.epub', await zip.generateAsync({ type: 'uint8array' }), { httpMetadata: { contentType: 'application/epub+zip' } });
@@ -34,10 +40,25 @@ test('账户权限接通书架和受保护EPUB，沙箱清除脚本，退出会�
   await page.goto(host + '/ebooks/WEISER94f87086f630/');
   await expect(page.locator('[data-book-content] h1')).toHaveText('Protected fixture book');
   await page.getByRole('link',{name:'在线阅读 EPUB'}).click();
-  const first=page.frameLocator('[data-reader-surface] iframe').first();
+  const cover=page.locator('[data-reader-surface] iframe').last().contentFrame();
+  await expect(cover.locator('body')).toHaveAttribute('data-reader-image-page','');
+  await expect.poll(()=>cover.locator('img').evaluate((img: HTMLImageElement)=>{const r=img.getBoundingClientRect();return img.naturalWidth>0&&r.left>=0&&r.right<=innerWidth&&r.bottom<=innerHeight;})).toBe(true);
+  await page.getByRole('button',{name:'Next · 下一页',exact:true}).click();
+  const svgCover=page.locator('[data-reader-surface] iframe').last().contentFrame();
+  await expect(svgCover.locator('image')).toHaveAttribute('href', /^blob:https:\/\/telysta\.com\//);
+  await expect.poll(()=>svgCover.locator('svg').evaluate(el=>{const r=el.getBoundingClientRect();return r.width>innerWidth*.8&&r.height>innerHeight*.8&&r.left>=0&&r.right<=innerWidth&&r.bottom<=innerHeight;})).toBe(true);
+  await page.getByRole('button',{name:'Next · 下一页',exact:true}).click();
+  const first=page.locator('[data-reader-surface] iframe').last().contentFrame();
   await expect(first.locator('body')).toContainText('First chapter content');
   await expect(page.locator('[data-reader-surface] iframe').first()).toHaveAttribute('sandbox','allow-same-origin');
   await expect(first.locator('script')).toHaveCount(0);
+  await expect(first.locator('#archive-cover')).toHaveAttribute('src', /^blob:https:\/\/telysta\.com\//);
+  await expect.poll(()=>first.locator('#archive-cover').evaluate((img: HTMLImageElement)=>img.naturalWidth)).toBe(1);
+  await expect(first.locator('.fixture-text')).toHaveCSS('font-style','italic');
+  await expect(first.locator('#remote-tracker')).not.toHaveAttribute('src');
+  await expect(first.locator('#foreign-blob')).not.toHaveAttribute('src');
+  await expect(first.locator('#unsafe-link')).not.toHaveAttribute('href');
+  expect(remoteRequests).toEqual([]);
   expect(await page.evaluate(() => (window as unknown as Record<string,unknown>).readerScriptExecuted)).toBeUndefined();
   for(const width of [1440,390]){
    await page.setViewportSize({width,height:1000});

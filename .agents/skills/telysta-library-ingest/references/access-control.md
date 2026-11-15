@@ -45,3 +45,5 @@ Worker运行时只流式读取R2文件，未列入部署catalog的对象不会�
 ## 阅览实现
 
 `/ebooks/read/?book=<固定ID>&format=EPUB|PDF` 按需打开书籍。PDF使用浏览器阅览器并保留Range；EPUB在沙箱iframe中显示，关闭书内脚本、弹窗，先清理HTML并限制外部资源。书架不预加载书籍正文。MOBI／AZW3暂供下载，需要转换时另行处理并保留原文件。
+
+EPUB须等待资源替换完成后再显示。清理逻辑位于 `src/lib/ebooks/readerSanitizer.ts`，只保留当前书籍清单生成的同源blob图片与样式地址；不能为修复封面空白而全局允许未知协议、书内脚本或外部资源。回归时同时检查真实封面、书内样式、脚本移除、沙箱与退出后的内容清除。

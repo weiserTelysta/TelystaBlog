@@ -88,27 +88,31 @@ export function initLibraryReader() {
             const data = await response.arrayBuffer();
             if (request !== revision)
                 return;
-            const [{ default: ePub }, { default: DOMPurify }] = await Promise.all([import('epubjs'), import('dompurify')]);
+            const [{ default: ePub }, { createEpubSanitizer }] = await Promise.all([import('epubjs'), import('./readerSanitizer')]);
             if (request !== revision)
                 return;
-            book = ePub(data);
-            await book.ready;
+            const openedBook = ePub(data);
+            book = openedBook;
+            // opened waits for resource replacement; ready only waits for manifest parsing.
+            await openedBook.opened;
             if (request !== revision)
                 return;
+            const manifest = await openedBook.loaded.manifest;
+            const assetUrls = await Promise.all(Object.values(manifest)
+                .filter(item => item.type.startsWith('image/') || item.type === 'text/css')
+                .map(item => openedBook.resources.get(item.href)));
+            if (request !== revision)
+                return;
+            const sanitize = createEpubSanitizer(assetUrls.filter(url => typeof url === 'string'));
             book.spine.hooks.serialize.register((html: string, section: {
                 output: string;
             }) => {
-                const clean = DOMPurify.sanitize(section.output || html, { WHOLE_DOCUMENT: true, FORBID_TAGS: ['script', 'iframe', 'object', 'embed', 'form', 'base'], FORBID_ATTR: ['srcdoc', 'ping', 'target'] });
-                const doc = new DOMParser().parseFromString(clean, 'text/html');
-                const policy = doc.createElement('meta');
-                policy.httpEquiv = 'Content-Security-Policy';
-                policy.content = "default-src 'none'; img-src blob: data:; style-src 'unsafe-inline' blob: data:; font-src blob: data:; base-uri 'none'; form-action 'none'";
-                doc.head.prepend(policy);
-                section.output = '<!DOCTYPE html>' + doc.documentElement.outerHTML;
+                section.output = sanitize(section.output || html);
             });
             rendition = book.renderTo(surface, { width: '100%', height: '100%', spread: 'none', allowScriptedContent: false });
+            const palette = getComputedStyle(root!);
             rendition.themes.default({
-                body: { color: '#d8dee9', background: '#0b0f17', 'line-height': '1.9', 'font-family': 'sans-serif' },
+                body: { color: palette.getPropertyValue('--color-text').trim(), background: palette.getPropertyValue('--color-background-soft').trim(), 'line-height': '1.9', 'font-family': palette.fontFamily },
                 'p, h1, h2, h3, blockquote, ul, ol': { 'max-width': '72ch', 'margin-left': 'auto', 'margin-right': 'auto' },
             });
             rendition.themes.fontSize(font + 'px');
