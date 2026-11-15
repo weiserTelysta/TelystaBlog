@@ -2,7 +2,7 @@
 
 本指南维护图片素材；画廊入口已改为 `/gallery/`。电子书原文件位于独立 bucket `telysta-library` 的 `books/` 前缀，书目与盘点见 [书室指南](library.md)，网页字段与下载响应头见 [电子书指南](ebooks.md)，不经过本指南的图片压缩／清单流程。
 
-插画原图与 WebP、Character 图片和首页轮换头像存放在 Cloudflare R2 bucket `telysta-blog-assets`，并通过自定义域名 `https://assets.telysta.com` 分发。当前对象前缀为 `telysta-images/`、`characters/`、`avatars/`、文章配图 `blog_imgs/` 和独立列表封面的 `covers/`。自 2026-09-29 起，上传允许列表为 PNG／JPG／JPEG／WebP；PSD 已清理，PSD／AI 不再上传。历史对象 `telysta-images/archive/mhs_test_03.ai` 未在本次 PSD 删除范围内，仍保留远端，但不登记在清单。见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。仓库不提交 R2 凭据。
+插画原图与 WebP、Character 图片和首页轮换头像存放在 Cloudflare R2 bucket `telysta-blog-assets`，并通过自定义域名 `https://assets.telysta.com` 分发。当前对象前缀为 `telysta-images/`、`characters/`、`avatars/`、文章配图 `blog_imgs/` 和独立列表封面的 `covers/`。自 2026-09-29 起，批量上传允许列表为 PNG／JPG／JPEG／WebP；正文专用 SVG 只按下文的逐文件审查流程上传。PSD 已清理，PSD／AI 不再上传。历史对象 `telysta-images/archive/mhs_test_03.ai` 未在本次 PSD 删除范围内，仍保留远端，但不登记在清单。见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。仓库不提交 R2 凭据。
 
 2026-10-04 角色现行素材改用 Mirelle 路径，旧 Serava／Sylvaena 对象保留兼容已发布引用；日常维护使用新路径，见 [更名记录](mirelle-rename-2026-10-04.md)。
 
@@ -51,6 +51,43 @@ TelystaAssets/
 - 文件名一旦公开尽量保持稳定；内容发生明显变化时优先使用新文件名，避免 CDN 缓存旧内容。
 
 脚本、密码、rclone 配置、临时文件和访问令牌不得放入素材目录或上传 R2。
+
+## 与博客正文强相关的配图
+
+正文专用参考图、示意图和符号使用 `blog_imgs/<固定文章目录>/`，**每篇一个目录**，不要直接堆放到 `blog_imgs/` 根目录，也不要混入画廊插画、电子书封面或头像目录。新文章建议用固定路由 ID `WEISER<12 位 UUID>` 作为目录名；已有明确目录的文章沿用原路径，标题和本地文件名变化不触发 R2 改名。
+
+本次 Skeb 文沿用已建立的目录：
+
+```text
+telysta-blog-assets/
+  blog_imgs/
+    weiser-hoja-skeb-2026-11-15/
+      elden-ring-snow-witch-hat-reference-2026-11-15.webp
+      weiser-ear-ornament-reference-2026-11-15.webp
+      weiser-hand-ornament-reference-2026-11-15.webp
+      elf-ear-cuff-reference-01-2026-11-15.webp
+      elf-ear-cuff-reference-02-2026-11-15.webp
+      weiser-body-chain-reference-2026-11-15.webp
+      layered-necklace-reference-2026-11-15.webp
+      annals-floral-emblem-white-2026-11-15.svg
+      flower-of-life-six-petals-white-2026-11-15.svg
+```
+
+对应索引为 [data/blog-assets/WEISERa234f883ebff.json](../data/blog-assets/WEISERa234f883ebff.json)，记录文章路径、固定 ID、bucket、目录、原文件名与正式文件名的对应、尺寸、字节数和 SHA-256。这个 JSON 是维护入口，不包含凭据，不把本地绝对路径写进去。以后补图修改同一索引，不另起一个相似目录。
+
+处理顺序：
+
+1. 保留本地 PNG／JPEG／原色 SVG，生成有语义的 WebP／白色 SVG 副本。临时名 `image-3.png`、随机截图名不得直接成为公开对象名。新增版本使用新文件名，保留已发表引用所需的旧对象。
+2. WebP 沿用展示档位，不放大、不拉伸；已经压缩过的 JPEG 若转为 quality 95 后反而变大，可单独比较较低质量的副本并记录选定质量。本次项链参考图采用 quality 90，其余 WebP 为 95。
+3. SVG 保留透明背景，只修改明确的描边／填充颜色。检查不含脚本、事件处理器、`foreignObject` 或外部资源引用；允许图内的 `href="#petal"`。通过单独的明确文件名单上传为 `image/svg+xml`，**不放宽通用批量上传的格式白名单**。
+4. 只向上述文章目录上传索引中的文件，不上传 Markdown、备份、原稿、临时预览或目录里的所有内容。上传新对象后再检查公开 URL；提前请求不存在的 URL 可能缓存 404，如发生则只清理这些确切 URL 的缓存。
+5. 下载公开 URL，核对 MIME、字节数和 SHA-256，再更新文章引用和共享 CDN 清单。上传素材与发布文章是两件事；作者要求先审阅时保持 `draft: true`，不提交部署文章。
+
+`assets:manifest` 会自动合并 `data/blog-assets/*.json`，因此重建不会丢失正文配图尺寸；公开的 `cdn-assets.json` 只收录展示路径、格式、尺寸和体积，不复制维护索引中的原稿名与校验信息。正文可使用完整 CDN URL；构建会按清单预留图片比例。小型 SVG 可显式设置等比例的 `width`／`height`，避免占满整页。
+
+跨文章复用的已有角色设定图继续引用 `telysta-images/Weiser/` 等原位置，不为每篇文章复制一份。不自动移动或删除历史的平铺配图，以免破坏已发布文章。
+
+博客正文中的图片，以及指向 WebP／PNG／JPEG／SVG 等图片文件的普通正文链接，正常点击会在当前页面打开图片查看器，支持缩放、Escape 关闭并返回原触发位置。慢加载的图片会先在原页等待加载，不跳走；明确标记为下载、打开新窗口或 `data-no-lightbox` 的作者链接保留原行为。Ctrl／Command 等修饰键点击继续使用浏览器的原图打开方式。直接从站外打开 CDN URL 仍是查看原始图片文件，不会进入博客的查看器。
 
 ## 日常发布顺序
 

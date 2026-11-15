@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "postId": "WEISERa234f883ebff",
+  "article": "src/content/weiser-posts/portrait/Weiser/2026-11-15-Hoja的Skeb委托.md",
+  "bucket": "telysta-blog-assets",
+  "prefix": "blog_imgs/weiser-hoja-skeb-2026-11-15",
+  "files": [
+    {
+      "original": "image.png",
+      "name": "elden-ring-snow-witch-hat-reference-2026-11-15.webp",
+      "quality": 95,
+      "bytes": 155222,
+      "width": 1080,
+      "height": 1528,
+      "sha256": "35e021624476b06a82fbe0e994f5290b23abb9d865814d35419b597288ba6767"
+    },
+    {
+      "original": "image-1.png",
+      "name": "weiser-ear-ornament-reference-2026-11-15.webp",
+      "quality": 95,
+      "bytes": 41562,
+      "width": 655,
+      "height": 424,
+      "sha256": "c4c2a40e31927a7dd8eccb800b79c7faea40b4d1dab9a919193ba80884d4849c"
+    },
+    {
+      "original": "image-2.png",
+      "name": "weiser-hand-ornament-reference-2026-11-15.webp",
+      "quality": 95,
+      "bytes": 26268,
+      "width": 487,
+      "height": 768,
+      "sha256": "bd2030d65d14ef66e78a79dabb4f573bea01b49badd5a5732c2abde339f8bc14"
+    },
+    {
+      "original": "image-3.png",
+      "name": "elf-ear-cuff-reference-01-2026-11-15.webp",
+      "quality": 95,
+      "bytes": 88378,
+      "width": 654,
+      "height": 493,
+      "sha256": "8f5250780c19ae154deda0c1d9d585b1c728fc53324491e5dc71e4c3d7c24b23"
+    },
+    {
+      "original": "image-4.png",
+      "name": "elf-ear-cuff-reference-02-2026-11-15.webp",
+      "quality": 95,
+      "bytes": 31946,
+      "width": 606,
+      "height": 613,
+      "sha256": "924b26f8397be45f3e86441727290a412f20ca6cbfcbd2d1cd0dbf1adcd3e533"
+    },
+    {
+      "original": "image-5.png",
+      "name": "weiser-body-chain-reference-2026-11-15.webp",
+      "quality": 95,
+      "bytes": 56642,
+      "width": 505,
+      "height": 562,
+      "sha256": "8abad231db22c5fac7f095128f6f49ef1fcba52117ece62cd96b2d4d30a500f3"
+    },
+    {
+      "original": "6157144b522451088b7eaacdc15c5128_720.jpg",
+      "name": "layered-necklace-reference-2026-11-15.webp",
+      "quality": 90,
+      "bytes": 210396,
+      "width": 690,
+      "height": 966,
+      "sha256": "1d9c049f7e5d95dc1082ba1870ac3ae446ef92c0b5f5b3071a2a4408ebe4c952"
+    },
+    {
+      "original": "annals_emblem_traced.svg",
+      "name": "annals-floral-emblem-white-2026-11-15.svg",
+      "bytes": 4458,
+      "width": 1254,
+      "height": 1254,
+      "sha256": "e7b3a76266134428073b00bb9c959a87f7646c27a23ba5bebeb5bdaef6b5a92e"
+    },
+    {
+      "original": "flower_of_life_6_petals.svg",
+      "name": "flower-of-life-six-petals-white-2026-11-15.svg",
+      "bytes": 691,
+      "width": 400,
+      "height": 400,
+      "sha256": "b4c8242121173821d387ebf3bfde58f636f1b1ea019d39ef9badc36d270f40f2"
+    }
+  ]
+}

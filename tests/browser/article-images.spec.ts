@@ -108,6 +108,64 @@ test('看图器模块失败时保留直接查看图片的回退路径', async ({
 	await expect(page).toHaveURL(url!);
 });
 
+test('图片仍在加载时点击也留在正文，加载完成后原位放大', async ({ page }) => {
+	await openArticle(page);
+	const url = page.url();
+	let release!: () => void;
+	const gate = new Promise<void>(resolve => { release = resolve; });
+	await page.route('**/article-delayed-image.svg', async route => {
+		await gate;
+		await route.fulfill({ contentType: 'image/svg+xml', body: '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="800" height="600" fill="white"/></svg>' });
+	});
+	await page.evaluate(() => {
+		const image = new Image();
+		image.id = 'delayed-image'; image.alt = '加载中的参考图'; image.width = 800; image.height = 600;
+		image.src = '/article-delayed-image.svg';
+		document.querySelector('[data-article-content]')!.append(image);
+		document.dispatchEvent(new Event('astro:page-load'));
+	});
+	const trigger = page.locator('.article-image-link').filter({ has: page.locator('#delayed-image') });
+	try {
+		await trigger.click();
+		await expect(trigger).toHaveAttribute('aria-busy', 'true');
+		await expect(page).toHaveURL(url);
+		release();
+		await expect(page.getByRole('dialog', { name: '图片预览：加载中的参考图', exact: true })).toBeVisible();
+		await expect(page).toHaveURL(url);
+		await page.keyboard.press('Escape');
+		await expect(trigger).toBeFocused();
+	} finally { release(); }
+});
+
+test('Skeb 参考图和正文中的直接图片链接使用原位查看器', async ({ page }) => {
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	await page.route('https://giscus.app/**', route => route.abort());
+	await page.goto('/blog/WEISERa234f883ebff/', { waitUntil: 'domcontentloaded' });
+	const url = page.url();
+	const necklace = page.locator('[data-article-content] img[src$="layered-necklace-reference-2026-11-15.webp"]');
+	await necklace.scrollIntoViewIfNeeded();
+	await necklace.evaluate((image: HTMLImageElement) => image.decode());
+	await necklace.click();
+	await expect(page.locator('.article-lightbox')).toBeVisible();
+	await expect(page).toHaveURL(url);
+	await page.keyboard.press('Escape');
+	await page.evaluate(() => {
+		const link = document.createElement('a');
+		link.id = 'direct-image-reference'; link.textContent = '項鏈參考圖';
+		link.href = document.querySelector<HTMLImageElement>('[data-article-content] img[src$="layered-necklace-reference-2026-11-15.webp"]')!.src;
+		document.querySelector('[data-article-content]')!.append(link);
+		document.dispatchEvent(new Event('astro:page-load'));
+		document.dispatchEvent(new Event('astro:page-load'));
+	});
+	const link = page.locator('#direct-image-reference');
+	await link.focus();
+	await page.keyboard.press('Enter');
+	await expect(page.getByRole('dialog', { name: '图片预览：項鏈參考圖', exact: true })).toBeVisible();
+	await expect(page).toHaveURL(url);
+	await page.keyboard.press('Escape');
+	await expect(link).toBeFocused();
+});
+
 test('打开动画期间立即关闭，不残留弹层或滚动锁', async ({ page }) => {
 	const trigger = await openArticle(page);
 	// Observe creation rather than waiting for animation/actionability.

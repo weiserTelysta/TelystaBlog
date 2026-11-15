@@ -3,6 +3,7 @@ import path from 'node:path';
 import process from 'node:process';
 import sharp from 'sharp';
 import { mergeCovers, readCoverIndex } from './lib/cdn-covers.mjs';
+import { readArticleAssets } from './lib/article-assets.mjs';
 
 const DEFAULT_ORIGIN = 'https://assets.telysta.com/';
 const DEFAULT_OUTPUT = 'src/generated/cdn-assets.json';
@@ -74,6 +75,13 @@ for (const collection of collections) {
 			sources: sourceFiles.map(toManifestFile),
 		};
 	}
+}
+
+for (const [key, asset] of Object.entries(await readArticleAssets(process.cwd()))) {
+	if (assets[key] && JSON.stringify(assets[key]) !== JSON.stringify(asset)) {
+		throw new Error(`文章专用图片与素材目录重复，请只保留一个管理来源：${key}`);
+	}
+	assets[key] = asset;
 }
 
 if (!options.withoutCovers) {

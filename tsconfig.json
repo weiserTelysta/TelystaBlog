@@ -5,6 +5,8 @@
     "**/*"
   ],
   "exclude": [
+    ".tmp",
+    "public",
     "dist",
     "workers"
   ],
