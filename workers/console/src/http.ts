@@ -1,5 +1,5 @@
 export class HttpError extends Error {
- constructor(public status: number, message: string) { super(message); }
+ constructor(public status: number, message: string, public code?: string, public field?: string) { super(message); }
 }
 export function json(value: unknown, status = 200) {
  return new Response(JSON.stringify(value), { status, headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' } });

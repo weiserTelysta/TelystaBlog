@@ -22,7 +22,7 @@ npm run library:access -- --id WEISERxxxxxxxxxxxx --access public
 
 工具先保留完整书目，再写公开占位；缺少私有资料时明确失败。不要手工把完整受保护资料留在公开JSON后直接提交。新书仍需核对作者、文件与公开范围，不按关键词自动发布整批。
 
-首页Hero头像进入 `/console/`。普通用户只浏览公开内容；正式用户、审核管理员（superuser）与超级管理员（admin）可访问受保护内容。只有固定超级管理员能提升角色，其他注册用户保持普通身份。专属管理工作台 `/telysta-console/`；固定超级管理员邮箱为 `weiser@telysta.com`。账户会话由Console Worker和D1管理，书库通过Service Binding核对权限，原公共密码锁已经由账户权限替代。前端不保存密码或会话令牌。退出后清除私有书目并停止阅览，文件接口仍逐次鉴权。
+首页Hero头像进入 `/console/`。受保护内容由超级管理员（admin）始终访问，其他账户必须获站主明确的独立授权（restricted_access）；升为正式用户或超级用户（superuser）不自动取得该权限。旧有已授权账户在迁移时保留访问资格。只有固定超级管理员能提升角色，其他注册用户保持普通身份。专属管理工作台 `/telysta-console/`；固定超级管理员邮箱为 `weiser@telysta.com`。账户会话由Console Worker和D1管理，书库通过Service Binding核对权限，原公共密码锁已经由账户权限替代。前端不保存密码或会话令牌。退出后清除私有书目并停止阅览，文件接口仍逐次鉴权。
 
 账户部署与邮件Secret见 [docs/console.md](../../../../docs/console.md)。不得把SMTP密码、验证码、会话令牌写入书目、Skill或日志。受保护元信息依然不能进入公开Git、静态HTML或匿名索引。
 
@@ -35,7 +35,7 @@ npm run library:access -- --id WEISERxxxxxxxxxxxx --access public
 2. `npm ci --prefix workers/library-gateway` 后执行该项目的 `check` 与 `test`。测试使用中性fixture，不需要真实密码或完整私有书目；生产打包缺少真实生成catalog时必须失败。
 3. 先部署Console认证服务和D1迁移，再部署声明 `AuthService` Service Binding的网关。认证服务不可用时保持受保护，不回退到公共密码。SMTP与验证码Secret只属于Console项目，不放在书库JSON。
 4. 在已有发布授权内部署Worker并验证实际运行。首次接管域名时先测Worker，再解除R2的同名直连域绑定，关闭其他R2公开访问方式，交由Worker自定义域提供资源。不能只保护网页、保留可匿名直取同一对象的 `r2.dev` 或其他域。
-5. 匿名目录不能包含受保护记录；匿名GET／HEAD／Range不能读取它们的书籍或封面。正式用户登录后检验文件字节、PDF的206／Content-Range、EPUB读取，普通用户、伪造会话与退出登录均要验证。邮箱验证码限频与PDF分段请求分开处理。
+5. 匿名目录不能包含受保护记录；匿名GET／HEAD／Range不能读取它们的书籍或封面。明确获授权的用户登录后检验文件字节、PDF的206／Content-Range、EPUB读取，普通用户、伪造会话与退出登录均要验证。邮箱验证码限频与PDF分段请求分开处理。
 6. Worker就绪后再推送网站元信息并验证Cloudflare Pages及保留的GitHub Pages流水线，避免页面已上线但后台未更新。Git push不会自动部署这个独立Worker。
 
 Worker运行时只流式读取R2文件，未列入部署catalog的对象不会自动透传。私有catalog可以在R2所有直连入口关闭后备份到manifest指定的 `gateway/` key；HTTP网关不公开这个前缀，恢复通过认证的R2工具读取。换机器前备份私有JSON，保留原书与既有对象。

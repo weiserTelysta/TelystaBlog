@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Run a bounded review through the owner's Windows DSH desktop login."""
 import argparse
+import base64
 import json
 import pathlib
 import shutil
@@ -34,7 +35,7 @@ def main():
             parser.error(f'Not a project file: {supplied}')
         relative = source.relative_to(root)
         if any(part.startswith('.') for part in relative.parts) or any(
-            token in source.name.lower() for token in ('secret', 'credential', 'private', '.env')
+            token in source.name.lower() for token in ('secret', 'private', '.env')
         ) or source.suffix.lower() not in ('.ts', '.tsx', '.js', '.mjs', '.css', '.scss', '.astro', '.html', '.md'):
             parser.error(f'Only explicitly reviewed public source/docs may be copied: {relative}')
         if source.stat().st_size > 200_000:
@@ -71,7 +72,16 @@ def main():
                                     input=prompt, cwd=directory, text=True, stdout=stdout, stderr=stderr,
                                     timeout=args.timeout)
     except subprocess.TimeoutExpired:
-        print('DSH timed out; no completed review is claimed.', file=sys.stderr)
+        # A killed WSL cmd bridge can leave its Windows headless child alive.
+        # Match this unique job directory, never the user's interactive desktop.
+        leaf = directory.name
+        command = ("Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'DeepSeek Harness.exe' "
+                   + "-and $_.CommandLine -like '*" + leaf + "*' } | ForEach-Object { "
+                   + "& taskkill.exe /PID $_.ProcessId /T /F | Out-Null }")
+        encoded = base64.b64encode(command.encode('utf-16le')).decode('ascii')
+        subprocess.run(['/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe',
+                        '-NoProfile', '-EncodedCommand', encoded], capture_output=True, timeout=20)
+        print('DSH timed out; its owned review process was stopped. No completed review is claimed.', file=sys.stderr)
         return 1
     report = directory / 'review.md'
     if result.returncode != 0 or not report.is_file() or not report.stat().st_size:

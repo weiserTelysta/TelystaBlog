@@ -39,9 +39,9 @@ test('登录星空遵守减少动态、隐藏暂停与页面生命周期，表�
   await expect.poll(() => page.evaluate(() => (window as any).starPaints)).toBeGreaterThan(0);
   const paints = () => page.evaluate(() => (window as any).starPaints);
   const frozen = await paints();
-  await page.getByLabel('邮箱', { exact: true }).fill('reader@example.com');
+  await page.getByLabel('用户名或邮箱', { exact: true }).fill('reader@example.com');
   await page.keyboard.press('Tab');
-  await expect(page.getByRole('button', { name: '获取验证码', exact: true })).toBeFocused();
+  await expect(page.getByLabel('密码', { exact: true })).toBeFocused();
   await page.waitForTimeout(250);
   expect(await paints()).toBe(frozen);
   await page.emulateMedia({ reducedMotion: 'no-preference' });

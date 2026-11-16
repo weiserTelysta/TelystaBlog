@@ -1,6 +1,6 @@
 import { connect } from 'cloudflare:sockets';
 // Tencent Exmail uses implicit TLS on 465; this adapter never logs SMTP replies or credentials.
-export async function sendCode(env: ConsoleEnv, recipient: string, code: string) {
+export async function sendCode(env: ConsoleEnv, recipient: string, code: string, purpose: 'login'|'register'|'reset' = 'login') {
  const socket = connect({ hostname: env.SMTP_HOST, port: 465 }, { secureTransport: 'on', allowHalfOpen: false });
  void socket.closed.catch(() => {});
  const timer = setTimeout(() => { void socket.close().catch(() => {}); }, 20_000);
@@ -26,7 +26,8 @@ export async function sendCode(env: ConsoleEnv, recipient: string, code: string)
   await socket.opened; await reply(220); await command('EHLO telysta.com', 250);
   await command('AUTH LOGIN', 334); await command(btoa(env.SMTP_USER), 334); await command(btoa(env.SMTP_PASSWORD), 235);
   await command(`MAIL FROM:<${env.SMTP_USER}>`, 250); await command(`RCPT TO:<${recipient}>`, 250); await command('DATA', 354);
-  const text = `Your Telysta verification code is ${code}. It expires in 5 minutes. If you did not request it, ignore this email.`;
+  const action = purpose === 'reset' ? 'password reset' : purpose === 'register' ? 'email verification for registration' : 'sign-in verification';
+  const text = `Your Telysta ${action} code is ${code}. It expires in 5 minutes. If you did not request it, ignore this email.`;
   const message = [`From: Telysta <${env.SMTP_USER}>`, `To: <${recipient}>`, `Date: ${new Date().toUTCString()}`, `Message-ID: <${crypto.randomUUID()}@telysta.com>`, 'Subject: Telysta verification code', 'MIME-Version: 1.0', 'Content-Type: text/plain; charset=UTF-8', 'Content-Transfer-Encoding: 8bit', '', text, '', '.'].join('\r\n');
   await command(message, 250);
   // DATA acceptance means delivery was queued; a broken QUIT must not invalidate the sent code.

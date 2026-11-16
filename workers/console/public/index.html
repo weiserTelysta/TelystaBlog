@@ -16,29 +16,52 @@
  <a class="skip-link" href="#main">跳至主要内容</a>
  <header class="site-header">
   <a class="site-header__brand" href="/" translate="no">Weiser’s Melancholy</a>
-  <a class="site-header__nav" href="/" lang="en">Back to site <span aria-hidden="true">↗</span></a>
  </header>
  <main id="main">
   <section id="login" class="login-panel" aria-labelledby="login-title" hidden>
    <div class="login-heading">
     <h1 id="login-title">登录</h1>
+    <button id="auth-language" class="text-button" type="button" lang="en">English</button>
    </div>
-   <form id="login-form" method="post" action="./api/auth/verify">
-    <div class="field">
+   <form id="login-form" method="post" action="./api/auth/login">
+    <div id="identifier-field" class="field">
+     <label for="identifier">用户名或邮箱</label>
+     <input id="identifier" name="identifier" autocomplete="username" spellcheck="false" autocapitalize="none" maxlength="254" required aria-describedby="identifier-error">
+     <span id="identifier-error" class="field-error"></span>
+    </div>
+    <div id="username-field" class="field" hidden>
+     <label for="username">用户名</label>
+     <input id="username" name="username" autocomplete="username" spellcheck="false" autocapitalize="none" minlength="3" maxlength="24" aria-describedby="username-help username-status username-error" disabled>
+     <span id="username-help" class="field-help">以字母开头，3–24位字母、数字、下划线或短横线。</span>
+     <span id="username-status" class="field-help" role="status"></span>
+     <span id="username-error" class="field-error"></span>
+    </div>
+    <div id="email-field" class="field" hidden>
      <label for="email">邮箱</label>
      <div class="email-field">
-      <input id="email" name="email" type="email" autocomplete="email" spellcheck="false" autocapitalize="none" maxlength="254" placeholder="you@example.com" aria-describedby="login-status" required>
+      <input id="email" name="email" type="email" autocomplete="email" spellcheck="false" autocapitalize="none" maxlength="254" placeholder="you@example.com" aria-describedby="email-error" disabled>
       <button id="send-code" type="button">获取验证码</button>
      </div>
+     <span id="email-error" class="field-error"></span>
     </div>
-    <div class="field">
+    <div id="password-field" class="field">
+     <label for="password">密码</label>
+     <div class="password-field">
+      <input id="password" name="password" type="password" autocomplete="current-password" maxlength="512" required aria-describedby="password-help password-error">
+      <button id="password-toggle" type="button" aria-pressed="false">显示</button>
+     </div>
+     <span id="password-help" class="field-help" hidden>至少15个字符，可使用空格与中文。</span>
+     <span id="password-error" class="field-error"></span>
+    </div>
+    <div id="code-field" class="field" hidden>
      <div class="field-caption"><label for="code">六位验证码</label><span id="code-expiry">5 分钟内有效</span></div>
-     <input id="code" name="code" class="code-input" inputmode="numeric" autocomplete="one-time-code" spellcheck="false" pattern="[0-9]{6}" maxlength="6" placeholder="000000" aria-describedby="code-expiry login-status" required>
+     <input id="code" name="code" class="code-input" inputmode="numeric" autocomplete="one-time-code" spellcheck="false" pattern="[0-9]{6}" maxlength="6" placeholder="000000" aria-describedby="code-expiry code-error" disabled>
+     <span id="code-error" class="field-error"></span>
     </div>
-    <button id="sign-in" type="submit" class="primary login-submit"><span>登录</span><span aria-hidden="true">→</span></button>
+    <button id="sign-in" type="submit" class="primary login-submit">登录</button>
    </form>
    <p role="status" id="login-status" aria-live="polite"></p>
-   <p id="signup-note" class="login-footnote">第一次来？验证邮箱后，即可建立普通账户。</p>
+   <nav id="auth-modes" class="login-footnote" aria-label="账户入口"></nav>
   </section>
   <section id="account" aria-label="账户管理" hidden>
    <div class="account-tools">

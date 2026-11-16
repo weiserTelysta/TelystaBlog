@@ -11,7 +11,7 @@ test('账户权限接通书架和受保护EPUB，沙箱清除脚本，退出会�
  const fixture = await createPlatformFixture();
  try {
   await fixture.attach(page.context());
-  await fixture.db.prepare("INSERT INTO users(id,email,role,status,created_at,updated_at) VALUES(?1,'member@example.com','member','active',0,0)").bind(crypto.randomUUID()).run();
+  await fixture.db.prepare("INSERT INTO users(id,email,role,status,restricted_access,created_at,updated_at) VALUES(?1,'member@example.com','member','active',1,0,0)").bind(crypto.randomUUID()).run();
 		const zip = new JSZip();
 		zip.file('mimetype', 'application/epub+zip');
 		zip.file('META-INF/container.xml', '<?xml version="1.0"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="book.opf" media-type="application/oebps-package+xml"/></rootfiles></container>');

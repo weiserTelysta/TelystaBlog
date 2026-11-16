@@ -1,29 +1,25 @@
+import { initAuthentication } from '../client/auth.js';
 const $ = selector => document.querySelector(selector);
-const roles = { viewer: '普通用户', member: '正式用户', superuser: '管理员', admin: '超级管理员' };
+const roles = { viewer: '普通用户', member: '正式用户', superuser: '超级用户', admin: '超级管理员' };
 const names = { post: '文章', ebook: '书室', gallery: '画廊', score: '简谱', config: '站点配置' };
 let user, active = 'dashboard', dirty = false, generation = 0;
 const element = (tag, text = '', className = '') => { const node = document.createElement(tag); node.textContent = text; if (className)
     node.className = className; return node; };
 const button = (text, handler) => { const node = element('button', text); node.type = 'button'; node.addEventListener('click', handler); return node; };
 const adminEntry = location.pathname.startsWith('/telysta-console');
-const navigationNames = { dashboard: 'Overview', sessions: 'Sessions', post: 'Articles', ebook: 'Library', gallery: 'Gallery', score: 'Scores', config: 'Settings', users: 'Users', audit: 'Activity', backup: 'Backups', uploads: 'Uploads' };
-function loginMode() {
-    if (!adminEntry)
-        return;
-    $('#login-title').textContent = '管理员验证';
-    $('#signup-note').textContent = '请使用站主邮箱接收验证码。';
-}
-loginMode();
+const navigationNames = { dashboard: 'Overview', sessions: 'Login devices', post: 'Articles', ebook: 'Library', gallery: 'Gallery', score: 'Scores', config: 'Settings', users: 'Users', audit: 'Activity', backup: 'Backups', uploads: 'Uploads', profile: 'Account' };
 const tell = text => { $('#notice').textContent = text; };
 async function api(path, options = {}) {
     const response = await fetch('./api/' + path, { credentials: 'same-origin', cache: 'no-store', ...options, headers: { ...(options.body ? { 'Content-Type': 'application/json' } : {}), ...options.headers } });
     const data = await response.json();
     if (!response.ok) {
-        if (response.status === 401 && user) {
+        if (response.status === 401 && user && !path.startsWith('auth/')) {
             user = null;
             display();
+            authentication.show('login');
         }
-        throw new Error(data.error || '操作暂时不可用。');
+        const error = new Error(data.error || '操作暂时不可用。');
+        error.code=data.code||'HTTP_'+response.status;error.field=data.field;error.status=response.status;throw error;
     }
     return data;
 }
@@ -44,10 +40,10 @@ function display() {
         $('#navigation').replaceChildren();
         return;
     }
-    $('#identity').textContent = `${user.email} · ${roles[user.role]}`;
+    $('#identity').textContent = `${user.displayName || user.username || user.email} · ${roles[user.role]}`;
     const navigation = $('#navigation');
     navigation.replaceChildren();
-    const links = [['dashboard', '概览'], ['sessions', '登录会话']];
+    const links = [['dashboard', '概览'], ['profile', '账户设置'], ['sessions', '登录设备']];
     if (user.role === 'admin')
         links.push(...Object.entries(names), ['users', '用户'], ['audit', '操作记录'], ['backup', '备份']);
     if (['member', 'superuser', 'admin'].includes(user.role))
@@ -72,7 +68,9 @@ async function navigate(key) {
     const workspace = $('#workspace');
     workspace.replaceChildren(element('p', '正在读取…', 'muted'));
     try {
-        if (key === 'dashboard') {
+        if (key === 'profile') {
+            await authentication.profile(workspace,user);
+        } else if (key === 'dashboard') {
             const data = await api('dashboard');
             if (version !== generation)
                 return;
@@ -223,13 +221,14 @@ async function edit(id, kind) { try {
 catch (error) {
     tell(error.message);
 } }
-async function users(version) { const records = await api('users'); if (version !== generation)
+async function users(version) { const data = await api('users'); const records=data.records; if (version !== generation)
     return; const list = element('ul', '', 'records'); for (const record of records) {
     const li = element('li'), copy = element('div');
     copy.append(element('span', record.email, 'record-title'), element('span', roles[record.role] + ' · ' + (record.status === 'active' ? '正常' : '已停用'), 'record-meta'));
     li.append(copy);
     if (record.role !== 'admin') {
         const controls = element('div', '', 'record-actions'), role = element('select'), status = element('select');
+        const grant=element('input'),grantLabel=element('label','允许访问限制内容','access-grant');grant.type='checkbox';grant.checked=record.restrictedAccess===true;grantLabel.prepend(grant);
         role.setAttribute('aria-label', record.email + '角色');
         status.setAttribute('aria-label', record.email + '状态');
         for (const key of ['viewer', 'member', 'superuser']) {
@@ -244,9 +243,9 @@ async function users(version) { const records = await api('users'); if (version 
         }
         role.value = record.role;
         status.value = record.status;
-        controls.append(role, status, button('会话', () => sessions(version, record.id, record.email)), button('保存', async () => { try {
-            await api('users/' + record.id, { method: 'PATCH', body: JSON.stringify({ role: role.value, status: status.value }) });
-            tell('用户权限已更新，旧会话已撤销。');
+        controls.append(role, status, grantLabel, button('登录设备', () => sessions(version, record.id, record.email)), button('保存', async () => { try {
+            await api('users/' + record.id, { method: 'PATCH', body: JSON.stringify({ role: role.value, status: status.value, restrictedAccess: grant.checked }) });
+            tell('用户权限已更新，旧登录已撤销。');
             await users(version);
         }
         catch (error) {
@@ -297,37 +296,17 @@ finally {
     li.append(controls);
     list.append(li);
 } workspace.replaceChildren(element('h2', user.role === 'member' ? '我的上传' : '上传与审核'), element('p', '电子书最大90 MB，图片最大16 MB。文件先进入私人待审核区；审核本身不会自动公开或发布。', 'small muted'), toolbar, list); }
-$('#send-code').addEventListener('click', async () => { const send = $('#send-code'), email = $('#email'); if (!email.reportValidity())
-    return; send.disabled = true; $('#login-status').textContent = '正在发送…'; try {
-    await api('auth/code', { method: 'POST', body: JSON.stringify({ email: email.value }) });
-    $('#login-status').textContent = '验证码已发送，五分钟内有效。';
-    let remaining = 60;
-    send.textContent = `${remaining} 秒后重发`;
-    const timer = setInterval(() => { remaining--; send.textContent = remaining ? `${remaining} 秒后重发` : '获取验证码'; if (!remaining) {
-        clearInterval(timer);
-        send.disabled = false;
-    } }, 1000);
-    $('#code').focus();
-}
-catch (error) {
-    $('#login-status').textContent = error.message;
-    send.disabled = false;
-} });
-$('#login-form').addEventListener('submit', async (event) => { event.preventDefault(); const submit = event.submitter; submit.disabled = true; submit.setAttribute('aria-busy', 'true'); try {
-    const data = await api('auth/verify', { method: 'POST', body: JSON.stringify({ email: $('#email').value, code: $('#code').value }) });
-    user = data.user;
-    localStorage.setItem('telysta.account.event', String(Date.now()));
-    $('#code').value = '';
-    display();
-    await navigate('dashboard');
-}
-catch (error) {
-    $('#login-status').textContent = error.message;
-}
-finally {
-    submit.disabled = false;
-    submit.removeAttribute('aria-busy');
-} });
+const authentication = initAuthentication({
+ api, adminEntry,
+ async authenticated(next) {
+  user=next;
+  document.documentElement.lang='zh-CN';
+  try { localStorage.setItem('telysta.account.event',String(Date.now())); } catch {}
+  display();
+  await navigate('dashboard');
+ },
+ profileUpdated(next) { user={...user,...next};display(); },
+});
 $('#logout').addEventListener('click', async () => { if (dirty && !confirm('内容尚未保存，仍要退出吗？'))
     return; try {
     await api('auth/logout', { method: 'POST', body: '{}' });
@@ -345,17 +324,13 @@ window.addEventListener('beforeunload', event => { if (dirty) {
 } });
 try {
     const data = await api('auth/session');
-    if (data.entry?.admin) {
-        $('#email').value = data.entry.email;
-        $('#email').readOnly = true;
-    }
+    authentication.configure(data.entry);
     user = data.user;
     display();
-    if (user)
-        await navigate('dashboard');
+    if (user) await authentication.resume(user);
 }
 catch (error) {
-    $('#loading').textContent = '暂时无法读取账户，请刷新重试。';
+    authentication.unavailable();
 }
 function editUpload(record, version) {
     const metadata = JSON.parse(record.metadata || '{}'), workspace = $('#workspace');
@@ -390,12 +365,12 @@ async function sessions(version, target, email) {
         if (version !== generation)
             return;
         const workspace = $('#workspace'), list = element('ul', '', 'records');
-        workspace.replaceChildren(element('h2', email ? email + ' 的登录会话' : '登录会话'));
+        workspace.replaceChildren(element('h2', email ? email + ' 的登录设备' : '登录设备'));
         if (target && records.length)
-            workspace.append(button('退出该用户全部会话', async () => { if (!confirm('确定退出该用户的全部会话吗？'))
+            workspace.append(button('退出该用户全部登录', async () => { if (!confirm('确定退出该用户的全部登录吗？'))
                 return; try {
                 await api('users/' + target + '/sessions', { method: 'DELETE' });
-                tell('全部会话已退出。');
+                tell('全部登录已退出。');
                 await sessions(version, target, email);
             }
             catch (error) {
@@ -403,15 +378,15 @@ async function sessions(version, target, email) {
             } }));
         for (const record of records) {
             const row = element('li'), copy = element('div');
-            copy.append(element('span', (record.current ? '当前会话 · ' : '') + (record.ip_hint || '设备'), 'record-title'), element('span', new Date(record.created_at * 1000).toLocaleString() + ' · ' + (record.user_agent || '浏览器'), 'record-meta'));
-            row.append(copy, button('退出此会话', async () => { try {
+            copy.append(element('span', (record.current ? '当前登录 · ' : '') + (record.ip_hint || '设备'), 'record-title'), element('span', new Date(record.created_at * 1000).toLocaleString() + ' · ' + (record.user_agent || '浏览器'), 'record-meta'));
+            row.append(copy, button('退出此登录', async () => { try {
                 await api('sessions/' + record.id, { method: 'DELETE' });
                 if (record.current) {
                     user = null;
                     display();
                     return;
                 }
-                tell('会话已退出。');
+                tell('登录已退出。');
                 await sessions(version, target, email);
             }
             catch (error) {
@@ -420,7 +395,7 @@ async function sessions(version, target, email) {
             list.append(row);
         }
         if (!records.length)
-            list.append(element('p', '没有活动会话。', 'empty'));
+            list.append(element('p', '没有活动登录。', 'empty'));
         workspace.append(list);
     }
     catch (error) {
@@ -434,7 +409,8 @@ setInterval(async () => { if (!user || document.hidden)
         user = null;
         dirty = false;
         display();
-        $('#login-status').textContent = '会话已结束，请重新登录。';
+        authentication.show('login');
+        $('#login-status').textContent = '登录已结束，请重新登录。';
     }
     else if (data.user.role !== user.role) {
         user = data.user;

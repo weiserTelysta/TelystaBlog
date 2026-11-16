@@ -9,7 +9,7 @@ export async function exportBackup(env: ConsoleEnv, actor: string, type: string,
   tables.push({key:'documents',from:'documents t',columns:'t.*',where:type==='all'?undefined:'t.kind=?3',bind:type==='all'?undefined:type});
   tables.push({key:'revisions',from:'document_revisions t',columns:'t.*',where:type==='all'?undefined:'EXISTS(SELECT 1 FROM documents d WHERE d.id=t.document_id AND d.kind=?3)',bind:type==='all'?undefined:type});
  }
- if(type==='all'||type==='users')tables.push({key:'users',from:'users t',columns:'t.id,t.email,t.role,t.status,t.created_at,t.updated_at'});
+ if(type==='all'||type==='users')tables.push({key:'users',from:'users t',columns:'t.id,t.email,t.username,t.display_name,t.role,t.status,t.restricted_access,t.email_verified_at,t.created_at,t.updated_at'});
  if(type==='all'||type==='uploads')tables.push({key:'uploads',from:'uploads t',columns:'t.*'});
  if(type==='all'||type==='audit')tables.push({key:'audit',from:'audit_events t',columns:'t.*'});
  await audit(env,actor,'backup.'+type);

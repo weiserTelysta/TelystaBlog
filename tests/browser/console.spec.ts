@@ -18,10 +18,10 @@ test('管理员强制退出其他用户Session，目标页面自动回到登录'
  try{
   await fixture.attach(page.context());await fixture.attach(context);const reader=await context.newPage();await reader.clock.install();await reader.goto('https://telysta.com/console/');await fixture.login(reader,'reader@example.com');await expect(reader.locator('#identity')).toContainText('普通用户');
   await page.goto('https://telysta.com/console/');await fixture.login(page,'weiser@telysta.com');await page.getByRole('button',{name:'Users',exact:true}).click();
-  await page.locator('.records>li').filter({hasText:'reader@example.com'}).getByRole('button',{name:'会话',exact:true}).click();
-  await expect(page.locator('#workspace')).toContainText('reader@example.com 的登录会话');
-  page.once('dialog',dialog=>dialog.accept());await page.getByRole('button',{name:'退出该用户全部会话'}).click();await expect(page.locator('#notice')).toHaveText('全部会话已退出。');
-  await reader.clock.fastForward(31_000);await expect(reader.locator('#login')).toBeVisible();await expect(reader.locator('#login-status')).toHaveText('会话已结束，请重新登录。');
+  await page.locator('.records>li').filter({hasText:'reader@example.com'}).getByRole('button',{name:'登录设备',exact:true}).click();
+  await expect(page.locator('#workspace')).toContainText('reader@example.com 的登录设备');
+  page.once('dialog',dialog=>dialog.accept());await page.getByRole('button',{name:'退出该用户全部登录'}).click();await expect(page.locator('#notice')).toHaveText('全部登录已退出。');
+  await reader.clock.fastForward(31_000);await expect(reader.locator('#login')).toBeVisible();await expect(reader.locator('#login-status')).toHaveText('登录已结束，请重新登录。');
  }finally{await context.close();await fixture.mf.dispose();}
 });
 
@@ -40,7 +40,8 @@ for(const width of [320,768,1440])test('专属管理入口预填邮箱、保持�
    const context=canvas.getContext('2d')!;
    return canvas.width>0 && context.getImageData(0,0,canvas.width,canvas.height).data.some((byte,index)=>index%4===3&&byte>0);
   })).toBe(true);
-  await expect(page.getByRole('link',{name:/Back to site/})).toHaveAttribute('href','/');
+  await expect(page.getByRole('link',{name:'Weiser’s Melancholy'})).toHaveAttribute('href','/');
+  await expect(page.getByRole('link',{name:/Back to site/})).toHaveCount(0);
   await expect(page.getByText('返回书室',{exact:true})).toHaveCount(0);
   const geometry=await page.evaluate(async()=>{await document.fonts.ready;const email=document.querySelector('#email')!.getBoundingClientRect(),send=document.querySelector('#send-code')!.getBoundingClientRect();return{overflow:document.documentElement.scrollWidth>innerWidth,sameRow:Math.abs(email.top-send.top)<3,sendHeight:send.height,fontLoaded:document.fonts.check('14px Cinzel')}});
   expect(geometry.overflow).toBe(false);expect(geometry.sameRow).toBe(true);expect(geometry.sendHeight).toBeGreaterThanOrEqual(44);expect(geometry.fontLoaded).toBe(true);

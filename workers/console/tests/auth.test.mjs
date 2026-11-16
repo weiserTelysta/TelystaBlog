@@ -1,19 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
-import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
+import {fixture} from './fixture.mjs';
 const base='https://telysta.com/console',origin='https://telysta.com';
-async function fixture(t){
- const mf=new Miniflare(convertV4MiniflareOptions({name:'telysta-console-test',modules:true,scriptPath:fileURLToPath(new URL('../.tmp/test-build/index.js',import.meta.url)),compatibilityDate:'2026-11-14',compatibilityFlags:['nodejs_compat'],d1Databases:['DB'],r2Buckets:['LIBRARY_BUCKET','MEDIA_BUCKET'],serviceBindings:{ASSETS:()=>new Response('fixture')},bindings:{CONSOLE_ORIGIN:origin,SITE_ORIGIN:origin,BASE_PATH:'/console',ADMIN_PATH:'/telysta-console',COOKIE_DOMAIN:'telysta.com',SMTP_HOST:'smtp.fixture',SMTP_USER:'weiser@telysta.com',SMTP_PASSWORD:'fixture-only',AUTH_PEPPER:'test-auth-pepper-with-more-than-32-bytes'},ratelimits:{AUTH_LIMITER:{namespace_id:'831415120',simple:{limit:100,period:60}}}}));
- t.after(()=>mf.dispose());const db=await mf.getD1Database('DB');
- const schema=await readFile(new URL('../migrations/0001_auth_content.sql',import.meta.url),'utf8');
- await db.exec(schema.replace(/\n/g,' '));await db.exec(await readFile(new URL('../migrations/0002_source_baseline.sql',import.meta.url),'utf8'));await db.exec((await readFile(new URL('../migrations/0003_session_management.sql',import.meta.url),'utf8')).replace(/\n/g,' '));await db.exec('CREATE TABLE test_outbox(email TEXT,code TEXT)');
- async function request(path,method='GET',value,cookie,headers={}){return mf.dispatchFetch(base+path,{method,headers:{Origin:origin,...(value!==undefined?{'Content-Type':'application/json'}:{}),...(cookie?{Cookie:cookie}:{}),...headers},body:value===undefined?undefined:JSON.stringify(value)});}
- async function login(email){assert.equal((await request('/api/auth/code','POST',{email})).status,200);const {code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1 ORDER BY rowid DESC LIMIT 1').bind(email.toLowerCase()).first();const response=await request('/api/auth/verify','POST',{email,code});assert.equal(response.status,200);return {cookie:response.headers.get('Set-Cookie').split(';')[0],body:await response.json(),code};}
- return{mf,db,request,login};
-}
-test('邮箱验证码注册默认普通用户，管理员邮箱固定，Cookie安全且数据库不保存验证码或明文会话',async t=>{
+
+test('已有验证码账户保留普通身份，管理员邮箱固定，Cookie安全且数据库不保存验证码或明文会话',async t=>{
  const{db,request,login}=await fixture(t);const viewer=await login('reader@example.com');assert.equal(viewer.body.user.role,'viewer');assert.equal(viewer.body.restricted,false);
  const stored=await db.prepare('SELECT digest FROM email_codes WHERE email=?1').bind('reader@example.com').first();assert.notEqual(stored.digest,viewer.code);assert.equal(stored.digest.length,64);
  const sessions=await db.prepare('SELECT token_hash FROM sessions').all();assert.ok(sessions.results.every(row=>!viewer.cookie.includes(row.token_hash)));
@@ -32,18 +22,18 @@ test('角色只能由管理员修改，提升／停用撤销旧会话，超级�
  const{db,request,login}=await fixture(t);const admin=await login('weiser@telysta.com'),viewer=await login('member@example.com');
  assert.equal((await request('/api/users/'+viewer.body.user.id,'PATCH',{role:'admin',status:'active'},admin.cookie)).status,400);
  assert.equal((await request('/api/users/'+admin.body.user.id,'PATCH',{role:'viewer',status:'suspended'},admin.cookie)).status,403);
- assert.equal((await request('/api/users/'+viewer.body.user.id,'PATCH',{role:'member',status:'active'},admin.cookie)).status,200);
+ assert.equal((await request('/api/users/'+viewer.body.user.id,'PATCH',{role:'member',status:'active',restrictedAccess:true},admin.cookie)).status,200);
  assert.equal((await (await request('/api/auth/session','GET',undefined,viewer.cookie)).json()).user,null);
  await db.prepare('UPDATE email_codes SET sent_at=0 WHERE email=?1').bind('member@example.com').run();const member=await login('member@example.com');assert.equal(member.body.restricted,true);
  await db.prepare('UPDATE users SET role=\'superuser\' WHERE email=?1').bind('member@example.com').run();assert.equal((await request('/api/users','GET',undefined,member.cookie)).status,403);
  await request('/api/users/'+member.body.user.id,'PATCH',{role:'member',status:'suspended'},admin.cookie);assert.equal((await request('/api/dashboard','GET',undefined,member.cookie)).status,401);
 });
 test('异源和无Origin写入被拒绝，验证并发仅一次成功，退出后会话失效',async t=>{
- const{db,mf,request}=await fixture(t);
+ const{db,mf,request,seedLegacy}=await fixture(t);
  assert.equal((await request('/api/auth/code','POST',{email:'a@example.com'},undefined,{Origin:'https://evil.example'})).status,403);
  assert.equal((await mf.dispatchFetch(base+'/api/auth/code',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).status,403);
  assert.equal((await request('/api/auth/code','POST',{email:'x\r\nBcc: attacker@example.com'})).status,400);
- await request('/api/auth/code','POST',{email:'race@example.com'});const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1').bind('race@example.com').first();
+ await seedLegacy('race@example.com'); await request('/api/auth/code','POST',{email:'race@example.com'});const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1').bind('race@example.com').first();
  const results=await Promise.all([request('/api/auth/verify','POST',{email:'race@example.com',code}),request('/api/auth/verify','POST',{email:'race@example.com',code})]);assert.deepEqual(results.map(r=>r.status).sort(),[200,401]);
  const cookie=results.find(r=>r.status===200).headers.get('Set-Cookie');assert.ok(cookie.includes('HttpOnly')&&cookie.includes('Secure')&&cookie.includes('SameSite=Strict'));
  await request('/api/auth/logout','POST',{},cookie.split(';')[0]);assert.equal((await(await request('/api/auth/session','GET',undefined,cookie.split(';')[0])).json()).user,null);
@@ -167,7 +157,7 @@ test('注册参数不能提升权限，只有固定超级管理员能授予正�
  const{db,request,login}=await fixture(t),owner=await login('weiser@telysta.com'),reviewer=await login('moderator@example.com'),target=await login('new@example.com');
  await request('/api/auth/code','POST',{email:'forged@example.com',role:'admin'});
  const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1').bind('forged@example.com').first();
- const forged=await(await request('/api/auth/verify','POST',{email:'forged@example.com',code,role:'admin',status:'active'})).json();assert.equal(forged.user.role,'viewer');
+ assert.equal((await request('/api/auth/verify','POST',{email:'forged@example.com',code,role:'admin',status:'active'})).status,409);assert.equal(await db.prepare('SELECT id FROM users WHERE email=?1').bind('forged@example.com').first(),null);
  await db.prepare("UPDATE users SET role='superuser' WHERE id=?1").bind(reviewer.body.user.id).run();
  for(const role of ['member','superuser','admin']){
   assert.equal((await request('/api/users/'+target.body.user.id,'PATCH',{role,status:'active'},target.cookie)).status,403);

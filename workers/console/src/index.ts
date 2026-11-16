@@ -6,6 +6,7 @@ import { HttpError, json } from './http';
 import { handleUploads } from './uploads';
 import { handleSessions } from './sessions';
 import { handleHistory } from './history';
+import { handleUsers } from './userAccess';
 export class AuthService extends WorkerEntrypoint<ConsoleEnv> {
  async session(cookies: string) { return sessionView(await sessionUser(this.env, cookies)); }
 }
@@ -30,7 +31,7 @@ export default {
     else {
      const user = await sessionUser(env, request.headers.get('Cookie'));
      if (!user) throw new HttpError(401, '请先登录。');
-     response = url.pathname.startsWith('/api/sessions') || /^\/api\/users\/[a-f0-9-]+\/sessions$/.test(url.pathname) ? await handleSessions(request, env, user, url) : url.pathname.startsWith('/api/uploads') ? await handleUploads(request, env, user, url) : /^\/api\/documents\/[^/]+\/revisions(?:\/|$)/.test(url.pathname) ? await handleHistory(request, env, user, url) : await handleManagement(request, env, user, url);
+     response = url.pathname.startsWith('/api/sessions') || /^\/api\/users\/[a-f0-9-]+\/sessions$/.test(url.pathname) ? await handleSessions(request, env, user, url) : url.pathname === '/api/profile' || url.pathname.startsWith('/api/users') ? await handleUsers(request, env, user, url) : url.pathname.startsWith('/api/uploads') ? await handleUploads(request, env, user, url) : /^\/api\/documents\/[^/]+\/revisions(?:\/|$)/.test(url.pathname) ? await handleHistory(request, env, user, url) : await handleManagement(request, env, user, url);
     }
    } else if (['GET','HEAD'].includes(request.method)) {
     if (base === env.ADMIN_PATH && url.pathname === '/') {
@@ -41,7 +42,7 @@ export default {
    }
    else throw new HttpError(405, '方法不支持。');
   } catch (error) {
-   if (error instanceof HttpError) response = json({ error: error.message }, error.status);
+   if (error instanceof HttpError) response = json({ error: error.message, code: error.code || `HTTP_${error.status}`, ...(error.field ? {field:error.field} : {}) }, error.status);
    else { console.error(JSON.stringify({ event: 'console_request_failed' })); response = json({ error: '服务暂时不可用。' }, 503); }
   }
   const headers = new Headers(response.headers);

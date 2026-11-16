@@ -10,7 +10,7 @@ export async function createPlatformFixture(){
   {name:'console-fixture',routes:['telysta.com/console*','telysta.com/telysta-console*'],modules:true,scriptPath:path.resolve('workers/console/.tmp/test-build/index.js'),compatibilityDate:'2026-11-14',compatibilityFlags:['nodejs_compat'],d1Databases:['DB'],r2Buckets:['LIBRARY_BUCKET','MEDIA_BUCKET'],bindings:{CONSOLE_ORIGIN:'https://telysta.com',SITE_ORIGIN:'https://telysta.com',BASE_PATH:'/console',ADMIN_PATH:'/telysta-console',COOKIE_DOMAIN:'telysta.com',SMTP_HOST:'smtp.fixture',SMTP_USER:'weiser@telysta.com',SMTP_PASSWORD:'fixture-only',AUTH_PEPPER:'browser-fixture-auth-pepper-more-than-32-bytes'},ratelimits:{AUTH_LIMITER:{namespace_id:'831415120',simple:{limit:100,period:60}}},serviceBindings:{ASSETS:async request=>{const file=assetFiles[new URL(request.url).pathname];return file?new Response(await fs.readFile(path.resolve('workers/console/.assets',file)),{headers:{'Content-Type':file.endsWith('.js')?'text/javascript':file.endsWith('.css')?'text/css':file.endsWith('.woff2')?'font/woff2':'text/html'}}):new Response('Not found',{status:404});}}}
  ]}));
  const db=await mf.getD1Database('DB','console-fixture');
- for(const name of (await fs.readdir('workers/console/migrations')).filter(name=>name.endsWith('.sql')).sort())await db.exec((await fs.readFile(path.resolve('workers/console/migrations',name),'utf8')).replace(/\n/g,' '));
+ for(const name of (await fs.readdir('workers/console/migrations')).filter(name=>name.endsWith('.sql')).sort())await db.exec((await fs.readFile(path.resolve('workers/console/migrations',name),'utf8')).replace(/^\s*--.*$/gm,'').replace(/\n/g,' '));
  await db.exec('CREATE TABLE test_outbox(email TEXT,code TEXT)');
  return{mf,db,async attach(context){
   const consoleWorker=await mf.getWorker('console-fixture'),libraryWorker=await mf.getWorker('library-fixture');
@@ -18,7 +18,25 @@ export async function createPlatformFixture(){
   await context.route('https://telysta.com/**',async route=>{const url=new URL(route.request().url());if(/^\/(?:telysta-)?console(?:\/|$)/.test(url.pathname)){await handle(consoleWorker)(route);return;}const response=await route.fetch({url:'http://127.0.0.1:4322'+url.pathname+url.search});await route.fulfill({response});});
   await context.route('https://library-files.telysta.com/**',handle(libraryWorker));
  },async login(page,email){
-  await page.getByLabel('邮箱',{exact:true}).fill(email);await page.getByRole('button',{name:'获取验证码',exact:true}).click();await page.locator('#login-status').getByText('验证码已发送，五分钟内有效。').waitFor();
-  const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1 ORDER BY rowid DESC LIMIT 1').bind(email).first();await page.getByLabel('六位验证码').fill(code);await page.getByRole('button',{name:'登录',exact:true}).click();
+  const password='Browser fixture library passphrase 2026!';
+  const existing=await db.prepare('SELECT password_hash FROM users WHERE email=?1').bind(email).first();
+  const owner=email==='weiser@telysta.com';
+  if(!owner&&!existing){
+   await page.getByRole('link',{name:'创建账户',exact:true}).click();
+   await page.getByLabel('用户名',{exact:true}).fill('reader_'+crypto.randomUUID().replaceAll('-','').slice(0,12));
+   await page.getByLabel('邮箱',{exact:true}).fill(email);await page.getByLabel('密码',{exact:true}).fill(password);
+  }else if(!owner&&existing.password_hash){
+   await page.getByLabel('用户名或邮箱').fill(email);await page.getByLabel('密码',{exact:true}).fill(password);
+   await page.getByRole('button',{name:'登录',exact:true}).click();return;
+  }else if(!await page.locator('#email').isVisible()){
+   await page.getByRole('link',{name:'旧账户／站主邮箱验证',exact:true}).click();
+  }
+  if(await page.locator('#email').getAttribute('readonly')===null)await page.getByLabel('邮箱',{exact:true}).fill(email);await page.getByRole('button',{name:'获取验证码',exact:true}).click();
+  await page.locator('#login-status').getByText('验证码已发送，五分钟内有效。').waitFor();
+  const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1 ORDER BY rowid DESC LIMIT 1').bind(email).first();
+  await page.getByLabel('六位验证码').fill(code);
+  await page.locator('#sign-in').click();
+  if(!owner&&existing&&!existing.password_hash)await page.getByRole('button',{name:'稍后设置',exact:true}).click();
+
  }};
 }
