@@ -209,12 +209,12 @@ DeepSeek Harness本轮目录边界审查超时，没有完成报告；已完成�
 
 ## 部署结果（2026-11-16）
 
-发布范围取自 `.tmp/library-gateway/release-705-ids.json`（705 个 ID，无重复），其中 8 本原草稿新书按作者指示转为公开。网关目录由 `scripts/prepare-library-gateway.ts --scope` 生成：`sha256 12d420d0431b5f75d922427491d85dde27876fa81168c2be66ac849ccb6234a2`，705 册、67 册受保护，与 `.tmp/library-gateway/manifest.json` 一致；同名审计对象已上传至 R2 `gateway/`。
+发布范围取自 `.tmp/library-gateway/release-705-ids.json`（705 个 ID，无重复），其中 8 本原草稿新书按作者指示转为公开。网关目录由 `scripts/prepare-library-gateway.ts --scope` 生成：`sha256 cf24dfcdae4a560b32b474a72df27c842323527ce207bfb69af7f9131941bf6d`，705 册、67 册受保护（含 65 册漫画封面），与 `.tmp/library-gateway/manifest.json` 一致；同名审计对象已上传至 R2 `gateway/`。
 
 | 项 | 结果 |
 | --- | --- |
 | `telysta-console` | Version `fe6f1aa2-ac9a-4410-a000-eb6f7e564a52`；路由 `/console*`、`/telysta-console*` |
-| `telysta-library-gateway` | Version `b10ae1fc-1a6d-44e0-add6-9ac20e7b873f`；自定义域 `library-files.telysta.com`、`library-gateway.telysta.com`；`CATALOG_KEY` 指向新摘要；Service Binding `AUTH_SERVICE → telysta-console#AuthService` |
+| `telysta-library-gateway` | Version `92846b1f-09ef-4614-bab3-ac3c2f647b6c`（此前 `b10ae1fc`）；自定义域 `library-files.telysta.com`、`library-gateway.telysta.com`；`CATALOG_KEY` 指向新摘要；Service Binding `AUTH_SERVICE → telysta-console#AuthService` |
 | D1 增量迁移 | `wrangler d1 migrations list telysta-console --remote` 返回 No migrations to apply，未重复执行 0004/0005 |
 | 单元测试 | 网关 4 项、控制台 31 项通过（Node 24.22.3） |
 
@@ -231,4 +231,6 @@ DeepSeek Harness本轮目录边界审查超时，没有完成报告；已完成�
 
 **未验证**：登录后访问受保护对象的 200／206 需要真实账户会话，本轮没有用账号执行，因此不把受保护下载链路描述为端到端验收。网关已不提供 `/api/unlock`、`/api/lock`（返回 405），解锁改由 Console 登录后经 `AuthService.session()` 判定 `restricted`。
 
-**仍待完成**：站点页面由 Git 构建产生，本次改动尚未提交与推送；`/ebooks/` 的静态书目与搜索索引仍为发布前的 632 条，8 本新书在页面上出现需要下一次站点构建。
+**站点构建（2026-11-16 18:00）**：`0555978..1345987` 已推送，Cloudflare Pages 重建完成。线上 `search-index.json` 638 册；`/ebooks/booklists/J238/` 匿名仅 3 本公开图鉴、无受保护标题；`/ebooks/WEISERb9b1b130353a/` 为《日本の貧困女子》详情页；`/ebooks/WEISER2c9bb8942cfd/` 为「受保护书籍」占位页（此前缺失页面被回落到首页）；`/console/` 200。
+
+65 册漫画的封面由 EPUB 前 8 张内页取面积最大者生成，320×480 WebP，写入 `.library-private/catalog/J.json`；封面对象与书文件同受 `access: protected` 约束，匿名请求返回 401。
