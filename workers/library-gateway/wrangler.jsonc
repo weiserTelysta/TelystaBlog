@@ -9,7 +9,7 @@
   ],
   "workers_dev": false,
   "vars": {
-    "CATALOG_KEY": "gateway/catalog-12d420d0431b5f75d922427491d85dde27876fa81168c2be66ac849ccb6234a2.json",
+    "CATALOG_KEY": "gateway/catalog-cf24dfcdae4a560b32b474a72df27c842323527ce207bfb69af7f9131941bf6d.json",
     "ALLOWED_ORIGINS": "https://telysta.com"
   },
   "r2_buckets": [
