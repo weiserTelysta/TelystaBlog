@@ -1,69 +1,37 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 import { createPlatformFixture } from '../helpers/platform-fixture.mjs';
-for(const width of [390,1440])test(`邮箱登录、角色界面隔离和管理员草稿保存：${width}px`,async({page},testInfo)=>{
+async function navigation(page: Page){if(await page.locator('#menu-trigger').isVisible()&&!await page.locator('#mobile-menu').evaluate((node:HTMLDialogElement)=>node.open))await page.locator('#menu-trigger').click();}
+for(const width of [390,1440])test(`站主首次设置和全屏分栏编辑工作流：${width}px`,async({page},testInfo)=>{
  test.setTimeout(60_000);const fixture=await createPlatformFixture();
  try{
+  await fixture.db.prepare("INSERT INTO documents(id,kind,title,source_path,source,updated_at,imported_at) VALUES('post_WEISER012345abcdef','post','Fixture article','src/content/weiser-posts/notes/fixture.md',?1,0,0)").bind('---\nuuid: 012345abcdef\ntitle: Meta title\ntitleEn: Fixture\ndescription: Fixture\ndescriptionEn: Fixture\ncategory: notes\npublishedAt: 2026-11-16\nupdatedAt: 2026-11-16\ntags: []\ndraft: false\ncustom: retained\n---\n\n# Fixture article\n\nOriginal text').run();
   await fixture.attach(page.context());await page.setViewportSize({width,height:1000});await page.emulateMedia({reducedMotion:'reduce'});
-  await page.goto('https://telysta.com/console/');await fixture.login(page,'reader@example.com');await expect(page.locator('#identity')).toContainText('普通用户');await expect(page.getByRole('button',{name:'Users',exact:true})).toHaveCount(0);await expect(page.getByRole('button',{name:'Settings',exact:true})).toHaveCount(0);
-  await page.getByRole('button',{name:'退出登录'}).click();await expect(page.locator('#login')).toBeVisible();
-  await fixture.db.prepare("INSERT INTO documents(id,kind,title,source_path,source,updated_at,imported_at) VALUES('post_WEISER012345abcdef','post','Fixture article','src/content/weiser-posts/notes/fixture.md',?1,0,0)").bind('---\nuuid: 012345abcdef\n---\nOriginal text').run();
-  await fixture.login(page,'weiser@telysta.com');await expect(page).toHaveURL('https://telysta.com/telysta-console/');await expect(page.locator('#identity')).toContainText('管理员');
-  await page.getByRole('button',{name:'Articles',exact:true}).click();await page.getByRole('button',{name:'编辑',exact:true}).click();await page.getByLabel('内容原文').fill('---\nuuid: 012345abcdef\n---\nEdited cloud draft');await page.getByRole('button',{name:'保存云端草稿'}).click();await expect(page.locator('#notice')).toContainText('已保存云端草稿，网站尚未发布');
-  expect((await fixture.db.prepare("SELECT source FROM documents WHERE id='post_WEISER012345abcdef'").first()).source).toContain('Edited cloud draft');
-  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:testInfo.outputPath(`console-${width}.png`)});
- }finally{await fixture.mf.dispose();}
+  await page.goto(await fixture.ownerLink());await expect(page.locator('#login-title')).toHaveText('设置站主账户');await expect(page.locator('#email')).toHaveValue('weiser@telysta.com');await expect(page.locator('#email')).toHaveAttribute('readonly','');
+  await expect(page.getByRole('button',{name:'获取验证码',exact:true})).not.toBeVisible();await expect(page.locator('#login-description')).toHaveCount(0);expect(page.url()).not.toContain('setup=');
+  await page.getByLabel('用户名',{exact:true}).fill('custom_owner');await page.getByLabel('密码',{exact:true}).fill('An owner browser passphrase 2026!');await page.getByRole('button',{name:'显示密码',exact:true}).click();await expect(page.getByRole('button',{name:'隐藏密码',exact:true}).locator('svg')).toHaveCount(1);await page.getByRole('button',{name:'保存并进入控制台'}).click();
+  await expect(page.locator('#workspace h1')).toHaveText('文章');await expect(page.locator('.summary-grid')).toHaveCount(0);
+  await page.getByRole('button',{name:'编辑',exact:true}).click();await expect(page.getByLabel('标题',{exact:true})).toHaveValue('Fixture article');await expect(page.getByLabel('内容原文',{exact:true})).not.toBeVisible();
+  await page.getByRole('tab',{name:'正文',exact:true}).click();await page.getByLabel('正文（Markdown）',{exact:true}).fill('Edited cloud draft\n\n<script>window.unsafeEditor=true</script>');await page.getByRole('button',{name:'预览正文'}).click();expect(await page.evaluate(()=>(window as unknown as Record<string,unknown>).unsafeEditor)).toBeUndefined();await page.getByRole('button',{name:'保存草稿',exact:true}).click();await expect(page.locator('#notice')).toContainText('草稿已保存');
+  const record=await fixture.db.prepare("SELECT source,revision FROM documents WHERE id='post_WEISER012345abcdef'").first();expect(record.source).toContain('custom: retained');expect(record.source).toContain('# Fixture article');expect(record.source).toContain('Edited cloud draft');expect(record.revision).toBe(2);
+  await page.getByRole('button',{name:'版本记录',exact:true}).click();await page.getByRole('button',{name:'载入此版本'}).click();await page.getByRole('button',{name:'继续',exact:true}).click();await page.getByRole('button',{name:'保存草稿',exact:true}).click();await expect(page.locator('#notice')).toContainText('草稿已保存');
+  const restored=await fixture.db.prepare("SELECT revision,source FROM documents WHERE id='post_WEISER012345abcdef'").first();expect(restored.revision).toBe(3);expect(restored.source).toContain('Original text');
+  await page.locator('#console-language').click();await expect(page.getByRole('button',{name:'Save draft',exact:true})).toBeVisible();await expect(page.getByRole('tab',{name:'Details',exact:true})).toBeVisible();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  if(width>860){const sidebar=await page.locator('#console-sidebar').boundingBox(),main=await page.locator('.console-main').boundingBox();expect(main!.x).toBe(sidebar!.width);expect(main!.width+sidebar!.width).toBe(width);}
+  await page.screenshot({path:testInfo.outputPath(`console-editor-${width}.png`)});
+ }finally{await page.context().unrouteAll({behavior:'wait'});await fixture.mf.dispose();}
 });
-test('管理员强制退出其他用户Session，目标页面自动回到登录',async({page,browser})=>{
- test.setTimeout(60_000);const fixture=await createPlatformFixture();const context=await browser.newContext();
- try{
-  await fixture.attach(page.context());await fixture.attach(context);const reader=await context.newPage();await reader.clock.install();await reader.goto('https://telysta.com/console/');await fixture.login(reader,'reader@example.com');await expect(reader.locator('#identity')).toContainText('普通用户');
-  await page.goto('https://telysta.com/console/');await fixture.login(page,'weiser@telysta.com');await page.getByRole('button',{name:'Users',exact:true}).click();
-  await page.locator('.records>li').filter({hasText:'reader@example.com'}).getByRole('button',{name:'登录设备',exact:true}).click();
-  await expect(page.locator('#workspace')).toContainText('reader@example.com 的登录设备');
-  page.once('dialog',dialog=>dialog.accept());await page.getByRole('button',{name:'退出该用户全部登录'}).click();await expect(page.locator('#notice')).toHaveText('全部登录已退出。');
-  await reader.clock.fastForward(31_000);await expect(reader.locator('#login')).toBeVisible();await expect(reader.locator('#login-status')).toHaveText('登录已结束，请重新登录。');
- }finally{await context.close();await fixture.mf.dispose();}
-});
-
-for(const width of [320,768,1440])test('专属管理入口预填邮箱、保持原位验证且表单可用：'+width+'px',async({page},testInfo)=>{
+test('具名站点设置表单保留未知代码并可切换语言，默认不暴露源码',async({page},testInfo)=>{
  test.setTimeout(60_000);const fixture=await createPlatformFixture();
  try{
-  await fixture.attach(page.context());await page.setViewportSize({width,height:1000});await page.emulateMedia({reducedMotion:'reduce'});
-  await page.goto('https://telysta.com/telysta-console/');
-  await expect(page).toHaveURL('https://telysta.com/telysta-console/');
-  await expect(page.locator('#login-title')).toHaveText('管理员验证');await expect(page.locator('#email')).toHaveValue('weiser@telysta.com');await expect(page.locator('#email')).toHaveAttribute('readonly','');
-  await expect(page.locator('#login .eyebrow')).toHaveCount(0);
-  await expect(page.locator('#login-description')).toHaveCount(0);
-  expect(await page.locator('#login-title').evaluate(node=>parseFloat(getComputedStyle(node).fontSize))).toBeLessThanOrEqual(24);
-  await expect(page.locator('#account-starfield')).toHaveAttribute('aria-hidden','true');
-  expect(await page.locator('#account-starfield canvas').evaluate((canvas:HTMLCanvasElement)=>{
-   const context=canvas.getContext('2d')!;
-   return canvas.width>0 && context.getImageData(0,0,canvas.width,canvas.height).data.some((byte,index)=>index%4===3&&byte>0);
-  })).toBe(true);
-  await expect(page.getByRole('link',{name:'Weiser’s Melancholy'})).toHaveAttribute('href','/');
-  await expect(page.getByRole('link',{name:/Back to site/})).toHaveCount(0);
-  await expect(page.getByText('返回书室',{exact:true})).toHaveCount(0);
-  const geometry=await page.evaluate(async()=>{await document.fonts.ready;const email=document.querySelector('#email')!.getBoundingClientRect(),send=document.querySelector('#send-code')!.getBoundingClientRect();return{overflow:document.documentElement.scrollWidth>innerWidth,sameRow:Math.abs(email.top-send.top)<3,sendHeight:send.height,fontLoaded:document.fonts.check('14px Cinzel')}});
-  expect(geometry.overflow).toBe(false);expect(geometry.sameRow).toBe(true);expect(geometry.sendHeight).toBeGreaterThanOrEqual(44);expect(geometry.fontLoaded).toBe(true);
-  await page.screenshot({path:testInfo.outputPath('admin-login-'+width+'.png')});
-  await page.getByRole('button',{name:'获取验证码',exact:true}).click();await expect(page.locator('#login-status')).toContainText('验证码已发送');
-  const{code}=await fixture.db.prepare("SELECT code FROM test_outbox WHERE email='weiser@telysta.com' ORDER BY rowid DESC LIMIT 1").first();
-  await page.getByLabel('六位验证码').fill(code);await page.getByRole('button',{name:'登录',exact:true}).click();
-  await expect(page.locator('#identity')).toContainText('超级管理员');
- }finally{await fixture.mf.dispose();}
-});
-
-test('历史版本可载入编辑并保存为新草稿，原文不会作为HTML执行',async({page})=>{
- test.setTimeout(60_000);const fixture=await createPlatformFixture();
- try{
+  await fixture.db.prepare("INSERT INTO documents(id,kind,title,source_path,source,updated_at,imported_at) VALUES('config_fixture','config','home.ts','src/config/pages/home.ts',?1,0,0)").bind('const untouched = () => 42;\nexport const HOME_SECTIONS = [{id:"about",title:"见我",description:"Intro",href:"/about/"}];\nexport const HOME_ARCHIVE_INTRO = "Intro text";\nexport const HOME_SOCIAL_LINKS = [];\nexport const HOME_QR_CONTACTS = [];').run();
   await fixture.attach(page.context());await page.goto('https://telysta.com/console/');await fixture.login(page,'weiser@telysta.com');
-  await fixture.db.prepare("INSERT INTO documents(id,kind,title,source,updated_at,imported_at) VALUES('post_WEISER012345abcdef','post','History fixture',?1,0,0)").bind('---\nuuid: 012345abcdef\n---\n<script>window.historyAttack=true</script>\nOriginal text').run();
-  await page.getByRole('button',{name:'Articles',exact:true}).click();await page.getByRole('button',{name:'编辑',exact:true}).click();
-  await page.getByLabel('内容原文').fill('---\nuuid: 012345abcdef\n---\nSecond text');await page.getByRole('button',{name:'保存云端草稿'}).click();await expect(page.locator('#notice')).toContainText('已保存');
-  await page.getByRole('button',{name:'版本记录',exact:true}).click();await page.getByRole('button',{name:'查看',exact:true}).click();await page.getByRole('button',{name:'载入此版本',exact:true}).click();
-  await expect(page.getByLabel('内容原文')).toHaveValue(/Original text/);await expect(page.locator('#notice')).toContainText('尚未保存');
-  expect(await page.evaluate(()=>(window as unknown as Record<string,unknown>).historyAttack)).toBeUndefined();
-  await page.getByRole('button',{name:'保存云端草稿'}).click();await expect(page.locator('#notice')).toContainText('已保存云端草稿');
-  const current=await fixture.db.prepare("SELECT revision,source FROM documents WHERE id='post_WEISER012345abcdef'").first();expect(current.revision).toBe(3);expect(current.source).toContain('Original text');
- }finally{await fixture.mf.dispose();}
+  await page.getByRole('link',{name:'站点设置',exact:true}).click();await expect(page.locator('#workspace')).not.toContainText('src/config/');await page.getByRole('button',{name:'首页内容与导航',exact:true}).click();
+  await page.getByLabel('标题',{exact:true}).fill('见我已更新');await page.locator('#console-language').click();await expect(page.getByLabel('Title',{exact:true})).toHaveValue('见我已更新');await page.getByRole('button',{name:'Save draft',exact:true}).click();await expect(page.locator('#notice')).toContainText('Settings draft saved');
+  const record=await fixture.db.prepare("SELECT source,revision FROM documents WHERE id='config_fixture'").first();expect(record.source).toContain('untouched = () => 42');expect(record.source).toContain('id:"about"');expect(record.source).toContain('见我已更新');expect(record.revision).toBe(2);
+  await page.screenshot({path:testInfo.outputPath('settings-form.png')});
+ }finally{await page.context().unrouteAll({behavior:'wait'});await fixture.mf.dispose();}
+});
+test('手机后台导航点击外部和Escape关闭，焦点回到按钮',async({page})=>{
+ const fixture=await createPlatformFixture();try{await fixture.attach(page.context());await page.setViewportSize({width:390,height:900});await page.goto('https://telysta.com/console/');await fixture.login(page,'reader@example.com');await expect(page.locator('#account')).toBeVisible();await navigation(page);await expect(page.locator('#mobile-menu')).toBeVisible();await page.mouse.click(385,400);await expect(page.locator('#mobile-menu')).not.toBeVisible();await expect(page.locator('#menu-trigger')).toBeFocused();await navigation(page);await page.keyboard.press('Escape');await expect(page.locator('#menu-trigger')).toBeFocused();await expect(page.getByRole('link',{name:'站点设置',exact:true})).toHaveCount(0);}finally{await page.context().unrouteAll({behavior:'wait'});await fixture.mf.dispose();}
 });

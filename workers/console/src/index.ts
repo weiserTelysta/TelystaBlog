@@ -47,7 +47,7 @@ export default {
   }
   const headers = new Headers(response.headers);
   headers.set('X-Content-Type-Options','nosniff'); headers.set('Referrer-Policy','no-referrer');
-  headers.set('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+  headers.set('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://assets.telysta.com https://library-files.telysta.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
   headers.set('X-Frame-Options','DENY'); headers.set('Permissions-Policy','camera=(), microphone=(), geolocation=()');
   headers.set('X-Robots-Tag','noindex, nofollow, noarchive');
   if (url.pathname.startsWith('/api/')) headers.set('Cache-Control','no-store');

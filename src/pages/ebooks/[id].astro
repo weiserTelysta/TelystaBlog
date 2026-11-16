@@ -1,12 +1,13 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import CloudComments from '../../components/CloudComments.astro';
 import { EBOOK_PAGE_CONFIG as copy } from '../../config/pages/ebooks';
 import { SITE_CONFIG } from '../../config/site';
 import { getPublishedEbookEntries } from '../../lib/ebooks/ebooks';
 import '../../styles/ebooks.scss';
 import ProtectedBookView from '../../components/ebooks/ProtectedBookView.astro';
-import { readerHref } from '../../lib/ebooks/protectedBookClient';
+import { readingLink } from '../../lib/ebooks/readerLinks';
 export async function getStaticPaths() {
 	return (await getPublishedEbookEntries({ includeProtected: true })).map(entry => ({ params: { id: entry.data.id }, props: { entry } }));
 }
@@ -29,11 +30,12 @@ const book = entry.data;
 					{book.clcCode && <><dt>分类</dt><dd>{book.clcCode} · {book.clcName}</dd></>}
 				</dl>
 				{book.authorStatus === 'partial-collection' && <p class="ebook-card__authors">合集含多位作者，此处列出已核实的署名。</p>}
-				<div class="ebook-reading-links">{book.files.filter(file => ['EPUB', 'PDF'].includes(file.format)).map(file => <a href={readerHref(book.id, file.format)}>在线阅读 {file.format}</a>)}</div>
+				<div class="ebook-reading-links">{book.files.map(file => { const link = readingLink(book.id, file); return <a href={link.href} target={link.target} rel={link.rel}>{link.label}</a>; })}</div>
 				<h2>{copy.downloadLabel}</h2>
 				<ul class="ebook-formats">{book.files.map(file => <li><a href={`${file.href}?download=1`} target="_blank" rel="noopener noreferrer" download aria-label={`下载 ${book.title}（${file.format}）`}>{file.format}{file.bytes ? ` · ${(file.bytes / 1024 / 1024).toFixed(1)} MB` : ''}</a></li>)}</ul>
 			</div>
 		</div>}
 		{book.notes && <section class="prose ebook-body"><h2>书籍介绍</h2><p>{book.notes}</p></section>}
+		<CloudComments kind="ebook" id={book.id} restricted={book.access === 'protected'} />
 	</main>
 </Layout>

@@ -11,13 +11,18 @@
     "assets": "node scripts/prepare-assets.mjs"
   },
   "devDependencies": {
+    "@types/node": "22.20.1",
+    "esbuild": "0.28.2",
     "subset-font": "2.9.0",
     "typescript": "6.0.3",
-    "wrangler": "4.162.0",
-    "esbuild": "0.28.2",
-    "@types/node": "22.20.1"
+    "wrangler": "4.162.0"
   },
   "dependencies": {
+    "@babel/parser": "8.1.2",
+    "dompurify": "3.4.18",
+    "marked": "18.2.0",
+    "mdast-util-from-markdown": "2.0.2",
+    "mdast-util-to-string": "4.0.0",
     "yaml": "2.9.0"
   }
 }

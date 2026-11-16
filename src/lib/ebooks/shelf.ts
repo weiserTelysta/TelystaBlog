@@ -1,4 +1,14 @@
 import { EBOOKS_PAGE_SIZE, LIBRARY_CLASSES } from '../../config/library';
+import { normalizeEbookTitle } from './metadata';
+
+const shelfCollator = new Intl.Collator('zh-CN');
+/** Public build output and authenticated catalogues must have the same total order. */
+export function compareShelfBooks(a: { id: string; title: string }, b: { id: string; title: string }) {
+	return shelfCollator.compare(normalizeEbookTitle(a.title), normalizeEbookTitle(b.title)) || a.id.localeCompare(b.id, 'en');
+}
+export function sortShelfBooks<T extends { id: string; title: string }>(books: readonly T[]): T[] {
+	return [...books].sort(compareShelfBooks);
+}
 
 type ShelfBook = { clcCode?: string; clcName?: string; categoryOnly?: boolean; access?: string };
 export function booksInCategory<T extends ShelfBook>(books: T[], category?: string, booklist?: string, unlocked = false): T[] {

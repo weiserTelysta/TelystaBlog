@@ -1083,6 +1083,32 @@
           "access": "public"
         }
       ]
+    },
+    {
+      "clcCode": "K543",
+      "clcName": "南斯拉夫",
+      "books": [
+        {
+          "id": "WEISERa2e36237fda8",
+          "title": "南斯拉夫兴亡",
+          "authors": [
+            "马细谱"
+          ],
+          "authorStatus": "verified",
+          "description": "《南斯拉夫兴亡》；马细谱。南斯拉夫，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K5%20%E6%AC%A7%E6%B4%B2/K543%20%E5%8D%97%E6%96%AF%E6%8B%89%E5%A4%AB/%E5%8D%97%E6%96%AF%E6%8B%89%E5%A4%AB%E5%85%B4%E4%BA%A1.mobi",
+              "bytes": 366824
+            }
+          ],
+          "draft": false,
+          "language": "zh",
+          "publishedAt": "2026-11-14",
+          "access": "public"
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,7 @@
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import fs from 'node:fs/promises';
+import {createHash,randomBytes} from 'node:crypto';
 const require=createRequire(path.resolve('workers/console/package.json'));
 const {Miniflare,convertV4MiniflareOptions}=require('miniflare');
 export async function createPlatformFixture(){
@@ -13,30 +14,25 @@ export async function createPlatformFixture(){
  for(const name of (await fs.readdir('workers/console/migrations')).filter(name=>name.endsWith('.sql')).sort())await db.exec((await fs.readFile(path.resolve('workers/console/migrations',name),'utf8')).replace(/^\s*--.*$/gm,'').replace(/\n/g,' '));
  await db.exec('CREATE TABLE test_outbox(email TEXT,code TEXT)');
  return{mf,db,async attach(context){
-  const consoleWorker=await mf.getWorker('console-fixture'),libraryWorker=await mf.getWorker('library-fixture');
-  const handle=worker=>async route=>{const req=route.request();const response=await mf.dispatchFetch(req.url(),{method:req.method(),headers:await req.allHeaders(),body:req.postDataBuffer()||undefined});await route.fulfill({status:response.status,headers:Object.fromEntries(response.headers),body:Buffer.from(await response.arrayBuffer())});};
-  await context.route('https://telysta.com/**',async route=>{const url=new URL(route.request().url());if(/^\/(?:telysta-)?console(?:\/|$)/.test(url.pathname)){await handle(consoleWorker)(route);return;}const response=await route.fetch({url:'http://127.0.0.1:4322'+url.pathname+url.search});await route.fulfill({response});});
-  await context.route('https://library-files.telysta.com/**',handle(libraryWorker));
+  const handle=async route=>{const req=route.request();const response=await mf.dispatchFetch(req.url(),{method:req.method(),headers:await req.allHeaders(),body:req.postDataBuffer()||undefined});await route.fulfill({status:response.status,headers:Object.fromEntries(response.headers),body:Buffer.from(await response.arrayBuffer())});};
+  await context.route('https://telysta.com/**',async route=>{const url=new URL(route.request().url());if(/^\/(?:telysta-)?console(?:\/|$)/.test(url.pathname)){await handle(route);return;}const response=await route.fetch({url:'http://127.0.0.1:4322'+url.pathname+url.search});await route.fulfill({response});});
+  await context.route('https://library-files.telysta.com/**',handle);
+ },async ownerLink(){
+  const token=randomBytes(32).toString('hex');await db.prepare("INSERT INTO owner_initialization(id,token_hash,expires_at) VALUES('owner',?1,?2) ON CONFLICT(id) DO UPDATE SET token_hash=excluded.token_hash,expires_at=excluded.expires_at,used_at=NULL").bind(createHash('sha256').update(token).digest('hex'),Math.floor(Date.now()/1000)+300).run();return 'https://telysta.com/telysta-console/#setup='+token;
  },async login(page,email){
   const password='Browser fixture library passphrase 2026!';
   const existing=await db.prepare('SELECT password_hash FROM users WHERE email=?1').bind(email).first();
   const owner=email==='weiser@telysta.com';
-  if(!owner&&!existing){
-   await page.getByRole('link',{name:'创建账户',exact:true}).click();
-   await page.getByLabel('用户名',{exact:true}).fill('reader_'+crypto.randomUUID().replaceAll('-','').slice(0,12));
-   await page.getByLabel('邮箱',{exact:true}).fill(email);await page.getByLabel('密码',{exact:true}).fill(password);
-  }else if(!owner&&existing.password_hash){
-   await page.getByLabel('用户名或邮箱').fill(email);await page.getByLabel('密码',{exact:true}).fill(password);
-   await page.getByRole('button',{name:'登录',exact:true}).click();return;
-  }else if(!await page.locator('#email').isVisible()){
-   await page.getByRole('link',{name:'旧账户／站主邮箱验证',exact:true}).click();
+  if(owner&&!existing?.password_hash){
+   const token=randomBytes(32).toString('hex');await db.prepare("INSERT INTO owner_initialization(id,token_hash,expires_at) VALUES('owner',?1,?2) ON CONFLICT(id) DO UPDATE SET token_hash=excluded.token_hash,expires_at=excluded.expires_at,used_at=NULL").bind(createHash('sha256').update(token).digest('hex'),Math.floor(Date.now()/1000)+300).run();
+   await page.goto('https://telysta.com/telysta-console/#setup='+token);await page.getByLabel('用户名',{exact:true}).fill('telysta');await page.getByLabel('密码',{exact:true}).fill(password);await page.getByRole('button',{name:'保存并进入控制台'}).click();return;
   }
-  if(await page.locator('#email').getAttribute('readonly')===null)await page.getByLabel('邮箱',{exact:true}).fill(email);await page.getByRole('button',{name:'获取验证码',exact:true}).click();
+  if(existing?.password_hash){await page.getByLabel('用户名或邮箱').fill(email);await page.getByLabel('密码',{exact:true}).fill(password);await page.getByRole('button',{name:'登录',exact:true}).click();return;}
+  await page.goto('https://telysta.com/console/?view='+(existing?'reset':'register'));
+  if(!existing)await page.getByLabel('用户名',{exact:true}).fill('reader_'+randomBytes(6).toString('hex'));
+  await page.getByLabel('邮箱',{exact:true}).fill(email);await page.getByLabel('密码',{exact:true}).fill(password);await page.getByRole('button',{name:'获取验证码',exact:true}).click();
   await page.locator('#login-status').getByText('验证码已发送，五分钟内有效。').waitFor();
-  const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1 ORDER BY rowid DESC LIMIT 1').bind(email).first();
-  await page.getByLabel('六位验证码').fill(code);
-  await page.locator('#sign-in').click();
-  if(!owner&&existing&&!existing.password_hash)await page.getByRole('button',{name:'稍后设置',exact:true}).click();
-
+  const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1 ORDER BY rowid DESC LIMIT 1').bind(email).first();await page.getByLabel('六位验证码').fill(code);await page.locator('#sign-in').click();
+  if(existing){await page.getByLabel('用户名',{exact:true}).fill('reader_'+randomBytes(6).toString('hex'));await page.locator('#sign-in').click();await page.locator('#identifier').waitFor();await page.getByLabel('密码',{exact:true}).fill(password);await page.getByRole('button',{name:'登录',exact:true}).click();}
  }};
 }

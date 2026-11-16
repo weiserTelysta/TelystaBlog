@@ -33,9 +33,9 @@ export async function checkChallenge(env: ConsoleEnv, email: string, code: unkno
 // A successful check alone does not consume proof or authorize a later unguarded write.
 export const liveChallenge = "EXISTS(SELECT 1 FROM email_codes WHERE email=?1 AND challenge_id=?2 AND purpose=?3 AND used_at IS NULL AND attempts<=5 AND expires_at>?4)";
 export async function sendChallenge(request: Request, env: ConsoleEnv, input: Record<string, unknown>, adminEntry: boolean) {
- const email = normalizeEmail(input.email), purpose = input.purpose ?? 'login';
+ const email = normalizeEmail(input.email), purpose = input.purpose ?? 'register';
  if (!email) throw new HttpError(400, '请输入有效邮箱。', 'EMAIL_INVALID', 'email');
- if (!['login','register','reset'].includes(String(purpose))) throw new HttpError(400, '验证用途无效。');
+ if (!['register','reset'].includes(String(purpose))) throw new HttpError(400, '验证用途无效。');
  if (adminEntry && email !== ADMIN_EMAIL) throw new HttpError(403, '请使用站主邮箱验证。');
  if (!env.SMTP_PASSWORD) throw new HttpError(503, '邮件服务暂未就绪。');
  const now = nowSeconds(), code = otp(), challenge = crypto.randomUUID();

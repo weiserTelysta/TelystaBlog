@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import ArticleAside from '../../components/article/ArticleAside.astro';
 import ArticleComments from '../../components/article/ArticleComments.astro';
+import CloudComments from '../../components/CloudComments.astro';
 import ArticleHeader from '../../components/article/ArticleHeader.astro';
 import ArticleSeriesNav from '../../components/article/ArticleSeriesNav.astro';
 import Layout from '../../layouts/Layout.astro';
@@ -73,7 +74,8 @@ const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 
 				<ArticleSeriesNav series={series} postCount={seriesPostCount} navigation={navigation} />
 
-				<ArticleComments commentId={entry.data.commentId ?? entry.id} />
+				<CloudComments kind="post" id={`WEISER${entry.data.uuid}`} />
+				<details class="legacy-comments"><summary>历史评论（GitHub）</summary><ArticleComments commentId={entry.data.commentId ?? entry.id} /></details>
 			</div>
 
 			{hasToc && <ArticleAside headings={tocHeadings} />}

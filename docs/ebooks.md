@@ -39,7 +39,7 @@ npm run library:access -- --id WEISERxxxxxxxxxxxx --access protected
 
 普通账户只能浏览公开内容；正式／超级／管理员可以展示、下载和阅览受保护内容。首页头像进入 `/console/`，原公共密码锁由[账户系统](console.md)替代。受保护条目在授权后可参与全部藏书、分类、Booklist与搜索。
 
-详情提供PDF／EPUB在线阅读。PDF使用浏览器查看器和Range，EPUB按需加载、清理HTML并使用禁止脚本的iframe；正文不会在书架预加载。MOBI／AZW3供下载。退出登录会清除页面中的受保护内容并停止阅览，服务器仍独立检查每次文件请求。
+PDF在新标签页使用浏览器查看器并保留Range。EPUB／MOBI／AZW3按需载入整窗阅读器，宽屏双页、窄屏单页，支持点击左右半区、键盘和滚轮翻页。目录停靠侧边，关闭头固定；手机外部点击及Escape关闭。书内HTML清理、CSP及无脚本iframe同时启用，正文不在书架预加载。退出登录会清除页面中的受保护内容并停止阅览，服务器仍独立检查每次文件请求。
 
 ## R2与发布
 

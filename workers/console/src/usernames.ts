@@ -6,7 +6,7 @@ export function usernameInput(value: unknown, email?: string): string {
  if (typeof value !== 'string') throw new HttpError(400, '请输入用户名。', 'USERNAME_INVALID', 'username');
  const username = value.trim().toLowerCase();
  if (!/^[a-z][a-z0-9_-]{2,23}$/.test(username)) throw new HttpError(400, '用户名须以字母开头，使用3–24位字母、数字、下划线或短横线。', 'USERNAME_INVALID', 'username');
- if (reserved.has(username) && !(email === ADMIN_EMAIL && username === 'weiser')) throw new HttpError(409, '这个用户名不可使用，请换一个。', 'USERNAME_TAKEN', 'username');
+ if (reserved.has(username) && !(email === ADMIN_EMAIL && ['telysta','weiser'].includes(username))) throw new HttpError(409, '这个用户名不可使用，请换一个。', 'USERNAME_TAKEN', 'username');
  return username;
 }
 export function displayNameInput(value: unknown): string {

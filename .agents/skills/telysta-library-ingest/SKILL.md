@@ -49,7 +49,7 @@ description: 为 Telysta 书室添加或修订电子书，核对书目与中图�
 - 书架与详情：`src/components/ebooks/`、`src/pages/ebooks/`；常规加书修改数据，不逐书修改组件或路由。
 - 本地盘点、证据与完整性：`scripts/library-catalog.py`、`data/library/author-overrides.json`。
 - 封面与初始网页记录：`scripts/prepare-library-books.py`；生成到 `.tmp/` 后审查，再加入正式书目。
-- 访问控制与阅览：`workers/library-gateway/`、`src/lib/ebooks/libraryAccess.ts`、`src/pages/ebooks/read.astro`；PDF由浏览器内嵌，EPUB按需加载并禁用书内脚本。
+- 访问控制与阅览：`workers/library-gateway/`、`src/lib/ebooks/libraryAccess.ts`、`src/pages/ebooks/read.astro`；PDF新标签页交给浏览器阅览并保留鉴权与Range；EPUB／MOBI／AZW3按需加载并禁用书内脚本，保留原文件。
 - Worker书目准备：`npm run library:gateway:prepare -- --scope <已核验全量ID数组JSON>`，读取公开JSON和本地私有JSON，生成忽略于Git的服务端catalog；名单包含继续服务的旧书与获准新增书，部署前必须运行，缺少名单或完整私有书目时停止部署。
 - `categoryOnly` 仅为发现方式，不是访问锁；解锁后的受保护条目可进入全部藏书、分类及搜索。原有 `data/library/presentation-overrides.json` 只用于离线准备旧书目，日常以分类JSON为准。
 

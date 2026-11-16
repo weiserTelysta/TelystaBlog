@@ -1,5 +1,6 @@
 import { checkLibrarySession, getLibraryCatalog, isLibraryUnlocked } from './libraryAccess';
-export function readerHref(id: string, format: string) { return `/ebooks/read/?book=${encodeURIComponent(id)}&format=${encodeURIComponent(format)}`; }
+import { readingLink } from './readerLinks';
+export { readerHref } from './readerLinks';
 export function initProtectedBookView() {
 	const root = document.querySelector<HTMLElement>('[data-library-book]'); if (!root) return;
 	const content = root.querySelector<HTMLElement>('[data-book-content]')!, state = root.querySelector<HTMLElement>('[data-book-state]')!, unlock = root.querySelector<HTMLElement>('[data-library-access-help]')!;
@@ -25,7 +26,11 @@ export function initProtectedBookView() {
 			const files = el('ul', '', 'ebook-formats');
 			for (const file of book.files) { const li = el('li'), a = el('a', `${file.format}${file.bytes ? ` · ${(file.bytes / 1048576).toFixed(1)} MB` : ''}`); a.href = file.href + (file.href.includes('?') ? '&' : '?') + 'download=1'; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.setAttribute('aria-label', `下载 ${book.title}（${file.format}）`); li.append(a); files.append(li); }
 			const reading = el('div', '', 'ebook-reading-links');
-			for (const file of book.files.filter(file => ['EPUB', 'PDF'].includes(file.format))) { const a = el('a', `在线阅读 ${file.format}`); a.href = readerHref(book.id, file.format); reading.append(a); }
+			for (const file of book.files) {
+				const link = readingLink(book.id, file), a = el('a', link.label); a.href = link.href;
+				if (link.target) { a.target = link.target; a.rel = link.rel; }
+				reading.append(a);
+			}
 			copy.append(header, list, reading, el('h2', '下载'), files); detail.append(copy); content.append(detail);
 			content.hidden = false; state.hidden = true; unlock.hidden = true; lockedTitle.hidden = true;
 		} catch { if (request === revision) state.textContent = '书目暂时无法加载，请稍后重试。'; }

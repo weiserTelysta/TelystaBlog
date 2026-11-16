@@ -1,0 +1,21 @@
+---
+import '../styles/comments.scss';
+type Props = { kind: 'post' | 'ebook'; id: string; restricted?: boolean };
+const { kind, id, restricted = false } = Astro.props;
+---
+<section class="cloud-comments" data-cloud-comments data-thread-kind={kind} data-thread-id={id} data-restricted={restricted ? 'true' : undefined} aria-label="讨论" hidden={restricted}>
+ <div class="cloud-comments__head"><h2 data-comments-heading>讨论</h2><button type="button" data-comments-refresh>刷新</button></div>
+ <p class="cloud-comments__status" role="status" aria-live="polite" data-comments-status>正在读取讨论…</p>
+ <div class="cloud-comments__list" data-comments-list></div>
+ <button class="cloud-comments__more" type="button" data-comments-more hidden>更早的讨论</button>
+ <form class="cloud-comments__composer" data-comments-form hidden>
+  <div class="cloud-comments__compose-head"><label data-comments-label>写下你的想法</label><span data-comments-reply></span></div>
+  <textarea data-comments-input maxlength="4000" rows="4" required aria-label="评论内容" placeholder="分享阅读感受或提出问题…"></textarea>
+  <div class="cloud-comments__actions"><span data-comments-identity></span><span data-comments-count>0 / 4000</span><button type="button" data-comments-cancel hidden>取消回复</button><button type="submit" data-comments-submit>发表评论</button></div>
+ </form>
+ <noscript>启用 JavaScript 后可以读取此处的讨论。</noscript>
+</section>
+<script>
+ import { initCloudComments } from '../lib/commentsClient';
+ initCloudComments();
+</script>

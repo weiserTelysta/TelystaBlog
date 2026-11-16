@@ -87,6 +87,10 @@ export default {
       }
       headers.set('Content-Length', String(range ? range.length : head.size));
       if (url.searchParams.get('download') === '1') headers.set('Content-Disposition', `attachment; filename*=UTF-8''${encodeURIComponent(key.split('/').at(-1)!)}`);
+      else if (key.toLowerCase().endsWith('.pdf')) {
+        headers.set('Content-Type', 'application/pdf');
+        headers.set('Content-Disposition', `inline; filename*=UTF-8''${encodeURIComponent(key.split('/').at(-1)!)}`);
+      }
       if (request.method === 'HEAD') return new Response(null, { status: range ? 206 : 200, headers });
       const object = await env.LIBRARY_BUCKET.get(key, range ? { range } : undefined);
       if (!object) return new Response(null, { status: 404, headers });

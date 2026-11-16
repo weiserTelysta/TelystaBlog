@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash, randomBytes } from 'node:crypto';
 import {readFile,readdir} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {Miniflare,convertV4MiniflareOptions} from 'miniflare';
@@ -13,6 +14,15 @@ export async function fixture(t){
   email=email.toLowerCase();if(email==='weiser@telysta.com')return;
   await db.prepare("INSERT OR IGNORE INTO users(id,email,role,status,created_at,updated_at,email_verified_at) VALUES(?1,?2,'viewer','active',?3,?3,?3)").bind(crypto.randomUUID(),email,Math.floor(Date.now()/1000)).run();
  }
- async function login(email){await seedLegacy(email);assert.equal((await request('/api/auth/code','POST',{email})).status,200);const {code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1 ORDER BY rowid DESC LIMIT 1').bind(email.toLowerCase()).first();const response=await request('/api/auth/verify','POST',{email,code});assert.equal(response.status,200);return {cookie:response.headers.get('Set-Cookie').split(';')[0],body:await response.json(),code};}
- return{mf,db,request,login,seedLegacy};
+ async function ownerSetup(value,cookie){return mf.dispatchFetch(origin+'/telysta-console/api/auth/owner-setup',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json',...(cookie?{Cookie:cookie}:{})},body:JSON.stringify(value)});}
+ async function ownerProof(){const token=randomBytes(32).toString('hex');await db.prepare("INSERT INTO owner_initialization(id,token_hash,expires_at) VALUES('owner',?1,?2) ON CONFLICT(id) DO UPDATE SET token_hash=excluded.token_hash,expires_at=excluded.expires_at,used_at=NULL").bind(createHash('sha256').update(token).digest('hex'),Math.floor(Date.now()/1000)+300).run();return token;}
+ async function login(email){
+  email=email.toLowerCase();const password='Fixture library passphrase 2026!';let response,code;
+  const row=await db.prepare('SELECT password_hash FROM users WHERE email=?1').bind(email).first();
+  if(email==='weiser@telysta.com'&&!row?.password_hash)response=await ownerSetup({username:'telysta',password,token:await ownerProof()});
+  else if(!row){assert.equal((await request('/api/auth/code','POST',{email,purpose:'register'})).status,200);({code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1 ORDER BY rowid DESC LIMIT 1').bind(email).first());response=await request('/api/auth/register','POST',{email,username:'reader_'+randomBytes(6).toString('hex'),password,code});}
+  else response=await request('/api/auth/login','POST',{identifier:email,password});
+  assert.equal(response.status,200,await response.clone().text());return{cookie:response.headers.get('Set-Cookie').split(';')[0],body:await response.json(),code};
+ }
+ return{mf,db,request,login,seedLegacy,ownerProof,ownerSetup};
 }

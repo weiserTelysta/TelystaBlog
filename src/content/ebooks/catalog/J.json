@@ -956,6 +956,656 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/9b5c7129d52a90e9404bd4c0d63632dd60ee42ed08548fc652e9fae488935a33.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER2c9bb8942cfd",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER07bf345a885c",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERff0e36f0bee0",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER1ae9bd077d34",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER19d7c510acb7",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER0d08eff1248d",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERff1e0e8e8955",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER90dce4432077",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER062fb30f114c",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER1100ce24e719",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERade28d99638e",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER0e5f87edab0c",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERc052b3ff1a7a",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER15cbe3d4fb9f",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER9e79ae1cea5a",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERa035b1b3d631",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER3b6e5687b103",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER46ed49ab8d59",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERe37084f8d401",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER95b5873c12ec",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERff545e645ec3",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER338ec98c4860",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERb66bfc19a0cf",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERda6d43ceb13e",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER2a695d00cf2f",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER7e0d0f22b720",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER333a626eacb6",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERc4c7f677ded8",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER7d64d0166813",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER68d6903db341",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER35352a32d43e",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER9cc6af1d8e62",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER2ec22f90a1e8",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERa0d014fc5921",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER7e091417057b",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER194f5b6818ab",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER3405ba3753ec",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER4125fd954d48",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER87c4a72c2499",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER738ecb91107b",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERb094b50626b3",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERe4ca8df6dd9e",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER338d40d7aa3b",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER985cb147b625",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER80e8454b4f3a",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER8a012e88742a",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER7cc2fe1c0264",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERd6ad99ba255d",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERbfadaaee1f0e",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER0e128337a1f5",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER0132915ed896",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER1c7bca157d5c",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER2e5e9e367893",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER25f261ffa8dc",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER8f90647e2131",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER9ce9f3daba6d",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER3ff8c5641996",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER25ed810ffac5",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER9b199adddb24",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERcfb108847c56",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER71907264e339",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER7cb4f40708e7",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERd5f344bfb1a3",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISERca5ff28d4e3f",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
+        },
+        {
+          "id": "WEISER3233e60fc46c",
+          "title": "受保护书籍",
+          "access": "protected",
+          "privateStub": true,
+          "authors": [],
+          "files": [],
+          "description": "",
+          "draft": false
         }
       ]
     }

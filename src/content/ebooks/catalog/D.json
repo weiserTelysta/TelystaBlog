@@ -876,6 +876,83 @@
           "access": "public"
         }
       ]
+    },
+    {
+      "clcCode": "D731.361",
+      "clcName": "日本阶级、阶层",
+      "books": [
+        {
+          "id": "WEISERe42b72d1a4e8",
+          "title": "新下层：日本的社会阶层与贫困遗传",
+          "authors": [
+            "桥本健二"
+          ],
+          "authorStatus": "verified",
+          "description": "《新下层：日本的社会阶层与贫困遗传》；桥本健二。日本阶级、阶层，AZW3 格式。",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D73%20%E4%BA%9A%E6%B4%B2%E6%94%BF%E6%B2%BB/D731.361%20%E6%97%A5%E6%9C%AC%E9%98%B6%E7%BA%A7%E3%80%81%E9%98%B6%E5%B1%82/%E6%96%B0%E4%B8%8B%E5%B1%82%3A%E6%97%A5%E6%9C%AC%E7%9A%84%E7%A4%BE%E4%BC%9A%E9%98%B6%E5%B1%82%E4%B8%8E%E8%B4%AB%E5%9B%B0%E9%81%97%E4%BC%A0.azw3",
+              "bytes": 7923511
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/f88a0b376c1b5aaf388ec5b3ec2414e4935496679b47fb962d3412393ad21b24.webp",
+          "translator": "毕梦静",
+          "language": "zh",
+          "publisher": "中国科学技术出版社",
+          "publicationYear": 2024,
+          "publishedAt": "2026-11-14",
+          "access": "public"
+        },
+        {
+          "id": "WEISERf56ccc436caf",
+          "title": "日本新中产阶级",
+          "authors": [
+            "傅高义"
+          ],
+          "authorStatus": "verified",
+          "description": "《日本新中产阶级》；傅高义。日本阶级、阶层，AZW3 格式。",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D73%20%E4%BA%9A%E6%B4%B2%E6%94%BF%E6%B2%BB/D731.361%20%E6%97%A5%E6%9C%AC%E9%98%B6%E7%BA%A7%E3%80%81%E9%98%B6%E5%B1%82/%E6%97%A5%E6%9C%AC%E6%96%B0%E4%B8%AD%E4%BA%A7%E9%98%B6%E7%BA%A7.azw3",
+              "bytes": 1700540
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/5a2f4df2613fcbd20757106974d85da7573c82a51b07791c6ae3a9a5852b1514.webp",
+          "translator": "周晓虹、周海燕、吕斌",
+          "language": "zh",
+          "publisher": "上海译文出版社",
+          "publicationYear": 2017,
+          "publishedAt": "2026-11-14",
+          "access": "public"
+        },
+        {
+          "id": "WEISERf6b6556de702",
+          "title": "新型日本阶级社会",
+          "authors": [
+            "桥本健二"
+          ],
+          "authorStatus": "verified",
+          "description": "《新型日本阶级社会》；桥本健二。日本阶级、阶层，AZW3 格式。",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/D%20%E6%94%BF%E6%B2%BB%E3%80%81%E6%B3%95%E5%BE%8B/D73%20%E4%BA%9A%E6%B4%B2%E6%94%BF%E6%B2%BB/D731.361%20%E6%97%A5%E6%9C%AC%E9%98%B6%E7%BA%A7%E3%80%81%E9%98%B6%E5%B1%82/%E6%96%B0%E5%9E%8B%E6%97%A5%E6%9C%AC%E9%98%B6%E7%BA%A7%E7%A4%BE%E4%BC%9A.azw3",
+              "bytes": 7739169
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/fb673aafb81ae158f158c02d982930d01e339070e6ac285478423e0f06a3ca21.webp",
+          "translator": "张启新",
+          "language": "zh",
+          "publisher": "上海译文出版社",
+          "publishedAt": "2026-11-14",
+          "access": "public"
+        }
+      ]
     }
   ]
 }

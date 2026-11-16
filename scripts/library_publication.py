@@ -1,6 +1,6 @@
-"""Explicit public selection for a mixed personal archive, shared by offline tools."""
+"""Public-selection helper shared by the offline library tools."""
 
-def is_public_book(book, policy):
-    excluded = set(policy.get('fileIds', []))
-    reviewed_comics = set(policy.get('reviewedComicFileIds', []))
-    return book['fileId'] not in excluded and (book['clcCode'] != 'J238' or book['fileId'] in reviewed_comics)
+
+def is_public_book(book, policy=None):
+    """Every catalogued book is public; kept for callers that pass a policy."""
+    return True

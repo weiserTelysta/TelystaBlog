@@ -34,12 +34,19 @@ export function createEpubSanitizer(assetUrls: string[]) {
 		if (doc.body.querySelector('img, svg image') && !text.textContent?.trim()) {
 			// Print margins and break-inside can push an image-only cover into a blank second column.
 			doc.body.setAttribute('data-reader-image-page', '');
+			// Calibre covers frequently specify preserveAspectRatio="none". Both
+			// a viewport-sized SVG and that attribute stretch portraits horizontally.
+			for (const svg of doc.body.querySelectorAll('svg')) {
+				svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+				const box = svg.getAttribute('viewBox')?.trim().split(/[\s,]+/).map(Number);
+				if (box?.length === 4 && box[2] > 0 && box[3] > 0) { svg.setAttribute('width', String(box[2])); svg.setAttribute('height', String(box[3])); }
+			}
 			const layout = doc.createElement('style');
 			layout.textContent = `
 				body[data-reader-image-page] { display:flex!important; align-items:center; justify-content:center; margin:0!important; padding:20px!important; box-sizing:border-box; }
 				body[data-reader-image-page] :is(div,p,section,figure,a) { display:contents!important; }
 				body[data-reader-image-page] :is(img,svg) { display:block; width:auto!important; height:auto!important; max-width:100%!important; max-height:calc(100vh - 40px)!important; object-fit:contain; }
-				body[data-reader-image-page] svg { width:100%!important; height:100%!important; }
+				
 			`;
 			doc.head.append(layout);
 		}

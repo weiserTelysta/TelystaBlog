@@ -10,13 +10,11 @@ test('已有验证码账户保留普通身份，管理员邮箱固定，Cookie�
  const admin=await login('WEISER@TELYSTA.COM');assert.equal(admin.body.user.role,'admin');assert.equal(admin.body.restricted,true);
  assert.equal((await request('/api/users','GET',undefined,viewer.cookie)).status,403);assert.equal((await request('/api/users','GET',undefined,admin.cookie)).status,200);
 });
-test('验证码不可重复使用、最多五次错误、过期无效、每邮箱重发冷却',async t=>{
- const{db,request,login}=await fixture(t);const session=await login('one@example.com');assert.equal((await request('/api/auth/verify','POST',{email:'one@example.com',code:session.code})).status,401);
- assert.equal((await request('/api/auth/code','POST',{email:'one@example.com'})).status,429);
- await request('/api/auth/code','POST',{email:'two@example.com'});const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1').bind('two@example.com').first();
- const wrong=code==='000000'?'111111':'000000';for(let i=0;i<5;i++)assert.equal((await request('/api/auth/verify','POST',{email:'two@example.com',code:wrong})).status,401);
- assert.equal((await request('/api/auth/verify','POST',{email:'two@example.com',code})).status,401);
- await request('/api/auth/code','POST',{email:'expired@example.com'});await db.exec('UPDATE email_codes SET expires_at=0');assert.equal((await request('/api/auth/verify','POST',{email:'expired@example.com',code:'123456'})).status,401);
+test('验证码用途和冷却生效，旧验证码登录入口已经关闭',async t=>{
+ const{request,login}=await fixture(t);const session=await login('one@example.com');
+ assert.equal((await request('/api/auth/verify','POST',{email:'one@example.com',code:session.code})).status,410);
+ assert.equal((await request('/api/auth/code','POST',{email:'one@example.com',purpose:'reset'})).status,429);
+ assert.equal((await request('/api/auth/code','POST',{email:'two@example.com',purpose:'login'})).status,400);
 });
 test('角色只能由管理员修改，提升／停用撤销旧会话，超级用户无用户授权权',async t=>{
  const{db,request,login}=await fixture(t);const admin=await login('weiser@telysta.com'),viewer=await login('member@example.com');
@@ -28,15 +26,13 @@ test('角色只能由管理员修改，提升／停用撤销旧会话，超级�
  await db.prepare('UPDATE users SET role=\'superuser\' WHERE email=?1').bind('member@example.com').run();assert.equal((await request('/api/users','GET',undefined,member.cookie)).status,403);
  await request('/api/users/'+member.body.user.id,'PATCH',{role:'member',status:'suspended'},admin.cookie);assert.equal((await request('/api/dashboard','GET',undefined,member.cookie)).status,401);
 });
-test('异源和无Origin写入被拒绝，验证并发仅一次成功，退出后会话失效',async t=>{
- const{db,mf,request,seedLegacy}=await fixture(t);
+test('异源和无Origin写入被拒绝，退出后会话失效',async t=>{
+ const{mf,request,login}=await fixture(t);
  assert.equal((await request('/api/auth/code','POST',{email:'a@example.com'},undefined,{Origin:'https://evil.example'})).status,403);
  assert.equal((await mf.dispatchFetch(base+'/api/auth/code',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).status,403);
  assert.equal((await request('/api/auth/code','POST',{email:'x\r\nBcc: attacker@example.com'})).status,400);
- await seedLegacy('race@example.com'); await request('/api/auth/code','POST',{email:'race@example.com'});const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1').bind('race@example.com').first();
- const results=await Promise.all([request('/api/auth/verify','POST',{email:'race@example.com',code}),request('/api/auth/verify','POST',{email:'race@example.com',code})]);assert.deepEqual(results.map(r=>r.status).sort(),[200,401]);
- const cookie=results.find(r=>r.status===200).headers.get('Set-Cookie');assert.ok(cookie.includes('HttpOnly')&&cookie.includes('Secure')&&cookie.includes('SameSite=Strict'));
- await request('/api/auth/logout','POST',{},cookie.split(';')[0]);assert.equal((await(await request('/api/auth/session','GET',undefined,cookie.split(';')[0])).json()).user,null);
+ const session=await login('race@example.com');assert.ok(session.cookie);await request('/api/auth/logout','POST',{},session.cookie);
+ assert.equal((await(await request('/api/auth/session','GET',undefined,session.cookie)).json()).user,null);
 });
 test('云端保存检查版本冲突，保留旧版，普通用户不能写入内容',async t=>{
  const{db,request,login}=await fixture(t),admin=await login('weiser@telysta.com'),viewer=await login('writer@example.com');
@@ -138,26 +134,19 @@ test('按类型流式备份跨页完整导出并带完成标记，不混入其�
  assert.equal(backup.documents.length,27);assert.equal(new Set(backup.documents.map(row=>row.id)).size,27);assert.equal(backup.completed,true);assert.equal(backup.binaryFilesIncluded,false);assert.ok(backup.documents.every(row=>row._cursor===undefined));
 });
 
-test('匿名直接访问专属管理入口可验证邮箱，预填身份不授权其他邮箱',async t=>{
- const{mf,db,login}=await fixture(t),adminBase=origin+'/telysta-console';
- assert.equal((await mf.dispatchFetch(adminBase+'/')).status,200);
+test('专属入口提供首次设置状态，固定邮箱不可由公共注册或匿名初始化接管',async t=>{
+ const{mf,request,login,ownerSetup}=await fixture(t),adminBase=origin+'/telysta-console';
  const context=await(await mf.dispatchFetch(adminBase+'/api/auth/session')).json();
- assert.equal(context.user,null);assert.equal(context.entry.email,'weiser@telysta.com');assert.equal(context.entry.admin,true);
- const send=async email=>mf.dispatchFetch(adminBase+'/api/auth/code',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({email})});
- assert.equal((await send('other@example.com')).status,403);
- assert.equal((await send('weiser@telysta.com')).status,200);
- const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1').bind('weiser@telysta.com').first();
- const response=await mf.dispatchFetch(adminBase+'/api/auth/verify',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify({email:'weiser@telysta.com',code})});
- assert.equal(response.status,200);assert.equal((await response.json()).user.role,'admin');
- const ordinary=await login('reader@example.com');
- assert.equal((await mf.dispatchFetch(adminBase+'/',{headers:{Cookie:ordinary.cookie},redirect:'manual'})).status,302);
+ assert.equal(context.user,null);assert.equal(context.entry.email,'weiser@telysta.com');assert.equal(context.entry.username,'telysta');assert.equal(context.entry.setupRequired,true);
+ assert.equal((await ownerSetup({username:'telysta',password:'Owner passphrase for test 2026!'})).status,403);
+ assert.equal((await request('/api/auth/register','POST',{email:'weiser@telysta.com',username:'takeover',password:'Owner passphrase for test 2026!',code:'123456'})).status,403);
+ const ordinary=await login('reader@example.com');assert.equal((await mf.dispatchFetch(adminBase+'/',{headers:{Cookie:ordinary.cookie},redirect:'manual'})).status,302);
 });
-
 test('注册参数不能提升权限，只有固定超级管理员能授予正式或审核管理员身份',async t=>{
  const{db,request,login}=await fixture(t),owner=await login('weiser@telysta.com'),reviewer=await login('moderator@example.com'),target=await login('new@example.com');
  await request('/api/auth/code','POST',{email:'forged@example.com',role:'admin'});
  const{code}=await db.prepare('SELECT code FROM test_outbox WHERE email=?1').bind('forged@example.com').first();
- assert.equal((await request('/api/auth/verify','POST',{email:'forged@example.com',code,role:'admin',status:'active'})).status,409);assert.equal(await db.prepare('SELECT id FROM users WHERE email=?1').bind('forged@example.com').first(),null);
+ assert.equal((await request('/api/auth/verify','POST',{email:'forged@example.com',code,role:'admin',status:'active'})).status,410);assert.equal(await db.prepare('SELECT id FROM users WHERE email=?1').bind('forged@example.com').first(),null);
  await db.prepare("UPDATE users SET role='superuser' WHERE id=?1").bind(reviewer.body.user.id).run();
  for(const role of ['member','superuser','admin']){
   assert.equal((await request('/api/users/'+target.body.user.id,'PATCH',{role,status:'active'},target.cookie)).status,403);

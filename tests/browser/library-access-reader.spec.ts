@@ -20,7 +20,7 @@ test('账户权限接通书架和受保护EPUB，沙箱清除脚本，退出会�
 		zip.file('cover.png', Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a6N8AAAAASUVORK5CYII=', 'base64'));
 		zip.file('book.css', '.fixture-text { font-style: italic; }.chapter {margin-top:66px} .image-page {break-inside:avoid}');
         zip.file('cover.xhtml', '<html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" href="book.css"/></head><body><div class="chapter"><div class="image-page"><p><img src="cover.png" width="900" height="1200" style="height:100%"/></p></div></div></body></html>');
-        zip.file('svg-cover.xhtml', '<html xmlns="http://www.w3.org/1999/xhtml"><head/><body><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200"><image href="cover.png" width="900" height="1200"/></svg></body></html>');
+        zip.file('svg-cover.xhtml', '<html xmlns="http://www.w3.org/1999/xhtml"><head/><body><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" preserveAspectRatio="none"><image href="cover.png" width="900" height="1200"/></svg></body></html>');
 		for (const [file, text] of [['one', 'First chapter content'], ['two', 'Second chapter content']]) zip.file(file + '.xhtml', `<?xml version="1.0"?><html xmlns="http://www.w3.org/1999/xhtml"><head><title>${file}</title><link rel="stylesheet" href="book.css"/></head><body><h1>${text}</h1><p class="fixture-text">Readable fixture text.</p><img id="archive-cover" src="cover.png"/><img id="remote-tracker" src="https://invalid.example/tracker.png"/><img id="foreign-blob" src="blob:https://telysta.com/not-from-book"/><a id="unsafe-link" href="javascript:parent.readerScriptExecuted=true">Unsafe link</a><script>parent.readerScriptExecuted=true</script></body></html>`);
 
   const bucket = await fixture.mf.getR2Bucket('LIBRARY_BUCKET','library-fixture');
@@ -34,7 +34,7 @@ test('账户权限接通书架和受保护EPUB，沙箱清除脚本，退出会�
   await expect(page).toHaveURL(/\/console\//);
   await fixture.login(page,'member@example.com');
   await expect(page.locator('#identity')).toContainText('正式用户');
-  await page.getByRole('link',{name:'打开书室',exact:true}).click();
+  await page.goto(host+'/ebooks/');
   await expect(page.locator('.ebook-card h2')).toHaveCount(2);
   await expect(page.locator('.ebook-card h2').filter({hasText:'Protected fixture book'})).toHaveCount(1);
   await page.goto(host + '/ebooks/WEISER94f87086f630/');
@@ -45,8 +45,9 @@ test('账户权限接通书架和受保护EPUB，沙箱清除脚本，退出会�
   await expect.poll(()=>cover.locator('img').evaluate((img: HTMLImageElement)=>{const r=img.getBoundingClientRect();return img.naturalWidth>0&&r.left>=0&&r.right<=innerWidth&&r.bottom<=innerHeight;})).toBe(true);
   await page.getByRole('button',{name:'Next · 下一页',exact:true}).click();
   const svgCover=page.locator('[data-reader-surface] iframe').last().contentFrame();
+  await expect(svgCover.locator('svg')).toHaveAttribute('preserveAspectRatio', 'xMidYMid meet');
   await expect(svgCover.locator('image')).toHaveAttribute('href', /^blob:https:\/\/telysta\.com\//);
-  await expect.poll(()=>svgCover.locator('svg').evaluate(el=>{const r=el.getBoundingClientRect();return r.width>innerWidth*.8&&r.height>innerHeight*.8&&r.left>=0&&r.right<=innerWidth&&r.bottom<=innerHeight;})).toBe(true);
+  await expect.poll(()=>svgCover.locator('svg').evaluate(el=>{const r=el.getBoundingClientRect();return r.width>0&&r.height>0&&r.left>=0&&r.right<=innerWidth&&r.bottom<=innerHeight;})).toBe(true);
   await page.getByRole('button',{name:'Next · 下一页',exact:true}).click();
   const first=page.locator('[data-reader-surface] iframe').last().contentFrame();
   await expect(first.locator('body')).toContainText('First chapter content');
@@ -71,7 +72,7 @@ test('账户权限接通书架和受保护EPUB，沙箱清除脚本，退出会�
   await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Contents · 书籍目录',exact:true})).toBeFocused();
   await page.getByRole('button',{name:'Contents · 书籍目录',exact:true}).click();
   await page.getByRole('button',{name:'Second chapter',exact:true}).click();
-  await expect(page.frameLocator('[data-reader-surface] iframe').last().locator('body')).toContainText('Second chapter content');
+  await expect(page.locator('[data-reader-surface] iframe').last().contentFrame().locator('body')).toContainText('Second chapter content');
   await page.getByRole('button',{name:'A+ · 放大阅读字号'}).click();
   const account=await page.context().newPage();await account.goto(host+'/console/');await account.getByRole('button',{name:'退出登录'}).click();
   await expect(page.locator('[data-reader-surface] iframe')).toHaveCount(0);

@@ -108,7 +108,7 @@ components:
 
 ### Forms
 
-注册与登录是独立流程：注册设置用户名、密码并验证邮箱；登录进入已有账户，旧验证码用户保留迁移路径。保留 label、email/username/current-password/new-password/one-time-code 自动填充、粘贴、加载和错误反馈。验证码只在需要邮箱验证的步骤出现。状态更新不推动表单跳动，发送与主提交按钮至少44px高。实施进度以 `docs/platform-roadmap-2026-11-16.md` 为准，不把设计约定冒充已上线功能。
+注册与登录是独立流程：注册设置用户名、密码并验证邮箱；登录进入已有账户，旧账户通过找回密码补齐凭据；站主只固定邮箱，用户名与密码由站主在私有初始化入口设置。保留 label、email/username/current-password/new-password/one-time-code 自动填充、粘贴、加载和错误反馈。验证码只在需要邮箱验证的步骤出现。状态更新不推动表单跳动，发送与主提交按钮至少44px高。实施进度以 `docs/platform-roadmap-2026-11-16.md` 为准，不把设计约定冒充已上线功能。
 
 ### Pagination
 
@@ -118,7 +118,7 @@ components:
 
 ### Reading controls
 
-目录原位淡入，原生对话框管理焦点，Escape关闭并返回触发按钮。正文保持可读行宽，阅读器本身占满视口。PDF保留Range，EPUB保留HTML清理、沙箱和逐次资源鉴权。
+文章目录保持原位淡入。电子书目录使用侧栏：电脑端停靠在正文旁并让正文重新排版，手机端使用模态侧栏，点击外部或按Escape关闭并返回触发按钮；关闭按钮固定在头部，仅目录内容滚动。阅读器占满视口，宽屏双页、窄屏单页；正文左右半区点击、方向键／PageUp／PageDown与滚轮均可翻页，但不劫持链接、文本选择与缩放。PDF新标签页交给浏览器，保持Range与鉴权；EPUB／MOBI／AZW3保留HTML清理和无脚本沙箱。
 
 ## Do's and Don'ts
 

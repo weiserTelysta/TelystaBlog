@@ -154,7 +154,7 @@ def main():
     overrides = json.loads(args.author_overrides.read_text(encoding='utf-8'))['records'] if args.author_overrides else []
     catalog = build_catalog(json.loads(args.inventory.read_text(encoding='utf-8-sig')), rows, args.checksums.read_text(encoding='utf-8-sig'), metadata, overrides)
     if args.public_only:
-        policy = json.loads(args.publication_policy.read_text())
+        policy = json.loads(args.publication_policy.read_text()) if args.publication_policy and args.publication_policy.exists() else {}
         total = len(catalog['files'])
         catalog['files'] = [book for book in catalog['files'] if is_public_book(book, policy)]
         catalog['summary'] = summarize_records(catalog['files'])

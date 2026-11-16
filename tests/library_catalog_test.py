@@ -74,12 +74,11 @@ class LibraryCatalogTests(unittest.TestCase):
         result = self.build(author_overrides=[override])
         self.assertEqual(result['summary']['partialCollections'], [override['fileId']])
 
-    def test_unreviewed_comics_are_not_automatically_added_to_public_selection(self):
-        policy = {'fileIds': ['excluded'], 'reviewedComicFileIds': ['reviewed-reference']}
-        self.assertFalse(library.is_public_book({'fileId': 'new-comic', 'clcCode': 'J238'}, policy))
-        self.assertTrue(library.is_public_book({'fileId': 'reviewed-reference', 'clcCode': 'J238'}, policy))
-        self.assertTrue(library.is_public_book({'fileId': 'normal-book', 'clcCode': 'I313'}, policy))
-        self.assertFalse(library.is_public_book({'fileId': 'excluded', 'clcCode': 'I313'}, policy))
+    def test_every_catalogued_book_is_public(self):
+        # 不再有排除清单：任何已编目书籍（含 J238 漫画）都应进入公开书目。
+        self.assertTrue(library.is_public_book({'fileId': 'comic', 'clcCode': 'J238'}))
+        self.assertTrue(library.is_public_book({'fileId': 'normal-book', 'clcCode': 'I313'}))
+        self.assertTrue(library.is_public_book({'fileId': 'legacy', 'clcCode': 'J238'}, {'fileIds': ['legacy']}))
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { booksInCategory, ebookShelfHref, filterShelf, paginateShelf, shelfBooklists, shelfCategories, shelfPageNumbers } from '../src/lib/ebooks/shelf';
+import { booksInCategory, ebookShelfHref, filterShelf, paginateShelf, shelfBooklists, shelfCategories, shelfPageNumbers, sortShelfBooks } from '../src/lib/ebooks/shelf';
 import { normalizeEbookTitle } from '../src/lib/ebooks/metadata';
 
 test('书架每页24项，完整覆盖且不重复，边缘页与越界明确', () => {
@@ -55,4 +55,14 @@ test('中图分类使用类号，空类不展示；总览和分类分页使用�
 	assert.equal(ebookShelfHref(2), '/ebooks/page/2/');
 	assert.equal(ebookShelfHref(1, 'B'), '/ebooks/clc/B/');
 	assert.equal(ebookShelfHref(3, 'B'), '/ebooks/clc/B/page/3/');
+});
+
+
+test('公共书架与认证目录使用同一稳定排序，同名书按 ID 决胜', () => {
+ const books = [{ id: 'b', title: '《书名》' }, { id: 'a', title: '书名' }, { id: 'c', title: '另一册' }];
+ const expected = sortShelfBooks(books);
+ assert.deepEqual(sortShelfBooks([...books].reverse()), expected);
+ assert.ok(expected.findIndex(book => book.id === 'a') < expected.findIndex(book => book.id === 'b'));
+ assert.deepEqual(books.map(book => book.id), ['b', 'a', 'c']);
+ assert.deepEqual(paginateShelf(expected, 2, 1).items, paginateShelf(sortShelfBooks([...books].reverse()), 2, 1).items);
 });

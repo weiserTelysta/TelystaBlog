@@ -48,7 +48,7 @@
      <label for="password">密码</label>
      <div class="password-field">
       <input id="password" name="password" type="password" autocomplete="current-password" maxlength="512" required aria-describedby="password-help password-error">
-      <button id="password-toggle" type="button" aria-pressed="false">显示</button>
+      <button id="password-toggle" type="button" aria-pressed="false" aria-label="显示密码"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button>
      </div>
      <span id="password-help" class="field-help" hidden>至少15个字符，可使用空格与中文。</span>
      <span id="password-error" class="field-error"></span>
@@ -63,15 +63,18 @@
    <p role="status" id="login-status" aria-live="polite"></p>
    <nav id="auth-modes" class="login-footnote" aria-label="账户入口"></nav>
   </section>
-  <section id="account" aria-label="账户管理" hidden>
-   <div class="account-tools">
-    <p id="identity" class="muted"></p>
-    <button id="logout" class="quiet-button" type="button">退出登录</button>
+  <section id="account" class="console-shell" aria-label="账户管理" hidden>
+   <aside id="console-sidebar" class="console-sidebar">
+    <div class="sidebar-heading"><a href="/" class="site-header__brand" translate="no">Weiser’s Melancholy</a><button id="menu-close" type="button" class="icon-button"></button></div>
+    <nav id="navigation" aria-label="账户功能"></nav>
+    <div class="sidebar-account"><p id="identity" class="muted"></p><button id="logout" type="button" class="text-button">退出登录</button></div>
+   </aside>
+   <div class="console-main">
+    <header class="console-bar"><button id="menu-trigger" type="button" class="icon-button" aria-controls="mobile-menu" aria-expanded="false"></button><span id="current-task"></span><button id="console-language" type="button" class="text-button">English</button></header>
+    <div class="console-scroll"><p id="notice" role="status" aria-live="polite" hidden></p><section id="workspace" tabindex="-1" aria-label="当前管理功能"></section></div>
    </div>
-   <nav id="navigation" aria-label="账户功能"></nav>
-   <p id="notice" role="status" aria-live="polite"></p>
-   <section id="workspace" aria-label="当前管理功能"></section>
   </section>
+  <dialog id="mobile-menu" class="mobile-menu" aria-label="账户导航"></dialog>
   <p id="loading" class="loading-state" role="status">正在读取账户…</p>
   <noscript><p class="loading-state">账户登录需要 JavaScript。请启用后刷新，或<a href="/">返回网站</a>。</p></noscript>
  </main>

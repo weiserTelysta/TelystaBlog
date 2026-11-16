@@ -74,7 +74,7 @@
 - [x] **AUTH-02** 服务端用户名规范、保留名称、大小写唯一索引及并发冲突处理；显示名与登录名分开，不公开邮箱作为作者。
 - [x] **AUTH-03** 采用有来源和实测依据的密码哈希；验证 Workers 运行限制及耗时，不为了迁就限制削弱参数。不保存明文或可逆密码。
 - [x] **AUTH-04** 邮箱验证码单次使用、过期、重发间隔、尝试限制；注册成功前验证邮箱。密码重置使用短期单次凭证。
-- [x] **AUTH-05** 旧验证码账户先验证邮箱再设置凭据；站主保留受限恢复路径，避免上线锁号；成功认证后轮换登录令牌。
+- [x] **AUTH-05** 旧账户通过找回密码补齐凭据；站主仅固定邮箱，在受保护的一次性初始化入口自行设置用户名密码；移除旧邮箱登录入口，成功设置后轮换令牌。
 - [x] **AUTH-06** 登录/重置反馈避免泄露邮箱是否存在；IP 与账户限流、请求体上限、Origin/CSRF、服务端授权和审计。
 - [x] **AUTH-07** 密码变更/重置、停用、权限变更、远程退出及时撤销登录。维持网关跨子域鉴权所需 Cookie 范围。
 
@@ -196,3 +196,39 @@ DeepSeek已完成本轮计划一致性审查；两次限定认证审查超时，
 发布结果已核对：认证提交 `5827e49488da4184c4fb488e910b46459b2741f1` 与跨服务类型修复 `888f9f2ff49d9e89a40a2509974a72be4d9d3816` 均已推送。修复后的 [GitHub Actions 43801792020](https://github.com/weiserTelysta/TelystaBlog/actions/runs/43801792020) 中 workers、build、deploy 全部成功；Cloudflare Pages 部署 `edbe6bf1-d90c-400a-8356-1fcb0d0c8027` 成功。网关4项测试通过；本轮没有发布其尚未验收的PDF响应或漫画目录改动。
 
 第三阶段准备：DeepSeek完成设置用途名称的限定审查。采纳「首页文章导语」「非活动标签页文案」等更明确的用途方向，保留作者指定的「见我／Marginalia、世界观／Annals」栏目名称，不把文案建议冒充已上线表单。前两次认证审查超时与此次完成报告分别记录。
+
+## 第三阶段验证（2026-11-16）
+
+本地实现并完成验证：全视口左右后台、双语字段表单、具名配置、草稿版本恢复、站主单次初始化；阅读器桌面双页／手机单页、正文点击／键盘／滚轮、固定关闭头与侧栏目录、PDF新标签页；统一书架排序，保留同序SSR卡片，避免认证目录到达后重排。
+
+Console 31项服务端测试、Gateway 4项测试、注册与后台8项浏览器测试、后台／授权阅读／书架15项回归测试通过；阅读器6项交互测试及真实MOBI／AZW3本地样本通过。原书样本与书目没有提交Git。D1迁移前导出已恢复到独立SQLite验证，751份文档、1名用户，integrity_check为ok且无外键异常；不重置数据库。部署记录将在实际验证后补入。
+
+65份受保护漫画的R2对象路径和大小全部核对一致；明确名单697份，67份受保护，8本暂缓新书仍排除。Cloudflare D1文章正式发布链路与云端评论仍需按CONTENT阶段推进，不把草稿保存描述为公开网站已经数据库直出。
+
+DeepSeek Harness本轮目录边界审查超时，没有完成报告；已完成的设置文案审查只采用核实过的用途命名建议。
+
+## 部署结果（2026-11-16）
+
+发布范围取自 `.tmp/library-gateway/release-705-ids.json`（705 个 ID，无重复），其中 8 本原草稿新书按作者指示转为公开。网关目录由 `scripts/prepare-library-gateway.ts --scope` 生成：`sha256 12d420d0431b5f75d922427491d85dde27876fa81168c2be66ac849ccb6234a2`，705 册、67 册受保护，与 `.tmp/library-gateway/manifest.json` 一致；同名审计对象已上传至 R2 `gateway/`。
+
+| 项 | 结果 |
+| --- | --- |
+| `telysta-console` | Version `fe6f1aa2-ac9a-4410-a000-eb6f7e564a52`；路由 `/console*`、`/telysta-console*` |
+| `telysta-library-gateway` | Version `b10ae1fc-1a6d-44e0-add6-9ac20e7b873f`；自定义域 `library-files.telysta.com`、`library-gateway.telysta.com`；`CATALOG_KEY` 指向新摘要；Service Binding `AUTH_SERVICE → telysta-console#AuthService` |
+| D1 增量迁移 | `wrangler d1 migrations list telysta-console --remote` 返回 No migrations to apply，未重复执行 0004/0005 |
+| 单元测试 | 网关 4 项、控制台 31 项通过（Node 24.22.3） |
+
+线上核对（2026-11-16 17:40 起，均匿名）：
+
+| 探测 | 结果 |
+| --- | --- |
+| `/api/catalog` | 200，638 册（705 − 67），响应不含受保护条目 |
+| 8 本新书是否在目录 | 8 / 8 |
+| 《日本世相系列（全4册）》文件 Range | 206，`bytes 0-1023/1961865`，返回 1024 字节 |
+| 受保护漫画 Range | 401 |
+| `/api/session` | 200，`{"authenticated":false}` |
+| `/`、`/ebooks/`、`/console/` | 200 |
+
+**未验证**：登录后访问受保护对象的 200／206 需要真实账户会话，本轮没有用账号执行，因此不把受保护下载链路描述为端到端验收。网关已不提供 `/api/unlock`、`/api/lock`（返回 405），解锁改由 Console 登录后经 `AuthService.session()` 判定 `restricted`。
+
+**仍待完成**：站点页面由 Git 构建产生，本次改动尚未提交与推送；`/ebooks/` 的静态书目与搜索索引仍为发布前的 632 条，8 本新书在页面上出现需要下一次站点构建。

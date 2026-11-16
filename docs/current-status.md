@@ -1,5 +1,7 @@
 # 当前状态
 
+2026-11-16更新：按 705 个 ID 的明确名单重建网关目录并部署 `telysta-console`（`fe6f1aa2`）与 `telysta-library-gateway`（`b10ae1fc`）。线上书目 705 条、受保护 67 条、匿名可读 638 条；65 册漫画的匿名请求由部署前的 404 变为 401；作者后续加入的 8 本新书已由草稿转为公开并纳入名单。本次只改数据与 Worker，站点页面仍需一次 Git 发布才会出现。见[部署记录](platform-roadmap-2026-11-16.md#部署结果2026-11-16)。
+
 2026-11-15更新：账户Worker已支持邮箱验证码、四种角色、D1 Session及管理员强制退出；线上保存为云端草稿，发布仍走Git。书目改为中图大类JSON与细类Booklist，受保护完整资料不进入公开Git。此次发布名单为632条（匿名630、受保护2），另8条新书在本地迁移为草稿，未纳入此次发布；下方其他批次数量是历史记录。主域现指向Cloudflare Pages `telystablog`，GitHub Pages保留回退来源。入口与边界见[线上管理](console.md)、[书室维护](ebooks.md)、[Cloudflare构建](cloudflare-builds.md)与[搜索发现](search-discovery.md)。
 
 核对日期：2026-11-14。滚动性能与文档整理见 [本轮记录](scroll-performance-2026-10-02.md)。2026-09-29 的 R2 清理与三组资源更新见 [执行记录](archive/2026-09/r2-resource-update-2026-09-29.md)。正文图片点击放大的范围与验证见 [验收记录](archive/2026-09/article-image-viewer-2026-09-24.md)。此前 WikiLink 与角色虹彩／资源更新分别见 [WikiLink 记录](wikilinks-2026-09-21.md) 和 [发布记录](archive/2026-09/category-resource-release-2026-09-21.md)。完整配置与行为见 [功能核对](feature-map.md)，后台范围见 [当前实施计划](admin-ux-plan-2026-09-15.md)。

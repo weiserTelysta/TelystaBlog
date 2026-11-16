@@ -1,6 +1,6 @@
 import { checkLibrarySession, getLibraryCatalog, isLibraryUnlocked, type LibraryBook } from './libraryAccess';
 import { EBOOKS_PAGE_SIZE } from '../../config/library';
-import { booksInCategory, ebookShelfHref, filterShelf, paginateShelf, shelfBooklists, shelfCategories, shelfPageNumbers } from './shelf';
+import { booksInCategory, ebookShelfHref, filterShelf, paginateShelf, shelfBooklists, shelfCategories, shelfPageNumbers, sortShelfBooks } from './shelf';
 
 type SearchBook = LibraryBook;
 
@@ -62,9 +62,16 @@ export function initEbookShelf() {
 		if (page > 1) params.set('page', String(page));
 		return `${ebookShelfHref(1, category, booklist)}?${params}`;
 	};
+	function cardSignature(container: ParentNode) {
+		return JSON.stringify([...container.querySelectorAll<HTMLElement>('.ebook-card')].map(card => ({
+			href: card.querySelector('h2 a')?.getAttribute('href'), title: card.querySelector('h2')?.textContent?.trim(),
+			authors: card.querySelector('.ebook-card__authors')?.textContent?.trim(), cover: card.querySelector('img')?.getAttribute('src'),
+			files: [...card.querySelectorAll('.ebook-formats a')].map(link => [link.textContent?.trim(), link.getAttribute('href')]),
+		})));
+	}
 	function pageLink(page: number, label: string, numbered = false) {
 		const link = element('a', '', label); link.href = filteredHref(page);
-		if (isFiltering()) link.dataset.filterPage = String(page);
+		link.dataset.filterPage = String(page);
 		if (numbered) link.setAttribute('aria-label', `第 ${page} 页`);
 		return link;
 	}
@@ -99,13 +106,16 @@ export function initEbookShelf() {
 		status.classList.add('ebook-sr-only'); status.textContent = '正在查找藏书…';
 		grid.setAttribute('aria-busy', 'true');
 		try {
-			index ||= getLibraryCatalog().catch(error => { index = undefined; throw error; });
+			index ||= getLibraryCatalog().then(sortShelfBooks).catch(error => { index = undefined; throw error; });
 			const books = await index;
 			if (request !== revision) return;
 			const matches = filterShelf(books, category, value, selectedFormat, booklist, isLibraryUnlocked());
 			const count = Math.max(1, Math.ceil(matches.length / EBOOKS_PAGE_SIZE));
 			const result = paginateShelf(matches, Math.min(Math.max(1, page), count));
-			grid.replaceChildren(...result.items.map(bookCard)); empty.textContent = '没有找到匹配的藏书。'; empty.hidden = matches.length > 0;
+			const cards = document.createDocumentFragment(); cards.append(...result.items.map(bookCard));
+			// Keep identical SSR cards mounted: replacing images causes flashing and layout anchoring.
+			if (cardSignature(grid) !== cardSignature(cards)) grid.replaceChildren(cards);
+			empty.textContent = '没有找到匹配的藏书。'; empty.hidden = matches.length > 0;
 			renderPager(Math.min(Math.max(1, page), count), count, matches.length);
 			status.textContent = `找到 ${matches.length} 份藏书，第 ${currentPage} 页。`;
 			renderNavigation(books);
@@ -167,7 +177,7 @@ export function initEbookShelf() {
 		const requested = Number(input.value);
 		const max = index ? currentPageCount : Number(input.max);
 		if (!Number.isInteger(requested) || requested < 1 || requested > max) return;
-		if (isFiltering()) void apply(requested, 'push', true);
+		if (isFiltering() || index) void apply(requested, 'push', true);
 		else location.assign(ebookShelfHref(requested, category, booklist));
 	});
 	function restoreFromUrl() {

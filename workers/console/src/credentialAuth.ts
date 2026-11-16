@@ -25,11 +25,11 @@ export async function identityLimit(env: ConsoleEnv, identity: string, kind = 'l
  const result = await env.DB.prepare('INSERT INTO auth_limits(key,count,expires_at) VALUES(?1,1,?2) ON CONFLICT(key) DO UPDATE SET count=count+1 WHERE count<?3 RETURNING count').bind(key, now+120, maximum).first();
  if (!result) throw new HttpError(429, '尝试较多，请稍后再试。');
 }
-export async function usernameAvailability(request: Request, env: ConsoleEnv, value: string) {
+export async function usernameAvailability(request: Request, env: ConsoleEnv, value: string, adminEntry=false) {
  await identityLimit(env, request.headers.get('CF-Connecting-IP') || 'unknown', 'username', 20);
  let username: string;
- try { username = usernameInput(value); } catch { return json({ available: false }); }
- const existing = await env.DB.prepare('SELECT id FROM users WHERE username=?1').bind(username).first();
+ try { username = usernameInput(value,adminEntry?ADMIN_EMAIL:undefined); } catch { return json({ available: false }); }
+ const existing = await env.DB.prepare('SELECT id FROM users WHERE username=?1 AND NOT(?2=1 AND email=?3 AND password_hash IS NULL)').bind(username,adminEntry?1:0,ADMIN_EMAIL).first();
  return json({ available: !existing, normalized: username });
 }
 async function readAfterWrite(env: ConsoleEnv, id: string): Promise<Account> {
@@ -44,7 +44,9 @@ export async function handleCredentials(request: Request, env: ConsoleEnv, path:
  const now = nowSeconds();
  if (path === '/api/auth/register') {
   only(input, ['email','code','username','password']);
-  const email = emailInput(input, adminEntry), username = usernameInput(input.username, email), password = passwordInput(input.password);
+  const email = emailInput(input, adminEntry);
+  if(email===ADMIN_EMAIL)throw new HttpError(403,'请在站主控制台设置账户。','OWNER_SETUP_REQUIRED');
+  const username = usernameInput(input.username, email), password = passwordInput(input.password);
   const proof = await checkChallenge(env, email, input.code, 'register');
   const existing = await account(env, 'email', email);
   if (existing) throw new HttpError(409, '此邮箱已有账户，请登录或找回密码。', 'ACCOUNT_EXISTS', 'email');
@@ -82,30 +84,7 @@ export async function handleCredentials(request: Request, env: ConsoleEnv, path:
   return authenticatedResponse(env, await readAfterWrite(env,user.id), session.token);
  }
  if (path === '/api/auth/setup') {
-  only(input, ['username','password']);
-  const user = await sessionUser(env, request.headers.get('Cookie'));
-  const token = sessionToken(request.headers.get('Cookie'));
-  if (!user || !token) throw new HttpError(401, '请先验证邮箱。');
-  const old = await account(env, 'id', user.id);
-  if (!old || old.password_hash) throw new HttpError(409, '账户已设置密码，请使用修改密码。');
-  const username = usernameInput(input.username, old.email), password = passwordInput(input.password);
-  if (old.username && old.username !== username) throw new HttpError(409, '用户名已确定，不能在此修改。');
-  const current = await env.DB.prepare('SELECT verified_at FROM sessions WHERE token_hash=?1 AND expires_at>?2').bind(await tokenHash(token), now).first<{verified_at:number|null}>();
-  if (current?.verified_at == null || current.verified_at <= now-600) throw new HttpError(401, '请重新验证邮箱后设置密码。', 'EMAIL_REVERIFY');
-  if (await env.DB.prepare('SELECT id FROM users WHERE username=?1 AND id<>?2').bind(username, old.id).first()) throw new HttpError(409, '这个用户名已被使用，请换一个。', 'USERNAME_TAKEN', 'username');
-  const hash = await hashPassword(password, env.AUTH_PEPPER), version = old.credential_version + 1;
-  const next = await sessionInsert(env, request, old.id, version, now, hash);
-  const result = await env.DB.batch([
-   env.DB.prepare(`UPDATE users SET username=?1,password_hash=?2,credential_version=?3,updated_at=?4
-    WHERE id=?5 AND password_hash IS NULL AND credential_version=?6 AND status='active'
-    AND NOT EXISTS(SELECT 1 FROM users WHERE username=?1 AND id<>?5)
-    AND EXISTS(SELECT 1 FROM sessions WHERE token_hash=?7 AND expires_at>?4 AND verified_at>?8) RETURNING id`)
-    .bind(username, hash, version, now, old.id, old.credential_version, await tokenHash(token), now-600),
-   env.DB.prepare('DELETE FROM sessions WHERE user_id=?1 AND EXISTS(SELECT 1 FROM users WHERE id=?1 AND password_hash=?2)').bind(old.id,hash),
-   next.statement,authAudit(env,old.id,'auth.credentials.setup',{sessionHash:await tokenHash(next.token)}),
-  ]);
-  if (!result[0].results.length || result[2].meta.changes !== 1) throw new HttpError(409, '账户状态已改变，请重新验证。');
-  return authenticatedResponse(env, await readAfterWrite(env,old.id),next.token);
+  throw new HttpError(410,'请使用密码重置完成账户设置。','PASSWORD_LOGIN_REQUIRED');
  }
  if (path === '/api/auth/reset') {
   only(input, ['email','code','password','username']);

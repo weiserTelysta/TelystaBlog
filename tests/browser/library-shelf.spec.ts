@@ -152,3 +152,27 @@ for(const width of [320,1440])test('分页操作紧邻居中，可直接点数�
  await page.getByRole('link',{name:'第 12 页',exact:true}).click();await expect(page).toHaveURL(/\/ebooks\/page\/12\//);
 
 });
+
+test('认证目录乱序不会重排既有书卡，页码在原页面切换并支持后退', async ({ page }) => {
+ const { readFile } = await import('node:fs/promises');
+ const books = JSON.parse(await readFile('dist/ebooks/search-index.json', 'utf8'));
+ let release!: () => void;
+ const ready = new Promise<void>(resolve => { release = resolve; });
+ await page.route('https://library-files.telysta.com/api/session', route => route.fulfill({ json: { authenticated: true }, headers: { 'access-control-allow-origin': 'http://127.0.0.1:4322', 'access-control-allow-credentials': 'true' } }));
+ await page.route('https://library-files.telysta.com/api/catalog', async route => { await ready; await route.fulfill({ json: [...books].reverse(), headers: { 'access-control-allow-origin': 'http://127.0.0.1:4322', 'access-control-allow-credentials': 'true' } }); });
+ await page.goto('/ebooks/');
+ const before = await page.locator('.ebook-card h2 a').evaluateAll(links => links.map(link => link.getAttribute('href')));
+ await page.evaluate(() => { (window as Window & { firstCard?: Element; marker?: string }).firstCard = document.querySelector('.ebook-card')!; (window as Window & { marker?: string }).marker = 'same-document'; });
+ release();
+ await expect(page.locator('[data-search-status]')).toContainText('找到');
+ expect(await page.locator('.ebook-card h2 a').evaluateAll(links => links.map(link => link.getAttribute('href')))).toEqual(before);
+ expect(await page.evaluate(() => (window as Window & { firstCard?: Element }).firstCard === document.querySelector('.ebook-card'))).toBe(true);
+ await page.getByRole('link', { name: '第 2 页', exact: true }).click();
+ await expect(page).toHaveURL(/\/ebooks\/page\/2\/$/);
+ expect(await page.evaluate(() => (window as Window & { marker?: string }).marker)).toBe('same-document');
+ const second = await page.locator('.ebook-card h2 a').evaluateAll(links => links.map(link => link.getAttribute('href')));
+ expect(second.some(href => before.includes(href))).toBe(false);
+ await page.goBack();
+ await expect(page).toHaveURL(/\/ebooks\/$/);
+ await expect.poll(() => page.locator('.ebook-card h2 a').evaluateAll(links => links.map(link => link.getAttribute('href')))).toEqual(before);
+});

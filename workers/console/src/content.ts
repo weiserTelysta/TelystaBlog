@@ -1,9 +1,11 @@
 import { HttpError, body, json } from './http';
-import { audit, nowSeconds } from './auth';
-import { ADMIN_EMAIL, can, ROLES, type User } from './permissions';
+import { audit, nowSeconds, sessionToken, tokenHash } from './auth';
+import { can, type User } from './permissions';
 import { BLOG_CATEGORY_IDS } from '../../../src/config/content/blogCategories';
 import { validatedSource } from './validation';
 import { exportBackup } from './backup';
+import { describeDocument, editorOptions, patchDocument, type DocumentRecord } from './documentEditor';
+import { CONFIG_DEFINITIONS } from './configEditor';
 const KINDS = ['post','ebook','gallery','score','config'];
 function requireOwner(user: User) { if (!can(user, 'site:manage')) throw new HttpError(403, '需要超级管理员权限。'); }
 export async function handleManagement(request: Request, env: ConsoleEnv, user: User, url: URL) {
@@ -14,22 +16,28 @@ export async function handleManagement(request: Request, env: ConsoleEnv, user: 
   const users = await env.DB.prepare('SELECT role,count(*) AS count FROM users GROUP BY role').all();
   return json({ content: content.results, users: users.results });
  }
- if (path === '/api/users' && request.method === 'GET') {
-  requireOwner(user); const query = (url.searchParams.get('q') || '').slice(0,100);
-  return json((await env.DB.prepare('SELECT id,email,role,status,created_at,last_login_at FROM users WHERE instr(email,?1)>0 ORDER BY created_at DESC LIMIT 100').bind(query).all()).results);
- }
- const userId = /^\/api\/users\/([a-f0-9-]{36})$/.exec(path)?.[1];
- if (userId && request.method === 'PATCH') {
-  requireOwner(user); const input = await body(request);
-  const target = await env.DB.prepare('SELECT id,email FROM users WHERE id=?1').bind(userId).first<{ id: string; email: string }>();
-  if (!target) throw new HttpError(404, '用户不存在。');
-  if (target.email === ADMIN_EMAIL) throw new HttpError(403, '管理员身份固定，不能降权或停用。');
-  if (typeof input.role !== 'string' || !ROLES.includes(input.role as User['role']) || input.role === 'admin' || !['active','suspended'].includes(String(input.status))) throw new HttpError(400, '角色或状态无效。');
-  await env.DB.batch([
-   env.DB.prepare('UPDATE users SET role=?1,status=?2,updated_at=?3 WHERE id=?4').bind(input.role, input.status, nowSeconds(), userId),
-   env.DB.prepare('DELETE FROM sessions WHERE user_id=?1').bind(userId),
-  ]);
-  await audit(env, user.id, 'users.update', userId); return json({ ok: true });
+ if (path === '/api/editor/options' && request.method === 'GET') { requireOwner(user); return json(editorOptions()); }
+ const editorMatch=/^\/api\/documents\/([A-Za-z0-9_-]{1,100})\/editor$/.exec(path);
+ if(editorMatch){
+  requireOwner(user);
+  const record=await env.DB.prepare('SELECT * FROM documents WHERE id=?1').bind(editorMatch[1]).first<DocumentRecord>();
+  if(!record)throw new HttpError(404,'内容不存在。');
+  if(request.method==='GET')return json({record,editor:describeDocument(record)});
+  if(request.method!=='PATCH')throw new HttpError(405,'方法不支持。');
+  const input=await body(request,1_200_000);
+  if(!Number.isSafeInteger(input.revision))throw new HttpError(400,'版本无效。');
+  if(input.revision!==record.revision)throw new HttpError(409,'内容已被更新，请对照最新版本合并。','VERSION_CONFLICT');
+  let base=record;
+  if(input.restoreRevision!==undefined){
+   if(!Number.isSafeInteger(input.restoreRevision)||Number(input.restoreRevision)<1)throw new HttpError(400,'历史版本无效。');
+   const old=await env.DB.prepare('SELECT source FROM document_revisions WHERE document_id=?1 AND revision=?2').bind(record.id,input.restoreRevision).first<{source:string}>();
+   if(!old)throw new HttpError(404,'历史版本不存在。');
+   base={...record,source:old.source};
+  }
+  const next=patchDocument(base,input);
+  const source=validatedSource(record.kind,record.id,next.source,next.access as 'public'|'protected');
+  const revision=await saveDocument(request,env,user,record,source,next.title,next.access);
+  return json({ok:true,revision,record:{...record,...next,source,revision,state:'draft'},editor:describeDocument({...record,...next,source,revision})});
  }
  if (path === '/api/documents' && request.method === 'GET') {
   requireOwner(user); const kind = url.searchParams.get('kind') || 'post';
@@ -37,7 +45,7 @@ export async function handleManagement(request: Request, env: ConsoleEnv, user: 
   const query = (url.searchParams.get('q') || '').slice(0,100), offset = Math.min(100000, Math.max(0, Number(url.searchParams.get('offset')) || 0));
   const records = await env.DB.prepare('SELECT id,kind,title,source_path,access,state,revision,updated_at FROM documents WHERE kind=?1 AND instr(title,?2)>0 ORDER BY updated_at DESC,id LIMIT 100 OFFSET ?3').bind(kind,query,offset).all();
   const total = await env.DB.prepare('SELECT count(*) AS count FROM documents WHERE kind=?1 AND instr(title,?2)>0').bind(kind,query).first();
-  return json({ records: records.results, total });
+  return json({ records: kind==='config'?records.results.map(record=>({...record,settings:CONFIG_DEFINITIONS.filter(def=>def.file===record.source_path)})):records.results, total });
  }
  if (path === '/api/documents' && request.method === 'POST') {
   requireOwner(user); const input = await body(request);
@@ -66,13 +74,8 @@ export async function handleManagement(request: Request, env: ConsoleEnv, user: 
   if (!current) throw new HttpError(404, '内容不存在。');
   if (current.revision !== input.revision) throw new HttpError(409, '内容已被其他编辑更新，请重新读取并合并。');
   const source = validatedSource(current.kind,documentId,input.source,access);
-  // Conditional revision insertion makes the following optimistic UPDATE safe in one D1 transaction.
-  const changed = await env.DB.batch([
-   env.DB.prepare('INSERT INTO document_revisions(document_id,revision,source,actor_id,created_at) SELECT id,revision,source,?1,?2 FROM documents WHERE id=?3 AND revision=?4').bind(user.id,nowSeconds(),documentId,input.revision),
-   env.DB.prepare('UPDATE documents SET source=?1,title=?2,access=?3,state=\'draft\',revision=revision+1,updated_at=?4 WHERE id=?5 AND revision=?6 RETURNING revision').bind(source,input.title.trim(),access,nowSeconds(),documentId,input.revision),
-  ]);
-  if (!changed[1].results.length) throw new HttpError(409, '版本冲突，输入未保存。');
-  await audit(env, user.id, 'documents.save', documentId); return json({ ok: true, revision: (changed[1].results[0] as { revision: number }).revision });
+  const revision=await saveDocument(request,env,user,{id:documentId,revision:current.revision},source,input.title.trim(),access);
+  return json({ok:true,revision});
  }
  if (path === '/api/export' && request.method === 'GET') {
   requireOwner(user);
@@ -84,4 +87,18 @@ export async function handleManagement(request: Request, env: ConsoleEnv, user: 
   requireOwner(user); return json((await env.DB.prepare('SELECT a.action,a.target_id,a.created_at,u.email FROM audit_events a LEFT JOIN users u ON u.id=a.actor_id ORDER BY a.created_at DESC LIMIT 100').all()).results);
  }
  throw new HttpError(404, '未找到接口。');
+}
+
+async function saveDocument(request:Request,env:ConsoleEnv,user:User,record:Pick<DocumentRecord,'id'|'revision'>,source:string,title:string,access:string){
+ if(!title.trim()||title.length>300||source.length>1_000_000)throw new HttpError(400,'内容或标题无效。');
+ const token=sessionToken(request.headers.get('Cookie'));if(!token)throw new HttpError(401,'请重新登录。');
+ const sessionHash=await tokenHash(token),now=nowSeconds();
+ const permission="EXISTS(SELECT 1 FROM sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=?5 AND s.user_id=?1 AND s.expires_at>?2 AND s.credential_version=u.credential_version AND u.status='active')";
+ const changed=await env.DB.batch([
+  env.DB.prepare(`INSERT INTO document_revisions(document_id,revision,source,actor_id,created_at) SELECT id,revision,source,?1,?2 FROM documents WHERE id=?3 AND revision=?4 AND ${permission}`).bind(user.id,now,record.id,record.revision,sessionHash),
+  env.DB.prepare(`UPDATE documents SET source=?6,title=?7,access=?8,state='draft',revision=revision+1,updated_at=?2 WHERE id=?3 AND revision=?4 AND ${permission} RETURNING revision`).bind(user.id,now,record.id,record.revision,sessionHash,source,title.trim(),access),
+  env.DB.prepare("INSERT INTO audit_events(id,actor_id,action,target_id,created_at) SELECT ?1,?2,'documents.save',?3,?4 WHERE changes()=1").bind(crypto.randomUUID(),user.id,record.id,now),
+ ]);
+ if(!changed[1].results.length)throw new HttpError(409,'版本或登录状态已改变，输入未保存。','VERSION_CONFLICT');
+ return (changed[1].results[0] as {revision:number}).revision;
 }

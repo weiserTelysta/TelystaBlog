@@ -44,6 +44,12 @@ Worker运行时只流式读取R2文件，未列入部署catalog的对象不会�
 
 ## 阅览实现
 
-`/ebooks/read/?book=<固定ID>&format=EPUB|PDF` 按需打开书籍。PDF使用浏览器阅览器并保留Range；EPUB在沙箱iframe中显示，关闭书内脚本、弹窗，先清理HTML并限制外部资源。书架不预加载书籍正文。MOBI／AZW3暂供下载，需要转换时另行处理并保留原文件。
+`/ebooks/read/?book=<固定ID>&format=EPUB|MOBI|AZW3` 按需打开书籍，原文件不转换、不重传。EPUB使用EPUB.js；MOBI／KF8使用固定版本的Foliate解析器及本地安全分页适配。PDF详情链接使用 `target="_blank"` 和 `rel="noopener noreferrer"` 直达文件，网关返回inline与Range；旧的PDF站内阅读地址跳转至文件，不叠加两套工具栏。
 
-EPUB须等待资源替换完成后再显示。清理逻辑位于 `src/lib/ebooks/readerSanitizer.ts`，只保留当前书籍清单生成的同源blob图片与样式地址；不能为修复封面空白而全局允许未知协议、书内脚本或外部资源。回归时同时检查真实封面、书内样式、脚本移除、沙箱与退出后的内容清除。
+阅读器占满视口，保留紧凑工具栏。宽屏双页、窄屏单页；点击正文右／左半区下一／上一页，支持方向键、PageUp／PageDown及滚轮，保留文本选择、链接、捏合缩放和内部滚动。EPUB.js的iframe可能按整章扩展，必须将点击坐标映射至可见stage，不能按整章宽度判断左右。
+
+目录桌面端停靠并让正文重新排版；手机端为侧边模态对话框，点击外部与Escape关闭，关闭后焦点返回。目录搜索和固定关闭头不随列表滚动；当前位置变化时保持选中项可见。不用中央长列表盖住阅读区域。
+
+安全清理位于 `src/lib/ebooks/readerSanitizer.ts`：只保留当前书籍清单生成的blob图片与样式，不能全局放开未知协议、书内脚本或外部资源。iframe使用 `sandbox="allow-same-origin"` 和书内CSP；不启用脚本、弹窗。Calibre的图像封面需修正preserveAspectRatio并约束尺寸，不横向拉伸。回归涵盖真实EPUB／MOBI／AZW3、脚本清除、外部追踪阻断、键盘／鼠标、侧栏焦点和退出后清空。
+
+恢复旧漫画先核对R2实际对象key。现有受保护漫画位于 `books/J 艺术/J2 绘画/J238 各国漫画/成人漫画/`；分类名与本机目录不用于猜测或重建已经上传的key。私有JSON保存完整书名、封面和文件URL，公开JSON只保留中性privateStub；匿名索引和静态页不包含这些资料。站主和获明确授权的账户进入全部藏书、书单与搜索后可以看到它们。

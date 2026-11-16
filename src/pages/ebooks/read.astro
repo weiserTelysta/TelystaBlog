@@ -9,21 +9,27 @@ import '../../styles/reader.scss';
 			<h1 data-reader-title>在线阅览</h1>
 			<div class="ebook-reading-links" data-reader-formats aria-label="阅读格式"></div>
 			<div class="reader-toolbar" data-reader-tools hidden>
-				<button type="button" data-reader-toc aria-label="Contents · 书籍目录">Contents</button>
+				<button type="button" data-reader-toc aria-label="Contents · 书籍目录" aria-controls="reader-contents" aria-expanded="false">Contents</button>
 				<button type="button" data-reader-prev aria-label="Prev · 上一页">Prev</button>
 				<button type="button" data-reader-next aria-label="Next · 下一页">Next</button>
+				<span class="reader-progress" data-reader-progress aria-label="Reading progress" aria-live="polite"></span>
+				<form class="reader-page-form" data-reader-page-form hidden>
+					<label><span class="reader-sr-only">Page</span><input name="page" type="number" min="1" required aria-label="Page" /></label>
+					<span data-reader-total></span><button hidden type="submit">Go to page</button>
+				</form>
 				<button type="button" data-reader-smaller aria-label="A− · 缩小阅读字号">A−</button>
 				<button type="button" data-reader-larger aria-label="A+ · 放大阅读字号">A+</button>
 			</div>
-			<button type="button" data-reader-fullscreen aria-label="Fullscreen · 切换全屏阅读" aria-pressed="false">Fullscreen</button>
+			<button type="button" data-reader-fullscreen aria-label="Fullscreen · 切换全屏阅读" aria-pressed="false"><span>Fullscreen</span><svg class="reader-fullscreen-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" /></svg></button>
 		</header>
 		<div class="reader-message" data-reader-message>
 			<p role="status" aria-live="polite" data-reader-state>正在读取书目…</p>
 			<a class="library-inline-button" href="/" data-library-access-help hidden>Back to site</a>
 		</div>
 		<div class="reader-surface" data-reader-surface data-scroll-native hidden></div>
-		<dialog class="reader-contents" data-reader-dialog aria-labelledby="reader-contents-title" data-scroll-native>
-			<div class="reader-contents__head"><h2 id="reader-contents-title">Contents</h2><button type="button" data-reader-close>Close</button></div>
+		<dialog id="reader-contents" class="reader-contents" data-reader-dialog aria-labelledby="reader-contents-title" data-scroll-native>
+			<div class="reader-contents__head"><h2 id="reader-contents-title">Contents</h2><button type="button" data-reader-close aria-label="Close contents"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button></div>
+			<label class="reader-contents__search"><span class="reader-sr-only">Search contents</span><input data-reader-toc-search type="search" placeholder="Search contents" autocomplete="off" /></label>
 			<nav aria-label="书籍目录" data-reader-chapters></nav>
 		</dialog>
 	</main>
