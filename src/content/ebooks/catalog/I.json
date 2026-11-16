@@ -1919,45 +1919,43 @@
       "clcName": "俄罗斯文学",
       "books": [
         {
-          "id": "WEISER2dbb02eb3d69",
-          "title": "安娜·卡列尼娜（套装上下册） (译文名著典藏)",
+          "id": "WEISER503ac18b9695",
+          "title": "伊凡·伊里奇之死",
           "authors": [
-            "译文名著典藏"
+            "etc."
           ],
           "authorStatus": "unreviewed",
-          "description": "《安娜·卡列尼娜（套装上下册） (译文名著典藏)》；译文名著典藏。俄罗斯文学，EPUB 格式。",
+          "description": "《伊凡·伊里奇之死》；etc.。俄罗斯文学，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/I%20%E6%96%87%E5%AD%A6/I3/7%20%E5%90%84%E5%9B%BD%E6%96%87%E5%AD%A6/I512%20%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%87%E5%AD%A6/%E5%AE%89%E5%A8%9C%C2%B7%E5%8D%A1%E5%88%97%E5%B0%BC%E5%A8%9C%EF%BC%88%E5%A5%97%E8%A3%85%E4%B8%8A%E4%B8%8B%E5%86%8C%EF%BC%89%20%28%E8%AF%91%E6%96%87%E5%90%8D%E8%91%97%E5%85%B8%E8%97%8F%29.epub",
-              "bytes": 5218580
+              "href": "https://library-files.telysta.com/books/I%20%E6%96%87%E5%AD%A6/I3/7%20%E5%90%84%E5%9B%BD%E6%96%87%E5%AD%A6/I512%20%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%87%E5%AD%A6/%E4%BC%8A%E5%87%A1%E3%83%BB%E4%BC%8A%E9%87%8C%E5%A5%87%E4%B9%8B%E6%AD%BB%20%E6%89%98%E5%B0%94%E6%96%AF%E6%B3%B0%E4%B8%AD%E7%9F%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%80%89%20%3D%20%D0%A1%D0%BC%D0%B5%D1%80%D1%82%D1%8C%20%D0%98%D0%B2%D0%B0%D0%BD%D0%B0%20%D0%98%D0%BB%D1%8C%D0%B8%D1%87%D0%B0%20%28%20etc.%29.epub",
+              "bytes": 373084
             }
           ],
           "draft": false,
-          "cover": "https://library-files.telysta.com/covers/61671708189cf5dcf1e7e1474ca5b1df7c028983b98b3488ceb7df4d20a5e039.webp",
           "language": "zh",
-          "publisher": "上海译文出版社",
           "access": "public"
         },
         {
-          "id": "WEISERdc99701e2064",
-          "title": "静静的顿河：全4册 (名著名译丛书)",
+          "id": "WEISERb75521beb270",
+          "title": "伊凡诺夫·海鸥 (契诃夫戏剧全集)",
           "authors": [
-            "名著名译丛书"
+            "安东·契诃夫 （Anton Chekhov）"
           ],
           "authorStatus": "unreviewed",
-          "description": "《静静的顿河：全4册 (名著名译丛书)》；名著名译丛书。俄罗斯文学，EPUB 格式。",
+          "description": "《伊凡诺夫·海鸥 (契诃夫戏剧全集)》；安东·契诃夫 （Anton Chekhov）。俄罗斯文学，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/I%20%E6%96%87%E5%AD%A6/I3/7%20%E5%90%84%E5%9B%BD%E6%96%87%E5%AD%A6/I512%20%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%87%E5%AD%A6/%E9%9D%99%E9%9D%99%E7%9A%84%E9%A1%BF%E6%B2%B3%3A%E5%85%A84%E5%86%8C%20%28%E5%90%8D%E8%91%97%E5%90%8D%E8%AF%91%E4%B8%9B%E4%B9%A6%29.epub",
-              "bytes": 9265637
+              "href": "https://library-files.telysta.com/books/I%20%E6%96%87%E5%AD%A6/I3/7%20%E5%90%84%E5%9B%BD%E6%96%87%E5%AD%A6/I512%20%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%87%E5%AD%A6/%E4%BC%8A%E5%87%A1%E8%AF%BA%E5%A4%AB%C2%B7%E6%B5%B7%E9%B8%A5%20%28%E5%A5%91%E8%AF%83%E5%A4%AB%E6%88%8F%E5%89%A7%E5%85%A8%E9%9B%86%29%20%28%E5%AE%89%E4%B8%9C%C2%B7%E5%A5%91%E8%AF%83%E5%A4%AB%20%EF%BC%88Anton%20Chekhov%EF%BC%89%29.epub",
+              "bytes": 520919
             }
           ],
           "draft": false,
-          "cover": "https://library-files.telysta.com/covers/a8e517bec7f02040d9961f3e4d0a08ba5da01b9529181473c907db25a985b008.webp",
-          "language": "zh",
-          "publisher": "人民文学出版社",
+          "cover": "https://library-files.telysta.com/covers/7c0c52ad08877716cb28143b64d3139d862361146817f3aafeb665558173dd20.webp",
+          "language": "zh-CN",
+          "publisher": "上海译文出版社",
           "access": "public"
         },
         {
@@ -2005,6 +2003,24 @@
           "access": "public"
         },
         {
+          "id": "WEISER86abeef75224",
+          "title": "大师与玛格丽特",
+          "authors": [
+            "米哈伊尔·布尔加科夫"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《大师与玛格丽特》；米哈伊尔·布尔加科夫。俄罗斯文学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I%20%E6%96%87%E5%AD%A6/I3/7%20%E5%90%84%E5%9B%BD%E6%96%87%E5%AD%A6/I512%20%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%87%E5%AD%A6/%E5%A4%A7%E5%B8%88%E4%B8%8E%E7%8E%9B%E6%A0%BC%E4%B8%BD%E7%89%B9.epub",
+              "bytes": 1070618
+            }
+          ],
+          "draft": false,
+          "access": "public"
+        },
+        {
           "id": "WEISER08f07a030fd1",
           "title": "契诃夫短篇小说选（世界文学名著，人民文学名著名译最新版） (名著名译丛书)",
           "authors": [
@@ -2026,64 +2042,24 @@
           "access": "public"
         },
         {
-          "id": "WEISER503ac18b9695",
-          "title": "伊凡·伊里奇之死",
+          "id": "WEISER2dbb02eb3d69",
+          "title": "安娜·卡列尼娜（套装上下册） (译文名著典藏)",
           "authors": [
-            "etc."
+            "译文名著典藏"
           ],
           "authorStatus": "unreviewed",
-          "description": "《伊凡·伊里奇之死》；etc.。俄罗斯文学，EPUB 格式。",
+          "description": "《安娜·卡列尼娜（套装上下册） (译文名著典藏)》；译文名著典藏。俄罗斯文学，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/I%20%E6%96%87%E5%AD%A6/I3/7%20%E5%90%84%E5%9B%BD%E6%96%87%E5%AD%A6/I512%20%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%87%E5%AD%A6/%E4%BC%8A%E5%87%A1%E3%83%BB%E4%BC%8A%E9%87%8C%E5%A5%87%E4%B9%8B%E6%AD%BB%20%E6%89%98%E5%B0%94%E6%96%AF%E6%B3%B0%E4%B8%AD%E7%9F%AD%E7%AF%87%E5%B0%8F%E8%AF%B4%E9%80%89%20%3D%20%D0%A1%D0%BC%D0%B5%D1%80%D1%82%D1%8C%20%D0%98%D0%B2%D0%B0%D0%BD%D0%B0%20%D0%98%D0%BB%D1%8C%D0%B8%D1%87%D0%B0%20%28%20etc.%29.epub",
-              "bytes": 373084
+              "href": "https://library-files.telysta.com/books/I%20%E6%96%87%E5%AD%A6/I3/7%20%E5%90%84%E5%9B%BD%E6%96%87%E5%AD%A6/I512%20%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%87%E5%AD%A6/%E5%AE%89%E5%A8%9C%C2%B7%E5%8D%A1%E5%88%97%E5%B0%BC%E5%A8%9C%EF%BC%88%E5%A5%97%E8%A3%85%E4%B8%8A%E4%B8%8B%E5%86%8C%EF%BC%89%20%28%E8%AF%91%E6%96%87%E5%90%8D%E8%91%97%E5%85%B8%E8%97%8F%29.epub",
+              "bytes": 5218580
             }
           ],
           "draft": false,
+          "cover": "https://library-files.telysta.com/covers/61671708189cf5dcf1e7e1474ca5b1df7c028983b98b3488ceb7df4d20a5e039.webp",
           "language": "zh",
-          "access": "public"
-        },
-        {
-          "id": "WEISERb75521beb270",
-          "title": "伊凡诺夫·海鸥 (契诃夫戏剧全集)",
-          "authors": [
-            "安东·契诃夫 （Anton Chekhov）"
-          ],
-          "authorStatus": "unreviewed",
-          "description": "《伊凡诺夫·海鸥 (契诃夫戏剧全集)》；安东·契诃夫 （Anton Chekhov）。俄罗斯文学，EPUB 格式。",
-          "files": [
-            {
-              "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/I%20%E6%96%87%E5%AD%A6/I3/7%20%E5%90%84%E5%9B%BD%E6%96%87%E5%AD%A6/I512%20%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%87%E5%AD%A6/%E4%BC%8A%E5%87%A1%E8%AF%BA%E5%A4%AB%C2%B7%E6%B5%B7%E9%B8%A5%20%28%E5%A5%91%E8%AF%83%E5%A4%AB%E6%88%8F%E5%89%A7%E5%85%A8%E9%9B%86%29%20%28%E5%AE%89%E4%B8%9C%C2%B7%E5%A5%91%E8%AF%83%E5%A4%AB%20%EF%BC%88Anton%20Chekhov%EF%BC%89%29.epub",
-              "bytes": 520919
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/7c0c52ad08877716cb28143b64d3139d862361146817f3aafeb665558173dd20.webp",
-          "language": "zh-CN",
           "publisher": "上海译文出版社",
-          "access": "public"
-        },
-        {
-          "id": "WEISER5c6fc14137e5",
-          "title": "樱桃园",
-          "authors": [
-            "（俄罗斯）契诃夫著；汝龙译"
-          ],
-          "authorStatus": "unreviewed",
-          "description": "《樱桃园》；（俄罗斯）契诃夫著；汝龙译。俄罗斯文学，EPUB 格式。",
-          "files": [
-            {
-              "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/I%20%E6%96%87%E5%AD%A6/I3/7%20%E5%90%84%E5%9B%BD%E6%96%87%E5%AD%A6/I512%20%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%87%E5%AD%A6/%E6%A8%B1%E6%A1%83%E5%9B%AD%20%28%EF%BC%88%E4%BF%84%E7%BD%97%E6%96%AF%EF%BC%89%E5%A5%91%E8%AF%83%E5%A4%AB%E8%91%97%EF%BC%9B%E6%B1%9D%E9%BE%99%E8%AF%91%29.epub",
-              "bytes": 5144467
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/e6051115118f7fe782ac39d6d73e92028cdd65248431769f950124bcf4442199.webp",
-          "language": "zh-CN",
-          "publisher": "人民文学出版社",
           "access": "public"
         },
         {
@@ -2108,6 +2084,27 @@
           "access": "public"
         },
         {
+          "id": "WEISER5c6fc14137e5",
+          "title": "樱桃园",
+          "authors": [
+            "（俄罗斯）契诃夫著；汝龙译"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《樱桃园》；（俄罗斯）契诃夫著；汝龙译。俄罗斯文学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I%20%E6%96%87%E5%AD%A6/I3/7%20%E5%90%84%E5%9B%BD%E6%96%87%E5%AD%A6/I512%20%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%87%E5%AD%A6/%E6%A8%B1%E6%A1%83%E5%9B%AD%20%28%EF%BC%88%E4%BF%84%E7%BD%97%E6%96%AF%EF%BC%89%E5%A5%91%E8%AF%83%E5%A4%AB%E8%91%97%EF%BC%9B%E6%B1%9D%E9%BE%99%E8%AF%91%29.epub",
+              "bytes": 5144467
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/e6051115118f7fe782ac39d6d73e92028cdd65248431769f950124bcf4442199.webp",
+          "language": "zh-CN",
+          "publisher": "人民文学出版社",
+          "access": "public"
+        },
+        {
           "id": "WEISER1dcfe5ea34ec",
           "title": "罪与罚 (名著名译丛书)",
           "authors": [
@@ -2124,6 +2121,27 @@
           ],
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/57d9ad0633e3bdc627e3735f17b3cc9d49e77037b2eb64f98db3fcf5fa423733.webp",
+          "language": "zh",
+          "publisher": "人民文学出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERdc99701e2064",
+          "title": "静静的顿河：全4册 (名著名译丛书)",
+          "authors": [
+            "名著名译丛书"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《静静的顿河：全4册 (名著名译丛书)》；名著名译丛书。俄罗斯文学，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I%20%E6%96%87%E5%AD%A6/I3/7%20%E5%90%84%E5%9B%BD%E6%96%87%E5%AD%A6/I512%20%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%87%E5%AD%A6/%E9%9D%99%E9%9D%99%E7%9A%84%E9%A1%BF%E6%B2%B3%3A%E5%85%A84%E5%86%8C%20%28%E5%90%8D%E8%91%97%E5%90%8D%E8%AF%91%E4%B8%9B%E4%B9%A6%29.epub",
+              "bytes": 9265637
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a8e517bec7f02040d9961f3e4d0a08ba5da01b9529181473c907db25a985b008.webp",
           "language": "zh",
           "publisher": "人民文学出版社",
           "access": "public"

@@ -46,54 +46,6 @@
       ]
     },
     {
-      "clcCode": "F12",
-      "clcName": "中国经济",
-      "books": [
-        {
-          "id": "WEISER0896cf886b3a",
-          "title": "分析与思考：黄奇帆的复旦经济课",
-          "authors": [
-            "黄奇帆"
-          ],
-          "authorStatus": "unreviewed",
-          "description": "《分析与思考：黄奇帆的复旦经济课》；黄奇帆。中国经济，EPUB 格式。",
-          "files": [
-            {
-              "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F12%20%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E/%E5%88%86%E6%9E%90%E4%B8%8E%E6%80%9D%E8%80%83%3A%E9%BB%84%E5%A5%87%E5%B8%86%E7%9A%84%E5%A4%8D%E6%97%A6%E7%BB%8F%E6%B5%8E%E8%AF%BE.epub",
-              "bytes": 780488
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/d603cb0ab8d4ff4625c80887502e5125de08a70cdb9c17a483477c0242c7a764.webp",
-          "language": "zh",
-          "publisher": "上海人民出版社",
-          "access": "public"
-        },
-        {
-          "id": "WEISER20b854d3fcc0",
-          "title": "置身事内 中国政府与经济发展【复旦经院“毕业课”解读经济生活背后的政府角色。罗永浩、刘格菘、张军、周黎安、王烁联袂推荐】",
-          "authors": [
-            "兰小欢"
-          ],
-          "authorStatus": "unreviewed",
-          "description": "《置身事内 中国政府与经济发展【复旦经院“毕业课”解读经济生活背后的政府角色。罗永浩、刘格菘、张军、周黎安、王烁联袂推荐】》；兰小欢。中国经济，EPUB 格式。",
-          "files": [
-            {
-              "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F12%20%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E/%E7%BD%AE%E8%BA%AB%E4%BA%8B%E5%86%85%20%E4%B8%AD%E5%9B%BD%E6%94%BF%E5%BA%9C%E4%B8%8E%E7%BB%8F%E6%B5%8E%E5%8F%91%E5%B1%95%E3%80%90%E5%A4%8D%E6%97%A6%E7%BB%8F%E9%99%A2%E2%80%9C%E6%AF%95%E4%B8%9A%E8%AF%BE%E2%80%9D%E8%A7%A3%E8%AF%BB%E7%BB%8F%E6%B5%8E%E7%94%9F%E6%B4%BB%E8%83%8C%E5%90%8E%E7%9A%84%E6%94%BF%E5%BA%9C%E8%A7%92%E8%89%B2%E3%80%82%E7%BD%97%E6%B0%B8%E6%B5%A9%E3%80%81%E5%88%98%E6%A0%BC%E8%8F%98%E3%80%81%E5%BC%A0%E5%86%9B%E3%80%81%E5%91%A8%E9%BB%8E%E5%AE%89%E3%80%81%E7%8E%8B%E7%83%81%E8%81%94%E8%A2%82%E6%8E%A8%E8%8D%90%E3%80%91.epub",
-              "bytes": 2191400
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/9ac37d443b65e22c78a4b16bd21f902cfa6b4238938f9d68e8dbfb9bbcfc0d2a.webp",
-          "language": "zh",
-          "publisher": "上海人民出版社",
-          "access": "public"
-        }
-      ]
-    },
-    {
       "clcCode": "F015",
       "clcName": "宏观经济学",
       "books": [
@@ -202,6 +154,54 @@
       ]
     },
     {
+      "clcCode": "F12",
+      "clcName": "中国经济",
+      "books": [
+        {
+          "id": "WEISER0896cf886b3a",
+          "title": "分析与思考：黄奇帆的复旦经济课",
+          "authors": [
+            "黄奇帆"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《分析与思考：黄奇帆的复旦经济课》；黄奇帆。中国经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F12%20%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E/%E5%88%86%E6%9E%90%E4%B8%8E%E6%80%9D%E8%80%83%3A%E9%BB%84%E5%A5%87%E5%B8%86%E7%9A%84%E5%A4%8D%E6%97%A6%E7%BB%8F%E6%B5%8E%E8%AF%BE.epub",
+              "bytes": 780488
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d603cb0ab8d4ff4625c80887502e5125de08a70cdb9c17a483477c0242c7a764.webp",
+          "language": "zh",
+          "publisher": "上海人民出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER20b854d3fcc0",
+          "title": "置身事内 中国政府与经济发展【复旦经院“毕业课”解读经济生活背后的政府角色。罗永浩、刘格菘、张军、周黎安、王烁联袂推荐】",
+          "authors": [
+            "兰小欢"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《置身事内 中国政府与经济发展【复旦经院“毕业课”解读经济生活背后的政府角色。罗永浩、刘格菘、张军、周黎安、王烁联袂推荐】》；兰小欢。中国经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F12%20%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E/%E7%BD%AE%E8%BA%AB%E4%BA%8B%E5%86%85%20%E4%B8%AD%E5%9B%BD%E6%94%BF%E5%BA%9C%E4%B8%8E%E7%BB%8F%E6%B5%8E%E5%8F%91%E5%B1%95%E3%80%90%E5%A4%8D%E6%97%A6%E7%BB%8F%E9%99%A2%E2%80%9C%E6%AF%95%E4%B8%9A%E8%AF%BE%E2%80%9D%E8%A7%A3%E8%AF%BB%E7%BB%8F%E6%B5%8E%E7%94%9F%E6%B4%BB%E8%83%8C%E5%90%8E%E7%9A%84%E6%94%BF%E5%BA%9C%E8%A7%92%E8%89%B2%E3%80%82%E7%BD%97%E6%B0%B8%E6%B5%A9%E3%80%81%E5%88%98%E6%A0%BC%E8%8F%98%E3%80%81%E5%BC%A0%E5%86%9B%E3%80%81%E5%91%A8%E9%BB%8E%E5%AE%89%E3%80%81%E7%8E%8B%E7%83%81%E8%81%94%E8%A2%82%E6%8E%A8%E8%8D%90%E3%80%91.epub",
+              "bytes": 2191400
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/9ac37d443b65e22c78a4b16bd21f902cfa6b4238938f9d68e8dbfb9bbcfc0d2a.webp",
+          "language": "zh",
+          "publisher": "上海人民出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
       "clcCode": "F131",
       "clcName": "日本经济",
       "books": [
@@ -224,6 +224,126 @@
           "cover": "https://library-files.telysta.com/covers/8d396e8ebfe7b086fd0aff3747ef453e08ffa00a8753e01d10732a95384083d7.webp",
           "language": "zh",
           "publisher": "开明出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERc5fdcb4089ef",
+          "title": "失去的三十年：平成日本经济史",
+          "authors": [
+            "野口悠纪雄"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《失去的三十年：平成日本经济史》；野口悠纪雄。日本经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F13/17%20%E5%90%84%E5%9B%BD%E7%BB%8F%E6%B5%8E/F131%20%E6%97%A5%E6%9C%AC%E7%BB%8F%E6%B5%8E/%E5%A4%B1%E5%8E%BB%E7%9A%84%E4%B8%89%E5%8D%81%E5%B9%B4-%E5%B9%B3%E6%88%90%E6%97%A5%E6%9C%AC%E7%BB%8F%E6%B5%8E%E5%8F%B2.epub",
+              "bytes": 4473988
+            }
+          ],
+          "draft": false,
+          "access": "public"
+        },
+        {
+          "id": "WEISER8d0ba9fd053c",
+          "title": "失去的二十年（十周年珍藏版）",
+          "authors": [
+            "池田信夫"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《失去的二十年（十周年珍藏版）》；池田信夫。日本经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F13/17%20%E5%90%84%E5%9B%BD%E7%BB%8F%E6%B5%8E/F131%20%E6%97%A5%E6%9C%AC%E7%BB%8F%E6%B5%8E/%E5%A4%B1%E5%8E%BB%E7%9A%84%E4%BA%8C%E5%8D%81%E5%B9%B4%EF%BC%88%E5%8D%81%E5%91%A8%E5%B9%B4%E7%8F%8D%E8%97%8F%E7%89%88%EF%BC%89.epub",
+              "bytes": 2527373
+            }
+          ],
+          "draft": false,
+          "access": "public"
+        },
+        {
+          "id": "WEISERaebd7daf0e48",
+          "title": "日本第一：对美国的启示",
+          "authors": [
+            "傅高义"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《日本第一：对美国的启示》；傅高义。日本经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F13/17%20%E5%90%84%E5%9B%BD%E7%BB%8F%E6%B5%8E/F131%20%E6%97%A5%E6%9C%AC%E7%BB%8F%E6%B5%8E/%E6%97%A5%E6%9C%AC%E7%AC%AC%E4%B8%80-%E5%AF%B9%E7%BE%8E%E5%9B%BD%E7%9A%84%E5%90%AF%E7%A4%BA.epub",
+              "bytes": 957759
+            }
+          ],
+          "draft": false,
+          "access": "public"
+        },
+        {
+          "id": "WEISER60dbb6a8e9c0",
+          "title": "繁荣与停滞：日本经济发展和转型",
+          "authors": [
+            "伊藤隆敏"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《繁荣与停滞：日本经济发展和转型》；伊藤隆敏。日本经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F13/17%20%E5%90%84%E5%9B%BD%E7%BB%8F%E6%B5%8E/F131%20%E6%97%A5%E6%9C%AC%E7%BB%8F%E6%B5%8E/%E7%B9%81%E8%8D%A3%E4%B8%8E%E5%81%9C%E6%BB%9E-%E6%97%A5%E6%9C%AC%E7%BB%8F%E6%B5%8E%E5%8F%91%E5%B1%95%E5%92%8C%E8%BD%AC%E5%9E%8B.epub",
+              "bytes": 11050260
+            }
+          ],
+          "draft": false,
+          "access": "public"
+        },
+        {
+          "id": "WEISER5012cd11fbc6",
+          "title": "负动产时代",
+          "authors": [
+            "日本《朝日新闻》采访组"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《负动产时代》；日本《朝日新闻》采访组。日本经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F13/17%20%E5%90%84%E5%9B%BD%E7%BB%8F%E6%B5%8E/F131%20%E6%97%A5%E6%9C%AC%E7%BB%8F%E6%B5%8E/%E8%B4%9F%E5%8A%A8%E4%BA%A7%E6%97%B6%E4%BB%A3.epub",
+              "bytes": 6813495
+            }
+          ],
+          "draft": false,
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F131.26",
+      "clcName": "韩国",
+      "books": [
+        {
+          "id": "WEISERbb5e0fd1eb65",
+          "title": "压缩现代性下的韩国：转型中的家族政治经济学",
+          "authors": [
+            "张庆燮"
+          ],
+          "authorStatus": "verified",
+          "description": "《压缩现代性下的韩国：转型中的家族政治经济学》；张庆燮。韩国，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F13%20%E4%BA%9A%E6%B4%B2%E7%BB%8F%E6%B5%8E/F131.26%20%E9%9F%A9%E5%9B%BD/%E5%8E%8B%E7%BC%A9%E7%8E%B0%E4%BB%A3%E6%80%A7%E4%B8%8B%E7%9A%84%E9%9F%A9%E5%9B%BD%3A%E8%BD%AC%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%AE%B6%E6%97%8F%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6.epub",
+              "bytes": 8505604
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/209fca260342b8770545802c46ecbea0e518d36edab8dd9cbd52b6400853a6ff.webp",
+          "translator": "司炳月、孙彤彤",
+          "language": "zh",
+          "publisher": "江苏人民出版社",
+          "publicationYear": 2024,
+          "publishedAt": "2026-11-14",
           "access": "public"
         }
       ]
@@ -554,6 +674,30 @@
       ]
     },
     {
+      "clcCode": "F279",
+      "clcName": "各国企业经济",
+      "books": [
+        {
+          "id": "WEISERbc8cf4b5c033",
+          "title": "逆势增长力：日本经济低迷期优质企业发展启示录",
+          "authors": [
+            "李海燕"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《逆势增长力：日本经济低迷期优质企业发展启示录》；李海燕。各国企业经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F2%20%E7%BB%8F%E6%B5%8E%E7%AE%A1%E7%90%86/F279%20%E5%90%84%E5%9B%BD%E4%BC%81%E4%B8%9A%E7%BB%8F%E6%B5%8E/%E9%80%86%E5%8A%BF%E5%A2%9E%E9%95%BF%E5%8A%9B-%E6%97%A5%E6%9C%AC%E7%BB%8F%E6%B5%8E%E4%BD%8E%E8%BF%B7%E6%9C%9F%E4%BC%98%E8%B4%A8%E4%BC%81%E4%B8%9A%E5%8F%91%E5%B1%95%E5%90%AF%E7%A4%BA%E5%BD%95.epub",
+              "bytes": 1687373
+            }
+          ],
+          "draft": false,
+          "access": "public"
+        }
+      ]
+    },
+    {
       "clcCode": "F713",
       "clcName": "商品流通与市场",
       "books": [
@@ -782,107 +926,76 @@
       ]
     },
     {
+      "clcCode": "F823.130",
+      "clcName": "日本货币政策",
+      "books": [
+        {
+          "id": "WEISER68cbd66a241a",
+          "title": "日本央行的光与影：央行与失去的三十年",
+          "authors": [
+            "河浪武史"
+          ],
+          "authorStatus": "verified",
+          "description": "《日本央行的光与影：央行与失去的三十年》；河浪武史。日本货币政策，AZW3 格式。",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F82%20%E8%B4%A7%E5%B8%81/F823.130%20%E6%97%A5%E6%9C%AC%E8%B4%A7%E5%B8%81%E6%94%BF%E7%AD%96/%E6%97%A5%E6%9C%AC%E5%A4%AE%E8%A1%8C%E7%9A%84%E5%85%89%E4%B8%8E%E5%BD%B1%3A%E5%A4%AE%E8%A1%8C%E4%B8%8E%E5%A4%B1%E5%8E%BB%E7%9A%84%E4%B8%89%E5%8D%81%E5%B9%B4.azw3",
+              "bytes": 5275639
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/68789985e5e67fd8cf480ee79b3f12945bb25b47739c2aa699bafa7208aa9ace.webp",
+          "translator": "宋刚、吴佳欣",
+          "language": "zh",
+          "publisher": "机械工业出版社",
+          "publicationYear": 2024,
+          "publishedAt": "2026-11-14",
+          "access": "public"
+        }
+      ]
+    },
+    {
       "clcCode": "F830",
       "clcName": "金融、银行",
       "books": [
         {
-          "id": "WEISER360ee4c482e1",
-          "title": "巴菲特致股东的信：投资者和公司高管教程（原书第4版） (华章经典·金融投资)",
+          "id": "WEISER05790cc9b521",
+          "title": "债务危机（《原则》作者、桥水创始人瑞·达利欧新作！破解金融危机规律，创建债务大周末模型，桥水44年危机应对经验公开！）",
           "authors": [
-            "华章经典·金融投资"
+            "瑞·达利欧"
           ],
           "authorStatus": "unreviewed",
-          "description": "《巴菲特致股东的信：投资者和公司高管教程（原书第4版） (华章经典·金融投资)》；华章经典·金融投资。金融、银行，MOBI 格式。",
-          "files": [
-            {
-              "format": "MOBI",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%87%B4%E8%82%A1%E4%B8%9C%E7%9A%84%E4%BF%A1%3A%E6%8A%95%E8%B5%84%E8%80%85%E5%92%8C%E5%85%AC%E5%8F%B8%E9%AB%98%E7%AE%A1%E6%95%99%E7%A8%8B%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC4%E7%89%88%EF%BC%89%20%28%E5%8D%8E%E7%AB%A0%E7%BB%8F%E5%85%B8%C2%B7%E9%87%91%E8%9E%8D%E6%8A%95%E8%B5%84%29.mobi",
-              "bytes": 2121468
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/c9f24cafea3162e73ec7fd4bc5932cb38cd5e4c5392fe12decf6e925e2b87522.webp",
-          "access": "public"
-        },
-        {
-          "id": "WEISER11e1b9ac60fc",
-          "title": "百万富翁快车道",
-          "authors": [
-            "【美】MJ·德马科"
-          ],
-          "authorStatus": "unreviewed",
-          "description": "《百万富翁快车道》；【美】MJ·德马科。金融、银行，EPUB 格式。",
+          "description": "《债务危机（《原则》作者、桥水创始人瑞·达利欧新作！破解金融危机规律，创建债务大周末模型，桥水44年危机应对经验公开！）》；瑞·达利欧。金融、银行，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E7%99%BE%E4%B8%87%E5%AF%8C%E7%BF%81%E5%BF%AB%E8%BD%A6%E9%81%93.epub",
-              "bytes": 1688528
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%80%BA%E5%8A%A1%E5%8D%B1%E6%9C%BA%EF%BC%88%E3%80%8A%E5%8E%9F%E5%88%99%E3%80%8B%E4%BD%9C%E8%80%85%E3%80%81%E6%A1%A5%E6%B0%B4%E5%88%9B%E5%A7%8B%E4%BA%BA%E7%91%9E%C2%B7%E8%BE%BE%E5%88%A9%E6%AC%A7%E6%96%B0%E4%BD%9C%EF%BC%81%E7%A0%B4%E8%A7%A3%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA%E8%A7%84%E5%BE%8B%EF%BC%8C%E5%88%9B%E5%BB%BA%E5%80%BA%E5%8A%A1%E5%A4%A7%E5%91%A8%E6%9C%AB%E6%A8%A1%E5%9E%8B%EF%BC%8C%E6%A1%A5%E6%B0%B444%E5%B9%B4%E5%8D%B1%E6%9C%BA%E5%BA%94%E5%AF%B9%E7%BB%8F%E9%AA%8C%E5%85%AC%E5%BC%80%EF%BC%81%EF%BC%89.epub",
+              "bytes": 25557004
             }
           ],
           "draft": false,
-          "cover": "https://library-files.telysta.com/covers/525735f5c384d09fdc9519081be28677a7cd8b271996cda067a407fb2434f0df.webp",
-          "language": "zh-CN",
+          "cover": "https://library-files.telysta.com/covers/ea10b26e6e475c7cae1da1b54daec331173f08ab6a7e66b2f9ed72ec0985069e.webp",
+          "language": "zh",
           "publisher": "中信出版集团",
           "access": "public"
         },
         {
-          "id": "WEISER9ec086ff1f3a",
-          "title": "彼得·林奇的成功投资",
+          "id": "WEISER647118c4d4b9",
+          "title": "十年轮回：从亚洲到全球的金融危机",
           "authors": [
-            "彼得.林奇, 约翰.罗瑟查尔德"
+            "沈联涛"
           ],
           "authorStatus": "unreviewed",
-          "description": "《彼得·林奇的成功投资》；彼得.林奇, 约翰.罗瑟查尔德。金融、银行，EPUB 格式。",
+          "description": "《十年轮回：从亚洲到全球的金融危机》；沈联涛。金融、银行，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%BD%BC%E5%BE%97%C2%B7%E6%9E%97%E5%A5%87%E7%9A%84%E6%88%90%E5%8A%9F%E6%8A%95%E8%B5%84%20%28%E5%BD%BC%E5%BE%97.%E6%9E%97%E5%A5%87%2C%20%E7%BA%A6%E7%BF%B0.%E7%BD%97%E7%91%9F%E6%9F%A5%E5%B0%94%E5%BE%B7%29.epub",
-              "bytes": 9376825
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%8D%81%E5%B9%B4%E8%BD%AE%E5%9B%9E-%E4%BB%8E%E4%BA%9A%E6%B4%B2%E5%88%B0%E5%85%A8%E7%90%83%E7%9A%84%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA.epub",
+              "bytes": 9040027
             }
           ],
           "draft": false,
-          "cover": "https://library-files.telysta.com/covers/6f8d4a8465bb8c2a6ee0070a99516001e4cd60108f6066a0aee2cc1b3ff34c77.webp",
-          "language": "zh",
-          "access": "public"
-        },
-        {
-          "id": "WEISERdde76b026fcd",
-          "title": "聪明的投资者",
-          "authors": [
-            "本杰明·格雷厄姆"
-          ],
-          "authorStatus": "unreviewed",
-          "description": "《聪明的投资者》；本杰明·格雷厄姆。金融、银行，EPUB 格式。",
-          "files": [
-            {
-              "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E8%81%AA%E6%98%8E%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%8C%E6%B3%A8%E7%96%8F%E7%82%B9%E8%AF%84%E7%89%88%EF%BC%89%EF%BC%88%E8%AF%81%E5%88%B8%E6%8A%95%E8%B5%84%E5%AE%9E%E5%8A%A1%E9%A2%86%E5%9F%9F%E7%9A%84%E4%B8%96%E7%95%8C%E7%BA%A7%E3%80%81%E4%B8%96%E7%BA%AA%E7%BA%A7%E7%BB%8F%E5%85%B8%E8%91%97%E4%BD%9C%EF%BC%8C1949%E5%B9%B4%E9%A6%96%E6%AC%A1%E5%87%BA%E7%89%88%E4%B8%80%E6%9D%A5%E5%9C%A8%E8%82%A1%E5%B8%82%E4%B8%8A%E4%B8%80%E7%9B%B4%E8%A2%AB%E5%A5%89%E4%B8%BA%E2%80%9C%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E5%9C%A3%E7%BB%8F%E2%80%9D%E3%80%82%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%A7%B0%E4%B9%8B%E4%B8%BA%E2%80%9C%E6%9C%89%E5%8F%B2%E4%BB%A5%E6%9D%A5%E6%9C%80%E4%BD%B3%E6%8A%95%E8%B5%84%E8%91%97%E4%BD%9C%E2%80%9D%E3%80%82%EF%BC%89.epub",
-              "bytes": 12352775
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/54cedca02fdaed81cb9758e521e0eafa7d619940b4701b04841d8f7fb1e93c62.webp",
-          "language": "zh",
-          "access": "public"
-        },
-        {
-          "id": "WEISERf396ae2abdc6",
-          "title": "大道段永平投资问答录 (赵理亚(选) 芒格书院(编))",
-          "authors": [
-            "赵理亚",
-            "芒格书院"
-          ],
-          "authorStatus": "verified",
-          "description": "《大道段永平投资问答录 (赵理亚(选) 芒格书院(编))》；赵理亚、芒格书院。金融、银行，PDF 格式。",
-          "files": [
-            {
-              "format": "PDF",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%A4%A7%E9%81%93%E6%AE%B5%E6%B0%B8%E5%B9%B3%E6%8A%95%E8%B5%84%E9%97%AE%E7%AD%94%E5%BD%95%20%28%E8%B5%B5%E7%90%86%E4%BA%9A%28%E9%80%89%29%20%E8%8A%92%E6%A0%BC%E4%B9%A6%E9%99%A2%28%E7%BC%96%29%29.pdf",
-              "bytes": 28948207
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/49ad3fa945d9f1b0660f39578c782d08a56a64a7e7fda052c4515c9a13bbe0ae.webp",
           "access": "public"
         },
         {
@@ -903,6 +1016,45 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/3934116a8eb83623aefa6e0d82f76207478676567d8a8eb265efb7a51fe2da5c.webp",
           "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISER4ec6c8aa9b1a",
+          "title": "周期",
+          "authors": [
+            "霍华德·马克斯"
+          ],
+          "authorStatus": "verified",
+          "description": "《周期》；霍华德·马克斯。金融、银行，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%91%A8%E6%9C%9F.pdf",
+              "bytes": 3750340
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/a014e189dd73170953c9d7cf5850679d11c3fe688275c61f1ba0622528f11053.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISERf396ae2abdc6",
+          "title": "大道段永平投资问答录 (赵理亚(选) 芒格书院(编))",
+          "authors": [
+            "赵理亚",
+            "芒格书院"
+          ],
+          "authorStatus": "verified",
+          "description": "《大道段永平投资问答录 (赵理亚(选) 芒格书院(编))》；赵理亚、芒格书院。金融、银行，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%A4%A7%E9%81%93%E6%AE%B5%E6%B0%B8%E5%B9%B3%E6%8A%95%E8%B5%84%E9%97%AE%E7%AD%94%E5%BD%95%20%28%E8%B5%B5%E7%90%86%E4%BA%9A%28%E9%80%89%29%20%E8%8A%92%E6%A0%BC%E4%B9%A6%E9%99%A2%28%E7%BC%96%29%29.pdf",
+              "bytes": 28948207
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/49ad3fa945d9f1b0660f39578c782d08a56a64a7e7fda052c4515c9a13bbe0ae.webp",
           "access": "public"
         },
         {
@@ -927,108 +1079,63 @@
           "access": "public"
         },
         {
-          "id": "WEISERb061652f048c",
-          "title": "股市趋势技术分析（原书第10版）",
+          "id": "WEISER360ee4c482e1",
+          "title": "巴菲特致股东的信：投资者和公司高管教程（原书第4版） (华章经典·金融投资)",
           "authors": [
-            "罗伯特D.爱德华兹(Robert D. Edwards)",
-            "约翰·迈吉(John Magee)",
-            "W. H. C.巴塞蒂(W. H. C. Bassetti)"
+            "华章经典·金融投资"
           ],
           "authorStatus": "unreviewed",
-          "description": "《股市趋势技术分析（原书第10版）》；罗伯特D.爱德华兹(Robert D. Edwards)、约翰·迈吉(John Magee)、W. H. C.巴塞蒂(W. H. C. Bassetti)。金融、银行，EPUB 格式。",
-          "files": [
-            {
-              "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E8%82%A1%E5%B8%82%E8%B6%8B%E5%8A%BF%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC10%E7%89%88%EF%BC%89.epub",
-              "bytes": 43747123
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/506fb9b364224d13de7e563efb7921df86bdfc9c1e5f671a7a0b0b2ad5c14d91.webp",
-          "language": "zh",
-          "publisher": "北京华章图文信息有限公司",
-          "access": "public"
-        },
-        {
-          "id": "WEISER0d5962643b8c",
-          "title": "货币金融学（原书第2版） (华章教材经典译丛)",
-          "authors": [
-            "华章教材经典译丛"
-          ],
-          "authorStatus": "unreviewed",
-          "description": "《货币金融学（原书第2版） (华章教材经典译丛)》；华章教材经典译丛。金融、银行，EPUB 格式。",
-          "files": [
-            {
-              "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E8%B4%A7%E5%B8%81%E9%87%91%E8%9E%8D%E5%AD%A6%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC2%E7%89%88%EF%BC%89%20%28%E5%8D%8E%E7%AB%A0%E6%95%99%E6%9D%90%E7%BB%8F%E5%85%B8%E8%AF%91%E4%B8%9B%29.epub",
-              "bytes": 9417303
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/b6f59ab6a968b84d37ee192e3df3c793258651acf90c9afcc35203742601c678.webp",
-          "language": "zh",
-          "publisher": "机械工业出版社",
-          "access": "public"
-        },
-        {
-          "id": "WEISERe90c521545ed",
-          "title": "金融炼金术",
-          "authors": [
-            "乔治·索罗斯"
-          ],
-          "authorStatus": "verified",
-          "description": "《金融炼金术》；乔治·索罗斯。金融、银行，MOBI 格式。",
+          "description": "《巴菲特致股东的信：投资者和公司高管教程（原书第4版） (华章经典·金融投资)》；华章经典·金融投资。金融、银行，MOBI 格式。",
           "files": [
             {
               "format": "MOBI",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E9%87%91%E8%9E%8D%E7%82%BC%E9%87%91%E6%9C%AF.mobi",
-              "bytes": 16277844
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%87%B4%E8%82%A1%E4%B8%9C%E7%9A%84%E4%BF%A1%3A%E6%8A%95%E8%B5%84%E8%80%85%E5%92%8C%E5%85%AC%E5%8F%B8%E9%AB%98%E7%AE%A1%E6%95%99%E7%A8%8B%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC4%E7%89%88%EF%BC%89%20%28%E5%8D%8E%E7%AB%A0%E7%BB%8F%E5%85%B8%C2%B7%E9%87%91%E8%9E%8D%E6%8A%95%E8%B5%84%29.mobi",
+              "bytes": 2121468
             }
           ],
           "draft": false,
-          "cover": "https://library-files.telysta.com/covers/58cb933be2505c0c6c1134dd2803d924cb4c3f03ef7f3e66336da9ce9dd01738.webp",
+          "cover": "https://library-files.telysta.com/covers/c9f24cafea3162e73ec7fd4bc5932cb38cd5e4c5392fe12decf6e925e2b87522.webp",
           "access": "public"
         },
         {
-          "id": "WEISER8be1d250574c",
-          "title": "纳瓦尔宝典",
+          "id": "WEISER9ec086ff1f3a",
+          "title": "彼得·林奇的成功投资",
           "authors": [
-            "（美）埃里克·乔根森"
+            "彼得.林奇, 约翰.罗瑟查尔德"
           ],
           "authorStatus": "unreviewed",
-          "description": "《纳瓦尔宝典》；（美）埃里克·乔根森。金融、银行，EPUB 格式。",
+          "description": "《彼得·林奇的成功投资》；彼得.林奇, 约翰.罗瑟查尔德。金融、银行，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E7%BA%B3%E7%93%A6%E5%B0%94%E5%AE%9D%E5%85%B8.epub",
-              "bytes": 724835
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%BD%BC%E5%BE%97%C2%B7%E6%9E%97%E5%A5%87%E7%9A%84%E6%88%90%E5%8A%9F%E6%8A%95%E8%B5%84%20%28%E5%BD%BC%E5%BE%97.%E6%9E%97%E5%A5%87%2C%20%E7%BA%A6%E7%BF%B0.%E7%BD%97%E7%91%9F%E6%9F%A5%E5%B0%94%E5%BE%B7%29.epub",
+              "bytes": 9376825
             }
           ],
           "draft": false,
-          "cover": "https://library-files.telysta.com/covers/73ab4cd25e59214bd6e0c800a41b09ece279545d6e440ebac99ae7e463c420f7.webp",
+          "cover": "https://library-files.telysta.com/covers/6f8d4a8465bb8c2a6ee0070a99516001e4cd60108f6066a0aee2cc1b3ff34c77.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERed367ea56648",
+          "title": "投资最重要的事（\"这是一本难得一见的有用的书。\"——沃伦巴菲特）",
+          "authors": [
+            "霍华德·马克斯"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《投资最重要的事（\"这是一本难得一见的有用的书。\"——沃伦巴菲特）》；霍华德·马克斯。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E6%8A%95%E8%B5%84%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B%EF%BC%88%20%E8%BF%99%E6%98%AF%E4%B8%80%E6%9C%AC%E9%9A%BE%E5%BE%97%E4%B8%80%E8%A7%81%E7%9A%84%E6%9C%89%E7%94%A8%E7%9A%84%E4%B9%A6%E3%80%82%20%E2%80%94%E2%80%94%E6%B2%83%E4%BC%A6%E5%B7%B4%E8%8F%B2%E7%89%B9%EF%BC%89.epub",
+              "bytes": 1164473
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/2e9644607cfb2ff20f122023333aadb1fa84da793a1f30d7a8ef588f9bae686c.webp",
           "language": "zh",
           "publisher": "中信出版集团",
-          "access": "public"
-        },
-        {
-          "id": "WEISER14248f425d12",
-          "title": "穷查理宝典（珍藏版）（1+2册）",
-          "authors": [
-            "[美]查理·芒格"
-          ],
-          "authorStatus": "unreviewed",
-          "description": "《穷查理宝典（珍藏版）（1+2册）》；[美]查理·芒格。金融、银行，EPUB 格式。",
-          "files": [
-            {
-              "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8%EF%BC%88%E7%8F%8D%E8%97%8F%E7%89%88%EF%BC%89%EF%BC%881%2B2%E5%86%8C%EF%BC%89.epub",
-              "bytes": 3928878
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/0fcfc85ad0b7f22924b7bf178c0e69e1bdc1042556a900871e8b8e716edcdc04.webp",
-          "language": "zh-CN",
-          "publisher": "中信出版社",
           "access": "public"
         },
         {
@@ -1050,27 +1157,6 @@
           "cover": "https://library-files.telysta.com/covers/52b4affdb3e30a1c4dcea3af057c5f43245a1d14838b8156b767dc4480feed65.webp",
           "language": "zh",
           "publisher": "北京华章图文信息有限公司",
-          "access": "public"
-        },
-        {
-          "id": "WEISER73ca38f0fe0f",
-          "title": "随机漫步的傻瓜",
-          "authors": [
-            "[ 美] 纳西姆· 尼古拉斯· 塔勒布"
-          ],
-          "authorStatus": "unreviewed",
-          "description": "《随机漫步的傻瓜》；[ 美] 纳西姆· 尼古拉斯· 塔勒布。金融、银行，EPUB 格式。",
-          "files": [
-            {
-              "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5%E7%9A%84%E5%82%BB%E7%93%9C.epub",
-              "bytes": 616122
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/79b9dd66c9a4cf48f0403634e5765186b7b14e221308020af0f152079e63304e.webp",
-          "language": "zh-CN",
-          "publisher": "中信出版社",
           "access": "public"
         },
         {
@@ -1117,86 +1203,109 @@
           "access": "public"
         },
         {
-          "id": "WEISERe1131bf2573d",
-          "title": "逃不开的经济周期：历史，理论与投资现实",
+          "id": "WEISER11e1b9ac60fc",
+          "title": "百万富翁快车道",
           "authors": [
-            "拉斯•特维德"
+            "【美】MJ·德马科"
           ],
           "authorStatus": "unreviewed",
-          "description": "《逃不开的经济周期：历史，理论与投资现实》；拉斯•特维德。金融、银行，EPUB 格式。",
+          "description": "《百万富翁快车道》；【美】MJ·德马科。金融、银行，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E9%80%83%E4%B8%8D%E5%BC%80%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%91%A8%E6%9C%9F%3A%E5%8E%86%E5%8F%B2%EF%BC%8C%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%95%E8%B5%84%E7%8E%B0%E5%AE%9E.epub",
-              "bytes": 4805852
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E7%99%BE%E4%B8%87%E5%AF%8C%E7%BF%81%E5%BF%AB%E8%BD%A6%E9%81%93.epub",
+              "bytes": 1688528
             }
           ],
           "draft": false,
-          "cover": "https://library-files.telysta.com/covers/75066cfa89027ac37450ecc63c13ee0feb3980df1c53fc933e886b5dbf356fe8.webp",
-          "language": "zh",
+          "cover": "https://library-files.telysta.com/covers/525735f5c384d09fdc9519081be28677a7cd8b271996cda067a407fb2434f0df.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版集团",
           "access": "public"
         },
         {
-          "id": "WEISERfc476ffaaf4d",
-          "title": "逃不开的经济周期2（理解金融动荡时期的真实情况）",
+          "id": "WEISER14248f425d12",
+          "title": "穷查理宝典（珍藏版）（1+2册）",
           "authors": [
-            "拉斯·特维德"
+            "[美]查理·芒格"
           ],
           "authorStatus": "unreviewed",
-          "description": "《逃不开的经济周期2（理解金融动荡时期的真实情况）》；拉斯·特维德。金融、银行，EPUB 格式。",
+          "description": "《穷查理宝典（珍藏版）（1+2册）》；[美]查理·芒格。金融、银行，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E9%80%83%E4%B8%8D%E5%BC%80%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%91%A8%E6%9C%9F2%EF%BC%88%E7%90%86%E8%A7%A3%E9%87%91%E8%9E%8D%E5%8A%A8%E8%8D%A1%E6%97%B6%E6%9C%9F%E7%9A%84%E7%9C%9F%E5%AE%9E%E6%83%85%E5%86%B5%EF%BC%89.epub",
-              "bytes": 4271142
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8%EF%BC%88%E7%8F%8D%E8%97%8F%E7%89%88%EF%BC%89%EF%BC%881%2B2%E5%86%8C%EF%BC%89.epub",
+              "bytes": 3928878
             }
           ],
           "draft": false,
-          "cover": "https://library-files.telysta.com/covers/8176d14436412e8c0bb00bb31aa01d7587150a851b946dd4337f8bb7a874c97b.webp",
+          "cover": "https://library-files.telysta.com/covers/0fcfc85ad0b7f22924b7bf178c0e69e1bdc1042556a900871e8b8e716edcdc04.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER8be1d250574c",
+          "title": "纳瓦尔宝典",
+          "authors": [
+            "（美）埃里克·乔根森"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《纳瓦尔宝典》；（美）埃里克·乔根森。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E7%BA%B3%E7%93%A6%E5%B0%94%E5%AE%9D%E5%85%B8.epub",
+              "bytes": 724835
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/73ab4cd25e59214bd6e0c800a41b09ece279545d6e440ebac99ae7e463c420f7.webp",
           "language": "zh",
           "publisher": "中信出版集团",
           "access": "public"
         },
         {
-          "id": "WEISERed367ea56648",
-          "title": "投资最重要的事（\"这是一本难得一见的有用的书。\"——沃伦巴菲特）",
+          "id": "WEISERdde76b026fcd",
+          "title": "聪明的投资者",
           "authors": [
-            "霍华德·马克斯"
+            "本杰明·格雷厄姆"
           ],
           "authorStatus": "unreviewed",
-          "description": "《投资最重要的事（\"这是一本难得一见的有用的书。\"——沃伦巴菲特）》；霍华德·马克斯。金融、银行，EPUB 格式。",
+          "description": "《聪明的投资者》；本杰明·格雷厄姆。金融、银行，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E6%8A%95%E8%B5%84%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B%EF%BC%88%20%E8%BF%99%E6%98%AF%E4%B8%80%E6%9C%AC%E9%9A%BE%E5%BE%97%E4%B8%80%E8%A7%81%E7%9A%84%E6%9C%89%E7%94%A8%E7%9A%84%E4%B9%A6%E3%80%82%20%E2%80%94%E2%80%94%E6%B2%83%E4%BC%A6%E5%B7%B4%E8%8F%B2%E7%89%B9%EF%BC%89.epub",
-              "bytes": 1164473
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E8%81%AA%E6%98%8E%E7%9A%84%E6%8A%95%E8%B5%84%E8%80%85%EF%BC%88%E7%AC%AC4%E7%89%88%EF%BC%8C%E6%B3%A8%E7%96%8F%E7%82%B9%E8%AF%84%E7%89%88%EF%BC%89%EF%BC%88%E8%AF%81%E5%88%B8%E6%8A%95%E8%B5%84%E5%AE%9E%E5%8A%A1%E9%A2%86%E5%9F%9F%E7%9A%84%E4%B8%96%E7%95%8C%E7%BA%A7%E3%80%81%E4%B8%96%E7%BA%AA%E7%BA%A7%E7%BB%8F%E5%85%B8%E8%91%97%E4%BD%9C%EF%BC%8C1949%E5%B9%B4%E9%A6%96%E6%AC%A1%E5%87%BA%E7%89%88%E4%B8%80%E6%9D%A5%E5%9C%A8%E8%82%A1%E5%B8%82%E4%B8%8A%E4%B8%80%E7%9B%B4%E8%A2%AB%E5%A5%89%E4%B8%BA%E2%80%9C%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E5%9C%A3%E7%BB%8F%E2%80%9D%E3%80%82%E5%B7%B4%E8%8F%B2%E7%89%B9%E7%A7%B0%E4%B9%8B%E4%B8%BA%E2%80%9C%E6%9C%89%E5%8F%B2%E4%BB%A5%E6%9D%A5%E6%9C%80%E4%BD%B3%E6%8A%95%E8%B5%84%E8%91%97%E4%BD%9C%E2%80%9D%E3%80%82%EF%BC%89.epub",
+              "bytes": 12352775
             }
           ],
           "draft": false,
-          "cover": "https://library-files.telysta.com/covers/2e9644607cfb2ff20f122023333aadb1fa84da793a1f30d7a8ef588f9bae686c.webp",
+          "cover": "https://library-files.telysta.com/covers/54cedca02fdaed81cb9758e521e0eafa7d619940b4701b04841d8f7fb1e93c62.webp",
           "language": "zh",
-          "publisher": "中信出版集团",
           "access": "public"
         },
         {
-          "id": "WEISER05790cc9b521",
-          "title": "债务危机（《原则》作者、桥水创始人瑞·达利欧新作！破解金融危机规律，创建债务大周末模型，桥水44年危机应对经验公开！）",
+          "id": "WEISERb061652f048c",
+          "title": "股市趋势技术分析（原书第10版）",
           "authors": [
-            "瑞·达利欧"
+            "罗伯特D.爱德华兹(Robert D. Edwards)",
+            "约翰·迈吉(John Magee)",
+            "W. H. C.巴塞蒂(W. H. C. Bassetti)"
           ],
           "authorStatus": "unreviewed",
-          "description": "《债务危机（《原则》作者、桥水创始人瑞·达利欧新作！破解金融危机规律，创建债务大周末模型，桥水44年危机应对经验公开！）》；瑞·达利欧。金融、银行，EPUB 格式。",
+          "description": "《股市趋势技术分析（原书第10版）》；罗伯特D.爱德华兹(Robert D. Edwards)、约翰·迈吉(John Magee)、W. H. C.巴塞蒂(W. H. C. Bassetti)。金融、银行，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%80%BA%E5%8A%A1%E5%8D%B1%E6%9C%BA%EF%BC%88%E3%80%8A%E5%8E%9F%E5%88%99%E3%80%8B%E4%BD%9C%E8%80%85%E3%80%81%E6%A1%A5%E6%B0%B4%E5%88%9B%E5%A7%8B%E4%BA%BA%E7%91%9E%C2%B7%E8%BE%BE%E5%88%A9%E6%AC%A7%E6%96%B0%E4%BD%9C%EF%BC%81%E7%A0%B4%E8%A7%A3%E9%87%91%E8%9E%8D%E5%8D%B1%E6%9C%BA%E8%A7%84%E5%BE%8B%EF%BC%8C%E5%88%9B%E5%BB%BA%E5%80%BA%E5%8A%A1%E5%A4%A7%E5%91%A8%E6%9C%AB%E6%A8%A1%E5%9E%8B%EF%BC%8C%E6%A1%A5%E6%B0%B444%E5%B9%B4%E5%8D%B1%E6%9C%BA%E5%BA%94%E5%AF%B9%E7%BB%8F%E9%AA%8C%E5%85%AC%E5%BC%80%EF%BC%81%EF%BC%89.epub",
-              "bytes": 25557004
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E8%82%A1%E5%B8%82%E8%B6%8B%E5%8A%BF%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC10%E7%89%88%EF%BC%89.epub",
+              "bytes": 43747123
             }
           ],
           "draft": false,
-          "cover": "https://library-files.telysta.com/covers/ea10b26e6e475c7cae1da1b54daec331173f08ab6a7e66b2f9ed72ec0985069e.webp",
+          "cover": "https://library-files.telysta.com/covers/506fb9b364224d13de7e563efb7921df86bdfc9c1e5f671a7a0b0b2ad5c14d91.webp",
           "language": "zh",
-          "publisher": "中信出版集团",
+          "publisher": "北京华章图文信息有限公司",
           "access": "public"
         },
         {
@@ -1221,82 +1330,105 @@
           "access": "public"
         },
         {
-          "id": "WEISER4ec6c8aa9b1a",
-          "title": "周期",
+          "id": "WEISER0d5962643b8c",
+          "title": "货币金融学（原书第2版） (华章教材经典译丛)",
           "authors": [
-            "霍华德·马克斯"
+            "华章教材经典译丛"
           ],
-          "authorStatus": "verified",
-          "description": "《周期》；霍华德·马克斯。金融、银行，PDF 格式。",
-          "files": [
-            {
-              "format": "PDF",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E5%91%A8%E6%9C%9F.pdf",
-              "bytes": 3750340
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/a014e189dd73170953c9d7cf5850679d11c3fe688275c61f1ba0622528f11053.webp",
-          "access": "public"
-        }
-      ]
-    },
-    {
-      "clcCode": "F823.130",
-      "clcName": "日本货币政策",
-      "books": [
-        {
-          "id": "WEISER68cbd66a241a",
-          "title": "日本央行的光与影：央行与失去的三十年",
-          "authors": [
-            "河浪武史"
-          ],
-          "authorStatus": "verified",
-          "description": "《日本央行的光与影：央行与失去的三十年》；河浪武史。日本货币政策，AZW3 格式。",
-          "files": [
-            {
-              "format": "AZW3",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F82%20%E8%B4%A7%E5%B8%81/F823.130%20%E6%97%A5%E6%9C%AC%E8%B4%A7%E5%B8%81%E6%94%BF%E7%AD%96/%E6%97%A5%E6%9C%AC%E5%A4%AE%E8%A1%8C%E7%9A%84%E5%85%89%E4%B8%8E%E5%BD%B1%3A%E5%A4%AE%E8%A1%8C%E4%B8%8E%E5%A4%B1%E5%8E%BB%E7%9A%84%E4%B8%89%E5%8D%81%E5%B9%B4.azw3",
-              "bytes": 5275639
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/68789985e5e67fd8cf480ee79b3f12945bb25b47739c2aa699bafa7208aa9ace.webp",
-          "translator": "宋刚、吴佳欣",
-          "language": "zh",
-          "publisher": "机械工业出版社",
-          "publicationYear": 2024,
-          "publishedAt": "2026-11-14",
-          "access": "public"
-        }
-      ]
-    },
-    {
-      "clcCode": "F131.26",
-      "clcName": "韩国",
-      "books": [
-        {
-          "id": "WEISERbb5e0fd1eb65",
-          "title": "压缩现代性下的韩国：转型中的家族政治经济学",
-          "authors": [
-            "张庆燮"
-          ],
-          "authorStatus": "verified",
-          "description": "《压缩现代性下的韩国：转型中的家族政治经济学》；张庆燮。韩国，EPUB 格式。",
+          "authorStatus": "unreviewed",
+          "description": "《货币金融学（原书第2版） (华章教材经典译丛)》；华章教材经典译丛。金融、银行，EPUB 格式。",
           "files": [
             {
               "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F13%20%E4%BA%9A%E6%B4%B2%E7%BB%8F%E6%B5%8E/F131.26%20%E9%9F%A9%E5%9B%BD/%E5%8E%8B%E7%BC%A9%E7%8E%B0%E4%BB%A3%E6%80%A7%E4%B8%8B%E7%9A%84%E9%9F%A9%E5%9B%BD%3A%E8%BD%AC%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%AE%B6%E6%97%8F%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6.epub",
-              "bytes": 8505604
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E8%B4%A7%E5%B8%81%E9%87%91%E8%9E%8D%E5%AD%A6%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC2%E7%89%88%EF%BC%89%20%28%E5%8D%8E%E7%AB%A0%E6%95%99%E6%9D%90%E7%BB%8F%E5%85%B8%E8%AF%91%E4%B8%9B%29.epub",
+              "bytes": 9417303
             }
           ],
           "draft": false,
-          "cover": "https://library-files.telysta.com/covers/209fca260342b8770545802c46ecbea0e518d36edab8dd9cbd52b6400853a6ff.webp",
-          "translator": "司炳月、孙彤彤",
+          "cover": "https://library-files.telysta.com/covers/b6f59ab6a968b84d37ee192e3df3c793258651acf90c9afcc35203742601c678.webp",
           "language": "zh",
-          "publisher": "江苏人民出版社",
-          "publicationYear": 2024,
-          "publishedAt": "2026-11-14",
+          "publisher": "机械工业出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISERfc476ffaaf4d",
+          "title": "逃不开的经济周期2（理解金融动荡时期的真实情况）",
+          "authors": [
+            "拉斯·特维德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《逃不开的经济周期2（理解金融动荡时期的真实情况）》；拉斯·特维德。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E9%80%83%E4%B8%8D%E5%BC%80%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%91%A8%E6%9C%9F2%EF%BC%88%E7%90%86%E8%A7%A3%E9%87%91%E8%9E%8D%E5%8A%A8%E8%8D%A1%E6%97%B6%E6%9C%9F%E7%9A%84%E7%9C%9F%E5%AE%9E%E6%83%85%E5%86%B5%EF%BC%89.epub",
+              "bytes": 4271142
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/8176d14436412e8c0bb00bb31aa01d7587150a851b946dd4337f8bb7a874c97b.webp",
+          "language": "zh",
+          "publisher": "中信出版集团",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe1131bf2573d",
+          "title": "逃不开的经济周期：历史，理论与投资现实",
+          "authors": [
+            "拉斯•特维德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《逃不开的经济周期：历史，理论与投资现实》；拉斯•特维德。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E9%80%83%E4%B8%8D%E5%BC%80%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%91%A8%E6%9C%9F%3A%E5%8E%86%E5%8F%B2%EF%BC%8C%E7%90%86%E8%AE%BA%E4%B8%8E%E6%8A%95%E8%B5%84%E7%8E%B0%E5%AE%9E.epub",
+              "bytes": 4805852
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/75066cfa89027ac37450ecc63c13ee0feb3980df1c53fc933e886b5dbf356fe8.webp",
+          "language": "zh",
+          "access": "public"
+        },
+        {
+          "id": "WEISERe90c521545ed",
+          "title": "金融炼金术",
+          "authors": [
+            "乔治·索罗斯"
+          ],
+          "authorStatus": "verified",
+          "description": "《金融炼金术》；乔治·索罗斯。金融、银行，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E9%87%91%E8%9E%8D%E7%82%BC%E9%87%91%E6%9C%AF.mobi",
+              "bytes": 16277844
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/58cb933be2505c0c6c1134dd2803d924cb4c3f03ef7f3e66336da9ce9dd01738.webp",
+          "access": "public"
+        },
+        {
+          "id": "WEISER73ca38f0fe0f",
+          "title": "随机漫步的傻瓜",
+          "authors": [
+            "[ 美] 纳西姆· 尼古拉斯· 塔勒布"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《随机漫步的傻瓜》；[ 美] 纳西姆· 尼古拉斯· 塔勒布。金融、银行，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F8%20%E8%B4%A2%E6%94%BF%E3%80%81%E9%87%91%E8%9E%8D/F830%20%E9%87%91%E8%9E%8D%E3%80%81%E9%93%B6%E8%A1%8C/%E9%9A%8F%E6%9C%BA%E6%BC%AB%E6%AD%A5%E7%9A%84%E5%82%BB%E7%93%9C.epub",
+              "bytes": 616122
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/79b9dd66c9a4cf48f0403634e5765186b7b14e221308020af0f152079e63304e.webp",
+          "language": "zh-CN",
+          "publisher": "中信出版社",
           "access": "public"
         }
       ]
