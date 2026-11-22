@@ -7,6 +7,7 @@ import { handleUploads } from './uploads';
 import { handleSessions } from './sessions';
 import { handleHistory } from './history';
 import { handleUsers } from './userAccess';
+import { handleComments } from './comments';
 export class AuthService extends WorkerEntrypoint<ConsoleEnv> {
  async session(cookies: string) { return sessionView(await sessionUser(this.env, cookies)); }
 }
@@ -30,8 +31,11 @@ export default {
     }
     else {
      const user = await sessionUser(env, request.headers.get('Cookie'));
+     if (url.pathname === '/api/comments' || url.pathname.startsWith('/api/comments/')) response = await handleComments(request, env, user, url);
+     else {
      if (!user) throw new HttpError(401, '请先登录。');
      response = url.pathname.startsWith('/api/sessions') || /^\/api\/users\/[a-f0-9-]+\/sessions$/.test(url.pathname) ? await handleSessions(request, env, user, url) : url.pathname === '/api/profile' || url.pathname.startsWith('/api/users') ? await handleUsers(request, env, user, url) : url.pathname.startsWith('/api/uploads') ? await handleUploads(request, env, user, url) : /^\/api\/documents\/[^/]+\/revisions(?:\/|$)/.test(url.pathname) ? await handleHistory(request, env, user, url) : await handleManagement(request, env, user, url);
+     }
     }
    } else if (['GET','HEAD'].includes(request.method)) {
     if (base === env.ADMIN_PATH && url.pathname === '/') {

@@ -8,14 +8,35 @@
     "nodejs_compat"
   ],
   "workers_dev": false,
+  "secrets": {
+    "required": [
+      "ANONYMOUS_QUOTA_SECRET"
+    ]
+  },
   "vars": {
-    "CATALOG_KEY": "gateway/catalog-26f26aa07ec7798dbadcc44e516f37ea7b9ae69b2981a5f4460692137328322b.json",
+    "CATALOG_KEY": "gateway/catalog-7c2802c694b0be34eff3d5b96b3f6a31adc72930de7f0d9ca786c2b7d786a194.json",
     "ALLOWED_ORIGINS": "https://telysta.com"
   },
   "r2_buckets": [
     {
       "binding": "LIBRARY_BUCKET",
       "bucket_name": "telysta-library"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "ANONYMOUS_DOWNLOADS",
+        "class_name": "AnonymousDownloads"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "anonymous-downloads-v1",
+      "new_sqlite_classes": [
+        "AnonymousDownloads"
+      ]
     }
   ],
   "observability": {

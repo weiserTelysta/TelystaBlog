@@ -16,6 +16,9 @@
 .cloud-comment__actions { gap: 20px; }
 .cloud-comment__actions button { font-size: var(--type-meta-size); }
 .cloud-comments__composer { margin-top: 28px; }
+.cloud-comments__sign-in { margin: 24px 0 0; font-size: var(--type-label-size); }
+.cloud-comments__sign-in a { display: inline-flex; align-items: center; min-height: 44px; color: var(--color-accent); text-decoration: none; }
+.cloud-comments__sign-in a:hover { text-decoration: underline; }
 .cloud-comments__compose-head { justify-content: space-between; margin-bottom: 10px; color: var(--color-text-muted); font-size: var(--type-label-size); }
 .cloud-comments textarea { width: 100%; min-height: 112px; padding: 14px; border: 1px solid var(--color-control-border); border-radius: var(--radius-control); background: var(--color-background-soft); color: var(--color-text); resize: vertical; font: var(--type-body-size)/1.8 var(--font-body); }
 .cloud-comments textarea::placeholder { color: var(--color-text-muted); }

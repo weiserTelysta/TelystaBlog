@@ -80,7 +80,7 @@ export async function handleManagement(request: Request, env: ConsoleEnv, user: 
  if (path === '/api/export' && request.method === 'GET') {
   requireOwner(user);
   const type = url.searchParams.get('type') || 'all';
-  if (![...KINDS,'users','uploads','audit','all'].includes(type)) throw new HttpError(400, '备份类型无效。');
+  if (![...KINDS,'users','uploads','audit','all','comments'].includes(type)) throw new HttpError(400, '备份类型无效。');
   return exportBackup(env,user.id,type,KINDS);
  }
  if (path === '/api/audit' && request.method === 'GET') {

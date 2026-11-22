@@ -457,6 +457,47 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/d9c64e7522d4588890851f814fa357cd09b01d7b08ad652eb6d6d8820b558b4e.webp"
+        },
+        {
+          "id": "WEISER692477093bac",
+          "title": "佛家逻辑通论",
+          "authors": [
+            "郑伟宏"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B81/WEISER692477093bac.pdf",
+              "bytes": 19703683
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/4cf66019d0f488ce8e4e2ec65b26be7b8a0c15a69b20254a686b92f587e36b1e.webp",
+          "description": "佛家逻辑通论，逻辑学相关藏书。"
+        },
+        {
+          "id": "WEISERa2640fb81e41",
+          "title": "因明入正理论读解·因明入正理论悟他门浅释",
+          "authors": [
+            "吕澂",
+            "陈大齐"
+          ],
+          "authorStatus": "unreviewed",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B81/WEISERa2640fb81e41.pdf",
+              "bytes": 27843656
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/5997d1e0f13ada4610b3dead4e57e44952d6fa822996f4fecf5b6aa81f350666.webp",
+          "description": "因明入正理论读解·因明入正理论悟他门浅释，逻辑学相关藏书。"
         }
       ]
     },
@@ -505,6 +546,66 @@
           "language": "zh",
           "publisher": "中国社会科学出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISER2b600c38685b",
+          "title": "理与人",
+          "authors": [
+            "德里克·帕菲特"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B/B82/WEISER2b600c38685b.epub",
+              "bytes": 3100454
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/56faa6f202ad12064556aed36494e75463f153da75b900562966cd3dcb7c0bf5.webp",
+          "description": "理与人，伦理学相关藏书。"
+        },
+        {
+          "id": "WEISER96321c299d05",
+          "title": "羞耻与必然性",
+          "authors": [
+            "伯纳德·威廉斯"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B82/WEISER96321c299d05.pdf",
+              "bytes": 58854417
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/a8b2300d619bd2dca3103b31c91befc618a169755558ddd3b100cebf24e35bb5.webp",
+          "description": "羞耻与必然性，伦理学相关藏书。"
+        },
+        {
+          "id": "WEISER1fd90efaf5b9",
+          "title": "道德运气",
+          "authors": [
+            "伯纳德·威廉斯"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B82/WEISER1fd90efaf5b9.pdf",
+              "bytes": 81940094
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/b0956e6a12076c6d3cd490a11b1c229f1a1ee4c6e5637f1892c18bb795c9cdc2.webp",
+          "description": "道德运气，伦理学相关藏书。"
         }
       ]
     },
@@ -1270,6 +1371,47 @@
           "language": "zh-TW",
           "publisher": "CBETA",
           "access": "public"
+        },
+        {
+          "id": "WEISER0c31dabe9b4a",
+          "title": "中论颂梵藏汉对照",
+          "authors": [
+            "龙树"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B94/WEISER0c31dabe9b4a.pdf",
+              "bytes": 3834598
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/6cc17fafaf0c43bc234e0570359cb2e104d1785bd156d47a706b7fcadb30bf72.webp",
+          "description": "中论颂梵藏汉对照，佛教相关藏书。",
+          "translator": "叶少勇"
+        },
+        {
+          "id": "WEISER5c890b623d31",
+          "title": "中国佛教哲学要义（上下册）",
+          "authors": [
+            "方立天"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B/B94/WEISER5c890b623d31.epub",
+              "bytes": 1312796
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/c930cb0fbd0497f5fd120f8c2f17090ebefed8c9dc885886d76c6fcfe58d20c5.webp",
+          "description": "中国佛教哲学要义（上下册），佛教相关藏书。"
         }
       ]
     },
@@ -2682,6 +2824,26 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/15df55cb1457033a175fcec5fcbc3956dd61ffbb58ee93f0ab4d3f68e77bb847.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER42f156ce50c1",
+          "title": "狄德罗哲学选集",
+          "authors": [
+            "狄德罗"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B/B565/WEISER42f156ce50c1.epub",
+              "bytes": 471713
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/a11209a1b12d3fb7f3c84a7840e208588e81bc6156277d47f70c188705044f9a.webp",
+          "description": "狄德罗哲学选集，法国哲学相关藏书。"
         }
       ]
     },
@@ -2879,6 +3041,32 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/dde7b53363e3fd5dfb50f8e2aa38fd73b5c7a2320d6bdbeba02d6ac53ef186cc.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "B949.351",
+      "clcName": "印度佛教史",
+      "books": [
+        {
+          "id": "WEISERc781fdbe867d",
+          "title": "印度佛学源流略讲",
+          "authors": [
+            "吕澂"
+          ],
+          "authorStatus": "unreviewed",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B949.351/WEISERc781fdbe867d.pdf",
+              "bytes": 16586277
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/9a20be81489bfaffbe2e9c48187f7fef1c2b9e439326e888f691f22669ce5ea1.webp",
+          "description": "印度佛学源流略讲，印度佛教史相关藏书。"
         }
       ]
     },

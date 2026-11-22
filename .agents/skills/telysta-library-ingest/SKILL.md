@@ -64,6 +64,8 @@ description: 为 Telysta 书室添加或修订电子书，核对书目与中图�
 
 中图法的大类与当前细分类映射见 [references/clc.md](references/clc.md)，新增书籍归类与 Booklist 建立时读取。现行结构、字段样例及历史盘点见仓库 [docs/ebooks.md](../../../docs/ebooks.md) 与 [docs/library.md](../../../docs/library.md)。
 
+匿名下载每日10个不同文件、续传去重及Secret/DO部署规则见 [访问控制](references/access-control.md#匿名下载每日额度2026-11-22)。常规入库不得重置配额或绕过网关。
+
 ## 完成标准
 
 对账本批次指定文件与实际上传对象，确认文件大小、可用哈希、封面和匿名公开链接；执行适用的内容校验、类型／单元检查和生产构建。报告实际入库／上传数量、保留的未核验项、验证方式、Git 提交和部署状态。没有测试的部分不宣称通过。

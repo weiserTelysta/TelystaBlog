@@ -375,6 +375,26 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/31096ef2112e3d57940b308c7e4d2550182efbcecd4909e732e951038a86551b.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER0a6ece3ea80b",
+          "title": "朱光潜谈文学",
+          "authors": [
+            "朱光潜"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I0/WEISER0a6ece3ea80b.pdf",
+              "bytes": 106646901
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/df1d713e08ba73513db1af8caa9d14be9180ee91edd48914642e0e7aaf906b0c.webp",
+          "description": "朱光潜谈文学，文学理论相关藏书。"
         }
       ]
     },
@@ -806,6 +826,32 @@
       ]
     },
     {
+      "clcCode": "I06",
+      "clcName": "文学评论、文学欣赏",
+      "books": [
+        {
+          "id": "WEISERc8cdc9c14e85",
+          "title": "文学读法",
+          "authors": [
+            "特里·伊格尔顿"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I06/WEISERc8cdc9c14e85.epub",
+              "bytes": 6050373
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/6510d150982522e3c3f56271fcf4c58990aeb95277962fddf9c94380240896fd.webp",
+          "description": "文学读法，文学评论、文学欣赏相关藏书。"
+        }
+      ]
+    },
+    {
       "clcCode": "I17",
       "clcName": "民间文学集",
       "books": [
@@ -1055,6 +1101,92 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/71db2b01370c85c2c4f3c929b06c74b2c79751c6a0b2b64cbe62eb690060ad2d.webp"
+        },
+        {
+          "id": "WEISER8dc0c9ca0ebf",
+          "title": "写小说最重要的十件事",
+          "authors": [
+            "厄休拉·勒古恩"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I054/WEISER8dc0c9ca0ebf.epub",
+              "bytes": 281950
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/da8f353f9e87abd0c4832762a7459e96092e054dd2219de550a6a7d5fe8f28cc.webp",
+          "description": "写小说最重要的十件事，小说相关藏书。"
+        },
+        {
+          "id": "WEISER5dd87157e6ee",
+          "title": "小说写作教程",
+          "authors": [
+            "杰里·克利弗"
+          ],
+          "authorStatus": "unreviewed",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I054/WEISER5dd87157e6ee.epub",
+              "bytes": 476717
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/08e8f503bfd1ef2bda4df4568a8784aeb934b373fb0687321b977889d8b99ece.webp",
+          "description": "小说写作教程，小说相关藏书。"
+        },
+        {
+          "id": "WEISER3078571c7cce",
+          "title": "小说的骨架",
+          "authors": [
+            "凯蒂·维兰德"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I054/WEISER3078571c7cce.epub",
+              "bytes": 6147456
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/cd4d79c7b6b30f7dce2c94c5247e6e31b0fd4142e9dfb0679047c05fac61d4e0.webp",
+          "description": "小说的骨架，小说相关藏书。"
+        }
+      ]
+    },
+    {
+      "clcCode": "I106",
+      "clcName": "作品评论和研究",
+      "books": [
+        {
+          "id": "WEISER5257e6d5e58c",
+          "title": "文学讲稿",
+          "authors": [
+            "弗拉基米尔·纳博科夫"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I106/WEISER5257e6d5e58c.epub",
+              "bytes": 914776
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/5d10dfb3a36d77ab0aa697516b2a96dae6c1c9a54b35dbb994bd592e0dc328e7.webp",
+          "description": "文学讲稿，作品评论和研究相关藏书。"
         }
       ]
     },
@@ -1130,6 +1262,34 @@
           "language": "zh",
           "publisher": "中华书局",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "I206.2",
+      "clcName": "古代文学（~1840 年）",
+      "books": [
+        {
+          "id": "WEISER4b3229ffb011",
+          "title": "论文偶记·初月楼古文绪论·春觉斋论文",
+          "authors": [
+            "刘大櫆",
+            "吴德旋",
+            "林纾"
+          ],
+          "authorStatus": "unreviewed",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I206.2/WEISER4b3229ffb011.pdf",
+              "bytes": 5210752
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/3445c013ce40b62e189f266587c41fb728c3fcf266fe2f1bdca08402d9cb2705.webp",
+          "description": "论文偶记·初月楼古文绪论·春觉斋论文，古代文学（~1840 年）相关藏书。"
         }
       ]
     },
@@ -1288,6 +1448,60 @@
       ]
     },
     {
+      "clcCode": "I222.2",
+      "clcName": "诗经",
+      "books": [
+        {
+          "id": "WEISER66deab7efcb6",
+          "title": "诗经注析",
+          "authors": [
+            "程俊英",
+            "蒋见元"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I222.2/WEISER66deab7efcb6.pdf",
+              "bytes": 23905257
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/fcb5deac444591f11dc0810a8f3be1e074a8a0562ff4a2d68864fee0ceb54512.webp",
+          "description": "诗经注析，诗经相关藏书。"
+        }
+      ]
+    },
+    {
+      "clcCode": "I222.742",
+      "clcName": "唐代诗歌",
+      "books": [
+        {
+          "id": "WEISER01ab9a99a95c",
+          "title": "李商隐诗歌集解（全五册）",
+          "authors": [
+            "刘学锴",
+            "余恕诚"
+          ],
+          "authorStatus": "unreviewed",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I222.742/WEISER01ab9a99a95c.pdf",
+              "bytes": 60151910
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/0dd3b616b24d6c60013d479b1bb19402a879a082cbdeec1351d0de6904784d86.webp",
+          "description": "李商隐诗歌集解（全五册），唐代诗歌相关藏书。"
+        }
+      ]
+    },
+    {
       "clcCode": "I242",
       "clcName": "古代小说",
       "books": [
@@ -1311,6 +1525,60 @@
           "language": "zh-CN",
           "publisher": "齐鲁书社",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "I242.4",
+      "clcName": "章回小说",
+      "books": [
+        {
+          "id": "WEISERf834016e435c",
+          "title": "红楼梦（脂本精校）",
+          "authors": [
+            "曹雪芹",
+            "无名氏"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/I/I242.4/WEISERf834016e435c.azw3",
+              "bytes": 7782514
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/289a011b204856eba99354a0c8001a07166a592c2130214d2af010e052e0230f.webp",
+          "notes": "原文件署名曹雪芹、无名氏；脂砚斋为批者，不将批者列为原著作者。",
+          "description": "红楼梦（脂本精校），章回小说相关藏书。"
+        }
+      ]
+    },
+    {
+      "clcCode": "I246.5",
+      "clcName": "新体长篇、中篇小说",
+      "books": [
+        {
+          "id": "WEISER129f52074471",
+          "title": "半生缘",
+          "authors": [
+            "张爱玲"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I246.5/WEISER129f52074471.epub",
+              "bytes": 420191
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/e723587748713780fc5a26bd6b6c65f165ad7d1f7c5f2adedbde97a23130b10c.webp",
+          "description": "半生缘，新体长篇、中篇小说相关藏书。"
         }
       ]
     },
@@ -1817,6 +2085,32 @@
       ]
     },
     {
+      "clcCode": "I247.5",
+      "clcName": "新体长篇、中篇小说",
+      "books": [
+        {
+          "id": "WEISER69a647a4737d",
+          "title": "封锁",
+          "authors": [
+            "小白"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I247.5/WEISER69a647a4737d.epub",
+              "bytes": 450439
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/602a2a7bde753639070d4d9bbe4c90c03de8e42e790b9696a8169bc210dfe2b6.webp",
+          "description": "封锁，新体长篇、中篇小说相关藏书。"
+        }
+      ]
+    },
+    {
       "clcCode": "I262",
       "clcName": "古代散文",
       "books": [
@@ -1878,6 +2172,27 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/d5f26e60f134be188af56d9afe1572a32aaf6d86d475771b8f47b374935483ba.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER5af3e3477923",
+          "title": "唐宋八大家文选",
+          "authors": [
+            "邓子勉"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I262/WEISER5af3e3477923.epub",
+              "bytes": 1394081
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/4607453eb5b79d6b217829b28f0f0a68e9392947a7db5d2fd0c4b1ad05cca7cd.webp",
+          "notes": "邓子勉选注，原作为唐宋八大家散文。",
+          "description": "唐宋八大家文选，古代散文相关藏书。"
         }
       ]
     },
@@ -1904,6 +2219,32 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/b4acd23d6c625e17b7aa2c0ad1575308c10a7e77b2fce826fd518e4d039bdc14.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "I264.9",
+      "clcName": "清代散文选集",
+      "books": [
+        {
+          "id": "WEISER3fc186d85a6a",
+          "title": "桐城文选",
+          "authors": [
+            "许结"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I264.9/WEISER3fc186d85a6a.pdf",
+              "bytes": 11354014
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/99cf619b9d5508690ec2868ddef2dfde1bfff8a7aafe617efa6f2d82c987bd85.webp",
+          "description": "桐城文选，清代散文选集相关藏书。"
         }
       ]
     },
@@ -2426,6 +2767,390 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/91b25d8f2da7a1dff2638027009452028c99bde9966dfd463959ae50316fa093.webp"
+        },
+        {
+          "id": "WEISERdbb2fa46dcfe",
+          "title": "川端康成必读套装（全7册）",
+          "authors": [
+            "川端康成"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "AZW3",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISERdbb2fa46dcfe.azw3",
+              "bytes": 6575945
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/fc726c4427e0c97ac07b6dc24e4ad53ed6a15c47c34816901a2dec5c2a0743ec.webp",
+          "description": "川端康成必读套装（全7册），日本文学相关藏书。"
+        }
+      ]
+    },
+    {
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "books": [
+        {
+          "id": "WEISER6c2a1e913895",
+          "title": "罗德斯岛战记",
+          "authors": [
+            "水野良"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISER6c2a1e913895.epub",
+              "bytes": 2762072
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/6278fbc6c1453a01b9d635f97455dd87901cf279a09e16e265fb5774d8b3cf16.webp",
+          "description": "罗德斯岛战记，日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISERb252653d4560",
+          "title": "伊豆的舞女",
+          "authors": [
+            "川端康成"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISERb252653d4560.epub",
+              "bytes": 2306686
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/98c9f3e29640911366302c90c6bdcceb22601c9b5ac94681db1f52b6ee1dae59.webp",
+          "description": "伊豆的舞女，日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER46be468dff0e",
+          "title": "伊里野的天空，UFO的夏天（第1卷）",
+          "authors": [
+            "秋山瑞人"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISER46be468dff0e.epub",
+              "bytes": 839189
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/d0ac297a0a47d8821d05ae7fd230c710fd2954246c8de6ebbdd47eca147e1ded.webp",
+          "description": "伊里野的天空，UFO的夏天（第1卷），日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER4ab0be908b8a",
+          "title": "伊里野的天空，UFO的夏天（第3卷）",
+          "authors": [
+            "秋山瑞人"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISER4ab0be908b8a.epub",
+              "bytes": 1551052
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/f98d629a2c228144e4d6a4dfb467af27fe179cec9e06fb65bc595f0a798e8fe3.webp",
+          "description": "伊里野的天空，UFO的夏天（第3卷），日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISERb98b3d29fe6c",
+          "title": "伊里野的天空，UFO的夏天（第2卷）",
+          "authors": [
+            "秋山瑞人"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISERb98b3d29fe6c.epub",
+              "bytes": 844005
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/3a282d24c80db10d744d35a0501dd9f2a09c8c74b3323e91f32d72b73742e84d.webp",
+          "description": "伊里野的天空，UFO的夏天（第2卷），日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISERc16de814363c",
+          "title": "伊里野的天空，UFO的夏天（第4卷）",
+          "authors": [
+            "秋山瑞人"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISERc16de814363c.epub",
+              "bytes": 843855
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/c4e36be8fc45488ab95dc699a0ad8e22f0f849048fba25cbd9210c7c832c617e.webp",
+          "description": "伊里野的天空，UFO的夏天（第4卷），日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISERffe4189b2fa4",
+          "title": "十二国记",
+          "authors": [
+            "小野不由美"
+          ],
+          "authorStatus": "unreviewed",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISERffe4189b2fa4.epub",
+              "bytes": 10320874
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/b92d240bb8460aefe11e92c14e476dcd1e99925b9c3a4ef5e9bdbcfc03d47bc7.webp",
+          "description": "十二国记，日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISERe166eb3b5857",
+          "title": "古都",
+          "authors": [
+            "川端康成"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISERe166eb3b5857.epub",
+              "bytes": 2478251
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/4ae5045e2d9ef3cd610dc0dcda2e3ef119d872dcb4c0cf7d9df7840f3b97595d.webp",
+          "description": "古都，日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISERaaa179dcc0b5",
+          "title": "挪威的森林",
+          "authors": [
+            "村上春树"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISERaaa179dcc0b5.epub",
+              "bytes": 699114
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/1e64bc66a201a276f2f2763368fa46d2719ec495aaa56d823b02d5c13c5db2bc.webp",
+          "description": "挪威的森林，日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER1b6d626b0c35",
+          "title": "旅猫日记",
+          "authors": [
+            "有川浩"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISER1b6d626b0c35.epub",
+              "bytes": 214687
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/2b038d65e9c289cf593c374df26a6fff1269038efd0b8473cfdee65194ab8866.webp",
+          "description": "旅猫日记，日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER2164ba81ce62",
+          "title": "春雪",
+          "authors": [
+            "三岛由纪夫"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISER2164ba81ce62.epub",
+              "bytes": 479988
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/a205eedf57fc31f0c94c0488aadaff4dd904457bde60eda87e1bf808eef90a8a.webp",
+          "description": "春雪，日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER8e0aca43b572",
+          "title": "狼与香辛料",
+          "authors": [
+            "支仓冻砂"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISER8e0aca43b572.epub",
+              "bytes": 22211996
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/f8b9d2492d24057af9ddcba60e313b8c9144f37f373bb8dec0c458d9d38e9642.webp",
+          "description": "狼与香辛料，日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER4135caa3bc46",
+          "title": "空之境界（含未来福音）",
+          "authors": [
+            "奈须蘑菇"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISER4135caa3bc46.epub",
+              "bytes": 2529317
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/f66a52aeeaf0a9307bc930844931fbec85c3dd87b313379293e9619836395ac1.webp",
+          "description": "空之境界（含未来福音），日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER52755ae285b9",
+          "title": "精灵守护者",
+          "authors": [
+            "上桥菜穗子"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISER52755ae285b9.pdf",
+              "bytes": 9718566
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/b7a64895fe72fd3b52a8392528f0236b84fde83b8102c4f885eb8474ef56b3be.webp",
+          "description": "精灵守护者，日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISERda5eb5d1d0e7",
+          "title": "薇尔莉特·伊芙加登（紫罗兰永恒花园）",
+          "authors": [
+            "晓佳奈"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISERda5eb5d1d0e7.epub",
+              "bytes": 688946
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "description": "薇尔莉特·伊芙加登（紫罗兰永恒花园），日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISERe80f27f4f33b",
+          "title": "起风了",
+          "authors": [
+            "堀辰雄"
+          ],
+          "authorStatus": "unreviewed",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISERe80f27f4f33b.epub",
+              "bytes": 3567697
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/726477006bebba8748ca18abf94c3c50e15260066c3edfaeb0fce76930c57efa.webp",
+          "description": "起风了，日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISERe2b74630f5c4",
+          "title": "雪国",
+          "authors": [
+            "川端康成"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISERe2b74630f5c4.epub",
+              "bytes": 755113
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/39dc3cf5d25465188adb11818bcdd6269e8c18fd589838aebed08f99f1690e1c.webp",
+          "description": "雪国，日本现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER7d6563b338b2",
+          "title": "魔女之旅",
+          "authors": [
+            "白石定规"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313.45/WEISER7d6563b338b2.epub",
+              "bytes": 1961936
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "description": "魔女之旅，日本现代小说相关藏书。"
         }
       ]
     },
@@ -2539,6 +3264,26 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/bc15d2bb25fe80c5926aa1fbdd50306c77214957d76bb70dbf106156d329d9cb.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER1d33dde64519",
+          "title": "罗摩衍那（全7篇）",
+          "authors": [
+            "蚁垤"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I351/WEISER1d33dde64519.epub",
+              "bytes": 3403250
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/431a5cd2cdb93da37703184adbd70c0d4adbf6a96f5e761d6d049711a58892cb.webp",
+          "description": "罗摩衍那（全7篇），印度文学相关藏书。"
         }
       ]
     },
@@ -3731,6 +4476,178 @@
       ]
     },
     {
+      "clcCode": "I561.44",
+      "clcName": "英国近代小说",
+      "books": [
+        {
+          "id": "WEISER43246831bc9c",
+          "title": "道林·格雷的画像",
+          "authors": [
+            "奥斯卡·王尔德"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I561.44/WEISER43246831bc9c.epub",
+              "bytes": 339759
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/5ad3a79df721d9615a85b77ca8f83cdc4ed3ab207c40fdc223383cb450e9eae9.webp",
+          "description": "道林·格雷的画像，英国近代小说相关藏书。"
+        }
+      ]
+    },
+    {
+      "clcCode": "I561.45",
+      "clcName": "英国现代小说",
+      "books": [
+        {
+          "id": "WEISER1d12b96dcc88",
+          "title": "星尘",
+          "authors": [
+            "尼尔·盖曼"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I561.45/WEISER1d12b96dcc88.epub",
+              "bytes": 13919502
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/e98df4458948e4f7000091f328e372841533c180625389b5c6f9391fc4bca5af.webp",
+          "description": "星尘，英国现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER4855db24956f",
+          "title": "浮生梦",
+          "authors": [
+            "达芙妮·杜穆里埃"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I561.45/WEISER4855db24956f.epub",
+              "bytes": 443593
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/e34f181a93e83198cfd19ddb90af1a4244cfe22a0d051c0b43315c1494b4117c.webp",
+          "description": "浮生梦，英国现代小说相关藏书。"
+        },
+        {
+          "id": "WEISERc4baf4604d64",
+          "title": "莫失莫忘",
+          "authors": [
+            "石黑一雄"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I561.45/WEISERc4baf4604d64.epub",
+              "bytes": 4876030
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/6bce9c990fbf65f1f351b56d6990564a7f05a25db9a2df0d73476ea11530c9f1.webp",
+          "description": "莫失莫忘，英国现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER5d3674c5a33b",
+          "title": "被掩埋的巨人",
+          "authors": [
+            "石黑一雄"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I561.45/WEISER5d3674c5a33b.epub",
+              "bytes": 1726846
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/5d3198cc41acc4b1b2b3350c8d34345f82122300601108359fc63f31abcb8c2a.webp",
+          "description": "被掩埋的巨人，英国现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER83e1b05d83af",
+          "title": "赎罪",
+          "authors": [
+            "伊恩·麦克尤恩"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I561.45/WEISER83e1b05d83af.epub",
+              "bytes": 6616256
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/a1077e7704bb311e912536b725db0dc931ea6fce21ca5e585a570dcfdc7f07be.webp",
+          "description": "赎罪，英国现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER52743b1afba8",
+          "title": "长日将尽",
+          "authors": [
+            "石黑一雄"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I561.45/WEISER52743b1afba8.epub",
+              "bytes": 359579
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/5a71c0a72d3404b9436360e374b7d429dd54e7ba3ecdfd833f8a9ae9b77b9b48.webp",
+          "description": "长日将尽，英国现代小说相关藏书。"
+        },
+        {
+          "id": "WEISER598d47d69b68",
+          "title": "面纱",
+          "authors": [
+            "威廉·萨默塞特·毛姆"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I561.45/WEISER598d47d69b68.epub",
+              "bytes": 622840
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/170b06b7fc9d941aca0b1c197be2056157b60b4dd68a4d086f2baf46ce8eabae.webp",
+          "description": "面纱，英国现代小说相关藏书。"
+        }
+      ]
+    },
+    {
       "clcCode": "I562",
       "clcName": "爱尔兰文学",
       "books": [
@@ -4242,6 +5159,26 @@
           "language": "zh-CN",
           "publisher": "重庆出版集团·重庆出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISER7c06c49eacca",
+          "title": "提嘉娜",
+          "authors": [
+            "盖伊·加夫里尔·凯"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I711/WEISER7c06c49eacca.epub",
+              "bytes": 1319007
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/50cf9aabfa7ff523daa8bc70ad8a2471c5361eb1a6cb9bd45af9ed3314d64a03.webp",
+          "description": "提嘉娜，加拿大文学相关藏书。"
         }
       ]
     },
@@ -4516,6 +5453,125 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/82f3490b2d5a8ef6e327ab059ca5de3bd2da4c4fd6e9a4898ee08c9b68df7a73.webp"
+        },
+        {
+          "id": "WEISER30aa104d97f4",
+          "title": "七王国的骑士",
+          "authors": [
+            "乔治·R.R.马丁"
+          ],
+          "authorStatus": "unreviewed",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I712/WEISER30aa104d97f4.epub",
+              "bytes": 997360
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "description": "七王国的骑士，美国文学相关藏书。"
+        },
+        {
+          "id": "WEISERc8f3599d0d59",
+          "title": "夏日终曲",
+          "authors": [
+            "安德烈·艾席蒙"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I712/WEISERc8f3599d0d59.epub",
+              "bytes": 310974
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/460881e9aeb7300c707301a38c56d42e7c8390941a5617b7d2242e09c67e1ae7.webp",
+          "description": "夏日终曲，美国文学相关藏书。"
+        },
+        {
+          "id": "WEISERf3809a435230",
+          "title": "夏洛的网",
+          "authors": [
+            "E.B.怀特"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I712/WEISERf3809a435230.epub",
+              "bytes": 251230
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/e46442310a232f9f767751a14dd33f03c9216d3cbfc6408ca7722384740d2f3d.webp",
+          "description": "夏洛的网，美国文学相关藏书。"
+        },
+        {
+          "id": "WEISER30956775e5f8",
+          "title": "奇风岁月",
+          "authors": [
+            "罗伯特·麦卡蒙"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I712/WEISER30956775e5f8.epub",
+              "bytes": 1301788
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/8a68a4c218b5da93f0b963ac692f1b2debb471170158815254a4356a44afd121.webp",
+          "description": "奇风岁月，美国文学相关藏书。"
+        },
+        {
+          "id": "WEISER8667acb280c6",
+          "title": "小妇人",
+          "authors": [
+            "路易莎·梅·奥尔科特"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I712/WEISER8667acb280c6.epub",
+              "bytes": 5272104
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/ec4b07edb183f90c9ff2af57f68f74a97bc6d37fc03554dd3db0222eb16b6a3d.webp",
+          "description": "小妇人，美国文学相关藏书。"
+        },
+        {
+          "id": "WEISER625f8e9921c4",
+          "title": "杀死一只知更鸟",
+          "authors": [
+            "哈珀·李"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I712/WEISER625f8e9921c4.epub",
+              "bytes": 4994549
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/620b51f114e1581dcff699646755b5b70a6e80f462ea1224a1f2865115cbd4ba.webp",
+          "description": "杀死一只知更鸟，美国文学相关藏书。"
         }
       ]
     },

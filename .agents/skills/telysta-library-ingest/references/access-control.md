@@ -53,3 +53,11 @@ Worker运行时只流式读取R2文件，未列入部署catalog的对象不会�
 安全清理位于 `src/lib/ebooks/readerSanitizer.ts`：只保留当前书籍清单生成的blob图片与样式，不能全局放开未知协议、书内脚本或外部资源。iframe使用 `sandbox="allow-same-origin"` 和书内CSP；不启用脚本、弹窗。Calibre的图像封面需修正preserveAspectRatio并约束尺寸，不横向拉伸。回归涵盖真实EPUB／MOBI／AZW3、脚本清除、外部追踪阻断、键盘／鼠标、侧栏焦点和退出后清空。
 
 恢复旧漫画先核对R2实际对象key。现有受保护漫画位于 `books/J 艺术/J2 绘画/J238 各国漫画/成人漫画/`；分类名与本机目录不用于猜测或重建已经上传的key。私有JSON保存完整书名、封面和文件URL，公开JSON只保留中性privateStub；匿名索引和静态页不包含这些资料。站主和获明确授权的账户进入全部藏书、书单与搜索后可以看到它们。
+
+## 匿名下载每日额度（2026-11-22）
+
+未登录IP每日可首次获取10个不同的电子书文件，按北京时间零点重置。同文件的重试、断点续传和PDF Range/在线阅读的分段请求不重复扣次；不同格式是不同文件。在线阅读首次取得原文件也计一次，不能通过省略download参数绕过。书目、封面、HEAD、304、404、416不扣额度。取得R2对象后、开始发送正文前计次；无法判断浏览器是否完整保存，故中途断开仍可免费重试同一文件。
+
+配额由 `workers/library-gateway/src/downloadQuota.ts` 的SQLite Durable Object原子维护，每个IP与日期独立；仅信任Cloudflare提供的CF-Connecting-IP，HMAC使用Cloudflare Secret `ANONYMOUS_QUOTA_SECRET`，不保存明文IP。计数到期由alarm清理。不同网关域名或查询参数使用同一对象Key计数。超限429包含Retry-After及X-Download-*，书籍响应private/no-store，封面仍可缓存。
+
+已登录账户不受该匿名额度约束；限制内容权限仍单独鉴权，伪造或失效Cookie不能免配额。后台角色与限制授权不能混为一谈。部署时保留DO迁移tag和Secret，新增实例必须先配置Secret并运行真实Workers/Miniflare并发与Range测试，不用KV或按节点近似限速代替严格每日额度。配额只限制不同文件数量，不声称能阻止更换IP或对已用文件的突发请求；基础网络防护仍由Cloudflare负责。

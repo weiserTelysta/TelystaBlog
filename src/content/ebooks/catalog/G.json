@@ -24,6 +24,99 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/c285e71dffaa0838c0edef0c38524e825b23642267e06a1aa8ce11544d4b7e13.webp"
+        },
+        {
+          "id": "WEISERfbdc814b99c0",
+          "title": "东方学",
+          "authors": [
+            "爱德华·W.萨义德"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/G/G02/WEISERfbdc814b99c0.epub",
+              "bytes": 518247
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/0dbdb8e43d87dbd170d5df2ab0aadda83b4e5807c30647d67bc81835331819bf.webp",
+          "description": "东方学，文化哲学相关藏书。"
+        },
+        {
+          "id": "WEISER0b1b2c8ca5d2",
+          "title": "文化记忆",
+          "authors": [
+            "扬·阿斯曼"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/G/G02/WEISER0b1b2c8ca5d2.pdf",
+              "bytes": 25435645
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/0ec1887f8772d118d487b2b6e53c81db07f87316e3a841ddbbb0114c2bb2bcf7.webp",
+          "description": "文化记忆，文化哲学相关藏书。"
+        }
+      ]
+    },
+    {
+      "clcCode": "G131.32",
+      "clcName": "日本文化研究",
+      "books": [
+        {
+          "id": "WEISERc7444de84644",
+          "title": "动物化的后现代",
+          "authors": [
+            "东浩纪"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/G/G131.32/WEISERc7444de84644.epub",
+              "bytes": 1801579
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/f320d1034eeec96a1eff135a5079e805bcf33b988910c7ad0270581df7b349e2.webp",
+          "description": "动物化的后现代，日本文化研究相关藏书。"
+        }
+      ]
+    },
+    {
+      "clcCode": "G156.1",
+      "clcName": "英国文化",
+      "books": [
+        {
+          "id": "WEISERdbd1753e068b",
+          "title": "传统的发明",
+          "authors": [
+            "E.霍布斯鲍姆",
+            "T.兰杰"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/G/G156.1/WEISERdbd1753e068b.pdf",
+              "bytes": 79515607
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/0cf7a8c4e28ad9070e357b530c1af2639d1f2cb41f45bde10c686db62084fade.webp",
+          "description": "传统的发明，英国文化相关藏书。"
         }
       ]
     },
@@ -122,6 +215,33 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/f99439c205e5180d5e4e8028a1d93b4fd918d20f50fdb3528146a269242db472.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "G649.565",
+      "clcName": "法国高等教育",
+      "books": [
+        {
+          "id": "WEISER95a882a84456",
+          "title": "再生产：一种教育系统理论的要点",
+          "authors": [
+            "皮埃尔·布尔迪约",
+            "让-克洛德·帕斯隆"
+          ],
+          "authorStatus": "unreviewed",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/G/G649.565/WEISER95a882a84456.pdf",
+              "bytes": 7894509
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/d716476afd5a8d0fa8b0b3a5249dbf01169c89fe6afc903056ed753cf902b84a.webp",
+          "description": "再生产：一种教育系统理论的要点，法国高等教育相关藏书。"
         }
       ]
     },

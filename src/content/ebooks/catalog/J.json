@@ -851,6 +851,26 @@
       "clcName": "绘画理论",
       "books": [
         {
+          "id": "WEISERc79141473ec0",
+          "title": "艺术与错觉：图画再现的心理学研究",
+          "authors": [
+            "E.H.贡布里希"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J0/WEISERc79141473ec0.pdf",
+              "bytes": 136292271
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/5d4751a7e82795c71d90e1854a7c47ab3160e8bdb3ade3dfade4161b7a44ec73.webp",
+          "description": "艺术与错觉：图画再现的心理学研究，绘画理论相关藏书。"
+        },
+        {
           "id": "WEISER16214df82a9a",
           "title": "艺术与错觉",
           "authors": [
@@ -951,6 +971,32 @@
       ]
     },
     {
+      "clcCode": "J110.9",
+      "clcName": "世界艺术史",
+      "books": [
+        {
+          "id": "WEISERb5f3141e46c5",
+          "title": "牛津艺术史（第一辑，全10册）",
+          "authors": [
+            "多位作者 等"
+          ],
+          "authorStatus": "partial-collection",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J/J110.9/WEISERb5f3141e46c5.epub",
+              "bytes": 394630032
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/032ab9d02454034c6a9212edffbfc93d53c24c7881efcbaf71475d3ec684c642.webp",
+          "description": "牛津艺术史（第一辑，全10册），世界艺术史相关藏书。"
+        }
+      ]
+    },
+    {
       "clcCode": "J110.93",
       "clcName": "中世纪（467～1640）",
       "books": [
@@ -999,6 +1045,46 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/46ef7d85ce1186c02a177c3350d5ce140d5d71a34bbc4327398cd3f96cc236e4.webp"
+        },
+        {
+          "id": "WEISERa6346a50716c",
+          "title": "中世纪之美",
+          "authors": [
+            "翁贝托·埃科"
+          ],
+          "authorStatus": "unreviewed",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J/J150.09/WEISERa6346a50716c.epub",
+              "bytes": 19693254
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/1e0a1ffdd463b1287db999d601bbef443f3105fd855722780de2ec3675b9a4c6.webp",
+          "description": "中世纪之美，欧洲艺术史相关藏书。"
+        },
+        {
+          "id": "WEISERee0eea5d4b92",
+          "title": "拜占庭艺术",
+          "authors": [
+            "罗宾·科马克"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J/J150.09/WEISERee0eea5d4b92.epub",
+              "bytes": 170823632
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/264422eb6ffc984a4f291bed8fd9e8d76bc02e03a137ec00847da990b765f409.webp",
+          "description": "拜占庭艺术，欧洲艺术史相关藏书。"
         }
       ]
     },

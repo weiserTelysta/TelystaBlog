@@ -570,6 +570,26 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/5b22f5bb26387958e8fbdabf8e75e3a2f307ab4f5acb4a39605b69f95fab6c8f.webp"
+        },
+        {
+          "id": "WEISER2d68b1c8c05e",
+          "title": "牛津拜占庭史",
+          "authors": [
+            "西里尔·曼戈"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K/K134/WEISER2d68b1c8c05e.epub",
+              "bytes": 24039689
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/29ff14e02acd36f5d009d71d294cf706641a967a9b17992172626a4be1b3637b.webp",
+          "description": "牛津拜占庭史，拜占庭帝国相关藏书。"
         }
       ]
     },
@@ -754,6 +774,33 @@
           "language": "zh",
           "publisher": "岳麓书社 广东人民出版社 等",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K221.04",
+      "clcName": "尚书研究",
+      "books": [
+        {
+          "id": "WEISERb769a909002a",
+          "title": "尚书今注今译",
+          "authors": [
+            "屈万里"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K/K221.04/WEISERb769a909002a.epub",
+              "bytes": 472705
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/d11a022383b5af7cf405af076bcfee9b23b150ea0b2f7b7a9f147546ef984b17.webp",
+          "notes": "屈万里注译，王云五主编。",
+          "description": "尚书今注今译，尚书研究相关藏书。"
         }
       ]
     },
@@ -1271,6 +1318,32 @@
           "language": "zh",
           "publisher": "中国长安出版社",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K565.03",
+      "clcName": "法国近代史",
+      "books": [
+        {
+          "id": "WEISERf1e52604eba9",
+          "title": "催眠术与法国启蒙运动的终结",
+          "authors": [
+            "罗伯特·达恩顿"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K565.03/WEISERf1e52604eba9.pdf",
+              "bytes": 32724943
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/a83c597621160e47a906a214bce231f19d84189691800a2445d76e12d70e899f.webp",
+          "description": "催眠术与法国启蒙运动的终结，法国近代史相关藏书。"
         }
       ]
     },

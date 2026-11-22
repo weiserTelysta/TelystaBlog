@@ -1,10 +1,95 @@
 [
   {
-    "id": "WEISER82d055db40bc", "title": "Public fixture book", "authors": ["Fixture author"], "access": "public", "clcCode": "B0", "clcName": "哲学理论", "categoryOnly": false,
-    "href": "/ebooks/WEISER82d055db40bc/", "files": [{ "format": "EPUB", "href": "https://library-files.telysta.com/books/fixture/public.epub" }]
+    "id": "WEISER82d055db40bc",
+    "title": "Public fixture book",
+    "authors": [
+      "Fixture author"
+    ],
+    "access": "public",
+    "clcCode": "B0",
+    "clcName": "哲学理论",
+    "categoryOnly": false,
+    "href": "/ebooks/WEISER82d055db40bc/",
+    "files": [
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-1.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-2.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-3.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-4.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-5.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-6.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-7.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-8.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-9.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-10.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-11.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-12.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-13.epub"
+      },
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/public-14.epub"
+      }
+    ],
+    "cover": "https://library-files.telysta.com/covers/fixture.webp"
   },
   {
-    "id": "WEISER94f87086f630", "title": "Protected fixture book", "authors": ["Fixture author"], "access": "protected", "clcCode": "K27", "clcName": "中华人民共和国史", "categoryOnly": false,
-    "href": "/ebooks/WEISER94f87086f630/", "files": [{ "format": "EPUB", "href": "https://library-files.telysta.com/books/fixture/protected.epub" }]
+    "id": "WEISER94f87086f630",
+    "title": "Protected fixture book",
+    "authors": [
+      "Fixture author"
+    ],
+    "access": "protected",
+    "clcCode": "K27",
+    "clcName": "中华人民共和国史",
+    "categoryOnly": false,
+    "href": "/ebooks/WEISER94f87086f630/",
+    "files": [
+      {
+        "format": "EPUB",
+        "href": "https://library-files.telysta.com/books/fixture/protected.epub"
+      }
+    ]
   }
 ]

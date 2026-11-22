@@ -124,4 +124,10 @@ python3 scripts/prepare-library-books.py \
 
 PDF链接新标签页交给浏览器查看器，保留Range／206和服务端权限检查。EPUB由EPUB.js分页，MOBI／KF8由固定版本Foliate解析器处理，不改原文件。宽屏双页、窄屏单页，支持正文左右点击、键盘及滚轮；目录在侧栏展开，关闭头固定，手机可点击外部关闭。书内脚本禁止、HTML清理、资源白名单、CSP及iframe沙箱同时生效。
 
-若后续增加轻量保护，建议只处理明显突发行为，保留正常下载、重试和断点续传；不要把每次PDF Range都算作下载一本书。[Workers限速binding](https://developers.cloudflare.com/workers/runtime-apis/bindings/rate-limit/)按Cloudflare位置近似计数，不能当严格全球配额。[R2 Workers API](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/)可用于统一网关；需要网关规则覆盖全部访问时，不能继续保留可绕过规则的公开直链。[预签名URL](https://developers.cloudflare.com/r2/api/s3/presigned-urls/)过期前可重复使用，也不是一次性下载凭证。网页阅读会把内容发送给浏览器，不承诺无法保存。
+待发布的网关配额按匿名 IP 每日 10 个不同文件计数，按北京时间零点重置；同一文件的重试、续传与阅览分段不重复扣次，封面与书目不计入。已登录账户不受这项匿名额度限制。配额由SQLite Durable Object原子保存，使用每日HMAC标识而不保存明文IP；超限429提供重试时间，书籍private/no-store。共享IP共用额度，该规则不替代突发请求防护。部署和计数细节见[入库Skill访问控制](../.agents/skills/telysta-library-ingest/references/access-control.md#匿名下载每日额度2026-11-22)。[Workers限速binding](https://developers.cloudflare.com/workers/runtime-apis/bindings/rate-limit/)按Cloudflare位置近似计数，不能当严格全球配额。[R2 Workers API](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/)可用于统一网关；需要网关规则覆盖全部访问时，不能继续保留可绕过规则的公开直链。[预签名URL](https://developers.cloudflare.com/r2/api/s3/presigned-urls/)过期前可重复使用，也不是一次性下载凭证。网页阅读会把内容发送给浏览器，不承诺无法保存。
+
+## 2026-11-22追加入库
+
+第二批95种新增内容（65 EPUB、28 PDF、2 AZW3），95份原文件与90张WebP封面通过R2 MD5逐对象校验，185/185匹配；原文件完整SHA-256与本地暂存一致。4份完全相同副本移动至Windows桌面 `Books_Duplicates_2026-11-22`，保留恢复清单；不同版次、格式、上下卷与合集均不因同名删除。旧1,000条保留，合计1,095条，公开1,027，受保护68。
+
+分类按正文、版权页和CIP复核，来源记录见 `data/library/ingest-2026-11-22.json`。修正《动物化的后现代》的译者误作作者、唐宋八大家混入明清散文、牛津艺术史合集沿用中国艺术单册CIP等情况；《英国工人阶级的形成》按大学馆藏归D756.161，《艺术与错觉》采用绘画理论J20上级类并保留原文集CIP和现行J20-05编目依据。分类修订不搬动已上传对象。无法逐项可靠核验的署名仍保留unreviewed，不冒称全部核验。

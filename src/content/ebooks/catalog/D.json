@@ -224,6 +224,45 @@
           "language": "en-US",
           "publisher": "Crown",
           "access": "public"
+        },
+        {
+          "id": "WEISER10015b3e1f4f",
+          "title": "反动的修辞",
+          "authors": [
+            "阿尔伯特·赫希曼"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/D/D0/WEISER10015b3e1f4f.pdf",
+              "bytes": 10103536
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/c29d4c447da27ce643428ffe5ba160613797f83c5be23bb28a21b2e43c0b678e.webp",
+          "description": "反动的修辞，政治学、政治理论相关藏书。"
+        },
+        {
+          "id": "WEISER25bdc4b7104d",
+          "title": "正义诸领域：为多元主义与平等一辩",
+          "authors": [
+            "迈克尔·沃尔泽"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D/D0/WEISER25bdc4b7104d.epub",
+              "bytes": 12862376
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "description": "正义诸领域：为多元主义与平等一辩，政治学、政治理论相关藏书。"
         }
       ]
     },
@@ -478,6 +517,32 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/665f379b6a64aaa603a91533cdca4cb60805327cbd78281988e4600399a09207.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "D091.6",
+      "clcName": "现代政治思想",
+      "books": [
+        {
+          "id": "WEISER29eb12c7ed78",
+          "title": "无政府、国家和乌托邦",
+          "authors": [
+            "罗伯特·诺齐克"
+          ],
+          "authorStatus": "unreviewed",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D/D091.6/WEISER29eb12c7ed78.epub",
+              "bytes": 3982485
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/294328ff3d3c2830d0cb3a683c99f6c8c45e07a48c20d34f5cb89cbbfcb0ae54.webp",
+          "description": "无政府、国家和乌托邦，现代政治思想相关藏书。"
         }
       ]
     },
@@ -834,6 +899,32 @@
       ]
     },
     {
+      "clcCode": "D756.161",
+      "clcName": "英国工人阶级",
+      "books": [
+        {
+          "id": "WEISER221275ca6a00",
+          "title": "英国工人阶级的形成（上下册）",
+          "authors": [
+            "E.P.汤普森"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K561.4/WEISER221275ca6a00.pdf",
+              "bytes": 70223995
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/76ca3be198e4b64b39052504a2e2841a200e2da339b9376d2614aa6a53649982.webp",
+          "description": "英国工人阶级的形成（上下册），英国工人阶级相关藏书。"
+        }
+      ]
+    },
+    {
       "clcCode": "D771",
       "clcName": "美国政治",
       "books": [
@@ -963,6 +1054,32 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/d3ff350e04475f553a8e5fa39f158631fa4bfd4cc97a5fd4ef5fcda6b9d0e1af.webp",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "D917",
+      "clcName": "犯罪学",
+      "books": [
+        {
+          "id": "WEISERc3f6bd108b12",
+          "title": "论犯罪与刑罚",
+          "authors": [
+            "切萨雷·贝卡里亚"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/D/D917/WEISERc3f6bd108b12.epub",
+              "bytes": 295897
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/a7698ca5ea0c40988b4340cea77d32ee3e32b22581ce9fff15da86c0fca26e39.webp",
+          "description": "论犯罪与刑罚，犯罪学相关藏书。"
         }
       ]
     },

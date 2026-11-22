@@ -555,6 +555,32 @@
       ]
     },
     {
+      "clcCode": "H15",
+      "clcName": "写作、修辞",
+      "books": [
+        {
+          "id": "WEISERd3b618406970",
+          "title": "修辞学发凡",
+          "authors": [
+            "陈望道"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/H/H15/WEISERd3b618406970.epub",
+              "bytes": 1624064
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/6815419f02ecd65aa24351c2edc92f8ba0a1db0045c3fd259f02f4d8447e497e.webp",
+          "description": "修辞学发凡，写作、修辞相关藏书。"
+        }
+      ]
+    },
+    {
       "clcCode": "H36",
       "clcName": "日语",
       "books": [
@@ -1680,6 +1706,32 @@
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/0c156e2b9984c4bf9229e5353381ca51729563033bda4d4f9934e4599686bdc4.webp",
           "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
+      "clcCode": "H711.4",
+      "clcName": "梵语语法",
+      "books": [
+        {
+          "id": "WEISERf80930066594",
+          "title": "基于梵汉对勘的《阿毗达磨俱舍论》语法研究",
+          "authors": [
+            "王继红"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H711.4/WEISERf80930066594.pdf",
+              "bytes": 69294734
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/4469d790000a3c67369e46971b6133715f11df784a34516111f5c3e767c1938f.webp",
+          "description": "基于梵汉对勘的《阿毗达磨俱舍论》语法研究，梵语语法相关藏书。"
         }
       ]
     },

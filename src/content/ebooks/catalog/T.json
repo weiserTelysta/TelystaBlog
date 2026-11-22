@@ -783,6 +783,73 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/36fed97b900038e992323978592dc213f1d3cf3eda80e901d184af856924812d.webp"
+        },
+        {
+          "id": "WEISER7b7e638bcb3c",
+          "title": "计算机系统要素：从零开始构建现代计算机",
+          "authors": [
+            "Noam Nisan",
+            "Shimon Schocken"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP3/WEISER7b7e638bcb3c.pdf",
+              "bytes": 60954462
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/02abcd54d8088e7ab079df05c50aa305c30b1cc24fd862a35c0c2c1bec712adf.webp",
+          "description": "计算机系统要素：从零开始构建现代计算机，计算机技术相关藏书。"
+        }
+      ]
+    },
+    {
+      "clcCode": "TP18",
+      "clcName": "人工智能理论",
+      "books": [
+        {
+          "id": "WEISER88cc0279def6",
+          "title": "AI工程：大模型应用开发实战",
+          "authors": [
+            "奇普·萱"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T/TP18/WEISER88cc0279def6.epub",
+              "bytes": 45936469
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/cd002332d43c0b9e16c674381db012672f3f86f3606f951c19cd6d81467ece74.webp",
+          "description": "AI工程：大模型应用开发实战，人工智能理论相关藏书。"
+        },
+        {
+          "id": "WEISER8d05c1b83750",
+          "title": "Agent设计模式：图解可复用智能体架构",
+          "authors": [
+            "黄佳"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T/TP18/WEISER8d05c1b83750.epub",
+              "bytes": 25514205
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/536429497bb97f083f302e5de0d9f50367f8a8503d1c93766412ea37698faf11.webp",
+          "description": "Agent设计模式：图解可复用智能体架构，人工智能理论相关藏书。"
         }
       ]
     },
@@ -910,6 +977,27 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/f5a7055859db629b7c5e9b09a5cda31889e8f7efcc837d7b267402524a984af4.webp"
+        },
+        {
+          "id": "WEISER40eadf01e5be",
+          "title": "程序员的自我修养：链接、装载与库",
+          "authors": [
+            "俞甲子",
+            "石凡",
+            "潘爱民"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T/TP311.1/WEISER40eadf01e5be.epub",
+              "bytes": 5607651
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "description": "程序员的自我修养：链接、装载与库，程序设计相关藏书。"
         }
       ]
     },
@@ -1025,6 +1113,66 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/aaf9ebef67c92e20c574090f83d2ee914edf659ecdedd08ebf61b7568e0446c2.webp"
+        },
+        {
+          "id": "WEISERba6c81812a6b",
+          "title": "Python asyncio并发编程",
+          "authors": [
+            "Matthew Fowler"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP312/WEISERba6c81812a6b.pdf",
+              "bytes": 108517880
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/802157c1b04b16e5f907d7c3d328f50d5b59348fe7c8aa8d4363d99e211a03c9.webp",
+          "description": "Python asyncio并发编程，程序语言、算法语言相关藏书。"
+        },
+        {
+          "id": "WEISER5166cff1c7c3",
+          "title": "Python工匠",
+          "authors": [
+            "朱雷"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T/TP312/WEISER5166cff1c7c3.epub",
+              "bytes": 1603354
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/3fd3cb61ecbd927d146fcd691084b6b7b1f49f8ca7b8a702600f9a790a770dde.webp",
+          "description": "Python工匠，程序语言、算法语言相关藏书。"
+        },
+        {
+          "id": "WEISER10bfbaf44bc1",
+          "title": "流畅的Python",
+          "authors": [
+            "Luciano Ramalho"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP312/WEISER10bfbaf44bc1.pdf",
+              "bytes": 15231173
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/5057f6251b9b1df703e492497089467e06f07052c48ebfe2cf8e0226735739fd.webp",
+          "description": "流畅的Python，程序语言、算法语言相关藏书。"
         }
       ]
     },
@@ -1237,6 +1385,33 @@
       ]
     },
     {
+      "clcCode": "TP338",
+      "clcName": "各种电子数字计算机",
+      "books": [
+        {
+          "id": "WEISERda36e1f29e0a",
+          "title": "深入理解计算机系统（原书第3版）",
+          "authors": [
+            "Randal E. Bryant",
+            "David R. O’Hallaron"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP338/WEISERda36e1f29e0a.pdf",
+              "bytes": 360885943
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/e7affd5a30d8a0f8befe936b3a1d03837d027967d1cd13fa1a2b8d0a6053ffeb.webp",
+          "description": "深入理解计算机系统（原书第3版），各种电子数字计算机相关藏书。"
+        }
+      ]
+    },
+    {
       "clcCode": "TP391.41",
       "clcName": "计算机图形图像处理",
       "books": [
@@ -1286,6 +1461,27 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/f671e45cbaed4ccc10e22b4821686e0d875b786dcaff320964a9b2044d10175d.webp"
+        },
+        {
+          "id": "WEISERfef1b562abea",
+          "title": "计算机网络：自顶向下方法（原书第8版）",
+          "authors": [
+            "James F. Kurose",
+            "Keith W. Ross"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP393/WEISERfef1b562abea.pdf",
+              "bytes": 45404251
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/454fc7cbd4f6011b58b52e30de30bdad7f8c5c22589567aaa195d3222435cba3.webp",
+          "description": "计算机网络：自顶向下方法（原书第8版），计算机网络相关藏书。"
         }
       ]
     },

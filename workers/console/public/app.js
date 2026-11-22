@@ -1,3 +1,4 @@
+import { commentReturnTo } from '../client/returnTo.js';
 import { initAuthentication, authError } from '../client/auth.js';
 import {
 	el,
@@ -25,7 +26,8 @@ const names = {
 	users: ['用户与权限', 'Users & access'],
 	uploads: ['上传资料', 'Uploads'],
 	audit: ['操作记录', 'Activity'],
-	backup: ['数据备份', 'Backups']
+	backup: ['数据备份', 'Backups'],
+	comments: ['评论管理', 'Comments']
 };
 const roleNames = {
 	viewer: ['普通用户', 'Reader'],
@@ -117,6 +119,7 @@ function display() {
 				['backup', 'archive']
 			]
 		]);
+	if (['admin','superuser'].includes(user.role)) groups.push([['社区','Community'],[['comments','comment']]]);
 	groups.push([
 		['个人账户', 'Account'],
 		[
@@ -503,6 +506,8 @@ const authentication = initAuthentication({
 	adminEntry,
 	async authenticated(next) {
 		user = next;
+		const returnTo=commentReturnTo(new URLSearchParams(location.search).get('returnTo'));
+		if(returnTo){changed();location.replace(returnTo);return;}
 		if (user.role === 'admin' && !adminEntry) {
 			location.replace('/telysta-console/');
 			return;
@@ -519,7 +524,8 @@ const authentication = initAuthentication({
 				: [
 						'profile',
 						'sessions',
-						...(['member', 'superuser'].includes(user.role) ? ['uploads'] : [])
+						...(['member', 'superuser'].includes(user.role) ? ['uploads'] : []),
+                        ...(user.role==='superuser'?['comments']:[])
 					];
 		const requested = location.hash.slice(1);
 		await navigate(

@@ -1,0 +1,2353 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-11-22",
+  "note": "仅本批获准新增的公开书目；完整受保护书目、原路径和OCR保存在私人目录。分类证据与作者核验分开，未核验的署名保留状态；不删除已有书目。",
+  "records": [
+    {
+      "fileId": "WEISER88cc0279def6",
+      "sha256": "88cc0279def68dead5c5d18f8e4cac1378f2a41584ffdd2bb425a4a28b5280af",
+      "title": "AI工程：大模型应用开发实战",
+      "clcCode": "TP18",
+      "clcName": "人工智能理论",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/T/TP18/WEISER88cc0279def6.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER8d05c1b83750",
+      "sha256": "8d05c1b83750ea3e8ae3baa5cbee10268c2db907e7119ce4e0034d0988ebc7ef",
+      "title": "Agent设计模式：图解可复用智能体架构",
+      "clcCode": "TP18",
+      "clcName": "人工智能理论",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/T/TP18/WEISER8d05c1b83750.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERba6c81812a6b",
+      "sha256": "ba6c81812a6baf7501a69462367e0e8897bb784bb2fa2aa01fc28dde534409e8",
+      "title": "Python asyncio并发编程",
+      "clcCode": "TP312",
+      "clcName": "程序语言、算法语言",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/T/TP312/WEISERba6c81812a6b.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER5166cff1c7c3",
+      "sha256": "5166cff1c7c3312ea342cb6d7583ef7333194342b4d145b10a8d6c0c5bc8a00c",
+      "title": "Python工匠",
+      "clcCode": "TP312",
+      "clcName": "程序语言、算法语言",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/T/TP312/WEISER5166cff1c7c3.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER66deab7efcb6",
+      "sha256": "66deab7efcb67bd81fadafe368ebda31ec45c1a30891ebc0f9f6b65d802b3ee2",
+      "title": "诗经注析",
+      "clcCode": "I222.2",
+      "clcName": "诗经",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I222.2/WEISER66deab7efcb6.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "I222.2"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER0c31dabe9b4a",
+      "sha256": "0c31dabe9b4a5a7dd2f7897992d4d371a6675e22d5bdb553ba914433e82d7019",
+      "title": "中论颂梵藏汉对照",
+      "clcCode": "B94",
+      "clcName": "佛教",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        },
+        {
+          "url": "https://fanfoyan.com/publi/mk.pdf",
+          "note": "原整理者公开的中论颂梵藏汉对照稿。"
+        }
+      ],
+      "objectKey": "books/B/B94/WEISER0c31dabe9b4a.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER6c2a1e913895",
+      "sha256": "6c2a1e91389530f8b37598798acd12b6a6663e4108745ce24c089b2d1863b71a",
+      "title": "罗德斯岛战记",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISER6c2a1e913895.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER30aa104d97f4",
+      "sha256": "30aa104d97f494bff6d8b706cad4d113b5720f1d79511d511b436ee8ca1e8139",
+      "title": "七王国的骑士",
+      "clcCode": "I712",
+      "clcName": "美国文学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I712/WEISER30aa104d97f4.epub",
+      "authorStatus": "unreviewed",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERfbdc814b99c0",
+      "sha256": "fbdc814b99c07f0769a346d2a5a68dbbc4501da9b8a3c6f57b8f4dff3783368a",
+      "title": "东方学",
+      "clcCode": "G02",
+      "clcName": "文化哲学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/g.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/G/G02/WEISERfbdc814b99c0.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERa6346a50716c",
+      "sha256": "a6346a50716c2b1f4174d6e660129af5b634abe40541791c0c1f18a276d7164e",
+      "title": "中世纪之美",
+      "clcCode": "J150.09",
+      "clcName": "欧洲艺术史",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/J/J150.09/WEISERa6346a50716c.epub",
+      "authorStatus": "unreviewed",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER5c890b623d31",
+      "sha256": "5c890b623d315c617d2db68e0f339fca09d7be03a996d73716820aa54ea370d7",
+      "title": "中国佛教哲学要义（上下册）",
+      "clcCode": "B94",
+      "clcName": "佛教",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/B/B94/WEISER5c890b623d31.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER3fc186d85a6a",
+      "sha256": "3fc186d85a6a9a9b32818701e62b79777b5d39e2113561321473004a62c365ee",
+      "title": "桐城文选",
+      "clcCode": "I264.9",
+      "clcName": "清代散文选集",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I264.9/WEISER3fc186d85a6a.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "I264.9"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER8fabafea1265",
+      "sha256": "8fabafea1265d4cf5594e675279f7c4ab4901cc327d2a5e2bce718c033d72a3b",
+      "title": "为承认而斗争",
+      "clcCode": "C91",
+      "clcName": "社会学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/c.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/C/C91/WEISER8fabafea1265.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "C91"
+      ],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER834a310ff699",
+      "sha256": "834a310ff6991d9e21013d664181f5d726e5fc7fb14be2aaecd0ef50454c148b",
+      "title": "以自由看待发展",
+      "clcCode": "F061.3",
+      "clcName": "发展经济学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/f.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        },
+        {
+          "url": "https://liblsp.neau.edu.cn/mspace/searchDetailLocal/mbfb95459a308dd80c7ec35aaea80f74f",
+          "note": "图书馆或院系馆藏书目核验。"
+        }
+      ],
+      "objectKey": "books/F/F061.3/WEISER834a310ff699.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERb252653d4560",
+      "sha256": "b252653d45603d0245f485cf3bcb5aebf028db00514ada6bed2c9d9f9eab98bd",
+      "title": "伊豆的舞女",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISERb252653d4560.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER46be468dff0e",
+      "sha256": "46be468dff0e2f62a8875c7f6bad840635bc105bbd71050cb983e8b410374e26",
+      "title": "伊里野的天空，UFO的夏天（第1卷）",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISER46be468dff0e.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER4ab0be908b8a",
+      "sha256": "4ab0be908b8a700d2e24a29f198e02c23e5ccf8a60014c8a8100b88ea0195638",
+      "title": "伊里野的天空，UFO的夏天（第3卷）",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISER4ab0be908b8a.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERb98b3d29fe6c",
+      "sha256": "b98b3d29fe6c8d404d67d2f837f42e16337fdb1eb3e3693c86b73472c0bd5262",
+      "title": "伊里野的天空，UFO的夏天（第2卷）",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISERb98b3d29fe6c.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERc16de814363c",
+      "sha256": "c16de814363ce67b40134f060dab23d70e0eb3bb7cc5ff419f915409f7c592b8",
+      "title": "伊里野的天空，UFO的夏天（第4卷）",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISERc16de814363c.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERdbd1753e068b",
+      "sha256": "dbd1753e068babd225ef1531498231f9d317c419ea13a616d7377c7799fb8a03",
+      "title": "传统的发明",
+      "clcCode": "G156.1",
+      "clcName": "英国文化",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/g.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/G/G156.1/WEISERdbd1753e068b.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "G156.1"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER692477093bac",
+      "sha256": "692477093bacb9215ebd1d593d36c04698ee04a1e97cf58e373c1632b4addcbb",
+      "title": "佛家逻辑通论",
+      "clcCode": "B81",
+      "clcName": "逻辑学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/B/B81/WEISER692477093bac.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISERd3b618406970",
+      "sha256": "d3b6184069704ddb571df39e306cf1107e835a6216c3f1f57a1a9b1fb03d76a3",
+      "title": "修辞学发凡",
+      "clcCode": "H15",
+      "clcName": "写作、修辞",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/H/H15/WEISERd3b618406970.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "H15"
+      ],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERf1e52604eba9",
+      "sha256": "f1e52604eba93652925fe7a8f57ecc9e8ebb689ccfb707270c06cd32e5f8b4f9",
+      "title": "催眠术与法国启蒙运动的终结",
+      "clcCode": "K565.03",
+      "clcName": "法国近代史",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/K/K565.03/WEISERf1e52604eba9.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "K565.03"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER4dfbaba4d610",
+      "sha256": "4dfbaba4d610210ae13d312044694bf00cbad6b99724bd6a7ab0737a416acdce",
+      "title": "再分配，还是承认？",
+      "clcCode": "C91",
+      "clcName": "社会学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/c.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/C/C91/WEISER4dfbaba4d610.epub",
+      "authorStatus": "unreviewed",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER95a882a84456",
+      "sha256": "95a882a844567daba168800998e078165a26a8d3c0e070d94a3b6916a136131f",
+      "title": "再生产：一种教育系统理论的要点",
+      "clcCode": "G649.565",
+      "clcName": "法国高等教育",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/g.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/G/G649.565/WEISER95a882a84456.pdf",
+      "authorStatus": "unreviewed",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [
+        "G649.565"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER8dc0c9ca0ebf",
+      "sha256": "8dc0c9ca0ebf21cd610c0fe0b3d67709f37fbf4162b4ff79363a0fea1e9f7437",
+      "title": "写小说最重要的十件事",
+      "clcCode": "I054",
+      "clcName": "小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I054/WEISER8dc0c9ca0ebf.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERc7444de84644",
+      "sha256": "c7444de84644f4b01aa899699562f71f91b0e7c45aec5b98552c8407f6690069",
+      "title": "动物化的后现代",
+      "clcCode": "G131.32",
+      "clcName": "日本文化研究",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/g.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        },
+        {
+          "url": "https://www.sis.pku.edu.cn/xsbd/zw/index411.htm",
+          "note": "图书馆或院系馆藏书目核验。"
+        }
+      ],
+      "objectKey": "books/G/G131.32/WEISERc7444de84644.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERffe4189b2fa4",
+      "sha256": "ffe4189b2fa4682d90516126bb0f94947036b163f00bcf85e9edc5920e55adbf",
+      "title": "十二国记",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISERffe4189b2fa4.epub",
+      "authorStatus": "unreviewed",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER129f52074471",
+      "sha256": "129f52074471d841007add2f2e6a2fede8da892097ffccaf5a69c4fae2e44cba",
+      "title": "半生缘",
+      "clcCode": "I246.5",
+      "clcName": "新体长篇、中篇小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I246.5/WEISER129f52074471.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERc781fdbe867d",
+      "sha256": "c781fdbe867d874c065d97975f6f4ff9cc733c125051d43386656bdf548a6354",
+      "title": "印度佛学源流略讲",
+      "clcCode": "B949.351",
+      "clcName": "印度佛教史",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/B/B949.351/WEISERc781fdbe867d.pdf",
+      "authorStatus": "unreviewed",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [
+        "B949.351"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER10015b3e1f4f",
+      "sha256": "10015b3e1f4ff886383a525fa71cc9a0dbf61c50bab4fca4697afdb38098424e",
+      "title": "反动的修辞",
+      "clcCode": "D0",
+      "clcName": "政治学、政治理论",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/d.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/D/D0/WEISER10015b3e1f4f.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISERe166eb3b5857",
+      "sha256": "e166eb3b5857f2b4f8744a8e29075df3a2409e69e70e6ecfc7a45ca41bc77517",
+      "title": "古都",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISERe166eb3b5857.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER5af3e3477923",
+      "sha256": "5af3e34779230991f8c597a88544f9c8b09bff8f5bef10f753186dc2cdf3d2ae",
+      "title": "唐宋八大家文选",
+      "clcCode": "I262",
+      "clcName": "古代散文",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I262/WEISER5af3e3477923.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERa2640fb81e41",
+      "sha256": "a2640fb81e4127ed8946c7140b0875e7e905d74ac5dec22e4a50339286cc6a16",
+      "title": "因明入正理论读解·因明入正理论悟他门浅释",
+      "clcCode": "B81",
+      "clcName": "逻辑学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/B/B81/WEISERa2640fb81e41.pdf",
+      "authorStatus": "unreviewed",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [
+        "B81-093"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISERf80930066594",
+      "sha256": "f8093006659446e9dc49134b3c0401af55ccfafdb3b1c3928b30b8709c3e289e",
+      "title": "基于梵汉对勘的《阿毗达磨俱舍论》语法研究",
+      "clcCode": "H711.4",
+      "clcName": "梵语语法",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/H/H711.4/WEISERf80930066594.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "H711.4"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISERc8f3599d0d59",
+      "sha256": "c8f3599d0d597080009b98f34d60caa159756480ec4760a3f4f74fae8ad3691c",
+      "title": "夏日终曲",
+      "clcCode": "I712",
+      "clcName": "美国文学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I712/WEISERc8f3599d0d59.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERf3809a435230",
+      "sha256": "f3809a43523059abc0c68baf2678b9fb62f3c8577868739713fab3f5be4b8fb1",
+      "title": "夏洛的网",
+      "clcCode": "I712",
+      "clcName": "美国文学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I712/WEISERf3809a435230.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER30956775e5f8",
+      "sha256": "30956775e5f84d7face5f87135b4c07764a5c20860452d5d9db8b08dc29f2f06",
+      "title": "奇风岁月",
+      "clcCode": "I712",
+      "clcName": "美国文学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I712/WEISER30956775e5f8.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER69a647a4737d",
+      "sha256": "69a647a4737d177821c119ceda470ff04d8163a4f113878c5887e5441d90b8d3",
+      "title": "封锁",
+      "clcCode": "I247.5",
+      "clcName": "新体长篇、中篇小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I247.5/WEISER69a647a4737d.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER8667acb280c6",
+      "sha256": "8667acb280c6450c0aa7ee91178dd0dda6ae9663424e6d46f3412e682db834f8",
+      "title": "小妇人",
+      "clcCode": "I712",
+      "clcName": "美国文学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I712/WEISER8667acb280c6.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER5dd87157e6ee",
+      "sha256": "5dd87157e6eec8898e2dcb6ce31719934f8f1a438950495523ef5a4f9df33a9e",
+      "title": "小说写作教程",
+      "clcCode": "I054",
+      "clcName": "小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I054/WEISER5dd87157e6ee.epub",
+      "authorStatus": "unreviewed",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER3078571c7cce",
+      "sha256": "3078571c7cce8634c86f16cc843560def0852bf2126723a09ba8b2f283d9c306",
+      "title": "小说的骨架",
+      "clcCode": "I054",
+      "clcName": "小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I054/WEISER3078571c7cce.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERb769a909002a",
+      "sha256": "b769a909002a9a3606cdfba2bd8d1f9e73cc285d952b397d351bf0354dbf588a",
+      "title": "尚书今注今译",
+      "clcCode": "K221.04",
+      "clcName": "尚书研究",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/K/K221.04/WEISERb769a909002a.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "K221.04"
+      ],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERdbb2fa46dcfe",
+      "sha256": "dbb2fa46dcfeda443b7302d1a1fb949ef8db992c8a75410304aa9ac51bf11992",
+      "title": "川端康成必读套装（全7册）",
+      "clcCode": "I313",
+      "clcName": "日本文学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313/WEISERdbb2fa46dcfe.azw3",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER77026c22c8f7",
+      "sha256": "77026c22c8f7e910cb0266ba587e0d8654a122beaad959f7d8ad5314d7d15886",
+      "title": "才华贵族：优绩制如何塑造了现代世界",
+      "clcCode": "C91",
+      "clcName": "社会学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/c.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/C/C91/WEISER77026c22c8f7.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER8c0b3590850b",
+      "sha256": "8c0b3590850bdda40d5bf119e00a79fc23e6836d402e8e67900e5a58c66a0fd8",
+      "title": "找工作：关系人与职业生涯的研究",
+      "clcCode": "C913.2",
+      "clcName": "职业",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/c.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/C/C913.2/WEISER8c0b3590850b.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "C913.2"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISERaaa179dcc0b5",
+      "sha256": "aaa179dcc0b5a48a4dbd44e1e7245744aceeb9abf5b16112f5da75b66b09c61a",
+      "title": "挪威的森林",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISERaaa179dcc0b5.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER7c06c49eacca",
+      "sha256": "7c06c49eaccae982d78c18f807344d0df948c76c879d03b681b971c26591512b",
+      "title": "提嘉娜",
+      "clcCode": "I711",
+      "clcName": "加拿大文学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I711/WEISER7c06c49eacca.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER0b1b2c8ca5d2",
+      "sha256": "0b1b2c8ca5d2200978658c28ba97ac324a392e1ea23d4d8681cc2ef7ba73839f",
+      "title": "文化记忆",
+      "clcCode": "G02",
+      "clcName": "文化哲学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/g.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/G/G02/WEISER0b1b2c8ca5d2.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISERc8cdc9c14e85",
+      "sha256": "c8cdc9c14e85ccf7043fe679a4b4a3bead7724df7263f02cf4e43046a9dd3290",
+      "title": "文学读法",
+      "clcCode": "I06",
+      "clcName": "文学评论、文学欣赏",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I06/WEISERc8cdc9c14e85.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER5257e6d5e58c",
+      "sha256": "5257e6d5e58c016e2404aa782c108b0884e4d99c53a202431f8875b76622f6ba",
+      "title": "文学讲稿",
+      "clcCode": "I106",
+      "clcName": "作品评论和研究",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I106/WEISER5257e6d5e58c.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "I106"
+      ],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER1b6d626b0c35",
+      "sha256": "1b6d626b0c35a45ca85662ae29f297cefb1ad42565efc146a47ccd26888d2918",
+      "title": "旅猫日记",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISER1b6d626b0c35.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER29eb12c7ed78",
+      "sha256": "29eb12c7ed78121ca81acdb364650db0baa50927ca76afd7ceaf6c29722258c9",
+      "title": "无政府、国家和乌托邦",
+      "clcCode": "D091.6",
+      "clcName": "现代政治思想",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/d.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/D/D091.6/WEISER29eb12c7ed78.epub",
+      "authorStatus": "unreviewed",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [
+        "D091.6"
+      ],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER1d12b96dcc88",
+      "sha256": "1d12b96dcc88cd1381f746f90102719d31aa909bc5717a5ab23e44623d346c96",
+      "title": "星尘",
+      "clcCode": "I561.45",
+      "clcName": "英国现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I561.45/WEISER1d12b96dcc88.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER2164ba81ce62",
+      "sha256": "2164ba81ce62553cc4fd2d0f95676770d9b3e526e3b104a0771943c3a99a0db7",
+      "title": "春雪",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISER2164ba81ce62.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER0a6ece3ea80b",
+      "sha256": "0a6ece3ea80b686b27b87c71df9c5fcc9040ae8e1b07ffd621bd2aca7830ee05",
+      "title": "朱光潜谈文学",
+      "clcCode": "I0",
+      "clcName": "文学理论",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I0/WEISER0a6ece3ea80b.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "I0"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER625f8e9921c4",
+      "sha256": "625f8e9921c44ba12a4670267d25f8a71d0fba4245d4dade9e62a54392615229",
+      "title": "杀死一只知更鸟",
+      "clcCode": "I712",
+      "clcName": "美国文学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I712/WEISER625f8e9921c4.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER01ab9a99a95c",
+      "sha256": "01ab9a99a95c0bc97188d1652677dac23801b8e975edf8420d4ec1a8e8e03b4d",
+      "title": "李商隐诗歌集解（全五册）",
+      "clcCode": "I222.742",
+      "clcName": "唐代诗歌",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I222.742/WEISER01ab9a99a95c.pdf",
+      "authorStatus": "unreviewed",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER25bdc4b7104d",
+      "sha256": "25bdc4b7104d49928d8357ff62f7e80be63f731c3cd7ce681c1bd4d7d1ede4ce",
+      "title": "正义诸领域：为多元主义与平等一辩",
+      "clcCode": "D0",
+      "clcName": "政治学、政治理论",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/d.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/D/D0/WEISER25bdc4b7104d.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER10bfbaf44bc1",
+      "sha256": "10bfbaf44bc1855ba2a37a34ef2f759d75189cd8c6b7a217d88352ce8a32b4dd",
+      "title": "流畅的Python",
+      "clcCode": "TP312",
+      "clcName": "程序语言、算法语言",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/T/TP312/WEISER10bfbaf44bc1.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER4855db24956f",
+      "sha256": "4855db24956f4f08fb35dccd7b0d499ed5978eb13a45e979a7af95aeabd8481c",
+      "title": "浮生梦",
+      "clcCode": "I561.45",
+      "clcName": "英国现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I561.45/WEISER4855db24956f.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "I561.45"
+      ],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERda36e1f29e0a",
+      "sha256": "da36e1f29e0a33947140c4b1139dd2e6dc9e3bfad014d8854e91820775dc6602",
+      "title": "深入理解计算机系统（原书第3版）",
+      "clcCode": "TP338",
+      "clcName": "各种电子数字计算机",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/T/TP338/WEISERda36e1f29e0a.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "TP338"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER2d68b1c8c05e",
+      "sha256": "2d68b1c8c05e0034fb6ca7da97295f62e1240b603dae2f842885d86bb2e629df",
+      "title": "牛津拜占庭史",
+      "clcCode": "K134",
+      "clcName": "拜占庭帝国",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/K/K134/WEISER2d68b1c8c05e.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "K134"
+      ],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERb5f3141e46c5",
+      "sha256": "b5f3141e46c548083dcc691e9fa967bf6aaa41ba700088165d9bf28e00b919f8",
+      "title": "牛津艺术史（第一辑，全10册）",
+      "clcCode": "J110.9",
+      "clcName": "世界艺术史",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/J/J110.9/WEISERb5f3141e46c5.epub",
+      "authorStatus": "partial-collection",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [
+        "J120.9"
+      ],
+      "inspectedPages": [],
+      "classificationResolution": "content-over-single-volume-cip",
+      "classificationReviewNote": "合集以全书覆盖主题归类，保留单册CIP原记录。"
+    },
+    {
+      "fileId": "WEISERee0eea5d4b92",
+      "sha256": "ee0eea5d4b92bd3ccf2efe8952178ea6e411749b6333f4e478295f1193c5ef5a",
+      "title": "拜占庭艺术",
+      "clcCode": "J150.09",
+      "clcName": "欧洲艺术史",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/J/J150.09/WEISERee0eea5d4b92.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER42f156ce50c1",
+      "sha256": "42f156ce50c1f957d001b3ca5b06ce85849e84add4c39f41175f769386ff27a8",
+      "title": "狄德罗哲学选集",
+      "clcCode": "B565",
+      "clcName": "法国哲学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/B/B565/WEISER42f156ce50c1.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER8e0aca43b572",
+      "sha256": "8e0aca43b572ebb1ce588ec1abf5cb09e7f4445e42e4543b1323dda75e9ab1fb",
+      "title": "狼与香辛料",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISER8e0aca43b572.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER2b600c38685b",
+      "sha256": "2b600c38685b5c0a881dac1180bd8e8529bf220911b14e5ea73946507d77a9b7",
+      "title": "理与人",
+      "clcCode": "B82",
+      "clcName": "伦理学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/B/B82/WEISER2b600c38685b.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER40eadf01e5be",
+      "sha256": "40eadf01e5be6f0aa8b5a84d4b3afc9ce800a682eac36764662c3361a86786be",
+      "title": "程序员的自我修养：链接、装载与库",
+      "clcCode": "TP311.1",
+      "clcName": "程序设计",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/T/TP311.1/WEISER40eadf01e5be.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER4135caa3bc46",
+      "sha256": "4135caa3bc46386fe5e2a6cd4009e65c244e972f843679b4a99d86a7afb301da",
+      "title": "空之境界（含未来福音）",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISER4135caa3bc46.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER52755ae285b9",
+      "sha256": "52755ae285b92728775f147f7eccc423baf150f1ae8b3c2f96c3b4304c3322d0",
+      "title": "精灵守护者",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISER52755ae285b9.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "I313.45"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISERd5c1e255f62b",
+      "sha256": "d5c1e255f62bebe838ebc1cb81f73e27f18b6f8c65a4bfb2234ee8963cb972c1",
+      "title": "精益创业实战（第3版）",
+      "clcCode": "F270",
+      "clcName": "企业经济理论和方法",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/f.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/F/F270/WEISERd5c1e255f62b.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER42f4aa7d6b56",
+      "sha256": "42f4aa7d6b5610fbf40a678717e16c3a9ffcb5b7fc8a62b2414cc7232334d0cd",
+      "title": "精英的傲慢",
+      "clcCode": "C91",
+      "clcName": "社会学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/c.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/C/C91/WEISER42f4aa7d6b56.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "C91"
+      ],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERf834016e435c",
+      "sha256": "f834016e435c302270ff861016b5ac9a420bd59b35d1386f15ca7f22c259db70",
+      "title": "红楼梦（脂本精校）",
+      "clcCode": "I242.4",
+      "clcName": "章回小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I242.4/WEISERf834016e435c.azw3",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER1d33dde64519",
+      "sha256": "1d33dde64519c5b36d853c33c95ae179127e256ab378f39c26e370626b3168e9",
+      "title": "罗摩衍那（全7篇）",
+      "clcCode": "I351",
+      "clcName": "印度文学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I351/WEISER1d33dde64519.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER96321c299d05",
+      "sha256": "96321c299d05cc7bb3c008abdef3c7f29bba306501792de373502b759617a3d1",
+      "title": "羞耻与必然性",
+      "clcCode": "B82",
+      "clcName": "伦理学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/B/B82/WEISER96321c299d05.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "B82-095"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER5af31a077aaa",
+      "sha256": "5af31a077aaabd1e3a8802b2ea1027b54b35b05ccdd5d981bd2888101b0d7a4e",
+      "title": "自由秩序原理",
+      "clcCode": "F091.33",
+      "clcName": "自由主义经济学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/f.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/F/F091.33/WEISER5af31a077aaa.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "F091.33"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISERc79141473ec0",
+      "sha256": "c79141473ec034d13546092645a845a634771c68f934d7d37aa00f2213196677",
+      "title": "艺术与错觉：图画再现的心理学研究",
+      "clcCode": "J20",
+      "clcName": "绘画理论",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "library-bibliography",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        },
+        {
+          "url": "https://opac.lib.uibe.edu.cn/opac/book/3f74e64ea147f45244b01f288186b57c",
+          "note": "对照同书馆藏编目；具体版本仍以本地文件为准。"
+        }
+      ],
+      "objectKey": "books/J/J0/WEISERc79141473ec0.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "J-53"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "classificationResolution": "cataloguing-and-content-review",
+      "classificationReviewNote": "书内文集CIP为J-53；现行馆藏按J20-05收录。采用已核实的绘画理论上级类J20，原对象Key不因分类修订而迁移。"
+    },
+    {
+      "fileId": "WEISER221275ca6a00",
+      "sha256": "221275ca6a002ab3f6888e6fe1d36ebf5d7a5e4d79ff10aaf1a757a58b97af04",
+      "title": "英国工人阶级的形成（上下册）",
+      "clcCode": "D756.161",
+      "clcName": "英国工人阶级",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "library-bibliography",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        },
+        {
+          "url": "https://opac.uibe.edu.cn/opac/book/1183265c208d012bcb1cba71166ba0de",
+          "note": "对照同书馆藏编目；具体版本仍以本地文件为准。"
+        }
+      ],
+      "objectKey": "books/K/K561.4/WEISER221275ca6a00.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "classificationResolution": "cataloguing-and-content-review",
+      "classificationReviewNote": "对照大学图书馆该书上下册的D756.161编目；原R2对象Key保留。"
+    },
+    {
+      "fileId": "WEISERc4baf4604d64",
+      "sha256": "c4baf4604d648f119defbaa774ed28c31105854a297fd7de660d83d4e3115390",
+      "title": "莫失莫忘",
+      "clcCode": "I561.45",
+      "clcName": "英国现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I561.45/WEISERc4baf4604d64.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERda5eb5d1d0e7",
+      "sha256": "da5eb5d1d0e77da5eeb892dec507f5da17b657cac4cea3f5dc3aa7156699fc21",
+      "title": "薇尔莉特·伊芙加登（紫罗兰永恒花园）",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISERda5eb5d1d0e7.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER5d3674c5a33b",
+      "sha256": "5d3674c5a33b7598c4db3f1b1805b70e062dd8bcffc846ba169e3180233fd958",
+      "title": "被掩埋的巨人",
+      "clcCode": "I561.45",
+      "clcName": "英国现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I561.45/WEISER5d3674c5a33b.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER7b7e638bcb3c",
+      "sha256": "7b7e638bcb3c0313317a6e05b30d3428fc65e534bd2f07c0479d2abd82868899",
+      "title": "计算机系统要素：从零开始构建现代计算机",
+      "clcCode": "TP3",
+      "clcName": "计算机技术",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/T/TP3/WEISER7b7e638bcb3c.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISERfef1b562abea",
+      "sha256": "fef1b562abea48b141fabdee49cb9bcc7c7fecd400b416affd5811543da52592",
+      "title": "计算机网络：自顶向下方法（原书第8版）",
+      "clcCode": "TP393",
+      "clcName": "计算机网络",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/T/TP393/WEISERfef1b562abea.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "TP393"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER4b3229ffb011",
+      "sha256": "4b3229ffb0112cfd1ddce4890122a322db9f59226004aa3da6c778e7a6ff3384",
+      "title": "论文偶记·初月楼古文绪论·春觉斋论文",
+      "clcCode": "I206.2",
+      "clcName": "古代文学（~1840 年）",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I206.2/WEISER4b3229ffb011.pdf",
+      "authorStatus": "unreviewed",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISERc3f6bd108b12",
+      "sha256": "c3f6bd108b1238e52064371a19f0a66fdab404a0494a323b263aa77047860a65",
+      "title": "论犯罪与刑罚",
+      "clcCode": "D917",
+      "clcName": "犯罪学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/d.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/D/D917/WEISERc3f6bd108b12.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "D917"
+      ],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER83e1b05d83af",
+      "sha256": "83e1b05d83af25508fc889209f84a92752c79f594588b0ffae7301c9e71d0957",
+      "title": "赎罪",
+      "clcCode": "I561.45",
+      "clcName": "英国现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I561.45/WEISER83e1b05d83af.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISERe80f27f4f33b",
+      "sha256": "e80f27f4f33b5c5b39714a03898b1cff8d7fa90251f1c99f9530dd650a871d04",
+      "title": "起风了",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISERe80f27f4f33b.epub",
+      "authorStatus": "unreviewed",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [
+        "I313.45"
+      ],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER1fd90efaf5b9",
+      "sha256": "1fd90efaf5b93ffe824ef9fbf510e3db025a414fcef72e479449f5ce1eee757e",
+      "title": "道德运气",
+      "clcCode": "B82",
+      "clcName": "伦理学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/B/B82/WEISER1fd90efaf5b9.pdf",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "B82-53"
+      ],
+      "inspectedPages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "fileId": "WEISER43246831bc9c",
+      "sha256": "43246831bc9c32f03299389ab5d3da87e97f705dfd8ddbaf3e024a19235372ba",
+      "title": "道林·格雷的画像",
+      "clcCode": "I561.44",
+      "clcName": "英国近代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "local-cip",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I561.44/WEISER43246831bc9c.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [
+        "I561.44"
+      ],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER52743b1afba8",
+      "sha256": "52743b1afba8cab0b4417fd7e8cff3302242494dbd3b1db5c65e28bed8fe88e1",
+      "title": "长日将尽",
+      "clcCode": "I561.45",
+      "clcName": "英国现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I561.45/WEISER52743b1afba8.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER5bef664644ef",
+      "sha256": "5bef664644ef742c79148c93655fb1a80f612718a7bccd8931b325c3ea104319",
+      "title": "阶级时代：为什么不平等至关重要（全10册）",
+      "clcCode": "C91",
+      "clcName": "社会学",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/c.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/C/C91/WEISER5bef664644ef.epub",
+      "authorStatus": "partial-collection",
+      "authorBasis": "transcribed-credit-pending-verification",
+      "printedCipCodes": [
+        "B82"
+      ],
+      "inspectedPages": [],
+      "classificationResolution": "content-over-single-volume-cip",
+      "classificationReviewNote": "合集以全书覆盖主题归类，保留单册CIP原记录。"
+    },
+    {
+      "fileId": "WEISERe2b74630f5c4",
+      "sha256": "e2b74630f5c495accaf6cd387db370b6af863bb97e05e0e9119477d9a1102401",
+      "title": "雪国",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISERe2b74630f5c4.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER598d47d69b68",
+      "sha256": "598d47d69b680f8aff5aafcbff7a0d6bff1a4fc749c4073123601ec373a9b9fc",
+      "title": "面纱",
+      "clcCode": "I561.45",
+      "clcName": "英国现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I561.45/WEISER598d47d69b68.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    },
+    {
+      "fileId": "WEISER7d6563b338b2",
+      "sha256": "7d6563b338b23b276eade2a0fbe9badcc720f64ec81278c4ff299d5a0e0887b7",
+      "title": "魔女之旅",
+      "clcCode": "I313.45",
+      "clcName": "日本现代小说",
+      "reviewedAt": "2026-11-22",
+      "classificationEdition": "中国图书馆分类法；结合书内CIP、实际目录与经核实类表",
+      "classificationBasis": "title-and-contents",
+      "status": "content-reviewed",
+      "sources": [
+        {
+          "url": "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+          "note": "对照基本分类层级；具体类号结合本地版权页和内容，复分地域类号以书内CIP核实。"
+        }
+      ],
+      "objectKey": "books/I/I313.45/WEISER7d6563b338b2.epub",
+      "authorStatus": "verified",
+      "authorBasis": "book-credit",
+      "printedCipCodes": [],
+      "inspectedPages": []
+    }
+  ]
+}

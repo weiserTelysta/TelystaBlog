@@ -214,6 +214,32 @@
       ]
     },
     {
+      "clcCode": "F061.3",
+      "clcName": "发展经济学",
+      "books": [
+        {
+          "id": "WEISER834a310ff699",
+          "title": "以自由看待发展",
+          "authors": [
+            "阿马蒂亚·森"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F/F061.3/WEISER834a310ff699.epub",
+              "bytes": 5454420
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/730e64c7dc02b491bf4fe3ba046ffb8a12064e51686b10ba260b305a6a623fa4.webp",
+          "description": "以自由看待发展，发展经济学相关藏书。"
+        }
+      ]
+    },
+    {
       "clcCode": "F091",
       "clcName": "经济思想史",
       "books": [
@@ -257,6 +283,32 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/f067f7e12f379ab613da15543ce210a470b6be83f06dc9a7fab8f40828e831b3.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "F091.33",
+      "clcName": "自由主义经济学",
+      "books": [
+        {
+          "id": "WEISER5af31a077aaa",
+          "title": "自由秩序原理",
+          "authors": [
+            "弗里德利希·冯·哈耶克"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F/F091.33/WEISER5af31a077aaa.pdf",
+              "bytes": 23046012
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/313424e46f24eba1cdcd2ca63c4fb294e3095f2ee7556d3935987b46db0c5ac5.webp",
+          "description": "自由秩序原理，自由主义经济学相关藏书。"
         }
       ]
     },
@@ -530,6 +582,26 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/f2cdd3e172b91a97d63204d5e2987267d1c200129a80dec7a790fb750ae4825b.webp"
+        },
+        {
+          "id": "WEISERd5c1e255f62b",
+          "title": "精益创业实战（第3版）",
+          "authors": [
+            "阿什·莫瑞亚"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F/F270/WEISERd5c1e255f62b.epub",
+              "bytes": 7625407
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/f67bba855e10d4ed36ccf0069427fa07a73afb9ff932462be8d7afe848796796.webp",
+          "description": "精益创业实战（第3版），企业经济理论和方法相关藏书。"
         }
       ]
     },

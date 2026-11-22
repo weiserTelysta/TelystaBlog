@@ -1,4 +1,6 @@
 import bundledCatalog from './catalog.generated.json';
+import { anonymousDownload, ANONYMOUS_DOWNLOAD_LIMIT } from './downloadQuota';
+export { AnonymousDownloads } from './downloadQuota';
 type Book = {
   id: string; title: string; authors: string[]; access: 'public' | 'protected';
   href: string; cover?: string; files: { href: string; format: string; bytes?: number }[];
@@ -6,9 +8,11 @@ type Book = {
 };
 let catalogCache: { key: string; books: Book[]; assets: Map<string, boolean> } | undefined;
 async function authenticated(request: Request, env: LibraryGatewayEnv) {
-  if (!request.headers.get('Cookie')?.includes('__Secure-telysta-session=')) return false;
-  try { return (await env.AUTH_SERVICE.session(request.headers.get('Cookie') || '')).restricted === true; }
-  catch { return false; }
+  if (!request.headers.get('Cookie')?.includes('__Secure-telysta-session=')) return { signedIn: false, restricted: false };
+  try {
+    const session = await env.AUTH_SERVICE.session(request.headers.get('Cookie') || '');
+    return { signedIn: session.user != null, restricted: session.restricted === true };
+  } catch { return { signedIn: false, restricted: false }; }
 }
 function assetKey(href: string) {
   const url = new URL(href);
@@ -54,7 +58,7 @@ export default {
     if (origin && !allowed.includes(origin)) return new Response('Forbidden', { status: 403, headers });
     if (origin) {
       headers.set('Access-Control-Allow-Origin', origin); headers.set('Access-Control-Allow-Credentials', 'true');
-      headers.set('Access-Control-Expose-Headers', 'Content-Range, Content-Length, Accept-Ranges, ETag');
+      headers.set('Access-Control-Expose-Headers', 'Content-Range, Content-Length, Accept-Ranges, ETag, Retry-After, X-Download-Limit, X-Download-Remaining, X-Download-Reset');
     }
     const json = (body: unknown, status = 200) => { headers.delete('Content-Length'); headers.delete('Content-Range'); headers.set('Cache-Control', 'no-store'); headers.set('Content-Type', 'application/json; charset=utf-8'); return new Response(JSON.stringify(body), { status, headers }); };
     try {
@@ -63,7 +67,7 @@ export default {
         headers.set('Access-Control-Allow-Methods', 'GET, HEAD, POST, OPTIONS'); headers.set('Access-Control-Allow-Headers', 'Content-Type, Range, If-Range, If-None-Match');
         return new Response(null, { status: 204, headers });
       }
-      const url = new URL(request.url), unlocked = await authenticated(request, env);
+      const url = new URL(request.url), session = await authenticated(request, env), unlocked = session.restricted;
       if (url.pathname === '/api/session' && request.method === 'GET') return json({ authenticated: unlocked });
       if (!['GET', 'HEAD'].includes(request.method)) return new Response(null, { status: 405, headers });
       const manifest = await catalog(env);
@@ -75,7 +79,7 @@ export default {
       const head = await env.LIBRARY_BUCKET.head(key);
       if (!head) return new Response('Not found', { status: 404, headers });
       head.writeHttpMetadata(headers); headers.set('ETag', head.httpEtag); headers.set('Accept-Ranges', 'bytes');
-      headers.set('Cache-Control', restricted ? 'private, no-store' : key.startsWith('covers/') ? 'public, max-age=31536000, immutable' : 'public, max-age=3600');
+      headers.set('Cache-Control', !restricted && key.startsWith('covers/') ? 'public, max-age=31536000, immutable' : 'private, no-store');
       headers.set('Content-Security-Policy', `frame-ancestors ${allowed.filter(value => value.startsWith('https://')).join(' ') || "'none'"}`);
       if (request.headers.get('If-None-Match')?.split(',').map(value => value.trim()).includes(head.httpEtag)) return new Response(null, { status: 304, headers });
       let range;
@@ -94,6 +98,20 @@ export default {
       if (request.method === 'HEAD') return new Response(null, { status: range ? 206 : 200, headers });
       const object = await env.LIBRARY_BUCKET.get(key, range ? { range } : undefined);
       if (!object) return new Response(null, { status: 404, headers });
+      if (key.startsWith('books/') && !session.signedIn) {
+        try {
+          const quota = await anonymousDownload(request, env, key);
+          headers.set('X-Download-Limit', String(ANONYMOUS_DOWNLOAD_LIMIT));
+          headers.set('X-Download-Remaining', String(quota.remaining));
+          headers.set('X-Download-Reset', String(Math.ceil(quota.resetAt / 1000)));
+          if (!quota.allowed) {
+            await object.body.cancel();
+            headers.set('Retry-After', String(Math.max(1, Math.ceil((quota.resetAt - Date.now()) / 1000))));
+            headers.delete('Content-Disposition');
+            return json({ error: '未登录访客每天最多获取10个不同文件，已用文件可继续阅览或续传。额度于北京时间零点恢复。 Anonymous daily download limit reached.', code: 'anonymous_download_limit', resetAt: quota.resetAt }, 429);
+          }
+        } catch (error) { await object.body.cancel(); throw error; }
+      }
       return new Response(object.body, { status: range ? 206 : 200, headers });
     } catch {
       console.error(JSON.stringify({ event: 'library_gateway_error' }));

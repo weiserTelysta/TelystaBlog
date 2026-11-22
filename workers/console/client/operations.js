@@ -1,3 +1,4 @@
+import { comments } from './comments.js';
 import { el, button, field, word, ask } from './ui.js';
 import { authError } from './auth.js';
 const roles = {
@@ -7,6 +8,7 @@ const roles = {
 	admin: ['超级管理员', 'Site owner']
 };
 export async function operations(key, c) {
+	if (key === 'comments') return comments(c);
 	if (key === 'users') return users(c);
 	if (key === 'sessions') return devices(c);
 	if (key === 'uploads') return uploads(c);
@@ -414,6 +416,7 @@ function backups(c) {
 		['gallery', ['画廊资料', 'Gallery entries']],
 		['score', ['简谱', 'Scores']],
 		['config', ['站点设置', 'Site settings']],
+		['comments', ['评论与回复', 'Comments & replies']],
 		['users', ['账户与权限', 'Accounts & access']],
 		['uploads', ['上传资料清单', 'Upload manifests']],
 		['audit', ['操作记录', 'Activity']]

@@ -194,6 +194,107 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/d1b930c1db3d79d79c62ef343d9fccbda30fcfa0b699abdccebcce8948497993.webp"
+        },
+        {
+          "id": "WEISER8fabafea1265",
+          "title": "为承认而斗争",
+          "authors": [
+            "阿克塞尔·霍耐特"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/C/C91/WEISER8fabafea1265.epub",
+              "bytes": 535240
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/dd9dced023194801c4c5c7396bc0faaf2a283f855dddd8fdce4e1748224c58ba.webp",
+          "description": "为承认而斗争，社会学相关藏书。"
+        },
+        {
+          "id": "WEISER4dfbaba4d610",
+          "title": "再分配，还是承认？",
+          "authors": [
+            "南茜·弗雷泽",
+            "阿克塞尔·霍耐特"
+          ],
+          "authorStatus": "unreviewed",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/C/C91/WEISER4dfbaba4d610.epub",
+              "bytes": 404531
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/893c02286b92a6e0c07b0793dac6bf95ae614700528b95d87c9291c6474bbfef.webp",
+          "description": "再分配，还是承认？，社会学相关藏书。"
+        },
+        {
+          "id": "WEISER77026c22c8f7",
+          "title": "才华贵族：优绩制如何塑造了现代世界",
+          "authors": [
+            "阿德里安·伍尔德里奇"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/C/C91/WEISER77026c22c8f7.pdf",
+              "bytes": 34849232
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/11109709e31d37748b32490c826cce2d9101f25f83c9515a91aa278bc6392c43.webp",
+          "description": "才华贵族：优绩制如何塑造了现代世界，社会学相关藏书。"
+        },
+        {
+          "id": "WEISER42f4aa7d6b56",
+          "title": "精英的傲慢",
+          "authors": [
+            "迈克尔·桑德尔"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/C/C91/WEISER42f4aa7d6b56.epub",
+              "bytes": 450085
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/629830051e89780de750b3fd1ff5bce7bad0687264c66ef4a4bfafe3ea23c36d.webp",
+          "description": "精英的傲慢，社会学相关藏书。"
+        },
+        {
+          "id": "WEISER5bef664644ef",
+          "title": "阶级时代：为什么不平等至关重要（全10册）",
+          "authors": [
+            "托马斯·斯坎伦 等"
+          ],
+          "authorStatus": "partial-collection",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/C/C91/WEISER5bef664644ef.epub",
+              "bytes": 29821999
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/c98054214d6df7cc17e06bcceb7c1ad03721b6f862d624bbdaca41b1e4d755a4.webp",
+          "description": "阶级时代：为什么不平等至关重要（全10册），社会学相关藏书。"
         }
       ]
     },
@@ -606,6 +707,26 @@
           "draft": false,
           "updatedAt": "2026-11-21",
           "cover": "https://library-files.telysta.com/covers/3b6a3e28e8c61138be71f7f20d6f83e93caec3dd2cf7fc3efefe5c163cca773e.webp"
+        },
+        {
+          "id": "WEISER8c0b3590850b",
+          "title": "找工作：关系人与职业生涯的研究",
+          "authors": [
+            "马克·格兰诺维特"
+          ],
+          "authorStatus": "verified",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/C/C913.2/WEISER8c0b3590850b.pdf",
+              "bytes": 14568383
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-22",
+          "cover": "https://library-files.telysta.com/covers/36ba32515f70a862f438e4fc2b08f29d462063d9e975ae12dded9763a91b3011.webp",
+          "description": "找工作：关系人与职业生涯的研究，职业相关藏书。"
         }
       ]
     },
