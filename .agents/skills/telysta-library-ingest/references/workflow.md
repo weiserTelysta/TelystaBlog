@@ -10,22 +10,40 @@
 
 本地工具文档与示例在 `docs/library.md`。命令中使用真实的批次路径，不能把历史 `.tmp/library-2026-11-14/` 当作永远存在的输入。
 
+## 增量报告
+
+先用 Windows `Get-ChildItem -Recurse -File -Force` 生成原生盘点JSON（`files` 中每行含 `path`、`bytes`，盘点错误放 `errors`），再对同一范围运行 rclone `hashsum SHA256`。原始清单和校验文件留在私人批次目录。不要用WSL枚举数量替代原生盘点。
+
+```bash
+python3 scripts/library_delta.py \
+  --inventory .tmp/<批次>/inventory-windows.json \
+  --checksums .tmp/<批次>/SHA256SUMS \
+  --catalog src/content/ebooks/catalog \
+  --output .tmp/<批次>/delta.json
+```
+
+可用重复的 `--hash-evidence data/library/ingest-<日期>.json` 比对既有全SHA证据。工具遇到路径规范化歧义、清单范围不一致、短ID冲突或同哈希大小冲突时停止。`missingExisting` 只是本地缺失记录，不是远端删除清单；`duplicates` 仅作重复提示，报告本身不执行删除或上传。用户明确要求去重时，先重新核对保留件与副本的字节数和完整SHA-256，再将副本移出Books到独立私人目录并保存恢复清单；不要处理只同名、不同格式／译本／版次的文件。
+
+分类完成后维护 `data/library/clc-mappings.json` 的名称、来源与核对状态，再把书籍加入对应Booklist。不要将旧标签的 `legacy-label` 批量改成已核实。标题不能单独决定分类，OCR只是读取题名页／CIP的辅助手段；无法确认作者时明确待核对。
+
 ## R2 复制与封面
 
 Windows rclone remote 目前名为 `r2`，配置在 `%APPDATA%\rclone\rclone.conf`；可以检查 remote／endpoint 与桶是否匹配，不输出配置中的认证字段。工具可通过 Windows PATH、WinGet 安装目录发现，不能假定仓库携带 rclone。
 
 公开URL规则：`https://library-files.telysta.com/` 加真实对象 key，逐路径段进行URL编码并保留 `/`。不要把本地绝对路径或 S3 API 端点写进网页。全角冒号等字符可能被 rclone 转义／规范化，上传后以远端实际 key 为准；用明确匹配关系核对，不凭相似文件名拼链接。
 
+新批次可采用 `books/<大类>/<已核实细类>/<固定ID>.<格式>`，避免Windows文件名转义和题名修改引起路径漂移。上传前确定key；上传后的分类修订只改元数据，不因对象目录与新分类不同而迁移旧对象。不要在上传或校验进程仍读取暂存文件时改名。
+
 `scripts/sync-r2-library.ps1` 要求 `-Source` 和 `-FilesFrom`，名单为相对该 Source 的实际 rclone 路径，桶内目标默认 `r2:telysta-library/books`。先 dry-run 看看只包含本批次，然后在已有上传授权内执行 `-Apply`。它使用 copy，不删除远端；不要改成 sync，也不要使用全库通配上传代替批准名单。
 
-脚本还会枚举 Source 并对其中四格式计算本地 SHA-256，远端 check 只比较名单所选对象。因此增量场景宜使用只含本批次的临时 Source，避免重新读取整个大书库。
+脚本枚举 Source 作为私人盘点；本地SHA-256与远端check均只处理明确名单。`--files-from`不能与rclone其他filter混用。增量场景仍宜使用独立临时Source，避免把完整个人目录写进批次盘点。
 
 封面从 EPUB 声明的封面、Kindle 元数据或 PDF 首页生成，保持原图比例，最大320×480，WebP；遇到特别长的 Windows 文件名，用 Windows 原生复制出临时短路径，配合 `--source-overrides`，不改原文件。只上传本批次审查通过的封面：
 
 - R2 key：`covers/<生成物完整SHA-256>.webp`。
 - Content-Type：`image/webp`；内容寻址文件可设 `Cache-Control: public,max-age=31536000,immutable`。
 - PDF：`application/pdf`；EPUB：`application/epub+zip`；其他格式按文件真实类型设置。不要因为没有网页阅读器而把全部书籍预加载到列表。
-- 站内阅读支持PDF内嵌和EPUB沙箱阅览；MOBI／AZW3供下载。邮箱验证码有独立限频，文件请求另行鉴权，目前没有每日下载本数配额。
+- PDF在新标签页交由浏览器阅览；EPUB、MOBI／AZW3按需加载沙箱阅读器，同时保留下载。邮箱验证码有独立限频，文件请求另行鉴权，目前没有每日下载本数配额。
 
 ## 验证与恢复
 

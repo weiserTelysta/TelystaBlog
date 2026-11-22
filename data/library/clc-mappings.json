@@ -1,0 +1,1874 @@
+{
+  "version": 1,
+  "reviewedAt": "2026-11-21",
+  "note": "reference-checked表示类号及本批书籍内容已对照，不等于每册CIP逐字核实；legacy-label保留既有映射待后续逐书复查。历史名称用aliases显式记录，分类修订不改文件ID或R2对象。",
+  "referenceTable": "https://publishmedia.cbpt.cnki.net/portal/minio/webs/fhlx/media/web/2025/07/09/%E4%B8%AD%E5%9B%BE%E5%88%86%E7%B1%BB%E5%8F%B7.pdf",
+  "classes": {
+    "A1": {
+      "name": "马克思、恩格斯著作",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "A4": {
+      "name": "毛泽东著作",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B0": {
+      "name": "哲学理论",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B1": {
+      "name": "世界哲学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B22": {
+      "name": "先秦哲学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B223": {
+      "name": "道家",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B234": {
+      "name": "汉代哲学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B244": {
+      "name": "宋元哲学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B248": {
+      "name": "明代哲学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B351": {
+      "name": "印度哲学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B5": {
+      "name": "欧洲哲学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html"
+      ]
+    },
+    "B502": {
+      "name": "古希腊罗马哲学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html"
+      ],
+      "aliases": [
+        "古代哲学"
+      ]
+    },
+    "B503": {
+      "name": "中世纪哲学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B504": {
+      "name": "十七~十九世纪前期哲学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html"
+      ]
+    },
+    "B516": {
+      "name": "德国哲学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B546": {
+      "name": "意大利哲学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html"
+      ]
+    },
+    "B555": {
+      "name": "东欧哲学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B561": {
+      "name": "英国哲学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html"
+      ]
+    },
+    "B563": {
+      "name": "荷兰哲学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html"
+      ]
+    },
+    "B565": {
+      "name": "法国哲学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B712": {
+      "name": "美国哲学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B81": {
+      "name": "逻辑学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html"
+      ],
+      "aliases": [
+        "逻辑学(论理学)"
+      ]
+    },
+    "B82": {
+      "name": "伦理学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B84": {
+      "name": "心理学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html"
+      ]
+    },
+    "B920": {
+      "name": "宗教理论、宗教思想",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html"
+      ]
+    },
+    "B932": {
+      "name": "神话研究",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html"
+      ],
+      "aliases": [
+        "神话"
+      ]
+    },
+    "B94": {
+      "name": "佛教",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B96": {
+      "name": "伊斯兰教",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B971": {
+      "name": "圣经",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B972": {
+      "name": "神学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B978": {
+      "name": "基督教史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B982": {
+      "name": "婆罗门教、印度教",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B983": {
+      "name": "琐罗亚斯德教",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B985": {
+      "name": "犹太教",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "B99": {
+      "name": "迷信术数",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/b.html"
+      ],
+      "aliases": [
+        "术数、迷信"
+      ]
+    },
+    "B992": {
+      "name": "中国旧时术数",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "C8": {
+      "name": "统计学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "C91": {
+      "name": "社会学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/c.html"
+      ]
+    },
+    "C912": {
+      "name": "社会结构与社会关系",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "C912.4": {
+      "name": "文化人类学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/c.html"
+      ],
+      "aliases": [
+        "文化人类学、社会人类学"
+      ]
+    },
+    "C913": {
+      "name": "社会生活与社会问题",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "C913.1": {
+      "name": "恋爱、家庭、婚姻",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/c.html"
+      ]
+    },
+    "C913.14": {
+      "name": "两性问题",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "C913.2": {
+      "name": "职业",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/c.html"
+      ]
+    },
+    "C913.68": {
+      "name": "妇女问题",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "C934": {
+      "name": "决策学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "C936": {
+      "name": "管理组织学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/c.html"
+      ]
+    },
+    "D0": {
+      "name": "政治学、政治理论",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D033": {
+      "name": "国家政治制度",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D035": {
+      "name": "国家行政管理",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D081": {
+      "name": "自由、平等、民主",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D091": {
+      "name": "政治思想史",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/d.html"
+      ],
+      "aliases": [
+        "世界政治思想史"
+      ]
+    },
+    "D095": {
+      "name": "各国政治思想史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D097": {
+      "name": "各国政治思想史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D231": {
+      "name": "党史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D625": {
+      "name": "地方行政管理",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D65": {
+      "name": "政治运动、政治事件",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/d.html"
+      ]
+    },
+    "D663": {
+      "name": "阶级、阶层",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D69": {
+      "name": "中国政治制度史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D731.361": {
+      "name": "日本阶级、阶层",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D771": {
+      "name": "美国政治",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D90": {
+      "name": "法的理论",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D909": {
+      "name": "法学史、法律思想史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D914": {
+      "name": "刑法",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D92": {
+      "name": "中国法律",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "D923": {
+      "name": "民法",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "E19": {
+      "name": "军事史",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/e.html"
+      ]
+    },
+    "E2": {
+      "name": "中国军事",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "E509": {
+      "name": "欧洲军事史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "E8": {
+      "name": "战略学、战役学、战术学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "E9": {
+      "name": "军事技术",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "F0": {
+      "name": "经济学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/f.html"
+      ]
+    },
+    "F015": {
+      "name": "宏观经济学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "F061": {
+      "name": "经济学分支",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "F091": {
+      "name": "经济思想史",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/f.html"
+      ],
+      "aliases": [
+        "世界"
+      ]
+    },
+    "F112": {
+      "name": "世界经济概况",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/f.html"
+      ]
+    },
+    "F113": {
+      "name": "世界经济问题",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "F12": {
+      "name": "中国经济",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "F131": {
+      "name": "日本经济",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/f.html"
+      ]
+    },
+    "F131.26": {
+      "name": "韩国",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "F231": {
+      "name": "会计",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "F270": {
+      "name": "企业经济理论和方法",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/f.html"
+      ]
+    },
+    "F272": {
+      "name": "企业管理",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/f.html"
+      ],
+      "aliases": [
+        "企业计划与经营决策"
+      ]
+    },
+    "F274": {
+      "name": "企业供销管理",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/f.html"
+      ]
+    },
+    "F279": {
+      "name": "各国企业经济",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "F49": {
+      "name": "信息产业经济(总论)",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/f.html"
+      ]
+    },
+    "F713": {
+      "name": "商品流通与市场",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/f.html"
+      ]
+    },
+    "F715": {
+      "name": "商业谈判",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "F812": {
+      "name": "中国财政",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "F823.130": {
+      "name": "日本货币政策",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "F830": {
+      "name": "金融、银行",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "G02": {
+      "name": "文化哲学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/g.html"
+      ]
+    },
+    "G201": {
+      "name": "信息理论",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/g.html",
+        "https://opac.uibe.edu.cn/opac/book/abdab1c468797f5e6cae8830d14ccec9"
+      ]
+    },
+    "G206": {
+      "name": "传播学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "G642.0": {
+      "name": "教学研究与改革",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/g.html"
+      ]
+    },
+    "G792": {
+      "name": "读书方法",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "H0": {
+      "name": "语言学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H01": {
+      "name": "语音学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H02": {
+      "name": "文字学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H039": {
+      "name": "词源学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H04": {
+      "name": "语法学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H1": {
+      "name": "汉语",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H109.2": {
+      "name": "古代汉语",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H109.4": {
+      "name": "现代汉语",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H11": {
+      "name": "语音",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H111": {
+      "name": "上古语音（周秦两汉语音）",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H126.2": {
+      "name": "盲文",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H126.3": {
+      "name": "形态语言（手势语）",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html",
+        "https://jp.tfswufe.edu.cn/opac/book/5b35c08915cdcbdf29d92cd3fb82bca8"
+      ]
+    },
+    "H14": {
+      "name": "语法",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H141": {
+      "name": "古代语法",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "H152": {
+      "name": "文章学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "H211.7": {
+      "name": "西夏语",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H214": {
+      "name": "藏语",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H315": {
+      "name": "写作、修辞",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H315.9": {
+      "name": "翻译",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H36": {
+      "name": "日语",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H364": {
+      "name": "日语语法",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html",
+        "https://www.lib.tongji.edu.cn/themes/357/userfiles/download/2024/4/25/3m2c8zkzaapcvla.pdf"
+      ]
+    },
+    "H37": {
+      "name": "阿拉伯语",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H4": {
+      "name": "汉藏语系",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H647": {
+      "name": "阿伊努语（虾夷语）",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H67": {
+      "name": "闪-含语系（阿非罗-亚细亚语系）",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H671": {
+      "name": "闪语族        H671.1 阿卡德语（亚述-巴比伦语）",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H673": {
+      "name": "埃及-科普特语族",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H7": {
+      "name": "印欧语系",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H71": {
+      "name": "印度语族",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H711": {
+      "name": "古印度语",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ],
+      "aliases": []
+    },
+    "H712": {
+      "name": "印地语",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H771": {
+      "name": "拉丁语",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "H791.1": {
+      "name": "古希腊语",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H794": {
+      "name": "安纳托利亚语族",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H823": {
+      "name": "班图分语支",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "H839": {
+      "name": "爱斯基摩-阿留申语系（北美洲极北部）",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/h.html"
+      ]
+    },
+    "I0": {
+      "name": "文学理论",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I04": {
+      "name": "文学创作论",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ]
+    },
+    "I053.5": {
+      "name": "电影剧本、电视剧本、广播剧本",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ]
+    },
+    "I054": {
+      "name": "小说",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ]
+    },
+    "I1": {
+      "name": "世界文学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I109.31": {
+      "name": "文艺复兴时期文学史",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ]
+    },
+    "I17": {
+      "name": "民间文学集",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ]
+    },
+    "I2": {
+      "name": "中国文学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ]
+    },
+    "I206": {
+      "name": "文学评论与研究",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I207": {
+      "name": "各体文学评论",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ],
+      "aliases": [
+        "各体文学评论和研究"
+      ]
+    },
+    "I21": {
+      "name": "作品集",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I211": {
+      "name": "总集",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I213": {
+      "name": "别集",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I22": {
+      "name": "诗歌、韵文",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I242": {
+      "name": "古代小说",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I247": {
+      "name": "当代小说",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I262": {
+      "name": "古代散文",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I264": {
+      "name": "明清散文",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ]
+    },
+    "I266": {
+      "name": "现代作品（1919~1949 年）",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ]
+    },
+    "I267": {
+      "name": "当代散文",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ],
+      "aliases": [
+        "当代作品（1949 年~）"
+      ]
+    },
+    "I313": {
+      "name": "日本文学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ],
+      "aliases": [
+        "日本"
+      ]
+    },
+    "I333": {
+      "name": "越南文学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+        "https://lib.sues.edu.cn/lxfs_14177/list.htm"
+      ]
+    },
+    "I351": {
+      "name": "印度文学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I371": {
+      "name": "阿拉伯文学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I411": {
+      "name": "埃及文学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+        "https://hzsb.cbpt.cnki.net/portal/journal/portal/client/paper/293c7c83cbd8a9e239027eb866bc1e6a"
+      ]
+    },
+    "I512": {
+      "name": "俄罗斯文学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I513": {
+      "name": "波兰文学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I516": {
+      "name": "德国文学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ],
+      "aliases": [
+        "德国"
+      ]
+    },
+    "I521": {
+      "name": "奥地利文学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ]
+    },
+    "I545": {
+      "name": "古希腊文学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I546": {
+      "name": "意大利文学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ]
+    },
+    "I551": {
+      "name": "西班牙文学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I561": {
+      "name": "英国文学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ],
+      "aliases": [
+        "英国"
+      ]
+    },
+    "I562": {
+      "name": "爱尔兰文学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ],
+      "aliases": [
+        "爱尔兰"
+      ]
+    },
+    "I565": {
+      "name": "法国文学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ],
+      "aliases": [
+        "法国"
+      ]
+    },
+    "I711": {
+      "name": "加拿大文学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "I712": {
+      "name": "美国文学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html"
+      ],
+      "aliases": [
+        "美国"
+      ]
+    },
+    "I731": {
+      "name": "墨西哥文学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/i.html",
+        "https://search-lib.dufe.edu.cn/mspace/searchDetailLocal/mb0632dc08489bdae2d618d21853b4e3e"
+      ]
+    },
+    "I775": {
+      "name": "哥伦比亚文学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "J0": {
+      "name": "艺术理论",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "J05": {
+      "name": "艺术评论",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "J063": {
+      "name": "色彩学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J1": {
+      "name": "世界各国艺术概况",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "J110": {
+      "name": "艺术史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "J110.93": {
+      "name": "中世纪（467～1640）",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J150.09": {
+      "name": "欧洲艺术史",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J2": {
+      "name": "绘画",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "J20": {
+      "name": "绘画理论",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J206.2": {
+      "name": "透视学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J218": {
+      "name": "各种画技法：按用途分",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J218.7": {
+      "name": "动画(卡通)",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J228": {
+      "name": "中国漫画",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "J231": {
+      "name": "作品综合集",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J238": {
+      "name": "各国漫画",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "J314.2": {
+      "name": "木刻、木雕",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J4": {
+      "name": "摄影艺术",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "J5": {
+      "name": "工艺美术",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "J50": {
+      "name": "工艺美术理论",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J6": {
+      "name": "音乐",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "J605": {
+      "name": "音乐评论、欣赏",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J613": {
+      "name": "基本乐科",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J613.6": {
+      "name": "音阶、调式",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J614": {
+      "name": "作曲理论",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J614.1": {
+      "name": "和声学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J614.8": {
+      "name": "其他作曲理论",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J616": {
+      "name": "声乐理论",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J616.1": {
+      "name": "发声法",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J617": {
+      "name": "戏剧音乐理论",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J619": {
+      "name": "音乐工艺学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J627": {
+      "name": "器乐合奏理论和演奏法",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J628": {
+      "name": "电子乐器",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/j.html"
+      ]
+    },
+    "J9": {
+      "name": "电影、电视艺术",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K0": {
+      "name": "史学理论",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K02": {
+      "name": "社会发展史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K061": {
+      "name": "历史研究法",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html"
+      ]
+    },
+    "K1": {
+      "name": "世界史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K103": {
+      "name": "文化史",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html"
+      ]
+    },
+    "K12": {
+      "name": "古代史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K124": {
+      "name": "美索不达米亚",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K126": {
+      "name": "古罗马",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K134": {
+      "name": "拜占庭帝国",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html"
+      ],
+      "aliases": [
+        "拜占庭帝国（477~1453 年）"
+      ]
+    },
+    "K204": {
+      "name": "古代史籍",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K207": {
+      "name": "研究、考订",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K225": {
+      "name": "春秋",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K232": {
+      "name": "秦汉",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K237": {
+      "name": "晋、南北朝",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K244": {
+      "name": "宋",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K265": {
+      "name": "抗日战争",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K27": {
+      "name": "中华人民共和国史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K296.13": {
+      "name": "开封地方史",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html"
+      ]
+    },
+    "K351": {
+      "name": "印度",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K373": {
+      "name": "伊朗",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K411": {
+      "name": "埃及",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html"
+      ]
+    },
+    "K500": {
+      "name": "欧洲通史",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K503": {
+      "name": "中世纪",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html"
+      ],
+      "aliases": [
+        "中世纪史"
+      ]
+    },
+    "K512": {
+      "name": "俄国",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K543": {
+      "name": "南斯拉夫",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K546": {
+      "name": "意大利",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html"
+      ]
+    },
+    "K561": {
+      "name": "英国",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html"
+      ]
+    },
+    "K565": {
+      "name": "法国",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K827": {
+      "name": "中国人物传记",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "K875": {
+      "name": "各种用品器物",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html"
+      ]
+    },
+    "K891": {
+      "name": "世界风俗习惯",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html"
+      ]
+    },
+    "K892": {
+      "name": "中国风俗习惯",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/k.html"
+      ]
+    },
+    "K991": {
+      "name": "世界地图",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "N02": {
+      "name": "科学哲学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "N09": {
+      "name": "自然科学史",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/n.html"
+      ]
+    },
+    "N49": {
+      "name": "科普读物",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "N94": {
+      "name": "系统科学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "O1": {
+      "name": "数学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/o.html"
+      ]
+    },
+    "O4": {
+      "name": "物理学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/o.html"
+      ]
+    },
+    "O415": {
+      "name": "非线性物理学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "O6": {
+      "name": "化学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "P148": {
+      "name": "天体化学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/p.html"
+      ]
+    },
+    "P208": {
+      "name": "测绘数据库与信息系统",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/p.html"
+      ]
+    },
+    "P3": {
+      "name": "地球物理学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/p.html"
+      ]
+    },
+    "P4": {
+      "name": "大气科学（气象学）",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/p.html"
+      ]
+    },
+    "P5": {
+      "name": "地质学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/p.html"
+      ]
+    },
+    "P53": {
+      "name": "历史地质学、地层学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/p.html"
+      ]
+    },
+    "P588": {
+      "name": "岩石分类",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/p.html"
+      ]
+    },
+    "P59": {
+      "name": "地球化学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/p.html"
+      ]
+    },
+    "P619.28": {
+      "name": "宝石矿床",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/p.html",
+        "https://opac.uibe.edu.cn/opac/book/b6f81f39210d8543dbae103a9f766b26"
+      ]
+    },
+    "Q94": {
+      "name": "植物学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/q.html"
+      ]
+    },
+    "Q98": {
+      "name": "人类学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "R": {
+      "name": "医药、卫生",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "R222.3": {
+      "name": "金匮要略",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/r.html"
+      ]
+    },
+    "R242": {
+      "name": "中医治疗学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/r.html"
+      ]
+    },
+    "R255.8": {
+      "name": "痰饮",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/r.html"
+      ]
+    },
+    "R32": {
+      "name": "人体形态学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/r.html"
+      ]
+    },
+    "R749": {
+      "name": "精神病学",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/r.html"
+      ]
+    },
+    "S": {
+      "name": "农业科学",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "S6": {
+      "name": "园艺",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "TB472": {
+      "name": "产品设计",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TK01": {
+      "name": "能源",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html",
+        "https://www.dglib.cn/dglib/sts/202108/ed49b511e1b540fcb4e3ab7eb76e5ad0.shtml"
+      ]
+    },
+    "TN": {
+      "name": "无线电电子学、电信技术",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "TN912.27": {
+      "name": "立体声和多声道系统技术与设备",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TN915.04": {
+      "name": "通信规程、通信协议",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TN918.1": {
+      "name": "理论",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TP3": {
+      "name": "计算机技术",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ],
+      "aliases": [
+        "计算技术、计算机技术"
+      ]
+    },
+    "TP301.6": {
+      "name": "算法理论",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TP31": {
+      "name": "计算机软件",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TP311": {
+      "name": "程序设计、软件工程",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TP311.1": {
+      "name": "程序设计",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TP311.5": {
+      "name": "软件工程",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TP312": {
+      "name": "程序语言、算法语言",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TP317.6": {
+      "name": "计算机游戏",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html",
+        "https://www.lib.tongji.edu.cn/index.php?classid=12021&newsid=2994&t=show"
+      ]
+    },
+    "TP391.41": {
+      "name": "计算机图形图像处理",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html",
+        "https://lib.ahpu.edu.cn/2017/1214/c9871a219094/page.htm"
+      ]
+    },
+    "TP393": {
+      "name": "计算机网络",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TQ56": {
+      "name": "爆炸物工业",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ],
+      "aliases": [
+        "爆炸物工业、火柴工业"
+      ]
+    },
+    "TQ65": {
+      "name": "香料、香精工业",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "TQ658": {
+      "name": "化妆品",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "TS6": {
+      "name": "木材加工工业、家具制造工业",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TS941": {
+      "name": "服装",
+      "verification": "legacy-label",
+      "sources": []
+    },
+    "TS972": {
+      "name": "饮食调制技术及设备",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TS976": {
+      "name": "家庭生活",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ],
+      "aliases": [
+        "生活知识、家政服务"
+      ]
+    },
+    "TU112.4": {
+      "name": "建筑声学技术与设计",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "TU2": {
+      "name": "建筑设计",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/t.html"
+      ]
+    },
+    "U2": {
+      "name": "铁路运输",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/u.html"
+      ]
+    },
+    "U212": {
+      "name": "线路规划、勘测与设计",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/u.html"
+      ]
+    },
+    "U260": {
+      "name": "一般性问题",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/u.html"
+      ]
+    },
+    "X956": {
+      "name": "生活安全",
+      "verification": "reference-checked",
+      "sources": [
+        "https://lib.gdupt.edu.cn/xszl/zhongtufa/x.html"
+      ]
+    },
+    "Z12": {
+      "name": "中国丛书",
+      "verification": "legacy-label",
+      "sources": []
+    }
+  }
+}

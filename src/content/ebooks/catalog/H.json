@@ -140,6 +140,131 @@
           "language": "en-US",
           "publisher": "Penguin Publishing Group",
           "access": "public"
+        },
+        {
+          "id": "WEISER18a3dd2d6b92",
+          "title": "普通语言学教程",
+          "authors": [
+            "费尔迪南·德·索绪尔"
+          ],
+          "authorStatus": "verified",
+          "description": "普通语言学教程，语言学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H0/WEISER18a3dd2d6b92.pdf",
+              "bytes": 11327780
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/6e5455ca0fb1b1afb7b6bd8af45844b50fb83e6dd897b6848202d4270e722a5a.webp"
+        },
+        {
+          "id": "WEISER6e7af45a80ec",
+          "title": "REON-4213.11 天文语教程（1.06版）",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "REON-4213.11 天文语教程（1.06版），语言学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H0/WEISER6e7af45a80ec.pdf",
+              "bytes": 1478868
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d10305f8b2553cbe28f797d793085162c621ec2774dba786b5b0b211f964ac90.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        },
+        {
+          "id": "WEISER7edaf0bf02a0",
+          "title": "Hymmnos语官方教程（个人中译版）",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "Hymmnos语官方教程（个人中译版），语言学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H0/WEISER7edaf0bf02a0.pdf",
+              "bytes": 1118157
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/0333259f7ed229b19442c0879c5e5fe7e030e93116614d679c59d499ebcaa82f.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        },
+        {
+          "id": "WEISER034142328bcf",
+          "title": "契绊想界诗（地文语）汉化教程（0.4版）",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "契绊想界诗（地文语）汉化教程（0.4版），语言学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H0/WEISER034142328bcf.pdf",
+              "bytes": 3633010
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/f8f3755648fc1ce5c212892be1b39b906a5a20a504ccf8c75b7ef74a971c9312.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        },
+        {
+          "id": "WEISER3ca3324a42f3",
+          "title": "An Introduction to Language（第7版）",
+          "authors": [
+            "Victoria Fromkin",
+            "Robert Rodman",
+            "Nina Hyams"
+          ],
+          "authorStatus": "verified",
+          "description": "An Introduction to Language（第7版），语言学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H0/WEISER3ca3324a42f3.pdf",
+              "bytes": 36534403
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/ae8b15060a6d9c66e078e6dfbacc2b8cec5bb6f9b18a38d4643da45058ae6bce.webp"
+        },
+        {
+          "id": "WEISER5121e13b8400",
+          "title": "语言论",
+          "authors": [
+            "伦纳德·布龙菲尔德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "语言论，语言学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H0/WEISER5121e13b8400.pdf",
+              "bytes": 28523816
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/8ed42f2041696d28dfddb7580d0954a0baa3734b5e2b2a5c0950767d64b5633b.webp"
         }
       ]
     },
@@ -165,6 +290,52 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/f58bcf5af35236502fe00824d2dccfa624bd2eee21c751dcc5664d36b31438e4.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER35baaa36e1cc",
+          "title": "语音学",
+          "authors": [
+            "朱晓农"
+          ],
+          "authorStatus": "verified",
+          "description": "语音学，语音学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H01/WEISER35baaa36e1cc.pdf",
+              "bytes": 14236717
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/089210635e3f4b0d74dfc7fe7f1c1127ae253b676c4a945b836dc20925fce9d6.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H1",
+      "clcName": "汉语",
+      "books": [
+        {
+          "id": "WEISERa9227aabd814",
+          "title": "汉语的本质和历史",
+          "authors": [
+            "高本汉"
+          ],
+          "authorStatus": "verified",
+          "description": "汉语的本质和历史，汉语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H1/WEISERa9227aabd814.pdf",
+              "bytes": 7541873
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/04123a38132985ef4667ed0b86ec4e878583e687846234da5a193775e0c1a9d2.webp"
         }
       ]
     },
@@ -190,6 +361,629 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/cc12c189588ed96a150023a09193ba8c436a06a4e8213c3167ac9e62c701053f.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER691ccb2d4fa8",
+          "title": "世界文字发展史",
+          "authors": [
+            "周有光"
+          ],
+          "authorStatus": "verified",
+          "description": "世界文字发展史，文字学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H02/WEISER691ccb2d4fa8.pdf",
+              "bytes": 9349140
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/1edde2316cff91f320ca627b923ddfdf2546307419fda32889fd70e027cd5a87.webp"
+        },
+        {
+          "id": "WEISER9441ac6b8c99",
+          "title": "The Unicode Standard 9.0: Cuneiform",
+          "authors": [
+            "The Unicode Consortium"
+          ],
+          "authorStatus": "verified",
+          "description": "The Unicode Standard 9.0: Cuneiform，文字学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H02/WEISER9441ac6b8c99.pdf",
+              "bytes": 1284261
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/03c2ece6067034d565e91e35c0f50b9dba90150aff3eded1cb2aa89e83b5aa3e.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H04",
+      "clcName": "语法学",
+      "books": [
+        {
+          "id": "WEISER1f15d5dbdb3b",
+          "title": "什么是生成语法",
+          "authors": [
+            "宁春岩"
+          ],
+          "authorStatus": "verified",
+          "description": "什么是生成语法，语法学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H04/WEISER1f15d5dbdb3b.pdf",
+              "bytes": 30046024
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/436e345bf7bd9aa2f3f7201c532b2b8780043d26823edd74b326918ae91fc520.webp"
+        },
+        {
+          "id": "WEISER02abf1b90cf8",
+          "title": "语法理论",
+          "authors": [
+            "高名凯"
+          ],
+          "authorStatus": "verified",
+          "description": "语法理论，语法学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H04/WEISER02abf1b90cf8.pdf",
+              "bytes": 9417579
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/842a6b85daa9d2f678dab87d6b4f4986271b56f83a907dd43f094ae52afc4363.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H4",
+      "clcName": "汉藏语系",
+      "books": [
+        {
+          "id": "WEISER4c1e264d4393",
+          "title": "Sino-Tibetan: A Conspectus",
+          "authors": [
+            "Paul K. Benedict"
+          ],
+          "authorStatus": "verified",
+          "description": "Sino-Tibetan: A Conspectus，汉藏语系相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H4/WEISER4c1e264d4393.pdf",
+              "bytes": 12093690
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/97589456781dc8430776fafa3fcd106c169159ebebab5867fbc5c7813d8e0ef1.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H7",
+      "clcName": "印欧语系",
+      "books": [
+        {
+          "id": "WEISERda0f0adcbe02",
+          "title": "Indo-European Language and Culture: An Introduction",
+          "authors": [
+            "Benjamin W. Fortson IV"
+          ],
+          "authorStatus": "verified",
+          "description": "Indo-European Language and Culture: An Introduction，印欧语系相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H7/WEISERda0f0adcbe02.pdf",
+              "bytes": 14490610
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/0f5737da394711eeff25acd84dad431616d013b19f0b3a48a7e6843897eb5ec9.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H11",
+      "clcName": "语音",
+      "books": [
+        {
+          "id": "WEISERe5a9df035a47",
+          "title": "音韵学教程（第3版）",
+          "authors": [
+            "唐作藩"
+          ],
+          "authorStatus": "verified",
+          "description": "音韵学教程（第3版），语音相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H11/WEISERe5a9df035a47.pdf",
+              "bytes": 9792303
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/be4755b2b42b7b43dc660d0187b54058e746695d5010beffe0b00e2de7ee2564.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H14",
+      "clcName": "语法",
+      "books": [
+        {
+          "id": "WEISERc5ffffa6b7b4",
+          "title": "语法调查研究手册",
+          "authors": [
+            "刘丹青"
+          ],
+          "authorStatus": "verified",
+          "description": "语法调查研究手册，语法相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H14/WEISERc5ffffa6b7b4.pdf",
+              "bytes": 65394053
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/87a346ab69a8d02c13dd3d465b17b8ea036d9a28b49d43ec3c9f3d2b0b9297d4.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H36",
+      "clcName": "日语",
+      "books": [
+        {
+          "id": "WEISERf97cb92160a4",
+          "title": "Old Japanese Pronouns",
+          "authors": [
+            "Bjarke Frellesvig"
+          ],
+          "authorStatus": "verified",
+          "description": "Old Japanese Pronouns，日语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H36/WEISERf97cb92160a4.pdf",
+              "bytes": 131934
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/75a08d9c9fd67817752c6b635d1ee262ae80c5a787719fc448718329ac3d65d3.webp"
+        },
+        {
+          "id": "WEISER080228f01307",
+          "title": "新日本语学入门：考察语言的结构",
+          "authors": [
+            "庵功雄"
+          ],
+          "authorStatus": "verified",
+          "description": "新日本语学入门：考察语言的结构，日语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H36/WEISER080228f01307.pdf",
+              "bytes": 22785047
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d5b407dd7b285476d1feb3fce5f1ad0560586cebc8358933aacecdd419c4c393.webp"
+        },
+        {
+          "id": "WEISER490be72434c5",
+          "title": "新编日语（第1册，修订本）",
+          "authors": [
+            "周平",
+            "陈小芬"
+          ],
+          "authorStatus": "verified",
+          "description": "新编日语（第1册，修订本），日语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H36/WEISER490be72434c5.pdf",
+              "bytes": 39673196
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/617e73018ae3a27682705a8dd05fbba77bcba492e54c8236032c0f0d1462e416.webp"
+        },
+        {
+          "id": "WEISERcb398415e29b",
+          "title": "新编日语（第3册，修订本）",
+          "authors": [
+            "周平",
+            "陈小芬"
+          ],
+          "authorStatus": "verified",
+          "description": "新编日语（第3册，修订本），日语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H36/WEISERcb398415e29b.pdf",
+              "bytes": 43336566
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/1026aae65d0217bab449aedb5ae0f9f03ebc3827d3286b87366084ab7867fe84.webp"
+        },
+        {
+          "id": "WEISER4ac769309baa",
+          "title": "新编日语（第2册，修订本）",
+          "authors": [
+            "周平",
+            "陈小芬"
+          ],
+          "authorStatus": "verified",
+          "description": "新编日语（第2册，修订本），日语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H36/WEISER4ac769309baa.pdf",
+              "bytes": 67508825
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/1b168969a78d685668e418f8b7b982197ebee3dc838b1102e41e875f9b99e522.webp"
+        },
+        {
+          "id": "WEISERa8dd10b04aed",
+          "title": "日语主题助词“は”与主格助词“が”",
+          "authors": [
+            "野田尚史"
+          ],
+          "authorStatus": "verified",
+          "description": "日语主题助词“は”与主格助词“が”，日语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H36/WEISERa8dd10b04aed.pdf",
+              "bytes": 6346154
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b7e70c5901bc9c34cbcd671a9ede2ea9bd35385b5f261043c050c1ed3c1287f1.webp"
+        },
+        {
+          "id": "WEISER2386531c3020",
+          "title": "日语基础语法新讲：描写语法导论",
+          "authors": [
+            "森山卓郎"
+          ],
+          "authorStatus": "verified",
+          "description": "日语基础语法新讲：描写语法导论，日语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H36/WEISER2386531c3020.pdf",
+              "bytes": 18063831
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/6a7897259b34d340a05df5bf15d84cf9396a6dfdf2b8c77acb997f270dcd0f66.webp"
+        },
+        {
+          "id": "WEISER0b6f3e8396a5",
+          "title": "红宝书大全集：新日本语能力考试N1—N5文字词汇详解",
+          "authors": [
+            "许小明",
+            "Reika"
+          ],
+          "authorStatus": "verified",
+          "description": "红宝书大全集：新日本语能力考试N1—N5文字词汇详解，日语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H36/WEISER0b6f3e8396a5.pdf",
+              "bytes": 52895226
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/96557ece7c40fad1ea87d4e47f773ab16cb050415949fb4365355814658960d6.webp"
+        },
+        {
+          "id": "WEISERabdda8fef786",
+          "title": "蓝宝书大全集：新日本语能力考试N1—N5文法详解",
+          "authors": [
+            "许小明",
+            "Reika"
+          ],
+          "authorStatus": "verified",
+          "description": "蓝宝书大全集：新日本语能力考试N1—N5文法详解，日语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H36/WEISERabdda8fef786.pdf",
+              "bytes": 27494048
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b7aa533e709c9d614d09bb1a52c58dd27dcf27b07bd30b0905c77841c3368e9b.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H37",
+      "clcName": "阿拉伯语",
+      "books": [
+        {
+          "id": "WEISER536106be3495",
+          "title": "阿拉伯语方言资料：埃及、伊拉克与叙利亚",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "阿拉伯语方言资料：埃及、伊拉克与叙利亚，阿拉伯语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H37/WEISER536106be3495.pdf",
+              "bytes": 13488240
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/fa1583984328a1bda97b68bde81b398135d95b59576c6128fd4f1e4891e87e25.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
+      "clcCode": "H039",
+      "clcName": "词源学",
+      "books": [
+        {
+          "id": "WEISERdeaab2bbfcd3",
+          "title": "Studia Etymologica Cracoviensia（第6期，2001）",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "Studia Etymologica Cracoviensia（第6期，2001），词源学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H039/WEISERdeaab2bbfcd3.pdf",
+              "bytes": 14974579
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/c32c4812ff1771f467a2a4bd6d0bf782a30c3efb4ec839d1a098be1966d8352d.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
+      "clcCode": "H67",
+      "clcName": "闪-含语系（阿非罗-亚细亚语系）",
+      "books": [
+        {
+          "id": "WEISER83c9d3bc26d5",
+          "title": "古代西亚塞姆语和印欧语楔形文字和语言",
+          "authors": [
+            "吴宇虹 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "古代西亚塞姆语和印欧语楔形文字和语言，闪-含语系（阿非罗-亚细亚语系）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H67/WEISER83c9d3bc26d5.pdf",
+              "bytes": 7192959
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/21d2f42586d823b770c183c9b832d1b18d3527c9623d0b20c54c439e43699318.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H71",
+      "clcName": "印度语族",
+      "books": [
+        {
+          "id": "WEISER536a9069c954",
+          "title": "乌尔都语与印地语：阿拉伯字母与梵文字母",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "乌尔都语与印地语：阿拉伯字母与梵文字母，印度语族相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H71/WEISER536a9069c954.pdf",
+              "bytes": 300738
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/a92c6a5b195dada4a26030ba28d9dc72dadbe6d9a1c0b43b9c54170d5e23b99f.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
+      "clcCode": "H109.2",
+      "clcName": "古代汉语",
+      "books": [
+        {
+          "id": "WEISER0c7ce05f04da",
+          "title": "古代汉语",
+          "authors": [
+            "王力"
+          ],
+          "authorStatus": "verified",
+          "description": "古代汉语，古代汉语相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/H/H109.2/WEISER0c7ce05f04da.epub",
+              "bytes": 1392445
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/70a04f032d376b5af0d4d54506dfecad928e5e99b5e53835eec5ff4194be8e83.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H109.4",
+      "clcName": "现代汉语",
+      "books": [
+        {
+          "id": "WEISERc4a2caff518a",
+          "title": "现代汉语",
+          "authors": [
+            "沈阳",
+            "郭锐"
+          ],
+          "authorStatus": "verified",
+          "description": "现代汉语，现代汉语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H109.4/WEISERc4a2caff518a.pdf",
+              "bytes": 24714772
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/ee02431755024d8cef7d4b4798524914eb94dcc9013e97baf44e4d274c85d3b1.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H111",
+      "clcName": "上古语音（周秦两汉语音）",
+      "books": [
+        {
+          "id": "WEISERc1885e3e7d7c",
+          "title": "Baxter–Sagart Old Chinese Reconstruction（1.1版）",
+          "authors": [
+            "William H. Baxter",
+            "Laurent Sagart"
+          ],
+          "authorStatus": "verified",
+          "description": "Baxter–Sagart Old Chinese Reconstruction（1.1版），上古语音（周秦两汉语音）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H111/WEISERc1885e3e7d7c.pdf",
+              "bytes": 2848359
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/affcc104ca6d96992809d8b7d3805a332f32c5a80915428e179cb367601d5900.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H126.2",
+      "clcName": "盲文",
+      "books": [
+        {
+          "id": "WEISERb96dde3c843e",
+          "title": "国家通用盲文方案（GF 0019—2018）",
+          "authors": [
+            "教育部",
+            "国家语言文字工作委员会",
+            "中国残疾人联合会"
+          ],
+          "authorStatus": "verified",
+          "description": "国家通用盲文方案（GF 0019—2018），盲文相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H026/WEISERb96dde3c843e.pdf",
+              "bytes": 13259038
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/67d79b267f723e1abd696095908faf9e68a10e65a71b215f7ab4e32733347c11.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H126.3",
+      "clcName": "形态语言（手势语）",
+      "books": [
+        {
+          "id": "WEISER86283a2a3b23",
+          "title": "中国手语（修订版，上、下册）",
+          "authors": [
+            "中国残疾人联合会教育就业部",
+            "中国聋人协会"
+          ],
+          "authorStatus": "verified",
+          "description": "中国手语（修订版，上、下册），形态语言（手势语）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H026/WEISER86283a2a3b23.pdf",
+              "bytes": 19554938
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/e72d42b2c76939380c04c2dc58c94462e3a8aa25f778bd4b81bf9acde6908c00.webp"
         }
       ]
     },
@@ -245,8 +1039,464 @@
       ]
     },
     {
+      "clcCode": "H211.7",
+      "clcName": "西夏语",
+      "books": [
+        {
+          "id": "WEISER887419f3f290",
+          "title": "西夏文教程",
+          "authors": [
+            "史金波"
+          ],
+          "authorStatus": "verified",
+          "description": "西夏文教程，西夏语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H211.7/WEISER887419f3f290.pdf",
+              "bytes": 84577766
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/fbcc5e062d25c0f02cddb52173eea33856bce3fcab91c9b93fbaa5e3b427bad6.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H214",
+      "clcName": "藏语",
+      "books": [
+        {
+          "id": "WEISER9e5372283247",
+          "title": "藏文阅读入门",
+          "authors": [
+            "周季文",
+            "谢后芳"
+          ],
+          "authorStatus": "verified",
+          "description": "藏文阅读入门，藏语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H214/WEISER9e5372283247.pdf",
+              "bytes": 6223893
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/a6cb0f60cd42df8c3c7e2e552a2c4e1400a2c4a79199d5c296c64ef43374ee38.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H315",
+      "clcName": "写作、修辞",
+      "books": [
+        {
+          "id": "WEISERfe2b710a8d6f",
+          "title": "风格感觉：21世纪写作指南",
+          "authors": [
+            "史蒂芬·平克"
+          ],
+          "authorStatus": "verified",
+          "description": "风格感觉：21世纪写作指南，写作、修辞相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/H/H315/WEISERfe2b710a8d6f.epub",
+              "bytes": 4261748
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/3a29b07b6a37f4b3d608cde361b7332a6ef73242213708f72ca4f337aa8ba8b5.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H315.9",
+      "clcName": "翻译",
+      "books": [
+        {
+          "id": "WEISER20d76892c00b",
+          "title": "商务英语翻译",
+          "authors": [
+            "王秋菊",
+            "邹和成"
+          ],
+          "authorStatus": "verified",
+          "description": "商务英语翻译，翻译相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/H/H315.9/WEISER20d76892c00b.epub",
+              "bytes": 10161374
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/4cd37b72ba8682e2aeedeff5925fc0f197ba7d9685c2b9a4feb179d7665db26c.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H364",
+      "clcName": "日语语法",
+      "books": [
+        {
+          "id": "WEISER1cf4dd232b70",
+          "title": "日本文言文法",
+          "authors": [
+            "马斌"
+          ],
+          "authorStatus": "verified",
+          "description": "日本文言文法，日语语法相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H36/WEISER1cf4dd232b70.pdf",
+              "bytes": 15157757
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/33578ed586d7396e66ca64861f530672c20aeee0396c60e5669e0c4137f3769e.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H647",
+      "clcName": "阿伊努语（虾夷语）",
+      "books": [
+        {
+          "id": "WEISERc25a747f43b6",
+          "title": "アイヌ語ラジオ講座テキスト（2012年度，Vol.1）",
+          "authors": [
+            "押野朱美",
+            "押野里架"
+          ],
+          "authorStatus": "verified",
+          "description": "アイヌ語ラジオ講座テキスト（2012年度，Vol.1），阿伊努语（虾夷语）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H647/WEISERc25a747f43b6.pdf",
+              "bytes": 8829168
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/af2aa1180b514fbdd14879441490ecc126f6b727bbff67865595a595ccd73e53.webp"
+        },
+        {
+          "id": "WEISER51c5cef4bc6b",
+          "title": "アイヌ語ラジオ講座テキスト（2012年度，Vol.2）",
+          "authors": [
+            "押野朱美",
+            "押野里架"
+          ],
+          "authorStatus": "verified",
+          "description": "アイヌ語ラジオ講座テキスト（2012年度，Vol.2），阿伊努语（虾夷语）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H647/WEISER51c5cef4bc6b.pdf",
+              "bytes": 11076199
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/4c42ac427e3150c87e6cf57685726efcfe7804e018ffc83d351179796a310f2a.webp"
+        },
+        {
+          "id": "WEISER74d1ca253c13",
+          "title": "アイヌ語ラジオ講座テキスト（2012年度，Vol.3）",
+          "authors": [
+            "押野朱美",
+            "押野里架"
+          ],
+          "authorStatus": "verified",
+          "description": "アイヌ語ラジオ講座テキスト（2012年度，Vol.3），阿伊努语（虾夷语）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H647/WEISER74d1ca253c13.pdf",
+              "bytes": 12035366
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d337f25afd65f27ac82a15b8697ea21877f365a3f5b9ca9cc5f28e0b85c44f71.webp"
+        },
+        {
+          "id": "WEISER92ef9101b3fa",
+          "title": "アイヌ語ラジオ講座テキスト（2011年度，Vol.4）",
+          "authors": [
+            "八谷麻衣"
+          ],
+          "authorStatus": "verified",
+          "description": "アイヌ語ラジオ講座テキスト（2011年度，Vol.4），阿伊努语（虾夷语）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H647/WEISER92ef9101b3fa.pdf",
+              "bytes": 6925434
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/569653fb8cbd31fa3fa196ba349f12acb485cc695bd6686f27709184c378f3a2.webp"
+        },
+        {
+          "id": "WEISERd84300baf04c",
+          "title": "アイヌ語ラジオ講座テキスト（2011年度，Vol.3）",
+          "authors": [
+            "八谷麻衣"
+          ],
+          "authorStatus": "verified",
+          "description": "アイヌ語ラジオ講座テキスト（2011年度，Vol.3），阿伊努语（虾夷语）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H647/WEISERd84300baf04c.pdf",
+              "bytes": 8339118
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/43787a27bbaa2eba587b2633ed318c1ec938f78760334e3a5f408a0a5e7b69eb.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H671",
+      "clcName": "闪语族        H671.1 阿卡德语（亚述-巴比伦语）",
+      "books": [
+        {
+          "id": "WEISER3940eb405b14",
+          "title": "A Grammar of Akkadian（第3版）",
+          "authors": [
+            "John Huehnergard"
+          ],
+          "authorStatus": "verified",
+          "description": "A Grammar of Akkadian（第3版），闪语族        H671.1 阿卡德语（亚述-巴比伦语）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H671/WEISER3940eb405b14.pdf",
+              "bytes": 72031065
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/841ebdb467a6337359961afbe77ccd1a166abfb5988512e6adc2b7b0e154a46a.webp"
+        },
+        {
+          "id": "WEISERad6591a09c40",
+          "title": "A Grammar of the Phoenician Language",
+          "authors": [
+            "Zellig S. Harris"
+          ],
+          "authorStatus": "verified",
+          "description": "A Grammar of the Phoenician Language，闪语族        H671.1 阿卡德语（亚述-巴比伦语）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H671/WEISERad6591a09c40.pdf",
+              "bytes": 10601126
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/1e0bf29f8cab32c4f73c99474db23a7f556252361a4ac11dcf0649647c89c3df.webp"
+        },
+        {
+          "id": "WEISERd747c75e19ce",
+          "title": "古希伯来语教程（全三册）",
+          "authors": [
+            "溪水编写组"
+          ],
+          "authorStatus": "verified",
+          "description": "古希伯来语教程（全三册），闪语族        H671.1 阿卡德语（亚述-巴比伦语）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H671/WEISERd747c75e19ce.pdf",
+              "bytes": 35006752
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/2172fcfe17b13fda5fb9913d1d0e3764d26e5bb75865584f0fa99fc4de7ba5c7.webp"
+        },
+        {
+          "id": "WEISER5376b936d05a",
+          "title": "希伯来语语法",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "希伯来语语法，闪语族        H671.1 阿卡德语（亚述-巴比伦语）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H671/WEISER5376b936d05a.pdf",
+              "bytes": 9988459
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/16bf887623575c361deb45aaffcfedcd87fcd47433842a6e44f9974950f386f1.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        },
+        {
+          "id": "WEISER3a1d833384e3",
+          "title": "A Short Vocabulary of Phoenician",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "A Short Vocabulary of Phoenician，闪语族        H671.1 阿卡德语（亚述-巴比伦语）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H671/WEISER3a1d833384e3.pdf",
+              "bytes": 43091
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/e981ec0b7d4aed7b3f9b54070dca99c7ce26530523afb19957bcfe2956b3593c.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
+      "clcCode": "H673",
+      "clcName": "埃及-科普特语族",
+      "books": [
+        {
+          "id": "WEISERe2b5d12061b6",
+          "title": "Ancient Egyptian Dictionary",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "Ancient Egyptian Dictionary，埃及-科普特语族相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H673/WEISERe2b5d12061b6.pdf",
+              "bytes": 3029796
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/e525966864d023460b5650e56afcb9fe668d606bb605578312719183b68a56af.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        },
+        {
+          "id": "WEISER288fa258dc00",
+          "title": "Dictionary of Middle Egyptian in Gardiner Classification Order",
+          "authors": [
+            "Paul Dickson"
+          ],
+          "authorStatus": "verified",
+          "description": "Dictionary of Middle Egyptian in Gardiner Classification Order，埃及-科普特语族相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H673/WEISER288fa258dc00.pdf",
+              "bytes": 19240204
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/554520bf5fcf963f46cd0eeb326955bf327735e747333b317eb19b174982042b.webp"
+        },
+        {
+          "id": "WEISERdd14dc84897c",
+          "title": "Middle Egyptian: An Introduction to the Language and Culture of Hieroglyphs",
+          "authors": [
+            "James P. Allen"
+          ],
+          "authorStatus": "verified",
+          "description": "Middle Egyptian: An Introduction to the Language and Culture of Hieroglyphs，埃及-科普特语族相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H673/WEISERdd14dc84897c.pdf",
+              "bytes": 21854472
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/3b809b17aacdfa0cf70d910c4a884da174425974b83a3c3d327fb64e0767a1e6.webp"
+        },
+        {
+          "id": "WEISERf196119ed9ab",
+          "title": "古埃及文—汉文词典",
+          "authors": [
+            "Robert P. Hopwood"
+          ],
+          "authorStatus": "verified",
+          "description": "古埃及文—汉文词典，埃及-科普特语族相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H673/WEISERf196119ed9ab.pdf",
+              "bytes": 97236462
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/1de003cf0e66a4ba1f175005415e8305a9a2fae94fb2d0d960b08be50019e851.webp"
+        },
+        {
+          "id": "WEISER42608bb163c3",
+          "title": "Middle Egyptian（第2版修订版）",
+          "authors": [
+            "James P. Allen"
+          ],
+          "authorStatus": "verified",
+          "description": "Middle Egyptian（第2版修订版），埃及-科普特语族相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H673/WEISER42608bb163c3.pdf",
+              "bytes": 19809397
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9abf1a71293c4545b88fd3b562af10e8d6e83b9edf8981578de1d5ed0e77660e.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "H711",
-      "clcName": "印度语族",
+      "clcName": "古印度语",
       "books": [
         {
           "id": "WEISERa0286b9e9b79",
@@ -266,6 +1516,197 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/ea9001fd0a445faaa8c7e1912452dd8d056d97044fdb7e3dc04dcd1405758017.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER42e60ce37c64",
+          "title": "佛法梵语教程",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "佛法梵语教程，古印度语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H711/WEISER42e60ce37c64.pdf",
+              "bytes": 297145
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/53432cb9031b7b70616b24a0e9cd572ab907728f8a0ca11e8fba4eebd1bb89a0.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        },
+        {
+          "id": "WEISERef4e06932a8f",
+          "title": "梵语入门（北塔藏文班编译，第3版）",
+          "authors": [
+            "Johann Georg Bühler",
+            "Edward Perry 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "梵语入门（北塔藏文班编译，第3版），古印度语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H711/WEISERef4e06932a8f.pdf",
+              "bytes": 9245122
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/a480da1f1147cf06d07132127655c0d58d00065dae3c3a2f9bd722a88aa83025.webp"
+        },
+        {
+          "id": "WEISERdae99679aa24",
+          "title": "梵文入门",
+          "authors": [
+            "吴汝钧"
+          ],
+          "authorStatus": "verified",
+          "description": "梵文入门，古印度语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H711/WEISERdae99679aa24.pdf",
+              "bytes": 4427797
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/3c19d4aa19b7b752c7bf0c752f811660f3f292331fb7e0c0f7ae856dab72cd1d.webp"
+        },
+        {
+          "id": "WEISERe30fbd1db942",
+          "title": "梵文基础读本",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "梵文基础读本，古印度语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H711/WEISERe30fbd1db942.pdf",
+              "bytes": 5262304
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/db2356c946b35211e94c98fafadc5e868af1666f03abc894ac7387d1b004814d.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        },
+        {
+          "id": "WEISER6f2f60a5878a",
+          "title": "学生梵语语法",
+          "authors": [
+            "阿瑟·安东尼·麦克唐奈"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "学生梵语语法，古印度语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H711/WEISER6f2f60a5878a.pdf",
+              "bytes": 29712652
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d4cfff47d863368124c71126fda9553b2d56c6d86988df6e46cc1097fd9e33f4.webp"
+        },
+        {
+          "id": "WEISERc471e053cd75",
+          "title": "梵和大辞典（上册）",
+          "authors": [
+            "荻原云来"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "梵和大辞典（上册），古印度语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H711/WEISERc471e053cd75.pdf",
+              "bytes": 100712217
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/00e97b7dce3343663088fdf14791b6d1caf4725b5adf7bcda15d065604daaba5.webp"
+        },
+        {
+          "id": "WEISER5c1a7bf73cd2",
+          "title": "梵和大辞典（下册）",
+          "authors": [
+            "荻原云来"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "梵和大辞典（下册），古印度语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H711/WEISER5c1a7bf73cd2.pdf",
+              "bytes": 97630485
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/ed06e11cfdbc773b4a243611b198a9d92c171d574f19734f1880544de02b764f.webp"
+        },
+        {
+          "id": "WEISER1e2d1d2513b9",
+          "title": "梵语语法表解",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "梵语语法表解，古印度语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H711/WEISER1e2d1d2513b9.pdf",
+              "bytes": 292838
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/0c156e2b9984c4bf9229e5353381ca51729563033bda4d4f9934e4599686bdc4.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
+      "clcCode": "H712",
+      "clcName": "印地语",
+      "books": [
+        {
+          "id": "WEISER80f0d1462a9b",
+          "title": "A Basic Hindi Reader",
+          "authors": [
+            "Richard M. Harris",
+            "Rama Nath Sharma"
+          ],
+          "authorStatus": "verified",
+          "description": "A Basic Hindi Reader，印地语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H712/WEISER80f0d1462a9b.pdf",
+              "bytes": 7751301
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/3192c055f56f725f4250532b18fad953c2364170e3b2b6f35e0c24780c5ee7da.webp"
         }
       ]
     },
@@ -330,6 +1771,153 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/59479915f310d3ae5546eec374a4d0bd78a5df8837a4e4eeb78b9e609f6030f4.webp",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "H791.1",
+      "clcName": "古希腊语",
+      "books": [
+        {
+          "id": "WEISER87356a57f84e",
+          "title": "Reading Greek: Text and Vocabulary（第2版）",
+          "authors": [
+            "Joint Association of Classical Teachers"
+          ],
+          "authorStatus": "verified",
+          "description": "Reading Greek: Text and Vocabulary（第2版），古希腊语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H791.1/WEISER87356a57f84e.pdf",
+              "bytes": 7604088
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/7471f67b897e0b8cf567935e8d94dd6f52c95be2e0152b8c8638c44640eeea59.webp"
+        },
+        {
+          "id": "WEISER77cd27260265",
+          "title": "Reading Greek: Grammar and Exercises（第2版）",
+          "authors": [
+            "Joint Association of Classical Teachers"
+          ],
+          "authorStatus": "verified",
+          "description": "Reading Greek: Grammar and Exercises（第2版），古希腊语相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H791.1/WEISER77cd27260265.pdf",
+              "bytes": 2422223
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/92f6d4271ba0d91097e1f1069f580e9bd6753abe9440da6db380ad97147227dc.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H794",
+      "clcName": "安纳托利亚语族",
+      "books": [
+        {
+          "id": "WEISER956a114bcb0d",
+          "title": "The Hittite Inherited Lexicon",
+          "authors": [
+            "Alwin Kloekhorst"
+          ],
+          "authorStatus": "verified",
+          "description": "The Hittite Inherited Lexicon，安纳托利亚语族相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H794/WEISER956a114bcb0d.pdf",
+              "bytes": 12317972
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9a24e76daa29fb2903ce2e0ff69ba425e718d1a6689182c750aa4c8fc3357439.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "H823",
+      "clcName": "班图分语支",
+      "books": [
+        {
+          "id": "WEISER07d74703695c",
+          "title": "斯瓦希里语（第1册）",
+          "authors": [
+            "曹勤",
+            "孙宝华",
+            "冯玉培"
+          ],
+          "authorStatus": "verified",
+          "description": "斯瓦希里语（第1册），班图分语支相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H823/WEISER07d74703695c.pdf",
+              "bytes": 2832388
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/e777e87c091251e17803843ba382ae2dcb707b04e2e99286be4814b6a7125f59.webp"
+        },
+        {
+          "id": "WEISERf8792f350fb5",
+          "title": "斯瓦希里语学习词汇表（中英斯文）",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "斯瓦希里语学习词汇表（中英斯文），班图分语支相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H823/WEISERf8792f350fb5.pdf",
+              "bytes": 174386
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/0c14a10584992551c656dfa2eb04c82e09689ac296768ab7314a648a4f7e8be3.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
+      "clcCode": "H839",
+      "clcName": "爱斯基摩-阿留申语系（北美洲极北部）",
+      "books": [
+        {
+          "id": "WEISERecbb0d0d0bf7",
+          "title": "A Practical Grammar of the Central Alaskan Yup'ik Eskimo Language",
+          "authors": [
+            "Steven A. Jacobson"
+          ],
+          "authorStatus": "verified",
+          "description": "A Practical Grammar of the Central Alaskan Yup'ik Eskimo Language，爱斯基摩-阿留申语系（北美洲极北部）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/H/H839/WEISERecbb0d0d0bf7.pdf",
+              "bytes": 13572516
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/34310fba2314f34d951a2ec9f2385a3a75c4d9fcdcb9b7c178da3841301f6a2e.webp"
         }
       ]
     }

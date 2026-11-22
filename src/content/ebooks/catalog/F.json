@@ -42,6 +42,94 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/2eda662657ac3d1faa1bef13938ad294336ebdf0d7ae847304a71fc7b3668325.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER2ae6bf909adb",
+          "title": "制度、制度变迁与经济成就",
+          "authors": [
+            "道格拉斯·诺斯"
+          ],
+          "authorStatus": "verified",
+          "description": "制度、制度变迁与经济成就，经济学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F/F0/WEISER2ae6bf909adb.epub",
+              "bytes": 158627
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9ac7dfbce1b5a5c07a72e553858a335709993e7c011d37480900bc3a45826f9e.webp"
+        },
+        {
+          "id": "WEISER840cb692fe28",
+          "title": "经济发展理论",
+          "authors": [
+            "约瑟夫·熊彼特"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "经济发展理论，经济学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F/F0/WEISER840cb692fe28.epub",
+              "bytes": 495228
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/54a6e74e77f5b2376c8710f9066150e19d5c14aebc6ef082c4e6eab1efa7bf4c.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "F12",
+      "clcName": "中国经济",
+      "books": [
+        {
+          "id": "WEISER0896cf886b3a",
+          "title": "分析与思考：黄奇帆的复旦经济课",
+          "authors": [
+            "黄奇帆"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《分析与思考：黄奇帆的复旦经济课》；黄奇帆。中国经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F12%20%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E/%E5%88%86%E6%9E%90%E4%B8%8E%E6%80%9D%E8%80%83%3A%E9%BB%84%E5%A5%87%E5%B8%86%E7%9A%84%E5%A4%8D%E6%97%A6%E7%BB%8F%E6%B5%8E%E8%AF%BE.epub",
+              "bytes": 780488
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/d603cb0ab8d4ff4625c80887502e5125de08a70cdb9c17a483477c0242c7a764.webp",
+          "language": "zh",
+          "publisher": "上海人民出版社",
+          "access": "public"
+        },
+        {
+          "id": "WEISER20b854d3fcc0",
+          "title": "置身事内 中国政府与经济发展【复旦经院“毕业课”解读经济生活背后的政府角色。罗永浩、刘格菘、张军、周黎安、王烁联袂推荐】",
+          "authors": [
+            "兰小欢"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《置身事内 中国政府与经济发展【复旦经院“毕业课”解读经济生活背后的政府角色。罗永浩、刘格菘、张军、周黎安、王烁联袂推荐】》；兰小欢。中国经济，EPUB 格式。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F12%20%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E/%E7%BD%AE%E8%BA%AB%E4%BA%8B%E5%86%85%20%E4%B8%AD%E5%9B%BD%E6%94%BF%E5%BA%9C%E4%B8%8E%E7%BB%8F%E6%B5%8E%E5%8F%91%E5%B1%95%E3%80%90%E5%A4%8D%E6%97%A6%E7%BB%8F%E9%99%A2%E2%80%9C%E6%AF%95%E4%B8%9A%E8%AF%BE%E2%80%9D%E8%A7%A3%E8%AF%BB%E7%BB%8F%E6%B5%8E%E7%94%9F%E6%B4%BB%E8%83%8C%E5%90%8E%E7%9A%84%E6%94%BF%E5%BA%9C%E8%A7%92%E8%89%B2%E3%80%82%E7%BD%97%E6%B0%B8%E6%B5%A9%E3%80%81%E5%88%98%E6%A0%BC%E8%8F%98%E3%80%81%E5%BC%A0%E5%86%9B%E3%80%81%E5%91%A8%E9%BB%8E%E5%AE%89%E3%80%81%E7%8E%8B%E7%83%81%E8%81%94%E8%A2%82%E6%8E%A8%E8%8D%90%E3%80%91.epub",
+              "bytes": 2191400
+            }
+          ],
+          "draft": false,
+          "cover": "https://library-files.telysta.com/covers/9ac37d443b65e22c78a4b16bd21f902cfa6b4238938f9d68e8dbfb9bbcfc0d2a.webp",
+          "language": "zh",
+          "publisher": "上海人民出版社",
+          "access": "public"
         }
       ]
     },
@@ -69,6 +157,32 @@
           "language": "zh",
           "publisher": "东方出版社",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F49",
+      "clcName": "信息产业经济(总论)",
+      "books": [
+        {
+          "id": "WEISER925324a066a1",
+          "title": "2021年中国二次元产业研究报告",
+          "authors": [
+            "艾瑞咨询研究院"
+          ],
+          "authorStatus": "verified",
+          "description": "2021年中国二次元产业研究报告，信息产业经济(总论)相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F/F49/WEISER925324a066a1.pdf",
+              "bytes": 3069322
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/89b08e4e483c97abd6e67974965913cbe60b041da44bd8b90e2bb1a62f7a0d08.webp"
         }
       ]
     },
@@ -123,6 +237,52 @@
           "language": "zh",
           "publisher": "陕西出版集团，陕西人民出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISER580dbc5ea0e9",
+          "title": "国富论（完整版）",
+          "authors": [
+            "亚当·斯密"
+          ],
+          "authorStatus": "verified",
+          "description": "国富论（完整版），世界相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F/F091/WEISER580dbc5ea0e9.pdf",
+              "bytes": 100757820
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/f067f7e12f379ab613da15543ce210a470b6be83f06dc9a7fab8f40828e831b3.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "F112",
+      "clcName": "世界经济概况",
+      "books": [
+        {
+          "id": "WEISER8c8b300a9b2b",
+          "title": "大分流：中国、欧洲与现代世界经济的形成",
+          "authors": [
+            "彭慕兰"
+          ],
+          "authorStatus": "verified",
+          "description": "大分流：中国、欧洲与现代世界经济的形成，世界经济概况相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F/F112/WEISER8c8b300a9b2b.epub",
+              "bytes": 1285816
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/90dca4dfb666c10f6c2fbcbddd4c172c32ab3017a77bf03cacab6ca761b7ebdb.webp"
         }
       ]
     },
@@ -149,54 +309,6 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/28110b953abe75fcd641d5edf933cd7cda2da104dd1138f3705c85784f46d501.webp",
           "language": "zh",
-          "access": "public"
-        }
-      ]
-    },
-    {
-      "clcCode": "F12",
-      "clcName": "中国经济",
-      "books": [
-        {
-          "id": "WEISER0896cf886b3a",
-          "title": "分析与思考：黄奇帆的复旦经济课",
-          "authors": [
-            "黄奇帆"
-          ],
-          "authorStatus": "unreviewed",
-          "description": "《分析与思考：黄奇帆的复旦经济课》；黄奇帆。中国经济，EPUB 格式。",
-          "files": [
-            {
-              "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F12%20%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E/%E5%88%86%E6%9E%90%E4%B8%8E%E6%80%9D%E8%80%83%3A%E9%BB%84%E5%A5%87%E5%B8%86%E7%9A%84%E5%A4%8D%E6%97%A6%E7%BB%8F%E6%B5%8E%E8%AF%BE.epub",
-              "bytes": 780488
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/d603cb0ab8d4ff4625c80887502e5125de08a70cdb9c17a483477c0242c7a764.webp",
-          "language": "zh",
-          "publisher": "上海人民出版社",
-          "access": "public"
-        },
-        {
-          "id": "WEISER20b854d3fcc0",
-          "title": "置身事内 中国政府与经济发展【复旦经院“毕业课”解读经济生活背后的政府角色。罗永浩、刘格菘、张军、周黎安、王烁联袂推荐】",
-          "authors": [
-            "兰小欢"
-          ],
-          "authorStatus": "unreviewed",
-          "description": "《置身事内 中国政府与经济发展【复旦经院“毕业课”解读经济生活背后的政府角色。罗永浩、刘格菘、张军、周黎安、王烁联袂推荐】》；兰小欢。中国经济，EPUB 格式。",
-          "files": [
-            {
-              "format": "EPUB",
-              "href": "https://library-files.telysta.com/books/F%20%E7%BB%8F%E6%B5%8E/F1%20%E4%B8%96%E7%95%8C%E7%BB%8F%E6%B5%8E/F12%20%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E/%E7%BD%AE%E8%BA%AB%E4%BA%8B%E5%86%85%20%E4%B8%AD%E5%9B%BD%E6%94%BF%E5%BA%9C%E4%B8%8E%E7%BB%8F%E6%B5%8E%E5%8F%91%E5%B1%95%E3%80%90%E5%A4%8D%E6%97%A6%E7%BB%8F%E9%99%A2%E2%80%9C%E6%AF%95%E4%B8%9A%E8%AF%BE%E2%80%9D%E8%A7%A3%E8%AF%BB%E7%BB%8F%E6%B5%8E%E7%94%9F%E6%B4%BB%E8%83%8C%E5%90%8E%E7%9A%84%E6%94%BF%E5%BA%9C%E8%A7%92%E8%89%B2%E3%80%82%E7%BD%97%E6%B0%B8%E6%B5%A9%E3%80%81%E5%88%98%E6%A0%BC%E8%8F%98%E3%80%81%E5%BC%A0%E5%86%9B%E3%80%81%E5%91%A8%E9%BB%8E%E5%AE%89%E3%80%81%E7%8E%8B%E7%83%81%E8%81%94%E8%A2%82%E6%8E%A8%E8%8D%90%E3%80%91.epub",
-              "bytes": 2191400
-            }
-          ],
-          "draft": false,
-          "cover": "https://library-files.telysta.com/covers/9ac37d443b65e22c78a4b16bd21f902cfa6b4238938f9d68e8dbfb9bbcfc0d2a.webp",
-          "language": "zh",
-          "publisher": "上海人民出版社",
           "access": "public"
         }
       ]
@@ -315,6 +427,26 @@
           ],
           "draft": false,
           "access": "public"
+        },
+        {
+          "id": "WEISERd0a7d7ae7cd1",
+          "title": "日本原创力",
+          "authors": [
+            "马修·阿尔特"
+          ],
+          "authorStatus": "verified",
+          "description": "日本原创力，日本经济相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F/F131/WEISERd0a7d7ae7cd1.epub",
+              "bytes": 1861283
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/7eb7742ff331d92742c1bc56482a9685cb41b1c87dec17e45fef9585d60eb1a8.webp"
         }
       ]
     },
@@ -372,6 +504,32 @@
           "language": "zh-CN",
           "publisher": "中国经济出版社",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "F270",
+      "clcName": "企业经济理论和方法",
+      "books": [
+        {
+          "id": "WEISER1016c6b730f4",
+          "title": "魔力创业：50位小成本创业者的实战成功经验",
+          "authors": [
+            "克里斯·吉尔博"
+          ],
+          "authorStatus": "verified",
+          "description": "魔力创业：50位小成本创业者的实战成功经验，企业经济理论和方法相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F/F270/WEISER1016c6b730f4.epub",
+              "bytes": 978915
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/f2cdd3e172b91a97d63204d5e2987267d1c200129a80dec7a790fb750ae4825b.webp"
         }
       ]
     },
@@ -670,6 +828,114 @@
           "language": "zh-CN",
           "publisher": "中信出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISER0d0978f4b4d6",
+          "title": "The Mom Test",
+          "authors": [
+            "Rob Fitzpatrick"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "The Mom Test，企业计划与经营决策相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F/F272/WEISER0d0978f4b4d6.epub",
+              "bytes": 131579
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/110150b4480ea0fc3e6de88393be4d712e5fcf09e66798e59bfb0b1634fc20be.webp"
+        },
+        {
+          "id": "WEISER0b881e2e5152",
+          "title": "一人企业：一个人也能赚钱的商业新模式",
+          "authors": [
+            "保罗·贾维斯"
+          ],
+          "authorStatus": "verified",
+          "description": "一人企业：一个人也能赚钱的商业新模式，企业计划与经营决策相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F/F272/WEISER0b881e2e5152.epub",
+              "bytes": 411575
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/7dd9234b219027dbc6ae8e8a31dd8973463f18b9daa5ba8cf0efaf4ccfcd3cd1.webp"
+        },
+        {
+          "id": "WEISER9150c3b1b1be",
+          "title": "在家就能读MBA：掌握经营的艺术",
+          "authors": [
+            "乔希·考夫曼"
+          ],
+          "authorStatus": "verified",
+          "description": "在家就能读MBA：掌握经营的艺术，企业计划与经营决策相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F/F272/WEISER9150c3b1b1be.pdf",
+              "bytes": 76030264
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/8874f00a187bb07eb898e68095324a6e43a6d61e9abbca08de6a8b3819d35dfa.webp"
+        },
+        {
+          "id": "WEISER8ff6c8203a9a",
+          "title": "管理大师德鲁克经典（合集）",
+          "authors": [
+            "彼得·德鲁克"
+          ],
+          "authorStatus": "verified",
+          "description": "管理大师德鲁克经典（合集），企业计划与经营决策相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/F/F272/WEISER8ff6c8203a9a.epub",
+              "bytes": 54244018
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/7dc53ab008f41276b5bfd7c9c3a5ba8843d74f0047fd5e0a7b374cd75f230ec1.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "F274",
+      "clcName": "企业供销管理",
+      "books": [
+        {
+          "id": "WEISER441fc8082c60",
+          "title": "定价战略与战术：通向利润增长之路（第5版）",
+          "authors": [
+            "汤姆·纳格",
+            "约瑟夫·查莱",
+            "陈兆丰"
+          ],
+          "authorStatus": "verified",
+          "description": "定价战略与战术：通向利润增长之路（第5版），企业供销管理相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F/F274/WEISER441fc8082c60.pdf",
+              "bytes": 83058218
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/ba33bfe3b83a034dade5495cb7f520e0a85d2d73f53848fbfaa7b4a1cc8972f8.webp"
         }
       ]
     },
@@ -870,6 +1136,48 @@
           "language": "zh-CN",
           "publisher": "中信出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISERcd61d3258c63",
+          "title": "营销管理（第16版）",
+          "authors": [
+            "菲利普·科特勒",
+            "凯文·莱恩·凯勒",
+            "亚历山大·切尔内夫"
+          ],
+          "authorStatus": "verified",
+          "description": "营销管理（第16版），商品流通与市场相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F/F713/WEISERcd61d3258c63.pdf",
+              "bytes": 42621118
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/0563340c53de86e66c19c3d40bb6459f34e921886501d27be810f2ebda46ba02.webp"
+        },
+        {
+          "id": "WEISERa2eac7bbf84f",
+          "title": "文案训练手册",
+          "authors": [
+            "约瑟夫·休格曼"
+          ],
+          "authorStatus": "verified",
+          "description": "文案训练手册，商品流通与市场相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/F/F713/WEISERa2eac7bbf84f.pdf",
+              "bytes": 18994879
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/195089b403027c82060279445fc9a81bdb45e559384c69d241776bce2e7b3b24.webp"
         }
       ]
     },

@@ -1,0 +1,110 @@
+{
+  "category": "U",
+  "booklists": [
+    {
+      "clcCode": "U2",
+      "clcName": "铁路运输",
+      "books": [
+        {
+          "id": "WEISERcfc6cea261aa",
+          "title": "中国铁道",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "中国铁道，铁路运输相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/U/U2/WEISERcfc6cea261aa.pdf",
+              "bytes": 96597860
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9fd834f6b9fdf716b8b3a6296fe296ad8de42c588eb05e794e36bb968222b00f.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
+      "clcCode": "U212",
+      "clcName": "线路规划、勘测与设计",
+      "books": [
+        {
+          "id": "WEISER37bde89bcccf",
+          "title": "川藏铁路主要地质灾害特征及地质选线探析",
+          "authors": [
+            "宋章",
+            "张广泽",
+            "蒋良文",
+            "吴光"
+          ],
+          "authorStatus": "verified",
+          "description": "川藏铁路主要地质灾害特征及地质选线探析，线路规划、勘测与设计相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/U/U212/WEISER37bde89bcccf.pdf",
+              "bytes": 861009
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/4c4785230e20f71ff47649e7ba4772ac851b519580d1a147f73fbba340089ad1.webp"
+        },
+        {
+          "id": "WEISER90d5f4f74366",
+          "title": "川藏铁路限制坡度方案研究",
+          "authors": [
+            "黄艳磊",
+            "邓军桥",
+            "张红伟"
+          ],
+          "authorStatus": "verified",
+          "description": "川藏铁路限制坡度方案研究，线路规划、勘测与设计相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/U/U212/WEISER90d5f4f74366.pdf",
+              "bytes": 703694
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/44f799e95feeae23f825f558b7f1b7d1dfcae085e746a7d9eb9190085bd568be.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "U260",
+      "clcName": "一般性问题",
+      "books": [
+        {
+          "id": "WEISER779d16723726",
+          "title": "“中华之星”高速动力车转向架研究",
+          "authors": [
+            "封全保",
+            "孙守光"
+          ],
+          "authorStatus": "verified",
+          "description": "“中华之星”高速动力车转向架研究，一般性问题相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/U/U260/WEISER779d16723726.pdf",
+              "bytes": 347006
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/23e3eec8f37dd6284fa9f4d43f4499f23957e4c50d28d413d47df9fac9f8e08f.webp"
+        }
+      ]
+    }
+  ]
+}

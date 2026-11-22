@@ -2,6 +2,59 @@
   "category": "P",
   "booklists": [
     {
+      "clcCode": "P3",
+      "clcName": "地球物理学",
+      "books": [
+        {
+          "id": "WEISER931bbda6eb0e",
+          "title": "Introduction to Geophysics: Global Physical Fields and Processes in the Earth",
+          "authors": [
+            "Christoph Clauser"
+          ],
+          "authorStatus": "verified",
+          "description": "Introduction to Geophysics: Global Physical Fields and Processes in the Earth，地球物理学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/P/P3/WEISER931bbda6eb0e.pdf",
+              "bytes": 116396748
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/edded5cf89b2c6b1481f97329b318b9f2ef2b25c417757ab8d49029773c3ad74.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "P4",
+      "clcName": "大气科学（气象学）",
+      "books": [
+        {
+          "id": "WEISER77adea648e01",
+          "title": "大气科学",
+          "authors": [
+            "John M. Wallace",
+            "Peter V. Hobbs"
+          ],
+          "authorStatus": "verified",
+          "description": "大气科学，大气科学（气象学）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/P/P4/WEISER77adea648e01.pdf",
+              "bytes": 99114045
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/78907fe2124775cf5fb7eda7c314b6cb778002d75f480f34c4d6726f48a91a9c.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "P5",
       "clcName": "地质学",
       "books": [
@@ -23,6 +76,259 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/2ca847b17e93e685b84300de7476bf2e8335996ed011abeb0a23ba3a143e437b.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISERe890abf15c9c",
+          "title": "普通地质学（第3版，彩色版）",
+          "authors": [
+            "舒良树"
+          ],
+          "authorStatus": "verified",
+          "description": "普通地质学（第3版，彩色版），地质学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/P/P5/WEISERe890abf15c9c.pdf",
+              "bytes": 43922292
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9dd4ac81413d3d32fcef45e2c2f81299e5d459889e373bdda92c124aee583232.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "P53",
+      "clcName": "历史地质学、地层学",
+      "books": [
+        {
+          "id": "WEISERaf1e70711135",
+          "title": "古生物地史学概论",
+          "authors": [
+            "杜远生",
+            "童金南"
+          ],
+          "authorStatus": "verified",
+          "description": "古生物地史学概论，历史地质学、地层学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/P/P53/WEISERaf1e70711135.pdf",
+              "bytes": 12657445
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/58d26bd00d44802d3e21c5c1807faa027b9930d5f57313a1eb32bcac507fef34.webp"
+        },
+        {
+          "id": "WEISER32868a0fb45d",
+          "title": "古生物学与地史学概论",
+          "authors": [
+            "肖传桃"
+          ],
+          "authorStatus": "verified",
+          "description": "古生物学与地史学概论，历史地质学、地层学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/P/P53/WEISER32868a0fb45d.pdf",
+              "bytes": 15424558
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b97f1d6387c1e0f50ad800bdd7817641cbddce3ff6274b4872b4a42966eba710.webp"
+        },
+        {
+          "id": "WEISER766f6380732e",
+          "title": "地史学教程（第3版）",
+          "authors": [
+            "刘本培",
+            "全秋琦",
+            "冯庆来",
+            "赵锡文",
+            "周正国 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "地史学教程（第3版），历史地质学、地层学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/P/P53/WEISER766f6380732e.pdf",
+              "bytes": 16922372
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/0ce4e8d71837a143bcc5628547d45f70ea11ff74f2165855a8a5cd50c5fef77c.webp"
+        },
+        {
+          "id": "WEISER364fed280a7e",
+          "title": "地质考古学：地球科学方法在考古学中的应用",
+          "authors": [
+            "George Rapp",
+            "Christopher L. Hill"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "地质考古学：地球科学方法在考古学中的应用，历史地质学、地层学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K85/WEISER364fed280a7e.pdf",
+              "bytes": 56391744
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/ddbdd0686807b936b0107b4f9c0b0abf728f249b96bf0158e79f4bd653a0c36e.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "P59",
+      "clcName": "地球化学",
+      "books": [
+        {
+          "id": "WEISER02e7bf8f7227",
+          "title": "地球化学",
+          "authors": [
+            "韩吟文",
+            "马振东",
+            "张宏飞",
+            "张本仁",
+            "李方林",
+            "高山",
+            "鲍征宇"
+          ],
+          "authorStatus": "verified",
+          "description": "地球化学，地球化学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/P/P59/WEISER02e7bf8f7227.pdf",
+              "bytes": 4969273
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/0c29b24e1c5e34cc52612e2a4e1c1254450df6d5b84d8d47e80afc1493163549.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "P148",
+      "clcName": "天体化学",
+      "books": [
+        {
+          "id": "WEISER53b2a4facab4",
+          "title": "天体化学",
+          "authors": [
+            "欧阳自远"
+          ],
+          "authorStatus": "verified",
+          "description": "天体化学，天体化学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/P/P148/WEISER53b2a4facab4.pdf",
+              "bytes": 9793129
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9610ee4b5162e2882b7e5ec95eb4079ff01aa95077463c5a978a3d8167910e2f.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "P208",
+      "clcName": "测绘数据库与信息系统",
+      "books": [
+        {
+          "id": "WEISERae8cf49935a2",
+          "title": "地理信息系统教程",
+          "authors": [
+            "汤国安 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "地理信息系统教程，测绘数据库与信息系统相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/P/P208/WEISERae8cf49935a2.pdf",
+              "bytes": 16497587
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/a0b21eff276080cd60a76f0ff1037e614ad2b6663653976bdeafa5b974cb6b05.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "P588",
+      "clcName": "岩石分类",
+      "books": [
+        {
+          "id": "WEISER37ad7bbdc5d5",
+          "title": "沉积岩石学（第3版）",
+          "authors": [
+            "赵澄林",
+            "朱筱敏"
+          ],
+          "authorStatus": "verified",
+          "description": "沉积岩石学（第3版），岩石分类相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/P/P588/WEISER37ad7bbdc5d5.pdf",
+              "bytes": 21779851
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/461a3a0ffaff6d96e0ad0460e80927bc7c7a96b48a0123a008025df0fc3f31c7.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "P619.28",
+      "clcName": "宝石矿床",
+      "books": [
+        {
+          "id": "WEISER5cf7dc54d057",
+          "title": "宝石学教程（第3版）",
+          "authors": [
+            "李娅莉",
+            "薛秦芳",
+            "李立平",
+            "陈美华",
+            "尹作为"
+          ],
+          "authorStatus": "verified",
+          "description": "宝石学教程（第3版），宝石矿床相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/P/P619.28/WEISER5cf7dc54d057.epub",
+              "bytes": 27872658
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/3748c107066d133a1f21505545fb4f8ece85cd1ec84a6238b413313737b9a487.webp"
         }
       ]
     }

@@ -12,6 +12,7 @@ description: 为 Telysta 书室添加或修订电子书，核对书目与中图�
 - 从会话确认本次指定哪些书，以及是否授权上传 R2、提交 Git、推送部署。已有授权继续有效；“只写 Skill／先整理／暂不提交这些书”不授权上传或发布新书。
 - 不扫描后把整个 Books 目录自动上传。新书可能暂存在根目录、未收进旧 CSV；原有清单不是新书齐全与否的唯一依据。
 - 不移动、删除或改名本地原书。要分类整理，优先在临时入库批次中保留分类路径；修改原目录须有相应任务授权。
+- 用户明确要求去重时，只移除完整 SHA-256 和字节数均相同的副本，操作前重验所有保留件与副本。优先保留已分类目录的一份；副本先移至 Books 之外的私人隔离目录，记录原路径、保留路径、哈希和恢复清单。不同格式、版次、译本、卷次或仅书名相同的不视为绝对重复，不据此删远端对象。
 - 不因待核对或不在首页展示而删除本地书籍或已有 R2 对象。分类／首页可见性属于元数据操作；远端删除是另一项操作，需单独授权。
 
 ## 存储位置
@@ -47,7 +48,8 @@ description: 为 Telysta 书室添加或修订电子书，核对书目与中图�
 - schema 与下载域约束：`src/lib/ebooks/ebookSchema.ts`。
 - R2 公开域、页大小与分类：`src/config/library.ts`。
 - 书架与详情：`src/components/ebooks/`、`src/pages/ebooks/`；常规加书修改数据，不逐书修改组件或路由。
-- 本地盘点、证据与完整性：`scripts/library-catalog.py`、`data/library/author-overrides.json`。
+- 增量盘点与完整性：`scripts/library_delta.py` 读取 Windows 原生盘点及完整 SHA-256，只生成私人差异报告；旧严格 CSV 流程保留于 `scripts/library-catalog.py`。
+- 类号、显示名及来源登记：`data/library/clc-mappings.json`；内容构建检查类号与名称，新增或修订分类时同时维护登记表和分类 JSON。
 - 封面与初始网页记录：`scripts/prepare-library-books.py`；生成到 `.tmp/` 后审查，再加入正式书目。
 - 访问控制与阅览：`workers/library-gateway/`、`src/lib/ebooks/libraryAccess.ts`、`src/pages/ebooks/read.astro`；PDF新标签页交给浏览器阅览并保留鉴权与Range；EPUB／MOBI／AZW3按需加载并禁用书内脚本，保留原文件。
 - Worker书目准备：`npm run library:gateway:prepare -- --scope <已核验全量ID数组JSON>`，读取公开JSON和本地私有JSON，生成忽略于Git的服务端catalog；名单包含继续服务的旧书与获准新增书，部署前必须运行，缺少名单或完整私有书目时停止部署。
@@ -87,6 +89,8 @@ description: 为 Telysta 书室添加或修订电子书，核对书目与中图�
 ### 分类证据
 
 每次新增或修改分类，应记录分类依据、参考来源 URL（如有）、分类法版本、核对状态与核对日期。已有同书同版本的可信图书馆记录应优先用于比对，但仍需判断其适用性。
+
+CIP与初步主题分类不一致时，单列冲突逐项复核，不能只采纳相同前缀的类号而静默忽略其他CIP。旧版类号、复分类号和一书多类号须保留原始记载；采用现行馆藏或内容归类时，记录原CIP、采用理由和依据。例如旧游戏设计书的TP311.5可依据现行编目归TP317.6，不能把旧类号机械套回，也不能不作说明就略过差异。
 
 ### 分类与存储解耦
 

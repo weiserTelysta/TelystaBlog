@@ -143,6 +143,58 @@
       ]
     },
     {
+      "clcCode": "K061",
+      "clcName": "历史研究法",
+      "books": [
+        {
+          "id": "WEISERf0634905e970",
+          "title": "历史学家的技艺",
+          "authors": [
+            "马克·布洛赫"
+          ],
+          "authorStatus": "verified",
+          "description": "历史学家的技艺，历史研究法相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K/K061/WEISERf0634905e970.epub",
+              "bytes": 382944
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/34545ef091eebbcc4b30cea34f86ed72274aa4a5e918e2871889345136285574.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "K103",
+      "clcName": "文化史",
+      "books": [
+        {
+          "id": "WEISER9e0c4ac30c4e",
+          "title": "黑色雅典娜：古典文明的亚非之根（全三卷）",
+          "authors": [
+            "马丁·贝尔纳"
+          ],
+          "authorStatus": "verified",
+          "description": "黑色雅典娜：古典文明的亚非之根（全三卷），文化史相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K/K125/WEISER9e0c4ac30c4e.epub",
+              "bytes": 30348518
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/6655cbb2951182be0a0daf73c0a09b66bd8ea18b58658dd847d1eef25bbb8d03.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "K124",
       "clcName": "美索不达米亚",
       "books": [
@@ -498,6 +550,26 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/0885ccbceba293d3d0e94b90ed1c3f997a4126eac236e9499d099337a1fd4292.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER034048dbdc29",
+          "title": "Constantine Porphyrogennetos: The Book of Ceremonies",
+          "authors": [
+            "Constantine VII Porphyrogenitus"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "Constantine Porphyrogennetos: The Book of Ceremonies，拜占庭帝国（477~1453 年）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K134/WEISER034048dbdc29.pdf",
+              "bytes": 110716901
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/5b22f5bb26387958e8fbdabf8e75e3a2f307ab4f5acb4a39605b69f95fab6c8f.webp"
         }
       ]
     },
@@ -819,6 +891,52 @@
       ]
     },
     {
+      "clcCode": "K296.13",
+      "clcName": "开封地方史",
+      "books": [
+        {
+          "id": "WEISER517a863ef76a",
+          "title": "东京梦华录（杨春俏译注）",
+          "authors": [
+            "孟元老"
+          ],
+          "authorStatus": "verified",
+          "description": "东京梦华录（杨春俏译注），开封地方史相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K/K296.13/WEISER517a863ef76a.epub",
+              "bytes": 1656338
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/858d31e8472ae498b45edc46275ee3d76ef76f6837b4c2783bbbb34769a0d516.webp"
+        },
+        {
+          "id": "WEISERfc78a326a1c6",
+          "title": "东京梦华录笺注（伊永文笺注，上、下册）",
+          "authors": [
+            "孟元老"
+          ],
+          "authorStatus": "verified",
+          "description": "东京梦华录笺注（伊永文笺注，上、下册），开封地方史相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K296.13/WEISERfc78a326a1c6.pdf",
+              "bytes": 37425909
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/ef17c9498c23efc8f4995735702fe65da3d7581337287b57a57604f3e068eae0.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "K351",
       "clcName": "印度",
       "books": [
@@ -859,6 +977,32 @@
           "language": "zh",
           "publisher": "湖南文艺出版社",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K411",
+      "clcName": "埃及",
+      "books": [
+        {
+          "id": "WEISER4d5915ca5461",
+          "title": "埃及考古学",
+          "authors": [
+            "穆斯塔法·埃尔-埃米尔"
+          ],
+          "authorStatus": "verified",
+          "description": "埃及考古学，埃及相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K411/WEISER4d5915ca5461.pdf",
+              "bytes": 15299482
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/2ffa225820913de37f96989a8d7d36fc468eb74f552a9add6136db4f273ffa77.webp"
         }
       ]
     },
@@ -955,6 +1099,26 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/475fb30ba2b9e4dfa2d3cd127956f27a6391ea56658527d340ade56c6ea382e1.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISERdb4a5e6642a4",
+          "title": "中世纪与文艺复兴",
+          "authors": [
+            "欧金尼奥·加林"
+          ],
+          "authorStatus": "verified",
+          "description": "中世纪与文艺复兴，中世纪史相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B503/WEISERdb4a5e6642a4.pdf",
+              "bytes": 65707004
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/6400084868aee2d2cd2187d80314cdd3a72a01cfb2c56dd7c32ee5004f981ff8.webp"
         }
       ]
     },
@@ -982,6 +1146,84 @@
           "language": "zh",
           "publisher": "四川人民出版社",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K543",
+      "clcName": "南斯拉夫",
+      "books": [
+        {
+          "id": "WEISERa2e36237fda8",
+          "title": "南斯拉夫兴亡",
+          "authors": [
+            "马细谱"
+          ],
+          "authorStatus": "verified",
+          "description": "《南斯拉夫兴亡》；马细谱。南斯拉夫，MOBI 格式。",
+          "files": [
+            {
+              "format": "MOBI",
+              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K5%20%E6%AC%A7%E6%B4%B2/K543%20%E5%8D%97%E6%96%AF%E6%8B%89%E5%A4%AB/%E5%8D%97%E6%96%AF%E6%8B%89%E5%A4%AB%E5%85%B4%E4%BA%A1.mobi",
+              "bytes": 366824
+            }
+          ],
+          "draft": false,
+          "language": "zh",
+          "publishedAt": "2026-11-14",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "K546",
+      "clcName": "意大利",
+      "books": [
+        {
+          "id": "WEISERf8252e2a956c",
+          "title": "廷臣论",
+          "authors": [
+            "巴尔达萨尔·卡斯蒂廖内"
+          ],
+          "authorStatus": "verified",
+          "description": "廷臣论，意大利相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K546/WEISERf8252e2a956c.pdf",
+              "bytes": 54917565
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9495705c9789f79c028a3e4ed1b0410aa2feb33fb4690989a9c7fe41b8e2ace4.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "K561",
+      "clcName": "英国",
+      "books": [
+        {
+          "id": "WEISERae6846d740fd",
+          "title": "文明的追求：现代英国的礼仪与文化探源",
+          "authors": [
+            "基思·托马斯"
+          ],
+          "authorStatus": "verified",
+          "description": "文明的追求：现代英国的礼仪与文化探源，英国相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K/K561/WEISERae6846d740fd.epub",
+              "bytes": 7809108
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/bba699523507a327211fd340376cbcb84e2d93b4bc969bf4475449c0361563e2.webp"
         }
       ]
     },
@@ -1060,6 +1302,224 @@
       ]
     },
     {
+      "clcCode": "K875",
+      "clcName": "各种用品器物",
+      "books": [
+        {
+          "id": "WEISER53b29c1f26c2",
+          "title": "中国古代金银首饰",
+          "authors": [
+            "扬之水"
+          ],
+          "authorStatus": "verified",
+          "description": "中国古代金银首饰，各种用品器物相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K875/WEISER53b29c1f26c2.pdf",
+              "bytes": 137890371
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/63a03d13c7a068908c5d443f4a084e45641660df7de35642d8f509b3a6691295.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "K891",
+      "clcName": "世界风俗习惯",
+      "books": [
+        {
+          "id": "WEISERdf0eb92e6d62",
+          "title": "过渡礼仪",
+          "authors": [
+            "阿诺尔德·范热内普"
+          ],
+          "authorStatus": "verified",
+          "description": "过渡礼仪，世界风俗习惯相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K/K891/WEISERdf0eb92e6d62.epub",
+              "bytes": 398725
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/cb66368607e4a3234981dfbc42266fa27b1dd2afb46dcf8260116db4d54fd8cf.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "K892",
+      "clcName": "中国风俗习惯",
+      "books": [
+        {
+          "id": "WEISER22998ec5b98a",
+          "title": "中国古代礼仪文明",
+          "authors": [
+            "彭林"
+          ],
+          "authorStatus": "verified",
+          "description": "中国古代礼仪文明，中国风俗习惯相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/K/K892/WEISER22998ec5b98a.epub",
+              "bytes": 31631847
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/90e8917f67a97f978c5dc73d7248c8d9aad8c48156a16b70092e5c13910ed1a8.webp"
+        },
+        {
+          "id": "WEISERec3da23ed508",
+          "title": "大明集礼（卷1—10，嘉靖九年内府刊本）",
+          "authors": [
+            "徐一夔 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "大明集礼（卷1—10，嘉靖九年内府刊本），中国风俗习惯相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K892/WEISERec3da23ed508.pdf",
+              "bytes": 401678703
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/e5be4bdadf76bd55a490ca8dd57c59fdcc4f4c75d9fc42399c467d7454f0abc9.webp"
+        },
+        {
+          "id": "WEISERf2fa737c1498",
+          "title": "大明集礼（卷11—20，嘉靖九年内府刊本）",
+          "authors": [
+            "徐一夔 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "大明集礼（卷11—20，嘉靖九年内府刊本），中国风俗习惯相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K892/WEISERf2fa737c1498.pdf",
+              "bytes": 431384998
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/770ad389c1aadf9fc0a7ab8b580945aff216f665d65fa3972d565b1d76a724bb.webp"
+        },
+        {
+          "id": "WEISER571dd37f9bdd",
+          "title": "大明集礼（卷21—26，嘉靖九年内府刊本）",
+          "authors": [
+            "徐一夔 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "大明集礼（卷21—26，嘉靖九年内府刊本），中国风俗习惯相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K892/WEISER571dd37f9bdd.pdf",
+              "bytes": 261516720
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d8f45ba9046cff294d51c9294704aead143f6b45fade67200d6202b3836e0e62.webp"
+        },
+        {
+          "id": "WEISER7097997c95fe",
+          "title": "大明集礼（卷27—30，嘉靖九年内府刊本）",
+          "authors": [
+            "徐一夔 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "大明集礼（卷27—30，嘉靖九年内府刊本），中国风俗习惯相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K892/WEISER7097997c95fe.pdf",
+              "bytes": 177070302
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/3591fc7941ba93c232ed640a4b95fc19514b8d5a14c01a37d724c36c624837c1.webp"
+        },
+        {
+          "id": "WEISER728a3c92dbbc",
+          "title": "大明集礼（卷31—40，嘉靖九年内府刊本）",
+          "authors": [
+            "徐一夔 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "大明集礼（卷31—40，嘉靖九年内府刊本），中国风俗习惯相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K892/WEISER728a3c92dbbc.pdf",
+              "bytes": 357757047
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/cb787661e5c5ddb18aadc933e231c8978c4fc88d9c1c64a7e802672d154641e3.webp"
+        },
+        {
+          "id": "WEISER37d70af5eac9",
+          "title": "大明集礼（卷41—49，嘉靖九年内府刊本）",
+          "authors": [
+            "徐一夔 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "大明集礼（卷41—49，嘉靖九年内府刊本），中国风俗习惯相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K892/WEISER37d70af5eac9.pdf",
+              "bytes": 374171102
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/29884afdd10a77edf3243b567d7b227da8101cb0e92dc285d59b35ac6f2f1ac9.webp"
+        },
+        {
+          "id": "WEISERc08e3f17c4a6",
+          "title": "大明集礼（卷50—53，嘉靖九年内府刊本）",
+          "authors": [
+            "徐一夔 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "大明集礼（卷50—53，嘉靖九年内府刊本），中国风俗习惯相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/K/K892/WEISERc08e3f17c4a6.pdf",
+              "bytes": 176463483
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9a6fa20d9408f5384824caa7e7ddbe16ce9d7c16ae0c9bbb2eadaf7517d540a6.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "K991",
       "clcName": "世界地图",
       "books": [
@@ -1080,32 +1540,6 @@
           ],
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/32b52ff4cfc4ac5725a41e06b07a81663fbbe107ff0b6841cc3f9eb69ff0904c.webp",
-          "access": "public"
-        }
-      ]
-    },
-    {
-      "clcCode": "K543",
-      "clcName": "南斯拉夫",
-      "books": [
-        {
-          "id": "WEISERa2e36237fda8",
-          "title": "南斯拉夫兴亡",
-          "authors": [
-            "马细谱"
-          ],
-          "authorStatus": "verified",
-          "description": "《南斯拉夫兴亡》；马细谱。南斯拉夫，MOBI 格式。",
-          "files": [
-            {
-              "format": "MOBI",
-              "href": "https://library-files.telysta.com/books/K%20%E5%8E%86%E5%8F%B2%E3%80%81%E5%9C%B0%E7%90%86/K5%20%E6%AC%A7%E6%B4%B2/K543%20%E5%8D%97%E6%96%AF%E6%8B%89%E5%A4%AB/%E5%8D%97%E6%96%AF%E6%8B%89%E5%A4%AB%E5%85%B4%E4%BA%A1.mobi",
-              "bytes": 366824
-            }
-          ],
-          "draft": false,
-          "language": "zh",
-          "publishedAt": "2026-11-14",
           "access": "public"
         }
       ]

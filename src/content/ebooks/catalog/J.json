@@ -847,6 +847,85 @@
       ]
     },
     {
+      "clcCode": "J20",
+      "clcName": "绘画理论",
+      "books": [
+        {
+          "id": "WEISER16214df82a9a",
+          "title": "艺术与错觉",
+          "authors": [
+            "E. H. 贡布里希"
+          ],
+          "authorStatus": "verified",
+          "description": "艺术与错觉，绘画理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J20/WEISER16214df82a9a.pdf",
+              "bytes": 136243265
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/5d4751a7e82795c71d90e1854a7c47ab3160e8bdb3ade3dfade4161b7a44ec73.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J50",
+      "clcName": "工艺美术理论",
+      "books": [
+        {
+          "id": "WEISER2279c729e283",
+          "title": "秩序感：装饰艺术的心理学研究",
+          "authors": [
+            "E. H. 贡布里希"
+          ],
+          "authorStatus": "verified",
+          "description": "秩序感：装饰艺术的心理学研究，工艺美术理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J525/WEISER2279c729e283.pdf",
+              "bytes": 145087871
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/a8cc740b6c3531cd3c96624dc6e1806d5e0f9049154f55e6711f955c74d4fc4c.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J063",
+      "clcName": "色彩学",
+      "books": [
+        {
+          "id": "WEISERb057d9959e08",
+          "title": "中国传统色彩色卡（学习资料）",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "中国传统色彩色卡（学习资料），色彩学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J063/WEISERb057d9959e08.pdf",
+              "bytes": 8134277
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9652a087787f45ecb75a8ab68e874e999431df04ae51bcbe0144ae2061c762e5.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
       "clcCode": "J110",
       "clcName": "艺术史",
       "books": [
@@ -872,6 +951,136 @@
       ]
     },
     {
+      "clcCode": "J110.93",
+      "clcName": "中世纪（467～1640）",
+      "books": [
+        {
+          "id": "WEISER38f19ca1e4b5",
+          "title": "图像学研究：文艺复兴时期艺术的人文主题",
+          "authors": [
+            "欧文·潘诺夫斯基"
+          ],
+          "authorStatus": "verified",
+          "description": "图像学研究：文艺复兴时期艺术的人文主题，中世纪（467～1640）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J110.93/WEISER38f19ca1e4b5.pdf",
+              "bytes": 116206351
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b12377c9cc1b8fd7c42247260c13b1506e2d90fbc07192d1e7b05737df3981e1.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J150.09",
+      "clcName": "欧洲艺术史",
+      "books": [
+        {
+          "id": "WEISER559be68861bf",
+          "title": "美术史的基本概念：后期艺术中的风格发展问题",
+          "authors": [
+            "海因里希·沃尔夫林"
+          ],
+          "authorStatus": "verified",
+          "description": "美术史的基本概念：后期艺术中的风格发展问题，欧洲艺术史相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J/J150.09/WEISER559be68861bf.epub",
+              "bytes": 6445298
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/46ef7d85ce1186c02a177c3350d5ce140d5d71a34bbc4327398cd3f96cc236e4.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J206.2",
+      "clcName": "透视学",
+      "books": [
+        {
+          "id": "WEISERda11695e20a1",
+          "title": "透视画法入门",
+          "authors": [
+            "约瑟夫·德·阿梅利奥"
+          ],
+          "authorStatus": "verified",
+          "description": "透视画法入门，透视学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J062/WEISERda11695e20a1.pdf",
+              "bytes": 73683225
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/7b7f12ab4e254ca54340dcc6b5a9531c2e964065e8bb93e21f00c3cf460adf98.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J218",
+      "clcName": "各种画技法：按用途分",
+      "books": [
+        {
+          "id": "WEISER04af6ff12a03",
+          "title": "西洋甲胄与武器作画资料集",
+          "authors": [
+            "渡邊信吾"
+          ],
+          "authorStatus": "verified",
+          "description": "西洋甲胄与武器作画资料集，各种画技法：按用途分相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J218/WEISER04af6ff12a03.pdf",
+              "bytes": 26362883
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/25f6a0b986f3415b5b978a390958f41f9eddd4f436a5c48f471f60bf1f8da72f.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J218.7",
+      "clcName": "动画(卡通)",
+      "books": [
+        {
+          "id": "WEISER424701380ae3",
+          "title": "国际游戏角色设计：告诉你如何将概念转化为图像",
+          "authors": [
+            "李大勋"
+          ],
+          "authorStatus": "verified",
+          "description": "国际游戏角色设计：告诉你如何将概念转化为图像，动画(卡通)相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J218.7/WEISER424701380ae3.pdf",
+              "bytes": 42289115
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d78ff347ffbd3491dbcdfcc156a550076195b750b96dd0140daa2c6f31b46d59.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "J228",
       "clcName": "中国漫画",
       "books": [
@@ -893,6 +1102,32 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/d8d9ae2fd5f29e11a887b3572b0358d8c3be82f5a383266986438111f5bf013e.webp",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "J231",
+      "clcName": "作品综合集",
+      "books": [
+        {
+          "id": "WEISER98dc157f1d33",
+          "title": "Codex Seraphinianus",
+          "authors": [
+            "Luigi Serafini"
+          ],
+          "authorStatus": "verified",
+          "description": "Codex Seraphinianus，作品综合集相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J231/WEISER98dc157f1d33.pdf",
+              "bytes": 55404785
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/a44136481fd5ef8db01b3df0a5b0e12e401ed63cdd67adc6d95cfe3b87d8f1d5.webp"
         }
       ]
     },
@@ -1606,6 +1841,608 @@
           "files": [],
           "description": "",
           "draft": false
+        }
+      ]
+    },
+    {
+      "clcCode": "J314.2",
+      "clcName": "木刻、木雕",
+      "books": [
+        {
+          "id": "WEISER4c3cbe031cc7",
+          "title": "木工雕刻全书",
+          "authors": [
+            "埃弗雷特·爱伦伍德"
+          ],
+          "authorStatus": "verified",
+          "description": "木工雕刻全书，木刻、木雕相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J/J314.2/WEISER4c3cbe031cc7.epub",
+              "bytes": 25257747
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/25e5c3efeac4a3e92e5babc090a6c2a277efce9f2ea225ed7ccf8dc5c64b2deb.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J605",
+      "clcName": "音乐评论、欣赏",
+      "books": [
+        {
+          "id": "WEISERf29cd461988b",
+          "title": "“中国风”节奏布鲁斯歌曲的音乐特征",
+          "authors": [
+            "王伊然"
+          ],
+          "authorStatus": "verified",
+          "description": "“中国风”节奏布鲁斯歌曲的音乐特征，音乐评论、欣赏相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J605/WEISERf29cd461988b.pdf",
+              "bytes": 3934369
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/00267ed04c42fe3a7f0514e7078b1881c197e3f108902679dc4996b0dc478a2d.webp"
+        },
+        {
+          "id": "WEISERe2ccabb72ddf",
+          "title": "欧美流行放克音乐的节奏律动研究",
+          "authors": [
+            "梁懋遒"
+          ],
+          "authorStatus": "verified",
+          "description": "欧美流行放克音乐的节奏律动研究，音乐评论、欣赏相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J605/WEISERe2ccabb72ddf.pdf",
+              "bytes": 4667447
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b7e2fb32ee72e9795fc7c5f1049a10f53dfa9db0ebcd462fb1d86e8a3b398218.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J613",
+      "clcName": "基本乐科",
+      "books": [
+        {
+          "id": "WEISERa5a87279d8ff",
+          "title": "基础乐理",
+          "authors": [
+            "袁丽蓉"
+          ],
+          "authorStatus": "verified",
+          "description": "基础乐理，基本乐科相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J613/WEISERa5a87279d8ff.pdf",
+              "bytes": 8240190
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/aecee3e4cf7df5c46f4ab639bb223fd6aef9795e2ebfea76b7de7c886bfe39de.webp"
+        },
+        {
+          "id": "WEISERf59e4ae6016d",
+          "title": "音乐中的变与不变：车万人的音乐课",
+          "authors": [
+            "Yoshika_DK"
+          ],
+          "authorStatus": "verified",
+          "description": "音乐中的变与不变：车万人的音乐课，基本乐科相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J613/WEISERf59e4ae6016d.pdf",
+              "bytes": 7403886
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/55a6a298d1991af771556c34fc3d569f152c126b393648032a33d39aa00a2876.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J613.6",
+      "clcName": "音阶、调式",
+      "books": [
+        {
+          "id": "WEISER7f9a94f88219",
+          "title": "汉族调式及其和声",
+          "authors": [
+            "黎英海"
+          ],
+          "authorStatus": "verified",
+          "description": "汉族调式及其和声，音阶、调式相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614/WEISER7f9a94f88219.pdf",
+              "bytes": 8182917
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/47c295f71771f1428d613a05d3ab3b5b6713b7d463b0d3f0fd096a1e9065f8c1.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J614",
+      "clcName": "作曲理论",
+      "books": [
+        {
+          "id": "WEISERc59fca80225a",
+          "title": "スグに使えるコード進行レシピ",
+          "authors": [
+            "斉藤修"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "スグに使えるコード進行レシピ，作曲理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614/WEISERc59fca80225a.pdf",
+              "bytes": 47777433
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/44cb7327abe78671092a1261c118a7a221c154a7b9ca91c7930e938ddbedcfe7.webp"
+        },
+        {
+          "id": "WEISERfdf2423dadf3",
+          "title": "和声理论：致初学作曲的业余音乐爱好者",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "和声理论：致初学作曲的业余音乐爱好者，作曲理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614/WEISERfdf2423dadf3.pdf",
+              "bytes": 721487
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/dbcf5440ccc7359d1cbaa80ff771a53c50bce200c349fcc05f807902ac176df2.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        },
+        {
+          "id": "WEISER3785255b9b08",
+          "title": "图解作曲配乐",
+          "authors": [
+            "梅垣ルナ"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "图解作曲配乐，作曲理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614/WEISER3785255b9b08.pdf",
+              "bytes": 6463835
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/613ff7bfe8b453f5481f0346dfe862aece616b4d615cd17e2691f270ac62c019.webp"
+        },
+        {
+          "id": "WEISERea9f6bb28b9b",
+          "title": "图解编曲入门",
+          "authors": [
+            "熊川浩孝",
+            "石田剛毅"
+          ],
+          "authorStatus": "verified",
+          "description": "图解编曲入门，作曲理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614/WEISERea9f6bb28b9b.pdf",
+              "bytes": 16127817
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/a0852296d8f6271dc1dd40951f31c217637e2d6a1bd6ac76934470884350d6f4.webp"
+        },
+        {
+          "id": "WEISERd49db5c229f0",
+          "title": "图解乐风编曲入门",
+          "authors": [
+            "藤谷一郎"
+          ],
+          "authorStatus": "verified",
+          "description": "图解乐风编曲入门，作曲理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614/WEISERd49db5c229f0.pdf",
+              "bytes": 13735342
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/378e3d658d983aa725bd65aadaf171ff2e058de8921189cb3936f7f1e0f1bfc7.webp"
+        },
+        {
+          "id": "WEISERd04912ccb73f",
+          "title": "图解重配和声入门",
+          "authors": [
+            "梅垣ルナ"
+          ],
+          "authorStatus": "verified",
+          "description": "图解重配和声入门，作曲理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614/WEISERd04912ccb73f.pdf",
+              "bytes": 11852062
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/8f90d2e91e79fc47b9396477921231111d855fbbec19895fff671630d9d0038f.webp"
+        },
+        {
+          "id": "WEISERdc643fe6236b",
+          "title": "当代和声：二十世纪和声研究",
+          "authors": [
+            "莫·卡纳"
+          ],
+          "authorStatus": "verified",
+          "description": "当代和声：二十世纪和声研究，作曲理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614/WEISERdc643fe6236b.pdf",
+              "bytes": 3125966
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/3044ce91da575896deb4786e359855415044067c7f57a6a282c5a25283e1d030.webp"
+        },
+        {
+          "id": "WEISER414f8cf0da4e",
+          "title": "流行音乐中之弦乐编曲分析与探究：以《很固执的》创作专辑为例",
+          "authors": [
+            "陈传禹"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "流行音乐中之弦乐编曲分析与探究：以《很固执的》创作专辑为例，作曲理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614/WEISER414f8cf0da4e.pdf",
+              "bytes": 9083151
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/1a7c00f0b2b7d9494a73103c97278b237e3c1b78833fac3bc49739397a60b01e.webp"
+        },
+        {
+          "id": "WEISER42dbd308c5a1",
+          "title": "爵士和声与音型造句",
+          "authors": [
+            "郭正权"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "爵士和声与音型造句，作曲理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614/WEISER42dbd308c5a1.pdf",
+              "bytes": 74760087
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/92b2c46cb4b1933f2cc2fe0fb61dbbdb7c8909c52faa0c2c0b4b5d4c21758925.webp"
+        },
+        {
+          "id": "WEISER783c6c62d461",
+          "title": "韵律与调性结构理论：乐句与曲式研究（16页资料）",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "韵律与调性结构理论：乐句与曲式研究（16页资料），作曲理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614/WEISER783c6c62d461.pdf",
+              "bytes": 1351984
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/2b6436df791294c19e13724e9858ea9bf0ea4e50fc0e4933d43da979d64dc765.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        },
+        {
+          "id": "WEISERf39b7c96a5c3",
+          "title": "韵律与调性结构理论：乐句与曲式研究（40页资料）",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "韵律与调性结构理论：乐句与曲式研究（40页资料），作曲理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614/WEISERf39b7c96a5c3.pdf",
+              "bytes": 3217383
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/87a110fa28ad177b8cc74e011260d75035a9991d7ba9b5cf53bb102294d8618f.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
+      "clcCode": "J614.1",
+      "clcName": "和声学",
+      "books": [
+        {
+          "id": "WEISER1d45ea5ffa0d",
+          "title": "20世纪和声研究（一）：1914年以前的法国和声",
+          "authors": [
+            "莱尼·列诺曼"
+          ],
+          "authorStatus": "verified",
+          "description": "20世纪和声研究（一）：1914年以前的法国和声，和声学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614.1/WEISER1d45ea5ffa0d.pdf",
+              "bytes": 18321776
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/6a132858a46703c4bbcf49a4f2bbf75fd08f0beda2d3ff3a27ff51c4c8109095.webp"
+        },
+        {
+          "id": "WEISER74d4cf470367",
+          "title": "色彩和声",
+          "authors": [
+            "华萃康"
+          ],
+          "authorStatus": "verified",
+          "description": "色彩和声，和声学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614.1/WEISER74d4cf470367.pdf",
+              "bytes": 94736200
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/df7653a5e88bfe58ed2e947af6bab1bae7f98066c6c28dca208258c8783d19c9.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J614.8",
+      "clcName": "其他作曲理论",
+      "books": [
+        {
+          "id": "WEISER30af9dcd86da",
+          "title": "电子舞曲手册（第2版）",
+          "authors": [
+            "Rick Snoman"
+          ],
+          "authorStatus": "verified",
+          "description": "电子舞曲手册（第2版），其他作曲理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J614.8/WEISER30af9dcd86da.pdf",
+              "bytes": 75408008
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/8a092b8fabc525c894813b675dd09a3f0b098af597cbdfc8cbd3f47d281c0970.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J616",
+      "clcName": "声乐理论",
+      "books": [
+        {
+          "id": "WEISER6e5969d0e111",
+          "title": "嗓音遗训：世界声乐史上历代大师教学经验荟萃",
+          "authors": [
+            "弗·兰皮尔蒂 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "嗓音遗训：世界声乐史上历代大师教学经验荟萃，声乐理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J616/WEISER6e5969d0e111.pdf",
+              "bytes": 8721111
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/fa789d76858a29816277e546c3d75c02224499516f8b9368456b1aea43091600.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J616.1",
+      "clcName": "发声法",
+      "books": [
+        {
+          "id": "WEISER9dd24497c6a8",
+          "title": "嗓音训练手册",
+          "authors": [
+            "理查德·奥尔德森"
+          ],
+          "authorStatus": "verified",
+          "description": "嗓音训练手册，发声法相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J616.1/WEISER9dd24497c6a8.pdf",
+              "bytes": 68336829
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/3f7ab647014f5f858a5088302c839a6c3c59981d3ff9bf6757be99adc093577c.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J617",
+      "clcName": "戏剧音乐理论",
+      "books": [
+        {
+          "id": "WEISER80bc787941ef",
+          "title": "久石让与宫崎骏的音乐叙事关系研究：以《千与千寻》为例",
+          "authors": [
+            "王帆"
+          ],
+          "authorStatus": "verified",
+          "description": "久石让与宫崎骏的音乐叙事关系研究：以《千与千寻》为例，戏剧音乐理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J617/WEISER80bc787941ef.pdf",
+              "bytes": 1651558
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/7e205dc4ff9348018be8ddb1be39e6d4226df9b9d1f518563f0ef4aa39fae7a8.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J619",
+      "clcName": "音乐工艺学",
+      "books": [
+        {
+          "id": "WEISER7cd5aa659416",
+          "title": "第一本照着做就0失误的音乐制作工具书",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "第一本照着做就0失误的音乐制作工具书，音乐工艺学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/J/J619/WEISER7cd5aa659416.epub",
+              "bytes": 87689245
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
+      "clcCode": "J627",
+      "clcName": "器乐合奏理论和演奏法",
+      "books": [
+        {
+          "id": "WEISER32eae0ae2826",
+          "title": "管弦乐队配器法",
+          "authors": [
+            "牟洪"
+          ],
+          "authorStatus": "verified",
+          "description": "管弦乐队配器法，器乐合奏理论和演奏法相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J627/WEISER32eae0ae2826.pdf",
+              "bytes": 28550837
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b36b9ddccc4a568f0eec1ad06cbc0c6714b2198768cbd1e4eecf83f60cfafdd4.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "J628",
+      "clcName": "电子乐器",
+      "books": [
+        {
+          "id": "WEISER28f410a84240",
+          "title": "图解合成器音乐创作法：99种技法一次学会",
+          "authors": [
+            "野崎贵朗"
+          ],
+          "authorStatus": "verified",
+          "description": "图解合成器音乐创作法：99种技法一次学会，电子乐器相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/J/J628/WEISER28f410a84240.pdf",
+              "bytes": 16287436
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/447c2eacc2422b87465951aecf4da10cb57a67bcc0580d61b27aa1e2f09d2605.webp"
         }
       ]
     }

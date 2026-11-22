@@ -2,26 +2,97 @@
   "category": "O",
   "booklists": [
     {
-      "clcCode": "O415",
-      "clcName": "非线性物理学",
+      "clcCode": "O1",
+      "clcName": "数学",
       "books": [
         {
-          "id": "WEISERdd944d61beec",
-          "title": "非线性动力学与混沌（原书第2版）",
+          "id": "WEISER19fc139308d8",
+          "title": "什么是数学：对思想和方法的基本研究（第4版）",
           "authors": [
-            "史蒂芬·斯托加茨"
+            "理查德·柯朗",
+            "赫伯特·罗宾"
           ],
           "authorStatus": "unreviewed",
-          "description": "《非线性动力学与混沌（原书第2版）》；史蒂芬·斯托加茨。非线性物理学，PDF 格式。",
+          "description": "什么是数学：对思想和方法的基本研究（第4版），数学相关资料。",
           "files": [
             {
               "format": "PDF",
-              "href": "https://library-files.telysta.com/books/O%20%E6%95%B0%E7%90%86%E7%A7%91%E5%AD%A6%E5%92%8C%E5%8C%96%E5%AD%A6/O4%20%E7%89%A9%E7%90%86%E5%AD%A6/O415%20%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%89%A9%E7%90%86%E5%AD%A6/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8A%A8%E5%8A%9B%E5%AD%A6%E4%B8%8E%E6%B7%B7%E6%B2%8C%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC2%E7%89%88%EF%BC%89.pdf",
-              "bytes": 59913718
+              "href": "https://library-files.telysta.com/books/O/O1/WEISER19fc139308d8.pdf",
+              "bytes": 35406039
             }
           ],
+          "access": "public",
           "draft": false,
-          "access": "public"
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/7241c8282a0d620e71ad7949260fb46ee12d1595794a0f647f1a505ee304f0d8.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "O4",
+      "clcName": "物理学",
+      "books": [
+        {
+          "id": "WEISERdbac57cae31d",
+          "title": "大学物理（上册）",
+          "authors": [
+            "吴百诗"
+          ],
+          "authorStatus": "verified",
+          "description": "大学物理（上册），物理学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/O/O4/WEISERdbac57cae31d.pdf",
+              "bytes": 28299708
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/69fe773eb6ad1b24b5ddf01f1fb2d5320a76f53401245156e4db420317e919c6.webp"
+        },
+        {
+          "id": "WEISERc6c8d2d0c9be",
+          "title": "大学物理（下册）",
+          "authors": [
+            "吴百诗"
+          ],
+          "authorStatus": "verified",
+          "description": "大学物理（下册），物理学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/O/O4/WEISERc6c8d2d0c9be.pdf",
+              "bytes": 31067649
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/823242511ed8c85795c24f427c2595f2d0e5f4e50d955f393e7577a0055552b0.webp"
+        },
+        {
+          "id": "WEISERa559ac0b279f",
+          "title": "费恩曼物理学讲义（新千年版，全5册）",
+          "authors": [
+            "理查德·费恩曼",
+            "罗伯特·莱顿",
+            "马修·桑兹"
+          ],
+          "authorStatus": "verified",
+          "description": "费恩曼物理学讲义（新千年版，全5册），物理学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/O/O4/WEISERa559ac0b279f.epub",
+              "bytes": 155939795
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/771b2d8af5657dce33b5f6c136e0835a0d025f48f878299c1fd4ce5069b3e0cc.webp"
         }
       ]
     },
@@ -48,6 +119,30 @@
           "cover": "https://library-files.telysta.com/covers/14b1845818be4ab0e2652c1db4d092de8f4b5479c6666a4420e45bbf9389f61e.webp",
           "language": "zh",
           "publisher": "译林出版社",
+          "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "O415",
+      "clcName": "非线性物理学",
+      "books": [
+        {
+          "id": "WEISERdd944d61beec",
+          "title": "非线性动力学与混沌（原书第2版）",
+          "authors": [
+            "史蒂芬·斯托加茨"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "《非线性动力学与混沌（原书第2版）》；史蒂芬·斯托加茨。非线性物理学，PDF 格式。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/O%20%E6%95%B0%E7%90%86%E7%A7%91%E5%AD%A6%E5%92%8C%E5%8C%96%E5%AD%A6/O4%20%E7%89%A9%E7%90%86%E5%AD%A6/O415%20%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%89%A9%E7%90%86%E5%AD%A6/%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8A%A8%E5%8A%9B%E5%AD%A6%E4%B8%8E%E6%B7%B7%E6%B2%8C%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC2%E7%89%88%EF%BC%89.pdf",
+              "bytes": 59913718
+            }
+          ],
+          "draft": false,
           "access": "public"
         }
       ]

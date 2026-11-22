@@ -14,6 +14,7 @@ import { createPostLinkIndex, legacyPostId, postHref } from '../../src/lib/postL
 import { parseContentDate } from '../../src/lib/contentDate';
 import { ebookSchema } from '../../src/lib/ebooks/ebookSchema';
 import { readEbookCatalogFiles } from '../../src/lib/ebooks/catalogFiles';
+import { ebookClassificationIssue, parseLibraryClassificationRegistry, type LibraryClassificationRegistry } from '../../src/lib/ebooks/classification';
 import type { Nodes } from 'mdast';
 
 const markdownParser = unified().use(remarkParse).use(remarkMath);
@@ -629,7 +630,7 @@ export function runContentValidation(rootDir: string, options: { featuredImages?
 		...validatePostDocuments(documents, rootDir),
 		...validatePostLinks(documents),
 		...validateResourceDocuments(documents, rootDir),
-		...validateEbookDocuments(documents),
+		...validateEbookDocuments(documents, readClassificationRegistry(rootDir, documents.some(document => document.kind === 'ebook'))),
 		...validateGallerySelection(documents, options.featuredImages ?? []),
 	].sort(compareIssues);
 
@@ -641,7 +642,14 @@ export function runContentValidation(rootDir: string, options: { featuredImages?
 	};
 }
 
-export function validateEbookDocuments(documents: ContentDocument[]): ValidationIssue[] {
+function readClassificationRegistry(rootDir: string, required: boolean): LibraryClassificationRegistry | undefined {
+	const file = path.join(rootDir, 'data/library/clc-mappings.json');
+	if (fs.existsSync(file)) return parseLibraryClassificationRegistry(JSON.parse(fs.readFileSync(file, 'utf8')));
+	if (required) throw new Error('书室存在书目但缺少 data/library/clc-mappings.json，停止构建。');
+	return undefined;
+}
+
+export function validateEbookDocuments(documents: ContentDocument[], registry?: LibraryClassificationRegistry): ValidationIssue[] {
 	const issues: ValidationIssue[] = [];
 	const ids = new Set<string>();
 	for (const document of documents.filter(item => item.kind === 'ebook' && !item.parseIssues.length)) {
@@ -652,6 +660,10 @@ export function validateEbookDocuments(documents: ContentDocument[]): Validation
 		}
 		if (ids.has(result.data.id)) issues.push(createIssue('error', 'ebook-id-duplicate', document.relativePath, `重复书目 id：${result.data.id}`));
 		ids.add(result.data.id);
+		if (registry) {
+			const message = ebookClassificationIssue(result.data, registry);
+			if (message) issues.push(createIssue('error', 'ebook-classification', document.relativePath, message));
+		}
 	}
 	return issues;
 }

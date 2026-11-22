@@ -25,6 +25,158 @@
           "access": "public"
         }
       ]
+    },
+    {
+      "clcCode": "R32",
+      "clcName": "人体形态学",
+      "books": [
+        {
+          "id": "WEISER78b6cff09041",
+          "title": "人体简史",
+          "authors": [
+            "比尔·布莱森"
+          ],
+          "authorStatus": "verified",
+          "description": "人体简史，人体形态学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/R/R32/WEISER78b6cff09041.epub",
+              "bytes": 3088525
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/c765dd07f501a38b49826f42759658590c44106dd0c20f18a80736acde4fe68f.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "R222.3",
+      "clcName": "金匮要略",
+      "books": [
+        {
+          "id": "WEISER8413b863fed0",
+          "title": "金匮要略（新世纪第4版）",
+          "authors": [
+            "范永升"
+          ],
+          "authorStatus": "verified",
+          "description": "金匮要略（新世纪第4版），金匮要略相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/R/R222.3/WEISER8413b863fed0.pdf",
+              "bytes": 50658697
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/3a7c4c051d49d4f0a80f5d14c4f3ef34bd86300b838638b7dc1041922de4fe5d.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "R242",
+      "clcName": "中医治疗学",
+      "books": [
+        {
+          "id": "WEISER426256be5cb5",
+          "title": "滋阴论",
+          "authors": [
+            "章真如"
+          ],
+          "authorStatus": "verified",
+          "description": "滋阴论，中医治疗学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/R/R242/WEISER426256be5cb5.pdf",
+              "bytes": 1197957
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/cecf04fa2b66feda93caa60101e1c0819bb433f0b4cb6385ba7fb332ee4d4db3.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "R255.8",
+      "clcName": "痰饮",
+      "books": [
+        {
+          "id": "WEISER7b866bf26bfd",
+          "title": "痰证论（第2版）",
+          "authors": [
+            "张德英"
+          ],
+          "authorStatus": "verified",
+          "description": "痰证论（第2版），痰饮相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/R/R255.8/WEISER7b866bf26bfd.epub",
+              "bytes": 522019
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/837b2a5f6bc9a954f6b9abda8400212e38f5738a75b0c1e9f7a4304eebc7085b.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "R749",
+      "clcName": "精神病学",
+      "books": [
+        {
+          "id": "WEISER4c92b3165e06",
+          "title": "边缘性人格障碍的移情焦点治疗",
+          "authors": [
+            "John F. Clarkin",
+            "Frank E. Yeomans",
+            "Otto F. Kernberg"
+          ],
+          "authorStatus": "verified",
+          "description": "边缘性人格障碍的移情焦点治疗，精神病学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/R/R749/WEISER4c92b3165e06.pdf",
+              "bytes": 22139775
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/f5d345239bea55915a1d495b507f3fac62d4cd1ea04ea6a70ef2788c09bb397f.webp"
+        },
+        {
+          "id": "WEISER9b0dff2cc58d",
+          "title": "存在主义心理治疗",
+          "authors": [
+            "欧文·D·亚隆"
+          ],
+          "authorStatus": "verified",
+          "description": "存在主义心理治疗，精神病学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/R/R749/WEISER9b0dff2cc58d.epub",
+              "bytes": 651410
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/0176bc3f309032c6e2e9d476a9f5b364d0860544628719642cb8e0832d5c72e4.webp"
+        }
+      ]
     }
   ]
 }

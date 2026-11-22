@@ -154,6 +154,46 @@
           "publisher": "浙江人民出版社",
           "publishedAt": "2026-11-14",
           "access": "public"
+        },
+        {
+          "id": "WEISER5a4ec0c2dcff",
+          "title": "互动仪式链",
+          "authors": [
+            "兰德尔·柯林斯"
+          ],
+          "authorStatus": "verified",
+          "description": "互动仪式链，社会学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/C/C91/WEISER5a4ec0c2dcff.epub",
+              "bytes": 2279475
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/4ee5b8a602bfcae986a4e8d155344383e2df9c00c0b801a6194a417ec7d6d7e3.webp"
+        },
+        {
+          "id": "WEISER2df57e01cb1e",
+          "title": "宫廷社会：关于君主制和宫廷贵族制的社会学研究",
+          "authors": [
+            "诺贝特·埃利亚斯"
+          ],
+          "authorStatus": "verified",
+          "description": "宫廷社会：关于君主制和宫廷贵族制的社会学研究，社会学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/C/C91/WEISER2df57e01cb1e.epub",
+              "bytes": 690883
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d1b930c1db3d79d79c62ef343d9fccbda30fcfa0b699abdccebcce8948497993.webp"
         }
       ]
     },
@@ -286,6 +326,106 @@
           "language": "zh",
           "publisher": "上海文艺出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISER5bd2bfa8a576",
+          "title": "礼物：古式社会中交换的形式与理由",
+          "authors": [
+            "马塞尔·莫斯"
+          ],
+          "authorStatus": "verified",
+          "description": "礼物：古式社会中交换的形式与理由，文化人类学、社会人类学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/C/C912.4/WEISER5bd2bfa8a576.pdf",
+              "bytes": 36375499
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b3c74246ba4842fa1e249ab660539596dcdf9450c41fdf93824455b9d04bc505.webp"
+        },
+        {
+          "id": "WEISER360b6153e26d",
+          "title": "仪式过程：结构与反结构",
+          "authors": [
+            "维克多·特纳"
+          ],
+          "authorStatus": "verified",
+          "description": "仪式过程：结构与反结构，文化人类学、社会人类学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/C/C912.4/WEISER360b6153e26d.epub",
+              "bytes": 2550974
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/cae028ff88722a2a72365c98a901e2e95e7ea71955b284d0f8dce5a7c6af4040.webp"
+        },
+        {
+          "id": "WEISERfa9ddf1ea371",
+          "title": "文明的进程",
+          "authors": [
+            "诺贝特·埃利亚斯"
+          ],
+          "authorStatus": "verified",
+          "description": "文明的进程，文化人类学、社会人类学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/C/C912.4/WEISERfa9ddf1ea371.epub",
+              "bytes": 773112
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9a8f89915ee42c9ae8b1dd05a50d0e6ec0a62adf89e04f11939019d4727ac308.webp"
+        },
+        {
+          "id": "WEISER0d787f5b39fb",
+          "title": "洁净与危险",
+          "authors": [
+            "玛丽·道格拉斯"
+          ],
+          "authorStatus": "verified",
+          "description": "洁净与危险，文化人类学、社会人类学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/C/C912.4/WEISER0d787f5b39fb.pdf",
+              "bytes": 8810424
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/22f2b292d16eeecc5332dcaf871b3728cf270b5d268b3731f9c24c85e289f818.webp"
+        },
+        {
+          "id": "WEISER68c393cabe4b",
+          "title": "甜与权力：糖在近代历史上的地位",
+          "authors": [
+            "西敏司"
+          ],
+          "authorStatus": "verified",
+          "description": "甜与权力：糖在近代历史上的地位，文化人类学、社会人类学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/C/C912.4/WEISER68c393cabe4b.epub",
+              "bytes": 371109
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/bd7cc5200ad1ad60ee40464f497fa2d0d686d4e81478dbd3880a63d2c6f37018.webp"
         }
       ]
     },
@@ -377,6 +517,32 @@
       ]
     },
     {
+      "clcCode": "C913.1",
+      "clcName": "恋爱、家庭、婚姻",
+      "books": [
+        {
+          "id": "WEISER37cb77beb475",
+          "title": "如何让你爱的人爱上你",
+          "authors": [
+            "莉尔·朗兹"
+          ],
+          "authorStatus": "verified",
+          "description": "如何让你爱的人爱上你，恋爱、家庭、婚姻相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B84/WEISER37cb77beb475.pdf",
+              "bytes": 12717135
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/22830ca0c425b44f6b163b88a5a149597166bccb875b603d89bd31d84be24f5c.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "C913.2",
       "clcName": "职业",
       "books": [
@@ -400,6 +566,46 @@
           "language": "zh",
           "publisher": "中信出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISER2b20812817b6",
+          "title": "优秀到不能被忽视",
+          "authors": [
+            "卡尔·纽波特"
+          ],
+          "authorStatus": "verified",
+          "description": "优秀到不能被忽视，职业相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/C/C913.2/WEISER2b20812817b6.epub",
+              "bytes": 3507364
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/df717539b7d1c17f78cfa455d85f2347f56b7dbe7d621e8336b03906b66c90ba.webp"
+        },
+        {
+          "id": "WEISER5466ceede079",
+          "title": "你的降落伞是什么颜色？",
+          "authors": [
+            "理查德·尼尔森·鲍利斯"
+          ],
+          "authorStatus": "verified",
+          "description": "你的降落伞是什么颜色？，职业相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/C/C913.2/WEISER5466ceede079.epub",
+              "bytes": 7950189
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/3b6a3e28e8c61138be71f7f20d6f83e93caec3dd2cf7fc3efefe5c163cca773e.webp"
         }
       ]
     },
@@ -599,6 +805,32 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/7c997517f233ac3f57483521b942143e2de2807e1151eb03425475296233e7ce.webp",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "C936",
+      "clcName": "管理组织学",
+      "books": [
+        {
+          "id": "WEISERc249e23f46fc",
+          "title": "管理行为（原书第4版）",
+          "authors": [
+            "赫伯特·A.西蒙"
+          ],
+          "authorStatus": "verified",
+          "description": "管理行为（原书第4版），管理组织学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/C/C936/WEISERc249e23f46fc.pdf",
+              "bytes": 61972981
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/4c2436f13676e35fdd9676fdf9adfd99a850b8e66b4e7d1de80008d181b8326f.webp"
         }
       ]
     }

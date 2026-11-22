@@ -2,6 +2,58 @@
   "category": "G",
   "booklists": [
     {
+      "clcCode": "G02",
+      "clcName": "文化哲学",
+      "books": [
+        {
+          "id": "WEISERca1d3570c5bb",
+          "title": "人论",
+          "authors": [
+            "恩斯特·卡西尔"
+          ],
+          "authorStatus": "verified",
+          "description": "人论，文化哲学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B516/WEISERca1d3570c5bb.pdf",
+              "bytes": 1683107
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/c285e71dffaa0838c0edef0c38524e825b23642267e06a1aa8ce11544d4b7e13.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "G201",
+      "clcName": "信息理论",
+      "books": [
+        {
+          "id": "WEISER61048cf588c3",
+          "title": "信息简史",
+          "authors": [
+            "詹姆斯·格雷克"
+          ],
+          "authorStatus": "verified",
+          "description": "信息简史，信息理论相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/G/G201/WEISER61048cf588c3.epub",
+              "bytes": 3329022
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/09599363a6a9034e0f8d32cec6722754d46e7d82a2082b0784307510f64eb571.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "G206",
       "clcName": "传播学",
       "books": [
@@ -44,6 +96,32 @@
           "language": "zh",
           "publisher": "中信出版集团",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "G642.0",
+      "clcName": "教学研究与改革",
+      "books": [
+        {
+          "id": "WEISER049b392a0978",
+          "title": "培养人性：从古典学角度为通识教育改革辩护",
+          "authors": [
+            "玛莎·纳斯鲍姆"
+          ],
+          "authorStatus": "verified",
+          "description": "培养人性：从古典学角度为通识教育改革辩护，教学研究与改革相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/G/G640/WEISER049b392a0978.pdf",
+              "bytes": 102492161
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/f99439c205e5180d5e4e8028a1d93b4fd918d20f50fdb3528146a269242db472.webp"
         }
       ]
     },

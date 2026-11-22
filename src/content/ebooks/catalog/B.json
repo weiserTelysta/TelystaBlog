@@ -220,6 +220,32 @@
       ]
     },
     {
+      "clcCode": "B5",
+      "clcName": "欧洲哲学",
+      "books": [
+        {
+          "id": "WEISER1ad0e297c468",
+          "title": "西方人文主义传统",
+          "authors": [
+            "阿伦·布洛克"
+          ],
+          "authorStatus": "verified",
+          "description": "西方人文主义传统，欧洲哲学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B505/WEISER1ad0e297c468.pdf",
+              "bytes": 65630059
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/03461e02587c145afaa091ab045f8bf8589722b0a5af2649fd38e36a8e4c88a3.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "B22",
       "clcName": "先秦哲学",
       "books": [
@@ -411,6 +437,26 @@
           "language": "zh-CN",
           "publisher": "商务印书馆",
           "access": "public"
+        },
+        {
+          "id": "WEISERaac564353790",
+          "title": "论证的使用（修订版）",
+          "authors": [
+            "斯蒂芬·图尔敏"
+          ],
+          "authorStatus": "verified",
+          "description": "论证的使用（修订版），逻辑学(论理学)相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B81/WEISERaac564353790.pdf",
+              "bytes": 64807308
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d9c64e7522d4588890851f814fa357cd09b01d7b08ad652eb6d6d8820b558b4e.webp"
         }
       ]
     },
@@ -992,6 +1038,66 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/9f84f14ea4161591454bcb7d2229c4ed6178d30486df6242e0017c45f973a6a7.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER782108bf73d9",
+          "title": "弗洛伊德文集：癔症研究",
+          "authors": [
+            "西格蒙德·弗洛伊德"
+          ],
+          "authorStatus": "verified",
+          "description": "弗洛伊德文集：癔症研究，心理学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B84/WEISER782108bf73d9.pdf",
+              "bytes": 12650622
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/8be9bb03ceb59114866161348da59668f39b890b8ece6555392fb7723d753de1.webp"
+        },
+        {
+          "id": "WEISER7a71c9db53db",
+          "title": "徐钧自体心理学入门",
+          "authors": [
+            "徐钧"
+          ],
+          "authorStatus": "verified",
+          "description": "徐钧自体心理学入门，心理学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B84/WEISER7a71c9db53db.pdf",
+              "bytes": 4451679
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/169bed93923c60a07c7ce603553305c6b59c544eb7c2d51a1e14ea68c774e7ab.webp"
+        },
+        {
+          "id": "WEISER330898b39cc3",
+          "title": "性学三论与论潜意识",
+          "authors": [
+            "西格蒙德·弗洛伊德"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "性学三论与论潜意识，心理学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B84/WEISER330898b39cc3.pdf",
+              "bytes": 37528410
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/5e41f3d2cff3afbf55f375675c3111df900ed33cc5214bced0183df4b6e08fc5.webp"
         }
       ]
     },
@@ -1568,6 +1674,46 @@
           "translator": "星宿老师",
           "language": "zh",
           "access": "public"
+        },
+        {
+          "id": "WEISER2f4e74ef8e83",
+          "title": "特里特米乌斯的水晶召灵术：原文与评述",
+          "authors": [
+            "Johannes Trithemius（托名）"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "特里特米乌斯的水晶召灵术：原文与评述，术数、迷信相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B99/WEISER2f4e74ef8e83.pdf",
+              "bytes": 13251337
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/7048a4ed2128a1fef85278cf1021838043719f3e9baadb98b67c74d053071b68.webp"
+        },
+        {
+          "id": "WEISER5f87a7a1b63d",
+          "title": "卜卦占星（2.0版）",
+          "authors": [
+            "John Frawley"
+          ],
+          "authorStatus": "verified",
+          "description": "卜卦占星（2.0版），术数、迷信相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B99/WEISER5f87a7a1b63d.pdf",
+              "bytes": 7539794
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/e99a5684a50a6ef9f2b9215863edb54328877556528853f14db82e377b9dfb99.webp"
         }
       ]
     },
@@ -1788,6 +1934,26 @@
           "language": "zh",
           "publisher": "商务印书馆",
           "access": "public"
+        },
+        {
+          "id": "WEISER8e1e20f48362",
+          "title": "哲学的慰藉",
+          "authors": [
+            "波爱修斯"
+          ],
+          "authorStatus": "verified",
+          "description": "哲学的慰藉，古代哲学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B/B502/WEISER8e1e20f48362.epub",
+              "bytes": 623210
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/15de8da9e10788c9f98ecac069143b2d0304811d8cf5db1fa17c7e97b13e2e15.webp"
         }
       ]
     },
@@ -1814,6 +1980,52 @@
           "cover": "https://library-files.telysta.com/covers/b448cc4e33d6e837e4fdc0b57051a430b588077dfbbd25434fb63fb15b08c39f.webp",
           "language": "zh",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "B504",
+      "clcName": "十七~十九世纪前期哲学",
+      "books": [
+        {
+          "id": "WEISER8e9f1b2d7a64",
+          "title": "启蒙时代：人的觉醒与现代秩序的诞生（全三册）",
+          "authors": [
+            "彼得·盖伊"
+          ],
+          "authorStatus": "verified",
+          "description": "启蒙时代：人的觉醒与现代秩序的诞生（全三册），十七~十九世纪前期哲学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B/B504/WEISER8e9f1b2d7a64.epub",
+              "bytes": 1988885
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/fbf58cdfcd74e57c80a64655f7b4ffd11d13ff6f5f722ee978817a766f809ccb.webp"
+        },
+        {
+          "id": "WEISER586a7f667657",
+          "title": "启蒙运动与现代性",
+          "authors": [
+            "詹姆斯·施密特"
+          ],
+          "authorStatus": "verified",
+          "description": "启蒙运动与现代性，十七~十九世纪前期哲学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B504/WEISER586a7f667657.pdf",
+              "bytes": 80034775
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/fc85cf52fdaa5bd8135fc1ff49801e8b0e34961e172905133a850582a7e1525d.webp"
         }
       ]
     },
@@ -2064,6 +2276,32 @@
       ]
     },
     {
+      "clcCode": "B546",
+      "clcName": "意大利哲学",
+      "books": [
+        {
+          "id": "WEISER3be54e9b12a6",
+          "title": "意大利人文主义",
+          "authors": [
+            "欧金尼奥·加林"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "意大利人文主义，意大利哲学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B546/WEISER3be54e9b12a6.pdf",
+              "bytes": 9119049
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/8769ed4935f2a5c8c3ea96c404e6781cb7cf9aa6478ecb7413ada2262eb00d78.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "B555",
       "clcName": "东欧哲学",
       "books": [
@@ -2193,6 +2431,26 @@
           "language": "zh",
           "publisher": "商务印书馆",
           "access": "public"
+        },
+        {
+          "id": "WEISER9c5ced2a3e8c",
+          "title": "人类理解论（上、下册）",
+          "authors": [
+            "约翰·洛克"
+          ],
+          "authorStatus": "verified",
+          "description": "人类理解论（上、下册），英国哲学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B/B561/WEISER9c5ced2a3e8c.epub",
+              "bytes": 1106797
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9dcf5a3f6380298850919a77c72c042215adc3323feb056e3e6c0942215da57c.webp"
         }
       ]
     },
@@ -2219,6 +2477,26 @@
           "cover": "https://library-files.telysta.com/covers/566c3c34ceb64962cdf4dff0310bc9172f96b2607200e190a6a6aa814a33ad01.webp",
           "language": "zh-CN",
           "access": "public"
+        },
+        {
+          "id": "WEISERb6a4ecaacee6",
+          "title": "神、人及其幸福简论",
+          "authors": [
+            "斯宾诺莎"
+          ],
+          "authorStatus": "verified",
+          "description": "神、人及其幸福简论，荷兰哲学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B563/WEISERb6a4ecaacee6.pdf",
+              "bytes": 16082169
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/42530780ce5054a7450e1131409dbbb33ff0dac5e8612f2413f28e197e765d8b.webp"
         }
       ]
     },
@@ -2452,6 +2730,52 @@
       ]
     },
     {
+      "clcCode": "B920",
+      "clcName": "宗教理论、宗教思想",
+      "books": [
+        {
+          "id": "WEISER5307237f9955",
+          "title": "宗教生活的基本形式",
+          "authors": [
+            "爱弥尔·涂尔干"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "宗教生活的基本形式，宗教理论、宗教思想相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/B/B920/WEISER5307237f9955.epub",
+              "bytes": 732665
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b78759a2d4a1b46f08ab0d307df2b52936b7d64a8678a6b3449179d914b172a5.webp"
+        },
+        {
+          "id": "WEISERb02081cf99e0",
+          "title": "神圣与世俗",
+          "authors": [
+            "米尔恰·伊利亚德"
+          ],
+          "authorStatus": "verified",
+          "description": "神圣与世俗，宗教理论、宗教思想相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B920/WEISERb02081cf99e0.pdf",
+              "bytes": 7525790
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/eff6427253662c351d1a9f6e1de0416341e04e7c1aff45a933cb17bef84b106b.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "B932",
       "clcName": "神话研究",
       "books": [
@@ -2515,6 +2839,46 @@
           "language": "en",
           "publisher": "商务印书馆2016",
           "access": "public"
+        },
+        {
+          "id": "WEISERfcd93a49af9b",
+          "title": "波斯神话",
+          "authors": [
+            "鲍志平"
+          ],
+          "authorStatus": "verified",
+          "description": "波斯神话，神话相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I373/WEISERfcd93a49af9b.pdf",
+              "bytes": 14106178
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/f780787406a6ef6e59154c4f5ffb528f98d11830feb2b721dac8a87c62a285f0.webp"
+        },
+        {
+          "id": "WEISER0c464fb13ac9",
+          "title": "The Origin of the Gods: A Psychoanalytic Study of Greek Theogonic Myth",
+          "authors": [
+            "Richard Caldwell"
+          ],
+          "authorStatus": "verified",
+          "description": "The Origin of the Gods: A Psychoanalytic Study of Greek Theogonic Myth，神话相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B932/WEISER0c464fb13ac9.pdf",
+              "bytes": 10273161
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/dde7b53363e3fd5dfb50f8e2aa38fd73b5c7a2320d6bdbeba02d6ac53ef186cc.webp"
         }
       ]
     },

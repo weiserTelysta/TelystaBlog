@@ -29,6 +29,8 @@
 
 `/ebooks/clc/K/`是大类入口，`/ebooks/booklists/K27/`是细类入口。包含斜杠的类号只在URL转为连字符，数据保留原码。分类依据见[CLC参考](../.agents/skills/telysta-library-ingest/references/clc.md)，字段与继承规则见[JSON维护](../.agents/skills/telysta-library-ingest/references/catalog-json.md)。
 
+类号、规范名称、历史别名和依据集中在 [`data/library/clc-mappings.json`](../data/library/clc-mappings.json)。新增分类先核实书内题名／版权页、目录与可信馆藏，再更新登记和对应分类JSON；不能仅按文件夹、作者国籍或格式归类。`reference-checked`与`legacy-label`分别表示已对照的分类与仍待复查的历史标签。中图法细类深度不必一致，不能为了导航齐整而抹掉已有细类。
+
 ## 访问与阅览
 
 `draft`默认true，控制是否发布；`access: public|protected`控制权限；`categoryOnly`仅控制发现位置。三者独立。匿名索引和静态HTML不含受保护完整资料，只有通用占位；完整资料在忽略于Git的 `.library-private/catalog/`。访问状态使用：
@@ -37,7 +39,7 @@
 npm run library:access -- --id WEISERxxxxxxxxxxxx --access protected
 ```
 
-普通账户只能浏览公开内容；正式／超级／管理员可以展示、下载和阅览受保护内容。首页头像进入 `/console/`，原公共密码锁由[账户系统](console.md)替代。受保护条目在授权后可参与全部藏书、分类、Booklist与搜索。
+超级管理员始终可展示、下载和阅览受保护内容；其他账户需要独立的`restricted_access`授权，成为正式用户或超级用户不会自动取得该权限。首页头像进入 `/console/`，原公共密码锁由[账户系统](console.md)替代。受保护条目在授权后可参与全部藏书、分类、Booklist与搜索。
 
 PDF在新标签页使用浏览器查看器并保留Range。EPUB／MOBI／AZW3按需载入整窗阅读器，宽屏双页、窄屏单页，支持点击左右半区、键盘和滚轮翻页。目录停靠侧边，关闭头固定；手机外部点击及Escape关闭。书内HTML清理、CSP及无脚本iframe同时启用，正文不在书架预加载。退出登录会清除页面中的受保护内容并停止阅览，服务器仍独立检查每次文件请求。
 
@@ -51,4 +53,4 @@ PDF在新标签页使用浏览器查看器并保留Range。EPUB／MOBI／AZW3按
 
 ## 检查
 
-`npm run content:check`检查书目schema、重复ID、日期、格式与路径；`npm run check`完成类型、单元和生产构建。构建不扫描远端桶。真实链接、权限和Range需另验。运行时测试位于 `workers/library-gateway/tests/`；桌面／手机和账户阅览回归位于 `tests/browser/`。
+`npm run content:check`检查书目schema、重复ID、日期、格式、路径以及分类登记／类号与名称一致性；已核对分类必须提供来源，缺少登记表会停止书室构建。`npm run check`完成类型、单元和生产构建。构建不扫描远端桶。真实链接、权限和Range需另验。运行时测试位于 `workers/library-gateway/tests/`；桌面／手机和账户阅览回归位于 `tests/browser/`。

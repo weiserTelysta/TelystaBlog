@@ -1,0 +1,31 @@
+{
+  "category": "X",
+  "booklists": [
+    {
+      "clcCode": "X956",
+      "clcName": "生活安全",
+      "books": [
+        {
+          "id": "WEISERc7e7d350df42",
+          "title": "特工训练手册：危急时刻如何绝处逢生",
+          "authors": [
+            "克林特·埃默森"
+          ],
+          "authorStatus": "verified",
+          "description": "特工训练手册：危急时刻如何绝处逢生，生活安全相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/X/X956/WEISERc7e7d350df42.pdf",
+              "bytes": 53684205
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d7808a2e40601ce620eb7b56c366b7c8797513440bba8df1ac287b4e5edbe089.webp"
+        }
+      ]
+    }
+  ]
+}

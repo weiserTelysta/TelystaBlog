@@ -753,6 +753,81 @@
           "cover": "https://library-files.telysta.com/covers/d7e5ee0e70ab011f78c35a4ef3bf16215515a2979cc287a88cd21ab21944fccf.webp",
           "language": "zh-CN",
           "access": "public"
+        },
+        {
+          "id": "WEISERce446a65aed3",
+          "title": "施法者大典",
+          "authors": [
+            "奇罗伊·A·多格雷特",
+            "奥莉亚·斯科塔亚",
+            "丹吉洛·拉恩·哲劳尼",
+            "奥列格·W·伊戈尔"
+          ],
+          "authorStatus": "verified",
+          "description": "施法者大典，中国文学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I2/WEISERce446a65aed3.pdf",
+              "bytes": 762210
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/59c0abc1f37e54c902bb51ecdd87a9ec5f2b894045f474854d4b225c1eabdc27.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "I04",
+      "clcName": "文学创作论",
+      "books": [
+        {
+          "id": "WEISERc84679331427",
+          "title": "对白：文字、舞台、银幕的言语行为艺术",
+          "authors": [
+            "罗伯特·麦基"
+          ],
+          "authorStatus": "verified",
+          "description": "对白：文字、舞台、银幕的言语行为艺术，文学创作论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I04/WEISERc84679331427.pdf",
+              "bytes": 41528495
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/c5f7ea631df35bcd97ad56e556b830a323cff0a0177959c597137a182144adf7.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "I17",
+      "clcName": "民间文学集",
+      "books": [
+        {
+          "id": "WEISER6311148c5a0d",
+          "title": "世界神话大全",
+          "authors": [
+            "唐纳·罗森伯格"
+          ],
+          "authorStatus": "verified",
+          "description": "世界神话大全，民间文学集相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I17/WEISER6311148c5a0d.pdf",
+              "bytes": 31207712
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/66f2fe1ebf82de056f6dd7f73b32aa14fc3f9e76ee703f09830f3e1e3d3f45a5.webp"
         }
       ]
     },
@@ -866,6 +941,146 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/ac472989f95af82dc823bd71f4de2ed6470b6e2fc3a8bd71655c4379fa2ba00f.webp",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "I053.5",
+      "clcName": "电影剧本、电视剧本、广播剧本",
+      "books": [
+        {
+          "id": "WEISER4f15bf9e81a7",
+          "title": "剧本：影视写作的艺术、技巧和商业运作",
+          "authors": [
+            "理查德·沃尔特"
+          ],
+          "authorStatus": "verified",
+          "description": "剧本：影视写作的艺术、技巧和商业运作，电影剧本、电视剧本、广播剧本相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I053.5/WEISER4f15bf9e81a7.pdf",
+              "bytes": 4686768
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/22ec279f7374099a74c65f8ed15603eb9de38d0b78ba38f635349caa0a5d1148.webp"
+        },
+        {
+          "id": "WEISER7fb570734db1",
+          "title": "电影剧本写作基础",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "电影剧本写作基础，电影剧本、电视剧本、广播剧本相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I053.5/WEISER7fb570734db1.pdf",
+              "bytes": 955487
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/81ae02e2c5b0a031952354b0265a76193dadd043a52b634076aaecdf2be26c02.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
+      "clcCode": "I054",
+      "clcName": "小说",
+      "books": [
+        {
+          "id": "WEISER200568386060",
+          "title": "卜洛克的小说学堂",
+          "authors": [
+            "劳伦斯·卜洛克"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "卜洛克的小说学堂，小说相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I054/WEISER200568386060.pdf",
+              "bytes": 13835449
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/5af791904535d6581b883e14380a5342332d1e16234fe86ea7c31b7d1da6f133.webp"
+        },
+        {
+          "id": "WEISER6fabe3094ad4",
+          "title": "情节！情节！通过人物、悬念与冲突赋予故事生命力",
+          "authors": [
+            "诺亚·卢克曼"
+          ],
+          "authorStatus": "verified",
+          "description": "情节！情节！通过人物、悬念与冲突赋予故事生命力，小说相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I054/WEISER6fabe3094ad4.pdf",
+              "bytes": 8252644
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/96b249590f5f4982e9e0ea952747a4f1253c99620b4a0599f6a7defa6a86157c.webp"
+        },
+        {
+          "id": "WEISERdb65c35b1e5d",
+          "title": "短篇小说写作指南",
+          "authors": [
+            "狄克森",
+            "司麦斯"
+          ],
+          "authorStatus": "verified",
+          "description": "短篇小说写作指南，小说相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I054/WEISERdb65c35b1e5d.pdf",
+              "bytes": 10728445
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/71db2b01370c85c2c4f3c929b06c74b2c79751c6a0b2b64cbe62eb690060ad2d.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "I109.31",
+      "clcName": "文艺复兴时期文学史",
+      "books": [
+        {
+          "id": "WEISERfaf790f9b81b",
+          "title": "文艺复兴时期的思想与艺术",
+          "authors": [
+            "保罗·奥斯卡·克里斯特勒"
+          ],
+          "authorStatus": "verified",
+          "description": "文艺复兴时期的思想与艺术，文艺复兴时期文学史相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/B/B503/WEISERfaf790f9b81b.pdf",
+              "bytes": 84517998
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d6f7ccaf9bf72ec3aaa4cc985265060b88d1b3087a623823ae1bc20efd819f09.webp"
         }
       ]
     },
@@ -999,6 +1214,26 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/7f54aa81eec34efb10116efb36fe348c4bd7aacb0ed0468ff0585286fbc822e4.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER4b41099f5c6c",
+          "title": "管锥编（全1—4卷）",
+          "authors": [
+            "錢鍾書"
+          ],
+          "authorStatus": "verified",
+          "description": "管锥编（全1—4卷），各体文学评论和研究相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I207/WEISER4b41099f5c6c.pdf",
+              "bytes": 21025089
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/1a644d5eec124080f16e9423784771283e491966ac429614324550d77c9e06ff.webp"
         }
       ]
     },
@@ -1647,6 +1882,78 @@
       ]
     },
     {
+      "clcCode": "I264",
+      "clcName": "明清散文",
+      "books": [
+        {
+          "id": "WEISER5721119d69bf",
+          "title": "陶庵梦忆；西湖梦寻",
+          "authors": [
+            "张岱"
+          ],
+          "authorStatus": "verified",
+          "description": "陶庵梦忆；西湖梦寻，明清散文相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I264/WEISER5721119d69bf.epub",
+              "bytes": 4868013
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b4acd23d6c625e17b7aa2c0ad1575308c10a7e77b2fce826fd518e4d039bdc14.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "I266",
+      "clcName": "现代作品（1919~1949 年）",
+      "books": [
+        {
+          "id": "WEISER460b2e038a4c",
+          "title": "湘行散记",
+          "authors": [
+            "沈从文"
+          ],
+          "authorStatus": "verified",
+          "description": "湘行散记，现代作品（1919~1949 年）相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I266/WEISER460b2e038a4c.epub",
+              "bytes": 1379623
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9d9bf319757106e5d96c0888f8c99e4cbf9f6f316a2e7c3c0f52411655d40329.webp"
+        },
+        {
+          "id": "WEISERfee251832a96",
+          "title": "画梦录",
+          "authors": [
+            "何其芳"
+          ],
+          "authorStatus": "verified",
+          "description": "画梦录，现代作品（1919~1949 年）相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I266/WEISERfee251832a96.pdf",
+              "bytes": 2195752
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/e6e69e26726c3568a37e2d14ea3e9d11458ae0a5fc0e546094babbb044d718cf.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "I267",
       "clcName": "当代散文",
       "books": [
@@ -1670,6 +1977,46 @@
           "language": "zh-CN",
           "publisher": "北京十月文艺出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISER2bc94f8bf648",
+          "title": "一个人的村庄",
+          "authors": [
+            "刘亮程"
+          ],
+          "authorStatus": "verified",
+          "description": "一个人的村庄，当代作品（1949 年~）相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I267/WEISER2bc94f8bf648.epub",
+              "bytes": 5775165
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/61f21527d3d3ac0467d6d9d1bc2090cf254c94d6c1736e708136e3c153a437ab.webp"
+        },
+        {
+          "id": "WEISERc73af33f6282",
+          "title": "蒲桥集",
+          "authors": [
+            "汪曾祺"
+          ],
+          "authorStatus": "verified",
+          "description": "蒲桥集，当代作品（1949 年~）相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I267/WEISERc73af33f6282.epub",
+              "bytes": 298598
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/20b1a5a3d5b63c67f42dbccfd2f44578f21fbc0a2b766aa7ede45fee1ebb7fde.webp"
         }
       ]
     },
@@ -1799,6 +2146,312 @@
           "language": "zh-cn",
           "publisher": "人民文学出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISERdb50c6146e3e",
+          "title": "超时空辉夜姬！",
+          "authors": [
+            "桐山なると"
+          ],
+          "authorStatus": "verified",
+          "description": "超时空辉夜姬！，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISERdb50c6146e3e.epub",
+              "bytes": 4850647
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b4eacfe03aa7f151f8196ba24e33a90a6d3448775a2e03d6c9d43c0649ef61fe.webp"
+        },
+        {
+          "id": "WEISERe92bb880e585",
+          "title": "世界の終わりの世界録 01：再来の騎士",
+          "authors": [
+            "細音啓"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "世界の終わりの世界録 01：再来の騎士，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISERe92bb880e585.epub",
+              "bytes": 9247860
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/5eaaaead0defaadcaac8db89bafa31372177ba352587c45ed3139bd18d474cc3.webp"
+        },
+        {
+          "id": "WEISERe4d270789721",
+          "title": "你与我最后的战场，亦或是世界起始的圣战 5",
+          "authors": [
+            "细音启"
+          ],
+          "authorStatus": "verified",
+          "description": "你与我最后的战场，亦或是世界起始的圣战 5，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISERe4d270789721.epub",
+              "bytes": 3903754
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/f1b3cd88f8d5d4cdc7488aef7f7f281404b46808313341a742e800ed9398c8b3.webp"
+        },
+        {
+          "id": "WEISER3be52ce7b711",
+          "title": "你与我最后的战场，亦或是世界起始的圣战 2",
+          "authors": [
+            "细音启"
+          ],
+          "authorStatus": "verified",
+          "description": "你与我最后的战场，亦或是世界起始的圣战 2，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISER3be52ce7b711.epub",
+              "bytes": 4103396
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/ad6fdbf60c80b85cf3ddd8fd64f5f71e96ce2df3e1d20eb43c59adac80ca9e31.webp"
+        },
+        {
+          "id": "WEISER532c112aa517",
+          "title": "你与我最后的战场，亦或是世界起始的圣战 3",
+          "authors": [
+            "细音启"
+          ],
+          "authorStatus": "verified",
+          "description": "你与我最后的战场，亦或是世界起始的圣战 3，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISER532c112aa517.epub",
+              "bytes": 4147725
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d7ec9ef408bda6db3369efeb4e3e464a86fb21361333d3bb001a03f9e563c6cc.webp"
+        },
+        {
+          "id": "WEISERb2f497d8a09d",
+          "title": "你与我最后的战场，亦或是世界起始的圣战 1",
+          "authors": [
+            "细音启"
+          ],
+          "authorStatus": "verified",
+          "description": "你与我最后的战场，亦或是世界起始的圣战 1，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISERb2f497d8a09d.epub",
+              "bytes": 5490272
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/31318aa6ead7ad6084c86214691cc71876dcacb8da80b0575953e158323a96e8.webp"
+        },
+        {
+          "id": "WEISER86650ca28a0c",
+          "title": "你与我最后的战场，亦或是世界起始的圣战 4",
+          "authors": [
+            "细音启"
+          ],
+          "authorStatus": "verified",
+          "description": "你与我最后的战场，亦或是世界起始的圣战 4，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISER86650ca28a0c.epub",
+              "bytes": 5007996
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/5444e2d1128d9dd10d1c56fb87ecd73c365f4ad4ba52bc38e1ba2c9e3d0fbe84.webp"
+        },
+        {
+          "id": "WEISER77879d12d782",
+          "title": "你与我最后的战场，亦或是世界起始的圣战 7",
+          "authors": [
+            "细音启"
+          ],
+          "authorStatus": "verified",
+          "description": "你与我最后的战场，亦或是世界起始的圣战 7，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISER77879d12d782.epub",
+              "bytes": 4090845
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/acb0ae1180ef3763459593d659c36f1024e8a333eb1e4aefb28cfa8c9eaafa63.webp"
+        },
+        {
+          "id": "WEISER81825223b2f4",
+          "title": "你与我最后的战场，亦或是世界起始的圣战 6",
+          "authors": [
+            "细音启"
+          ],
+          "authorStatus": "verified",
+          "description": "你与我最后的战场，亦或是世界起始的圣战 6，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISER81825223b2f4.epub",
+              "bytes": 9212344
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/5e3fe5dc0ebc1adf6f41d9edd31059cca4c1a3e9ba68cb01978549f79c57bfa4.webp"
+        },
+        {
+          "id": "WEISER62b81a65d299",
+          "title": "新约·魔法禁书目录 20",
+          "authors": [
+            "镰池和马"
+          ],
+          "authorStatus": "verified",
+          "description": "新约·魔法禁书目录 20，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISER62b81a65d299.epub",
+              "bytes": 3641986
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/0fb9a04de886acaaa23704d09938c1433221ddc10db60619c40c6d6d24adcd6a.webp"
+        },
+        {
+          "id": "WEISER91eb809d2081",
+          "title": "杨花歌",
+          "authors": [
+            "青波杏"
+          ],
+          "authorStatus": "verified",
+          "description": "杨花歌，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISER91eb809d2081.epub",
+              "bytes": 5638978
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/945a446f7971de9da2104d9bcdddac902726773786bf287146682552afb9ad20.webp"
+        },
+        {
+          "id": "WEISER1296b2461a66",
+          "title": "来自新世界",
+          "authors": [
+            "贵志祐介"
+          ],
+          "authorStatus": "verified",
+          "description": "来自新世界，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISER1296b2461a66.epub",
+              "bytes": 568202
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/fb0001d3223e3a85f56ede80a61fe9f99b84dc741b4239e6b53f8cd817ff5518.webp"
+        },
+        {
+          "id": "WEISERb40b904afb71",
+          "title": "乙女游戏世界对路人角色太严厉（第1卷及短篇）",
+          "authors": [
+            "三嶋与夢"
+          ],
+          "authorStatus": "verified",
+          "description": "乙女游戏世界对路人角色太严厉（第1卷及短篇），日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISERb40b904afb71.epub",
+              "bytes": 35065429
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/1b04f04368de8233f43d9e1903b8256f99e456d338d4a03bdbdf8c8ecfafbd3f.webp"
+        },
+        {
+          "id": "WEISER5173523151ab",
+          "title": "阴翳礼赞",
+          "authors": [
+            "谷崎润一郎"
+          ],
+          "authorStatus": "verified",
+          "description": "阴翳礼赞，日本相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I313/WEISER5173523151ab.epub",
+              "bytes": 284217
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/91b25d8f2da7a1dff2638027009452028c99bde9966dfd463959ae50316fa093.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "I333",
+      "clcName": "越南文学",
+      "books": [
+        {
+          "id": "WEISER7e1d2bf434e3",
+          "title": "胡春香诗集",
+          "authors": [
+            "胡春香"
+          ],
+          "authorStatus": "verified",
+          "description": "胡春香诗集，越南文学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I333/WEISER7e1d2bf434e3.pdf",
+              "bytes": 17487790
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/824d994e73d92d21c0ef87454f19945976d9decb3923235f6afcfef87ddd197a.webp"
         }
       ]
     },
@@ -1911,6 +2564,32 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/e03e061a98bea565894a38ee39bd3a02a295152678891ce9cc425d9d8207058e.webp",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "I411",
+      "clcName": "埃及文学",
+      "books": [
+        {
+          "id": "WEISER5bc011885384",
+          "title": "Dispute of a Man with His Ba",
+          "authors": [
+            "佚名"
+          ],
+          "authorStatus": "anonymous",
+          "description": "Dispute of a Man with His Ba，埃及文学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I411/WEISER5bc011885384.pdf",
+              "bytes": 253529
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/1e7c8a572c56f19f1e92a8fec9bd938737c117c504810be801b37cbff68fa219.webp"
         }
       ]
     },
@@ -2303,6 +2982,52 @@
           "language": "zh-CN",
           "publisher": "上海译文出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISER4327b27ef36b",
+          "title": "奥斯特利茨",
+          "authors": [
+            "温弗里德·塞巴尔德"
+          ],
+          "authorStatus": "verified",
+          "description": "奥斯特利茨，德国相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I516/WEISER4327b27ef36b.epub",
+              "bytes": 9452467
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/2472afd8e715a6cbedde6dbc8db00fc7bef1363a4f1488636c98c808a7fdda32.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "I521",
+      "clcName": "奥地利文学",
+      "books": [
+        {
+          "id": "WEISERcb46a5aaa92f",
+          "title": "维吉尔之死",
+          "authors": [
+            "赫尔曼·布洛赫"
+          ],
+          "authorStatus": "verified",
+          "description": "维吉尔之死，奥地利文学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I521/WEISERcb46a5aaa92f.pdf",
+              "bytes": 4368232
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/e6035246523dffdfe010360ba77896b0aba5c161febad0358b4cc709d8006470.webp"
         }
       ]
     },
@@ -2417,6 +3142,46 @@
           "language": "zh",
           "publisher": "人民文学出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISER8b77c7fc1872",
+          "title": "豹：一个意大利家族的时代挽歌",
+          "authors": [
+            "朱塞佩·托马西·迪·兰佩杜萨"
+          ],
+          "authorStatus": "verified",
+          "description": "豹：一个意大利家族的时代挽歌，意大利文学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I546/WEISER8b77c7fc1872.epub",
+              "bytes": 559763
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/1ad20996d798f1d3fb437e78983b6f40471961a5f58490303601f8aee32541f3.webp"
+        },
+        {
+          "id": "WEISER106965691260",
+          "title": "鞑靼人沙漠",
+          "authors": [
+            "迪诺·布扎蒂"
+          ],
+          "authorStatus": "verified",
+          "description": "鞑靼人沙漠，意大利文学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I546/WEISER106965691260.epub",
+              "bytes": 361450
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/66e4637483f35d347e427c67bce0004aac187d7c11f345aeb09d4926a1c248e2.webp"
         }
       ]
     },
@@ -2942,6 +3707,26 @@
           "cover": "https://library-files.telysta.com/covers/333738545243725a5a1ca69b4bce2b421f8f4077a7238ccb01e814d6eecc85ef.webp",
           "language": "zh",
           "access": "public"
+        },
+        {
+          "id": "WEISERdb6d8d5cb7ba",
+          "title": "普通读者",
+          "authors": [
+            "弗吉尼亚·伍尔夫"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "普通读者，英国相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I561/WEISERdb6d8d5cb7ba.epub",
+              "bytes": 691437
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/c9bf767028bc4fe215fc9e85f863672011086e5b7f0aa5bd619810f8b059343c.webp"
         }
       ]
     },
@@ -3032,6 +3817,26 @@
           "language": "zh",
           "publisher": "人民文学出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISER9b9b348d2f20",
+          "title": "夺牛记",
+          "authors": [
+            "佚名"
+          ],
+          "authorStatus": "anonymous",
+          "description": "夺牛记，爱尔兰相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I562/WEISER9b9b348d2f20.pdf",
+              "bytes": 49625208
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/33f56ccc69035b4133833f467d0abb8da060622ee64fd54229a69617628fa41f.webp"
         }
       ]
     },
@@ -3308,6 +4113,46 @@
           "language": "zh",
           "publisher": "译林出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISER91f1593e65a5",
+          "title": "哈德良回忆录",
+          "authors": [
+            "玛格丽特·尤瑟纳尔"
+          ],
+          "authorStatus": "verified",
+          "description": "哈德良回忆录，法国相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I565/WEISER91f1593e65a5.epub",
+              "bytes": 14424504
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/c5c88322228858e41f18fc8b79229602bfbcd29b84d003ea8b9958a178a988a3.webp"
+        },
+        {
+          "id": "WEISERe9597bb44fcf",
+          "title": "蒙田随笔全集",
+          "authors": [
+            "米歇尔·德·蒙田"
+          ],
+          "authorStatus": "verified",
+          "description": "蒙田随笔全集，法国相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I565/WEISERe9597bb44fcf.epub",
+              "bytes": 2073960
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/5c128aa735af5fc319a62464c8c08b37d58643b81708f0a14f899675991e3da6.webp"
         }
       ]
     },
@@ -3631,6 +4476,72 @@
           "language": "zh",
           "publisher": "湖南文艺出版社",
           "access": "public"
+        },
+        {
+          "id": "WEISERe532fb9b5ba4",
+          "title": "银河帝国（1—15册合集）",
+          "authors": [
+            "艾萨克·阿西莫夫"
+          ],
+          "authorStatus": "verified",
+          "description": "银河帝国（1—15册合集），美国相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I712/WEISERe532fb9b5ba4.epub",
+              "bytes": 6979181
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/266a48ab700ce7040a6e3143822ec414d150ada1e4c65aa84e1e6066ccf55d11.webp"
+        },
+        {
+          "id": "WEISER36bb6128561e",
+          "title": "谋杀的简约之道：钱德勒散文书信集",
+          "authors": [
+            "雷蒙德·钱德勒"
+          ],
+          "authorStatus": "verified",
+          "description": "谋杀的简约之道：钱德勒散文书信集，美国相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/I/I712/WEISER36bb6128561e.pdf",
+              "bytes": 7757729
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/82f3490b2d5a8ef6e327ab059ca5de3bd2da4c4fd6e9a4898ee08c9b68df7a73.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "I731",
+      "clcName": "墨西哥文学",
+      "books": [
+        {
+          "id": "WEISER94710f5c5974",
+          "title": "佩德罗·巴拉莫",
+          "authors": [
+            "胡安·鲁尔福"
+          ],
+          "authorStatus": "verified",
+          "description": "佩德罗·巴拉莫，墨西哥文学相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/I/I731/WEISER94710f5c5974.epub",
+              "bytes": 261373
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/c2dfa4b9b6368bc49ca76ad820672787fbaf61703bc38eaf0a44025292b67510.webp"
         }
       ]
     },

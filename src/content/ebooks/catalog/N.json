@@ -29,6 +29,32 @@
       ]
     },
     {
+      "clcCode": "N09",
+      "clcName": "自然科学史",
+      "books": [
+        {
+          "id": "WEISER6711b9419634",
+          "title": "西方科学的起源（第2版）",
+          "authors": [
+            "戴维·林德伯格"
+          ],
+          "authorStatus": "verified",
+          "description": "西方科学的起源（第2版），自然科学史相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/N/N09/WEISER6711b9419634.pdf",
+              "bytes": 148313364
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/54bd09c46a9e8567c00f9f31f32beaac372943f5f23ea31046473b90bc8b2b6e.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "N49",
       "clcName": "科普读物",
       "books": [

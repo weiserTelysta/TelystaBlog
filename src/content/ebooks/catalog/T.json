@@ -2,6 +2,58 @@
   "category": "T",
   "booklists": [
     {
+      "clcCode": "TB472",
+      "clcName": "产品设计",
+      "books": [
+        {
+          "id": "WEISER2ff76d06dd4b",
+          "title": "工程思维（原书第5版）",
+          "authors": [
+            "Mark N. Horenstein"
+          ],
+          "authorStatus": "verified",
+          "description": "工程思维（原书第5版），产品设计相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TB2/WEISER2ff76d06dd4b.pdf",
+              "bytes": 159694464
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/0c0d8e3569e6efd444ca1fe59a22fd8c948eb1c94ad12eb7c33c6afc90ccda7e.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TK01",
+      "clcName": "能源",
+      "books": [
+        {
+          "id": "WEISER58ee1c49d327",
+          "title": "能量与文明",
+          "authors": [
+            "瓦茨拉夫·斯米尔"
+          ],
+          "authorStatus": "verified",
+          "description": "能量与文明，能源相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T/TK01/WEISER58ee1c49d327.epub",
+              "bytes": 24867957
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/a84ea4942198fee18df2562c9eb14f7d1e6105db01ff44174485cfc4334a0d05.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "TN",
       "clcName": "无线电电子学、电信技术",
       "books": [
@@ -23,6 +75,108 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/c7dd0e060abc77ff1e227d80d5c1fc77c790ccfb97f5466dc6b4612214c196a5.webp",
           "access": "public"
+        }
+      ]
+    },
+    {
+      "clcCode": "TN912.27",
+      "clcName": "立体声和多声道系统技术与设备",
+      "books": [
+        {
+          "id": "WEISER9105f68c7e44",
+          "title": "音响技术与音乐欣赏手册",
+          "authors": [
+            "唐道济"
+          ],
+          "authorStatus": "verified",
+          "description": "音响技术与音乐欣赏手册，立体声和多声道系统技术与设备相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TN912.27/WEISER9105f68c7e44.pdf",
+              "bytes": 12810170
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/fac30a2c6959e12aee833e4f5d13d55a9788f5a9bcde028ead43c86f4e08659d.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TN915.04",
+      "clcName": "通信规程、通信协议",
+      "books": [
+        {
+          "id": "WEISERc03e5c436755",
+          "title": "HTTP权威指南",
+          "authors": [
+            "David Gourley",
+            "Brian Totty",
+            "Marjorie Sayer",
+            "Sailu Reddy",
+            "Anshu Aggarwal"
+          ],
+          "authorStatus": "verified",
+          "description": "HTTP权威指南，通信规程、通信协议相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP393/WEISERc03e5c436755.pdf",
+              "bytes": 89259239
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/2001ec60cd0fa4e2889830df4f5d9b00a42dd3ce04e0518cfc0329a5f942f36d.webp"
+        },
+        {
+          "id": "WEISERf430657b7fe3",
+          "title": "图解HTTP",
+          "authors": [
+            "上野宣"
+          ],
+          "authorStatus": "verified",
+          "description": "图解HTTP，通信规程、通信协议相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP393/WEISERf430657b7fe3.pdf",
+              "bytes": 16842632
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/e245031e2c1ae3764ecb814693935d5be3a7389d8f3d1302da406f7dab110ec6.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TN918.1",
+      "clcName": "理论",
+      "books": [
+        {
+          "id": "WEISER1c9b63c47ff4",
+          "title": "密码学基础",
+          "authors": [
+            "Oded Goldreich"
+          ],
+          "authorStatus": "verified",
+          "description": "密码学基础，理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TN918.1/WEISER1c9b63c47ff4.pdf",
+              "bytes": 11506086
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/277bcf9fc233bee7712c395d0745f51f1bea8ec6babbd7292c725ff051cbdd5b.webp"
         }
       ]
     },
@@ -568,6 +722,570 @@
           "language": "en",
           "publisher": "W W Norton & Co Inc",
           "access": "public"
+        },
+        {
+          "id": "WEISER5926f548365b",
+          "title": "Java 面试宝典（6.0版）",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "Java 面试宝典（6.0版），计算技术、计算机技术相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP3/WEISER5926f548365b.pdf",
+              "bytes": 4135477
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/c496629ad0cf240fdafdf9f64226cfa86c9a7cf689783a67f29eeb958cbb5996.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        },
+        {
+          "id": "WEISER05bc63a283bf",
+          "title": "计算机是怎样跑起来的",
+          "authors": [
+            "矢泽久雄"
+          ],
+          "authorStatus": "verified",
+          "description": "计算机是怎样跑起来的，计算技术、计算机技术相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP3/WEISER05bc63a283bf.pdf",
+              "bytes": 23531959
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/e20778fbaf11c6c73ea50b74394d911b6aaf25a9ca8f639481db1c2243059e8a.webp"
+        },
+        {
+          "id": "WEISERd9c591bdb96b",
+          "title": "黑客与画家",
+          "authors": [
+            "保罗·格雷厄姆"
+          ],
+          "authorStatus": "verified",
+          "description": "黑客与画家，计算技术、计算机技术相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T/TP3/WEISERd9c591bdb96b.epub",
+              "bytes": 945684
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/36fed97b900038e992323978592dc213f1d3cf3eda80e901d184af856924812d.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TP31",
+      "clcName": "计算机软件",
+      "books": [
+        {
+          "id": "WEISERc09accab5279",
+          "title": "程序是怎样跑起来的",
+          "authors": [
+            "矢泽久雄"
+          ],
+          "authorStatus": "verified",
+          "description": "程序是怎样跑起来的，计算机软件相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP311/WEISERc09accab5279.pdf",
+              "bytes": 37379205
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b8c7207874a7d64a38e3528d46086c142833a06498bb7f3d8430891bd27a6c00.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TP301.6",
+      "clcName": "算法理论",
+      "books": [
+        {
+          "id": "WEISER52ac403dbcfa",
+          "title": "算法图解",
+          "authors": [
+            "Aditya Bhargava"
+          ],
+          "authorStatus": "verified",
+          "description": "算法图解，算法理论相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP301.6/WEISER52ac403dbcfa.pdf",
+              "bytes": 17918292
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/fc21b0b25df17cb809a34b284ec31961a5b0bbf3c42c48a5b39d13e6e169b9c9.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TP311",
+      "clcName": "程序设计、软件工程",
+      "books": [
+        {
+          "id": "WEISERb49f8a00d0dd",
+          "title": "正则表达式深入浅出",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "正则表达式深入浅出，程序设计、软件工程相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP311/WEISERb49f8a00d0dd.pdf",
+              "bytes": 336928
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/292f38e435b1b3771561a3801eb4e803bdade30c9715e8ab2c6229852860749e.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        }
+      ]
+    },
+    {
+      "clcCode": "TP311.1",
+      "clcName": "程序设计",
+      "books": [
+        {
+          "id": "WEISER391c7b8fe66c",
+          "title": "剑指Offer：名企面试官精讲典型编程题",
+          "authors": [
+            "何海涛"
+          ],
+          "authorStatus": "verified",
+          "description": "剑指Offer：名企面试官精讲典型编程题，程序设计相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP311.1/WEISER391c7b8fe66c.pdf",
+              "bytes": 22560630
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/353eb5155fe9611d7b48a9a522b96d7ac32b37acce1123bf62e06456658de970.webp"
+        },
+        {
+          "id": "WEISER5427ce9bb010",
+          "title": "计算机程序的构造和解释（原书第2版）",
+          "authors": [
+            "Harold Abelson",
+            "Gerald Jay Sussman",
+            "Julie Sussman"
+          ],
+          "authorStatus": "verified",
+          "description": "计算机程序的构造和解释（原书第2版），程序设计相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP311.1/WEISER5427ce9bb010.pdf",
+              "bytes": 110939380
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/f5a7055859db629b7c5e9b09a5cda31889e8f7efcc837d7b267402524a984af4.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TP311.5",
+      "clcName": "软件工程",
+      "books": [
+        {
+          "id": "WEISERef8d8055efb6",
+          "title": "大话设计模式",
+          "authors": [
+            "程杰"
+          ],
+          "authorStatus": "verified",
+          "description": "大话设计模式，软件工程相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP311.5/WEISERef8d8055efb6.pdf",
+              "bytes": 72932930
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/e5c63aa67b3917ea40a16e0d5349b1c0e0ef707019c2d2e8436a83e51091e454.webp"
+        },
+        {
+          "id": "WEISER710881e74f14",
+          "title": "设计原本",
+          "authors": [
+            "Frederick P. Brooks Jr."
+          ],
+          "authorStatus": "verified",
+          "description": "设计原本，软件工程相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP311.5/WEISER710881e74f14.pdf",
+              "bytes": 62143118
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/9ee025de8e7da66e4ae5b5a673bb8728c28e8b74e5ebb6f57421dc58f772b7cb.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TP312",
+      "clcName": "程序语言、算法语言",
+      "books": [
+        {
+          "id": "WEISERf30e0aa7fc3b",
+          "title": "C#入门经典（第5版）",
+          "authors": [
+            "Karli Watson",
+            "Christian Nagel 等"
+          ],
+          "authorStatus": "partial-collection",
+          "description": "C#入门经典（第5版），程序语言、算法语言相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP312/WEISERf30e0aa7fc3b.pdf",
+              "bytes": 15539416
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/aadc915f8e6992eea7e2d9d601862209767526009150cb3e0a0bdf3ddb5ac00c.webp"
+        },
+        {
+          "id": "WEISER8a895bcc18a7",
+          "title": "Rust Web开发",
+          "authors": [
+            "巴斯蒂安·格鲁伯"
+          ],
+          "authorStatus": "verified",
+          "description": "Rust Web开发，程序语言、算法语言相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP393/WEISER8a895bcc18a7.pdf",
+              "bytes": 2333433
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/519111ee89dd846575931179cfd6e62828fb7d89fc3429af498bfb2061fade1c.webp"
+        },
+        {
+          "id": "WEISERfe85d38f24b7",
+          "title": "Qt 6 C++开发指南",
+          "authors": [
+            "王维波",
+            "栗宝鹃",
+            "侯春望"
+          ],
+          "authorStatus": "verified",
+          "description": "Qt 6 C++开发指南，程序语言、算法语言相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP312/WEISERfe85d38f24b7.pdf",
+              "bytes": 20478316
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/aaf9ebef67c92e20c574090f83d2ee914edf659ecdedd08ebf61b7568e0446c2.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TP317.6",
+      "clcName": "计算机游戏",
+      "books": [
+        {
+          "id": "WEISER626113e2bbd4",
+          "title": "游戏情感设计",
+          "authors": [
+            "David Freeman"
+          ],
+          "authorStatus": "verified",
+          "description": "游戏情感设计，计算机游戏相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP317.6/WEISER626113e2bbd4.pdf",
+              "bytes": 66133564
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/981789bb9699b07328c5e085fa94a050bdf6387ef7f3522b92a93b770af713d0.webp"
+        },
+        {
+          "id": "WEISER65798f315bc8",
+          "title": "体验引擎：游戏设计全景探秘",
+          "authors": [
+            "Tynan Sylvester"
+          ],
+          "authorStatus": "verified",
+          "description": "体验引擎：游戏设计全景探秘，计算机游戏相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP317.6/WEISER65798f315bc8.pdf",
+              "bytes": 75664172
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/026665cb253fc9b6f1408befb801f0926e7e89a3b67e0a046b4b78aa188f48bc.webp"
+        },
+        {
+          "id": "WEISERd0ef691e6fc2",
+          "title": "全景探秘游戏设计艺术",
+          "authors": [
+            "Jesse Schell"
+          ],
+          "authorStatus": "verified",
+          "description": "全景探秘游戏设计艺术，计算机游戏相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP317.6/WEISERd0ef691e6fc2.pdf",
+              "bytes": 83420638
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d6bf705626f8fc7bc91e64a83ac7460fe42ac3c0c95b2c9a00a7b23a3c2300fa.webp"
+        },
+        {
+          "id": "WEISERd0bc22eaab68",
+          "title": "平衡掌控者：游戏数值经济设计",
+          "authors": [
+            "似水无痕"
+          ],
+          "authorStatus": "verified",
+          "description": "平衡掌控者：游戏数值经济设计，计算机游戏相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP317.6/WEISERd0bc22eaab68.pdf",
+              "bytes": 49263358
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/8df020f0f42f7197a89b5d9a6e4b4277d6dcd5bcc642facf1fec69d32e5025a0.webp"
+        },
+        {
+          "id": "WEISERb0c35127b4c7",
+          "title": "平衡掌控者：游戏数值战斗设计",
+          "authors": [
+            "似水无痕"
+          ],
+          "authorStatus": "verified",
+          "description": "平衡掌控者：游戏数值战斗设计，计算机游戏相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP317.6/WEISERb0c35127b4c7.pdf",
+              "bytes": 47217432
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/c9cda336c5f39e772443281dce0cdb97e555eff6822e6f0f97af4492187ac711.webp"
+        },
+        {
+          "id": "WEISER38acdff138cd",
+          "title": "游戏剧本怎么写",
+          "authors": [
+            "佐佐木智广"
+          ],
+          "authorStatus": "verified",
+          "description": "游戏剧本怎么写，计算机游戏相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP317.6/WEISER38acdff138cd.pdf",
+              "bytes": 4829348
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/1e57feac8dbb2ca5078f4c35825640d63d37f74c0d6c4029075ef9d730a1ffc1.webp"
+        },
+        {
+          "id": "WEISER435813d7402a",
+          "title": "游戏架构设计与策划基础",
+          "authors": [
+            "黄石",
+            "李志远",
+            "陈洪"
+          ],
+          "authorStatus": "verified",
+          "description": "游戏架构设计与策划基础，计算机游戏相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP317.6/WEISER435813d7402a.pdf",
+              "bytes": 28576247
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b84631ce941fd0bdc3b7ddabd18fa01aefb442a414f616d257b4ce9f900383bd.webp"
+        },
+        {
+          "id": "WEISER7e18b9e5fc54",
+          "title": "游戏设计信条：从创意到制作的设计原则",
+          "authors": [
+            "Marc Albinet"
+          ],
+          "authorStatus": "verified",
+          "description": "游戏设计信条：从创意到制作的设计原则，计算机游戏相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP317.6/WEISER7e18b9e5fc54.pdf",
+              "bytes": 2656625
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/be6948e621a9e14a09c3d034c2605c05106d908da86dbe37db223f1257d326a9.webp"
+        },
+        {
+          "id": "WEISER7457a796f82f",
+          "title": "游戏设计艺术（第2版）",
+          "authors": [
+            "Jesse Schell"
+          ],
+          "authorStatus": "verified",
+          "description": "游戏设计艺术（第2版），计算机游戏相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP317.6/WEISER7457a796f82f.pdf",
+              "bytes": 94184508
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/8a0a0af828fd5888c7a7059d5fb0e0870455dc3f9c9218130ed5725f9d8e38df.webp"
+        },
+        {
+          "id": "WEISERa3b34bdf3b73",
+          "title": "游戏设计进阶：一种系统方法",
+          "authors": [
+            "Michael Sellers"
+          ],
+          "authorStatus": "verified",
+          "description": "游戏设计进阶：一种系统方法，计算机游戏相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP317.6/WEISERa3b34bdf3b73.pdf",
+              "bytes": 99208139
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/6fdca0efdf187aac786bcc86eb4f4ed16cdd0d7fcd5048f80a8b9fbea5c561f3.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TP391.41",
+      "clcName": "计算机图形图像处理",
+      "books": [
+        {
+          "id": "WEISER7c12da902ec5",
+          "title": "游戏像素图与界面制作教程",
+          "authors": [
+            "房晓溪",
+            "姜宁"
+          ],
+          "authorStatus": "verified",
+          "description": "游戏像素图与界面制作教程，计算机图形图像处理相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP391.41/WEISER7c12da902ec5.pdf",
+              "bytes": 14178217
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/bfd10666027261e3fc245ba3beb65988b8efb1d81f248ec74647093f7592526b.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TP393",
+      "clcName": "计算机网络",
+      "books": [
+        {
+          "id": "WEISER317abf7c547b",
+          "title": "网络是怎样连接的",
+          "authors": [
+            "户根勤"
+          ],
+          "authorStatus": "verified",
+          "description": "网络是怎样连接的，计算机网络相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TP393/WEISER317abf7c547b.pdf",
+              "bytes": 93340699
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/f671e45cbaed4ccc10e22b4821686e0d875b786dcaff320964a9b2044d10175d.webp"
         }
       ]
     },
@@ -708,6 +1426,27 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/f59969494582d4f7363eb75b3bea29888bf446a3225b39c05c022e2c0c50b325.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER005c2cd4a2e7",
+          "title": "炸药毒性与防护",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "炸药毒性与防护，爆炸物工业、火柴工业相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TQ56/WEISER005c2cd4a2e7.pdf",
+              "bytes": 6377026
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/edc600ca4c4e606e5fbd839ee0bc7b27f0ab5c948322668510973064fa59834f.webp",
+          "notes": "原文件署名未确认，作者待核对。"
         }
       ]
     },
@@ -1197,6 +1936,52 @@
       ]
     },
     {
+      "clcCode": "TS6",
+      "clcName": "木材加工工业、家具制造工业",
+      "books": [
+        {
+          "id": "WEISER919466937c5c",
+          "title": "木工基础",
+          "authors": [
+            "彼得·科恩"
+          ],
+          "authorStatus": "verified",
+          "description": "木工基础，木材加工工业、家具制造工业相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T/TS6/WEISER919466937c5c.epub",
+              "bytes": 11935334
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d30202dbdc6632f57250f21a296743150c1ee59530c6855f66e66f5d59e4118b.webp"
+        },
+        {
+          "id": "WEISER49d7c17d9edd",
+          "title": "木工全书",
+          "authors": [
+            "英国DK出版社"
+          ],
+          "authorStatus": "verified",
+          "description": "木工全书，木材加工工业、家具制造工业相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TS6/WEISER49d7c17d9edd.pdf",
+              "bytes": 86627337
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b4d56be17038f7775e321c15e275f4ce9d1f1acd02ca3414703d394b6ce63257.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "TS941",
       "clcName": "服装",
       "books": [
@@ -1414,6 +2199,133 @@
       ]
     },
     {
+      "clcCode": "TS972",
+      "clcName": "饮食调制技术及设备",
+      "books": [
+        {
+          "id": "WEISERb967766b37dc",
+          "title": "巧做家庭菜600例",
+          "authors": [
+            "朴丰田"
+          ],
+          "authorStatus": "verified",
+          "description": "巧做家庭菜600例，饮食调制技术及设备相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TS972/WEISERb967766b37dc.pdf",
+              "bytes": 49459704
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/935681c032016bb05ac36cf9ce5c1cadb59262c0b53c2ba26d613c83121c8457.webp"
+        },
+        {
+          "id": "WEISERca550fbf9e82",
+          "title": "猪肉鸡肉料理",
+          "authors": [
+            "作者待核对"
+          ],
+          "authorStatus": "unreviewed",
+          "description": "猪肉鸡肉料理，饮食调制技术及设备相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TS972/WEISERca550fbf9e82.pdf",
+              "bytes": 36199254
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/c21c4683becade47ab3887f59b2f3def23e8d42b3697996cef022b7805a855c9.webp",
+          "notes": "原文件署名未确认，作者待核对。"
+        },
+        {
+          "id": "WEISER54dc54668878",
+          "title": "食物与厨艺：奶·蛋·肉·鱼",
+          "authors": [
+            "Harold McGee"
+          ],
+          "authorStatus": "verified",
+          "description": "食物与厨艺：奶·蛋·肉·鱼，饮食调制技术及设备相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TS972/WEISER54dc54668878.pdf",
+              "bytes": 133064411
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/d43f49edfb40166d8a2c2c8086c0269cca196328b1fdeddf0fff2089bd2a48c1.webp"
+        },
+        {
+          "id": "WEISER74186cb620d2",
+          "title": "食物与厨艺：蔬·果·香料·谷物",
+          "authors": [
+            "Harold McGee"
+          ],
+          "authorStatus": "verified",
+          "description": "食物与厨艺：蔬·果·香料·谷物，饮食调制技术及设备相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TS972/WEISER74186cb620d2.pdf",
+              "bytes": 126307280
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/becec6a0590f8ced9b1a44dbdcf41efdacb06ca6075d00981411a93fceaa741b.webp"
+        },
+        {
+          "id": "WEISER01c23883ec16",
+          "title": "食物与厨艺：蔬·果·香料·谷物",
+          "authors": [
+            "Harold McGee"
+          ],
+          "authorStatus": "verified",
+          "description": "食物与厨艺：蔬·果·香料·谷物，饮食调制技术及设备相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T/TS972/WEISER01c23883ec16.epub",
+              "bytes": 36911799
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/8e1f0883c17fd95f2119c4e8abbe0a93062b9d47341a95ea190a6d1083e2bed5.webp"
+        },
+        {
+          "id": "WEISERef6b2b31937c",
+          "title": "食物与厨艺：面食·酱料·甜点·饮料",
+          "authors": [
+            "Harold McGee"
+          ],
+          "authorStatus": "verified",
+          "description": "食物与厨艺：面食·酱料·甜点·饮料，饮食调制技术及设备相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T/TS972/WEISERef6b2b31937c.epub",
+              "bytes": 36944111
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/b2a9b2e07149587f790015ff9a3943a42f75117f0e2890591156f009a0f11e9b.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "TS976",
       "clcName": "家庭生活",
       "books": [
@@ -1437,6 +2349,80 @@
           "language": "zh",
           "publisher": "中信出版集团",
           "access": "public"
+        },
+        {
+          "id": "WEISER349084cdebdf",
+          "title": "要钱还是要生活：没有财务自由，也能提前退休",
+          "authors": [
+            "维姬·罗宾",
+            "乔·多明格斯"
+          ],
+          "authorStatus": "verified",
+          "description": "要钱还是要生活：没有财务自由，也能提前退休，生活知识、家政服务相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/T/TS976/WEISER349084cdebdf.epub",
+              "bytes": 2520207
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/8a5ec402c73e659d46a4dedd2e0371b133072461c144a555949efdb6bb092467.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TU2",
+      "clcName": "建筑设计",
+      "books": [
+        {
+          "id": "WEISER395809f82510",
+          "title": "建筑的永恒之道",
+          "authors": [
+            "C. 亚历山大"
+          ],
+          "authorStatus": "verified",
+          "description": "建筑的永恒之道，建筑设计相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TU2/WEISER395809f82510.pdf",
+              "bytes": 145887880
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/c29a78a51e121ead9ab9df9f095b206724c37e0725378d29c5260edb111a124a.webp"
+        }
+      ]
+    },
+    {
+      "clcCode": "TU112.4",
+      "clcName": "建筑声学技术与设计",
+      "books": [
+        {
+          "id": "WEISER86e38b4e1f1f",
+          "title": "声学手册：声学设计与建筑声学实用指南（第5版）",
+          "authors": [
+            "F. Alton Everest",
+            "Ken C. Pohlmann"
+          ],
+          "authorStatus": "verified",
+          "description": "声学手册：声学设计与建筑声学实用指南（第5版），建筑声学技术与设计相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/T/TU112.4/WEISER86e38b4e1f1f.pdf",
+              "bytes": 96909933
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/8196d3fb21f18980d1714f1f3d4ec6ff9f412092933e4bc1875307e2b632cea4.webp"
         }
       ]
     }

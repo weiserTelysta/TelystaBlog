@@ -98,6 +98,32 @@
       ]
     },
     {
+      "clcCode": "E19",
+      "clcName": "军事史",
+      "books": [
+        {
+          "id": "WEISERe787157b0e8a",
+          "title": "战争的面目：阿金库尔、滑铁卢与索姆河战役",
+          "authors": [
+            "约翰·基根"
+          ],
+          "authorStatus": "verified",
+          "description": "战争的面目：阿金库尔、滑铁卢与索姆河战役，军事史相关资料。",
+          "files": [
+            {
+              "format": "EPUB",
+              "href": "https://library-files.telysta.com/books/E/E19/WEISERe787157b0e8a.epub",
+              "bytes": 970991
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/599532cdd51b8bd372b47e34712e97a466e81b080fda8713f6e284be7e81c6e6.webp"
+        }
+      ]
+    },
+    {
       "clcCode": "E509",
       "clcName": "欧洲军事史",
       "books": [

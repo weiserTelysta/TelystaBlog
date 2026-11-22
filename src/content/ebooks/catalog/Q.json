@@ -23,6 +23,26 @@
           "draft": false,
           "cover": "https://library-files.telysta.com/covers/cb068b754df2dfe825b1469d4bba89728109399e10ad153ace85e0d780e9cc98.webp",
           "access": "public"
+        },
+        {
+          "id": "WEISER3250da530d80",
+          "title": "英国皇家园艺学会植物学指南",
+          "authors": [
+            "杰夫·霍奇"
+          ],
+          "authorStatus": "verified",
+          "description": "英国皇家园艺学会植物学指南，植物学相关资料。",
+          "files": [
+            {
+              "format": "PDF",
+              "href": "https://library-files.telysta.com/books/Q/Q94/WEISER3250da530d80.pdf",
+              "bytes": 137814032
+            }
+          ],
+          "access": "public",
+          "draft": false,
+          "updatedAt": "2026-11-21",
+          "cover": "https://library-files.telysta.com/covers/940244a9ce08da647e585f3a6650019b6c63f90c1b27d149090926233bd0b8fe.webp"
         }
       ]
     },
