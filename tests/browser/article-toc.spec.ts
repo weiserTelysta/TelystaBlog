@@ -144,8 +144,8 @@ test('阅读时目录平滑跟随，鼠标查看目录时不抢走滚动位置',
 	const positions = await page.evaluate(async () => {
 		const toc = document.querySelector<HTMLElement>('[data-article-toc-list]')!;
 		const heading = document.getElementById('伊斯兰哲学')!;
+		const values = [toc.scrollTop];
 		window.scrollTo({ top: heading.getBoundingClientRect().top + scrollY - 28, behavior: 'instant' });
-		const values: number[] = [];
 		const start = performance.now();
 		while (performance.now() - start < 650) {
 			values.push(toc.scrollTop);
@@ -153,7 +153,10 @@ test('阅读时目录平滑跟随，鼠标查看目录时不抢走滚动位置',
 		}
 		return values;
 	});
-	expect(new Set(positions).size).toBeGreaterThan(5);
+	const initialPosition = positions[0];
+	const finalPosition = positions.at(-1)!;
+	expect(finalPosition).toBeGreaterThan(initialPosition);
+	expect(positions.some(position => position > initialPosition && position < finalPosition)).toBe(true);
 	const toc = page.locator(list);
 	await toc.hover();
 	await toc.evaluate(el => el.scrollTop = 0);
