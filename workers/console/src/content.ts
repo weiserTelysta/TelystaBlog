@@ -2,21 +2,46 @@ import { HttpError, body, json } from './http';
 import { audit, nowSeconds, sessionToken, tokenHash } from './auth';
 import { can, type User } from './permissions';
 import { BLOG_CATEGORY_IDS } from '../../../src/config/content/blogCategories';
+import { postDirectoryForCategory } from '../../../src/lib/postPaths.mjs';
 import { validatedSource } from './validation';
 import { exportBackup } from './backup';
 import { describeDocument, editorOptions, patchDocument, type DocumentRecord } from './documentEditor';
 import { CONFIG_DEFINITIONS } from './configEditor';
+import { editSeries, readSeries, seriesRecord } from './seriesEditor';
+import { preparePostPublication } from './postPublication';
 const KINDS = ['post','ebook','gallery','score','config'];
 function requireOwner(user: User) { if (!can(user, 'site:manage')) throw new HttpError(403, '需要超级管理员权限。'); }
 export async function handleManagement(request: Request, env: ConsoleEnv, user: User, url: URL) {
  const path = url.pathname;
+ const postPublication = /^\/api\/documents\/(post_WEISER[a-f0-9]{12})\/publication$/.exec(path);
+ if (postPublication) {
+  requireOwner(user);
+  return preparePostPublication(request, env, user, postPublication[1]);
+ }
  if (path === '/api/dashboard' && request.method === 'GET') {
   if (!can(user, 'site:manage')) return json({ role: user.role, uploads: await env.DB.prepare('SELECT count(*) AS count FROM uploads WHERE owner_id=?1 AND state=\'ready\'').bind(user.id).first() });
   const content = await env.DB.prepare('SELECT kind,count(*) AS count FROM documents GROUP BY kind').all();
   const users = await env.DB.prepare('SELECT role,count(*) AS count FROM users GROUP BY role').all();
   return json({ content: content.results, users: users.results });
  }
- if (path === '/api/editor/options' && request.method === 'GET') { requireOwner(user); return json(editorOptions()); }
+ if (path === '/api/series') {
+  requireOwner(user);
+  const record = await seriesRecord(env);
+  if (!record) throw new HttpError(404, '请先导入站点的文章系列配置。', 'SERIES_CONFIG_MISSING');
+  if (request.method === 'GET') {
+   return json({ series: readSeries(record), categories: editorOptions().categories, revision: record.revision, documentId: record.id });
+  }
+  if (request.method !== 'PATCH') throw new HttpError(405, '方法不支持。');
+  const input = await body(request, 100_000);
+  if (input.revision !== record.revision) throw new HttpError(409, '系列已被更新，请重新读取。', 'VERSION_CONFLICT');
+  const source = await editSeries(env, record, input);
+  const revision = await saveDocument(request, env, user, record, source, record.title, record.access);
+  return json({ series: readSeries({ ...record, source }), revision });
+ }
+ if (path === '/api/editor/options' && request.method === 'GET') {
+  requireOwner(user);
+  return json(editorOptions(readSeries(await seriesRecord(env))));
+ }
  const editorMatch=/^\/api\/documents\/([A-Za-z0-9_-]{1,100})\/editor$/.exec(path);
  if(editorMatch){
   requireOwner(user);
@@ -34,7 +59,8 @@ export async function handleManagement(request: Request, env: ConsoleEnv, user: 
    if(!old)throw new HttpError(404,'历史版本不存在。');
    base={...record,source:old.source};
   }
-  const next=patchDocument(base,input);
+  const series = record.kind === 'post' ? readSeries(await seriesRecord(env)) : undefined;
+  const next=patchDocument(base,input,series);
   const source=validatedSource(record.kind,record.id,next.source,next.access as 'public'|'protected');
   const revision=await saveDocument(request,env,user,record,source,next.title,next.access);
   return json({ok:true,revision,record:{...record,...next,source,revision,state:'draft'},editor:describeDocument({...record,...next,source,revision})});
@@ -55,7 +81,7 @@ export async function handleManagement(request: Request, env: ConsoleEnv, user: 
   const uuid = crypto.randomUUID().replaceAll('-', '').slice(0, 12), id = 'post_WEISER' + uuid;
   const date = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Shanghai' }).format(new Date());
   const source = `---\nuuid: ${JSON.stringify(uuid)}\ntitle: ${JSON.stringify(input.title.trim())}\ntitleEn: Draft\ndescription: 待补充摘要\ndescriptionEn: Draft\npublishedAt: ${date}\nupdatedAt: ${date}\ncategory: ${category}\ndraft: true\ntags: []\n---\n\n# ${input.title.trim()}\n\n`;
-  const sourcePath = `src/content/weiser-posts/${category}/${date}-${uuid}.md`;
+  const sourcePath = `src/content/weiser-posts/${postDirectoryForCategory(category)}/${date}-${uuid}.md`;
   await env.DB.prepare('INSERT INTO documents(id,kind,title,source_path,source,owner_id,updated_at,imported_at) VALUES(?1,\'post\',?2,?3,?4,?5,?6,?6)').bind(id,input.title.trim(),sourcePath,source,user.id,nowSeconds()).run();
   await audit(env,user.id,'documents.create',id); return json({ id },201);
  }

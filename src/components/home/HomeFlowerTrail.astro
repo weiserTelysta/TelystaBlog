@@ -1,0 +1,152 @@
+---
+import type { HomeSectionItem } from '../../config/pages/home';
+import cherry from '../../assets/images/decorations/discussion-blossoms.svg?raw';
+import peach from '../../assets/images/decorations/discussion-peach.svg?raw';
+import camellia from '../../assets/images/decorations/discussion-camellia.svg?raw';
+import hydrangea from '../../assets/images/decorations/discussion-hydrangea.svg?raw';
+
+type Flower = NonNullable<HomeSectionItem['flower']>;
+type Fragment = [shape: 'petal' | 'blossom', xPercent: number, yPercent: number, size: number, rotation: number, opacity: number];
+type Trail = {
+	petal: string;
+	petalFold: string;
+	petalVein: string;
+	blossom: string;
+	blossomVeins: string;
+	stamens: string;
+	flowerCenter: string;
+	tail: Fragment[];
+	sweep: Fragment[];
+};
+
+const trails: Record<Flower, Trail> = {
+	cherry: {
+		petal: 'M-4 2C-3-1.5-.6-3.4 3-3L2-1.5 4-1.9C2.7 1.4-.9 2.5-4 2Z',
+		petalFold: 'M-3.9 1.95Q-1.3-.9 2-1.5L4-1.9Q1.7.68-3.9 1.95Z',
+		petalVein: 'M-3.1 1.55C-1.2.45.8-.35 2.4-1.7M-.9.4Q-.1-.75.95-1.35',
+		blossom: 'M0-2C-2-6 2-6 1.3-1.8 5-4 6 0 2 .1 5 2.8 2 5-.1 2 0 6-4 4-2 1.1-6 2-6-2-2-1.1Z',
+		blossomVeins: 'M0 0Q-.3-1.6.35-2.9M.25.1Q1.7-.5 2.75-.8M.2.35Q1.1 1.2 1.46 2.55M-.12.4Q-.7 1.45-1.42 2.7M-.36 0Q-1.6-.1-2.8-.7',
+		stamens: 'M-.35-1.24h.01M1.16-.64h.01M.88 1.06h.01M-.8.95h.01M-1.28-.28h.01',
+		flowerCenter: '#eecddd',
+		tail: [
+			['petal', 13, 71, 5, 7, .19], ['petal', 23, 88, 5, -18, .20],
+			['blossom', 34, 69, 9, -8, .26], ['petal', 40, 52, 5, 29, .22],
+			['petal', 44, 82, 6, -21, .25],
+		],
+		sweep: [
+			['petal', 53, 52, 7, 6, .34], ['petal', 60, 73, 5, -27, .33],
+			['blossom', 67, 30, 12, -12, .48], ['petal', 75, 18, 7, 20, .39],
+			['petal', 83, 62, 6, -12, .41], ['petal', 89, 25, 5, 43, .31],
+		],
+	},
+	peach: {
+		petal: 'M-3.8 1C-2.7-1.3-2-3.7.8-3.6 4-3.5 3.5 0 1.7 1.5.1 2.9-2.1 2.8-3.8 1Z',
+		petalFold: 'M-3.6.94C-1.67.35-.95-3.14.84-3.55 2.14-3.53 3.08-2.81 3.06-1.62Q1.64-.97.69.08Q-1.42 1.62-3.6.94Z',
+		petalVein: 'M-2.9 1.09Q-.55.28 1.7-2.02M-1.64.74Q-.35-.67-.32-1.72',
+		blossom: 'M-2-1C-4.2-2.6-1.9-5.7.3-3.4 2.5-5.7 5.2-2.4 3.2-.7 6.1 1 3.3 4.2 1.4 2.6.5 5.7-3.9 4.1-2.3 1.7-5.5 2.2-5.4-1.8-2-1Z',
+		blossomVeins: 'M-.1.3l-.8-2M.04.15l1.39-2.2M.32.35l2-.75M.27.6l1.8 1.24M-.07.7l.2 1.65M-.29.54l-1.78 1.2M-.3.3l-2.02-.6',
+		stamens: 'M-.9-1.7h.01M1.43-2.05h.01M2.32-.4h.01M2.07 1.84h.01M.13 2.35h.01M-2.07 1.74h.01M-2.32-.3h.01',
+		flowerCenter: '#efd3b4',
+		tail: [
+			['petal', 12, 61, 5, -22, .20], ['petal', 29, 49, 6, 37, .20],
+			['petal', 34, 82, 7, 31, .23], ['blossom', 43, 72, 7, 16, .26],
+			['petal', 47, 88, 4, -12, .24],
+		],
+		sweep: [
+			['petal', 57, 72, 8, -30, .32], ['blossom', 65, 58, 9, -12, .41],
+			['petal', 70, 83, 5, 12, .38], ['petal', 77, 31, 6, 60, .42],
+			['blossom', 84, 48, 13, -14, .53], ['petal', 92, 68, 7, -38, .42],
+		],
+	},
+	camellia: {
+		petal: 'M-4 1.3C-2.4-2.5-.2-3.6 2.7-2.4 5.5-.3 2 2.7-4 1.3ZM-2.7.7C-.6 1.1 1.7.5 2.4-.9.6-.2-.9.5-2.7.7Z',
+		petalFold: 'M-3.85 1.24C-2.5-1.72-.25-3.48 2.59-2.39Q2.47-1.81 1.89-1.39C-.35-.83-1.77.48-3.85 1.24Z',
+		petalVein: 'M-3.1.95C-1.2-.3.52-.53 2.86-1.6M.35 1.45Q2.1 1 3.18-.03',
+		blossom: 'M-3.8-1.9C-3.2-3.4-2.1-3.8-.9-3.8.2-4.7 2-4.2 2.8-3.2 4.6-2.7 5-1.2 4.4.2 4.9 1.7 3.5 3.4 2.1 3.7.5 4.8-1.2 4.4-2.1 3.3-3.8 3.2-4.5 2-4.1.7-4.9-.3-4.7-1.4-3.8-1.9ZM-2.7 0C-2.6-2.5 1-3.1 2.4-1.5.3-2.4-1.2-1.9-2.7 0ZM-1.1 2C1.6 2 2.8.2 2.4-.9 3.3 1.5 1.4 3-1.1 2Z',
+		blossomVeins: 'M-3.31 1.5Q-2.76 3.3-.94 3.33M.35 3.81Q2.58 3.43 3.67 1.6M2.6-2.66Q4-2 3.75-.45M-1.18 1.17Q-1.81.53-1.09-.45.05-1.45 1.2-.64',
+		stamens: 'M-.73.36h.01M.61-.44h.01M.77.67h.01',
+		flowerCenter: '#e6be9c',
+		tail: [
+			['petal', 15, 74, 6, -36, .21], ['petal', 31, 81, 6, -16, .23],
+			['petal', 42, 69, 8, 16, .27], ['petal', 49, 76, 5, 44, .22],
+		],
+		sweep: [
+			['petal', 58, 70, 8, -40, .32], ['petal', 64, 62, 8, 10, .40],
+			['blossom', 70, 67, 7, 28, .35], ['petal', 76, 55, 6, -13, .33],
+			['blossom', 84, 57, 13, 19, .48], ['petal', 93, 43, 7, -32, .36],
+		],
+	},
+	hydrangea: {
+		petal: 'M-3.7 1.7C-3.5-1.2-.5-3.2 1.5-2.4 4.8-1.2 2.1 1.1-3.7 1.7Z',
+		petalFold: 'M-3.57 1.62C-3.05-.6-.9-2.74 1.47-2.34Q2.41-2 2.64-1.44C.8-1.85-1-.49-3.57 1.62Z',
+		petalVein: 'M-2.95 1.12Q-.24-.23 2.3-1.3M-.56-.2Q.1-1.11.94-1.63',
+		blossom: 'M0-1.5C-4.5-6.8 5-6.4 1.7-1.1 7-4.4 6.3 5.1 1.4 1.5 5.9 6.5-4.4 7 .1 1.7-6.9 5.4-7-4.3 0-1.5Z',
+		blossomVeins: 'M.7 0Q.44-1.5.65-3.03M1 .32Q2.5.2 3.66.93M.65.66Q.9 2.52.57 3.55M.39.34Q-1.17.59-3.14-.13',
+		stamens: 'M.7-.57h.01M1.57.33h.01M.7 1.23h.01M-.24.32h.01',
+		flowerCenter: '#ddd3e6',
+		tail: [
+			['petal', 13, 74, 5, 25, .21], ['blossom', 27, 58, 6, 11, .23],
+			['blossom', 32, 79, 7, 46, .20], ['petal', 42, 89, 5, -19, .21],
+		],
+		sweep: [
+			['blossom', 54, 65, 8, 14, .34], ['petal', 61, 84, 6, 34, .32],
+			['blossom', 69, 41, 10, 8, .47], ['blossom', 74, 22, 7, 32, .39],
+			['blossom', 76, 58, 11, 48, .47], ['blossom', 83, 34, 8, 12, .43],
+			['petal', 87, 72, 7, -32, .38], ['petal', 94, 40, 6, -9, .40],
+		],
+	},
+};
+
+type Props = { id: string; flower: Flower };
+const { id, flower } = Astro.props;
+const trail = trails[flower];
+const petalWash = `${id}-petal-wash`;
+const foldWash = `${id}-fold-wash`;
+const blossomWash = `${id}-blossom-wash`;
+const flowers = { cherry, peach, camellia, hydrangea };
+// The source illustrations are local SVGs. Scope their IDs separately from the trail.
+const bloom = flowers[flower].replace(/\b(id="|href="#|url\(#)([\w-]+)/g, `$1${id}-bloom-$2`);
+---
+
+<svg class="home-section__petal-trail" data-flower={flower} aria-hidden="true" focusable="false" fill="currentColor" fill-rule="evenodd">
+	<defs>
+		<linearGradient id={petalWash} x1="15%" y1="17%" x2="75%" y2="89%">
+			<stop stop-color="currentColor" />
+			<stop offset=".56" stop-color="currentColor" stop-opacity=".88" />
+			<stop offset="1" stop-color="currentColor" stop-opacity=".57" />
+		</linearGradient>
+		<linearGradient id={foldWash} x1="27%" y1="4%" x2="68%" y2="78%">
+			<stop stop-color={trail.flowerCenter} stop-opacity=".68" />
+			<stop offset="1" stop-color={trail.flowerCenter} stop-opacity=".06" />
+		</linearGradient>
+		<radialGradient id={blossomWash} cx="42%" cy="40%" r="60%">
+			<stop stop-color="currentColor" stop-opacity=".68" />
+			<stop offset=".57" stop-color="currentColor" />
+			<stop offset="1" stop-color="currentColor" stop-opacity=".83" />
+		</radialGradient>
+		<g id={`${id}-petal`}>
+			<path d={trail.petal} fill={`url(#${petalWash})`} />
+			<path d={trail.petalFold} fill={`url(#${foldWash})`} />
+			<path d={trail.petalVein} fill="none" stroke={trail.flowerCenter} stroke-opacity=".53" stroke-width=".36" stroke-linecap="round" />
+		</g>
+		<g id={`${id}-blossom`}>
+			<path d={trail.blossom} fill={`url(#${blossomWash})`} />
+			<path d={trail.blossomVeins} fill="none" stroke={trail.flowerCenter} stroke-opacity=".55" stroke-width=".41" stroke-linecap="round" />
+			<path d={trail.stamens} fill="none" stroke={trail.flowerCenter} stroke-opacity=".84" stroke-width=".65" stroke-linecap="round" />
+			<circle cx={flower === 'hydrangea' ? .7 : 0} cy={flower === 'hydrangea' ? .32 : 0} r=".62" fill={trail.flowerCenter} />
+		</g>
+	</defs>
+	{(['tail', 'sweep'] as const).map(layer => (
+		<g class={`home-section__petal-${layer}`}>
+			{trail[layer].map(([shape, x, y, size, rotation, opacity], index, fragments) => (
+				<svg x={`${x}%`} y={`${y}%`} width={size} height={size} viewBox="-5 -5 10 10" overflow="visible"
+					style={layer === 'sweep' ? `--petal-delay:${120 + (fragments.length - 1 - index) * 22}ms` : undefined}>
+					<g data-fragment={shape}>
+						<use href={`#${id}-${shape}`} transform={`rotate(${rotation})`} opacity={opacity} />
+					</g>
+				</svg>
+			))}
+		</g>
+	))}
+</svg>
+<span class="home-section__flower" data-flower={flower} aria-hidden="true" set:html={bloom} />

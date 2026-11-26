@@ -3,7 +3,7 @@
    Shared with the local editor; no downloaded textures or animation loops. */
 [data-foil] {
 	--foil-angle: 125deg;
-	--foil-a: #9cc7e8;
+	--foil-a: var(--color-accent);
 	--foil-b: #d6a7c8;
 	--foil-c: #a8cfc5;
 	--foil-grain: repeating-linear-gradient(35deg, #e4e9f04d 0 0.6px, transparent 0.9px 5px);

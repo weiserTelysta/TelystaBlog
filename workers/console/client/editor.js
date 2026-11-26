@@ -157,6 +157,7 @@ export async function editDocument({
 	let restoring,
 		rawMode = false,
 		busy = false,
+		hasUnsavedChanges = false,
 		fields = structuredClone(editor.fields || {}),
 		body = editor.body || '',
 		raw = record.source;
@@ -164,6 +165,10 @@ export async function editDocument({
 		controls = new Map(),
 		container = el('div', '', 'document-editor');
 	workspace.replaceChildren(container);
+	const markDirty = (changed) => {
+		hasUnsavedChanges = changed;
+		dirty(changed);
+	};
 	function render() {
 		container.replaceChildren();
 		getters.clear();
@@ -218,6 +223,13 @@ export async function editDocument({
 			'分类与访问',
 			'Classification & access'
 		]);
+		if (record.kind === 'post') {
+			const publication = section('publication', ['发布', 'Publication']);
+			publication.append(
+				el('p', ['下载已保存版本，供 Git 构建发布。', 'Download the saved revision for a Git build.'], 'field-help'),
+				button(['下载发布快照', 'Download publication snapshot'], downloadPublication, 'quiet-button')
+			);
+		}
 		function activate(key) {
 			for (const tab of tabs.children) {
 				const on = tab.id === 'editor-tab-' + key;
@@ -263,7 +275,7 @@ export async function editDocument({
 				input = select(
 					[
 						['', ['无系列', 'No series']],
-						...options.series.map((v) => [
+						...options.series.filter(v => v.category === fields.category || v.id === value).map((v) => [
 							v.id,
 							() => (locale() === 'en' ? v.titleEn : v.title)
 						])
@@ -339,7 +351,7 @@ export async function editDocument({
 			input.addEventListener('input', () => {
 				fields[key] = read();
 				input.removeAttribute('aria-invalid');
-				dirty(true);
+				markDirty(true);
 				if (key === 'title') title.textContent = input.value;
 			});
 			const wrapper = field(labels[key] || [key, key], input, hints[key]);
@@ -411,7 +423,7 @@ export async function editDocument({
 			toolbar.append(previewButton);
 			text.addEventListener('input', () => {
 				body = text.value;
-				dirty(true);
+				markDirty(true);
 				if (!preview.hidden) renderPreview(body, preview);
 			});
 			content.append(
@@ -425,7 +437,7 @@ export async function editDocument({
 				preview
 			);
 		}
-		if (record.kind === 'post')
+		if (record.kind === 'post') {
 			for (const key of [
 				'category',
 				'tags',
@@ -437,7 +449,29 @@ export async function editDocument({
 				'cover'
 			])
 				publish.append(inputFor(key, fields[key]));
-		else if (record.kind === 'ebook')
+			const category = controls.get('category');
+			const series = controls.get('series');
+			const order = controls.get('seriesOrder');
+			const syncOrder = () => {
+				order.disabled = !series.value;
+				order.required = Boolean(series.value);
+				if (order.disabled) order.value = '';
+			};
+			category.addEventListener('change', () => {
+				const previous = series.value;
+				const available = options.series.filter(value => value.category === category.value);
+				const replacement = select([
+					['', ['无系列', 'No series']],
+					...available.map(value => [value.id, () => locale() === 'en' ? value.titleEn : value.title]),
+				], previous);
+				series.replaceChildren(...replacement.children);
+				series.value = available.some(value => value.id === previous) ? previous : '';
+				fields.series = series.value || null;
+				syncOrder();
+			});
+			series.addEventListener('change', syncOrder);
+			syncOrder();
+		} else if (record.kind === 'ebook')
 			for (const key of ['clcCode', 'clcName', 'categoryOnly', 'draft'])
 				publish.append(inputFor(key, fields[key]));
 		else if (record.kind === 'gallery')
@@ -493,7 +527,7 @@ export async function editDocument({
 		});
 		source.addEventListener('input', () => {
 			raw = source.value;
-			dirty(true);
+			markDirty(true);
 		});
 		advanced.append(
 			summary,
@@ -564,7 +598,7 @@ export async function editDocument({
 							} else if (input.value) item[name] = input.value;
 							else delete item[name];
 							fields[key] = value;
-							dirty(true);
+							markDirty(true);
 						});
 						row.append(field(nested[name] || name, input));
 					}
@@ -574,7 +608,7 @@ export async function editDocument({
 							() => {
 								value.splice(index, 1);
 								fields[key] = value;
-								dirty(true);
+								markDirty(true);
 								draw();
 							},
 							'quiet-button'
@@ -594,7 +628,7 @@ export async function editDocument({
 								: { type: 'external', label: '', href: '' }
 				);
 				fields[key] = value;
-				dirty(true);
+				markDirty(true);
 				draw();
 			});
 			box.append(add);
@@ -650,7 +684,7 @@ export async function editDocument({
 				if (!current()) return;
 				record.revision = result.revision;
 				restoring = undefined;
-				dirty(false);
+				markDirty(false);
 				if (result.record) {
 					record = result.record;
 					raw = record.source;
@@ -696,6 +730,33 @@ export async function editDocument({
 			}
 		}
 	}
+	async function downloadPublication(event) {
+		if (hasUnsavedChanges) {
+			tell(['请先保存当前修改。', 'Save your changes first.']);
+			return;
+		}
+		const control = event.currentTarget;
+		control.disabled = true;
+		try {
+			const snapshot = await api('documents/' + encodeURIComponent(id) + '/publication', {
+				method: 'POST',
+				body: JSON.stringify({ revision: record.revision })
+			});
+			if (!current()) return;
+			const url = URL.createObjectURL(new Blob([JSON.stringify(snapshot, null, 2)], { type: 'application/json' }));
+			const link = el('a');
+			link.href = url;
+			link.download = `${snapshot.documentId}-r${snapshot.revision}.json`;
+			link.click();
+			setTimeout(() => URL.revokeObjectURL(url), 1_000);
+			tell(['快照已下载，等待 Git 构建。', 'Snapshot downloaded. Awaiting a Git build.']);
+		} catch (error) {
+			if (current()) tell(authError(error));
+		} finally {
+			if (current()) control.disabled = false;
+		}
+	}
+
 	async function showHistory() {
 		if (busy) return;
 		let panel = container.querySelector('.history-panel');
@@ -743,7 +804,7 @@ export async function editDocument({
 							raw = old.source;
 							restoring = version.revision;
 							rawMode = false;
-							dirty(true);
+							markDirty(true);
 							render();
 							tell([
 								'旧版本已载入，尚未保存。',

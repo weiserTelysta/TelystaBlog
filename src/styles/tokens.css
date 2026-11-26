@@ -4,10 +4,12 @@
 	--color-text: #d8dee9;
 	--color-text-strong: #edf3fb;
 	--color-text-muted: #8b95a7;
-	--color-accent: #9cc7e8;
+	--color-accent: #b8b2ca;
+	--color-accent-rgb: 184 178 202;
 	--color-accent-soft: #d6a7c8;
+	--color-focus: #c8c3de;
 	--color-border: rgba(255, 255, 255, 0.08);
-	--color-control-border: rgba(156, 199, 232, 0.5);
+	--color-control-border: rgb(var(--color-accent-rgb) / 0.45);
 	--site-content-width: 1080px;
 	--site-header-block-size: 64px;
 	--site-header-clearance: 28px;

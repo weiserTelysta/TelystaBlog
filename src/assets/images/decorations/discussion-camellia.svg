@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="56" viewBox="0 0 132 56">
+  <defs>
+    <linearGradient id="pink" x2=".5" y2="1">
+      <stop stop-color="#dfacba"/><stop offset="1" stop-color="#9e576d"/>
+    </linearGradient>
+    <path id="p" d="M0 2C-5 0-15-7-15-15C-15-23-10-27-3-26C6-30 15-23 15-16C15-8 7-2 0 2Z"/>
+    <g id="rim" fill="url(#pink)" stroke="#9a5a70" stroke-width=".7">
+      <use href="#p"/><use href="#p" transform="rotate(60)"/><use href="#p" transform="rotate(120)"/>
+      <use href="#p" transform="rotate(180)"/><use href="#p" transform="rotate(240)"/><use href="#p" transform="rotate(300)"/>
+    </g>
+    <g id="flower">
+      <use href="#rim"/><use href="#rim" transform="rotate(26) scale(.68)"/>
+      <use href="#rim" transform="rotate(55) scale(.41)"/>
+      <g id="center" fill="#e3bd8e"><circle r="1.5"/><circle cx="3" cy="2" r="1.1"/><circle cx="-3" cy="1" r=".9"/><circle cx="1" cy="-3" r=".9"/></g>
+    </g>
+  </defs>
+  <g fill="#829589" opacity=".47"><path d="M80 40Q64 26 47 36Q58 48 80 40"/><path d="M107 37Q114 48 132 44Q120 33 107 37"/><path d="M82 35Q69 16 59 20Q61 33 82 35"/></g>
+  <g transform="translate(99 28) rotate(18) scale(.92)" opacity=".7">
+    <g data-bloom="">
+      <use href="#rim" data-petal="1"/>
+      <g transform="rotate(26) scale(.68)"><use href="#rim" data-petal="2"/></g>
+      <g transform="rotate(55) scale(.41)"><use href="#rim" data-petal="3"/></g>
+      <use href="#center" data-petal="4"/>
+    </g>
+  </g>
+  <g transform="translate(54 42) rotate(22) scale(.37)" opacity=".56"><use href="#flower" data-petal="4"/></g>
+</svg>

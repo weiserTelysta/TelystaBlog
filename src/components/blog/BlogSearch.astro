@@ -151,7 +151,7 @@ const copy = BLOG_PAGE_CONFIG.search;
 	.blog-search__trigger[hidden] { display: none; }
 	button:hover { color: var(--color-accent); }
 	button:active { transform: scale(0.96); }
-	button:focus-visible, .blog-search__results :global(a:focus-visible) { outline: 1px solid var(--color-accent); outline-offset: -1px; }
+	button:focus-visible, .blog-search__results :global(a:focus-visible) { outline: 1px solid var(--color-focus); outline-offset: -1px; }
 	.blog-search__dialog { width: min(640px, calc(100% - 40px)); height: min(68dvh, 620px); max-height: calc(100dvh - 100px); margin: clamp(64px, 14dvh, 150px) auto auto; padding: 2px; border: 0; border-radius: 0; background: transparent; color: var(--color-text); font-family: var(--font-body); overflow: hidden; }
 	.blog-search__dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 24px; }
 	.blog-search__dialog::backdrop { background: rgba(7, 10, 16, 0.98); }
@@ -170,6 +170,6 @@ const copy = BLOG_PAGE_CONFIG.search;
 	.blog-search__results :global(a:hover) { color: var(--color-accent); }
 	.blog-search__results :global(span) { font-size: 0.94rem; font-weight: 550; }
 	.blog-search__results :global(p) { margin: 6px 0 0; font-size: 0.8rem; line-height: 1.8; color: var(--color-text-muted); }
-	.blog-search__results :global(mark) { color: var(--color-accent); background: transparent; font-weight: inherit; text-decoration: underline; text-decoration-color: rgba(156, 199, 232, 0.45); text-underline-offset: 3px; }
+	.blog-search__results :global(mark) { color: var(--color-accent); background: transparent; font-weight: inherit; text-decoration: underline; text-decoration-color: rgb(var(--color-accent-rgb) / 0.45); text-underline-offset: 3px; }
 	@media (prefers-reduced-motion: reduce) { button, input, .blog-search__results :global(a) { transition: none; } button:active { transform: none; } }
 </style>

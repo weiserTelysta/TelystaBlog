@@ -42,12 +42,12 @@
 	background: linear-gradient(
 		180deg,
 		transparent,
-		rgba(156, 199, 232, 0.28) 18%,
+		rgb(var(--color-accent-rgb) / 0.28) 18%,
 		rgba(216, 222, 233, 0.45) 50%,
-		rgba(156, 199, 232, 0.18) 82%,
+		rgb(var(--color-accent-rgb) / 0.18) 82%,
 		transparent
 	);
-	box-shadow: 0 0 18px rgba(156, 199, 232, 0.08);
+	box-shadow: 0 0 18px rgb(var(--color-accent-rgb) / 0.08);
 	transition:
 		height 0.22s ease,
 		background 0.22s ease,
@@ -69,10 +69,10 @@
 .back-to-top__mark {
 	width: 6px;
 	height: 6px;
-	border: 1px solid rgba(156, 199, 232, 0.42);
-	background: rgba(156, 199, 232, 0.08);
+	border: 1px solid rgb(var(--color-accent-rgb) / 0.42);
+	background: rgb(var(--color-accent-rgb) / 0.08);
 	opacity: 0.82;
-	box-shadow: 0 0 12px rgba(156, 199, 232, 0.14);
+	box-shadow: 0 0 12px rgb(var(--color-accent-rgb) / 0.14);
 	transform: rotate(45deg);
 	transition:
 		transform 0.2s ease,
@@ -90,12 +90,12 @@
 	background: linear-gradient(
 		180deg,
 		transparent,
-		rgba(156, 199, 232, 0.42) 18%,
+		rgb(var(--color-accent-rgb) / 0.42) 18%,
 		rgba(237, 243, 251, 0.7) 50%,
-		rgba(156, 199, 232, 0.26) 82%,
+		rgb(var(--color-accent-rgb) / 0.26) 82%,
 		transparent
 	);
-	box-shadow: 0 0 26px rgba(156, 199, 232, 0.14);
+	box-shadow: 0 0 26px rgb(var(--color-accent-rgb) / 0.14);
 }
 
 .back-to-top:hover .back-to-top__label {
@@ -104,9 +104,9 @@
 
 .back-to-top:hover .back-to-top__mark {
 	border-color: rgba(237, 243, 251, 0.68);
-	background: rgba(156, 199, 232, 0.18);
+	background: rgb(var(--color-accent-rgb) / 0.18);
 	opacity: 1;
-	box-shadow: 0 0 18px rgba(156, 199, 232, 0.32);
+	box-shadow: 0 0 18px rgb(var(--color-accent-rgb) / 0.32);
 	transform: rotate(45deg) scale(1.12);
 }
 
@@ -117,7 +117,7 @@
 	height: 36px;
 	gap: 0;
 	place-items: center;
-	border: 1px solid rgba(156, 199, 232, 0.14);
+	border: 1px solid rgb(var(--color-accent-rgb) / 0.14);
 	border-radius: 10px;
 	background: rgba(7, 12, 19, 0.48);
 	box-shadow: 0 12px 34px rgba(0, 0, 0, 0.24);

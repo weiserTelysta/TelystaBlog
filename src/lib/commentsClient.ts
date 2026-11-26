@@ -1,6 +1,9 @@
 type Comment = { id: string; body: string; parentId: string | null; parentAuthorName: string | null; authorName: string; createdAt: number; updatedAt: number; canEdit: boolean; canDelete: boolean };
 type Viewer = { id: string; displayName: string } | null;
 type Page = { records: Comment[]; nextCursor: string | null; viewer: Viewer };
+class CommentsRequestError extends Error {
+ constructor(readonly status: number, message: string) { super(message); }
+}
 const copy = {
  zh: { heading:'讨论', refresh:'刷新', loading:'正在读取讨论…', empty:'还没有讨论。', failure:'讨论暂时无法加载，请稍后刷新。', label:'写下你的想法', placeholder:'分享阅读感受或提出问题…', submit:'发表评论', submitting:'正在发表…', posted:'评论已发表。', postedRefreshFailed:'评论已发表，但讨论列表未能刷新，请稍后点击刷新。', reply:'回复', replying:'回复 {name}', cancelReply:'取消回复', edit:'编辑', save:'保存修改', cancel:'取消', remove:'删除', confirm:'删除这条评论？', confirmRemove:'确认删除', removed:'评论已删除。', saved:'修改已保存。', edited:'已编辑', more:'更早的讨论', identity:'以 {name} 的身份参与', input:'评论内容', invalid:'请先填写评论内容。', ownReply:'仅能回复主评论。' },
  en: { heading:'Discussion', refresh:'Refresh', loading:'Loading discussion…', empty:'No comments yet.', failure:'Discussion could not load. Please refresh and try again.', label:'Share your thoughts', placeholder:'Share a reading experience or ask a question…', submit:'Post comment', submitting:'Posting…', posted:'Comment posted.', postedRefreshFailed:'Comment posted, but the discussion could not refresh. Please try Refresh.', reply:'Reply', replying:'Replying to {name}', cancelReply:'Cancel reply', edit:'Edit', save:'Save changes', cancel:'Cancel', remove:'Delete', confirm:'Delete this comment?', confirmRemove:'Delete comment', removed:'Comment deleted.', saved:'Changes saved.', edited:'Edited', more:'Earlier comments', identity:'Posting as {name}', input:'Comment', invalid:'Enter a comment first.', ownReply:'Reply to a top-level comment.' },
@@ -17,11 +20,11 @@ export function initCloudComments() {
   let cursor:string|null=null, viewer:Viewer=null, generation=0, parentId:string|null=null, replyTrigger:HTMLButtonElement|null=null;
   const identify=root.querySelector<HTMLElement>('[data-comments-identity]')!, counter=root.querySelector<HTMLElement>('[data-comments-count]')!;
   root.querySelector('[data-comments-heading]')!.textContent=t.heading;
-  root.setAttribute('aria-label',t.heading);
   const signIn=root.querySelector<HTMLElement>('[data-comments-sign-in]')!,login=root.querySelector<HTMLAnchorElement>('[data-comments-login]')!;
-  login.textContent=locale==='en'?'Sign in to join the discussion':'登录后参与讨论';
-  login.href='/console/?'+new URLSearchParams({returnTo:location.pathname+'#discussion'});
-  root.querySelector('[data-comments-refresh]')!.textContent=t.refresh;
+  login.querySelector('[data-comments-login-label]')!.textContent=locale==='en'?'Sign in to join the discussion':'登录后参与讨论';
+  const refresh=root.querySelector<HTMLButtonElement>('[data-comments-refresh]')!;
+  refresh.textContent=t.refresh;
+  refresh.hidden=false;
   root.querySelector('[data-comments-label]')!.textContent=t.label;
   const labelId='comment-'+root.dataset.threadKind+'-'+root.dataset.threadId;
   input.id=labelId;root.querySelector('label')!.htmlFor=labelId;
@@ -30,11 +33,36 @@ export function initCloudComments() {
   function resetReply() {parentId=null;replyNote.textContent='';cancel.hidden=true;}
   function count() {counter.textContent=`${input.value.length} / 4000`;input.setCustomValidity('');}
   input.addEventListener('input',count);cancel.addEventListener('click',()=>{const target=replyTrigger;resetReply();target?.isConnected?target.focus():input.focus();});
+  function updateViewer(next: Viewer) {
+   const changed = viewer?.id !== next?.id;
+   viewer = next;
+   form.hidden = !next;
+   signIn.hidden = !!next;
+   identify.textContent = next ? t.identity.replace('{name}',next.displayName) : '';
+   if(changed){input.value='';resetReply();count();}
+   return changed;
+  }
+  function clearAccess() {
+   updateViewer(null);
+   list.replaceChildren();
+   cursor = null;
+   more.hidden = true;
+   if(root.dataset.restricted) root.hidden = true;
+  }
+  function accessDenied(error: unknown) {
+   if (!(error instanceof CommentsRequestError)) return false;
+   if (error.status !== 401 && !(root.dataset.restricted && [403, 404].includes(error.status))) return false;
+   clearAccess();
+   status.textContent = '';
+   return true;
+  }
   async function api<T>(url:string, options:RequestInit = {}):Promise<T> {
    const response=await fetch(url,{credentials:'same-origin',cache:'no-store',...options,headers:{...(options.body?{'Content-Type':'application/json'}:{}),...options.headers}});
-   const data=await response.json();
-   if(!response.ok) {if(response.status===404&&root.dataset.restricted){root.hidden=true;list.replaceChildren();input.value='';resetReply();}throw new Error(data.error||t.failure);}
-   return data as T;
+   if(!response.ok){
+    const data = await response.json().catch(() => null);
+    throw new CommentsRequestError(response.status, typeof data?.error === 'string' ? data.error : t.failure);
+   }
+   return await response.json() as T;
   }
   function focusComment(id?:string) {
    const article=id?Array.from(list.querySelectorAll<HTMLElement>('article')).find(node=>node.dataset.commentId===id):undefined;
@@ -75,9 +103,7 @@ export function initCloudComments() {
    try {
     const result=await api<Page>(endpoint+'?'+search);
     if(version!==generation)return false;
-    const changed=viewer?.id!==result.viewer?.id;
-    viewer=result.viewer;form.hidden=!viewer;signIn.hidden=!!viewer;identify.textContent=viewer?t.identity.replace('{name}',viewer.displayName):'';
-    if(changed){input.value='';resetReply();count();}
+    const changed=updateViewer(result.viewer);
     root.hidden=false;
     if(quiet&&!changed)return true;
     cursor=result.nextCursor;
@@ -85,20 +111,23 @@ export function initCloudComments() {
     const entries=result.records.map(render);list.append(...entries);
     if(append&&!cursor&&document.activeElement===more)(entries[0]||root.querySelector<HTMLElement>('[data-comments-heading]'))?.focus();
     status.textContent=list.childElementCount?'':t.empty;more.hidden=!cursor;return true;
-   } catch(error) {if(version===generation&&!quiet){status.textContent=(error as Error).message;}return false;}
+   } catch(error) {
+    if(version===generation&&!accessDenied(error)&&!quiet) status.textContent=t.failure;
+    return false;
+   }
    finally {if(version===generation)more.disabled=false;}
   }
   more.addEventListener('click',()=>{void load(true);});
-  root.querySelector('[data-comments-refresh]')!.addEventListener('click',()=>{void load();});
+  refresh.addEventListener('click',()=>{void load();});
   form.addEventListener('submit',async event=>{
    event.preventDefault();if(!input.value.trim()){input.setCustomValidity(t.invalid);input.reportValidity();return;}
    submit.disabled=true;submit.textContent=t.submitting;submit.setAttribute('aria-busy','true');
    try{await api(endpoint+'?'+query,{method:'POST',body:JSON.stringify({body:input.value,parentId})});input.value='';resetReply();count();status.textContent=await load()?t.posted:t.postedRefreshFailed;}
-   catch(error){status.textContent=(error as Error).message;}
+   catch(error){if(!accessDenied(error))status.textContent=error instanceof CommentsRequestError ? error.message : t.failure;}
    finally{submit.disabled=false;submit.textContent=t.submit;submit.removeAttribute('aria-busy');}
   });
-  window.addEventListener('storage',event=>{if(event.key==='telysta.account.event'){list.replaceChildren();form.hidden=true;if(root.dataset.restricted)root.hidden=true;void load();}});
-  window.addEventListener('library-access-change',()=>{if(root.dataset.restricted){root.hidden=true;list.replaceChildren();input.value='';resetReply();}void load();});
+  window.addEventListener('storage',event=>{if(event.key==='telysta.account.event'){clearAccess();void load();}});
+  window.addEventListener('library-access-change',()=>{if(root.dataset.restricted)clearAccess();void load();});
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)void load(false,true);});
   window.setInterval(()=>{if(!document.hidden)void load(false,true);},30000);
   void load();

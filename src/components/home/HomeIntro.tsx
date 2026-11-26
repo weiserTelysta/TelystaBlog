@@ -20,8 +20,8 @@ const TONE_STYLES: Record<HomeProfileTone, HomeIntroStyle> = {
 		'--home-intro-accent-soft': 'rgba(222, 190, 124, 0.16)',
 	},
 	moon: {
-		'--home-intro-accent': 'rgba(156, 199, 232, 0.76)',
-		'--home-intro-accent-soft': 'rgba(156, 199, 232, 0.16)',
+		'--home-intro-accent': 'rgb(var(--color-accent-rgb) / 0.76)',
+		'--home-intro-accent-soft': 'rgb(var(--color-accent-rgb) / 0.16)',
 	},
 	rose: {
 		'--home-intro-accent': 'rgba(214, 167, 200, 0.72)',
@@ -55,6 +55,7 @@ export default function HomeIntro() {
 	const [displayedText, setDisplayedText] = useState('');
 	const [reducedMotion, setReducedMotion] = useState(false);
 	const displayMode = getGreetingDisplayMode(intro.greeting);
+	const isBrailleArt = /^[\u2800-\u28ff\n]+$/u.test(intro.greeting);
 	const toneStyle = useMemo(
 		() => TONE_STYLES[intro.profile.tone ?? 'moon'],
 		[intro.profile.tone],
@@ -205,7 +206,7 @@ export default function HomeIntro() {
 			<p
 				className={`time-greeting time-greeting--${displayMode}${
 					isSettled ? ' time-greeting--complete' : ''
-				}`}
+				}${isBrailleArt ? ' time-greeting--braille-art' : ''}`}
 				aria-live="polite"
 			>
 				<span>{displayedText}</span>

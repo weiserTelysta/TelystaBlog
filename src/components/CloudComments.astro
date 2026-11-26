@@ -1,14 +1,26 @@
 ---
 import '../styles/comments.scss';
+import FlowerOrnament from './site/FlowerOrnament.astro';
+import { ebookHref } from '../lib/ebooks/ebookSchema';
+import { postHref } from '../lib/postLinks.mjs';
 type Props = { kind: 'post' | 'ebook'; id: string; restricted?: boolean };
 const { kind, id, restricted = false } = Astro.props;
+const threadPath = kind === 'post' ? postHref(id) : ebookHref(id);
+const loginHref = `/console/?${new URLSearchParams({ returnTo: `${threadPath}#discussion` })}`;
 ---
-<section id="discussion" class="cloud-comments" data-cloud-comments data-thread-kind={kind} data-thread-id={id} data-restricted={restricted ? 'true' : undefined} aria-label="讨论" hidden={restricted}>
- <div class="cloud-comments__head"><h2 data-comments-heading tabindex="-1">讨论</h2><button type="button" data-comments-refresh>刷新</button></div>
- <p class="cloud-comments__status" role="status" aria-live="polite" data-comments-status>正在读取讨论…</p>
+<section id="discussion" class="cloud-comments" data-cloud-comments data-thread-kind={kind} data-thread-id={id} data-restricted={restricted ? 'true' : undefined} aria-labelledby={`discussion-${id}`} hidden={restricted}>
+ <div class="cloud-comments__head">
+  <h2 id={`discussion-${id}`} data-comments-heading tabindex="-1">讨论</h2>
+  <button type="button" data-comments-refresh hidden>刷新</button>
+ </div>
+ <p class="cloud-comments__status" role="status" aria-live="polite" data-comments-status></p>
  <div class="cloud-comments__list" data-comments-list></div>
  <button class="cloud-comments__more" type="button" data-comments-more hidden>更早的讨论</button>
- <p class="cloud-comments__sign-in" data-comments-sign-in hidden><a href="/console/" data-comments-login>登录后参与讨论</a></p>
+ <div class="cloud-comments__sign-in" data-comments-sign-in>
+  <a class="cloud-comments__login text-link" href={loginHref} data-comments-login>
+   <FlowerOrnament tone={kind === 'post' ? 'lilac' : 'rose'}><span data-comments-login-label>登录后参与讨论</span></FlowerOrnament>
+  </a>
+ </div>
  <form class="cloud-comments__composer" data-comments-form hidden>
   <div class="cloud-comments__compose-head"><label data-comments-label>写下你的想法</label><span data-comments-reply></span></div>
   <textarea data-comments-input maxlength="4000" rows="4" required aria-label="评论内容" placeholder="分享阅读感受或提出问题…"></textarea>
@@ -19,4 +31,5 @@ const { kind, id, restricted = false } = Astro.props;
 <script>
  import { initCloudComments } from '../lib/commentsClient';
  initCloudComments();
+
 </script>

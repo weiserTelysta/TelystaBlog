@@ -1,0 +1,46 @@
+.ornamented-text {
+	position: relative;
+	isolation: isolate;
+	display: inline-block;
+	max-inline-size: 100%;
+}
+
+.flower-ornament {
+	--petal-width: clamp(19px, 1.15em, 27px);
+	position: absolute;
+	inset-inline-end: calc(.24em - var(--petal-width));
+	inset-block-end: calc(100% - .48em);
+	z-index: -1;
+	display: block;
+	inline-size: var(--petal-width);
+	block-size: auto;
+	overflow: visible;
+	fill: var(--color-accent-soft);
+	pointer-events: none;
+	user-select: none;
+}
+
+.flower-ornament--lilac { fill: var(--color-accent); }
+.flower-ornament--ivory { fill: #d7c4ad; }
+.flower-ornament [data-petal="1"] { opacity: .58; }
+.flower-ornament [data-petal="2"] { opacity: .72; }
+.flower-ornament [data-petal="3"] { opacity: .42; }
+.flower-ornament [data-petal="4"] { opacity: .46; }
+
+@media (prefers-reduced-motion: no-preference) {
+	.flower-ornament.is-blooming [data-petal] {
+		transform-box: fill-box;
+		transform-origin: center;
+		animation: petal-settle 480ms var(--motion-ease-out, ease-out) both;
+	}
+	.flower-ornament.is-blooming [data-petal="2"] { animation-delay: 55ms; }
+	.flower-ornament.is-blooming [data-petal="3"] { animation-delay: 115ms; }
+	.flower-ornament.is-blooming [data-petal="4"] { animation-delay: 165ms; }
+}
+
+@keyframes petal-settle {
+	from { opacity: .16; transform: translate(-2px, 2px) rotate(-16deg); }
+	to { transform: none; }
+}
+
+@media (forced-colors: active) { .flower-ornament { visibility: hidden; } }

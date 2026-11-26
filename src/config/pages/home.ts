@@ -13,6 +13,7 @@ export type HomeSectionItem = {
 	description?: string;
 	external?: boolean;
 	kind?: string;
+	flower?: 'cherry' | 'peach' | 'camellia' | 'hydrangea';
 };
 
 export type HomeSectionConfig = {
@@ -76,18 +77,21 @@ export const HOME_SECTIONS: HomeSectionConfig[] = [
 				href: '/about/',
 				description: '我见我知，予言予闻。',
 				kind: 'Marginalia',
+				flower: 'cherry',
 			},
 			{
 				label: '画廊',
 				href: '/gallery/',
 				description: '笔已经自己在画了！',
 				kind: 'Gallery',
+				flower: 'peach',
 			},
 			{
 				label: '书室',
 				href: '/ebooks/',
 				description: '电子书是人类进步的电梯。',
 				kind: 'Library',
+				flower: 'camellia',
 			},
 			{
 				label: '世界观',
@@ -95,6 +99,7 @@ export const HOME_SECTIONS: HomeSectionConfig[] = [
 				description: '一些过去的故事。',
 				external: true,
 				kind: 'Annals',
+				flower: 'hydrangea',
 			},
 		],
 		order: 20,

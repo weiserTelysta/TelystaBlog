@@ -1,5 +1,6 @@
 import '../../styles/category-foil.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import type { CSSProperties, MouseEvent, PointerEvent, WheelEvent } from 'react';
 import { BLOG_PAGE_CONFIG } from '../../config/pages/blog';
 import type { BlogCategoryId, CategoryPostCount } from '../../config/content/blogCategories';
@@ -21,7 +22,6 @@ const ACCORDION_COPY = BLOG_PAGE_CONFIG.categoryAccordion;
 function getCategoryTitle(visual: BlogCategoryVisual) {
 	return `${visual.cardInscription.prefix}'s ${visual.cardInscription.name}`;
 }
-const CATEGORY_DIALOG_TITLE_ID = 'category-accordion-title';
 const CLOSE_ANIMATION_MS = 200;
 const RAIL_REST_DISTANCE = 0.5;
 
@@ -106,17 +106,13 @@ export default function CategoryAccordion({
 		root.classList.add('is-category-accordion-open');
 		body.classList.add('is-category-accordion-open');
 		focusFrame = window.requestAnimationFrame(() => {
-			closeButtonRef.current?.focus();
-			updateRailEdgeSpace();
+			closeButtonRef.current?.focus({ preventScroll: true });
 		});
 
 		const rail = railRef.current;
 
 		if (rail && 'ResizeObserver' in window) {
-			railResizeObserverRef.current = new ResizeObserver(() => {
-				updateRailEdgeSpace();
-				clearWheelScrollState();
-			});
+			railResizeObserverRef.current = new ResizeObserver(clearWheelScrollState);
 			railResizeObserverRef.current.observe(rail);
 		}
 
@@ -321,22 +317,6 @@ export default function CategoryAccordion({
 		return Math.max(0, rail.scrollWidth - rail.clientWidth);
 	}
 
-	function updateRailEdgeSpace() {
-		const rail = railRef.current;
-		const firstCard = rail?.querySelector<HTMLElement>('.category-accordion__card');
-
-		if (!rail || !firstCard) {
-			return;
-		}
-
-		const railStyles = window.getComputedStyle(rail);
-		const gap = parseFloat(railStyles.columnGap || railStyles.gap || '0') || 0;
-		const cardWidth = firstCard.getBoundingClientRect().width;
-		const edgeSpace = Math.max(24, rail.clientWidth / 2 - cardWidth / 2 - gap);
-
-		rail.style.setProperty('--rail-edge-space', `${edgeSpace}px`);
-	}
-
 	function disconnectRailResizeObserver() {
 		railResizeObserverRef.current?.disconnect();
 		railResizeObserverRef.current = null;
@@ -504,7 +484,7 @@ export default function CategoryAccordion({
 				</span>
 			</button>
 
-			{open && (
+			{open && createPortal(
 				<div
 					className={[
 						'category-accordion__overlay',
@@ -515,7 +495,7 @@ export default function CategoryAccordion({
 					data-scroll-native
 					role="dialog"
 					aria-modal="true"
-					aria-labelledby={CATEGORY_DIALOG_TITLE_ID}
+					aria-label={ACCORDION_COPY.dialogLabel}
 					onClick={(event) => {
 						if (event.target === event.currentTarget) {
 							requestCloseAccordion();
@@ -527,31 +507,28 @@ export default function CategoryAccordion({
 						className="category-accordion__panel"
 						onClick={handlePanelClick}
 					>
-						<button
-							ref={closeButtonRef}
-							className="category-accordion__close"
-							type="button"
-							aria-label={ACCORDION_COPY.closeLabel}
-							data-category-accordion-control
-							onClick={requestCloseAccordion}
-						>
-							×
-						</button>
-
-						<header className="category-accordion__heading">
-							<p>{ACCORDION_COPY.dialogEyebrow}</p>
-							<h2 id={CATEGORY_DIALOG_TITLE_ID}>{ACCORDION_COPY.dialogTitle}</h2>
+						<div className="category-accordion__actions">
+							<button
+								ref={closeButtonRef}
+								className="category-accordion__close"
+								type="button"
+								aria-label={ACCORDION_COPY.closeLabel}
+								data-category-accordion-control
+								onClick={requestCloseAccordion}
+							>
+								<svg width="17" height="17" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 4 8 8m0-8-8 8" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" /></svg>
+							</button>
 							{selectedCategoryId && (
 								<a
-									className="category-accordion__all-link"
+									className="category-accordion__all-link text-link"
 									href={buildCategoryHref()}
 									data-category-accordion-control
 								>
-									<span aria-hidden="true">←</span>
-									{ACCORDION_COPY.allRecordsTitle}
+									<svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12.5 8h-9m4-4-4 4 4 4" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" /></svg>
+									<span>{ACCORDION_COPY.allRecordsTitle}</span>
 								</a>
 							)}
-						</header>
+						</div>
 
 						<div
 							className="category-accordion__rail-frame"
@@ -608,7 +585,7 @@ export default function CategoryAccordion({
 													className="category-accordion__image"
 													src={visual.image.src}
 													srcSet={visual.imageSrcSet}
-													sizes="(max-width: 362px) 58vw, (max-width: 760px) 210px, (max-width: 1171px) 164px, (max-width: 1643px) 14vw, 230px"
+													sizes="(max-width: 760px) min(58vw, 210px), (max-width: 1092px) 142px, (max-width: 1554px) 13vw, 202px"
 													width={visual.image.width}
 													height={visual.image.height}
 													alt=""
@@ -616,23 +593,17 @@ export default function CategoryAccordion({
 													decoding="async"
 												/>
 												<span className="category-accordion__card-shade" aria-hidden="true" />
-												<span className="category-accordion__card-title">
-													<span className="category-accordion__card-title-prefix">
-														{visual.cardInscription.prefix}
+												<span className="category-accordion__caption" lang="en">
+													<span className="category-accordion__card-title">
+														<span className="category-accordion__card-title-prefix">{visual.cardInscription.prefix}</span>
+														<span className="category-accordion__card-title-name">{visual.cardInscription.name}</span>
 													</span>
-													<span className="category-accordion__card-title-name">
-														{visual.cardInscription.name}
+													<span className="category-accordion__details" aria-hidden={!isPreselected}>
+														<span className="category-accordion__card-copy">
+															<span>{visual.descriptionEn}</span>
+															<span className="category-accordion__card-count">{postCount} {ACCORDION_COPY.recordLabel}</span>
+														</span>
 													</span>
-												</span>
-												<span className="category-accordion__card-copy" lang="en">
-													<strong>
-														<span>{visual.cardInscription.prefix}'s</span>{' '}
-														<span>{visual.cardInscription.name}</span>
-													</strong>
-													<span>{visual.descriptionEn}</span>
-													<em>
-														{postCount} {ACCORDION_COPY.recordLabel}
-													</em>
 												</span>
 												{isActive && (
 													<span className="category-accordion__current-mark">
@@ -646,7 +617,8 @@ export default function CategoryAccordion({
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>,
+				document.body
 			)}
 		</div>
 	);

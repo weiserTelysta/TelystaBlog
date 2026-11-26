@@ -13,10 +13,12 @@ import {
 } from '../client/ui.js';
 import { editDocument } from '../client/editor.js';
 import { operations } from '../client/operations.js';
+import { renderSeries } from '../client/series.js';
 const $ = (selector) => document.querySelector(selector),
 	adminEntry = location.pathname.startsWith('/telysta-console');
 const names = {
 	post: ['文章', 'Articles'],
+	series: ['文章系列', 'Series'],
 	ebook: ['书室', 'Library'],
 	gallery: ['画廊', 'Gallery'],
 	score: ['简谱', 'Scores'],
@@ -38,8 +40,7 @@ const roleNames = {
 let user = null,
 	active = 'profile',
 	dirty = false,
-	generation = 0,
-	optionsCache;
+	generation = 0;
 const workspace = $('#workspace'),
 	notice = $('#notice');
 function tell(message) {
@@ -101,6 +102,7 @@ function display() {
 			['内容管理', 'Content'],
 			[
 				['post', 'file'],
+				['series', 'archive'],
 				['ebook', 'book'],
 				['gallery', 'image'],
 				['score', 'file'],
@@ -144,7 +146,7 @@ function display() {
 		}
 		$('#navigation').append(group);
 	}
-	bind($('#current-task'), names[active] || names.profile);
+	bind($('#current-task'), active === 'series' ? '' : names[active] || names.profile);
 }
 async function leave() {
 	return (
@@ -185,6 +187,8 @@ async function navigate(key, force = false) {
 	try {
 		if (['post', 'ebook', 'gallery', 'score', 'config'].includes(active))
 			await documents(active, context);
+		else if (active === 'series')
+			await renderSeries(context);
 		else {
 			workspace.replaceChildren();
 			const heading = el('h1', names[active]);
@@ -215,14 +219,14 @@ async function editor(id, kind, section) {
 	workspace.setAttribute('aria-busy', 'true');
 	tell('');
 	try {
-		optionsCache ||= await api('editor/options');
+		const options = await api('editor/options');
 		if (version !== generation) return;
 		await editDocument({
 			id,
 			section,
 			api,
 			workspace,
-			options: optionsCache,
+			options,
 			current: () => version === generation && !!user,
 			tell,
 			dirty: (value) => {
@@ -418,7 +422,7 @@ async function documents(kind, context) {
 		for (const [group, label] of Object.entries(categories)) {
 			const items = records.flatMap((record) =>
 				(record.settings || [])
-					.filter((item) => item.group === group)
+					.filter((item) => item.group === group && item.name !== 'BLOG_SERIES')
 					.map((item) => ({ record, item }))
 			);
 			if (!items.length) continue;

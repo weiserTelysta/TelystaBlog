@@ -362,6 +362,13 @@ export function configSections(source: string, sourcePath: string) {
 		fields: describe(declaration(source, d.name))
 	}));
 }
+
+export function replaceSeriesArray(source: string, series: unknown[]) {
+	const value = declaration(source, 'BLOG_SERIES');
+	if (value.type !== 'ArrayExpression') throw new HttpError(400, '文章系列配置格式无效。');
+	return source.slice(0, value.start!) + JSON.stringify(series, null, '\t') + source.slice(value.end!);
+}
+
 export function patchConfig(
 	source: string,
 	sourcePath: string,

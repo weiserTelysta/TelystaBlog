@@ -52,7 +52,7 @@ const VISUAL_COPY: Record<
 	},
 	collection: {
 		cardInscription: {
-			prefix: 'Weiser',
+			prefix: 'Telysta',
 			name: 'Collection',
 		},
 		image: accordionTelystaImage,
@@ -61,7 +61,7 @@ const VISUAL_COPY: Record<
 	},
 	letters: {
 		cardInscription: {
-			prefix: 'Weiser',
+			prefix: 'Rhaelysa',
 			name: 'Letters',
 		},
 		image: accordionRhaelysaImage01,
@@ -70,7 +70,7 @@ const VISUAL_COPY: Record<
 	},
 	reading: {
 		cardInscription: {
-			prefix: 'Weiser',
+			prefix: 'Alice',
 			name: 'Reading',
 		},
 		image: accordionAliceImage,
@@ -79,7 +79,7 @@ const VISUAL_COPY: Record<
 	},
 	life: {
 		cardInscription: {
-			prefix: 'Weiser',
+			prefix: 'Mirelle',
 			name: 'Life',
 		},
 		image: accordionMirelleImage,
@@ -88,7 +88,7 @@ const VISUAL_COPY: Record<
 	},
 	portraits: {
 		cardInscription: {
-			prefix: 'Weiser',
+			prefix: 'Rhaelysa',
 			name: 'Portraits',
 		},
 		image: accordionRhaelysaImage02,

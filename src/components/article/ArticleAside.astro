@@ -81,7 +81,7 @@ const panelId = 'article-toc-panel';
 		background: transparent;
 		cursor: pointer;
 		list-style: none;
-		color: rgba(156, 199, 232, 0.56);
+		color: rgb(var(--color-accent-rgb) / 0.56);
 		pointer-events: auto;
 		animation: article-toc-trigger-enter 0.56s var(--motion-ease-out) 0.38s backwards;
 		transition: color var(--motion-fast) ease;
@@ -93,7 +93,7 @@ const panelId = 'article-toc-panel';
 		height: 32px;
 		border-radius: 50%;
 		content: "";
-		background: radial-gradient(circle, rgba(156, 199, 232, 0.16), transparent 68%);
+		background: radial-gradient(circle, rgb(var(--color-accent-rgb) / 0.16), transparent 68%);
 		opacity: 0.16;
 		transform: scale(0.78);
 		animation: article-toc-trigger-glint 0.86s ease 0.62s backwards;
@@ -126,7 +126,7 @@ const panelId = 'article-toc-panel';
 
 	.article-aside__trigger:focus-visible {
 		border-radius: 2px;
-		outline: 1px solid rgba(156, 199, 232, 0.74);
+		outline: 1px solid var(--color-focus);
 		outline-offset: 3px;
 	}
 

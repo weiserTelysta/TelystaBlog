@@ -21,30 +21,25 @@ test('首页四个入口使用作者确认的中英文名称与文案', async ({
 });
 
 for (const width of [390, 1440]) {
-	test(`页面主标题与文章共用字号，${width}px 下没有横向溢出`, async ({ page }, testInfo) => {
+	test(`公开页面采用对应的标题层级，${width}px 下没有横向溢出`, async ({ page }, testInfo) => {
 		await page.setViewportSize({ width, height: 1000 });
 		await page.emulateMedia({ reducedMotion: 'reduce' });
-		const sizes = [];
 		for (const path of pages) {
 			await page.goto(path, { waitUntil: 'domcontentloaded' });
 			const heading = page.getByRole('heading', { level: 1 });
 			await expect(heading).toBeVisible();
-			if (path === '/ebooks/') {
-				await expect(heading).toHaveClass('ebook-sr-only');
-				continue;
-			}
-			sizes.push(await heading.evaluate(el => {
-				const s = getComputedStyle(el);
-				return { font: parseFloat(s.fontSize), line: parseFloat(s.lineHeight) };
-			}));
 			expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), path).toBe(true);
+			if (path === '/ebooks/' || path === '/gallery/') {
+				await expect(heading).toHaveCSS('width', '1px');
+			} else {
+				const expectedFontSize = path === '/series/' ? 18 : width === 1440 ? 40 : 30.4;
+				await expect(heading).toHaveCSS('font-size', `${expectedFontSize}px`);
+				const lineHeight = await heading.evaluate(el => parseFloat(getComputedStyle(el).lineHeight));
+				expect(lineHeight, path).toBeCloseTo(expectedFontSize * (path === '/series/' ? 1.4 : 1.2), 1);
+			}
 			if (['/about/', '/gallery/', '/ebooks/'].includes(path)) {
 				await page.screenshot({ path: testInfo.outputPath(`${path.split('/')[1]}-${width}.png`) });
 			}
-		}
-		for (const size of sizes) {
-			expect(size.font).toBeCloseTo(width === 1440 ? 40 : 30.4, 1);
-			expect(size.line).toBeCloseTo(size.font * 1.2, 1);
 		}
 	});
 }

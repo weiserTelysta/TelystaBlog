@@ -1,6 +1,54 @@
 import { test, expect, type Page } from '@playwright/test';
+import { readFile } from 'node:fs/promises';
 import { createPlatformFixture } from '../helpers/platform-fixture.mjs';
 async function navigation(page: Page){if(await page.locator('#menu-trigger').isVisible()&&!await page.locator('#mobile-menu').evaluate((node:HTMLDialogElement)=>node.open))await page.locator('#menu-trigger').click();}
+
+test('站主新建系列、上传裁好的封面并把文章排入系列', async ({ page }, info) => {
+ test.setTimeout(60_000);
+ const fixture = await createPlatformFixture();
+ try {
+  const seriesSource = await readFile(new URL('../../src/config/content/blogSeries.ts', import.meta.url), 'utf8');
+  await fixture.db.prepare("INSERT INTO documents(id,kind,title,source_path,source,updated_at,imported_at) VALUES('config_series','config','Series','src/config/content/blogSeries.ts',?1,0,0)").bind(seriesSource).run();
+  const post = '---\nuuid: 012345abcdef\ntitle: Fixture article\ntitleEn: Fixture\ndescription: Fixture\ndescriptionEn: Fixture\ncategory: notes\npublishedAt: 2026-11-16\nupdatedAt: 2026-11-16\n---\n\n# Fixture article\n\nOriginal text';
+  await fixture.db.prepare("INSERT INTO documents(id,kind,title,source,updated_at,imported_at) VALUES('post_WEISER012345abcdef','post','Fixture article',?1,0,0)").bind(post).run();
+  await fixture.attach(page.context());
+  await page.goto('https://telysta.com/console/');
+  await fixture.login(page,'weiser@telysta.com');
+  await page.getByRole('link', { name: '文章系列', exact: true }).click();
+  await page.getByRole('button', { name: '新建系列', exact: true }).click();
+  await page.getByLabel('所属分类').selectOption('notes');
+  await page.getByLabel('固定链接编号').fill('test-bloom');
+  await page.getByLabel('系列名称').fill('花开记');
+  await page.getByLabel('英文名称').fill('Bloom journal');
+  await page.getByLabel('系列简介').fill('一组花卉随笔。');
+  await page.getByLabel('英文简介').fill('Notes about flowers.');
+  await page.getByLabel('选取封面图片').setInputFiles('src/assets/images/series/ranunculus.webp');
+  await expect(page.getByLabel('裁剪后的封面预览')).toBeVisible();
+  await page.getByLabel('缩放').press('End');
+  await expect(page.getByLabel('缩放')).toHaveValue('250');
+  await page.screenshot({ path: info.outputPath('series-cover-editor.png') });
+  await page.getByRole('button', { name: '保存系列草稿' }).click();
+  await expect(page.locator('#notice')).toContainText('系列草稿已保存');
+  let stored = await fixture.db.prepare("SELECT source FROM documents WHERE id='config_series'").first();
+  const key = String(stored.source).match(/series-covers\/[a-f0-9]{64}\.webp/)?.[0];
+  expect(key).toBeTruthy();
+  const bucket = await fixture.mf.getR2Bucket('MEDIA_BUCKET', 'console-fixture');
+  expect((await bucket.head(key!))?.httpMetadata?.contentType).toBe('image/webp');
+  await page.getByRole('button', { name: '分配文章' }).click();
+  await page.getByRole('button', { name: '编辑', exact: true }).click();
+  await page.getByRole('tab', { name: '分类与访问' }).click();
+  await page.getByLabel('文章系列', { exact: true }).selectOption('test-bloom');
+  await page.getByLabel('系列顺序').fill('1');
+  await page.getByRole('button', { name: '保存草稿', exact: true }).click();
+  await expect(page.locator('#notice')).toContainText('草稿已保存');
+  stored = await fixture.db.prepare("SELECT source FROM documents WHERE id='post_WEISER012345abcdef'").first();
+  expect(stored.source).toContain('series: test-bloom');
+  expect(stored.source).toContain('seriesOrder: 1');
+ } finally {
+  await page.context().unrouteAll({ behavior: 'wait' });
+  await fixture.mf.dispose();
+ }
+});
 for(const width of [390,1440])test(`站主首次设置和全屏分栏编辑工作流：${width}px`,async({page},testInfo)=>{
  test.setTimeout(60_000);const fixture=await createPlatformFixture();
  try{
@@ -15,6 +63,14 @@ for(const width of [390,1440])test(`站主首次设置和全屏分栏编辑工�
   const record=await fixture.db.prepare("SELECT source,revision FROM documents WHERE id='post_WEISER012345abcdef'").first();expect(record.source).toContain('custom: retained');expect(record.source).toContain('# Fixture article');expect(record.source).toContain('Edited cloud draft');expect(record.revision).toBe(2);
   await page.getByRole('button',{name:'版本记录',exact:true}).click();await page.getByRole('button',{name:'载入此版本'}).click();await page.getByRole('button',{name:'继续',exact:true}).click();await page.getByRole('button',{name:'保存草稿',exact:true}).click();await expect(page.locator('#notice')).toContainText('草稿已保存');
   const restored=await fixture.db.prepare("SELECT revision,source FROM documents WHERE id='post_WEISER012345abcdef'").first();expect(restored.revision).toBe(3);expect(restored.source).toContain('Original text');
+  await page.getByRole('tab',{name:'发布',exact:true}).click();
+  const downloadPromise=page.waitForEvent('download');
+  await page.getByRole('button',{name:'下载发布快照',exact:true}).click();
+  const download=await downloadPromise;
+  expect(download.suggestedFilename()).toBe('post_WEISER012345abcdef-r3.json');
+  const snapshot=JSON.parse(await readFile((await download.path())!,'utf8'));
+  expect(snapshot.source).toContain('Original text');
+  expect(snapshot.author).toEqual({name:'custom_owner',username:'custom_owner'});
   await page.locator('#console-language').click();await expect(page.getByRole('button',{name:'Save draft',exact:true})).toBeVisible();await expect(page.getByRole('tab',{name:'Details',exact:true})).toBeVisible();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   if(width>860){const sidebar=await page.locator('#console-sidebar').boundingBox(),main=await page.locator('.console-main').boundingBox();expect(main!.x).toBe(sidebar!.width);expect(main!.width+sidebar!.width).toBe(width);}

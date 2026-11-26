@@ -19,15 +19,34 @@ test('Blog、Gallery 与 Ebooks 直接访问目录地址，无脚本也能跳转
 	} finally { await context.close(); }
 });
 
-for (const width of [390, 720, 721, 1440]) {
+for (const width of [320, 390, 720, 721, 1440]) {
 	test(`Home navigation wraps after two items at ${width}px`, async ({ page }, testInfo) => {
 		await page.setViewportSize({ width, height: 1000 });
 		await page.emulateMedia({ reducedMotion: 'reduce' });
 		await page.goto('/');
 		const navigation = page.locator('.home-section--resources');
 		await navigation.scrollIntoViewIfNeeded();
+		await expect(navigation.locator('.home-section__eyebrow')).toHaveText('Navigation');
 		const links = navigation.locator('.home-section__link-item');
-		expect(await links.count()).toBeGreaterThanOrEqual(3);
+		await expect(links).toHaveCount(4);
+		const flowers = navigation.locator('.home-section__flower');
+		await expect(flowers).toHaveCount(4);
+		const trails = navigation.locator('.home-section__petal-trail');
+		await expect(trails).toHaveCount(4);
+		const silhouettes = await trails.evaluateAll(elements => elements.map(el => el.querySelector('defs path')?.getAttribute('d')));
+		expect(new Set(silhouettes).size).toBe(4);
+		await expect(trails.locator('path[stroke]:not(defs *)')).toHaveCount(0);
+		for (const flower of await flowers.all()) {
+			await expect(flower).toHaveAttribute('aria-hidden', 'true');
+			await expect(flower).toHaveCSS('pointer-events', 'none');
+			await expect(flower.locator('svg')).toBeVisible();
+			expect(await flower.evaluate(el => Math.abs(el.parentElement!.getBoundingClientRect().right
+				- el.getBoundingClientRect().right - 7))).toBeLessThan(1);
+			expect(await flower.locator('use').evaluateAll(petals => petals.every(petal => {
+				const target = petal.getAttribute('href');
+				return target && petal.closest('svg')!.querySelector(target);
+			}))).toBe(true);
+		}
 		const boxes = await links.evaluateAll(items => items.map(item => {
 			const { x, y, width, height } = item.getBoundingClientRect();
 			return { x, y, width, height };
@@ -41,8 +60,82 @@ for (const width of [390, 720, 721, 1440]) {
 		}
 		expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 		const firstLink = navigation.getByRole('link').first();
+		const label = firstLink.locator('.home-section__link-label');
+		const trail = firstLink.locator('.home-section__petal-trail');
+		const fragment = trail.locator('.home-section__petal-sweep [data-fragment]').last();
+		const petal = firstLink.locator('.home-section__flower [data-petal]').first();
+		const bloom = firstLink.locator('.home-section__flower [data-bloom]');
+		await expect(label).toHaveCSS('text-decoration-line', 'none');
+		await expect(trail).toHaveAttribute('aria-hidden', 'true');
+		await expect(trail).toHaveCSS('pointer-events', 'none');
+		const overlap = await trail.evaluate(el => {
+			const description = el.parentElement!.querySelector('.home-section__link-description')!;
+			const text = document.createRange();
+			text.selectNodeContents(description);
+			const bounds = text.getBoundingClientRect();
+			return [...el.querySelectorAll('.home-section__petal-tail use')].some(petal => {
+				const fragment = petal.getBoundingClientRect();
+				return fragment.left < bounds.right && fragment.right > bounds.left
+					&& fragment.top < bounds.bottom && fragment.bottom > bounds.top;
+			});
+		});
+		expect(overlap).toBe(true);
 		await firstLink.focus();
 		await expect(firstLink).toBeFocused();
+		await expect(firstLink).toHaveCSS('outline-style', 'solid');
+		await expect(label).toHaveCSS('text-decoration-line', 'none');
+		for (const decoration of [bloom, petal, fragment]) {
+			await expect(decoration).toHaveCSS('transform', 'none');
+			await expect(decoration).toHaveCSS('transition-duration', '0s');
+		}
 		await navigation.screenshot({ path: testInfo.outputPath('home-navigation.png') });
 	});
 }
+
+test('首页路标悬停与键盘聚焦时花瓣依次舒展，入口位置保持稳定', async ({ page }) => {
+	await page.goto('/');
+	const navigation = page.locator('.home-section--resources');
+	const links = navigation.locator('.home-section__links');
+	const link = links.getByRole('link', { name: /^书室/ });
+	const label = link.locator('.home-section__link-label');
+	const mainPetal = link.locator('.home-section__flower [data-petal]').first();
+	const bloom = link.locator('.home-section__flower [data-bloom]');
+	const fragments = link.locator('.home-section__petal-sweep [data-fragment]');
+	const near = fragments.last();
+	const far = fragments.first();
+	await link.scrollIntoViewIfNeeded();
+	await page.evaluate(() => document.fonts.ready);
+	await expect(navigation).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+	await expect(links).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+	const initialColor = await label.evaluate(el => getComputedStyle(el).color);
+	const position = await link.boundingBox();
+	const fragmentCenters = () => fragments.evaluateAll(elements => elements.map(el => {
+		const { x, y, width, height } = el.getBoundingClientRect();
+		return { x: x + width / 2, y: y + height / 2 };
+	}));
+	const restingCenters = await fragmentCenters();
+	await link.hover();
+	await expect(label).not.toHaveCSS('color', initialColor);
+	await expect(link).toHaveCSS('transition-property', 'color');
+	await expect(bloom).not.toHaveCSS('transform', 'none');
+	await expect(mainPetal).not.toHaveCSS('transform', 'none');
+	await expect(near).not.toHaveCSS('transform', 'none');
+	await expect(near).toHaveCSS('transition-delay', '0.12s');
+	await expect(far).toHaveCSS('transition-delay', '0.23s');
+	for (const [index, center] of (await fragmentCenters()).entries()) {
+		const from = restingCenters[index];
+		expect(Math.hypot(center.x - from.x, center.y - from.y)).toBeLessThan(4);
+	}
+	await expect(label).toHaveCSS('text-decoration-line', 'none');
+	expect(await link.boundingBox()).toEqual(position);
+	await page.mouse.move(0, 0);
+	await expect(label).toHaveCSS('color', initialColor);
+	await expect(bloom).toHaveCSS('transform', 'none');
+	await expect(mainPetal).toHaveCSS('transform', 'none');
+	await expect(near).toHaveCSS('transform', 'none');
+	await link.focus();
+	await expect(link).toHaveCSS('outline-style', 'solid');
+	await expect(bloom).not.toHaveCSS('transform', 'none');
+	await expect(mainPetal).not.toHaveCSS('transform', 'none');
+	expect(await link.boundingBox()).toEqual(position);
+});

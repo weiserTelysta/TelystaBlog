@@ -1,6 +1,6 @@
 # 公开站点发现与收录
 
-网站只维护一份公开 `https://telysta.com/sitemap.xml`，由构建产物路由生成、去重，排除后台、受保护书籍、阅读器、JSON索引、旧跳转页和404。robots.txt声明该地址；后台另外发送noindex响应头，受保护资料仍靠服务端鉴权。
+网站只维护一份公开 `https://telysta.com/sitemap.xml`。构建时按明确范围收录首页、见我、博客、书室首页、画廊、系列及其公开目录、公开博客的 WEISER 永久链接。整份书目、书单、分类分页、阅读器、后台、JSON 索引及旧跳转页均在主动提交范围之外。后台另发 `noindex`，受保护资料由服务端鉴权。
 
 `/rss.xml`只包含公开文章，沿用永久链接和正文H1优先的标题。它用于读者订阅和博客目录核验，不包含电子书正文、云端草稿或用户资料。
 
@@ -16,7 +16,13 @@ Google已停用匿名sitemap ping，不能把404当提交成功。通过robots�
 
 本轮未连接Google Search Console或百度搜索资源平台账号，未执行这两个平台的账号内提交；不使用已经停用的匿名ping接口冒充成功。若后续提供相应账号授权／本地安全配置，再提交同一个公开sitemap，无需创建第二份站点地图。
 
+## 2026-11-22 执行结果
+
+IndexNow 接收首页 `/`、`/blog/` 和 `/series/`，返回 HTTP 200。线上原有 sitemap 有 1,370 个地址，收紧规则后的本地构建有 44 个。Google Search Console 和百度普通收录仍待站点账号授权。未找到可核实的搜狐站点地图提交渠道。
+
 ## 爬虫规则
+
+2026-11-22 收窄电子书抓取范围，保留书室首页，将详情、书单、分页、分类目录、阅读器和机器索引排除。通用爬虫组声明 `Crawl-delay: 5`，Bing 等支持该指令的爬虫可以读取同一份规则。Google 使用路径规则，其文档不支持该延迟指令。百度可在已验证站点的资源平台设置抓取频次。robots.txt 供爬虫遵守，实际请求控制由站点的鉴权及边缘限流负责。[Bing robots 说明](https://www.bing.com/webmasters/help/?topicid=cb7c31ec) · [Google robots 规范](https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec) · [百度抓取频次](https://ziyuan.baidu.com/pressure/index)
 
 线上核验发现Cloudflare自动追加的训练爬虫限制同时禁止了Baiduspider。为满足百度收录要求，robots改由仓库维护：`data/seo/crawler-policy.json` 保留其余既有训练爬虫限制及 `search=yes,ai-train=no,use=reference`，仅将Baiduspider移出禁止名单；后台和阅读器路径仍禁止抓取。
 

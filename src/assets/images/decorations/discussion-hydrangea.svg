@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="56" viewBox="0 0 132 56">
+  <defs>
+    <path id="p" d="M0 0C-7-3-9-10-7-12C-4-15 2-15 5-12C9-8 5-3 0 0Z"/>
+    <g id="flower">
+      <use href="#p"/><use href="#p" transform="rotate(90)"/><use href="#p" transform="rotate(180)"/><use href="#p" transform="rotate(270)"/>
+      <path d="M0 0-1-8M0 0 8-1M0 0 1 8M0 0-8 1" stroke="#f2daeb" opacity=".42" stroke-width=".55"/>
+      <circle r="1.6" fill="#e9dde8"/>
+    </g>
+  </defs>
+  <path d="M94 40Q79 53 67 54Q69 39 94 40M106 35Q120 28 131 36Q118 46 106 35" fill="#809995" opacity=".43"/>
+  <g data-bloom="" opacity=".68">
+    <g transform="translate(76 19) rotate(15) scale(.85)" fill="#9387b3"><use href="#flower" data-petal="3"/></g>
+    <g transform="translate(92 12) rotate(26) scale(.78)" fill="#b0a3ca"><use href="#flower" data-petal="2"/></g>
+    <g transform="translate(110 17) rotate(16) scale(.8)" fill="#a1a0c5"><use href="#flower" data-petal="4"/></g>
+    <g transform="translate(104 39) rotate(42) scale(.8)" fill="#8498b8"><use href="#flower" data-petal="3"/></g>
+    <g transform="translate(80 35) rotate(36) scale(.89)" fill="#8895b1"><use href="#flower" data-petal="2"/></g>
+    <g transform="translate(94 26) rotate(41) scale(1.04)" fill="#b3a8cb"><use href="#flower" data-petal="1"/></g>
+  </g>
+  <g transform="translate(53 38) rotate(12) scale(.43)" fill="#b0a3ca" opacity=".47"><use href="#flower" data-petal="5"/></g>
+</svg>

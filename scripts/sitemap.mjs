@@ -1,5 +1,14 @@
 import { writeFile } from 'node:fs/promises';
 
+const PUBLIC_ENTRY_POINTS = new Set(['/', '/about/', '/blog/', '/ebooks/', '/gallery/', '/series/']);
+
+/** @param {string} pathname */
+export function isDiscoverablePath(pathname) {
+ return PUBLIC_ENTRY_POINTS.has(pathname)
+  || /^\/blog\/WEISER[0-9a-f]{12}\/$/.test(pathname)
+  || /^\/(?:blog\/category|series)\/[a-z0-9-]+\/$/.test(pathname);
+}
+
 /** @param {string} value */
 const escapeXml = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&apos;');
 /** @param {string} site @param {string[]} paths @param {(pathname: string) => boolean} include */

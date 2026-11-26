@@ -18,6 +18,7 @@ type Props = {
 	article?: ArticleMetadata;
 	starfield?: boolean;
 	starfieldVariant?: 'immersive' | 'subtle';
+	homeFractals?: boolean;
 	noIndex?: boolean;
 	readingMode?: boolean;
 };
@@ -30,6 +31,7 @@ const {
 	article,
 	starfield = true,
 	starfieldVariant = 'immersive',
+	homeFractals = false,
 	noIndex = false,
 	readingMode = false,
 } = Astro.props;
@@ -54,7 +56,7 @@ const {
 		<TabIdentity />
 	</head>
 	<body class:list={{ 'is-reading': readingMode }}>
-		{starfield && <StarfieldBackground client:idle variant={starfieldVariant} />}
+		{starfield && <StarfieldBackground client:idle variant={starfieldVariant} homeFractals={homeFractals} />}
 		{readingMode ? <slot /> : <>
 			<SiteHeader />
 			<div class="site-shell"><slot /></div>

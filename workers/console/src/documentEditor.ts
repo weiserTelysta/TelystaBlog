@@ -8,7 +8,7 @@ import {
 	patchConfig
 } from './configEditor';
 import { BLOG_CATEGORIES } from '../../../src/config/content/blogCategories';
-import { BLOG_SERIES } from '../../../src/config/content/blogSeries';
+import { BLOG_SERIES, type BlogSeries } from '../../../src/config/content/blogSeries';
 import manifest from '../../../src/generated/cdn-assets.json';
 import { validateDocumentFields } from './documentFields';
 import { RESOURCE_TYPES } from '../../../src/config/content/resourceTypes';
@@ -172,7 +172,7 @@ export function describeDocument(record: DocumentRecord) {
 function object(value: unknown): value is Record<string, unknown> {
 	return !!value && typeof value === 'object' && !Array.isArray(value);
 }
-function validate(kind: string, patch: Record<string, unknown>) {
+function validate(kind: string, patch: Record<string, unknown>, series: readonly BlogSeries[]) {
 	for (const [key, value] of Object.entries(patch)) {
 		if (!fields[kind]?.includes(key))
 			throw new HttpError(400, '该字段不能通过此表单修改。');
@@ -216,7 +216,7 @@ function validate(kind: string, patch: Record<string, unknown>) {
 			key === 'series' &&
 			value !== null &&
 			value !== '' &&
-			!(BLOG_SERIES as readonly { id: string }[]).some((v) => v.id === value)
+			!series.some((v) => v.id === value)
 		)
 			throw new HttpError(400, '文章系列不存在。');
 		if (
@@ -230,7 +230,8 @@ function validate(kind: string, patch: Record<string, unknown>) {
 }
 export function patchDocument(
 	record: DocumentRecord,
-	input: Record<string, unknown>
+	input: Record<string, unknown>,
+	series: readonly BlogSeries[] = BLOG_SERIES
 ) {
 	if (record.kind === 'config') {
 		const source = patchConfig(
@@ -243,7 +244,7 @@ export function patchDocument(
 	}
 	if (!object(input.fields) || JSON.stringify(input.fields).length > 500000)
 		throw new HttpError(400, '表单数据无效。');
-	validate(record.kind, input.fields);
+	validate(record.kind, input.fields, series);
 	validateDocumentFields(record.kind, input.fields);
 	const patch = input.fields;
 	if (
@@ -317,7 +318,7 @@ export function patchDocument(
 		if (Boolean(data.series) !== (data.seriesOrder !== undefined))
 			throw new HttpError(400, '选择系列时，请同时填写章节顺序。');
 		if (data.series) {
-			const s = BLOG_SERIES.find((s) => s.id === data.series);
+			const s = series.find((s) => s.id === data.series);
 			if (s && s.category !== data.category)
 				throw new HttpError(400, '系列与文章分类不匹配。');
 		}
@@ -369,14 +370,14 @@ export function assetImage(value?: string) {
 		return '';
 	}
 }
-export function editorOptions() {
+export function editorOptions(series: readonly BlogSeries[] = BLOG_SERIES) {
 	return {
 		categories: BLOG_CATEGORIES.map((c) => ({
 			id: c.id,
 			title: c.title,
 			titleEn: c.titleEn
 		})),
-		series: BLOG_SERIES.map((s) => ({
+		series: series.map((s) => ({
 			id: s.id,
 			title: s.title,
 			titleEn: s.titleEn,

@@ -1,6 +1,7 @@
 .home-archive {
 	position: relative;
 	--home-reading-width: 42rem;
+	--home-caption-ink: color-mix(in srgb, var(--color-text-muted) 86%, var(--color-background-soft));
 	--home-reveal-ease: cubic-bezier(0.22, 0.72, 0.2, 1);
 	--home-reveal-step-delay: 40ms;
 	--home-reveal-part-delay: 26ms;
@@ -57,8 +58,8 @@
 	background:
 		linear-gradient(
 			to right,
-			rgba(156, 199, 232, 0.34),
-			rgba(156, 199, 232, 0.12),
+			rgb(var(--color-accent-rgb) / 0.34),
+			rgb(var(--color-accent-rgb) / 0.12),
 			transparent
 		);
 }
@@ -68,13 +69,21 @@
 }
 
 .home-section__title {
-	margin: 12px 0 0;
-	color: rgba(224, 231, 241, 0.86);
+	margin: 0;
+	color: color-mix(in srgb, var(--color-text) 45%, var(--color-text-muted));
 	font-family: var(--font-home-prose);
 	font-size: var(--type-section-title-size);
 	font-weight: var(--type-section-title-weight);
 	letter-spacing: 0;
 	line-height: var(--type-section-title-line);
+}
+
+.home-section__eyebrow + .home-section__title {
+	margin-top: 12px;
+}
+
+.home-section--resources .home-section__eyebrow {
+	color: var(--home-caption-ink);
 }
 
 .home-section__description {
@@ -103,42 +112,37 @@
 }
 
 .home-section__link {
+	--text-link-color: color-mix(in srgb, var(--color-text) 78%, var(--color-background-soft));
+	--home-flower-width: clamp(46px, 6.3vw, 82px);
+	--home-flower-inset: clamp(16px, 2vw, 26px);
 	position: relative;
 	display: grid;
-	gap: 8px;
-	padding: 16px 0 16px 18px;
-	border-left: 1px solid rgba(156, 199, 232, 0.16);
-	color: rgba(206, 217, 232, 0.78);
-	transition:
-		border-color 0.28s ease,
-		color 0.28s ease,
-		transform 0.28s ease;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
+	gap: clamp(8px, 1.8vw, 16px);
+	min-height: 44px;
+	padding-block: 13px;
+	padding-inline: 17px var(--home-flower-inset);
+	color: var(--text-link-color);
 }
 
 .home-section__link::before {
-	content: "";
+	content: '';
 	position: absolute;
-	top: 1.45em;
-	left: -3px;
-	width: 5px;
-	height: 5px;
-	border-radius: 50%;
-	background: rgba(156, 199, 232, 0.4);
-	box-shadow: 0 0 18px rgba(156, 199, 232, 0.18);
-	transition:
-		background 0.28s ease,
-		box-shadow 0.28s ease;
+	inset-block: 8px;
+	inset-inline-start: 0;
+	width: 1px;
+	background: linear-gradient(transparent, currentColor 42%, transparent);
+	opacity: .24;
+	pointer-events: none;
 }
 
-.home-section__link:hover {
-	border-color: rgba(156, 199, 232, 0.34);
-	color: rgba(237, 243, 251, 0.94);
-	transform: translateX(4px);
-}
-
-.home-section__link:hover::before {
-	background: rgba(214, 167, 200, 0.72);
-	box-shadow: 0 0 22px rgba(214, 167, 200, 0.22);
+.home-section__link-copy {
+	position: relative;
+	z-index: 1;
+	display: grid;
+	gap: 6px;
+	min-width: 0;
 }
 
 .home-section__link--disabled {
@@ -161,16 +165,132 @@
 }
 
 .home-section__link-kind {
+	color: var(--home-caption-ink);
 	font-size: 0.62rem;
-	letter-spacing: 0.13em;
-	opacity: 0.72;
+	letter-spacing: 0.085em;
 }
 
 .home-section__link-description {
-	color: rgba(145, 157, 176, 0.66);
+	color: var(--home-caption-ink);
 	font-family: var(--font-home-prose);
 	font-size: 0.9rem;
 	line-height: 1.7;
+}
+
+.home-section__flower {
+	position: relative;
+	inset-inline-end: calc(7px - var(--home-flower-inset));
+	z-index: 1;
+	display: block;
+	width: var(--home-flower-width);
+	height: auto;
+	opacity: .76;
+	pointer-events: none;
+}
+
+.home-section__flower > svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+
+.home-section__petal-trail {
+	position: absolute;
+	inset-inline-start: 17px;
+	inset-block-start: calc(50% - 10px);
+	width: calc(100% - 17px - var(--home-flower-inset) - var(--home-flower-width) * .75);
+	height: 32px;
+	overflow: visible;
+	color: var(--color-accent-soft);
+	opacity: .73;
+	pointer-events: none;
+}
+
+.home-section__petal-trail[data-flower='peach'] { color: #d4a095; }
+.home-section__petal-trail[data-flower='camellia'] { color: #bf8d9d; }
+.home-section__petal-trail[data-flower='hydrangea'] { color: #aba7cc; }
+
+.home-section__link:is(:hover, :focus-visible) .home-section__petal-trail {
+	opacity: .91;
+}
+
+.home-section__link:is(:hover, :focus-visible) .home-section__flower {
+	opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.home-section__flower,
+	.home-section__petal-trail { transition: opacity var(--motion-fast) ease; }
+
+	.home-section__flower :is([data-bloom], [data-petal]),
+	.home-section__petal-sweep [data-fragment] {
+		transition: transform var(--motion-medium) var(--motion-ease-out);
+	}
+
+	.home-section__flower[data-flower='cherry'] {
+		--bloom-turn: 21deg;
+		--petal-open: 1.08, 1.14;
+	}
+
+	.home-section__flower[data-flower='peach'] {
+		--bloom-turn: -17deg;
+		--petal-open: 1.11, 1.09;
+	}
+
+	.home-section__flower[data-flower='camellia'] {
+		--bloom-turn: 24deg;
+		--petal-open: 1.06, 1.10;
+	}
+
+	.home-section__flower[data-flower='hydrangea'] {
+		--bloom-turn: -13deg;
+		--petal-open: 1.09, 1.08;
+	}
+
+	// The source SVGs place each animated petal or flower around its own local origin.
+	.home-section__flower :is([data-bloom], [data-petal]) { transform-origin: 0 0; }
+	.home-section__flower[data-flower='hydrangea'] [data-bloom] {
+		transform-box: fill-box;
+		transform-origin: center;
+	}
+
+	.home-section__flower [data-petal="1"] { --bloom-delay: 0ms; }
+	.home-section__flower [data-petal="2"] { --bloom-delay: 30ms; }
+	.home-section__flower [data-petal="3"] { --bloom-delay: 60ms; }
+	.home-section__flower [data-petal="4"] { --bloom-delay: 86ms; }
+	.home-section__flower [data-petal="5"] { --bloom-delay: 114ms; }
+
+	.home-section__petal-sweep [data-fragment] {
+		--petal-turn: -11deg;
+		transform-box: fill-box;
+		transform-origin: center;
+	}
+
+	.home-section__petal-sweep > svg:nth-child(even) [data-fragment] { --petal-turn: 9deg; }
+	.home-section__petal-sweep [data-fragment='blossom'] { --petal-turn: -4deg; }
+	.home-section__petal-sweep > svg:nth-child(even) [data-fragment='blossom'] { --petal-turn: 5deg; }
+
+	.home-section__link:is(:hover, :focus-visible) .home-section__flower [data-bloom] {
+		transform: rotate(var(--bloom-turn));
+		transition-duration: 510ms;
+	}
+
+	.home-section__link:is(:hover, :focus-visible) .home-section__flower [data-petal] {
+		transform: scale(var(--petal-open));
+		transition-duration: 420ms;
+		transition-delay: var(--bloom-delay);
+	}
+
+	.home-section__link:is(:hover, :focus-visible) .home-section__petal-sweep [data-fragment] {
+		transform: translate(-2px, -1px) rotate(var(--petal-turn));
+		transition-duration: 350ms;
+		transition-delay: var(--petal-delay);
+	}
+}
+
+@media (forced-colors: active) {
+	.home-section__petal-trail { display: none; }
 }
 
 .home-social {
@@ -204,13 +324,13 @@
 }
 
 .home-social a:hover {
-	background: rgba(156, 199, 232, 0.055);
+	background: rgb(var(--color-accent-rgb) / 0.055);
 	color: rgba(232, 239, 248, 0.9);
 	transform: translateY(-2px);
 }
 
 .home-social a:focus-visible {
-	outline: 1px solid rgba(156, 199, 232, 0.82);
+	outline: 1px solid var(--color-focus);
 	outline-offset: 3px;
 	color: rgba(237, 243, 251, 0.94);
 }
@@ -244,10 +364,10 @@ body.is-home-contact-dialog-open {
 	margin: auto;
 	padding: 0;
 	overflow: auto;
-	border: 1px solid rgba(156, 199, 232, 0.14);
+	border: 1px solid rgb(var(--color-accent-rgb) / 0.14);
 	border-radius: 16px;
 	background:
-		radial-gradient(circle at 50% 0%, rgba(156, 199, 232, 0.055), transparent 48%),
+		radial-gradient(circle at 50% 0%, rgb(var(--color-accent-rgb) / 0.055), transparent 48%),
 		rgba(8, 12, 19, 0.96);
 	box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
 	color: var(--color-text);
@@ -295,7 +415,7 @@ body.is-home-contact-dialog-open {
 	height: 36px;
 	padding: 0;
 	place-items: center;
-	border: 1px solid rgba(156, 199, 232, 0.12);
+	border: 1px solid rgb(var(--color-accent-rgb) / 0.12);
 	border-radius: 50%;
 	background: rgba(255, 255, 255, 0.018);
 	color: rgba(205, 216, 231, 0.68);
@@ -310,8 +430,8 @@ body.is-home-contact-dialog-open {
 }
 
 .home-contact-dialog__close:hover {
-	border-color: rgba(156, 199, 232, 0.28);
-	background: rgba(156, 199, 232, 0.055);
+	border-color: rgb(var(--color-accent-rgb) / 0.28);
+	background: rgb(var(--color-accent-rgb) / 0.055);
 	color: rgba(237, 243, 251, 0.94);
 }
 
@@ -353,7 +473,7 @@ body.is-home-contact-dialog-open {
 
 .home-contact-dialog__close:focus-visible,
 .home-contact-dialog__qr-link:focus-visible {
-	outline: 1px solid rgba(156, 199, 232, 0.82);
+	outline: 1px solid var(--color-focus);
 	outline-offset: 3px;
 }
 

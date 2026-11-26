@@ -1,6 +1,56 @@
 import { test, expect } from '@playwright/test';
 import { createPlatformFixture } from '../helpers/platform-fixture.mjs';
 const book='WEISER82d055db40bc';
+const post='WEISER1cb3c69c6556';
+
+for (const { path, width } of [
+ { path: `/blog/${post}/`, width: 1440 },
+ { path: `/ebooks/${book}/`, width: 320 },
+]) {
+ test(`公开讨论在匿名接口返回 401 或不可用时仍可登录 ${path}`, async ({ page }, info) => {
+  await page.setViewportSize({ width, height: 900 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  let status = 401;
+  await page.route('**/console/api/comments?**', route => status === 401
+   ? route.fulfill({ status, json: { error: '请先登录。' } })
+   : route.fulfill({ status, body: 'Unavailable' }));
+  await page.goto(`${path}#discussion`);
+  const discussion = page.locator('#discussion');
+  const login = discussion.getByRole('link', { name: '登录后参与讨论' });
+  expect(new URL(await login.getAttribute('href') ?? '', 'https://telysta.com').searchParams.get('returnTo')).toBe(`${path}#discussion`);
+  await expect(discussion.getByRole('status')).toBeEmpty();
+  await expect(login.locator('[data-petal]')).toHaveCount(4);
+  await expect(login.locator('[data-comments-login-label]')).toHaveCSS('text-decoration-line', 'none');
+  await expect(discussion.locator('form')).toBeHidden();
+  await discussion.getByRole('button', { name: '刷新' }).focus();
+  await page.keyboard.press('Tab');
+  await expect(login).toBeFocused();
+  await expect(login).toBeInViewport();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await discussion.screenshot({ path: info.outputPath(`guest-discussion-${width}.png`) });
+
+  status = 503;
+  await discussion.getByRole('button', { name: '刷新' }).click();
+  await expect(discussion.getByRole('status')).toContainText('讨论暂时无法加载');
+  await expect(login).toBeVisible();
+ });
+}
+
+test('关闭脚本时，文章的登录回跳链接仍在页面上', async ({ browser, baseURL }) => {
+ const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
+ try {
+  const page = await context.newPage();
+  await page.goto(`/blog/${post}/#discussion`);
+  const discussion = page.locator('#discussion');
+  const login = discussion.getByRole('link', { name: '登录后参与讨论' });
+  await expect(login).toBeVisible();
+  expect(new URL(await login.getAttribute('href') ?? '', 'https://telysta.com').searchParams.get('returnTo')).toBe(`/blog/${post}/#discussion`);
+  await expect(discussion.getByRole('button', { name: '刷新' })).toHaveCount(0);
+ } finally {
+  await context.close();
+ }
+});
+
 for(const width of [390,1440])test('云端讨论匿名登录入口、键盘焦点、文本安全及双语管理：'+width,async({page,context},info)=>{
  test.setTimeout(60000);const fixture=await createPlatformFixture();const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
  try{

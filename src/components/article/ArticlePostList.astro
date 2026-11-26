@@ -41,7 +41,7 @@ const { posts, language = 'zh', appearance = 'default' } = Astro.props;
 		text-decoration: none;
 	}
 	.article-post-list--directory a:focus-visible {
-		outline: 1px solid #9cc7e8;
+		outline: 1px solid var(--color-focus);
 		outline-offset: 4px;
 	}
 	.article-post-list {
@@ -68,7 +68,7 @@ const { posts, language = 'zh', appearance = 'default' } = Astro.props;
 		width: 0;
 		height: 1px;
 		content: "";
-		background: rgba(156, 199, 232, 0.62);
+		background: rgb(var(--color-accent-rgb) / 0.62);
 		transition: width var(--motion-medium) var(--motion-ease-out);
 	}
 
@@ -81,7 +81,7 @@ const { posts, language = 'zh', appearance = 'default' } = Astro.props;
 	}
 
 	.article-post-list span {
-		color: rgba(156, 199, 232, 0.54);
+		color: rgb(var(--color-accent-rgb) / 0.54);
 		font-family: var(--type-display-label-font);
 		font-size: var(--type-meta-size);
 		font-weight: var(--type-display-label-weight);
@@ -129,12 +129,12 @@ const { posts, language = 'zh', appearance = 'default' } = Astro.props;
 
 	.article-post-list a:hover > span,
 	.article-post-list a:focus-visible > span {
-		color: rgba(156, 199, 232, 0.86);
+		color: rgb(var(--color-accent-rgb) / 0.86);
 	}
 
 	.article-post-list a:focus-visible {
 		border-radius: 2px;
-		outline: 1px solid rgba(156, 199, 232, 0.76);
+		outline: 1px solid var(--color-focus);
 		outline-offset: 3px;
 	}
 

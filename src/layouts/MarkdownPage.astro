@@ -1,17 +1,39 @@
 ---
 import type { MarkdownLayoutProps } from 'astro';
+import { Image } from 'astro:assets';
 import Layout from './Layout.astro';
 import { SITE_CONFIG } from '../config/site';
+import FlowerOrnament from '../components/site/FlowerOrnament.astro';
+import lilyAndRibbon from '../assets/images/decorations/lily-and-ribbon.webp';
 
-type Props = MarkdownLayoutProps<{ title: string; description: string }>;
-const { title, description } = Astro.props.frontmatter;
+type Props = MarkdownLayoutProps<{
+	title: string;
+	description: string;
+	ornament?: 'ivory' | 'lily-and-ribbon';
+}>;
+const { title, description, ornament } = Astro.props.frontmatter;
+const showLily = ornament === 'lily-and-ribbon';
 ---
 
 <Layout title={`${title} · ${SITE_CONFIG.name}`} description={description} starfieldVariant="subtle">
 	<main class="markdown-page">
-		<article>
-			<header><h1 class="text-article-title">{title}</h1></header>
+		<article class:list={{ 'markdown-page__illustrated': showLily }}>
+			<header><h1 class="text-article-title">
+				{ornament === 'ivory' ? <FlowerOrnament tone={ornament}>{title}</FlowerOrnament> : title}
+			</h1></header>
 			<div class="prose"><slot /></div>
+			{showLily && (
+				<Image
+					src={lilyAndRibbon}
+					class="markdown-page__illustration"
+					alt=""
+					width={160}
+					widths={[80, 160, 240, 320]}
+					sizes="(min-width: 760px) 160px, 80px"
+					format="webp"
+					loading="eager"
+				/>
+			)}
 		</article>
 	</main>
 </Layout>
@@ -23,7 +45,38 @@ const { title, description } = Astro.props.frontmatter;
 		margin-inline: auto;
 		padding: clamp(46px, 5vw, 72px) 0 clamp(92px, 13vw, 150px);
 	}
-	header { margin-bottom: clamp(36px, 5vw, 52px); }
+	header { margin-bottom: clamp(24px, 4vw, 38px); }
 	h1 { margin: 0; }
+
+	.markdown-page__illustrated {
+		inline-size: fit-content;
+		max-inline-size: 100%;
+	}
+
+	.markdown-page__illustration {
+		display: block;
+		inline-size: 80px;
+		block-size: auto;
+		margin: 6px 0 0 auto;
+		opacity: .82;
+		pointer-events: none;
+	}
+
+	@media (min-width: 760px) {
+		.markdown-page__illustrated {
+			--illustration-width: clamp(150px, 13vw, 160px);
+			position: relative;
+			padding-inline-end: calc(var(--illustration-width) + 32px);
+		}
+
+		.markdown-page__illustration {
+			position: absolute;
+			inset-inline-end: 0;
+			inset-block-end: 6px;
+			inline-size: var(--illustration-width);
+			margin: 0;
+		}
+	}
+
 	@media (max-width: 640px) { .markdown-page { width: calc(100% - 32px); } }
 </style>

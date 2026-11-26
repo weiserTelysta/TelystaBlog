@@ -6,6 +6,7 @@ await fs.mkdir(directory,{recursive:true});
 for(const name of ['index.html','style.css'])await fs.copyFile(new URL('../public/'+name,import.meta.url),new URL(name,directory));
 await build({entryPoints:[new URL('../client/app.js',import.meta.url).pathname],outfile:new URL('app.js',directory).pathname,bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true});
 await fs.copyFile(new URL('../../../src/styles/tokens.css',import.meta.url),new URL('tokens.css',directory));
+await fs.cp(new URL('../../../src/assets/images/series/',import.meta.url),new URL('series-cover-previews/',directory),{recursive:true});
 const text=Array.from({length:95},(_,i)=>String.fromCodePoint(32+i)).join('')+'’“”–—';
 const source=await fs.readFile(new URL('../../../src/assets/fonts/Cinzel-VariableFont_wght.ttf',import.meta.url));
 await fs.writeFile(new URL('cinzel.woff2',directory),await subsetFont(source,text,{targetFormat:'woff2'}));

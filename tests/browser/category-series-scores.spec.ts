@@ -1,17 +1,47 @@
 import { test, expect } from '@playwright/test';
 
+test('碎花瓣沿标题右上角错落，并遵循减少动态设置', async ({ page }) => {
+	await page.goto('/series/');
+	const flower = page.locator('.series-index [data-flower-ornament]');
+	await expect(flower).toHaveClass(/is-blooming/);
+	const placement = await flower.evaluate(el => {
+		const text = el.parentElement!.getBoundingClientRect();
+		const petals = el.getBoundingClientRect();
+		return { overlap: text.right - petals.left, width: petals.width };
+	});
+	expect(placement.overlap).toBeGreaterThan(0);
+	expect(placement.overlap).toBeLessThan(8);
+	expect(placement.width).toBeLessThan(28);
+	const petals = await flower.evaluate(ornament => {
+		const elements = [...ornament.querySelectorAll('[data-petal]')];
+		const animations = elements.flatMap(petal => petal.getAnimations());
+		animations.forEach(animation => { animation.pause(); animation.currentTime = 0; });
+		const folded = elements.map(petal => getComputedStyle(petal).transform);
+		animations.forEach(animation => { animation.currentTime = 1000; });
+		return { folded, open: elements.map(petal => getComputedStyle(petal).transform) };
+	});
+	expect(petals.folded).not.toEqual(petals.open);
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	await expect(flower.locator('[data-petal="1"]')).toHaveCSS('animation-name', 'none');
+});
+
 for (const width of [390, 1440]) {
-	test(`Series uses Chinese titles with English accents and borderless lists at ${width}px`, async ({ page }, testInfo) => {
+	test(`Series displays artwork, compact entries and borderless article lists at ${width}px`, async ({ page }, testInfo) => {
 		await page.setViewportSize({ width, height: 1000 });
 		await page.goto('/series/');
 		const main = page.locator('main');
 		await expect(main).not.toHaveAttribute('lang', 'en');
 		await expect(page.getByRole('heading', { level: 1 })).toHaveText('系列文章');
-		await expect(page.locator('.series-index__header p')).toHaveText('Series Archive');
 		await expect(page.locator('.series-index__summary strong').first()).toHaveText('博客建设记录');
 		await expect(page.locator('.series-index__summary p').first()).toContainText('记录这个安静博客');
-		await expect(page.locator('.series-index__group-header h2').first()).toHaveText('Manuscript');
-		expect((await page.locator('.series-index__group-header').allTextContents()).join(' ')).not.toMatch(/Weiser|Alice|Rhaelysa/);
+		const entries = page.locator('.series-index__card');
+		await expect(entries.first().locator('img')).toHaveAttribute('src', /^\/_astro\/.*\.webp$/);
+		await expect.poll(() => entries.first().locator('img').evaluate((image: HTMLImageElement) => image.naturalWidth)).toBe(176);
+		await expect(entries.first().locator('.series-index__meta')).toContainText('篇文章');
+		const first = (await entries.nth(0).boundingBox())!;
+		const second = (await entries.nth(1).boundingBox())!;
+		if (width === 390) expect(second.y).toBeGreaterThan(first.y);
+		else expect(second.y).toBe(first.y);
 		await page.screenshot({ path: testInfo.outputPath('series.png'), fullPage: true });
 		await page.locator('.series-index__list a').first().click();
 		await expect(page.getByRole('heading', { level: 1 })).toHaveText('博客建设记录');

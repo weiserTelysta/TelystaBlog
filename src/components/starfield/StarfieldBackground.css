@@ -7,7 +7,7 @@
 	opacity: 0;
 	animation: starfield-reveal 2.2s ease-out forwards;
 	background:
-		radial-gradient(circle at 18% 18%, rgba(156, 199, 232, 0.04), transparent 28rem),
+		radial-gradient(circle at 18% 18%, rgb(var(--color-accent-rgb) / 0.04), transparent 28rem),
 		radial-gradient(circle at 82% 28%, rgba(214, 167, 200, 0.026), transparent 24rem),
 		linear-gradient(180deg, #070a10 0%, #0b0f17 52%, #070a10 100%);
 }
@@ -21,7 +21,7 @@
 
 .starfield::before {
 	background:
-		radial-gradient(circle at 32% 42%, rgba(156, 199, 232, 0.045), transparent 18rem),
+		radial-gradient(circle at 32% 42%, rgb(var(--color-accent-rgb) / 0.045), transparent 18rem),
 		radial-gradient(circle at 68% 58%, rgba(214, 167, 200, 0.028), transparent 16rem);
 	opacity: 0.12;
 	animation: starfield-breathe 18s ease-in-out infinite;
@@ -41,6 +41,15 @@
 	inset: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.starfield__fractal {
+	mask-image: linear-gradient(to top, transparent, black 24%);
+	transition: opacity 520ms ease;
+}
+
+.starfield__fractal[data-fractal-visible="false"] {
+	opacity: 0;
 }
 
 @keyframes starfield-reveal {
@@ -78,4 +87,6 @@
 		animation: none;
 		opacity: 0.14;
 	}
+
+	.starfield__fractal { transition: none; }
 }

@@ -1,5 +1,17 @@
 {
   "contentSignal": "search=yes,ai-train=no,use=reference",
+  "crawlDelaySeconds": 5,
+  "excludedPaths": [
+    "/console",
+    "/telysta-console",
+    "/blog/search-index.json",
+    "/ebooks/search-index.json",
+    "/ebooks/read",
+    "/ebooks/WEISER",
+    "/ebooks/page/",
+    "/ebooks/clc/",
+    "/ebooks/booklists/"
+  ],
   "blockedBots": [
     "Amazonbot",
     "Applebot-Extended",
@@ -34,5 +46,5 @@
     "CitibotSiteCrawler"
   ],
   "source": "https://developers.cloudflare.com/bots/additional-configurations/managed-robots-txt/",
-  "reviewedAt": "2026-11-15"
+  "reviewedAt": "2026-11-22"
 }

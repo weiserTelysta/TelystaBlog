@@ -1,5 +1,6 @@
 ---
 import type { HomeSectionConfig } from '../../config/pages/home';
+import HomeFlowerTrail from './HomeFlowerTrail.astro';
 
 type Props = {
 	section: HomeSectionConfig;
@@ -15,11 +16,7 @@ const hasItems = section.items && section.items.length > 0;
 	data-home-reveal
 	style={`--reveal-order: ${index}`}
 >
-	<div
-		class="home-section__rule home-section__reveal-part"
-		aria-hidden="true"
-		style="--part-order: 0"
-	></div>
+	{section.type === 'profile' && <div class="home-section__rule home-section__reveal-part" aria-hidden="true"></div>}
 	<div class="home-section__body">
 		{
 			section.eyebrow && (
@@ -42,36 +39,30 @@ const hasItems = section.items && section.items.length > 0;
 					aria-label={`${section.title} links`}
 					style="--part-order: 4"
 				>
-					{section.items?.map((item) => (
-						<li class="home-section__link-item">
-							{item.href ? (
-								<a
-									class="home-section__link"
+					{section.items?.map((item, itemIndex) => {
+						const Tag = item.href ? 'a' : 'span';
+						return (
+							<li class="home-section__link-item">
+								<Tag
+									class:list={['home-section__link', item.href ? 'text-link' : 'home-section__link--disabled']}
 									href={item.href}
-									target={item.external ? '_blank' : undefined}
-									rel={item.external ? 'noreferrer' : undefined}
+									target={item.href && item.external ? '_blank' : undefined}
+									rel={item.href && item.external ? 'noreferrer' : undefined}
 								>
-									<span class="home-section__link-text">
-										<span class="home-section__link-label">{item.label}</span>
-										{item.kind && <span class="home-section__link-kind">{item.kind}</span>}
+									<span class="home-section__link-copy">
+										<span class="home-section__link-text">
+											<span class="home-section__link-label">{item.label}</span>
+											{item.kind && <span class="home-section__link-kind" lang="en">{item.kind}</span>}
+										</span>
+										{item.description && <span class="home-section__link-description">{item.description}</span>}
 									</span>
-									{item.description && (
-										<span class="home-section__link-description">{item.description}</span>
+									{item.flower && (
+									<HomeFlowerTrail id={`home-flower-${index}-${itemIndex}`} flower={item.flower} />
 									)}
-								</a>
-							) : (
-								<span class="home-section__link home-section__link--disabled">
-									<span class="home-section__link-text">
-										<span class="home-section__link-label">{item.label}</span>
-										{item.kind && <span class="home-section__link-kind">{item.kind}</span>}
-									</span>
-									{item.description && (
-										<span class="home-section__link-description">{item.description}</span>
-									)}
-								</span>
-							)}
-						</li>
-					))}
+								</Tag>
+							</li>
+						);
+					})}
 				</ul>
 			)
 		}

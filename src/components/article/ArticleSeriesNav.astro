@@ -26,7 +26,7 @@ const controls = [
 	{
 		series && (
 			<a
-				class="article-series__link"
+				class="article-series__link text-link"
 				href={buildSeriesHref(series.id)}
 				aria-label={`所属系列：${series.title}`}
 			>
@@ -41,7 +41,7 @@ const controls = [
 			return (
 				<li>
 					<Tag
-						class:list={['article-series__chapter', `article-series__chapter--${key}`]}
+						class:list={['article-series__chapter', `article-series__chapter--${key}`, { 'text-link': target }]}
 						href={target?.href}
 						rel={target ? rel : undefined}
 						role={target ? undefined : 'link'}
@@ -86,7 +86,7 @@ const controls = [
 
 	.article-series__count {
 		flex: 0 0 auto;
-		color: rgba(156, 199, 232, 0.56);
+		color: rgb(var(--color-accent-rgb) / 0.56);
 		font-family: var(--type-display-label-font);
 		font-size: 0.82rem;
 		font-weight: var(--type-display-label-weight);
@@ -101,7 +101,7 @@ const controls = [
 
 	.article-series__link:hover .article-series__count,
 	.article-series__link:focus-visible .article-series__count {
-		color: rgba(156, 199, 232, 0.76);
+		color: rgb(var(--color-accent-rgb) / 0.76);
 	}
 
 	.article-series__link:active {
@@ -110,7 +110,7 @@ const controls = [
 
 	.article-series__link:focus-visible {
 		border-radius: 2px;
-		outline: 1px solid rgba(156, 199, 232, 0.78);
+		outline: 1px solid var(--color-focus);
 		outline-offset: 3px;
 	}
 
@@ -133,7 +133,7 @@ const controls = [
 		gap: 8px;
 		min-height: 48px;
 		padding: 10px 4px;
-		color: var(--color-text-muted);
+		color: var(--color-text);
 		font-family: var(--type-meta-font);
 		font-size: 0.9rem;
 		font-weight: 400;
@@ -149,11 +149,11 @@ const controls = [
 
 	.article-series__chapter[href]:hover,
 	.article-series__chapter[href]:focus-visible {
-		color: var(--color-accent);
+		color: var(--color-text-strong);
 	}
 
 	.article-series__chapter[href]:focus-visible {
-		outline: 1px solid var(--color-accent);
+		outline: 1px solid var(--color-focus);
 		outline-offset: 2px;
 		border-radius: 2px;
 	}

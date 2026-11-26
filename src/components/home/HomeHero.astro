@@ -42,8 +42,8 @@ import { SITE_CONFIG } from '../../config/site';
 	}
 
 	:global(.home-intro) {
-		--home-intro-accent: rgba(156, 199, 232, 0.76);
-		--home-intro-accent-soft: rgba(156, 199, 232, 0.16);
+		--home-intro-accent: rgb(var(--color-accent-rgb) / 0.76);
+		--home-intro-accent-soft: rgb(var(--color-accent-rgb) / 0.16);
 		display: flex;
 		width: 100%;
 		align-items: center;
@@ -73,7 +73,7 @@ import { SITE_CONFIG } from '../../config/site';
 		border-radius: 50%;
 	}
 	:global(.home-identity__avatar-shell:focus-visible) {
-		outline: 2px solid var(--color-accent);
+		outline: 2px solid var(--color-focus);
 		outline-offset: 8px;
 	}
 
@@ -122,7 +122,7 @@ import { SITE_CONFIG } from '../../config/site';
 		box-shadow:
 			0 16px 42px rgba(0, 0, 0, 0.28),
 			0 0 0 5px rgba(255, 255, 255, 0.018),
-			0 0 32px rgba(156, 199, 232, 0.08);
+			0 0 32px rgb(var(--color-accent-rgb) / 0.08);
 		opacity: 0;
 		object-fit: cover;
 		transform: scale(0.975);
@@ -156,7 +156,7 @@ import { SITE_CONFIG } from '../../config/site';
 		letter-spacing: 0.018em;
 		text-shadow:
 			0 2px 22px rgba(0, 0, 0, 0.46),
-			0 0 26px rgba(156, 199, 232, 0.055);
+			0 0 26px rgb(var(--color-accent-rgb) / 0.055);
 		opacity: 0;
 		transform: translateY(5px);
 		transition:
@@ -183,8 +183,15 @@ import { SITE_CONFIG } from '../../config/site';
 		font-size: clamp(0.98rem, 1.75vw, 1.1rem);
 		line-height: 1.9;
 		white-space: pre-wrap;
+		overflow-wrap: anywhere;
 		text-wrap: balance;
 		text-shadow: 0 2px 16px rgba(0, 0, 0, 0.42);
+	}
+
+	:global(.time-greeting--braille-art) {
+		font-family: var(--font-code);
+		font-size: min(1rem, 3.5vw);
+		text-wrap: wrap;
 	}
 
 	:global(.home-intro--speaking .time-greeting--fade) {
@@ -201,7 +208,7 @@ import { SITE_CONFIG } from '../../config/site';
 		width: 0.58em;
 		height: 1.1em;
 		margin-left: 0.18em;
-		border-right: 2px solid rgba(156, 199, 232, 0.56);
+		border-right: 2px solid rgb(var(--color-accent-rgb) / 0.56);
 		vertical-align: -0.16em;
 		animation: cursor-blink 1s steps(2, start) infinite;
 	}
@@ -214,7 +221,7 @@ import { SITE_CONFIG } from '../../config/site';
 		background: linear-gradient(
 			90deg,
 			transparent,
-			rgba(156, 199, 232, 0.14),
+			rgb(var(--color-accent-rgb) / 0.14),
 			transparent
 		);
 	}
@@ -227,7 +234,7 @@ import { SITE_CONFIG } from '../../config/site';
 		background: linear-gradient(
 			90deg,
 			transparent,
-			rgba(156, 199, 232, 0.16),
+			rgb(var(--color-accent-rgb) / 0.16),
 			transparent
 		);
 	}

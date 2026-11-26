@@ -3,6 +3,8 @@ import type { BlogCategoryId } from './blogCategories';
 type BlogSeriesDefinition = {
 	id: string;
 	category: BlogCategoryId;
+	artworkId?: string;
+	cover?: string;
 	title: string;
 	titleEn: string;
 	description: string;
@@ -12,6 +14,7 @@ type BlogSeriesDefinition = {
 export const BLOG_SERIES = [
 	{
 		id: 'weiser-blog-construction-records',
+		artworkId: 'weiser_character_01',
 		category: 'manuscript',
 		title: '博客建设记录',
 		titleEn: "Weiser's Blog Construction Records",
@@ -20,6 +23,7 @@ export const BLOG_SERIES = [
 	},
 	{
 		id: 'marketing-ecommerce-notes',
+		artworkId: 'alice_character_primary_01',
 		category: 'reading',
 		title: '电子商务笔记',
 		titleEn: 'Notes on Marketing and E-Commerce',
@@ -28,6 +32,7 @@ export const BLOG_SERIES = [
 	},
 	{
 		id: 'byzantine-civilization',
+		artworkId: 'mirelle_character_primary',
 		category: 'reading',
 		title: '拜占庭文明史',
 		titleEn: 'History of Byzantine Civilization',
@@ -36,6 +41,7 @@ export const BLOG_SERIES = [
 	},
 	{
 		id: 'my-journal',
+		artworkId: 'weiser_artnouveau',
 		category: 'life',
 		title: '我的日记',
 		titleEn: 'My Journal',
@@ -44,6 +50,7 @@ export const BLOG_SERIES = [
 	},
 	{
 		id: 'ningbo-catholic-observation-log',
+		artworkId: 'telysta_crinoline',
 		category: 'notes',
 		title: '宁波天主教观察日志',
 		titleEn: 'Ningbo Catholic Observation Log',
@@ -52,6 +59,7 @@ export const BLOG_SERIES = [
 	},
 	{
 		id: 'telysta-notes',
+		artworkId: 'telysta_primary_character_01',
 		category: 'portraits',
 		title: 'Telysta 札记',
 		titleEn: 'Notes on Telysta',
@@ -60,6 +68,7 @@ export const BLOG_SERIES = [
 	},
 	{
 		id: 'rhaelysa-notes',
+		artworkId: 'rhaelysa_illustration_01',
 		category: 'portraits',
 		title: 'Rhaelysa 札记',
 		titleEn: 'Notes on Rhaelysa',
@@ -68,6 +77,7 @@ export const BLOG_SERIES = [
 	},
 	{
 		id: 'mirelle-notes',
+		artworkId: 'mirelle_official_illustration_01',
 		category: 'portraits',
 		title: 'Mirelle 札记',
 		titleEn: 'Notes on Mirelle',
@@ -76,6 +86,7 @@ export const BLOG_SERIES = [
 	},
 	{
 		id: 'plants-in-their-season',
+		artworkId: 'ranunculus',
 		category: 'notes',
 		title: '草木有时',
 		titleEn: 'Plants in Their Season',
