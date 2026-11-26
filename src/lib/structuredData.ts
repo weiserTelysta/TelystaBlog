@@ -1,7 +1,8 @@
 import { SITE_CONFIG } from '../config/site';
 import { resolveCanonicalUrl } from './shareMetadata';
+import type { PublishedPostAuthor } from './postPublicationSource';
 
-export type ArticleMetadata = { title: string; publishedAt: Date; updatedAt: Date; tags: string[] };
+export type ArticleMetadata = { title: string; publishedAt: Date; updatedAt: Date; tags: string[]; author?: PublishedPostAuthor };
 
 export function buildStructuredData(input: {
 	site: URL; pathname: string; title: string; description: string; image?: string; article?: ArticleMetadata;
@@ -25,7 +26,9 @@ export function buildStructuredData(input: {
 			'@type': 'BlogPosting', '@id': `${canonical}#article`, url: canonical,
 			headline: article.title, description, ...(image ? { image: [image] } : {}),
 			datePublished: article.publishedAt.toISOString(), dateModified: article.updatedAt.toISOString(),
-			author: { '@id': author['@id'] }, publisher: { '@id': author['@id'] },
+			author: article.author ? { '@type': 'Person', name: article.author.name,
+				...(article.author.username ? { alternateName: article.author.username } : {}) } : { '@id': author['@id'] },
+			publisher: { '@id': author['@id'] },
 			mainEntityOfPage: { '@id': page['@id'] }, keywords: article.tags,
 		}] : [] )],
 	};

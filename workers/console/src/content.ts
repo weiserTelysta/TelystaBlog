@@ -8,15 +8,15 @@ import { exportBackup } from './backup';
 import { describeDocument, editorOptions, patchDocument, type DocumentRecord } from './documentEditor';
 import { CONFIG_DEFINITIONS } from './configEditor';
 import { editSeries, readSeries, seriesRecord } from './seriesEditor';
-import { preparePostPublication } from './postPublication';
+import { checkPostPublication, preparePostPublication } from './postPublication';
 const KINDS = ['post','ebook','gallery','score','config'];
 function requireOwner(user: User) { if (!can(user, 'site:manage')) throw new HttpError(403, '需要超级管理员权限。'); }
 export async function handleManagement(request: Request, env: ConsoleEnv, user: User, url: URL) {
  const path = url.pathname;
- const postPublication = /^\/api\/documents\/(post_WEISER[a-f0-9]{12})\/publication$/.exec(path);
+ const postPublication = /^\/api\/documents\/(post_WEISER[a-f0-9]{12})\/publication(\/check)?$/.exec(path);
  if (postPublication) {
   requireOwner(user);
-  return preparePostPublication(request, env, user, postPublication[1]);
+  return postPublication[2] ? checkPostPublication(request, env, user, postPublication[1]) : preparePostPublication(request, env, user, postPublication[1]);
  }
  if (path === '/api/dashboard' && request.method === 'GET') {
   if (!can(user, 'site:manage')) return json({ role: user.role, uploads: await env.DB.prepare('SELECT count(*) AS count FROM uploads WHERE owner_id=?1 AND state=\'ready\'').bind(user.id).first() });

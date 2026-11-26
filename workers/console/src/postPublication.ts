@@ -3,6 +3,7 @@ import { validatedSource } from './validation';
 import { body, HttpError, json } from './http';
 import { nowSeconds, sessionToken, tokenHash } from './auth';
 import type { User } from './permissions';
+import { isPublishedPostAuthor, normalizePublicationSource } from '../../../src/lib/postPublicationSource';
 
 type PostSnapshot = {
 	document_id: string;
@@ -38,12 +39,13 @@ export async function preparePostPublication(request: Request, env: ConsoleEnv, 
 	const token = sessionToken(request.headers.get('Cookie'));
 	if (!token) throw new HttpError(401, '请重新登录。');
 	const source = validatedSource('post', id, record.source, 'public');
-	const [hash, sessionHash] = await Promise.all([tokenHash(source), tokenHash(token)]);
+	const normalized = normalizePublicationSource(source);
+	const [hash, sessionHash] = await Promise.all([tokenHash(normalized), tokenHash(token)]);
 	const snapshot = await env.DB.prepare(`
 		INSERT INTO post_publication_snapshots
 		(document_id, revision, source_path, source, base_hash, source_hash,
 		 author_id, author_name, author_username, prepared_by, prepared_at)
-		SELECT d.id, d.revision, d.source_path, d.source, d.base_hash, ?1,
+		SELECT d.id, d.revision, d.source_path, ?8, d.base_hash, ?1,
 		       u.id, COALESCE(CASE WHEN instr(u.display_name, '@')=0 THEN NULLIF(trim(u.display_name), '') END, u.username, 'Weiser'), u.username,
 		       requester.id, ?2
 		FROM documents d JOIN users u ON u.id=COALESCE(d.owner_id, ?3)
@@ -53,8 +55,10 @@ export async function preparePostPublication(request: Request, env: ConsoleEnv, 
 		WHERE d.id=?5 AND d.kind='post' AND d.revision=?6 AND d.source=?7 AND d.access='public'
 		ON CONFLICT(document_id,revision) DO UPDATE SET prepared_at=prepared_at
 		RETURNING document_id,revision,source_path,source,base_hash,source_hash,author_name,author_username
-	`).bind(hash, nowSeconds(), user.id, sessionHash, id, record.revision, source).first<PostSnapshot>();
+	`).bind(hash, nowSeconds(), user.id, sessionHash, id, record.revision, source, normalized).first<PostSnapshot>();
 	if (!snapshot) throw new HttpError(409, '版本或登录状态已改变。', 'VERSION_CONFLICT');
+	const attribution = { name: snapshot.author_name, username: snapshot.author_username };
+	const usernameAttribution = { name: snapshot.author_username, username: snapshot.author_username };
 	return json({
 		version: 1,
 		documentId: snapshot.document_id,
@@ -63,6 +67,65 @@ export async function preparePostPublication(request: Request, env: ConsoleEnv, 
 		source: snapshot.source,
 		baseHash: snapshot.base_hash,
 		sha256: snapshot.source_hash,
-		author: { name: snapshot.author_name, username: snapshot.author_username },
+		author: isPublishedPostAuthor(attribution) ? attribution : isPublishedPostAuthor(usernameAttribution)
+			? usernameAttribution : { name: 'Weiser', username: null },
 	});
+}
+
+export async function checkPostPublication(request: Request, env: ConsoleEnv, user: User, id: string) {
+	if (request.method !== 'POST') throw new HttpError(405, '方法不支持。');
+	const token = sessionToken(request.headers.get('Cookie'));
+	if (!token) throw new HttpError(401, '请重新登录。');
+	const record = await env.DB.prepare("SELECT revision,base_hash FROM documents WHERE id=?1 AND kind='post'")
+		.bind(id).first<{ revision: number; base_hash: string | null }>();
+	if (!record) throw new HttpError(404, '文章不存在。');
+	const prepared = await env.DB.prepare('SELECT max(revision) AS revision FROM post_publication_snapshots WHERE document_id=?1')
+		.bind(id).first<{ revision: number | null }>();
+	const latestPrepared = prepared?.revision ?? null;
+	if (latestPrepared === null) return json({ status: 'draft', currentRevision: record.revision });
+
+	const publicId = id.slice('post_'.length);
+	let deployedHash: string | null = null;
+	let deployedRevision = 0;
+	try {
+		const url = new URL(`/blog/${publicId}/`, env.SITE_ORIGIN);
+		url.searchParams.set('publication-check', crypto.randomUUID());
+		const page = await fetch(url, { redirect: 'manual', signal: AbortSignal.timeout(8_000) });
+		if (page.ok && page.headers.get('Content-Type')?.includes('text/html')) {
+			const inspected = new HTMLRewriter().on(`article.article-page__inner[data-telysta-post="${publicId}"][data-post-source]`, {
+				element(article) {
+					if (deployedHash !== null) return;
+					deployedHash = article.getAttribute('data-post-source');
+					deployedRevision = Number(article.getAttribute('data-post-revision'));
+				},
+			}).transform(page);
+			await inspected.body?.pipeTo(new WritableStream());
+		} else {
+			await page.body?.cancel();
+			if (page.status !== 404) throw new Error('Public article unavailable');
+		}
+	} catch {
+		throw new HttpError(503, '暂时无法核对公开文章，请稍后重试。', 'PUBLICATION_UNAVAILABLE');
+	}
+	const awaiting = { status: 'awaiting', latestPrepared, currentRevision: record.revision };
+	if (!deployedHash || !/^[a-f0-9]{64}$/.test(deployedHash) || !Number.isSafeInteger(deployedRevision) || deployedRevision < 1) {
+		return json(awaiting);
+	}
+	const snapshot = await env.DB.prepare('SELECT source FROM post_publication_snapshots WHERE document_id=?1 AND revision=?2')
+		.bind(id, deployedRevision).first<{ source: string }>();
+	if (!snapshot) return json(awaiting);
+	const source = normalizePublicationSource(snapshot.source);
+	if (await tokenHash(source) !== deployedHash) return json(awaiting);
+	const updated = await env.DB.prepare(`
+		UPDATE documents SET base_hash=?1,
+		state=CASE WHEN revision=?2 AND replace(source,char(13)||char(10),char(10))=?3 AND access='public' THEN 'published' ELSE 'draft' END
+		WHERE id=?4 AND (base_hash IS ?5 OR base_hash=?1)
+		AND EXISTS(SELECT 1 FROM sessions s JOIN users u ON u.id=s.user_id
+			WHERE s.token_hash=?6 AND s.user_id=?7 AND s.expires_at>?8
+			AND u.status='active' AND u.role='admin' AND u.credential_version=s.credential_version)
+		RETURNING revision,state
+	`).bind(deployedHash, deployedRevision, source, id, record.base_hash, await tokenHash(token), user.id, nowSeconds())
+		.first<{ revision: number; state: string }>();
+	if (!updated) throw new HttpError(409, '草稿基线或登录已改变，请重新核对。', 'VERSION_CONFLICT');
+	return json({ status: 'live', revision: deployedRevision, latestPrepared, currentRevision: updated.revision, currentState: updated.state });
 }

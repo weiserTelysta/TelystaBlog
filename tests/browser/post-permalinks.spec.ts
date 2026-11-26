@@ -1,14 +1,19 @@
 import { expect, test } from '@playwright/test';
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import { readPostLinkIndex } from '../../scripts/lib/post-link-index.mjs';
 import { buildPostRedirects } from '../../src/lib/postLinks.mjs';
+import { normalizePublicationSource } from '../../src/lib/postPublicationSource';
 import { permalinkFor } from '../helpers/post-routes';
 
 const index = readPostLinkIndex();
 const byzantium = permalinkFor('/blog/reading/history/2026-11-3-拜占庭的赠礼/');
-const byzantiumTitle = '拜占庭的赠礼阅读笔记';
+const byzantiumTitle = '《拜占庭的赠礼》阅读笔记';
 
 test('所有公开文章、搜索与 sitemap 使用短编号，全部旧文件名地址直接跳转且保留评论键', async ({ request }) => {
-	const sitemap = await (await request.get('/sitemap-0.xml')).text();
+	const sitemapResponse = await request.get('/sitemap.xml');
+	expect(sitemapResponse.status()).toBe(200);
+	const sitemap = await sitemapResponse.text();
 	const search = await (await request.get('/blog/search-index.json')).json();
 	for (const post of index.posts) {
 		if (post.data.draft === true) continue;
@@ -16,6 +21,8 @@ test('所有公开文章、搜索与 sitemap 使用短编号，全部旧文件�
 		const response = await request.get(post.href);
 		expect(response.status(), post.file).toBe(200);
 		const html = await response.text();
+		const sourceHash = createHash('sha256').update(normalizePublicationSource(readFileSync(post.file, 'utf8'))).digest('hex');
+		expect(html).toContain(`data-telysta-post="${post.href.split('/')[2]}" data-post-source="${sourceHash}"`);
 		expect(html).toContain(`rel="canonical" href="https://telysta.com${post.href}"`);
 		expect(html).toContain('data-mapping="specific"');
 		expect(html).toContain(`data-term="${encodeURI(post.data.commentId ?? post.id)}"`);

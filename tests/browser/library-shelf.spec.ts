@@ -1,5 +1,8 @@
 import { test, expect } from '@playwright/test';
 
+type CatalogEntry = { clcCode?: string; categoryOnly?: boolean; access?: string };
+const shelfEntries = (catalog: CatalogEntry[]) => catalog.filter(book => book.access !== 'protected' && !book.categoryOnly);
+
 for (const width of [390, 1440]) {
 	test(`真实书室按中图法分页，原生链接与详情可用：${width}px`, async ({ browser, baseURL }, testInfo) => {
 		const context = await browser.newContext({ javaScriptEnabled: false, baseURL, viewport: { width, height: 1000 }, reducedMotion: 'reduce' });
@@ -21,7 +24,9 @@ for (const width of [390, 1440]) {
 			await page.getByRole('link', { name: /^B · 哲学、宗教/ }).click();
 			await expect(page).toHaveURL(/\/ebooks\/clc\/B\/$/);
 			await expect(page.locator('.ebook-classification summary')).toContainText('哲学、宗教');
-			await expect(page.locator('.ebook-pagination')).toContainText('137');
+			const catalog = await (await page.request.get('/ebooks/search-index.json')).json();
+			const total = shelfEntries(catalog).filter(book => book.clcCode?.startsWith('B')).length;
+			await expect(page.locator('.ebook-pagination')).toContainText(`共 ${total} 份藏书`);
 			await page.goto('/ebooks/WEISER8cf630042445/', { waitUntil: 'domcontentloaded' });
 			await expect(page.locator('h1')).toHaveText('伯里曼人体结构绘画教学（最新版）');
 			await expect(page.locator('dl')).toContainText('乔治·伯里曼');
@@ -98,12 +103,16 @@ test('搜索按全库和书单范围筛选、格式可组合、编号页可直�
 	await page.getByRole('searchbox').fill('Private Pleasures');
 	await expect(page.locator('.ebook-card')).toHaveCount(0);
 	await page.goto('/ebooks/', { waitUntil: 'domcontentloaded' });
+	const pageSize = await page.locator('.ebook-card').count();
 	await page.getByLabel('跳转页码').fill('3');
 	await page.getByRole('button', { name: '前往' }).click();
 	await expect(page).toHaveURL(/\/ebooks\/page\/3\/$/);
-	await page.getByRole('link', { name: '第 27 页', exact: true }).click();
-	await expect(page).toHaveURL(/\/ebooks\/page\/27\/$/);
-	await expect(page.locator('.ebook-card')).toHaveCount(6);
+	const catalog = await (await page.request.get('/ebooks/search-index.json')).json();
+	const total = shelfEntries(catalog).length;
+	const lastPage = Math.ceil(total / pageSize);
+	await page.getByRole('link', { name: `第 ${lastPage} 页`, exact: true }).click();
+	await expect(page).toHaveURL(new RegExp(`/ebooks/page/${lastPage}/$`));
+	await expect(page.locator('.ebook-card')).toHaveCount(total - (lastPage - 1) * pageSize);
 });
 
 for (const width of [390, 1440]) {
@@ -153,13 +162,14 @@ for(const width of [320,1440])test('分页操作紧邻居中，可直接点数�
 
 });
 
-test('认证目录乱序不会重排既有书卡，页码在原页面切换并支持后退', async ({ page }) => {
+test('认证目录乱序不会重排既有书卡，页码在原页面切换并支持后退', async ({ page, baseURL }) => {
  const { readFile } = await import('node:fs/promises');
  const books = JSON.parse(await readFile('dist/ebooks/search-index.json', 'utf8'));
  let release!: () => void;
  const ready = new Promise<void>(resolve => { release = resolve; });
- await page.route('https://library-files.telysta.com/api/session', route => route.fulfill({ json: { authenticated: true }, headers: { 'access-control-allow-origin': 'http://127.0.0.1:4322', 'access-control-allow-credentials': 'true' } }));
- await page.route('https://library-files.telysta.com/api/catalog', async route => { await ready; await route.fulfill({ json: [...books].reverse(), headers: { 'access-control-allow-origin': 'http://127.0.0.1:4322', 'access-control-allow-credentials': 'true' } }); });
+ const headers = { 'access-control-allow-origin': new URL(baseURL!).origin, 'access-control-allow-credentials': 'true' };
+ await page.route('https://library-files.telysta.com/api/session', route => route.fulfill({ json: { authenticated: true }, headers }));
+ await page.route('https://library-files.telysta.com/api/catalog', async route => { await ready; await route.fulfill({ json: [...books].reverse(), headers }); });
  await page.goto('/ebooks/');
  const before = await page.locator('.ebook-card h2 a').evaluateAll(links => links.map(link => link.getAttribute('href')));
  await page.evaluate(() => { (window as Window & { firstCard?: Element; marker?: string }).firstCard = document.querySelector('.ebook-card')!; (window as Window & { marker?: string }).marker = 'same-document'; });

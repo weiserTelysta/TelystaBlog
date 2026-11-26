@@ -169,13 +169,15 @@ export async function editDocument({
 		hasUnsavedChanges = changed;
 		dirty(changed);
 	};
+	const stateLabel = () => record.kind === 'post' && record.state === 'published'
+		? ['已上线', 'Live'] : ['云端草稿', 'Cloud draft'];
 	function render() {
 		container.replaceChildren();
 		getters.clear();
 		controls.clear();
 		const head = el('div', '', 'task-heading'),
 			title = el('h1', fields.title || record.title),
-			state = el('span', ['云端草稿', 'Cloud draft'], 'status-label');
+			state = el('span', stateLabel, 'status-label');
 		head.append(title, state);
 		const actions = el('div', '', 'editor-actions'),
 			save = button(['保存草稿', 'Save draft'], saveRecord, 'primary');
@@ -227,7 +229,8 @@ export async function editDocument({
 			const publication = section('publication', ['发布', 'Publication']);
 			publication.append(
 				el('p', ['下载已保存版本，供 Git 构建发布。', 'Download the saved revision for a Git build.'], 'field-help'),
-				button(['下载发布快照', 'Download publication snapshot'], downloadPublication, 'quiet-button')
+				button(['下载发布快照', 'Download publication snapshot'], downloadPublication, 'quiet-button'),
+				button(['核对线上版本', 'Check live revision'], checkPublication, 'quiet-button')
 			);
 		}
 		function activate(key) {
@@ -752,6 +755,33 @@ export async function editDocument({
 			tell(['快照已下载，等待 Git 构建。', 'Snapshot downloaded. Awaiting a Git build.']);
 		} catch (error) {
 			if (current()) tell(authError(error));
+		} finally {
+			if (current()) control.disabled = false;
+		}
+	}
+
+	async function checkPublication(event) {
+		const control = event.currentTarget;
+		control.disabled = true;
+		tell(['正在核对线上版本…', 'Checking the live revision…']);
+		try {
+			const result = await api('documents/' + encodeURIComponent(id) + '/publication/check', { method: 'POST' });
+			if (!current()) return;
+			if (result.status === 'live') {
+				if (record.revision === result.currentRevision) {
+					record.state = result.currentState;
+					bind(container.querySelector('.status-label'), stateLabel);
+				}
+				tell(result.currentState === 'published' ?
+					[`第 ${result.revision} 版已上线。`, `Revision ${result.revision} is live.`] :
+					[`线上为第 ${result.revision} 版。第 ${result.currentRevision} 版仍是草稿。`, `Revision ${result.revision} is live. Revision ${result.currentRevision} is still a draft.`]);
+			} else if (result.status === 'awaiting') tell([
+				`线上尚未显示第 ${result.latestPrepared} 版。请检查 Git 和 Pages 构建状态。`,
+				`Revision ${result.latestPrepared} is not live yet. Check Git and the Pages build status.`]);
+			else tell(['此文尚未准备发布快照。', 'No publication snapshot has been prepared for this article.']);
+		} catch (error) {
+			if (current()) tell(error.code === 'PUBLICATION_UNAVAILABLE' ?
+				['暂时无法核对公开文章，请稍后重试。', 'The public article could not be checked. Try again shortly.'] : authError(error));
 		} finally {
 			if (current()) control.disabled = false;
 		}

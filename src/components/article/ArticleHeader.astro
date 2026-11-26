@@ -2,13 +2,15 @@
 import { ARTICLE_PAGE_CONFIG } from '../../config/pages/article';
 import type { PostListItem } from '../../lib/blogPosts';
 import { formatArticleDate, formatFullDate, formatPostDate } from '../../lib/blogPosts';
+import type { PublishedPostAuthor } from '../../lib/postPublicationSource';
 
 type Props = {
 	post: PostListItem;
 	title: string;
+	author?: PublishedPostAuthor;
 };
 
-const { post, title } = Astro.props;
+const { post, title, author } = Astro.props;
 const cover = post.cover?.startsWith('/images/posts/') ? post.cover : undefined;
 const { header } = ARTICLE_PAGE_CONFIG;
 ---
@@ -25,6 +27,7 @@ const { header } = ARTICLE_PAGE_CONFIG;
 	<h1>{title}</h1>
 
 	<div class="article-header__dates" aria-label={header.metaAriaLabel}>
+		{author && <span>{author.name}</span>}
 		<span>
 			{header.publishedLabel}{' '}
 			<time

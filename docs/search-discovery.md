@@ -20,6 +20,10 @@ Google已停用匿名sitemap ping，不能把404当提交成功。通过robots�
 
 IndexNow 接收首页 `/`、`/blog/` 和 `/series/`，返回 HTTP 200。线上原有 sitemap 有 1,370 个地址，收紧规则后的本地构建有 44 个。Google Search Console 和百度普通收录仍待站点账号授权。未找到可核实的搜狐站点地图提交渠道。
 
+## 2026-11-27 执行结果
+
+IndexNow 再次接收首页、博客和系列总览，返回 HTTP 200。本次回执记录于 `.tmp/seo/indexnow-last.json`。Google Search Console 和百度仍需站点账号授权。
+
 ## 爬虫规则
 
 2026-11-22 收窄电子书抓取范围，保留书室首页，将详情、书单、分页、分类目录、阅读器和机器索引排除。通用爬虫组声明 `Crawl-delay: 5`，Bing 等支持该指令的爬虫可以读取同一份规则。Google 使用路径规则，其文档不支持该延迟指令。百度可在已验证站点的资源平台设置抓取频次。robots.txt 供爬虫遵守，实际请求控制由站点的鉴权及边缘限流负责。[Bing robots 说明](https://www.bing.com/webmasters/help/?topicid=cb7c31ec) · [Google robots 规范](https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec) · [百度抓取频次](https://ziyuan.baidu.com/pressure/index)

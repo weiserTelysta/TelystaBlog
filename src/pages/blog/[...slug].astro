@@ -15,6 +15,8 @@ import {
 } from '../../lib/blogPosts';
 import { getBlogSeriesById } from '../../lib/blogSeriesUtils';
 import { SITE_CONFIG } from '../../config/site';
+import publishedAuthors from '../../../data/post-authors.json';
+import { isPublishedPostAuthor } from '../../lib/postPublicationSource';
 import 'katex/dist/katex.min.css';
 import 'photoswipe/style.css';
 import '../../components/article/ArticleImageViewer.scss';
@@ -42,8 +44,13 @@ type Props = {
 	navigation?: SeriesNavigation;
 };
 
-const { entry, seriesPostCount, navigation } = Astro.props;
+const { entry, seriesPostCount, navigation } = Astro.props as Props;
 const post = toPostListItem(entry);
+const attribution = (publishedAuthors as Record<string, { sha256: string; revision: number; author: unknown }>)[entry.id];
+const publication = attribution?.sha256 === entry.data.sourceHash &&
+	Number.isSafeInteger(attribution.revision) && attribution.revision > 0 && isPublishedPostAuthor(attribution.author)
+	? { revision: attribution.revision, author: attribution.author } : undefined;
+const author = publication?.author;
 const series = getBlogSeriesById(post.series);
 const { Content, headings } = await render(entry);
 const articleTitle = post.title;
@@ -60,12 +67,12 @@ const hasToc = tocHeadings.length >= ARTICLE_PAGE_CONFIG.toc.minHeadingCount;
 	description={post.description}
 	shareImage={post.cover}
 	shareImageAlt={post.title}
-	article={{ title: articleTitle, publishedAt: post.publishedAt, updatedAt: post.updatedAt, tags: post.tags }}
+	article={{ title: articleTitle, publishedAt: post.publishedAt, updatedAt: post.updatedAt, tags: post.tags, author }}
 	starfieldVariant="subtle"
 >
 	<main class="article-page">
-		<article class="article-page__inner">
-			<ArticleHeader post={post} title={articleTitle} />
+		<article class="article-page__inner" data-telysta-post={entry.id} data-post-source={entry.data.sourceHash} data-post-revision={publication?.revision}>
+			<ArticleHeader post={post} title={articleTitle} author={author} />
 
 			<div class="article-page__body">
 				<div class="article-page__content prose" data-article-content>

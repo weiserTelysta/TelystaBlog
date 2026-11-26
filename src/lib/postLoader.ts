@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { glob, type Loader } from 'astro/loaders';
 import { splitMarkdownSource } from './markdownSource';
 import { completePostMetadata, needsPostBody } from './postMetadata';
@@ -7,8 +8,9 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { postRouteId } from './postLinks.mjs';
 import { readPostLinkIndex } from '../../scripts/lib/post-link-index.mjs';
+import { normalizePublicationSource } from './postPublicationSource';
 
-const POST_RENDER_VERSION = 8;
+const POST_RENDER_VERSION = 9;
 
 /** Keep Astro's Markdown rendering, relative assets, IDs and dev watcher. */
 export function postLoader(): Loader {
@@ -30,10 +32,10 @@ export function postLoader(): Loader {
 					// Bump the render version when metadata or Markdown rules change.
 					generateDigest: (data) => context.generateDigest({ version: POST_RENDER_VERSION, imageManifestDigest, linkDigest, data }),
 					async parseData(options) {
-						const body = options.filePath && needsPostBody(options.data)
-							? splitMarkdownSource(await readFile(options.filePath, 'utf8')).body
-							: '';
+						const source = options.filePath ? await readFile(options.filePath, 'utf8') : '';
+						const body = needsPostBody(options.data) ? splitMarkdownSource(source).body : '';
 						const data = completePostMetadata(options.data, body, options.filePath ?? options.id);
+						data.sourceHash = createHash('sha256').update(normalizePublicationSource(source)).digest('hex');
 						return context.parseData({
 							...options,
 							data: data as typeof options.data,

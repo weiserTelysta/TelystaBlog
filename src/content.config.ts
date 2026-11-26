@@ -21,6 +21,7 @@ const posts = defineCollection({
 	schema: z
 		.object({
 			uuid: z.string().regex(POST_UUID_PATTERN),
+				sourceHash: z.string().regex(/^[a-f0-9]{64}$/),
 			redirectFrom: z.array(z.string().min(1)).optional(),
 			commentId: z.string().min(1).optional(),
 			aliases: z.array(z.string().trim().min(1)).optional(),
