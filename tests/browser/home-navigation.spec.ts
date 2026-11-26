@@ -1,5 +1,44 @@
 import { test, expect } from '@playwright/test';
 
+test('首页侧影落款与单行站龄叠放，并在北京时间零点更新', async ({ page }, testInfo) => {
+	await page.setViewportSize({ width: 320, height: 800 });
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	await page.clock.install({ time: new Date('2026-11-23T15:59:45Z') });
+	await page.goto('/');
+	const colophon = page.locator('footer[aria-label="建站时间"]');
+	await colophon.scrollIntoViewIfNeeded();
+	await expect(colophon.locator('img')).toHaveAttribute('alt', '');
+	await expect.poll(() => colophon.locator('img').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+	await expect(colophon.locator('time')).toHaveAttribute('datetime', 'P182D');
+	await expect(colophon).toHaveText('第一颗星，已亮了 182 夜');
+	await page.evaluate(() => document.fonts.ready);
+	const { artwork, copy } = await colophon.evaluate(footer => ({
+		artwork: footer.querySelector('img')!.getBoundingClientRect().toJSON(),
+		copy: footer.querySelector('p')!.getBoundingClientRect().toJSON(),
+	}));
+	expect(copy.left).toBeGreaterThan(artwork.left + artwork.width * 0.19);
+	expect(copy.left).toBeLessThan(artwork.left + artwork.width * 0.25);
+	expect(copy.right).toBeLessThan(artwork.right);
+	expect(copy.top).toBeGreaterThan(artwork.top);
+	expect(copy.bottom).toBeLessThan(artwork.bottom);
+	expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(320);
+	await colophon.screenshot({ path: testInfo.outputPath('first-star-mobile.png') });
+	await page.setViewportSize({ width: 1440, height: 1000 });
+	const desktop = await colophon.evaluate(footer => {
+		const art = footer.querySelector('img')!.getBoundingClientRect();
+		const caption = footer.querySelector('p')!;
+		const range = document.createRange();
+		range.selectNodeContents(caption);
+		const text = range.getBoundingClientRect();
+		return { height: text.height, lineHeight: parseFloat(getComputedStyle(caption).lineHeight), overflow: text.right - art.right };
+	});
+	expect(desktop.height).toBeLessThan(desktop.lineHeight + 2);
+	expect(desktop.overflow).toBeLessThan(2);
+	await colophon.screenshot({ path: testInfo.outputPath('first-star-desktop.png') });
+	await page.clock.fastForward(16_000);
+	await expect(colophon).toHaveText('第一颗星，已亮了 183 夜');
+});
+
 test('Blog、Gallery 与 Ebooks 直接访问目录地址，无脚本也能跳转', async ({ browser, baseURL }) => {
 	const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
 	const page = await context.newPage();

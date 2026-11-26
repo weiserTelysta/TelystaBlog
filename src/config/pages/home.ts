@@ -41,6 +41,9 @@ export type HomeQrContactConfig = {
 	imageSrc: string;
 };
 
+// The repository began on 25 May 2026. Count nights from that date in Beijing time.
+export const HOME_FIRST_STAR_DATE = '2026-05-25';
+
 export const HOME_ARCHIVE_INTRO: HomeArchiveIntroConfig = {
 	eyebrow: '',
 	title: 'sic itur ad astra',

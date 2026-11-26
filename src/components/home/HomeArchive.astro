@@ -1,6 +1,7 @@
 ---
 import HomeSection from './HomeSection.astro';
 import HomeSocialNav from './HomeSocialNav.astro';
+import HomeFirstStar from './HomeFirstStar.astro';
 import {
 	HOME_ARCHIVE_INTRO,
 	HOME_QR_CONTACTS,
@@ -30,6 +31,7 @@ const sections = HOME_SECTIONS.filter((section) => section.enabled !== false).so
 			contacts={HOME_QR_CONTACTS}
 			revealOrder={sections.length + 1}
 		/>
+		<HomeFirstStar />
 	</div>
 </section>
 

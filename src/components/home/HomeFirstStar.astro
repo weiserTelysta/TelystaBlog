@@ -1,0 +1,91 @@
+---
+import firstStarArt from '../../assets/images/decorations/telysta-first-star-selected.webp';
+import { firstStarAge, formatNights } from '../../lib/firstStarAge';
+
+const { nights } = firstStarAge(Date.now());
+---
+
+<footer class="first-star" aria-label="建站时间">
+	<img class="first-star__art" src={firstStarArt.src} width={firstStarArt.width} height={firstStarArt.height} alt="" loading="lazy" decoding="async" />
+	<p class="first-star__caption"><span class="first-star__name">第一颗星</span>，已亮了 <time datetime={`P${nights}D`} data-first-star-age>{formatNights(nights)} 夜</time></p>
+</footer>
+
+<script>
+	import { firstStarAge, formatNights } from '../../lib/firstStarAge';
+
+	const age = document.querySelector<HTMLTimeElement>('[data-first-star-age]');
+	let refresh: number | undefined;
+
+	function updateAge() {
+		if (!age) return;
+		window.clearTimeout(refresh);
+		const { nights, untilNextNight } = firstStarAge(Date.now());
+		age.dateTime = `P${nights}D`;
+		age.textContent = `${formatNights(nights)} 夜`;
+		refresh = window.setTimeout(updateAge, untilNextNight);
+	}
+
+	updateAge();
+	window.addEventListener('pageshow', updateAge);
+	document.addEventListener('visibilitychange', () => {
+		if (document.visibilityState === 'visible') updateAge();
+	});
+</script>
+
+<style>
+	@font-face {
+		font-family: 'Long Cang Colophon';
+		src: url('../../assets/fonts/LongCang-FirstStar.woff2') format('woff2');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	.first-star {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		align-items: center;
+		width: min(100%, 330px);
+		margin: clamp(44px, 9vw, 72px) auto 0;
+	}
+
+	.first-star__art,
+	.first-star__caption {
+		grid-area: 1 / 1;
+	}
+
+	.first-star__art {
+		display: block;
+		width: 100%;
+		height: auto;
+		opacity: 0.69;
+	}
+
+	.first-star__caption {
+		z-index: 1;
+		justify-self: start;
+		margin: 0 0 0 22%;
+		min-width: 0;
+		transform: translateY(-0.52em);
+		color: color-mix(in srgb, var(--color-accent) 88%, var(--color-background-soft));
+		font-family: 'Long Cang Colophon', var(--font-home-prose);
+		font-size: clamp(1.0625rem, 5.7vw, 1.4375rem);
+		letter-spacing: -0.018em;
+		line-height: 1.23;
+		text-shadow: 0 1px 5px var(--color-background);
+	}
+
+	.first-star__name {
+		color: color-mix(in srgb, var(--color-accent) 84%, var(--color-accent-soft));
+	}
+
+	.first-star__caption time {
+		white-space: nowrap;
+	}
+
+	@media (min-width: 320px) {
+		.first-star__caption {
+			white-space: nowrap;
+		}
+	}
+</style>
