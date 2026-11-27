@@ -1,4 +1,4 @@
-import { checkLibrarySession, getLibraryCatalog, isLibraryUnlocked } from './libraryAccess';
+import { checkLibrarySession, getLibraryCatalog, initLibraryAccess, isLibraryUnlocked } from './libraryAccess';
 import { bindReaderNavigation, type ReaderCallbacks, type ReaderView } from './readerTypes';
 import { createReaderContents } from './readerContents';
 import { pdfPreviewHref, REFLOW_FORMATS } from './readerLinks';
@@ -97,5 +97,6 @@ export function initLibraryReader() {
 	window.addEventListener('library-access-change', () => { void open(params.get('format') || undefined); });
 	window.addEventListener('pagehide', () => { observer.disconnect(); clear(); });
 	window.addEventListener('pageshow', event => { if (event.persisted) { observer.observe(surface); void checkLibrarySession().then(() => open(params.get('format') || undefined)); } });
+	initLibraryAccess();
 	void checkLibrarySession().then(() => open(params.get('format') || undefined));
 }

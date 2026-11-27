@@ -107,11 +107,11 @@ test('图片内聚操作、移出/闲置隐藏、下载分层关闭与焦点恢�
 	expect(await page.evaluate(() => document.body.style.overflow)).not.toBe('hidden');
 });
 
-test('触屏窄屏与减少动态：按钮不溢出，像素皮肤保留 PNG', async ({ browser }, testInfo) => {
-	const context = await browser.newContext({ viewport: { width: 320, height: 740 }, hasTouch: true, isMobile: true, reducedMotion: 'reduce' });
+test('触屏窄屏与减少动态：按钮不溢出，像素皮肤保留 PNG', async ({ browser, baseURL }, testInfo) => {
+	const context = await browser.newContext({ viewport: { width: 320, height: 740 }, hasTouch: true, isMobile: true, reducedMotion: 'reduce', baseURL });
 	const page = await context.newPage();
 	try {
-		await page.goto('http://127.0.0.1:4322/gallery/');
+		await page.goto('/gallery/');
 		await page.getByRole('link', { name: '查看资源：Minecraft · 红色皮肤', exact: true }).tap();
 		await expect(page.locator('.pswp')).toBeVisible();
 		await expect(page.locator('.resource-viewer-toolbar')).toHaveCSS('transition-duration', '0s');

@@ -1,0 +1,42 @@
+---
+import { SITE_CHROME_CONFIG } from '../../config/interactions/siteChrome';
+import './BackToTop.scss';
+
+const { ariaLabel, label } = SITE_CHROME_CONFIG.backToTop;
+---
+
+<button class="back-to-top" type="button" aria-label={ariaLabel} aria-hidden="true" tabindex="-1">
+	<span class="back-to-top__line" aria-hidden="true"></span>
+	<span class="back-to-top__label">{label}</span>
+	<span class="back-to-top__mark" aria-hidden="true"></span>
+</button>
+
+<script>
+	import { SITE_CHROME_CONFIG } from '../../config/interactions/siteChrome';
+	import { scrollToTop } from '../../lib/scrollRuntime';
+
+	const button = document.querySelector<HTMLButtonElement>('.back-to-top');
+	if (button) {
+		const root = document.documentElement;
+		let visible = false;
+		const update = () => {
+			const nextVisible = scrollY > SITE_CHROME_CONFIG.backToTop.showAfter && !root.classList.contains('has-modal-open');
+			if (nextVisible === visible) return;
+			visible = nextVisible;
+			button.classList.toggle('is-visible', visible);
+			button.setAttribute('aria-hidden', String(!visible));
+			button.tabIndex = visible ? 0 : -1;
+		};
+		const resourcePage = document.querySelector('.resource-page');
+		if (resourcePage) {
+			const updateCompact = () => button.classList.toggle('is-compact', resourcePage.getBoundingClientRect().right + 72 > innerWidth);
+			new ResizeObserver(updateCompact).observe(resourcePage);
+			addEventListener('resize', updateCompact);
+			updateCompact();
+		}
+		button.addEventListener('click', scrollToTop);
+		addEventListener('scroll', update, { passive: true });
+		new MutationObserver(update).observe(root, { attributes: true, attributeFilter: ['class'] });
+		update();
+	}
+</script>

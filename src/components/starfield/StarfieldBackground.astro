@@ -1,0 +1,22 @@
+---
+import type { StarfieldVariant } from './starfieldRuntime';
+import './StarfieldBackground.css';
+
+interface Props { variant?: StarfieldVariant }
+const { variant = 'immersive' } = Astro.props;
+---
+
+<div class="starfield" aria-hidden="true">
+	<canvas class="starfield__canvas" data-starfield-variant={variant}></canvas>
+</div>
+
+<script>
+	import { startStarfield } from './starfieldRuntime';
+
+	const canvas = document.querySelector<HTMLCanvasElement>('[data-starfield-variant]');
+	if (canvas) {
+		const start = () => startStarfield(canvas, canvas.dataset.starfieldVariant === 'subtle' ? 'subtle' : 'immersive');
+		if (typeof requestIdleCallback === 'function') requestIdleCallback(start, { timeout: 1500 });
+		else setTimeout(start, 0);
+	}
+</script>

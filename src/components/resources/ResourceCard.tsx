@@ -3,10 +3,11 @@ import type { ResourceListItem } from '../../lib/resources/resourceItems';
 
 type ResourceCardProps = {
 	resource: ResourceListItem;
+	priority: boolean;
 	onSelect: (resource: ResourceListItem, trigger: HTMLAnchorElement) => void;
 };
 
-export default function ResourceCard({ resource, onSelect }: ResourceCardProps) {
+export default function ResourceCard({ resource, priority, onSelect }: ResourceCardProps) {
 	const ratio = resource.coverAspectRatio > 0 ? resource.coverAspectRatio : 0.78;
 
 	function open(event: MouseEvent<HTMLAnchorElement>) {
@@ -24,7 +25,7 @@ export default function ResourceCard({ resource, onSelect }: ResourceCardProps) 
 			onClick={open}
 			aria-label={'查看资源：' + resource.title}
 		>
-			<img src={resource.cover} alt={resource.title} loading="lazy" decoding="async" />
+			<img src={resource.cover} alt={resource.title} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : undefined} decoding="async" />
 		</a>
 	);
 }

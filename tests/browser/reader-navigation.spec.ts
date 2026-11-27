@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import JSZip from 'jszip';
+import { browserTestOrigin } from '../../scripts/browser-test-address.mjs';
 
 const host = 'https://telysta.com', library = 'https://library-files.telysta.com';
 async function attach(page: Page, bytes: Buffer, format = 'EPUB') {
@@ -8,7 +9,7 @@ async function attach(page: Page, bytes: Buffer, format = 'EPUB') {
    await route.fulfill({ json: [{ id: 'reader-fixture', title: 'Reader fixture', files: [{ format, href: library + '/books/reader-fixture.' + format.toLowerCase() }] }] }); return;
   }
   const url = new URL(route.request().url());
-  const response = await route.fetch({ url: 'http://127.0.0.1:4322' + url.pathname + url.search }); await route.fulfill({ response });
+  const response = await route.fetch({ url: browserTestOrigin + url.pathname + url.search }); await route.fulfill({ response });
  });
  await page.route(library + '/**', async route => {
   if (route.request().url().endsWith('/api/session')) { await route.fulfill({ json: { authenticated: false } }); return; }

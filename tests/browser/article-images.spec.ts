@@ -189,11 +189,11 @@ test('打开动画期间立即关闭，不残留弹层或滚动锁', async ({ pa
 	await expect(page.locator('.article-lightbox')).toHaveCount(0);
 });
 
-test('无 JavaScript 时正文与图片仍可阅读', async ({ browser }) => {
-	const context = await browser.newContext({ javaScriptEnabled: false });
+test('无 JavaScript 时正文与图片仍可阅读', async ({ browser, baseURL }) => {
+	const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
 	try {
 		const page = await context.newPage();
-		await page.goto(`http://127.0.0.1:4322${article}`);
+		await page.goto(article);
 		const image = page.locator(imageSelector).first();
 		await image.scrollIntoViewIfNeeded();
 		await expect(image).toBeVisible();

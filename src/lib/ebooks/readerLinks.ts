@@ -7,6 +7,11 @@ export function pdfPreviewHref(href: string) {
 	url.searchParams.delete('download');
 	return url.href;
 }
+export function fileDownloadHref(href: string) {
+	const url = new URL(href);
+	url.searchParams.set('download', '1');
+	return url.href;
+}
 export function readingLink(id: string, file: { href: string; format: string }) {
 	return file.format === 'PDF'
 		? { href: pdfPreviewHref(file.href), target: '_blank', rel: 'noopener noreferrer', label: '打开 PDF（新标签页）' }

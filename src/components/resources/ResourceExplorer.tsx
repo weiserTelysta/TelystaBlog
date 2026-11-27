@@ -84,8 +84,8 @@ export default function ResourceExplorer({ resources }: ResourceExplorerProps) {
 					</div>
 				) : (
 					<div className="resource-gallery">
-						{filteredResources.map((resource) => (
-							<ResourceCard key={resource.id} resource={resource} onSelect={selectResource} />
+						{filteredResources.map((resource, index) => (
+							<ResourceCard key={resource.id} resource={resource} priority={index === 0} onSelect={selectResource} />
 						))}
 					</div>
 				)}

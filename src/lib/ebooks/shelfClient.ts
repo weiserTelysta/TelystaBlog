@@ -1,5 +1,6 @@
-import { checkLibrarySession, getLibraryCatalog, isLibraryUnlocked, type LibraryBook } from './libraryAccess';
+import { checkLibrarySession, getLibraryCatalog, initLibraryAccess, isLibraryUnlocked, type LibraryBook } from './libraryAccess';
 import { EBOOKS_PAGE_SIZE } from '../../config/library';
+import { fileDownloadHref } from './readerLinks';
 import { booksInCategory, ebookShelfHref, filterShelf, paginateShelf, shelfBooklists, shelfCategories, shelfPageNumbers, sortShelfBooks } from './shelf';
 
 type SearchBook = LibraryBook;
@@ -25,7 +26,7 @@ function bookCard(book: SearchBook) {
 	const formats = element('ul', 'ebook-formats'); formats.setAttribute('aria-label', `${book.title}的格式`);
 	for (const file of book.files) {
 		const li = element('li'), a = element('a', '', file.format);
-		a.href = file.href; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.download = ''; a.setAttribute('aria-label', `下载 ${book.title}（${file.format}）`); li.append(a); formats.append(li);
+		a.href = fileDownloadHref(file.href); a.target = '_blank'; a.rel = 'noopener noreferrer'; a.download = ''; a.setAttribute('aria-label', `下载 ${book.title}（${file.format}）`); li.append(a); formats.append(li);
 	}
 	copy.append(title, authors, formats); article.append(cover, copy); item.append(article);
 	return item;
@@ -190,6 +191,7 @@ export function initEbookShelf() {
 	}
 	window.addEventListener('popstate', restoreFromUrl);
 	window.addEventListener('library-access-change', () => { index = undefined; void apply(currentPage, 'none'); });
+	initLibraryAccess();
 	void checkLibrarySession();
 	restoreFromUrl();
 }

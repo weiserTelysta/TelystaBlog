@@ -6,6 +6,7 @@ test('首页在旧的背景会话中也只渲染星空', async ({ page }) => {
 		await page.setViewportSize(viewport);
 		await page.emulateMedia({ reducedMotion: viewport.width === 390 ? 'reduce' : 'no-preference' });
 		await page.goto('/');
+		await expect(page.locator('astro-island[renderer-url]')).toHaveCount(0);
 		const background = page.locator('.starfield');
 		const canvas = background.locator('canvas');
 		await expect(background).toHaveAttribute('aria-hidden', 'true');

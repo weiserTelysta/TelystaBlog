@@ -226,11 +226,11 @@ for (const width of [390, 1440]) {
 	});
 }
 
-test('触屏滑动只滚动目录，选章后恢复正文导航', async ({ browser }) => {
-	const context = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+test('触屏滑动只滚动目录，选章后恢复正文导航', async ({ browser, baseURL }) => {
+	const context = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, baseURL });
 	try {
 		const page = await context.newPage();
-		await page.goto(`http://127.0.0.1:4322${route}`);
+		await page.goto(route);
 		await page.locator(trigger).tap();
 		await expect(page.locator(panel)).toHaveCSS('opacity', '1');
 		const session = await context.newCDPSession(page);
@@ -249,11 +249,11 @@ test('触屏滑动只滚动目录，选章后恢复正文导航', async ({ brows
 	}
 });
 
-test('无 JavaScript 时目录仍可展开并通过原生锚点定位', async ({ browser }) => {
-	const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 1440, height: 1000 } });
+test('无 JavaScript 时目录仍可展开并通过原生锚点定位', async ({ browser, baseURL }) => {
+	const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 1440, height: 1000 }, baseURL });
 	try {
 		const page = await context.newPage();
-		await page.goto(`http://127.0.0.1:4322${route}`);
+		await page.goto(route);
 		await page.locator(trigger).click();
 		await expect(page.locator(panel)).toHaveCSS('opacity', '1');
 		await page.locator(entry('伊斯兰崛起')).click();

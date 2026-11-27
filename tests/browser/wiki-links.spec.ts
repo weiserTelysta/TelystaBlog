@@ -20,11 +20,11 @@ for (const width of [390, 1440]) {
 	});
 }
 
-test('WikiLink 在无 JavaScript 时仍是可跳转的原生链接', async ({ browser }) => {
-	const context = await browser.newContext({ javaScriptEnabled: false });
+test('WikiLink 在无 JavaScript 时仍是可跳转的原生链接', async ({ browser, baseURL }) => {
+	const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
 	try {
 		const page = await context.newPage();
-		await page.goto('http://127.0.0.1:4322/blog/portraits/rhaelysa/2026-9-20-rhaelysa的创作理念/', { waitUntil: 'domcontentloaded' });
+		await page.goto('/blog/portraits/rhaelysa/2026-9-20-rhaelysa的创作理念/', { waitUntil: 'domcontentloaded' });
 		await page.locator('[data-article-content]').getByRole('link', { name: 'Telysta', exact: true }).click();
 		await expect(page.locator('h1')).toHaveText('Telysta 的设计信息分享');
 	} finally { await context.close(); }

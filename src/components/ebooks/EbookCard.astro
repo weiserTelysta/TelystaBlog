@@ -1,5 +1,6 @@
 ---
 import type { Ebook } from '../../lib/ebooks/ebooks';
+import { fileDownloadHref } from '../../lib/ebooks/readerLinks';
 type Props = { book: Ebook };
 const { book } = Astro.props;
 ---
@@ -11,7 +12,7 @@ const { book } = Astro.props;
 		<h2><a href={book.href} title={book.title}>{book.title}</a></h2>
 		<p class="ebook-card__authors" title={book.authors.join('、')}>{book.authors.join('、')}{book.authorStatus === 'partial-collection' && ' 等'}</p>
 		<ul class="ebook-formats" aria-label={`${book.title}的格式`}>
-			{book.files.map(file => <li><a href={file.href} target="_blank" rel="noopener noreferrer" download aria-label={`下载 ${book.title}（${file.format}）`}>{file.format}</a></li>)}
+			{book.files.map(file => <li><a href={fileDownloadHref(file.href)} target="_blank" rel="noopener noreferrer" download aria-label={`下载 ${book.title}（${file.format}）`}>{file.format}</a></li>)}
 		</ul>
 	</div>
 </article>

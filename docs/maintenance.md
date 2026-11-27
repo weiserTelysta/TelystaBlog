@@ -32,6 +32,8 @@
 - `src/components/resources/resourceLightbox.ts`：按需加载的全屏看图器与下载选择，替代旧详情分栏。详见 [资源画廊记录](archive/2026-09/resource-gallery-2026-09-05.md)。
 - `src/components/blog/BlogSearch.astro`、`src/lib/blogSearch.ts`：简约搜索交互、匹配与命中句；`src/pages/blog/search-index.json.ts` 在构建时生成已发布文章索引，不要手改生成文件。
 - `src/lib/homeProfile.ts`、`src/components/site/TabIdentity.astro`：同一标签页会话共享头像与 favicon，刷新不重新抽取；离开时的多语言标题集中在 `src/config/tabGreetings.ts`。
+- `src/components/home/HomeHero.astro` 提供首屏身份标题，`homeIntroRuntime.ts` 负责会话头像和问候动效。星空、回顶和滚动进度条由各自的 Astro 组件初始化，星空绘制继续复用 `starfieldRuntime.ts`。
+- `src/lib/ebooks/libraryAccess.ts` 在书架、受保护详情和阅读器内复核权限。收到跨标签页账户事件时重新检查，按最新的会话响应更新目录。
 - `scripts/prepare-favicons.ts`：新增头像方案后运行 `npm run assets:favicons -- --cdn`（或 `--source <本地 avatars 目录>`），检查并提交 `public/favicons/` 的小尺寸 PNG。普通构建不会重新下载生成。详见 [标签页、搜索与组图记录](archive/2026-09/tab-search-gallery-2026-09-05.md)。
 - `.github/workflows/deploy.yml`：Node 22 检查和 GitHub Pages 部署。
 
@@ -108,7 +110,7 @@ R2 素材的增量 WebP、清单和上传流程见 [cdn-assets.md](cdn-assets.md
 
 ## 文章评论
 
-所有公开文章通过 `src/pages/blog/[...slug].astro` 统一渲染，页面顺序固定为“正文 → 系列入口 → 评论”。Giscus 只在该路由的正文主体内加载；评论配置集中在 `src/components/article/ArticleComments.astro`，首页、文章索引、系列页和资源页不会引入评论脚本。
+所有公开文章通过 `src/pages/blog/[...slug].astro` 统一渲染，页面顺序是正文、系列入口、评论。站内讨论由账户 Worker 和 D1 提供。Giscus 保留在文章的「历史讨论」区，按 `src/components/article/ArticleComments.astro` 中的映射找回旧记录。[站内讨论维护](console.md#站内账户与评论2026-11-22)
 
 当前使用 `specific` 映射和 `preferred_color_scheme` 主题。迁移文章通过 commentId 保留原 pathname 对应的讨论键；新文章默认使用固定的 `WEISER<uuid>`。文件或标题改名时保留 uuid、commentId 和 redirectFrom，构建统一生成内部链接、canonical、sitemap 与静态旧地址跳转。评论仓库必须保持公开、启用 Discussions，并安装 Giscus GitHub App。格式与边界见 [永久链接说明](post-permalinks-2026-11-03.md)。
 
@@ -145,11 +147,13 @@ git status
 - 新增文本为 UTF-8。
 - 没有提交 `dist/`、`.tmp/` 或资源原图。
 
-`test:browser` 先构建，再用独立浏览器测试本机 `127.0.0.1:4322` 预览。Playwright 通过 `scripts/browser-preview.mjs` 使用 Astro 的程序化 preview API，直接管理服务生命周期，避免 CLI 在代理环境自动转入后台后测试误判服务退出。Windows 默认使用已安装 Edge，不读取用户浏览器 profile；其他平台先运行 `npx playwright install chromium`。可用 `TELYSTA_TEST_BROWSER` 选择已安装的 channel。不要把 4322 用于其他服务；本地允许复用同项目 preview，CI 不复用。脚本覆盖布局、键盘、遮罩、下载与减少动态，不代替真机触摸手感测试。
+`test:browser` 先构建，再由 Playwright 启动和关闭 Astro preview。默认地址是 `127.0.0.1:4322`。端口占用时，通过 `TELYSTA_BROWSER_TEST_PORT` 指定一个空闲端口，预览、页面导航和账户测试夹具会使用同一地址。Windows 默认使用 Edge，其余平台可用 `npx playwright install chromium` 安装 Chromium，也可通过 `TELYSTA_TEST_BROWSER` 指定已安装的浏览器。
 
 ## 依赖更新
 
 定期执行 `npm audit`，更新后运行 `npm run check`，涉及前端交互或后台再运行对应浏览器测试；不使用 `--force` 跳过兼容性评估。当前 `package.json` 的 `overrides.katex` 引用根依赖，统一数学渲染插件与页面 CSS 所用版本，避免插件带回旧版 KaTeX。移除 override 前确认上游依赖已支持安全版本，并检查公式渲染。2026-10-11 的审计与更新记录见 [排查报告](project-audit-2026-10-11.md)。
+
+Astro 7.4.7 将构建环境的最低 Node 版本提高到 22.23.4。主站和两个 Worker 分别维护锁文件，复核时分别运行依赖审计和测试。[Astro 发布记录](https://github.com/withastro/astro/releases/tag/astro%407.4.7)
 
 ## Windows 本机原生模块加载失败
 

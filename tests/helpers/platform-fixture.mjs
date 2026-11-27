@@ -2,6 +2,7 @@ import { createRequire } from 'node:module';
 import path from 'node:path';
 import fs from 'node:fs/promises';
 import {createHash,randomBytes} from 'node:crypto';
+import { browserTestOrigin } from '../../scripts/browser-test-address.mjs';
 const require=createRequire(path.resolve('workers/console/package.json'));
 const {Miniflare,convertV4MiniflareOptions}=require('miniflare');
 export async function createPlatformFixture(){
@@ -15,7 +16,7 @@ export async function createPlatformFixture(){
  await db.exec('CREATE TABLE test_outbox(email TEXT,code TEXT)');
  return{mf,db,async attach(context){
   const handle=async route=>{const req=route.request();const response=await mf.dispatchFetch(req.url(),{method:req.method(),headers:await req.allHeaders(),body:req.postDataBuffer()||undefined});await route.fulfill({status:response.status,headers:Object.fromEntries(response.headers),body:Buffer.from(await response.arrayBuffer())});};
-  await context.route('https://telysta.com/**',async route=>{const url=new URL(route.request().url());if(/^\/(?:telysta-)?console(?:\/|$)/.test(url.pathname)){await handle(route);return;}const response=await route.fetch({url:'http://127.0.0.1:4322'+url.pathname+url.search});await route.fulfill({response});});
+  await context.route('https://telysta.com/**',async route=>{const url=new URL(route.request().url());if(/^\/(?:telysta-)?console(?:\/|$)/.test(url.pathname)){await handle(route);return;}const response=await route.fetch({url:browserTestOrigin+url.pathname+url.search});await route.fulfill({response});});
   await context.route('https://library-files.telysta.com/**',handle);
  },async ownerLink(){
   const token=randomBytes(32).toString('hex');await db.prepare("INSERT INTO owner_initialization(id,token_hash,expires_at) VALUES('owner',?1,?2) ON CONFLICT(id) DO UPDATE SET token_hash=excluded.token_hash,expires_at=excluded.expires_at,used_at=NULL").bind(createHash('sha256').update(token).digest('hex'),Math.floor(Date.now()/1000)+300).run();return 'https://telysta.com/telysta-console/#setup='+token;

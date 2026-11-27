@@ -104,8 +104,7 @@ test('手机原生触摸滚动', async ({ browser }) => {
 test('桌面进度条拖动直接跟随指针，键盘可定位首尾', async ({ page }) => {
 	await page.goto('/blog/');
 	const slider = page.getByRole('slider', { name: 'Page scroll position' });
-	// client:idle renders the track before its pointer handlers are hydrated.
-	await expect(page.locator('astro-island').filter({ has: slider })).not.toHaveAttribute('ssr');
+	await expect(slider).toHaveAttribute('aria-orientation', 'vertical');
 	await slider.focus();
 	const box = await slider.boundingBox();
 	expect(box).not.toBeNull();
@@ -113,9 +112,11 @@ test('桌面进度条拖动直接跟随指针，键盘可定位首尾', async ({
 	await page.mouse.move(x, box!.y + box!.height * 0.25);
 	await page.mouse.down();
 	await expect(slider).toHaveClass(/is-dragging/);
-	await page.mouse.move(x, box!.y + box!.height * 0.75);
+	await page.mouse.move(x - 65, box!.y + box!.height * 0.75);
 	await expect.poll(() => page.evaluate(() => scrollY / (document.documentElement.scrollHeight - innerHeight))).toBeCloseTo(0.75, 2);
 	await page.mouse.up();
+	await expect(slider).not.toHaveClass(/is-dragging/);
+	await expect(page.locator('html')).not.toHaveClass(/is-page-scroll-dragging/);
 	await page.emulateMedia({ reducedMotion: 'reduce' });
 	await slider.press('End');
 	await expect.poll(() => page.evaluate(() => Math.abs(scrollY - (document.documentElement.scrollHeight - innerHeight)))).toBeLessThan(2);

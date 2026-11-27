@@ -4,6 +4,37 @@ import { createPlatformFixture } from '../helpers/platform-fixture.mjs';
 const require = createRequire(import.meta.url);
 const JSZip = require('jszip');
 const host = 'https://telysta.com';
+
+test('书库会话只在相关页面加载，旧响应无法覆盖跨标签页的权限变化', async ({ page, baseURL }) => {
+	const endpoint = 'https://library-files.telysta.com/api/session';
+	const cors = { 'access-control-allow-origin': new URL(baseURL!).origin, 'access-control-allow-credentials': 'true' };
+	let requests = 0;
+	let release!: () => void;
+	const pending = new Promise<void>(resolve => { release = resolve; });
+	await page.route(endpoint, async route => {
+		if (++requests === 1) {
+			await pending;
+			await route.fulfill({ headers: { ...cors, 'x-fixture-request': 'previous' }, json: { authenticated: true } });
+		} else await route.fulfill({ headers: cors, json: { authenticated: false } });
+	});
+	try {
+		await page.goto('/');
+		await page.goto('/blog/');
+		expect(requests).toBe(0);
+		await page.goto('/ebooks/');
+		await expect.poll(() => requests).toBe(1);
+		await page.evaluate(() => window.dispatchEvent(new StorageEvent('storage', { key: 'telysta.account.event' })));
+		await expect.poll(() => page.evaluate(() => localStorage.getItem('telysta.library.state'))).toBe('locked');
+		const previous = page.waitForResponse(response => response.headers()['x-fixture-request'] === 'previous');
+		release();
+		await (await previous).finished();
+		await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+		expect(await page.evaluate(() => localStorage.getItem('telysta.library.state'))).toBe('locked');
+	} finally {
+		release();
+	}
+});
+
 test('账户权限接通书架和受保护EPUB，沙箱清除脚本，退出会停止阅览', async ({ page }, testInfo) => {
  test.setTimeout(60_000);
  const remoteRequests: string[] = [];

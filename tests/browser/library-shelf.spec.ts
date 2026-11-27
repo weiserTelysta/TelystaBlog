@@ -13,6 +13,7 @@ for (const width of [390, 1440]) {
 			await page.goto('/ebooks/', { waitUntil: 'domcontentloaded' });
 			await expect(page.locator('h1')).toHaveText('书室');
 			await expect(page.locator('.ebook-card')).toHaveCount(24);
+			await expect(page.locator('.ebook-card .ebook-formats a').first()).toHaveAttribute('href', /[?&]download=1(?:&|$)/);
 			expect(requestedBooks).toEqual([]);
 			await expect(page.locator('.ebook-grid')).toHaveCSS('grid-template-columns', width === 1440 ? /^\S+ \S+ \S+ \S+$/ : /^\S+$/);
 			const firstPage = await page.locator('.ebook-card h2 a').evaluateAll(links => links.map(link => link.getAttribute('href')));
@@ -85,6 +86,7 @@ test('搜索按全库和书单范围筛选、格式可组合、编号页可直�
 	await page.getByRole('searchbox', { name: '搜索书名或作者' }).fill('玛拉兹英灵录 卷二');
 	await expect(page.locator('.ebook-card')).toHaveCount(1);
 	await expect(page.locator('.ebook-card h2')).toHaveText('玛拉兹英灵录 卷二：死屋之门');
+	await expect(page.locator('.ebook-card .ebook-formats a').first()).toHaveAttribute('href', /[?&]download=1(?:&|$)/);
 	await page.getByLabel('筛选文件格式', { exact: true }).click();
 	await page.getByRole('radio', { name: 'PDF', exact: true }).check();
 	await expect(page.locator('.ebook-card')).toHaveCount(0);

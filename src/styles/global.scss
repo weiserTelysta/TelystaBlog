@@ -234,6 +234,10 @@ a {
 	box-shadow: 0 0 22px rgb(var(--color-accent-rgb) / 0.22);
 }
 
+.has-modal-open .page-scroll-indicator {
+	visibility: hidden;
+}
+
 @media (max-width: 640px) {
 	:root {
 		--site-header-block-size: 52px;

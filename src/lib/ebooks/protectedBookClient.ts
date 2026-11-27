@@ -1,5 +1,5 @@
-import { checkLibrarySession, getLibraryCatalog, isLibraryUnlocked } from './libraryAccess';
-import { readingLink } from './readerLinks';
+import { checkLibrarySession, getLibraryCatalog, initLibraryAccess, isLibraryUnlocked } from './libraryAccess';
+import { fileDownloadHref, readingLink } from './readerLinks';
 export { readerHref } from './readerLinks';
 export function initProtectedBookView() {
 	const root = document.querySelector<HTMLElement>('[data-library-book]'); if (!root) return;
@@ -24,7 +24,16 @@ export function initProtectedBookView() {
 			const metadata: Array<[string, string | number | undefined]> = [['作者／编者', book.authors.join('、')], ['译者', book.translator], ['出版社', book.publisher], ['出版年份', book.publicationYear], ['分类', book.clcCode ? `${book.clcCode} · ${book.clcName}` : undefined]];
 			for (const [label, value] of metadata) if (value) list.append(el('dt', label), el('dd', String(value)));
 			const files = el('ul', '', 'ebook-formats');
-			for (const file of book.files) { const li = el('li'), a = el('a', `${file.format}${file.bytes ? ` · ${(file.bytes / 1048576).toFixed(1)} MB` : ''}`); a.href = file.href + (file.href.includes('?') ? '&' : '?') + 'download=1'; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.setAttribute('aria-label', `下载 ${book.title}（${file.format}）`); li.append(a); files.append(li); }
+			for (const file of book.files) {
+				const item = el('li');
+				const link = el('a', `${file.format}${file.bytes ? ` · ${(file.bytes / 1048576).toFixed(1)} MB` : ''}`);
+				link.href = fileDownloadHref(file.href);
+				link.target = '_blank';
+				link.rel = 'noopener noreferrer';
+				link.setAttribute('aria-label', `下载 ${book.title}（${file.format}）`);
+				item.append(link);
+				files.append(item);
+			}
 			const reading = el('div', '', 'ebook-reading-links');
 			for (const file of book.files) {
 				const link = readingLink(book.id, file), a = el('a', link.label); a.href = link.href;
@@ -36,5 +45,6 @@ export function initProtectedBookView() {
 		} catch { if (request === revision) state.textContent = '书目暂时无法加载，请稍后重试。'; }
 	}
 	window.addEventListener('library-access-change', () => { void render(); });
+	initLibraryAccess();
 	void checkLibrarySession().then(render);
 }
