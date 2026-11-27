@@ -3,7 +3,9 @@ test('旧资源地址保留筛选参数与片段，正式画廊静态可访问',
 	await page.goto('/resources/?type=image#works');
 	await expect(page).toHaveURL(/\/gallery\/\?type=image#works$/);
 	await expect(page.locator('.resource-card')).toHaveCount(2);
-	const xml = await (await request.get('/sitemap-0.xml')).text();
+	const sitemap = await request.get('/sitemap.xml');
+	expect(sitemap.status()).toBe(200);
+	const xml = await sitemap.text();
 	expect(xml).toContain('https://telysta.com/gallery/'); expect(xml).toContain('https://telysta.com/ebooks/'); expect(xml).not.toContain('https://telysta.com/resources/');
 });
 test('无脚本访问画廊和真实书架，书目模板不公开', async ({ browser, baseURL }) => {
@@ -13,8 +15,11 @@ test('无脚本访问画廊和真实书架，书目模板不公开', async ({ br
 		await expect(page.locator('h1')).toHaveText("画廊");
 		await expect(page.locator('.resource-card')).toHaveCount(28);
 		await page.goto('/ebooks/', { waitUntil: 'domcontentloaded' }); await expect(page.locator('h1')).toHaveText("书室");
-		await expect(page.locator('.ebook-card')).toHaveCount(24);
-		await expect(page.locator('.ebook-pagination')).toContainText('1 / 27');
+		const pageSize = 24;
+		await expect(page.locator('.ebook-card')).toHaveCount(pageSize);
+		const catalog = await (await page.request.get('/ebooks/search-index.json')).json();
+		const total = catalog.filter((book: { categoryOnly?: boolean }) => !book.categoryOnly).length;
+		await expect(page.locator('.ebook-pagination')).toContainText(`1 / ${Math.ceil(total / pageSize)} · 共 ${total} 份藏书`);
 		expect((await page.request.get('/ebooks/ebook-template/')).status()).toBe(404);
 	} finally { await context.close(); }
 });

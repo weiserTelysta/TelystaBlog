@@ -8,8 +8,11 @@ const routes = [
 ];
 
 test('Mirelle routes replace old names in navigation, search and sitemap', async ({ page, request }) => {
-	const sitemap = await (await request.get('/sitemap-0.xml')).text();
+	const response = await request.get('/sitemap.xml');
+	expect(response.status()).toBe(200);
+	const sitemap = await response.text();
 	expect(sitemap).not.toMatch(/serava|severa|sevara/i);
+	const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => decodeURI(match[1]));
 	const search = await (await request.get('/blog/search-index.json')).text();
 	expect(search).not.toMatch(/serava|severa|sevara/i);
 	for (const [oldPath, newPath] of routes) {
@@ -17,7 +20,7 @@ test('Mirelle routes replace old names in navigation, search and sitemap', async
 		await expect.poll(() => decodeURI(new URL(page.url()).pathname)).toBe(newPath);
 		const canonical = await page.locator('link[rel=canonical]').getAttribute('href');
 		expect(decodeURI(canonical!)).toBe('https://telysta.com' + newPath);
-		expect(decodeURI(sitemap)).toContain('https://telysta.com' + newPath);
+		expect(urls).toContain('https://telysta.com' + newPath);
 	}
 	await page.goto('/series/');
 	await expect(page.getByRole('link', { name: /Mirelle 札记/ })).toHaveAttribute('href', '/series/mirelle-notes/');
