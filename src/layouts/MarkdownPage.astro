@@ -9,13 +9,14 @@ import lilyAndRibbon from '../assets/images/decorations/lily-and-ribbon.webp';
 type Props = MarkdownLayoutProps<{
 	title: string;
 	description: string;
+	noIndex?: boolean;
 	ornament?: 'ivory' | 'lily-and-ribbon';
 }>;
-const { title, description, ornament } = Astro.props.frontmatter;
+const { title, description, noIndex, ornament } = Astro.props.frontmatter;
 const showLily = ornament === 'lily-and-ribbon';
 ---
 
-<Layout title={`${title} · ${SITE_CONFIG.name}`} description={description} starfieldVariant="subtle">
+<Layout title={`${title} · ${SITE_CONFIG.name}`} description={description} {noIndex} starfieldVariant="subtle">
 	<main class="markdown-page">
 		<article class:list={{ 'markdown-page__illustrated': showLily }}>
 			<header><h1 class="text-article-title">

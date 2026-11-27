@@ -43,15 +43,6 @@
 	height: 100%;
 }
 
-.starfield__fractal {
-	mask-image: linear-gradient(to top, transparent, black 24%);
-	transition: opacity 520ms ease;
-}
-
-.starfield__fractal[data-fractal-visible="false"] {
-	opacity: 0;
-}
-
 @keyframes starfield-reveal {
 	from {
 		opacity: 0;
@@ -87,6 +78,4 @@
 		animation: none;
 		opacity: 0.14;
 	}
-
-	.starfield__fractal { transition: none; }
 }

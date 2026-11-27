@@ -33,6 +33,18 @@ test('robots 与 sitemap 指向可抓取的正式页面，元信息与 JSON-LD �
 	}
 });
 
+test('已撤下的 sitemap 与不存在的页面返回 404', async ({ page }) => {
+	const retiredSitemap = await page.request.get('/sitemap-0.xml');
+	expect(retiredSitemap.status()).toBe(404);
+	const missingPage = await page.goto('/missing-telysta-page/');
+	expect(missingPage?.status()).toBe(404);
+	await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
+	await expect(page.getByRole('heading', { level: 1, name: '找不到这个页面' })).toBeVisible();
+	const home = new URL('/', page.url()).href;
+	await page.getByRole('link', { name: '返回首页', exact: true }).click();
+	await expect(page).toHaveURL(home);
+});
+
 test('About 与作者首页文案不依赖 JavaScript，入口与资源同级', async ({ browser }) => {
 	const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
 	try {

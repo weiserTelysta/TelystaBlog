@@ -1,5 +1,21 @@
 import { test, expect } from '@playwright/test';
 
+test('首页在旧的背景会话中也只渲染星空', async ({ page }) => {
+	await page.addInitScript(() => sessionStorage.setItem('telysta.home.atmosphere', 'julia:0.5'));
+	for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
+		await page.setViewportSize(viewport);
+		await page.emulateMedia({ reducedMotion: viewport.width === 390 ? 'reduce' : 'no-preference' });
+		await page.goto('/');
+		const background = page.locator('.starfield');
+		const canvas = background.locator('canvas');
+		await expect(background).toHaveAttribute('aria-hidden', 'true');
+		await expect(canvas).toHaveCount(1);
+		await expect(canvas).toBeVisible();
+		await expect.poll(() => canvas.evaluate(node => (node as HTMLCanvasElement).width)).toBeGreaterThan(300);
+		if (viewport.width === 390) await expect(background).toHaveCSS('animation-name', 'none');
+	}
+});
+
 test('首页侧影落款与单行站龄叠放，并在北京时间零点更新', async ({ page }, testInfo) => {
 	await page.setViewportSize({ width: 320, height: 800 });
 	await page.emulateMedia({ reducedMotion: 'reduce' });
